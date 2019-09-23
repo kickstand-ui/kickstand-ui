@@ -1,0 +1,107 @@
+@import '../variables';
+    @import 'color-contrast';
+    
+    @function build-pallet() {
+        $result: ();
+    
+        @each $key, $value in $theme-colors {
+            $group: ($key: ('base': $value,
+                'light': lighten($value, $color-variation),
+                'lighter': lighten($value, $color-variation * 2),
+                'lightest': lighten($value, $color-variation * 3),
+                'dark': darken($value, $color-variation),
+                'darker': darken($value, $color-variation * 2),
+                'darkest': darken($value, $color-variation * 3)));
+    
+            $result: map-merge($result, $group);
+        }
+    
+        @return $result;
+    }
+    
+    $color-pallette: build-pallet();
+    
+    /*
+        GET COLOR
+    
+        usage:
+            // for the base color
+            color(primary);
+    
+            // for variations of a color
+            color(primary, lighter);
+            color(primary, light);
+            color(primary, dark);
+            color(primary, darker);
+    */
+    @function color($name: 'primary', $variant: 'base', $opacity: 1) {
+        $color: null;
+    
+        $name: $name + unquote("");
+    
+        @if(type-of($variant) == 'number') {
+            $opacity: $variant;
+            $variant: 'base';
+        }
+    
+        // Get the color name
+        $color-name: map-get($color-pallette, $name);
+    
+        // Get the color variant
+        @if $color-name or $name == 'black' or $name == 'white' {
+            @if $name == 'black' {
+                $color: black;
+            } @else if $name == 'white' {
+                $color: white;
+            } @else {
+                $color: map-get($color-name, $variant);
+            }
+        
+            @if $color {
+                @return rgba($color, $opacity);
+            } @else {
+                @error "Invalid color variation: '#{$name}', '#{$variant}'."
+            }
+        } @else {
+            @error "Invalid color name: '#{$name}'."
+        }
+    
+        @return $color;
+    }
+    
+    /*
+        GET CONTRASTING COLOR FOR TEXT ACCESSIBILITY (WCAG 2.0 AA+)
+    
+        usage:
+            // text for the base color
+            text-color(primary);
+    
+            // for variations of a color
+            text-color(primary, lighter);
+            text-color(primary, light);
+            text-color(primary, dark);
+            text-color(primary, darker);
+    */
+    @function text-color($name: 'primary', $variant: 'base', $opacity: 1) {
+        $color: color($name, $variant, $opacity);
+    
+        @return get-contrast-color($color);
+    }              
+    
+    // Used for splitting up color blocks - ex: "primary dark 0.75"
+    @function split-color-list($color, $variant: base, $opacity: 1) {
+        @if(length($color) > 1) {
+            $g-color: nth($color, 1);
+            $g-variant: nth($color, 2);
+            $g-opacity: 1;
+    
+            @if(length($color) > 2) {
+                $g-opacity: nth($color, 3);
+            }
+    
+            @return color($g-color, $g-variant, $g-opacity);
+        } @else {
+            @return color($color, $variant, $opacity);
+        }
+    }
+    

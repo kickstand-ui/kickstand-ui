@@ -1,0 +1,3 @@
+# Elements
+
+The Elements folder is for styling specific elements such as links, buttons, form inputs, and header tags. These are the smallest building blocks in the web and cannot be broken up into smaller parts. Browsers, by default, have their own styling in place for these elements, but tend to be inconsistent. Because of this, adding a reset to the 01_Base directory or adding one to the build pipeline is recommended.

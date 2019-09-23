@@ -1,0 +1,18 @@
+@import '../00_Abstracts/index';
+        
+    * {
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        font-family: $font-base;
+        font-size: $font-size-base;
+        line-height: $line-height-base;
+    
+        code,
+        pre {
+            font-family: $font-monospace;
+        }
+    }                            
+    

@@ -1,0 +1,62 @@
+@import '../00_Abstracts/index';
+
+.button {
+    @include font-size(sm);
+    @include p(md);
+
+    @each $color, $value in $theme-colors {
+        &.#{$color} {
+            background-color: color($color);
+            border: 2px solid color($color);
+            color: text-color($color);
+
+            &:focus,
+            &:hover:not(:disabled) {
+                background-color: color($color, dark);
+                border-color: color($color, dark);
+                color: text-color($color, dark);
+            }
+
+            &.hollow {
+                background-color: transparent;
+                border: 2px solid color($color);
+                color: color($color);
+
+                &:focus,
+                &:hover:not(:disabled) {
+                    background-color: transparent;
+                    border: 2px solid color($color, dark);
+                    color: color($color, dark);
+                }
+            }
+        }
+    }
+
+    &:disabled {
+        opacity: 0.6;
+
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+
+    &.link {
+        background-color: transparent;
+        border: 2px solid transparent;
+        color: color(primary);
+        text-decoration: none;
+
+        &:focus,
+        &:hover:not(:disabled) {
+            color: color(primary, dark);
+        }
+    }
+
+    &.size {
+        @each $size, $value in $spacing-sizes {
+            &-#{$size} {
+                @include px($size);
+            }
+        }
+    }
+}

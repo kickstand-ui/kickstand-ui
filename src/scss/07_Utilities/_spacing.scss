@@ -1,0 +1,74 @@
+@import '../00_Abstracts/index';
+
+@each $size, $value in $spacing-sizes {
+    // Padding
+    .p-#{$size} {
+        @include p($size);
+    }
+
+    // Padding X
+    .px-#{$size} {
+        @include px($size);
+    }
+
+    // Padding Y
+    .py-#{$size} {
+        @include py($size);
+    }
+
+    // Padding Left
+    .pl-#{$size} {
+        @include pl($size);
+    }
+
+    // Padding Right
+    .pr-#{$size} {
+        @include pr($size);
+    }
+
+    // Padding Top
+    .pt-#{$size} {
+        @include pt($size);
+    }
+
+    // Padding Bottom
+    .pb-#{$size} {
+        @include pb($size);
+    }
+
+
+    // Margin
+    .m-#{$size} {
+        @include m($size);
+    }
+
+    // Margin X
+    .mx-#{$size} {
+        @include mx($size);
+    }
+
+    // Margin Y
+    .my-#{$size} {
+        @include my($size);
+    }
+
+    // Margin Left
+    .ml-#{$size} {
+        @include ml($size);
+    }
+
+    // Margin Right
+    .mr-#{$size} {
+        @include mr($size);
+    }
+
+    // Margin Top
+    .mt-#{$size} {
+        @include mt($size);
+    }
+
+    // Margin Bottom
+    .mb-#{$size} {
+        @include mb($size);
+    }
+}

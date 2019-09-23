@@ -1,0 +1,15 @@
+@import '../variables';
+    
+    @mixin transition-ease-in-out($speed: fast, $important: false) {
+        @if map-has-key($transitions, $speed) {
+            @if($important == true) {
+                transition: all map-get($transitions, $speed) ease-in-out !important;
+            } @else {
+                transition: all map-get($transitions, $speed) ease-in-out;
+            }
+        } 
+        @else {
+            @error "Invalid transition speed: '#{$speed}'.";
+        }
+    }    
+    

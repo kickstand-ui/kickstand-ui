@@ -1,0 +1,30 @@
+@import '../00_Abstracts/index';
+
+.alert {
+    background-color: color(white);
+    @include p(lg);
+    @include border();
+
+    @each $color,
+    $value in $theme-colors {
+        &.#{$color} {
+            @include border-l(solid, md, $color);
+        }
+    }
+
+    .alert-header {
+        display: flex;
+        justify-content: space-between;
+        @include mb(lg);
+
+        .alert-heading {
+            font-weight: bold;
+            @include mt(none);
+            @include mb(none);
+        }
+    }
+
+    .alert-body {
+        @include m(none);
+    }
+}

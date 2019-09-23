@@ -1,0 +1,11 @@
+@import '../variables';
+    @import 'colors';
+    
+    @function border($style, $size, $color, $variant: base, $opacity: 1, $important: false) {
+        @if($important == true) {
+            @return $style spacing($size) split-color-list($color, $variant, $opacity) !important;
+        } @else {
+            @return $style spacing($size) split-color-list($color, $variant, $opacity);
+        }
+    }
+    

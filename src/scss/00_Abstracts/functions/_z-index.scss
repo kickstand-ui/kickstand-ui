@@ -1,0 +1,11 @@
+@import '../variables';
+        
+    @function z($name) {
+        @if map-has-key($z-indexes, $name) {
+            @return map-get($z-indexes, $name);
+        } 
+        @else {
+            @error "Invalid 'z' value: '#{$name}'.";
+        }
+    }
+    
