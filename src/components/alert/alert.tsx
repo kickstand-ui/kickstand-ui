@@ -1,5 +1,4 @@
 import { Component, h, Prop } from '@stencil/core';
-import Base from '../base/base';
 
 @Component({
     tag: 'c-alert',

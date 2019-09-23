@@ -1,7 +1,11 @@
+import { text, select } from "@storybook/addon-knobs";
+
 export default { title: 'Alert' };
 
-const variations  = ['Primary', 'Secondary', 'Success', 'Info', 'Warning', 'Danger', 'Light', 'Dark'];
+const variations = { 'Primary': 'primary', 'Secondary': 'secondary', 'Success': 'success', 'Info': 'info', 'Warning': 'warning', 'Danger': 'danger', 'Light': 'light', 'Dark': 'dark' };
 
-export const withHeading = () => variations.map(x => `<c-alert css-class="m-md" header="${x} Alert" type="${x.toLowerCase()}"></c-alert>`).join('');
+export const withHeading = () => {
+    const type = select('Type', variations, 'primary');
+    return (`<c-alert css-class="m-md" header="Primary Alert" type="${type}"></c-alert>`);
 
-export const withoutHeading = () => variations.map(x => `<c-alert type="${x.toLowerCase()}"></c-alert>`).join('');
+};
