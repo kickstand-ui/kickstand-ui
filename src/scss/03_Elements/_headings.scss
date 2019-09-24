@@ -1,0 +1,37 @@
+@import '../00_Abstracts/index';
+
+%heading {
+    @include mt(none); // 1
+    @include mb(md);
+    font-family: $font-accent;
+}
+
+h1 {
+    @extend %heading;
+    @include font-size(xxl);
+}
+
+h2 {
+    @extend %heading;
+    @include font-size(xl);
+}
+
+h3 {
+    @extend %heading;
+    @include font-size(lg);
+}
+
+h4 {
+    @extend %heading;
+    @include font-size(md);
+}
+
+h5 {
+    @extend %heading;
+    @include font-size(sm);
+}
+
+h6 {
+    @extend %heading;
+    @include font-size(xs);
+}

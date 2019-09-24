@@ -1,8 +1,7 @@
 import { Component, h, Prop, ComponentInterface } from '@stencil/core';
 
 @Component({
-    tag: 'c-button',
-    styleUrl: '../../scss/styles.scss'
+    tag: 'c-button'
 })
 export class Alert implements ComponentInterface {
     @Prop() cssClass: string;

@@ -4,8 +4,10 @@ export default { title: 'Alert' };
 
 const variations = { 'Primary': 'primary', 'Secondary': 'secondary', 'Success': 'success', 'Info': 'info', 'Warning': 'warning', 'Danger': 'danger', 'Light': 'light', 'Dark': 'dark' };
 
-export const withHeading = () => {
+export const defaultHeading = () => {
     const type = select('Type', variations, 'primary');
-    return (`<c-alert css-class="m-md" header="Primary Alert" type="${type}"></c-alert>`);
-
+    const header = text('Header', 'Default Header Text');
+    const cssClass = text('CSS Class', 'm-md');
+    const htmlId = text('HTML Id', '');
+    return (`<c-alert html-id="${htmlId}" css-class="${cssClass}" header="${header}" type="${type}"></c-alert>`);
 };

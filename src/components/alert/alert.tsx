@@ -1,14 +1,16 @@
 import { Component, h, Prop } from '@stencil/core';
 
 @Component({
-    tag: 'c-alert',
-    styleUrl: '../../scss/styles.scss'
+    tag: 'c-alert'
 })
 export class Alert {
+    
+  /**
+   * Animation to use when the alert is dismissed.
+   */
     @Prop() cssClass: string;
     @Prop() htmlId: string;
     @Prop() header: string;
-    @Prop() class: string;
     @Prop() type: string = 'primary';
 
     render() {

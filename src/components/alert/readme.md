@@ -1,4 +1,4 @@
-# my-component
+# c-alert
 
 
 
@@ -7,13 +7,12 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type     | Default     |
-| ---------- | ----------- | ----------- | -------- | ----------- |
-| `class`    | `class`     |             | `string` | `undefined` |
-| `cssClass` | `css-class` |             | `string` | `undefined` |
-| `header`   | `header`    |             | `string` | `undefined` |
-| `htmlId`   | `html-id`   |             | `string` | `undefined` |
-| `type`     | `type`      |             | `string` | `'primary'` |
+| Property   | Attribute   | Description                                   | Type     | Default     |
+| ---------- | ----------- | --------------------------------------------- | -------- | ----------- |
+| `cssClass` | `css-class` | Animation to use when the alert is dismissed. | `string` | `undefined` |
+| `header`   | `header`    |                                               | `string` | `undefined` |
+| `htmlId`   | `html-id`   |                                               | `string` | `undefined` |
+| `type`     | `type`      |                                               | `string` | `'primary'` |
 
 
 ----------------------------------------------

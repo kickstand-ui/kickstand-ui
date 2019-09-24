@@ -10,7 +10,9 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface CAlert {
-    'class': string;
+    /**
+    * Animation to use when the alert is dismissed.
+    */
     'cssClass': string;
     'header': string;
     'htmlId': string;
@@ -71,7 +73,9 @@ declare global {
 
 declare namespace LocalJSX {
   interface CAlert extends JSXBase.HTMLAttributes<HTMLCAlertElement> {
-    'class'?: string;
+    /**
+    * Animation to use when the alert is dismissed.
+    */
     'cssClass'?: string;
     'header'?: string;
     'htmlId'?: string;

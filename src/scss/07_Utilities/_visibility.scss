@@ -1,0 +1,35 @@
+@import '../00_Abstracts/index';
+
+.sr-only {
+    @include screen-reader-only();
+}
+
+.hidden {
+    visibility: hidden !important;
+}
+
+@each $breakpoint, $value in $breakpoints {
+    .#{$breakpoint}:hidden {
+        @include breakpoint-below($breakpoint) {
+            visibility: hidden !important;
+        }
+    }
+}
+
+
+.display-none {
+    display: none !important;
+}
+
+@each $breakpoint, $value in $breakpoints {
+    .#{$breakpoint}:display-none {
+        @include breakpoint-below($breakpoint) {
+            display: none !important;
+        }
+    }
+}
+
+
+.display-block {
+    display: block !important;
+}
