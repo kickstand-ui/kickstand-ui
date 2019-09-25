@@ -6,7 +6,9 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import {
+  IBreadcrumbs,
+} from './components/breadcrumbs/breadcrumbs';
 
 export namespace Components {
   interface CAlert {
@@ -18,6 +20,17 @@ export namespace Components {
     'htmlId': string;
     'type': string;
   }
+  interface CBadge {
+    'cssClass': string;
+    'hollow': boolean;
+    'htmlId': string;
+    'type': string;
+  }
+  interface CBreadcrumbs {
+    'breadcrumbs': IBreadcrumbs[];
+    'cssClass': string;
+    'htmlId': string;
+  }
   interface CButton {
     'cssClass': string;
     'hollow': boolean;
@@ -27,6 +40,14 @@ export namespace Components {
     'linkUrl': string;
     'size': string;
     'type': string;
+  }
+  interface CImg {
+    'alt': string;
+    'cssClass': string;
+    'htmlId': string;
+    'lazy': boolean;
+    'src': string;
+    'threshold': number;
   }
   interface MyComponent {
     /**
@@ -53,10 +74,28 @@ declare global {
     new (): HTMLCAlertElement;
   };
 
+  interface HTMLCBadgeElement extends Components.CBadge, HTMLStencilElement {}
+  var HTMLCBadgeElement: {
+    prototype: HTMLCBadgeElement;
+    new (): HTMLCBadgeElement;
+  };
+
+  interface HTMLCBreadcrumbsElement extends Components.CBreadcrumbs, HTMLStencilElement {}
+  var HTMLCBreadcrumbsElement: {
+    prototype: HTMLCBreadcrumbsElement;
+    new (): HTMLCBreadcrumbsElement;
+  };
+
   interface HTMLCButtonElement extends Components.CButton, HTMLStencilElement {}
   var HTMLCButtonElement: {
     prototype: HTMLCButtonElement;
     new (): HTMLCButtonElement;
+  };
+
+  interface HTMLCImgElement extends Components.CImg, HTMLStencilElement {}
+  var HTMLCImgElement: {
+    prototype: HTMLCImgElement;
+    new (): HTMLCImgElement;
   };
 
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
@@ -66,7 +105,10 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'c-alert': HTMLCAlertElement;
+    'c-badge': HTMLCBadgeElement;
+    'c-breadcrumbs': HTMLCBreadcrumbsElement;
     'c-button': HTMLCButtonElement;
+    'c-img': HTMLCImgElement;
     'my-component': HTMLMyComponentElement;
   }
 }
@@ -81,6 +123,17 @@ declare namespace LocalJSX {
     'htmlId'?: string;
     'type'?: string;
   }
+  interface CBadge extends JSXBase.HTMLAttributes<HTMLCBadgeElement> {
+    'cssClass'?: string;
+    'hollow'?: boolean;
+    'htmlId'?: string;
+    'type'?: string;
+  }
+  interface CBreadcrumbs extends JSXBase.HTMLAttributes<HTMLCBreadcrumbsElement> {
+    'breadcrumbs'?: IBreadcrumbs[];
+    'cssClass'?: string;
+    'htmlId'?: string;
+  }
   interface CButton extends JSXBase.HTMLAttributes<HTMLCButtonElement> {
     'cssClass'?: string;
     'hollow'?: boolean;
@@ -90,6 +143,14 @@ declare namespace LocalJSX {
     'linkUrl'?: string;
     'size'?: string;
     'type'?: string;
+  }
+  interface CImg extends JSXBase.HTMLAttributes<HTMLCImgElement> {
+    'alt'?: string;
+    'cssClass'?: string;
+    'htmlId'?: string;
+    'lazy'?: boolean;
+    'src'?: string;
+    'threshold'?: number;
   }
   interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
     /**
@@ -108,7 +169,10 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'c-alert': CAlert;
+    'c-badge': CBadge;
+    'c-breadcrumbs': CBreadcrumbs;
     'c-button': CButton;
+    'c-img': CImg;
     'my-component': MyComponent;
   }
 }
