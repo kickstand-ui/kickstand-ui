@@ -1,0 +1,26 @@
+@import '../00_Abstracts/index';
+
+.badge {
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    padding: 0.25em 0.4em;
+    font-size: 0.6em;
+    @include radius(pill);
+
+    @each $color, $value in $theme-colors {
+        &.#{$color} {
+            background-color: color($color);
+            color: text-color($color);
+
+            &.hollow {
+                background-color: transparent;
+                color: color($color);
+                @include border(solid, '3xs', $color);
+            }
+        }
+    }
+}
