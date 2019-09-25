@@ -1,0 +1,38 @@
+@import '../00_Abstracts/index';
+
+.breadcrumbs {
+    display: block;
+    background-color: color(light);
+
+    .list {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        @include px(lg);
+        @include py(md);
+        @include mb(lg);
+
+        .breadcrumb {
+
+            &.current {
+                @include font-size(sm);
+            }
+
+            .link {
+                font-weight: bold;
+                text-decoration: none;
+                @include font-size(sm);
+            }
+        }
+
+        .breadcrumb+.breadcrumb {
+            @include pl(sm);
+
+            &::before {
+                display: inline-block;
+                content: "/";
+                @include pr(sm);
+            }
+        }
+    }
+}
