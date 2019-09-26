@@ -9,7 +9,7 @@ export interface IBreadcrumbs {
     tag: 'c-breadcrumbs'
 })
 export class Breadcrumbs implements ComponentInterface {
-    @Prop() breadcrumbs: IBreadcrumbs[] = [];
+    @Prop() breadcrumbs: IBreadcrumbs[];
     @Prop() cssClass: string;
     @Prop() htmlId: string;
 
@@ -18,16 +18,25 @@ export class Breadcrumbs implements ComponentInterface {
         return index === this.breadcrumbs.length -1;
     }
 
+    setDefaultValuesForTesting() {
+        this.breadcrumbs = this.breadcrumbs || [
+            {url: '#', text: 'Home'},
+            {url: '#', text: 'Products'},
+            {url: '#', text: 'Product 1'},
+            {url: '#', text: 'Details'},
+        ];
+    }
+
     render() {
-        
+        this.setDefaultValuesForTesting();
         return (
             <nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
                 <ol class="list">
                     {this.breadcrumbs.map((crumb, index) =>
                         <li role="menuitem" class={`breadcrumb ${this.isLastCrumb(index) ? 'current' : ''}`}>
                             {this.isLastCrumb(index)
-                                ? <span class="link">{crumb.text}</span>
-                                : <a class="link" href={crumb.url}>{crumb.text}</a>
+                                ? <span class="text">{crumb.text}</span>
+                                : <a class="text" href={crumb.url}>{crumb.text}</a>
                             }
                         </li>
                     )}

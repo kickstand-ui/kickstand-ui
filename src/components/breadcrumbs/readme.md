@@ -9,7 +9,7 @@
 
 | Property      | Attribute   | Description | Type             | Default     |
 | ------------- | ----------- | ----------- | ---------------- | ----------- |
-| `breadcrumbs` | --          |             | `IBreadcrumbs[]` | `[]`        |
+| `breadcrumbs` | --          |             | `IBreadcrumbs[]` | `undefined` |
 | `cssClass`    | `css-class` |             | `string`         | `undefined` |
 | `htmlId`      | `html-id`   |             | `string`         | `undefined` |
 
