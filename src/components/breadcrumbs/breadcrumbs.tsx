@@ -19,12 +19,16 @@ export class Breadcrumbs implements ComponentInterface {
     }
 
     render() {
+        
         return (
             <nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
                 <ol class="list">
                     {this.breadcrumbs.map((crumb, index) =>
                         <li role="menuitem" class={`breadcrumb ${this.isLastCrumb(index) ? 'current' : ''}`}>
-                            <a class="link" href={crumb.url}>{crumb.text}</a>
+                            {this.isLastCrumb(index)
+                                ? <span class="link">{crumb.text}</span>
+                                : <a class="link" href={crumb.url}>{crumb.text}</a>
+                            }
                         </li>
                     )}
                 </ol>
