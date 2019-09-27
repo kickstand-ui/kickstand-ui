@@ -28,7 +28,6 @@ export class Breadcrumbs implements ComponentInterface {
     }
 
     render() {
-        this.setDefaultValuesForTesting();
         return (
             <nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
                 <ol class="list">
