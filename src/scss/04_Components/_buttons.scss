@@ -4,7 +4,7 @@
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
-    line-height: 1.5;
+    line-height: 1;
     white-space: nowrap;
     text-align: center;
     vertical-align: middle;
@@ -56,14 +56,30 @@
         &:focus,
         &:hover:not(:disabled) {
             color: color(primary, dark);
+            text-decoration: underline;
         }
     }
 
     &.size {
-        @each $size, $value in $spacing-sizes {
-            &-#{$size} {
-                @include px($size);
-            }
+        &-xs {
+            @include p(xs);
+            @include font-size(xs);
+        }
+        &-sm {
+            @include p(sm);
+            @include font-size(sm);
+        }
+        &-md {
+            @include p(md);
+            @include font-size(sm);
+        }
+        &-lg {
+            @include p(lg);
+            @include font-size(md);
+        }
+        &-xl {
+            @include p(xl);
+            @include font-size(lg);
         }
     }
 }
