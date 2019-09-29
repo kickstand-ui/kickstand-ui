@@ -11,7 +11,6 @@
 | ---------- | ----------- | --------------------------------------------- | -------- | ----------- |
 | `cssClass` | `css-class` | Animation to use when the alert is dismissed. | `string` | `undefined` |
 | `header`   | `header`    |                                               | `string` | `undefined` |
-| `htmlId`   | `html-id`   |                                               | `string` | `undefined` |
 | `type`     | `type`      |                                               | `string` | `'primary'` |
 
 

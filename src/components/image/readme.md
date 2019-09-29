@@ -11,11 +11,23 @@
 | ----------- | ----------- | ----------- | --------- | ----------- |
 | `alt`       | `alt`       |             | `string`  | `undefined` |
 | `cssClass`  | `css-class` |             | `string`  | `undefined` |
-| `htmlId`    | `html-id`   |             | `string`  | `undefined` |
 | `lazy`      | `lazy`      |             | `boolean` | `undefined` |
 | `src`       | `src`       |             | `string`  | `undefined` |
 | `threshold` | `threshold` |             | `number`  | `300`       |
 
+
+## Dependencies
+
+### Used by
+
+ - [c-card](../card)
+
+### Graph
+```mermaid
+graph TD;
+  c-card --> c-img
+  style c-img fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

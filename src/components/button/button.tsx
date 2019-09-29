@@ -5,18 +5,17 @@ import { Component, h, Prop, ComponentInterface } from '@stencil/core';
 })
 export class Alert implements ComponentInterface {
     @Prop() cssClass: string;
-    @Prop() htmlId: string;
     @Prop() type: string;
     @Prop() hollow: boolean;
     @Prop() size: string;
     @Prop() icon: string;
     @Prop() iconDirection: string = 'left';
-    @Prop() linkUrl: string;
+    @Prop() url: string;
 
     render() {
         let content: HTMLElement;
-        if (this.linkUrl) {
-            content = <a id={this.htmlId} class={`button ${this.type}${this.hollow ? ' hollow' : ''} size-${this.size} ${this.cssClass}`} href={this.linkUrl}>
+        if (this.url) {
+            content = <a class={`button ${this.type}${this.hollow ? ' hollow' : ''} size-${this.size} ${this.cssClass}`} href={this.url}>
                 {this.icon ? <i class={`button-icon ${this.icon}`}></i> : null}
                 <span class="button-text">
                     <slot>
@@ -25,7 +24,7 @@ export class Alert implements ComponentInterface {
                 </span>
             </a>
         } else {
-            content = <button id={this.htmlId} class={`button ${this.type}${this.hollow ? ' hollow' : ''} size-${this.size} ${this.cssClass}`}>
+            content = <button class={`button ${this.type}${this.hollow ? ' hollow' : ''} size-${this.size} ${this.cssClass}`}>
                 {this.icon ? <i class={`button-icon ${this.icon}`}></i> : null}
                 <span class="button-text">
                     <slot>

@@ -8,7 +8,6 @@ export class Img {
     @Element() el: HTMLElement;
 
     @Prop() cssClass: string;
-    @Prop() htmlId: string;
     @Prop() src: string;
     @Prop() alt: string;
     @Prop() lazy: boolean;
@@ -84,7 +83,7 @@ export class Img {
 
     render() {
         return (
-            <img id={this.htmlId} class={this.cssClass} data-src={this.src} alt={this.alt}></img>
+            <img class={this.cssClass} data-src={this.src} alt={this.alt}></img>
         );
     }
 }

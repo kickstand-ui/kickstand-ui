@@ -11,7 +11,6 @@
 | ---------- | ----------- | ----------- | --------- | ----------- |
 | `cssClass` | `css-class` |             | `string`  | `undefined` |
 | `hollow`   | `hollow`    |             | `boolean` | `undefined` |
-| `htmlId`   | `html-id`   |             | `string`  | `undefined` |
 | `type`     | `type`      |             | `string`  | `'primary'` |
 
 

@@ -11,25 +11,15 @@ export interface IBreadcrumbs {
 export class Breadcrumbs implements ComponentInterface {
     @Prop() breadcrumbs: IBreadcrumbs[];
     @Prop() cssClass: string;
-    @Prop() htmlId: string;
 
 
     isLastCrumb(index: number): boolean {
         return index === this.breadcrumbs.length -1;
     }
 
-    setDefaultValuesForTesting() {
-        this.breadcrumbs = this.breadcrumbs || [
-            {url: '#', text: 'Home'},
-            {url: '#', text: 'Products'},
-            {url: '#', text: 'Product 1'},
-            {url: '#', text: 'Details'},
-        ];
-    }
-
     render() {
         return (
-            <nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
+            <nav class={`breadcrumbs ${this.cssClass}`} role="menubar" aria-label="breadcrumbs">
                 <ol class="list">
                     {this.breadcrumbs.map((crumb, index) =>
                         <li role="menuitem" class={`breadcrumb ${this.isLastCrumb(index) ? 'current' : ''}`}>

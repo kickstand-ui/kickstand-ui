@@ -11,7 +11,6 @@
 | ------------- | ----------- | ----------- | ---------------- | ----------- |
 | `breadcrumbs` | --          |             | `IBreadcrumbs[]` | `undefined` |
 | `cssClass`    | `css-class` |             | `string`         | `undefined` |
-| `htmlId`      | `html-id`   |             | `string`         | `undefined` |
 
 
 ----------------------------------------------

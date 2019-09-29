@@ -9,22 +9,19 @@ export class Alert {
    * Animation to use when the alert is dismissed.
    */
     @Prop() cssClass: string;
-    @Prop() htmlId: string;
     @Prop() header: string;
     @Prop() type: string = 'primary';
 
     render() {
         return (
-            <div id={this.htmlId} class={`alert ${this.type}${this.cssClass ? ` ${this.cssClass}` : ''}`}>
+            <div class={`alert ${this.type} ${this.cssClass}`}>
                 {this.header
                     ? (<header class="alert-header">
                           <h3 class="alert-heading">{this.header}</h3>
                        </header>)
                     : null}
                 <p class="alert-body">
-                    <slot>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, eum eaque aperiam maiores rem consequuntur ipsa tenetur quidem architecto fugit facilis corporis illum, expedita voluptas officia blanditiis adipisci quae laborum?
-                    </slot>
+                    <slot />
                 </p>
             </div>
         );
