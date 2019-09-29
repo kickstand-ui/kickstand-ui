@@ -1,4 +1,4 @@
-import { Component, h, ComponentInterface, Prop } from '@stencil/core';
+import { Component, h, ComponentInterface } from '@stencil/core';
 
 @Component({
     tag: 'c-card-footer'

@@ -8,7 +8,7 @@
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   IBreadcrumbs,
-} from './components/breadcrumbs/breadcrumbs';
+} from './scripts/components/breadcrumbs/breadcrumbs';
 
 export namespace Components {
   interface CAlert {
@@ -45,8 +45,8 @@ export namespace Components {
     'threshold': number;
   }
   interface CCardBody {
-    'subTitle': string;
-    'title': string;
+    'cardSubTitle': string;
+    'cardTitle': string;
   }
   interface CCardFooter {}
   interface CImg {
@@ -155,8 +155,8 @@ declare namespace LocalJSX {
     'threshold'?: number;
   }
   interface CCardBody extends JSXBase.HTMLAttributes<HTMLCCardBodyElement> {
-    'subTitle'?: string;
-    'title'?: string;
+    'cardSubTitle'?: string;
+    'cardTitle'?: string;
   }
   interface CCardFooter extends JSXBase.HTMLAttributes<HTMLCCardFooterElement> {}
   interface CImg extends JSXBase.HTMLAttributes<HTMLCImgElement> {

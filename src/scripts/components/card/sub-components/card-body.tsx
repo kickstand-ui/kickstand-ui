@@ -4,14 +4,14 @@ import { Component, h, ComponentInterface, Prop } from '@stencil/core';
     tag: 'c-card-body'
 })
 export class CardBody implements ComponentInterface {
-    @Prop() title: string;
-    @Prop() subTitle: string;
+    @Prop() cardTitle: string;
+    @Prop() cardSubTitle: string;
 
     render() {
         return (
             <div class="card-body">
-                {this.title ? <h3 class="heading">{this.title}</h3> : null}
-                {this.title ? <h4 class="sub-heading">{this.subTitle}</h4> : null}
+                {this.cardTitle ? <h3 class="heading">{this.cardTitle}</h3> : null}
+                {this.cardTitle ? <h4 class="sub-heading">{this.cardSubTitle}</h4> : null}
                 <p class="text">
                     <slot />
                 </p>
