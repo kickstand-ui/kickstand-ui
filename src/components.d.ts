@@ -17,51 +17,44 @@ export namespace Components {
     */
     'cssClass': string;
     'header': string;
-    'htmlId': string;
     'type': string;
   }
   interface CBadge {
     'cssClass': string;
     'hollow': boolean;
-    'htmlId': string;
     'type': string;
   }
   interface CBreadcrumbs {
     'breadcrumbs': IBreadcrumbs[];
     'cssClass': string;
-    'htmlId': string;
   }
   interface CButton {
     'cssClass': string;
     'hollow': boolean;
-    'htmlId': string;
     'icon': string;
     'iconDirection': string;
-    'linkUrl': string;
     'size': string;
     'type': string;
+    'url': string;
   }
-  interface CImg {
+  interface CCard {
     'alt': string;
     'cssClass': string;
-    'htmlId': string;
     'lazy': boolean;
     'src': string;
     'threshold': number;
   }
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
+  interface CCardBody {
+    'subTitle': string;
+    'title': string;
+  }
+  interface CCardFooter {}
+  interface CImg {
+    'alt': string;
+    'cssClass': string;
+    'lazy': boolean;
+    'src': string;
+    'threshold': number;
   }
 }
 
@@ -92,24 +85,38 @@ declare global {
     new (): HTMLCButtonElement;
   };
 
+  interface HTMLCCardElement extends Components.CCard, HTMLStencilElement {}
+  var HTMLCCardElement: {
+    prototype: HTMLCCardElement;
+    new (): HTMLCCardElement;
+  };
+
+  interface HTMLCCardBodyElement extends Components.CCardBody, HTMLStencilElement {}
+  var HTMLCCardBodyElement: {
+    prototype: HTMLCCardBodyElement;
+    new (): HTMLCCardBodyElement;
+  };
+
+  interface HTMLCCardFooterElement extends Components.CCardFooter, HTMLStencilElement {}
+  var HTMLCCardFooterElement: {
+    prototype: HTMLCCardFooterElement;
+    new (): HTMLCCardFooterElement;
+  };
+
   interface HTMLCImgElement extends Components.CImg, HTMLStencilElement {}
   var HTMLCImgElement: {
     prototype: HTMLCImgElement;
     new (): HTMLCImgElement;
-  };
-
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
   };
   interface HTMLElementTagNameMap {
     'c-alert': HTMLCAlertElement;
     'c-badge': HTMLCBadgeElement;
     'c-breadcrumbs': HTMLCBreadcrumbsElement;
     'c-button': HTMLCButtonElement;
+    'c-card': HTMLCCardElement;
+    'c-card-body': HTMLCCardBodyElement;
+    'c-card-footer': HTMLCCardFooterElement;
     'c-img': HTMLCImgElement;
-    'my-component': HTMLMyComponentElement;
   }
 }
 
@@ -120,51 +127,44 @@ declare namespace LocalJSX {
     */
     'cssClass'?: string;
     'header'?: string;
-    'htmlId'?: string;
     'type'?: string;
   }
   interface CBadge extends JSXBase.HTMLAttributes<HTMLCBadgeElement> {
     'cssClass'?: string;
     'hollow'?: boolean;
-    'htmlId'?: string;
     'type'?: string;
   }
   interface CBreadcrumbs extends JSXBase.HTMLAttributes<HTMLCBreadcrumbsElement> {
     'breadcrumbs'?: IBreadcrumbs[];
     'cssClass'?: string;
-    'htmlId'?: string;
   }
   interface CButton extends JSXBase.HTMLAttributes<HTMLCButtonElement> {
     'cssClass'?: string;
     'hollow'?: boolean;
-    'htmlId'?: string;
     'icon'?: string;
     'iconDirection'?: string;
-    'linkUrl'?: string;
     'size'?: string;
     'type'?: string;
+    'url'?: string;
   }
-  interface CImg extends JSXBase.HTMLAttributes<HTMLCImgElement> {
+  interface CCard extends JSXBase.HTMLAttributes<HTMLCCardElement> {
     'alt'?: string;
     'cssClass'?: string;
-    'htmlId'?: string;
     'lazy'?: boolean;
     'src'?: string;
     'threshold'?: number;
   }
-  interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
+  interface CCardBody extends JSXBase.HTMLAttributes<HTMLCCardBodyElement> {
+    'subTitle'?: string;
+    'title'?: string;
+  }
+  interface CCardFooter extends JSXBase.HTMLAttributes<HTMLCCardFooterElement> {}
+  interface CImg extends JSXBase.HTMLAttributes<HTMLCImgElement> {
+    'alt'?: string;
+    'cssClass'?: string;
+    'lazy'?: boolean;
+    'src'?: string;
+    'threshold'?: number;
   }
 
   interface IntrinsicElements {
@@ -172,8 +172,10 @@ declare namespace LocalJSX {
     'c-badge': CBadge;
     'c-breadcrumbs': CBreadcrumbs;
     'c-button': CButton;
+    'c-card': CCard;
+    'c-card-body': CCardBody;
+    'c-card-footer': CCardFooter;
     'c-img': CImg;
-    'my-component': MyComponent;
   }
 }
 
