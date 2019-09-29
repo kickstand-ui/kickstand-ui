@@ -1,0 +1,13 @@
+@import '../00_Abstracts/index';
+
+@import '../00_Abstracts/index';
+
+$percentages: (10, 20, 25, 30, 33, 40, 50, 60, 66, 70, 75, 80, 90, 100);
+
+// WIDTH
+
+@each $percent in $percentages {
+    .w-#{$percent} {
+        width: #{$percent + '%'} !important;
+    }
+}

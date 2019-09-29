@@ -40,12 +40,13 @@ export namespace Components {
   interface CCard {
     'alt': string;
     'cssClass': string;
+    'imgDirection': string;
+    'imgSrc': string;
     'lazy': boolean;
-    'src': string;
     'threshold': number;
   }
   interface CCardBody {
-    'cardSubTitle': string;
+    'cardSubtitle': string;
     'cardTitle': string;
   }
   interface CCardFooter {}
@@ -150,12 +151,13 @@ declare namespace LocalJSX {
   interface CCard extends JSXBase.HTMLAttributes<HTMLCCardElement> {
     'alt'?: string;
     'cssClass'?: string;
+    'imgDirection'?: string;
+    'imgSrc'?: string;
     'lazy'?: boolean;
-    'src'?: string;
     'threshold'?: number;
   }
   interface CCardBody extends JSXBase.HTMLAttributes<HTMLCCardBodyElement> {
-    'cardSubTitle'?: string;
+    'cardSubtitle'?: string;
     'cardTitle'?: string;
   }
   interface CCardFooter extends JSXBase.HTMLAttributes<HTMLCCardFooterElement> {}

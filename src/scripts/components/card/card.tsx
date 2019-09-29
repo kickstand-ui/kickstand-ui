@@ -8,19 +8,22 @@ export class Card implements ComponentInterface {
     @Prop() cssClass: string;
 
     // Props for image
-    @Prop() src: string;
+    @Prop() imgSrc: string;
     @Prop() alt: string;
     @Prop() lazy: boolean;
     @Prop() threshold: number;
 
+    @Prop() imgDirection: string = 'top';
 
 
     render() {
         return (
-            <article class={`card ${this.cssClass}`}>
-                <div class="card-img">
-                    <c-img alt={this.alt} lazy={this.lazy} src={this.src} threshold={this.threshold} />
-                </div>
+            <article class={`card img-${this.imgDirection} ${this.cssClass}`}>
+                {this.imgSrc 
+                    ? (<div class="card-img">
+                            <c-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} />
+                        </div>)
+                    : null}
                 <div class="card-content">
                     <slot />
                 </div>

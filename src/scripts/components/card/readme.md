@@ -7,13 +7,14 @@
 
 ## Properties
 
-| Property    | Attribute   | Description | Type      | Default     |
-| ----------- | ----------- | ----------- | --------- | ----------- |
-| `alt`       | `alt`       |             | `string`  | `undefined` |
-| `cssClass`  | `css-class` |             | `string`  | `undefined` |
-| `lazy`      | `lazy`      |             | `boolean` | `undefined` |
-| `src`       | `src`       |             | `string`  | `undefined` |
-| `threshold` | `threshold` |             | `number`  | `undefined` |
+| Property       | Attribute       | Description | Type      | Default     |
+| -------------- | --------------- | ----------- | --------- | ----------- |
+| `alt`          | `alt`           |             | `string`  | `undefined` |
+| `cssClass`     | `css-class`     |             | `string`  | `undefined` |
+| `imgDirection` | `img-direction` |             | `string`  | `'top'`     |
+| `imgSrc`       | `img-src`       |             | `string`  | `undefined` |
+| `lazy`         | `lazy`          |             | `boolean` | `undefined` |
+| `threshold`    | `threshold`     |             | `number`  | `undefined` |
 
 
 ## Dependencies
