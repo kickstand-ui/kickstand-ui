@@ -12,9 +12,6 @@ import {
 
 export namespace Components {
   interface CAlert {
-    /**
-    * Animation to use when the alert is dismissed.
-    */
     'cssClass': string;
     'header': string;
     'type': string;
@@ -136,9 +133,6 @@ declare global {
 
 declare namespace LocalJSX {
   interface CAlert extends JSXBase.HTMLAttributes<HTMLCAlertElement> {
-    /**
-    * Animation to use when the alert is dismissed.
-    */
     'cssClass'?: string;
     'header'?: string;
     'type'?: string;
