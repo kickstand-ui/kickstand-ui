@@ -19,7 +19,7 @@ export class Breadcrumbs implements ComponentInterface {
 
     render() {
         return (
-            <nav class={`breadcrumbs ${this.cssClass}`} role="menubar" aria-label="breadcrumbs">
+            <nav class={`breadcrumbs ${this.cssClass}`} role="navigation" aria-label="breadcrumbs">
                 <ol class="list">
                     {this.breadcrumbs.map((crumb, index) =>
                         <li role="menuitem" class={`breadcrumb ${this.isLastCrumb(index) ? 'current' : ''}`}>

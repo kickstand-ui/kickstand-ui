@@ -57,6 +57,12 @@ export namespace Components {
     'src': string;
     'threshold': number;
   }
+  interface COverlay {
+    'absolute': boolean;
+    'hide': () => Promise<void>;
+    'show': () => Promise<void>;
+    'theme': string;
+  }
 }
 
 declare global {
@@ -109,6 +115,12 @@ declare global {
     prototype: HTMLCImgElement;
     new (): HTMLCImgElement;
   };
+
+  interface HTMLCOverlayElement extends Components.COverlay, HTMLStencilElement {}
+  var HTMLCOverlayElement: {
+    prototype: HTMLCOverlayElement;
+    new (): HTMLCOverlayElement;
+  };
   interface HTMLElementTagNameMap {
     'c-alert': HTMLCAlertElement;
     'c-badge': HTMLCBadgeElement;
@@ -118,6 +130,7 @@ declare global {
     'c-card-body': HTMLCCardBodyElement;
     'c-card-footer': HTMLCCardFooterElement;
     'c-img': HTMLCImgElement;
+    'c-overlay': HTMLCOverlayElement;
   }
 }
 
@@ -168,6 +181,10 @@ declare namespace LocalJSX {
     'src'?: string;
     'threshold'?: number;
   }
+  interface COverlay extends JSXBase.HTMLAttributes<HTMLCOverlayElement> {
+    'absolute'?: boolean;
+    'theme'?: string;
+  }
 
   interface IntrinsicElements {
     'c-alert': CAlert;
@@ -178,6 +195,7 @@ declare namespace LocalJSX {
     'c-card-body': CCardBody;
     'c-card-footer': CCardFooter;
     'c-img': CImg;
+    'c-overlay': COverlay;
   }
 }
 
