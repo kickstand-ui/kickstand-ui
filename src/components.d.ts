@@ -47,6 +47,9 @@ export namespace Components {
     'cardTitle': string;
   }
   interface CCardFooter {}
+  interface CCarousel {
+    'cssClass': string;
+  }
   interface CImg {
     'alt': string;
     'cssClass': string;
@@ -107,6 +110,12 @@ declare global {
     new (): HTMLCCardFooterElement;
   };
 
+  interface HTMLCCarouselElement extends Components.CCarousel, HTMLStencilElement {}
+  var HTMLCCarouselElement: {
+    prototype: HTMLCCarouselElement;
+    new (): HTMLCCarouselElement;
+  };
+
   interface HTMLCImgElement extends Components.CImg, HTMLStencilElement {}
   var HTMLCImgElement: {
     prototype: HTMLCImgElement;
@@ -126,6 +135,7 @@ declare global {
     'c-card': HTMLCCardElement;
     'c-card-body': HTMLCCardBodyElement;
     'c-card-footer': HTMLCCardFooterElement;
+    'c-carousel': HTMLCCarouselElement;
     'c-img': HTMLCImgElement;
     'c-overlay': HTMLCOverlayElement;
   }
@@ -168,6 +178,9 @@ declare namespace LocalJSX {
     'cardTitle'?: string;
   }
   interface CCardFooter extends JSXBase.HTMLAttributes<HTMLCCardFooterElement> {}
+  interface CCarousel extends JSXBase.HTMLAttributes<HTMLCCarouselElement> {
+    'cssClass'?: string;
+  }
   interface CImg extends JSXBase.HTMLAttributes<HTMLCImgElement> {
     'alt'?: string;
     'cssClass'?: string;
@@ -188,6 +201,7 @@ declare namespace LocalJSX {
     'c-card': CCard;
     'c-card-body': CCardBody;
     'c-card-footer': CCardFooter;
+    'c-carousel': CCarousel;
     'c-img': CImg;
     'c-overlay': COverlay;
   }

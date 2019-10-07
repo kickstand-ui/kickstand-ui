@@ -1,15 +1,43 @@
-@import '../variables';
-    
-    @mixin transition-ease-in-out($speed: fast, $important: false) {
-        @if map-has-key($transitions, $speed) {
-            @if($important == true) {
-                transition: all map-get($transitions, $speed) ease-in-out !important;
-            } @else {
-                transition: all map-get($transitions, $speed) ease-in-out;
-            }
-        } 
-        @else {
-            @error "Invalid transition speed: '#{$speed}'.";
+@import "../variables";
+
+@mixin transition-ease-in-out($speed: fast, $important: false) {
+    @if map-has-key($transitions, $speed) {
+        @if ($important == true) {
+            transition: all
+                map-get($transitions, $speed)
+                ease-in-out !important;
+        } @else {
+            transition: all map-get($transitions, $speed) ease-in-out;
         }
-    }    
-    
+    } @else {
+        @error "Invalid transition speed: '#{$speed}'.";
+    }
+}
+
+@mixin fade-in {
+    animation-name: fade-in;
+    animation-duration: 2.5s;
+}
+
+@mixin fade-out {
+    animation-name: fade-out;
+    animation-duration: 2.5s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0.60;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.60;
+    }
+}

@@ -1,0 +1,9 @@
+@import '../00_Abstracts/index';
+
+.text {
+    @each $size, $value in $font-sizes {
+        &-#{$size} {
+            @include font-size($size, true);
+        }
+    }
+}
