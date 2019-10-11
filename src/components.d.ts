@@ -11,6 +11,12 @@ import {
 } from './scripts/components/breadcrumbs/breadcrumbs';
 
 export namespace Components {
+  interface CAlert {
+    'cssClass': string;
+    'header': string;
+    'note': boolean;
+    'type': string;
+  }
   interface CBadge {
     'cssClass': string;
     'hollow': boolean;
@@ -67,6 +73,12 @@ export namespace Components {
 
 declare global {
 
+
+  interface HTMLCAlertElement extends Components.CAlert, HTMLStencilElement {}
+  var HTMLCAlertElement: {
+    prototype: HTMLCAlertElement;
+    new (): HTMLCAlertElement;
+  };
 
   interface HTMLCBadgeElement extends Components.CBadge, HTMLStencilElement {}
   var HTMLCBadgeElement: {
@@ -128,6 +140,7 @@ declare global {
     new (): HTMLCOverlayElement;
   };
   interface HTMLElementTagNameMap {
+    'c-alert': HTMLCAlertElement;
     'c-badge': HTMLCBadgeElement;
     'c-breadcrumbs': HTMLCBreadcrumbsElement;
     'c-button': HTMLCButtonElement;
@@ -142,6 +155,12 @@ declare global {
 }
 
 declare namespace LocalJSX {
+  interface CAlert extends JSXBase.HTMLAttributes<HTMLCAlertElement> {
+    'cssClass'?: string;
+    'header'?: string;
+    'note'?: boolean;
+    'type'?: string;
+  }
   interface CBadge extends JSXBase.HTMLAttributes<HTMLCBadgeElement> {
     'cssClass'?: string;
     'hollow'?: boolean;
@@ -194,6 +213,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'c-alert': CAlert;
     'c-badge': CBadge;
     'c-breadcrumbs': CBreadcrumbs;
     'c-button': CButton;

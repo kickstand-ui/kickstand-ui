@@ -1,31 +1,38 @@
 @import '../00_Abstracts/index';
 
-.note {
-    background-color: color(white);
+.alert {
     @include p(lg);
-    @include border();
     @include shadow(sm);
 
     @each $color,
     $value in $theme-colors {
         &.#{$color} {
+            @include border(solid, xxs, $color, dark);
+            @include bg-color($color);
+            @include shadow(sm);
+        }
+
+        &.note.#{$color} {
+            @include bg-color(white);
+            @include border();
             @include border-l(solid, md, $color);
         }
     }
 
-    .note-header {
+    .alert-header {
         display: flex;
         justify-content: space-between;
         @include mb(lg);
 
-        .note-heading {
+        .alert-heading {
             font-weight: bold;
             @include mt(none);
             @include mb(none);
         }
     }
 
-    .note-body {
+    .alert-body {
         @include m(none);
     }
+
 }

@@ -1,22 +1,23 @@
 import { Component, h, Prop } from '@stencil/core';
 
 @Component({
-    tag: 'c-note'
+    tag: 'c-alert'
 })
 export class Note {
     @Prop() cssClass: string;
     @Prop() header: string;
+    @Prop() note: boolean;
     @Prop() type: string = 'primary';
 
     render() {
         return (
-            <div class={`note ${this.type} ${this.cssClass}`}>
+            <div class={`alert ${this.type} ${this.note ? 'note' : ''} ${this.cssClass}`}>
                 {this.header
-                    ? (<header class="note-header">
-                          <h3 class="note-heading">{this.header}</h3>
+                    ? (<header class="alert-header">
+                          <h3 class="alert-heading">{this.header}</h3>
                        </header>)
                     : null}
-                <p class="note-body">
+                <p class="alert-body">
                     <slot />
                 </p>
             </div>

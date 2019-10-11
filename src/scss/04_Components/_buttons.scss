@@ -8,7 +8,6 @@
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
-    @include font-size(xs);
     @include p(md);
     @include shadow(xs);
     @include transition-ease-in-out(med);
