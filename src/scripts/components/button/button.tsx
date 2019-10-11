@@ -15,7 +15,7 @@ export class Alert implements ComponentInterface {
     render() {
         let content: HTMLElement;
         if (this.url) {
-            content = <a class={`button ${this.type}${this.hollow ? ' hollow' : ''} size-${this.size} ${this.cssClass}`} href={this.url}>
+            content = <a class={`button ${this.type}${this.hollow ? ' hollow' : ''} button-${this.size} ${this.cssClass}`} href={this.url}>
                 {this.icon ? <i class={`button-icon ${this.icon}`}></i> : null}
                 <span class="button-text">
                     <slot>
@@ -24,7 +24,7 @@ export class Alert implements ComponentInterface {
                 </span>
             </a>
         } else {
-            content = <button class={`button ${this.type}${this.hollow ? ' hollow' : ''} size-${this.size} ${this.cssClass}`}>
+            content = <button class={`button ${this.type}${this.hollow ? ' hollow' : ''} button-${this.size} ${this.cssClass}`}>
                 {this.icon ? <i class={`button-icon ${this.icon}`}></i> : null}
                 <span class="button-text">
                     <slot>

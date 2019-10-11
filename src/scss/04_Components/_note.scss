@@ -4,6 +4,7 @@
     background-color: color(white);
     @include p(lg);
     @include border();
+    @include shadow(sm);
 
     @each $color,
     $value in $theme-colors {

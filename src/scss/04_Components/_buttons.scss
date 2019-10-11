@@ -8,14 +8,14 @@
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
-    @include font-size(sm);
+    @include font-size(xs);
     @include p(md);
-    @include shadow(sm);
+    @include shadow(xs);
     @include transition-ease-in-out(med);
 
     &:focus,
     &:hover:not(:disabled) {
-        @include shadow(lg);
+        @include shadow(sm);
         @include transition-ease-in-out(med);
     }
 
@@ -79,17 +79,17 @@
         border: 2px solid transparent;
         color: color(primary);
         text-decoration: none;
-        box-shadow: none;
+        @include shadow(none);
 
         &:focus,
         &:hover:not(:disabled) {
             color: color(primary, light);
             text-decoration: underline;
-            box-shadow: none;
+            @include shadow(none);
         }
     }
 
-    &.size {
+    &.button {
         &-xs {
             @include p(xs);
             @include font-size(xs);
@@ -123,11 +123,11 @@
         padding: 0;
         margin: 0;
         border: 0;
-        box-shadow: none;
+        @include shadow(none);
 
         &:focus,
         &:hover:not(:disabled) {
-            box-shadow: none;
+            @include shadow(none);
         }
     }
 }
