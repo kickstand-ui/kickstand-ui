@@ -11,11 +11,6 @@ import {
 } from './scripts/components/breadcrumbs/breadcrumbs';
 
 export namespace Components {
-  interface CAlert {
-    'cssClass': string;
-    'header': string;
-    'type': string;
-  }
   interface CBadge {
     'cssClass': string;
     'hollow': boolean;
@@ -57,6 +52,11 @@ export namespace Components {
     'src': string;
     'threshold': number;
   }
+  interface CNote {
+    'cssClass': string;
+    'header': string;
+    'type': string;
+  }
   interface COverlay {
     'absolute': boolean;
     'hide': () => Promise<void>;
@@ -67,12 +67,6 @@ export namespace Components {
 
 declare global {
 
-
-  interface HTMLCAlertElement extends Components.CAlert, HTMLStencilElement {}
-  var HTMLCAlertElement: {
-    prototype: HTMLCAlertElement;
-    new (): HTMLCAlertElement;
-  };
 
   interface HTMLCBadgeElement extends Components.CBadge, HTMLStencilElement {}
   var HTMLCBadgeElement: {
@@ -122,13 +116,18 @@ declare global {
     new (): HTMLCImgElement;
   };
 
+  interface HTMLCNoteElement extends Components.CNote, HTMLStencilElement {}
+  var HTMLCNoteElement: {
+    prototype: HTMLCNoteElement;
+    new (): HTMLCNoteElement;
+  };
+
   interface HTMLCOverlayElement extends Components.COverlay, HTMLStencilElement {}
   var HTMLCOverlayElement: {
     prototype: HTMLCOverlayElement;
     new (): HTMLCOverlayElement;
   };
   interface HTMLElementTagNameMap {
-    'c-alert': HTMLCAlertElement;
     'c-badge': HTMLCBadgeElement;
     'c-breadcrumbs': HTMLCBreadcrumbsElement;
     'c-button': HTMLCButtonElement;
@@ -137,16 +136,12 @@ declare global {
     'c-card-footer': HTMLCCardFooterElement;
     'c-carousel': HTMLCCarouselElement;
     'c-img': HTMLCImgElement;
+    'c-note': HTMLCNoteElement;
     'c-overlay': HTMLCOverlayElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface CAlert extends JSXBase.HTMLAttributes<HTMLCAlertElement> {
-    'cssClass'?: string;
-    'header'?: string;
-    'type'?: string;
-  }
   interface CBadge extends JSXBase.HTMLAttributes<HTMLCBadgeElement> {
     'cssClass'?: string;
     'hollow'?: boolean;
@@ -188,13 +183,17 @@ declare namespace LocalJSX {
     'src'?: string;
     'threshold'?: number;
   }
+  interface CNote extends JSXBase.HTMLAttributes<HTMLCNoteElement> {
+    'cssClass'?: string;
+    'header'?: string;
+    'type'?: string;
+  }
   interface COverlay extends JSXBase.HTMLAttributes<HTMLCOverlayElement> {
     'absolute'?: boolean;
     'theme'?: string;
   }
 
   interface IntrinsicElements {
-    'c-alert': CAlert;
     'c-badge': CBadge;
     'c-breadcrumbs': CBreadcrumbs;
     'c-button': CButton;
@@ -203,6 +202,7 @@ declare namespace LocalJSX {
     'c-card-footer': CCardFooter;
     'c-carousel': CCarousel;
     'c-img': CImg;
+    'c-note': CNote;
     'c-overlay': COverlay;
   }
 }

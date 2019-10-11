@@ -1,6 +1,6 @@
 @import '../00_Abstracts/index';
 
-.alert {
+.note {
     background-color: color(white);
     @include p(lg);
     @include border();
@@ -12,19 +12,19 @@
         }
     }
 
-    .alert-header {
+    .note-header {
         display: flex;
         justify-content: space-between;
         @include mb(lg);
 
-        .alert-heading {
+        .note-heading {
             font-weight: bold;
             @include mt(none);
             @include mb(none);
         }
     }
 
-    .alert-body {
+    .note-body {
         @include m(none);
     }
 }
