@@ -56,6 +56,10 @@ body {
     outline: 0 !important;
 }
 
+*:focus {
+    outline: 0;
+}
+
 
 // Content grouping
 //

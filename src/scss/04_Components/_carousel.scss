@@ -44,6 +44,7 @@
 
         &:focus,
         &:hover {
+            outline: 0;
             color: color(white);
         }
 
@@ -74,13 +75,20 @@
         .indicator {
             height: 1rem;
             width: 1rem;
-            background-color: color(light, 0.5);
+            background-color: color(light, 0.50);
             @include radius(circle);
             @include mx(sm);
             @include transition-ease-in-out(slow);
 
+            @include hover-focus {
+                outline: 0;
+                background-color: color(light, 0.75);
+                @include shadow(xs);
+            }
+
             &.active {
                 background-color: color(light);
+                @include shadow(xs);
                 @include transition-ease-in-out(slow);
             }
         }

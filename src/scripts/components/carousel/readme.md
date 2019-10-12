@@ -7,9 +7,14 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type     | Default     |
-| ---------- | ----------- | ----------- | -------- | ----------- |
-| `cssClass` | `css-class` |             | `string` | `undefined` |
+| Property         | Attribute         | Description | Type      | Default     |
+| ---------------- | ----------------- | ----------- | --------- | ----------- |
+| `autoplay`       | `autoplay`        |             | `boolean` | `true`      |
+| `cssClass`       | `css-class`       |             | `string`  | `undefined` |
+| `showControls`   | `show-controls`   |             | `boolean` | `true`      |
+| `showIndicators` | `show-indicators` |             | `boolean` | `true`      |
+| `thumbnails`     | `thumbnails`      |             | `boolean` | `false`     |
+| `timer`          | `timer`           |             | `number`  | `6000`      |
 
 
 ----------------------------------------------

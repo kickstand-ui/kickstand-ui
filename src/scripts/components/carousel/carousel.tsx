@@ -7,6 +7,11 @@ import { Component, h, Prop, State, Element } from '@stencil/core';
 export class carousel {
     @Element() el: HTMLElement;
 
+    @Prop() timer: number = 6000;
+    @Prop() autoplay: boolean = true;
+    @Prop() showIndicators: boolean = true;
+    @Prop() showControls: boolean = true;
+    @Prop() thumbnails: boolean = false;
     @Prop() cssClass: string;
 
     @State() slideIndex: number = 0;
@@ -45,6 +50,11 @@ export class carousel {
         this.slideIndex = index;
         this.updateSlide();
         this.updateIndicator();
+
+        if (this.autoplay) {
+            console.log('slide', this.slideIndex);
+            setTimeout(() => this.nextSlide(), this.timer);
+        }
     }
 
     updateSlide() {
@@ -58,18 +68,31 @@ export class carousel {
     }
 
     render() {
+        let controls = [
+            <button class="control prev" onClick={this.prevSlide.bind(this)}><i class="control-icon fas fa-chevron-left"></i></button>,
+            <button class="control next" onClick={this.nextSlide.bind(this)}><i class="control-icon fas fa-chevron-right"></i></button>
+        ];
+        let indicators = (
+            <div class="indicators">
+                {this.slides.map((slide, index) =>
+                    <button class="indicator" onClick={() => this.goToSlide(index)}><span class="sr-only">Got to slide {index + 1}</span></button>
+                )}
+            </div>
+        );
+        let thumbnails = (
+            <div className="thumbnails">
+                {this.slides.map((slide, index) =>
+                    <button class="indicator" onClick={() => this.goToSlide(index)}><c-image lazy src=""></c-image>></button>
+                )}
+            </div>
+        )
         return (
             <div class={`carousel ${this.cssClass}`}>
                 <div class="slides">
                     <slot />
                 </div>
-                <button class="control prev" onClick={this.prevSlide.bind(this)}><i class="control-icon fas fa-chevron-left"></i></button>
-                <button class="control next" onClick={this.nextSlide.bind(this)}><i class="control-icon fas fa-chevron-right"></i></button>
-                <div class="indicators">
-                    {this.slides.map((slide, index) =>
-                        <button class="indicator" onClick={() => this.goToSlide(index)}><span class="sr-only">Got to slide {index + 1}</span></button>
-                    )}
-                </div>
+                {this.showControls ? controls : null}
+                {this.showIndicators || !this.thumbnails ? indicators : null}
             </div>
         );
     }

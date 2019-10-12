@@ -1,4 +1,4 @@
-@import '../00_Abstracts/index';
+@import "../00_Abstracts/index";
 
 .button {
     display: inline-block;
@@ -14,6 +14,7 @@
 
     &:focus,
     &:hover:not(:disabled) {
+        outline: 0;
         @include shadow(sm);
         @include transition-ease-in-out(med);
     }
@@ -23,8 +24,7 @@
         @include transition-ease-in-out(med);
     }
 
-    @each $color,
-    $value in $theme-colors {
+    @each $color, $value in $theme-colors {
         &.#{$color} {
             @include border(solid, xxs, $color);
             @include bg-color($color);
@@ -59,7 +59,7 @@
                     color: color($color, dark);
                     @include border(solid, xxs, $color, light);
                     @include transition-ease-in-out(med);
-                }    
+                }
             }
         }
     }

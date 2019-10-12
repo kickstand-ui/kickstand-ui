@@ -49,7 +49,12 @@ export namespace Components {
   }
   interface CCardFooter {}
   interface CCarousel {
+    'autoplay': boolean;
     'cssClass': string;
+    'showControls': boolean;
+    'showIndicators': boolean;
+    'thumbnails': boolean;
+    'timer': number;
   }
   interface CImg {
     'alt': string;
@@ -57,11 +62,6 @@ export namespace Components {
     'lazy': boolean;
     'src': string;
     'threshold': number;
-  }
-  interface CNote {
-    'cssClass': string;
-    'header': string;
-    'type': string;
   }
   interface COverlay {
     'absolute': boolean;
@@ -128,12 +128,6 @@ declare global {
     new (): HTMLCImgElement;
   };
 
-  interface HTMLCNoteElement extends Components.CNote, HTMLStencilElement {}
-  var HTMLCNoteElement: {
-    prototype: HTMLCNoteElement;
-    new (): HTMLCNoteElement;
-  };
-
   interface HTMLCOverlayElement extends Components.COverlay, HTMLStencilElement {}
   var HTMLCOverlayElement: {
     prototype: HTMLCOverlayElement;
@@ -149,7 +143,6 @@ declare global {
     'c-card-footer': HTMLCCardFooterElement;
     'c-carousel': HTMLCCarouselElement;
     'c-img': HTMLCImgElement;
-    'c-note': HTMLCNoteElement;
     'c-overlay': HTMLCOverlayElement;
   }
 }
@@ -193,7 +186,12 @@ declare namespace LocalJSX {
   }
   interface CCardFooter extends JSXBase.HTMLAttributes<HTMLCCardFooterElement> {}
   interface CCarousel extends JSXBase.HTMLAttributes<HTMLCCarouselElement> {
+    'autoplay'?: boolean;
     'cssClass'?: string;
+    'showControls'?: boolean;
+    'showIndicators'?: boolean;
+    'thumbnails'?: boolean;
+    'timer'?: number;
   }
   interface CImg extends JSXBase.HTMLAttributes<HTMLCImgElement> {
     'alt'?: string;
@@ -201,11 +199,6 @@ declare namespace LocalJSX {
     'lazy'?: boolean;
     'src'?: string;
     'threshold'?: number;
-  }
-  interface CNote extends JSXBase.HTMLAttributes<HTMLCNoteElement> {
-    'cssClass'?: string;
-    'header'?: string;
-    'type'?: string;
   }
   interface COverlay extends JSXBase.HTMLAttributes<HTMLCOverlayElement> {
     'absolute'?: boolean;
@@ -222,7 +215,6 @@ declare namespace LocalJSX {
     'c-card-footer': CCardFooter;
     'c-carousel': CCarousel;
     'c-img': CImg;
-    'c-note': CNote;
     'c-overlay': COverlay;
   }
 }
