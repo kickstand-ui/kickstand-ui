@@ -10,7 +10,7 @@
 | Property      | Attribute   | Description | Type             | Default     |
 | ------------- | ----------- | ----------- | ---------------- | ----------- |
 | `breadcrumbs` | --          |             | `IBreadcrumbs[]` | `undefined` |
-| `cssClass`    | `css-class` |             | `string`         | `undefined` |
+| `cssClass`    | `css-class` |             | `string`         | `''`        |
 
 
 ----------------------------------------------

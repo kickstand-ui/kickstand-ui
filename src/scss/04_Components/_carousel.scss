@@ -12,22 +12,6 @@
                 display: block;
                 @include fade-in;
             }
-
-            // &.slide {
-            //     @include slide-out;
-
-            //     &.active {
-            //         @include slide-in;
-            //     }
-            // }
-
-            // &.fade {
-            //     @include fade-out;
-
-            //     &.active {
-            //         @include fade-in;
-            //     }
-            // }
         }
     }
 
@@ -35,7 +19,7 @@
         position: absolute;
         top: 0;
         bottom: 0;
-        width: 15%;
+        width: 10%;
         color: color(white, 0.50);
         background-color: transparent;
         border: none;
@@ -91,6 +75,41 @@
                 @include shadow(xs);
                 @include transition-ease-in-out(slow);
             }
+        }
+    }
+
+    .thumbnails {
+        display: flex;
+
+        .indicator {
+            flex-grow: 1;
+            flex-basis: 0;
+            opacity: 0.5;
+            @include border(none);
+            @include p(none);
+            @include m(none);
+            @include transition-ease-in-out(slow);
+
+            &:hover {
+                outline: 0;
+                opacity: 0.75;
+                @include shadow(xs);
+                @include transition-ease-in-out(slow);
+            }
+
+            &:focus {
+                @include shadow(outline);
+            }
+
+            &.active {
+                opacity: 0.75;
+                @include shadow(xs);
+                @include transition-ease-in-out(slow);
+            }
+        }
+
+        .indicator + .indicator {
+            @include pl(xs);
         }
     }
 }

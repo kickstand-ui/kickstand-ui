@@ -4,35 +4,28 @@ import { Component, h, Prop, ComponentInterface } from '@stencil/core';
     tag: 'c-button'
 })
 export class Alert implements ComponentInterface {
-    @Prop() cssClass: string;
     @Prop() type: string;
     @Prop() hollow: boolean;
     @Prop() size: string;
     @Prop() icon: string;
     @Prop() iconDirection: string = 'left';
     @Prop() url: string;
+    @Prop() cssClass: string = '';
 
     render() {
-        let content: HTMLElement;
-        if (this.url) {
-            content = <a class={`button ${this.type}${this.hollow ? ' hollow' : ''} button-${this.size} ${this.cssClass}`} href={this.url}>
-                {this.icon ? <i class={`button-icon ${this.icon}`}></i> : null}
-                <span class="button-text">
-                    <slot>
-                        Button Text
+        let content = [
+            this.icon && <i class={`button-icon ${this.icon}`}></i>,
+            <span class="button-text">
+                <slot>
+                    Button Text
                 </slot>
-                </span>
-            </a>
-        } else {
-            content = <button class={`button ${this.type}${this.hollow ? ' hollow' : ''} button-${this.size} ${this.cssClass}`}>
-                {this.icon ? <i class={`button-icon ${this.icon}`}></i> : null}
-                <span class="button-text">
-                    <slot>
-                        Button Text
-                    </slot>
-                </span >
-            </button >
-        }
-        return (content);
+            </span>
+        ];
+
+        return (
+            this.url
+                ? <a class={`button ${this.type}${this.hollow ? ' hollow' : ''} button-${this.size} ${this.cssClass}`} href={this.url}>{content}</a>
+                : <button class={`button ${this.type}${this.hollow ? ' hollow' : ''} button-${this.size} ${this.cssClass}`}>{content}</button >
+        );
     }
 }

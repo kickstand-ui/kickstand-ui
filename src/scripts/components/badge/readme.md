@@ -9,7 +9,7 @@
 
 | Property   | Attribute   | Description | Type      | Default     |
 | ---------- | ----------- | ----------- | --------- | ----------- |
-| `cssClass` | `css-class` |             | `string`  | `undefined` |
+| `cssClass` | `css-class` |             | `string`  | `''`        |
 | `hollow`   | `hollow`    |             | `boolean` | `undefined` |
 | `type`     | `type`      |             | `string`  | `'primary'` |
 

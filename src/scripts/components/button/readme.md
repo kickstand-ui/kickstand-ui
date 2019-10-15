@@ -9,7 +9,7 @@
 
 | Property        | Attribute        | Description | Type      | Default     |
 | --------------- | ---------------- | ----------- | --------- | ----------- |
-| `cssClass`      | `css-class`      |             | `string`  | `undefined` |
+| `cssClass`      | `css-class`      |             | `string`  | `''`        |
 | `hollow`        | `hollow`         |             | `boolean` | `undefined` |
 | `icon`          | `icon`           |             | `string`  | `undefined` |
 | `iconDirection` | `icon-direction` |             | `string`  | `'left'`    |

@@ -10,7 +10,7 @@ export interface IBreadcrumbs {
 })
 export class Breadcrumbs implements ComponentInterface {
     @Prop() breadcrumbs: IBreadcrumbs[];
-    @Prop() cssClass: string;
+    @Prop() cssClass: string = '';
 
 
     isLastCrumb(index: number): boolean {

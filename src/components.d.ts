@@ -56,6 +56,13 @@ export namespace Components {
     'thumbnails': boolean;
     'timer': number;
   }
+  interface CCarouselSlide {
+    'alt': string;
+    'cssClass': string;
+    'lazy': boolean;
+    'src': string;
+    'threshold': number;
+  }
   interface CImg {
     'alt': string;
     'cssClass': string;
@@ -122,6 +129,12 @@ declare global {
     new (): HTMLCCarouselElement;
   };
 
+  interface HTMLCCarouselSlideElement extends Components.CCarouselSlide, HTMLStencilElement {}
+  var HTMLCCarouselSlideElement: {
+    prototype: HTMLCCarouselSlideElement;
+    new (): HTMLCCarouselSlideElement;
+  };
+
   interface HTMLCImgElement extends Components.CImg, HTMLStencilElement {}
   var HTMLCImgElement: {
     prototype: HTMLCImgElement;
@@ -142,6 +155,7 @@ declare global {
     'c-card-body': HTMLCCardBodyElement;
     'c-card-footer': HTMLCCardFooterElement;
     'c-carousel': HTMLCCarouselElement;
+    'c-carousel-slide': HTMLCCarouselSlideElement;
     'c-img': HTMLCImgElement;
     'c-overlay': HTMLCOverlayElement;
   }
@@ -193,6 +207,13 @@ declare namespace LocalJSX {
     'thumbnails'?: boolean;
     'timer'?: number;
   }
+  interface CCarouselSlide extends JSXBase.HTMLAttributes<HTMLCCarouselSlideElement> {
+    'alt'?: string;
+    'cssClass'?: string;
+    'lazy'?: boolean;
+    'src'?: string;
+    'threshold'?: number;
+  }
   interface CImg extends JSXBase.HTMLAttributes<HTMLCImgElement> {
     'alt'?: string;
     'cssClass'?: string;
@@ -214,6 +235,7 @@ declare namespace LocalJSX {
     'c-card-body': CCardBody;
     'c-card-footer': CCardFooter;
     'c-carousel': CCarousel;
+    'c-carousel-slide': CCarouselSlide;
     'c-img': CImg;
     'c-overlay': COverlay;
   }

@@ -1,10 +1,9 @@
 import { Component, h, Prop, State, Element } from '@stencil/core';
 
-
 @Component({
     tag: 'c-carousel'
 })
-export class carousel {
+export class Carousel {
     @Element() el: HTMLElement;
 
     @Prop() timer: number = 6000;
@@ -12,54 +11,66 @@ export class carousel {
     @Prop() showIndicators: boolean = true;
     @Prop() showControls: boolean = true;
     @Prop() thumbnails: boolean = false;
-    @Prop() cssClass: string;
+    @Prop() cssClass: string = '';
 
     @State() slideIndex: number = 0;
-    @State() slides: Element[];
+    @State() slides: HTMLCCarouselSlideElement[];
     @State() indicators: Element[];
+    @State() slideTimer: number;
+    @State() slideDirection: string = 'slide-left';
 
 
     connectedCallback() {
-        this.slides = Array.from(this.el.getElementsByClassName('slide'));
+        this.slides = Array.from(this.el.querySelectorAll('c-carousel-slide'));
     }
 
     componentDidLoad() {
         this.indicators = Array.from(this.el.getElementsByClassName('indicator'));
-        this.goToSlide(this.slideIndex);
+        this.goToSlide();
     }
 
     prevSlide() {
+        this.resetSlideTimer();
         this.slideIndex--;
 
         if (this.slideIndex < 0)
             this.slideIndex = this.slides.length - 1;
 
-        this.goToSlide(this.slideIndex);
+        this.goToSlide();
     }
 
     nextSlide() {
+        this.resetSlideTimer();
         this.slideIndex++;
 
         if (this.slideIndex >= this.slides.length)
             this.slideIndex = 0;
 
-        this.goToSlide(this.slideIndex);
+        this.goToSlide();
     }
 
-    goToSlide(index: number) {
+    selectSlide(index: number) {
         this.slideIndex = index;
+        this.resetSlideTimer();
+        this.goToSlide();
+    }
+
+    goToSlide() {
         this.updateSlide();
         this.updateIndicator();
 
         if (this.autoplay) {
-            console.log('slide', this.slideIndex);
-            setTimeout(() => this.nextSlide(), this.timer);
+            this.slideTimer = setTimeout(() => this.nextSlide(), this.timer);
         }
     }
 
+    resetSlideTimer() {
+        clearTimeout(this.slideTimer);
+    }
+
     updateSlide() {
-        this.slides.forEach(slide => slide.classList.remove('active'));
-        this.slides[this.slideIndex].classList.add('active');
+        this.slides.forEach(slide => slide.querySelector('.slide').classList.remove('active'));
+        this.slides[this.slideIndex].querySelector('.slide').classList.add('active');
     }
 
     updateIndicator() {
@@ -75,24 +86,31 @@ export class carousel {
         let indicators = (
             <div class="indicators">
                 {this.slides.map((slide, index) =>
-                    <button class="indicator" onClick={() => this.goToSlide(index)}><span class="sr-only">Got to slide {index + 1}</span></button>
+                    <button class="indicator" onClick={() => this.selectSlide(index)}>
+                        <span class="sr-only">Got to slide {slide ? index + 1 : ''}</span>
+                    </button>
                 )}
             </div>
         );
-        let thumbnails = (
-            <div className="thumbnails">
+        let thumbnailList = (
+            <div class="thumbnails">
                 {this.slides.map((slide, index) =>
-                    <button class="indicator" onClick={() => this.goToSlide(index)}><c-image lazy src=""></c-image>></button>
+                    <button class="indicator" onClick={() => this.selectSlide(index)}>
+                        <span class="sr-only">Got to slide {slide ? index + 1 : ''}</span>
+                        <c-img lazy src={slide.src} />
+                    </button>
                 )}
             </div>
-        )
+        );
+
         return (
             <div class={`carousel ${this.cssClass}`}>
                 <div class="slides">
                     <slot />
                 </div>
-                {this.showControls ? controls : null}
-                {this.showIndicators || !this.thumbnails ? indicators : null}
+                {this.showControls && controls}
+                {(this.showIndicators && !this.thumbnails) && indicators}
+                {this.thumbnails && thumbnailList}
             </div>
         );
     }

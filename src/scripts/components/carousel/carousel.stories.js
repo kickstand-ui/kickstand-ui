@@ -1,46 +1,21 @@
-import { text, select, boolean } from "@storybook/addon-knobs";
+import { text, select, boolean, number } from "@storybook/addon-knobs";
 
 export default { title: 'Carousel' };
 
-export const defaultCarousel = () => {
+export const carouselWithImages = () => {
+    const timer = number('timer', 6000);
     const autoplay = boolean('autoplay', true);
-    return (`<c-carousel autoplay="${autoplay}">
-    <div class="slide">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100 text-xl" width="800" height="400"
-            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-            aria-label="Placeholder: Second slide">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#666"></rect><text x="50%" y="50%" fill="#444" dominant-baseline="middle" text-anchor="middle"
-                dy=".3em">First slide</text>
-        </svg>
-    </div>
-    <div class="slide">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100 text-xl" width="800" height="400"
-            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-            aria-label="Placeholder: Second slide">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#666"></rect><text x="50%" y="50%" fill="#444" dominant-baseline="middle" text-anchor="middle"
-                dy=".3em">Second slide</text>
-        </svg>
-    </div>
-    <div class="slide">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100 text-xl" width="800" height="400"
-            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-            aria-label="Placeholder: Second slide">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#666"></rect><text x="50%" y="50%" fill="#444" dominant-baseline="middle" text-anchor="middle"
-                dy=".3em">Third slide</text>
-        </svg>
-    </div>
-    <div class="slide">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100 text-xl" width="800" height="400"
-            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
-            aria-label="Placeholder: Second slide">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#666"></rect><text x="50%" y="50%" fill="#444" dominant-baseline="middle" text-anchor="middle"
-                dy=".3em">Fourth slide</text>
-        </svg>
-    </div>
-</c-carousel>
-`);
+    const thumbnails = boolean('thumbnails', false);
+    const showIndicators = boolean('show-indicators', true);
+    const showControls = boolean('show-controls', true);
+    const cssClass = text('css-class', 'm-md w-33');
+
+    return (`<c-carousel autoplay="${autoplay}" thumbnails="${thumbnails}" show-indicators="${showIndicators}" show-controls="${showControls}" timer="${timer}" css-class="${cssClass}">
+        <c-carousel-slide alt="Jim Pranks Dwight" src="http://oyster.ignimgs.com/wordpress/stg.ign.com/2013/05/Stapler_in_jello.jpg"></c-carousel-slide>
+        <c-carousel-slide alt="Jim Pranks Dwight" src="https://www.bing.com/th?id=OIP.vcsEsRm8QqPj0OW_edJICwHaEJ&pid=Api&rs=1"></c-carousel-slide>
+        <c-carousel-slide alt="Jim Pranks Dwight" src="https://moviefellas.files.wordpress.com/2013/05/pilot.jpg"></c-carousel-slide>
+        <c-carousel-slide alt="Jim Pranks Dwight" src="https://www.bing.com/th?id=OIP.TUEcbhF4a8u_LQmqW8wSMQHaEJ&pid=Api&rs=1"></c-carousel-slide>
+        <c-carousel-slide alt="Jim Pranks Dwight" src="https://img.buzzfeed.com/buzzfeed-static/static/2016-05/4/10/enhanced/webdr06/original-16454-1462371390-5.png"></c-carousel-slide>
+        <c-carousel-slide alt="Jim Pranks Dwight" src="https://img.buzzfeed.com/buzzfeed-static/static/2015-07/17/14/enhanced/webdr08/enhanced-4901-1437158753-3.jpg"></c-carousel-slide>
+</c-carousel>`);
 };
