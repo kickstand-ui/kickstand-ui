@@ -22,10 +22,10 @@ export class Breadcrumbs implements ComponentInterface {
             <nav class={`breadcrumbs ${this.cssClass}`} role="navigation" aria-label="breadcrumbs">
                 <ol class="list">
                     {this.breadcrumbs.map((crumb, index) =>
-                        <li role="menuitem" class={`breadcrumb ${this.isLastCrumb(index) ? 'current' : ''}`}>
+                        <li class={`breadcrumb ${this.isLastCrumb(index) ? 'current' : ''}`}>
                             {this.isLastCrumb(index)
-                                ? <span class="text">{crumb.text}</span>
-                                : <a class="text" href={crumb.url}>{crumb.text}</a>
+                                ? <a class="link" aria-current="page" href={crumb.url}>{crumb.text}</a>
+                                : <a class="link" href={crumb.url}>{crumb.text}</a>
                             }
                         </li>
                     )}

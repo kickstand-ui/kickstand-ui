@@ -80,8 +80,14 @@ export class Carousel {
 
     render() {
         let controls = [
-            <button class="control prev" onClick={this.prevSlide.bind(this)}><i class="control-icon fas fa-chevron-left"></i></button>,
-            <button class="control next" onClick={this.nextSlide.bind(this)}><i class="control-icon fas fa-chevron-right"></i></button>
+            <button class="control prev" onClick={this.prevSlide.bind(this)}>
+                <i class="control-icon fas fa-chevron-left"></i>
+                <span class="sr-only">previous slide</span>
+            </button>,
+            <button class="control next" onClick={this.nextSlide.bind(this)}>
+                <i class="control-icon fas fa-chevron-right"></i>
+                <span class="sr-only">next slide</span>
+            </button>
         ];
         let indicators = (
             <div class="indicators">

@@ -13,15 +13,15 @@
         @include mb(lg);
 
         .breadcrumb {
-
-            &.current {
-                @include font-size(sm);
-            }
-
-            .text {
+            .link {
                 font-weight: bold;
                 text-decoration: none;
                 @include font-size(sm);
+
+                &[aria-current="page"] {
+                    color: color(black);
+                    @include font-size(sm);
+                }
             }
         }
 

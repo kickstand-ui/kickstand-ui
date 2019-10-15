@@ -10,7 +10,7 @@
 | Property    | Attribute   | Description | Type      | Default     |
 | ----------- | ----------- | ----------- | --------- | ----------- |
 | `alt`       | `alt`       |             | `string`  | `undefined` |
-| `cssClass`  | `css-class` |             | `string`  | `undefined` |
+| `cssClass`  | `css-class` |             | `string`  | `''`        |
 | `lazy`      | `lazy`      |             | `boolean` | `undefined` |
 | `src`       | `src`       |             | `string`  | `undefined` |
 | `threshold` | `threshold` |             | `number`  | `300`       |

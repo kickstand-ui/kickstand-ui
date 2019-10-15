@@ -7,7 +7,7 @@ import { Component, Element, Prop, State, h } from '@stencil/core';
 export class Img {
     @Element() el: HTMLElement;
 
-    @Prop() cssClass: string;
+    @Prop() cssClass: string = '';
     @Prop() src: string;
     @Prop() alt: string;
     @Prop() lazy: boolean;
