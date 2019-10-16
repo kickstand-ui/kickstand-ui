@@ -72,8 +72,9 @@ export namespace Components {
   }
   interface COverlay {
     'absolute': boolean;
-    'hide': () => Promise<void>;
-    'show': () => Promise<void>;
+    'hideOverlay': () => Promise<void>;
+    'show': boolean;
+    'showOverlay': () => Promise<void>;
     'theme': string;
   }
 }
@@ -223,6 +224,7 @@ declare namespace LocalJSX {
   }
   interface COverlay extends JSXBase.HTMLAttributes<HTMLCOverlayElement> {
     'absolute'?: boolean;
+    'show'?: boolean;
     'theme'?: string;
   }
 

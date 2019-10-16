@@ -8,16 +8,16 @@ export class overlay {
     @Prop() absolute: boolean = false;
     @Prop() theme: string = 'dark';
 
-    @State() isOpened: boolean = false;
+    @Prop({ mutable: true }) show: boolean = false;
 
     @Method()
-    async show() {
-        this.isOpened = true;
+    async showOverlay() {
+        this.show = true;
     }
 
     @Method()
-    async hide() {
-        this.isOpened = false;
+    async hideOverlay() {
+        this.show = false;
     }
 
     isAbsolute() {
@@ -25,7 +25,7 @@ export class overlay {
     }
 
     render() {
-        return (<div class={`overlay ${this.theme} ${this.isAbsolute()} ${this.isOpened ? 'opened' : ''}`}>
+        return (<div class={`overlay ${this.theme} ${this.absolute && 'absolute'} ${this.show && 'opened'}`}>
             <div class="scrim"></div>
             <div class="content" role="dialog">
                 <slot />

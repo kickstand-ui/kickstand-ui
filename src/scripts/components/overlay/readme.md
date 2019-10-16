@@ -10,12 +10,13 @@
 | Property   | Attribute  | Description | Type      | Default  |
 | ---------- | ---------- | ----------- | --------- | -------- |
 | `absolute` | `absolute` |             | `boolean` | `false`  |
+| `show`     | `show`     |             | `boolean` | `false`  |
 | `theme`    | `theme`    |             | `string`  | `'dark'` |
 
 
 ## Methods
 
-### `hide() => Promise<void>`
+### `hideOverlay() => Promise<void>`
 
 
 
@@ -25,7 +26,7 @@ Type: `Promise<void>`
 
 
 
-### `show() => Promise<void>`
+### `showOverlay() => Promise<void>`
 
 
 
