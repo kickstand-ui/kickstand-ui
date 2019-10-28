@@ -53,11 +53,15 @@ body {
 // and https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/
 
 [tabindex="-1"]:focus:not(:focus-visible) {
-    outline: 0 !important;
+    outline: 2px;
+    outline-style: solid;
+    outline-color: color(primary, 0.5);
 }
 
 *:focus {
-    outline: 0;
+    outline: 2px;
+    outline-style: solid;
+    outline-color: color(primary, 0.5);
 }
 
 

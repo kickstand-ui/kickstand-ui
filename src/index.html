@@ -25,6 +25,9 @@
                 <button onClick="overlay.hide()">Hide Overlay</button>
             </c-overlay>
         </div>
+        <c-button css-class="m-lg">
+            Click Test
+        </c-button>
         <!-- <c-carousel>
             <div class="slide">
                 <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100 text-xl" width="800" height="400"
@@ -75,7 +78,9 @@
     </div>
     <script>
         var overlay = document.querySelector('c-overlay');
-
+        let button = document.querySelector('c-button');
+        var logMessage = () => console.log('You clicked the button!!!');
+        button.clickHandler = logMessage;
     </script>
 </body>
 

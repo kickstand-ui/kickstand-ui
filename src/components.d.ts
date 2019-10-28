@@ -11,6 +11,15 @@ import {
 } from './scripts/components/breadcrumbs/breadcrumbs';
 
 export namespace Components {
+  interface CAccordion {
+    'cssClass': string;
+  }
+  interface CAccordionSlide {
+    'cssClass': string;
+    'expanded': boolean;
+    'heading': string;
+    'toggleSlide': () => Promise<void>;
+  }
   interface CAlert {
     'cssClass': string;
     'header': string;
@@ -27,13 +36,14 @@ export namespace Components {
     'cssClass': string;
   }
   interface CButton {
+    'clickHandler': Function;
     'cssClass': string;
     'hollow': boolean;
+    'href': string;
     'icon': string;
     'iconDirection': string;
     'size': string;
     'type': string;
-    'url': string;
   }
   interface CCard {
     'alt': string;
@@ -81,6 +91,18 @@ export namespace Components {
 
 declare global {
 
+
+  interface HTMLCAccordionElement extends Components.CAccordion, HTMLStencilElement {}
+  var HTMLCAccordionElement: {
+    prototype: HTMLCAccordionElement;
+    new (): HTMLCAccordionElement;
+  };
+
+  interface HTMLCAccordionSlideElement extends Components.CAccordionSlide, HTMLStencilElement {}
+  var HTMLCAccordionSlideElement: {
+    prototype: HTMLCAccordionSlideElement;
+    new (): HTMLCAccordionSlideElement;
+  };
 
   interface HTMLCAlertElement extends Components.CAlert, HTMLStencilElement {}
   var HTMLCAlertElement: {
@@ -148,6 +170,8 @@ declare global {
     new (): HTMLCOverlayElement;
   };
   interface HTMLElementTagNameMap {
+    'c-accordion': HTMLCAccordionElement;
+    'c-accordion-slide': HTMLCAccordionSlideElement;
     'c-alert': HTMLCAlertElement;
     'c-badge': HTMLCBadgeElement;
     'c-breadcrumbs': HTMLCBreadcrumbsElement;
@@ -163,6 +187,14 @@ declare global {
 }
 
 declare namespace LocalJSX {
+  interface CAccordion extends JSXBase.HTMLAttributes<HTMLCAccordionElement> {
+    'cssClass'?: string;
+  }
+  interface CAccordionSlide extends JSXBase.HTMLAttributes<HTMLCAccordionSlideElement> {
+    'cssClass'?: string;
+    'expanded'?: boolean;
+    'heading'?: string;
+  }
   interface CAlert extends JSXBase.HTMLAttributes<HTMLCAlertElement> {
     'cssClass'?: string;
     'header'?: string;
@@ -179,13 +211,14 @@ declare namespace LocalJSX {
     'cssClass'?: string;
   }
   interface CButton extends JSXBase.HTMLAttributes<HTMLCButtonElement> {
+    'clickHandler'?: Function;
     'cssClass'?: string;
     'hollow'?: boolean;
+    'href'?: string;
     'icon'?: string;
     'iconDirection'?: string;
     'size'?: string;
     'type'?: string;
-    'url'?: string;
   }
   interface CCard extends JSXBase.HTMLAttributes<HTMLCCardElement> {
     'alt'?: string;
@@ -229,6 +262,8 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'c-accordion': CAccordion;
+    'c-accordion-slide': CAccordionSlide;
     'c-alert': CAlert;
     'c-badge': CBadge;
     'c-breadcrumbs': CBreadcrumbs;

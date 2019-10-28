@@ -3,14 +3,21 @@ import { Component, h, Prop, ComponentInterface } from '@stencil/core';
 @Component({
     tag: 'c-button'
 })
-export class Alert implements ComponentInterface {
-    @Prop() type: string;
+export class LinkButton implements ComponentInterface {
+    @Prop() type: string = 'primary';
     @Prop() hollow: boolean;
     @Prop() size: string;
     @Prop() icon: string;
     @Prop() iconDirection: string = 'left';
-    @Prop() url: string;
+    @Prop() href: string;
+    @Prop() clickHandler: Function;
     @Prop() cssClass: string = '';
+
+
+    _clickHandler() {
+        if(this.clickHandler)
+            this.clickHandler();
+    }
 
     render() {
         let content = [
@@ -23,9 +30,9 @@ export class Alert implements ComponentInterface {
         ];
 
         return (
-            this.url
-                ? <a class={`button ${this.type}${this.hollow ? ' hollow' : ''} button-${this.size} ${this.cssClass}`} href={this.url}>{content}</a>
-                : <button class={`button ${this.type}${this.hollow ? ' hollow' : ''} button-${this.size} ${this.cssClass}`}>{content}</button >
+            this.href
+                ? <a class={`button ${this.type} ${this.hollow ? 'hollow' : ''} icon-${this.iconDirection} ${this.size} ${this.cssClass}`} href={this.href}>{content}</a>
+                : <button class={`button ${this.type} ${this.hollow ? 'hollow' : ''} icon-${this.iconDirection} ${this.size} ${this.cssClass}`} onClick={this._clickHandler.bind(this)}>{content}</button >
         );
     }
 }

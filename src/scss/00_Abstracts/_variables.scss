@@ -106,7 +106,9 @@ $shadows: (
 //  TRANSITIONS
 
 $transitions: (
-    slow: .5s,
-    med: .3s,
-    fast: .1s
+    xslow: 2s,
+    slow: 1s,
+    med: .5s,
+    fast: .3s,
+    xfast: .1s
 ) !default;

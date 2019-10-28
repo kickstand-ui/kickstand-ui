@@ -1,0 +1,49 @@
+@import "../00_Abstracts/index";
+
+.accordion {
+    @include border();
+
+    .accordion-slide {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .accordion-heading {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            background: linear-gradient(color(light, light), color(light));
+            @include border-x($size: none);
+            @include border-y();
+            @include p(lg);
+            @include my("-3xs");
+
+            .accordion-icon {
+                color: color(dark, lighter);
+                @include transition-ease-in-out(med);
+            }
+
+            &[aria-expanded="true"] {
+                .accordion-icon {
+                    transform: rotate(180deg);
+                    @include transition-ease-in-out(med);
+                }
+            }
+        }
+
+        .accordion-content {
+            height: auto;
+            display: block;
+            @include transition-ease-in-out(fast);
+            @include p(lg);
+
+            &[aria-hidden="true"] {
+                height: 0;
+                overflow: hidden;
+                display: none;
+                @include transition-ease-in-out(fast);
+                @include py(none);
+            }
+        }
+    }
+}

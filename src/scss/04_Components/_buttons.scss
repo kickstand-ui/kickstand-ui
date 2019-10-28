@@ -1,7 +1,7 @@
 @import "../00_Abstracts/index";
 
 .button {
-    display: inline-block;
+    display: flex;
     text-decoration: none;
     line-height: 1;
     white-space: nowrap;
@@ -88,31 +88,29 @@
         }
     }
 
-    &.button {
-        &-xs {
-            @include p(xs);
-            @include font-size(xs);
-        }
+    &.xsmall {
+        @include p(xs);
+        @include font-size(xs);
+    }
 
-        &-sm {
-            @include p(sm);
-            @include font-size(sm);
-        }
+    &.small {
+        @include p(sm);
+        @include font-size(sm);
+    }
 
-        &-md {
-            @include p(md);
-            @include font-size(sm);
-        }
+    &.medium {
+        @include p(md);
+        @include font-size(sm);
+    }
 
-        &-lg {
-            @include p(lg);
-            @include font-size(md);
-        }
+    &.large {
+        @include p(lg);
+        @include font-size(md);
+    }
 
-        &-xl {
-            @include p(xl);
-            @include font-size(lg);
-        }
+    &.xlarge {
+        @include p(xl);
+        @include font-size(lg);
     }
 
     &.none {
@@ -127,6 +125,24 @@
         &:focus,
         &:hover:not(:disabled) {
             @include shadow(none);
+        }
+    }
+
+    &.icon {
+        &-left {
+            flex-direction: row;
+
+            .button-icon {
+                @include mr(sm);
+            }
+        }
+
+        &-right {
+            flex-direction: row-reverse;
+
+            .button-icon {
+                @include ml(sm);
+            }
         }
     }
 }

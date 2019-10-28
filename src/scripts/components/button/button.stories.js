@@ -4,7 +4,7 @@ export default { title: 'Button' };
 
 const types = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark', 'link', 'none'];
 const sizes = [ 'xs', 'sm', 'md', 'lg', 'xl' ];
-const iconDirections = ['top', 'right', 'bottom', 'left'];
+const iconDirections = ['left', 'right'];
 
 export const playground = () => {
     const type = select('type', types, 'primary');
@@ -64,4 +64,14 @@ export const sizeVariations = () => {
             url="${linkUrl}">
             ${type} button
         </c-button>`).join(''));
+};
+
+export const clickHandler = () => {
+    const type = select('type', types, 'primary');
+    const cssClass = text('css-class', 'm-md');
+    const button = document.createElement('c-button');
+    button.type = type;
+    button.cssClass = cssClass;
+    button.clickHandler = () => console.log('You just clicked a button...');
+    return button;
 };
