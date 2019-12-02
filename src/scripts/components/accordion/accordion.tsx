@@ -6,8 +6,6 @@ import { Component, h, Prop, State, Element, Host } from '@stencil/core';
 export class Accordion {
     @Element() el: HTMLElement;
 
-    @Prop() cssClass: string = '';
-
     @State() slides: HTMLCAccordionSlideElement[];
 
     connectedCallback() {

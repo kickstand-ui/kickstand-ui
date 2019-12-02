@@ -5,7 +5,6 @@ import componentUtils from '../../utils/componentUtils';
     tag: 'c-accordion-slide'
 })
 export class AccordionSlide {
-    @Prop() cssClass: string = '';
     @Prop() heading: string;
     @Prop() expanded: boolean = false;
 
