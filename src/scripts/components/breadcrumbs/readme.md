@@ -7,10 +7,9 @@
 
 ## Properties
 
-| Property      | Attribute   | Description | Type             | Default     |
-| ------------- | ----------- | ----------- | ---------------- | ----------- |
-| `breadcrumbs` | --          |             | `IBreadcrumbs[]` | `undefined` |
-| `cssClass`    | `css-class` |             | `string`         | `''`        |
+| Property      | Attribute | Description | Type             | Default     |
+| ------------- | --------- | ----------- | ---------------- | ----------- |
+| `breadcrumbs` | --        |             | `IBreadcrumbs[]` | `undefined` |
 
 
 ----------------------------------------------

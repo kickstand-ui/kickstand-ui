@@ -28,7 +28,6 @@ export namespace Components {
   }
   interface CBreadcrumbs {
     'breadcrumbs': IBreadcrumbs[];
-    'cssClass': string;
   }
   interface CButton {
     'clickHandler': Function;
@@ -265,7 +264,6 @@ declare namespace LocalJSX {
   }
   interface CBreadcrumbs extends JSXBase.HTMLAttributes<HTMLCBreadcrumbsElement> {
     'breadcrumbs'?: IBreadcrumbs[];
-    'cssClass'?: string;
   }
   interface CButton extends JSXBase.HTMLAttributes<HTMLCButtonElement> {
     'clickHandler'?: Function;

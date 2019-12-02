@@ -1,4 +1,4 @@
-import { Component, h, Prop, ComponentInterface } from '@stencil/core';
+import { Component, h, Prop, ComponentInterface, Host } from '@stencil/core';
 
 export interface IBreadcrumbs {
     url: string;
@@ -10,7 +10,6 @@ export interface IBreadcrumbs {
 })
 export class Breadcrumbs implements ComponentInterface {
     @Prop() breadcrumbs: IBreadcrumbs[];
-    @Prop() cssClass: string = '';
 
 
     isLastCrumb(index: number): boolean {
@@ -19,7 +18,7 @@ export class Breadcrumbs implements ComponentInterface {
 
     render() {
         return (
-            <nav class={`breadcrumbs ${this.cssClass}`} role="navigation" aria-label="breadcrumbs">
+            <Host class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
                 <ol class="list">
                     {this.breadcrumbs.map((crumb, index) =>
                         <li class={`breadcrumb ${this.isLastCrumb(index) ? 'current' : ''}`}>
@@ -30,7 +29,7 @@ export class Breadcrumbs implements ComponentInterface {
                         </li>
                     )}
                 </ol>
-            </nav>
+            </Host>
         );
     }
 }

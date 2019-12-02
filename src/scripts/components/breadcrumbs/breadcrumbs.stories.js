@@ -10,9 +10,7 @@ const breadcrumbs = [
 ];
 
 export const breadcrumb = () => {
-    const cssClass = text("css-class", "");
     const element = document.createElement('c-breadcrumbs');
-    element.cssClass = cssClass
     element.breadcrumbs = breadcrumbs;
     return element;
 };
