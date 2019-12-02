@@ -1,12 +1,10 @@
-import { Component, h, ComponentInterface, Prop, } from '@stencil/core';
+import { Component, h, ComponentInterface, Prop, Host} from '@stencil/core';
 
 
 @Component({
     tag: 'c-card'
 })
 export class Card implements ComponentInterface {
-    @Prop() cssClass: string;
-
     // Props for image
     @Prop() imgSrc: string;
     @Prop() alt: string;
@@ -18,7 +16,7 @@ export class Card implements ComponentInterface {
 
     render() {
         return (
-            <article class={`card img-${this.imgDirection} ${this.cssClass}`}>
+            <Host class={`card img-${this.imgDirection}`}>
                 {this.imgSrc 
                     ? (<div class="card-img">
                             <c-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} />
@@ -27,7 +25,7 @@ export class Card implements ComponentInterface {
                 <div class="card-content">
                     <slot />
                 </div>
-            </article>
+            </Host>
         );
     }
 }

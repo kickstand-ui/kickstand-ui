@@ -13,18 +13,17 @@ export const card = () => {
     const cardTitle = text('card-title', 'Card Title');
     const cardSubtitle = text('card-subtitle', 'Card Subtitle');
     const bodyText = text('body text', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat nulla error inventore dolore iusto sit. Et soluta ipsum optio illum vero voluptatem? Aperiam fugit maxime animi. Iusto eius dignissimos ipsum.');
-    const cssClass = text('css-class', 'w-25 m-md');
     
     return(`<c-card img-src="${src}"
                     img-direction="${imgDir}"
                     alt="${alt}"
-                    css-class="${cssClass}"
+                    class="w-25 m-md'"
                     lazy="${lazy}"
                     threshold="${threshold}">
-                <c-card-body card-title="${cardTitle}"
+                <card-body card-title="${cardTitle}"
                              card-subtitle="${cardSubtitle}">
                              ${bodyText}
-                </c-card-body>
-                <c-card-footer></c-card-footer>
+                </card-body>
+                <card-footer></card-footer>
             </c-card>`);
 };

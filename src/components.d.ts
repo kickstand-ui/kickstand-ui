@@ -41,17 +41,11 @@ export namespace Components {
   }
   interface CCard {
     'alt': string;
-    'cssClass': string;
     'imgDirection': string;
     'imgSrc': string;
     'lazy': boolean;
     'threshold': number;
   }
-  interface CCardBody {
-    'cardSubtitle': string;
-    'cardTitle': string;
-  }
-  interface CCardFooter {}
   interface CCarousel {
     'autoplay': boolean;
     'cssClass': string;
@@ -96,6 +90,11 @@ export namespace Components {
     'showOverlay': () => Promise<void>;
     'theme': string;
   }
+  interface CardBody {
+    'cardSubtitle': string;
+    'cardTitle': string;
+  }
+  interface CardFooter {}
   interface DropdownItem {
     'closeOnClick': boolean;
   }
@@ -153,18 +152,6 @@ declare global {
     new (): HTMLCCardElement;
   };
 
-  interface HTMLCCardBodyElement extends Components.CCardBody, HTMLStencilElement {}
-  var HTMLCCardBodyElement: {
-    prototype: HTMLCCardBodyElement;
-    new (): HTMLCCardBodyElement;
-  };
-
-  interface HTMLCCardFooterElement extends Components.CCardFooter, HTMLStencilElement {}
-  var HTMLCCardFooterElement: {
-    prototype: HTMLCCardFooterElement;
-    new (): HTMLCCardFooterElement;
-  };
-
   interface HTMLCCarouselElement extends Components.CCarousel, HTMLStencilElement {}
   var HTMLCCarouselElement: {
     prototype: HTMLCCarouselElement;
@@ -201,6 +188,18 @@ declare global {
     new (): HTMLCOverlayElement;
   };
 
+  interface HTMLCardBodyElement extends Components.CardBody, HTMLStencilElement {}
+  var HTMLCardBodyElement: {
+    prototype: HTMLCardBodyElement;
+    new (): HTMLCardBodyElement;
+  };
+
+  interface HTMLCardFooterElement extends Components.CardFooter, HTMLStencilElement {}
+  var HTMLCardFooterElement: {
+    prototype: HTMLCardFooterElement;
+    new (): HTMLCardFooterElement;
+  };
+
   interface HTMLDropdownItemElement extends Components.DropdownItem, HTMLStencilElement {}
   var HTMLDropdownItemElement: {
     prototype: HTMLDropdownItemElement;
@@ -232,14 +231,14 @@ declare global {
     'c-breadcrumbs': HTMLCBreadcrumbsElement;
     'c-button': HTMLCButtonElement;
     'c-card': HTMLCCardElement;
-    'c-card-body': HTMLCCardBodyElement;
-    'c-card-footer': HTMLCCardFooterElement;
     'c-carousel': HTMLCCarouselElement;
     'c-carousel-slide': HTMLCCarouselSlideElement;
     'c-dropdown': HTMLCDropdownElement;
     'c-img': HTMLCImgElement;
     'c-navbar': HTMLCNavbarElement;
     'c-overlay': HTMLCOverlayElement;
+    'card-body': HTMLCardBodyElement;
+    'card-footer': HTMLCardFooterElement;
     'dropdown-item': HTMLDropdownItemElement;
     'navbar-group': HTMLNavbarGroupElement;
     'navbar-item': HTMLNavbarItemElement;
@@ -277,17 +276,11 @@ declare namespace LocalJSX {
   }
   interface CCard extends JSXBase.HTMLAttributes<HTMLCCardElement> {
     'alt'?: string;
-    'cssClass'?: string;
     'imgDirection'?: string;
     'imgSrc'?: string;
     'lazy'?: boolean;
     'threshold'?: number;
   }
-  interface CCardBody extends JSXBase.HTMLAttributes<HTMLCCardBodyElement> {
-    'cardSubtitle'?: string;
-    'cardTitle'?: string;
-  }
-  interface CCardFooter extends JSXBase.HTMLAttributes<HTMLCCardFooterElement> {}
   interface CCarousel extends JSXBase.HTMLAttributes<HTMLCCarouselElement> {
     'autoplay'?: boolean;
     'cssClass'?: string;
@@ -330,6 +323,11 @@ declare namespace LocalJSX {
     'show'?: boolean;
     'theme'?: string;
   }
+  interface CardBody extends JSXBase.HTMLAttributes<HTMLCardBodyElement> {
+    'cardSubtitle'?: string;
+    'cardTitle'?: string;
+  }
+  interface CardFooter extends JSXBase.HTMLAttributes<HTMLCardFooterElement> {}
   interface DropdownItem extends JSXBase.HTMLAttributes<HTMLDropdownItemElement> {
     'closeOnClick'?: boolean;
     'onCloseDropdown'?: (event: CustomEvent<any>) => void;
@@ -350,14 +348,14 @@ declare namespace LocalJSX {
     'c-breadcrumbs': CBreadcrumbs;
     'c-button': CButton;
     'c-card': CCard;
-    'c-card-body': CCardBody;
-    'c-card-footer': CCardFooter;
     'c-carousel': CCarousel;
     'c-carousel-slide': CCarouselSlide;
     'c-dropdown': CDropdown;
     'c-img': CImg;
     'c-navbar': CNavbar;
     'c-overlay': COverlay;
+    'card-body': CardBody;
+    'card-footer': CardFooter;
     'dropdown-item': DropdownItem;
     'navbar-group': NavbarGroup;
     'navbar-item': NavbarItem;
