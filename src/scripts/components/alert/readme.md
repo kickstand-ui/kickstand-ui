@@ -7,12 +7,11 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type      | Default     |
-| ---------- | ----------- | ----------- | --------- | ----------- |
-| `cssClass` | `css-class` |             | `string`  | `''`        |
-| `header`   | `header`    |             | `string`  | `undefined` |
-| `note`     | `note`      |             | `boolean` | `undefined` |
-| `type`     | `type`      |             | `string`  | `'primary'` |
+| Property | Attribute | Description | Type      | Default     |
+| -------- | --------- | ----------- | --------- | ----------- |
+| `header` | `header`  |             | `string`  | `undefined` |
+| `note`   | `note`    |             | `boolean` | `undefined` |
+| `type`   | `type`    |             | `string`  | `'primary'` |
 
 
 ----------------------------------------------

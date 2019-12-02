@@ -1,17 +1,16 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, Host } from '@stencil/core';
 
 @Component({
     tag: 'c-alert'
 })
-export class Note {
-    @Prop() cssClass: string = '';
+export class Alert {
     @Prop() header: string;
     @Prop() note: boolean;
     @Prop() type: string = 'primary';
 
     render() {
         return (
-            <div class={`alert ${this.type} ${this.note ? 'note' : ''} ${this.cssClass}`}>
+            <Host class={`alert ${this.type} ${this.note ? 'note' : ''}`}>
                 {this.header && 
                     <header class="alert-header">
                         <h3 class="alert-heading">{this.header}</h3>
@@ -20,7 +19,7 @@ export class Note {
                 <p class="alert-body">
                     <slot />
                 </p>
-            </div>
+            </Host>
         );
     }
 }
