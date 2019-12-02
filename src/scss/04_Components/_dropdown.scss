@@ -1,0 +1,142 @@
+@import "../00_Abstracts/index";
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+    &.mega-menu {
+        display: block;
+        float: left;
+        position: static;
+        width: 100%;
+    }
+
+    .button {
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+
+        .dropdown-text {
+            @include ml(xs);
+        }
+
+        .dropdown-icon {
+            @include font-size(xxs);
+            @include ml(sm);
+            @include transition-ease-in-out(med);
+        }
+
+        &[aria-expanded="true"] .dropdown-icon {
+            transform: rotate(-180deg);
+            @include transition-ease-in-out(med);
+        }
+
+        .navbar-item &.link {
+            cursor: pointer;
+            color: inherit;
+            border: inherit;
+            line-height: inherit;
+            height: inherit;
+            padding: inherit;
+            margin: inherit;
+
+            @include hover-focus {
+                background-color: inherit;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .dropdown-contents {
+        display: none;
+        left: 0;
+        position: absolute;
+        z-index: z(xs);
+        list-style: none;
+        width: auto;
+        overflow: hidden;
+        white-space: nowrap;
+        @include shadow(xs);
+        @include bg-color(white);
+        @include px(sm);
+        @include py(none);
+        @include m(none);
+        @include transition-ease-in-out(fast);
+
+        .dropdown-item {
+            > * {
+                text-align: left;
+                text-decoration: none;
+                display: block;
+                color: color(primary);
+                width: 100%;
+                font-weight: normal;
+                @include font-size(sm);
+                @include px(lg);
+                @include py(md);
+            }
+
+            a,
+            button {
+                @include hover-focus {
+                    @include bg-color(light, light);
+                }
+            }
+        }
+
+        &.align-left {
+            left: 0;
+            right: auto;
+        }
+
+        &.align-right {
+            right: 0;
+            left: auto;
+        }
+
+        .navbar-row &,
+        .navbar-row .align-right & {
+            right: 0;
+            left: auto;
+        }
+
+        .navbar-row .align-left & {
+            left: 0;
+            right: auto;
+        }
+    }
+
+    .mega-menu-contents {
+        display: none;
+        position: absolute;
+        float: none;
+        left: 0;
+        max-width: 100%;
+        max-height: 80vh;
+        min-width: 200px;
+        overflow-y: auto;
+        right: 0;
+        z-index: z(xs);
+        @include shadow(xs);
+        @include bg-color(white);
+        @include px(sm);
+        @include py(none);
+        @include m(none);
+        @include transition-ease-in-out(fast);
+    }
+
+    [aria-expanded="true"] + .dropdown-contents,
+    [aria-expanded="true"] + .mega-menu-contents {
+        display: block;
+        width: auto;
+        min-width: 100%;
+        @include border();
+        @include py(sm);
+        @include transition-ease-in-out(fast);
+    }
+
+    [aria-expanded="true"] + .dropdown-contents {
+        display: flex;
+        flex-direction: column;
+    }
+}
