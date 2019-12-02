@@ -1,0 +1,177 @@
+@import "../00_Abstracts/index";
+
+.navbar {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+    @include font-size(sm);
+    @include bg-color(primary);
+
+    .navbar-branding {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: text-color(primary);
+        @include p(sm);
+
+        .logo {
+            max-width: 3rem;
+            width: auto;
+            @include mx(auto);
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .tagline {
+            white-space: nowrap;
+            @include font-size(md);
+            @include ml(sm);
+        }
+    }
+
+    .navbar-toggler {
+        display: none;
+        background-color: transparent;
+        @include border($color: white);
+        @include ml(auto);
+        @include mr(sm);
+        @include px(md);
+        @include py(sm);
+    }
+
+    .navbar-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        flex-basis: auto;
+        width: 100%;
+
+        &:focus {
+            outline: none !important;
+        }
+
+        .navbar-row {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-content: center;
+
+            .navbar-group {
+                display: flex;
+
+                &.align {
+                    &-left {
+                        @include mr(auto);
+                    }
+
+                    &-right {
+                        @include ml(auto);
+                    }
+                }
+            }
+
+            .navbar-item {
+                font-weight: 600;
+
+                &.active {
+                    > * {
+                        text-decoration: underline;
+                        font-weight: 900;
+                    }
+                }
+
+                > * {
+                    font-weight: 600;
+                    white-space: nowrap;
+                    color: text-color(primary);
+                    text-decoration: none;
+
+                    &:focus {
+                        outline: dotted text-color(primary) 1px;
+                    }
+                }
+
+                @include border-r();
+                @include px(lg);
+                @include my(lg);
+
+                &:last-child {
+                    border: 0;
+                }
+
+                @include hover-focus {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &.collapse {
+        @each $key, $value in $breakpoints {
+            &-#{$key} {
+                @include breakpoint-below($key) {
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .navbar-toggler {
+                        display: block;
+                    }
+
+                    .navbar-content {
+                        display: none;
+                        flex-basis: 100%;
+                        flex-grow: 1;
+                        align-items: center;
+                        flex-direction: column;
+
+                        .navbar-row {
+                            flex-direction: column;
+                            justify-content: flex-start;
+
+                            .navbar-group {
+                                flex-direction: column;
+                                justify-content: start;
+                                @include mx(none);
+                            }
+
+                            .navbar-item {
+                                text-align: left;
+                                @include border(none);
+
+                                > * {
+                                    display: block;
+                                    width: 100%;
+                                }
+
+                                .dropdown {
+                                    width: 100%;
+
+                                    .dropdown-button {
+                                        width: 100%;
+                                        text-align: left;
+                                    }
+
+                                    .dropdown-contents {
+                                        position: relative;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    [aria-expanded="true"] + .navbar-content {
+                        display: block;
+                        @include border-t();
+                        @include transition-ease-in-out(fast);
+                    }
+                }
+            }
+        }
+    }
+}
