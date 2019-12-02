@@ -11,23 +11,18 @@ import {
 } from './scripts/components/breadcrumbs/breadcrumbs';
 
 export namespace Components {
-  interface CAccordion {
-    'cssClass': string;
-  }
+  interface CAccordion {}
   interface CAccordionSlide {
-    'cssClass': string;
     'expanded': boolean;
     'heading': string;
     'toggleSlide': () => Promise<void>;
   }
   interface CAlert {
-    'cssClass': string;
     'header': string;
     'note': boolean;
     'type': string;
   }
   interface CBadge {
-    'cssClass': string;
     'hollow': boolean;
     'type': string;
   }
@@ -73,12 +68,27 @@ export namespace Components {
     'src': string;
     'threshold': number;
   }
+  interface CDropdown {
+    'buttonIcon': string;
+    'buttonType': string;
+    'dropdownAlignment': string;
+    'dropdownText': string;
+    'hideButtonText': boolean;
+    'hollow': boolean;
+    'megaMenu': boolean;
+  }
   interface CImg {
     'alt': string;
     'cssClass': string;
     'lazy': boolean;
     'src': string;
     'threshold': number;
+  }
+  interface CNavbar {
+    'altText': string;
+    'collapseAt': string;
+    'logoUrl': string;
+    'tagline': string;
   }
   interface COverlay {
     'absolute': boolean;
@@ -87,6 +97,16 @@ export namespace Components {
     'showOverlay': () => Promise<void>;
     'theme': string;
   }
+  interface DropdownItem {
+    'closeOnClick': boolean;
+  }
+  interface NavbarGroup {
+    'position': string;
+  }
+  interface NavbarItem {
+    'position': string;
+  }
+  interface NavbarRow {}
 }
 
 declare global {
@@ -158,16 +178,52 @@ declare global {
     new (): HTMLCCarouselSlideElement;
   };
 
+  interface HTMLCDropdownElement extends Components.CDropdown, HTMLStencilElement {}
+  var HTMLCDropdownElement: {
+    prototype: HTMLCDropdownElement;
+    new (): HTMLCDropdownElement;
+  };
+
   interface HTMLCImgElement extends Components.CImg, HTMLStencilElement {}
   var HTMLCImgElement: {
     prototype: HTMLCImgElement;
     new (): HTMLCImgElement;
   };
 
+  interface HTMLCNavbarElement extends Components.CNavbar, HTMLStencilElement {}
+  var HTMLCNavbarElement: {
+    prototype: HTMLCNavbarElement;
+    new (): HTMLCNavbarElement;
+  };
+
   interface HTMLCOverlayElement extends Components.COverlay, HTMLStencilElement {}
   var HTMLCOverlayElement: {
     prototype: HTMLCOverlayElement;
     new (): HTMLCOverlayElement;
+  };
+
+  interface HTMLDropdownItemElement extends Components.DropdownItem, HTMLStencilElement {}
+  var HTMLDropdownItemElement: {
+    prototype: HTMLDropdownItemElement;
+    new (): HTMLDropdownItemElement;
+  };
+
+  interface HTMLNavbarGroupElement extends Components.NavbarGroup, HTMLStencilElement {}
+  var HTMLNavbarGroupElement: {
+    prototype: HTMLNavbarGroupElement;
+    new (): HTMLNavbarGroupElement;
+  };
+
+  interface HTMLNavbarItemElement extends Components.NavbarItem, HTMLStencilElement {}
+  var HTMLNavbarItemElement: {
+    prototype: HTMLNavbarItemElement;
+    new (): HTMLNavbarItemElement;
+  };
+
+  interface HTMLNavbarRowElement extends Components.NavbarRow, HTMLStencilElement {}
+  var HTMLNavbarRowElement: {
+    prototype: HTMLNavbarRowElement;
+    new (): HTMLNavbarRowElement;
   };
   interface HTMLElementTagNameMap {
     'c-accordion': HTMLCAccordionElement;
@@ -181,28 +237,29 @@ declare global {
     'c-card-footer': HTMLCCardFooterElement;
     'c-carousel': HTMLCCarouselElement;
     'c-carousel-slide': HTMLCCarouselSlideElement;
+    'c-dropdown': HTMLCDropdownElement;
     'c-img': HTMLCImgElement;
+    'c-navbar': HTMLCNavbarElement;
     'c-overlay': HTMLCOverlayElement;
+    'dropdown-item': HTMLDropdownItemElement;
+    'navbar-group': HTMLNavbarGroupElement;
+    'navbar-item': HTMLNavbarItemElement;
+    'navbar-row': HTMLNavbarRowElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface CAccordion extends JSXBase.HTMLAttributes<HTMLCAccordionElement> {
-    'cssClass'?: string;
-  }
+  interface CAccordion extends JSXBase.HTMLAttributes<HTMLCAccordionElement> {}
   interface CAccordionSlide extends JSXBase.HTMLAttributes<HTMLCAccordionSlideElement> {
-    'cssClass'?: string;
     'expanded'?: boolean;
     'heading'?: string;
   }
   interface CAlert extends JSXBase.HTMLAttributes<HTMLCAlertElement> {
-    'cssClass'?: string;
     'header'?: string;
     'note'?: boolean;
     'type'?: string;
   }
   interface CBadge extends JSXBase.HTMLAttributes<HTMLCBadgeElement> {
-    'cssClass'?: string;
     'hollow'?: boolean;
     'type'?: string;
   }
@@ -248,6 +305,15 @@ declare namespace LocalJSX {
     'src'?: string;
     'threshold'?: number;
   }
+  interface CDropdown extends JSXBase.HTMLAttributes<HTMLCDropdownElement> {
+    'buttonIcon'?: string;
+    'buttonType'?: string;
+    'dropdownAlignment'?: string;
+    'dropdownText'?: string;
+    'hideButtonText'?: boolean;
+    'hollow'?: boolean;
+    'megaMenu'?: boolean;
+  }
   interface CImg extends JSXBase.HTMLAttributes<HTMLCImgElement> {
     'alt'?: string;
     'cssClass'?: string;
@@ -255,11 +321,28 @@ declare namespace LocalJSX {
     'src'?: string;
     'threshold'?: number;
   }
+  interface CNavbar extends JSXBase.HTMLAttributes<HTMLCNavbarElement> {
+    'altText'?: string;
+    'collapseAt'?: string;
+    'logoUrl'?: string;
+    'tagline'?: string;
+  }
   interface COverlay extends JSXBase.HTMLAttributes<HTMLCOverlayElement> {
     'absolute'?: boolean;
     'show'?: boolean;
     'theme'?: string;
   }
+  interface DropdownItem extends JSXBase.HTMLAttributes<HTMLDropdownItemElement> {
+    'closeOnClick'?: boolean;
+    'onCloseDropdown'?: (event: CustomEvent<any>) => void;
+  }
+  interface NavbarGroup extends JSXBase.HTMLAttributes<HTMLNavbarGroupElement> {
+    'position'?: string;
+  }
+  interface NavbarItem extends JSXBase.HTMLAttributes<HTMLNavbarItemElement> {
+    'position'?: string;
+  }
+  interface NavbarRow extends JSXBase.HTMLAttributes<HTMLNavbarRowElement> {}
 
   interface IntrinsicElements {
     'c-accordion': CAccordion;
@@ -273,8 +356,14 @@ declare namespace LocalJSX {
     'c-card-footer': CCardFooter;
     'c-carousel': CCarousel;
     'c-carousel-slide': CCarouselSlide;
+    'c-dropdown': CDropdown;
     'c-img': CImg;
+    'c-navbar': CNavbar;
     'c-overlay': COverlay;
+    'dropdown-item': DropdownItem;
+    'navbar-group': NavbarGroup;
+    'navbar-item': NavbarItem;
+    'navbar-row': NavbarRow;
   }
 }
 
