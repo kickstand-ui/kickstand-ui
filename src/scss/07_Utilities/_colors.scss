@@ -1,0 +1,45 @@
+@import '../00_Abstracts/index';
+
+$variations: ('lighter', 'light', 'base', 'dark', 'darker');
+
+@each $color, $value in $theme-colors {
+    /*
+        .text-primary
+        .text-secondary
+        ...
+    */
+    .text-#{$color} {
+        color: color($color) !important;
+    }
+
+    /*
+        .bg-primary
+        .bg-secondary
+        ...
+    */
+    .bg-#{$color} {
+        background-color: color($color) !important;
+        color: text-color($color) !important;
+    }
+
+    @each $variation in $variations {
+        /*
+            .text-primary-lighter
+            .text-secondary-dark
+            ...
+        */
+        .text-#{$color}-#{$variation} {
+            color: color($color, $variation) !important;
+        }
+
+        /*
+            .bg-primary-light
+            .bg-secondary-darker
+            ...
+        */
+        .bg-#{$color}-#{$variation} {
+            background-color: color($color, $variation) !important;
+            color: text-color($color, $variation) !important;
+        }
+    }
+}

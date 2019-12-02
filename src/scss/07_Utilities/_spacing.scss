@@ -3,72 +3,72 @@
 @each $size, $value in $spacing-sizes {
     // Padding
     .p-#{$size} {
-        @include p($size);
+        @include p($size, $important: true);
     }
 
     // Padding X
     .px-#{$size} {
-        @include px($size);
+        @include px($size, $important: true);
     }
 
     // Padding Y
     .py-#{$size} {
-        @include py($size);
+        @include py($size, $important: true);
     }
 
     // Padding Left
     .pl-#{$size} {
-        @include pl($size);
+        @include pl($size, true);
     }
 
     // Padding Right
     .pr-#{$size} {
-        @include pr($size);
+        @include pr($size, true);
     }
 
     // Padding Top
     .pt-#{$size} {
-        @include pt($size);
+        @include pt($size, true);
     }
 
     // Padding Bottom
     .pb-#{$size} {
-        @include pb($size);
+        @include pb($size, true);
     }
 
 
     // Margin
     .m-#{$size} {
-        @include m($size);
+        @include m($size, $important: true);
     }
 
     // Margin X
     .mx-#{$size} {
-        @include mx($size);
+        @include mx($size, $important: true);
     }
 
     // Margin Y
     .my-#{$size} {
-        @include my($size);
+        @include my($size, $important: true);
     }
 
     // Margin Left
     .ml-#{$size} {
-        @include ml($size);
+        @include ml($size, true);
     }
 
     // Margin Right
     .mr-#{$size} {
-        @include mr($size);
+        @include mr($size, true);
     }
 
     // Margin Top
     .mt-#{$size} {
-        @include mt($size);
+        @include mt($size, true);
     }
 
     // Margin Bottom
     .mb-#{$size} {
-        @include mb($size);
+        @include mb($size, true);
     }
 }
