@@ -1,4 +1,4 @@
-import { Component, h, Prop, State, Element } from '@stencil/core';
+import { Component, h, Prop, State, Element, Host } from '@stencil/core';
 
 @Component({
     tag: 'c-accordion'
@@ -16,9 +16,9 @@ export class Accordion {
 
     render() {
         return (
-            <div class="accordion" role="tablist">
+            <Host class="accordion" role="tablist">
                 <slot />
-            </div>
+            </Host>
         );
     }
 }

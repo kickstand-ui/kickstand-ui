@@ -1,4 +1,4 @@
-import { Component, h, Prop, Method, State } from '@stencil/core';
+import { Component, h, Prop, Method, State, Host } from '@stencil/core';
 import componentUtils from '../../utils/componentUtils';
 
 @Component({
@@ -18,7 +18,7 @@ export class AccordionSlide {
 
     render() {
         return (
-            <div class="accordion-slide">
+            <Host class="accordion-slide">
                 <button class="accordion-heading" role="tab" aria-controls={this.slideId} aria-expanded={`${this.expanded}`} onClick={this.toggleSlide.bind(this)}>
                     <span>{this.heading}</span>
                     <i class="accordion-icon fas fa-chevron-down"></i>
@@ -26,7 +26,7 @@ export class AccordionSlide {
                 <div class="accordion-content" role="tabpanel" aria-hidden={`${!this.expanded}`} id={this.slideId}>
                     <slot />
                 </div>
-            </div>
+            </Host>
         );
     }
 }
