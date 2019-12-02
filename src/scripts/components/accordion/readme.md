@@ -7,11 +7,10 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type      | Default     |
-| ---------- | ----------- | ----------- | --------- | ----------- |
-| `cssClass` | `css-class` |             | `string`  | `''`        |
-| `expanded` | `expanded`  |             | `boolean` | `false`     |
-| `heading`  | `heading`   |             | `string`  | `undefined` |
+| Property   | Attribute  | Description | Type      | Default     |
+| ---------- | ---------- | ----------- | --------- | ----------- |
+| `expanded` | `expanded` |             | `boolean` | `false`     |
+| `heading`  | `heading`  |             | `string`  | `undefined` |
 
 
 ## Methods
