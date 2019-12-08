@@ -1,0 +1,78 @@
+@import "../00_Abstracts/index";
+
+.side-drawer {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: auto;
+    touch-action: none;
+    z-index: z(xl);
+    background-color: transparent;
+    @include transition-ease-in-out(slow);
+
+    &.open {
+        visibility: visible;
+        @include bg-color(black, 0.50);
+
+        .contents {
+            &.left {
+                left: 0;
+            }
+
+            &.right {
+                right: 0;
+            }
+        }
+    }
+
+    .contents {
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        z-index: z(xs);
+        top: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        @include p(lg);
+        @include bg-color(white);
+        @include shadow(md);
+        @include transition-ease-in-out(med);
+
+        &.left {
+            left: -250px;
+            @include border-r($color: dark, $variant: lighter);
+        }
+
+        &.right {
+            right: -250px;
+            @include border-l($color: dark, $variant: lighter);
+
+            .side-drawer-header {
+                flex-direction: row-reverse;
+            }
+        }
+
+        .side-drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            @include border-b();
+            @include font-size(xl);
+
+            .drawer-close {
+                background-color: transparent;
+                color: color(primary);
+                line-height: inherit;
+                @include font-size(xl);
+                @include px(sm);
+            }
+        }
+
+        .side-drawer-body {
+            @include py(lg);
+        }
+    }
+}
