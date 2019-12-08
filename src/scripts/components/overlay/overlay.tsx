@@ -1,4 +1,4 @@
-import { Component, h, Prop, Method } from '@stencil/core';
+import { Component, h, Prop, Method, Host } from '@stencil/core';
 
 
 @Component({
@@ -25,11 +25,11 @@ export class overlay {
     }
 
     render() {
-        return (<div class={`overlay ${this.theme} ${this.absolute && 'absolute'} ${this.show && 'opened'}`}>
+        return (<Host class={`overlay ${this.theme} ${this.absolute && 'absolute'} ${this.show && 'opened'}`}>
             <div class="scrim"></div>
             <div class="content" role="dialog">
                 <slot />
             </div>
-        </div>);
+        </Host>);
     }
 }

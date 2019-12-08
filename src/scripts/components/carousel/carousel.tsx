@@ -1,4 +1,4 @@
-import { Component, h, Prop, State, Element } from '@stencil/core';
+import { Component, h, Prop, State, Element, Host } from '@stencil/core';
 
 @Component({
     tag: 'c-carousel'
@@ -110,14 +110,14 @@ export class Carousel {
         );
 
         return (
-            <div class={`carousel ${this.cssClass}`}>
+            <Host class={`carousel ${this.cssClass}`}>
                 <div class="slides">
                     <slot />
                 </div>
                 {this.showControls && controls}
                 {(this.showIndicators && !this.thumbnails) && indicators}
                 {this.thumbnails && thumbnailList}
-            </div>
+            </Host>
         );
     }
 }

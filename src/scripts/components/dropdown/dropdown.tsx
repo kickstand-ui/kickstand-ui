@@ -60,9 +60,9 @@ export class Dropdown {
     render() {
         return (
             <Host class={{
-                'dropdown': true,
-                'mega-menu': this.megaMenu
-            }}
+                    'dropdown': true,
+                    'mega-menu': this.megaMenu
+                }}
                 onKeyup={this.keyupHandler.bind(this)}>
                 <button onClick={this.toggleDropdown.bind(this)} class={`button ${this.buttonType} ${this.hollow && 'hollow'} dropdown-button`} aria-haspopup="true" aria-expanded={`${this.expanded}`} aria-controls={`dropdown-${this.dropdownId}`}>
                     {this.buttonIcon && <i class={`button-icon ${this.buttonIcon}`}></i>}
