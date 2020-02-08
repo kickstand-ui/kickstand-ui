@@ -13,7 +13,7 @@ $gutter-size: lg;
     &.no-gutter {
         @include mx(none);
 
-        > .column {
+        >.column {
             @include px(none);
         }
     }
@@ -78,7 +78,7 @@ $gutter-size: lg;
         }
     }
 
-    .column {
+    .col {
         display: flex;
         position: relative;
         flex-basis: 0;
@@ -94,9 +94,10 @@ $gutter-size: lg;
                 flex: 0 0 (100% / $columns) * $i;
             }
 
-            @each $key, $value in $breakpoints {
+            @each $key,
+            $value in $breakpoints {
                 @include breakpoint-below($key) {
-                    &.#{$key}-#{$i} {
+                    &.\@#{$key}\:col-#{$i} {
                         max-width: (100% / $columns) * $i;
                         flex: 0 0 (100% / $columns) * $i;
                     }
@@ -108,14 +109,14 @@ $gutter-size: lg;
             &-start {
                 align-self: flex-start;
             }
-    
+
             &-center {
                 align-self: center;
             }
-    
+
             &-end {
                 align-self: flex-end;
             }
-        }    
+        }
     }
 }
