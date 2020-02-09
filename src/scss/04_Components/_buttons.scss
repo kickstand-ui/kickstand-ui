@@ -10,7 +10,6 @@
     cursor: pointer;
     @include p(md);
     @include shadow(xs);
-    @include transition-ease-in-out(med);
 
     &:focus,
     &:hover:not(:disabled) {
@@ -21,7 +20,15 @@
 
     &:active {
         @include shadow(inner);
-        @include transition-ease-in-out(med);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        @include shadow(inner);
+
+        &:hover {
+            cursor: not-allowed;
+        }
     }
 
     @each $color, $value in $theme-colors {
@@ -33,12 +40,10 @@
             &:hover:not(:disabled) {
                 border-color: color($color, light);
                 @include bg-color($color, light);
-                @include transition-ease-in-out(med);
             }
 
             &:active {
                 @include bg-color($color, dark);
-                @include transition-ease-in-out(med);
             }
 
             &.hollow {
@@ -61,15 +66,6 @@
                     @include transition-ease-in-out(med);
                 }
             }
-        }
-    }
-
-    &:disabled {
-        opacity: 0.6;
-        @include shadow(inner);
-
-        &:hover {
-            cursor: not-allowed;
         }
     }
 
