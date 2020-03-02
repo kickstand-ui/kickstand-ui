@@ -18,6 +18,10 @@
                 text-decoration: none;
                 @include font-size(sm);
 
+                &:hover {
+                    text-decoration: underline;
+                }
+
                 &[aria-current="page"] {
                     color: color(black);
                     @include font-size(sm);
