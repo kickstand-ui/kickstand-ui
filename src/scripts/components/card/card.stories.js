@@ -17,7 +17,7 @@ export const card = () => {
     return(`<c-card img-src="${src}"
                     img-direction="${imgDir}"
                     alt="${alt}"
-                    class="w-25 m-md'"
+                    class="w-25 m-xxl"
                     lazy="${lazy}"
                     threshold="${threshold}">
                 <card-body card-title="${cardTitle}"
