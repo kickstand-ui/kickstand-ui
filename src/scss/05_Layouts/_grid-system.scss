@@ -13,7 +13,7 @@ $gutter-size: lg;
     &.no-gutter {
         @include mx(none);
 
-        >.column {
+        >.col {
             @include px(none);
         }
     }
@@ -97,7 +97,7 @@ $gutter-size: lg;
             @each $key,
             $value in $breakpoints {
                 @include breakpoint-below($key) {
-                    &.\@#{$key}\:col-#{$i} {
+                    &.#{$key}\:col-#{$i} {
                         max-width: (100% / $columns) * $i;
                         flex: 0 0 (100% / $columns) * $i;
                     }
