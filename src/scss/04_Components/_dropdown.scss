@@ -17,7 +17,7 @@
         align-items: center;
 
         .dropdown-text {
-            @include ml(xs);
+            // @include ml(xs);
         }
 
         .dropdown-icon {
@@ -29,21 +29,6 @@
         &[aria-expanded="true"] .dropdown-icon {
             transform: rotate(-180deg);
             @include transition-ease-in-out(med);
-        }
-
-        .navbar-item &.link {
-            cursor: pointer;
-            color: inherit;
-            border: inherit;
-            line-height: inherit;
-            height: inherit;
-            padding: inherit;
-            margin: inherit;
-
-            @include hover-focus {
-                background-color: inherit;
-                text-decoration: underline;
-            }
         }
     }
 
@@ -93,17 +78,6 @@
             right: 0;
             left: auto;
         }
-
-        .navbar-row &,
-        .navbar-row .align-right & {
-            right: 0;
-            left: auto;
-        }
-
-        .navbar-row .align-left & {
-            left: 0;
-            right: auto;
-        }
     }
 
     .mega-menu-contents {
@@ -138,5 +112,56 @@
     [aria-expanded="true"] + .dropdown-contents {
         display: flex;
         flex-direction: column;
+    }
+}
+
+.navbar {
+    .navbar-item {
+        .dropdown {
+            @include m(none);
+
+            .dropdown-button {
+                &.link {
+                    cursor: pointer;
+                    color: inherit;
+                    border: inherit;
+                    line-height: inherit;
+                    height: inherit;
+                    padding: inherit;
+                    @include m(none);
+
+                    @include hover-focus {
+                        background-color: inherit;
+                        text-decoration: underline;
+                    }
+
+                    &:focus {
+                        outline: 2px dotted text-color(primary);
+                    }
+                }
+            }
+        }
+    }
+
+    &.collapse {
+        @each $key, $value in $breakpoints {
+            &-#{$key} {
+                @include breakpoint-below($key) {
+                    .navbar-item {
+                        .dropdown {
+                            .dropdown-button {
+                                width: 100%;
+                                text-align: left;
+                            }
+
+                            .dropdown-contents {
+                                position: relative;
+                                @include mx(-lg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

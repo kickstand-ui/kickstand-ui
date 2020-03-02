@@ -16,7 +16,18 @@ export const defaultHeading = () => {
                     <a href="#">Test 1</a>
                 </c-navbar-item>
                 <c-navbar-item>
-                    <a href="#">Test 2</a>
+                    <c-dropdown
+                        class="m-lg"
+                        dropdown-text="Drop-Down" 
+                        dropdown-alignment="right" 
+                        button-type="link" 
+                        >
+                        <dropdown-item><span>Test 1 Test 1 Test 1 Test 1 Test 1 Test 1</span></dropdown-item>
+                        <dropdown-item><a href="#">Test 2</a></dropdown-item>
+                        <dropdown-item><a href="#">Test 3</a></dropdown-item>
+                        <dropdown-item><a href="#">Test 4</a></dropdown-item>
+                        <dropdown-item><a href="#">Test 5</a></dropdown-item>
+                    </c-dropdown>
                 </c-navbar-item>
             </c-navbar-group>
         </c-navbar-row>

@@ -53,6 +53,7 @@
         align-content: center;
         flex-basis: auto;
         width: 100%;
+        max-width: 100%;
 
         &:focus {
             outline: none !important;
@@ -99,7 +100,7 @@
                     text-decoration: none;
 
                     &:focus {
-                        outline: dotted text-color(primary) 1px;
+                        outline: 2px dotted text-color(primary);
                     }
                 }
 
@@ -142,29 +143,18 @@
                                 flex-direction: column;
                                 justify-content: start;
                                 align-items: flex-start;
+                                width: 100%;
                                 @include mx(none);
                             }
 
                             .navbar-item {
+                                width: 100%;
                                 text-align: left;
                                 @include border(none);
 
                                 > * {
                                     display: block;
                                     width: 100%;
-                                }
-
-                                .dropdown {
-                                    width: 100%;
-
-                                    .dropdown-button {
-                                        width: 100%;
-                                        text-align: left;
-                                    }
-
-                                    .dropdown-contents {
-                                        position: relative;
-                                    }
                                 }
                             }
                         }
