@@ -1,4 +1,4 @@
-import { Component, h, Prop, State, Element, Host } from '@stencil/core';
+import { Component, h, State, Element, Host } from '@stencil/core';
 
 @Component({
     tag: 'c-accordion'
