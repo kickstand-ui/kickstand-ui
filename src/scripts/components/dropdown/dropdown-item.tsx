@@ -3,7 +3,7 @@ import { Component, h, Prop, Host, Event, EventEmitter } from '@stencil/core';
 @Component({
     tag: 'dropdown-item'
 })
-export class Note {
+export class DropdownItem {
     @Prop() closeOnClick: boolean = true;
 
     @Event() closeDropdown: EventEmitter;

@@ -56,7 +56,7 @@
         width: auto;
         overflow: hidden;
         white-space: nowrap;
-        @include shadow(xs);
+        @include shadow(sm);
         @include bg-color(white);
         @include px(sm);
         @include py(none);
