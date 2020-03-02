@@ -8,5 +8,5 @@ export const defaultHeading = () => {
     const type = select('type', types, 'primary');
     const header = text('header', 'The Facts of Life by Michael Scott');
     const note = boolean('note', false);
-    return (`<c-alert header="${header}" note="${note}" type="${type}">${dummyText}</c-alert>`);
+    return (`<c-alert class="m-xl" header="${header}" note="${note}" type="${type}">${dummyText}</c-alert>`);
 };

@@ -11,7 +11,7 @@ export class Alert {
     render() {
         return (
             <Host class={`alert ${this.type} ${this.note ? 'note' : ''}`}>
-                {this.header && 
+                {this.header &&
                     <header class="alert-header">
                         <h3 class="alert-heading">{this.header}</h3>
                     </header>

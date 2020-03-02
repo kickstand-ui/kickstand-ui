@@ -1,14 +1,13 @@
-@import '../00_Abstracts/index';
+@import "../00_Abstracts/index";
 
 .alert {
+    display: block;
     @include p(lg);
     @include shadow(sm);
 
-    @each $color,
-    $value in $theme-colors {
+    @each $color, $value in $theme-colors {
         &.#{$color} {
-            @include border(solid, xxs, $color, dark);
-            @include bg-color($color);
+            @include border(solid, xxs, $color);
             @include shadow(sm);
         }
 
@@ -34,5 +33,4 @@
     .alert-body {
         @include m(none);
     }
-
 }
