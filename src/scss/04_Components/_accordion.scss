@@ -1,48 +1,57 @@
 @import "../00_Abstracts/index";
 
 .accordion {
-    @include border();
+    display: block;
 
     .accordion-slide {
         display: flex;
         flex-direction: column;
         width: 100%;
+        @include mt(-xxs);
+
+        &:first-child {
+            @include mt(none);
+        }
 
         .accordion-heading {
             display: flex;
             justify-content: space-between;
             width: 100%;
-            background: linear-gradient(color(light, light), color(light));
-            @include border-x($size: none);
-            @include border-y();
+            color: color(primary);
+            @include border($size: xxs, $color: primary);
             @include p(lg);
-            @include my("-3xs");
 
             .accordion-icon {
-                color: color(dark, lighter);
+                color: color(primary);
                 @include transition-ease-in-out(med);
+            }
+
+            &:focus {
+                outline: 2px dotted color(dark);
             }
 
             &[aria-expanded="true"] {
                 .accordion-icon {
-                    transform: rotate(180deg);
+                    transform: rotate(-180deg);
                     @include transition-ease-in-out(med);
                 }
             }
         }
 
         .accordion-content {
-            height: auto;
+            height: 0;
             display: block;
+            visibility: hidden;
+            overflow: hidden;
+            @include px(lg);
+            @include border-x($size: xxs);
             @include transition-ease-in-out(fast);
-            @include p(lg);
 
-            &[aria-hidden="true"] {
-                height: 0;
-                overflow: hidden;
-                display: none;
-                @include transition-ease-in-out(fast);
-                @include py(none);
+            &[aria-hidden="false"] {
+                height: auto;
+                visibility: visible;
+                @include py(lg);
+                @include border-b($size: xxs);
             }
         }
     }
