@@ -18,22 +18,22 @@
 
     // Padding Left
     .pl-#{$size} {
-        @include pl($size, true);
+        @include pl($size, $important: true);
     }
 
     // Padding Right
     .pr-#{$size} {
-        @include pr($size, true);
+        @include pr($size, $important: true);
     }
 
     // Padding Top
     .pt-#{$size} {
-        @include pt($size, true);
+        @include pt($size, $important: true);
     }
 
     // Padding Bottom
     .pb-#{$size} {
-        @include pb($size, true);
+        @include pb($size, $important: true);
     }
 
 
@@ -54,21 +54,21 @@
 
     // Margin Left
     .ml-#{$size} {
-        @include ml($size, true);
+        @include ml($size, $important: true);
     }
 
     // Margin Right
     .mr-#{$size} {
-        @include mr($size, true);
+        @include mr($size, $important: true);
     }
 
     // Margin Top
     .mt-#{$size} {
-        @include mt($size, true);
+        @include mt($size, $important: true);
     }
 
     // Margin Bottom
     .mb-#{$size} {
-        @include mb($size, true);
+        @include mb($size, $important: true);
     }
 }
