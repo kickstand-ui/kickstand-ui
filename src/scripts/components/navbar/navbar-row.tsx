@@ -1,7 +1,7 @@
 import { Component, h, Host } from '@stencil/core';
 
 @Component({
-    tag: 'navbar-row'
+    tag: 'c-navbar-row'
 })
 export class NavbarRow {
     render() {

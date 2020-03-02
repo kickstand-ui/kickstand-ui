@@ -1,4 +1,4 @@
-import { Component, h, Prop, State, Element } from '@stencil/core';
+import { Component, h, Prop, State, Element, Host } from '@stencil/core';
 import componentUtils from '../../utils/componentUtils';
 
 @Component({
@@ -30,7 +30,7 @@ export class Navbar {
 
     render() {
         return (
-            <nav class={`navbar collapse-${this.collapseAt}`} role="navigation">
+            <Host class={`navbar collapse-${this.collapseAt}`} role="navigation">
                 {(this.logoUrl || this.tagline) &&
                     <a href="/" class="navbar-branding">
                         {this.logoUrl && <img class="logo" src={this.logoUrl} alt={this.altText} />}
@@ -42,9 +42,9 @@ export class Navbar {
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="navbar-content" id={`navbar-content-${this.navbarId}`} tabindex="-1">
-                    <scope />
+                    <slot />
                 </div>
-            </nav>
+            </Host>
         );
     }
 }

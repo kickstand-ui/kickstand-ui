@@ -13,6 +13,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        text-decoration: none;
         color: text-color(primary);
         @include p(sm);
 
@@ -28,6 +29,7 @@
 
         .tagline {
             white-space: nowrap;
+            text-decoration: none;
             @include font-size(md);
             @include ml(sm);
         }
@@ -36,6 +38,7 @@
     .navbar-toggler {
         display: none;
         background-color: transparent;
+        color: text-color(primary);
         @include border($color: white);
         @include ml(auto);
         @include mr(sm);
@@ -63,6 +66,7 @@
 
             .navbar-group {
                 display: flex;
+                align-items: center;
 
                 &.align {
                     &-left {
@@ -77,6 +81,9 @@
 
             .navbar-item {
                 font-weight: 600;
+                @include border-r();
+                @include px(lg);
+                @include my(sm);
 
                 &.active {
                     > * {
@@ -96,12 +103,8 @@
                     }
                 }
 
-                @include border-r();
-                @include px(lg);
-                @include my(lg);
-
                 &:last-child {
-                    border: 0;
+                    @include border(none);
                 }
 
                 @include hover-focus {
@@ -133,10 +136,12 @@
                         .navbar-row {
                             flex-direction: column;
                             justify-content: flex-start;
+                            align-items: flex-start;
 
                             .navbar-group {
                                 flex-direction: column;
                                 justify-content: start;
+                                align-items: flex-start;
                                 @include mx(none);
                             }
 
