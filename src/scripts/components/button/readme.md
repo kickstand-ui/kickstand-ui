@@ -9,6 +9,7 @@
 
 | Property        | Attribute        | Description | Type       | Default     |
 | --------------- | ---------------- | ----------- | ---------- | ----------- |
+| `clear`         | `clear`          |             | `boolean`  | `undefined` |
 | `clickHandler`  | --               |             | `Function` | `undefined` |
 | `cssClass`      | `css-class`      |             | `string`   | `''`        |
 | `hollow`        | `hollow`         |             | `boolean`  | `undefined` |
