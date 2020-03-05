@@ -66,14 +66,36 @@
                     @include transition-ease-in-out(med);
                 }
             }
+
+            &.clear {
+                border-color: transparent;
+                background-color: transparent;
+                color: color($color);
+                @include shadow(none);
+                @include transition-ease-in-out(med);
+
+                &:focus,
+                &:hover:not(:disabled) {
+                    border-color: transparent;
+                    background-color: transparent;
+                    color: color($color, light);
+                    border: size(xxs) transparent;
+                }
+
+                &:active {
+                    color: color($color, dark);
+                }
+            }
         }
     }
 
     &.link {
         background-color: transparent;
-        border: 2px solid transparent;
+        display: inline-block;
         color: color(primary);
         text-decoration: none;
+        border: 0;
+        @include p(none);
         @include shadow(none);
 
         &:focus,
@@ -107,21 +129,6 @@
     &.xlarge {
         @include p(xl);
         @include font-size(lg);
-    }
-
-    &.none {
-        display: inherit;
-        line-height: inherit;
-        font-size: inherit;
-        padding: 0;
-        margin: 0;
-        border: 0;
-        @include shadow(none);
-
-        &:focus,
-        &:hover:not(:disabled) {
-            @include shadow(none);
-        }
     }
 
     &.icon {

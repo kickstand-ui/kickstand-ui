@@ -6,6 +6,7 @@ import { Component, h, Prop, ComponentInterface } from '@stencil/core';
 export class LinkButton implements ComponentInterface {
     @Prop() type: string = 'primary';
     @Prop() hollow: boolean;
+    @Prop() clear: boolean;
     @Prop() size: string;
     @Prop() icon: string;
     @Prop() iconDirection: string = 'left';
@@ -28,11 +29,13 @@ export class LinkButton implements ComponentInterface {
                 </slot>
             </span>
         ];
+        
+        let classes = `button ${this.type} ${this.hollow ? 'hollow' : ''} ${this.clear ? 'clear' : ''} icon-${this.iconDirection} ${this.size} ${this.cssClass}`;
 
         return (
             this.href
-                ? <a class={`button ${this.type} ${this.hollow ? 'hollow' : ''} icon-${this.iconDirection} ${this.size} ${this.cssClass}`} href={this.href}>{content}</a>
-                : <button class={`button ${this.type} ${this.hollow ? 'hollow' : ''} icon-${this.iconDirection} ${this.size} ${this.cssClass}`} onClick={this._clickHandler.bind(this)}>{content}</button >
+                ? <a class={classes} href={this.href}>{content}</a>
+                : <button class={classes} onClick={this._clickHandler.bind(this)}>{content}</button >
         );
     }
 }

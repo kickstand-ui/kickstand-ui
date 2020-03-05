@@ -2,13 +2,14 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 
 export default { title: 'Button' };
 
-const types = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark', 'link', 'none'];
-const sizes = [ 'xs', 'sm', 'md', 'lg', 'xl' ];
+const types = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark', 'link'];
+const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
 const iconDirections = ['left', 'right'];
 
 export const playground = () => {
     const type = select('type', types, 'primary');
     const hollow = boolean('hollow', false);
+    const clear = boolean('clear', false);
     const size = select('size', sizes, 'md');
     const icon = text('icon', '');
     const iconDirection = select('icon-direction', iconDirections, 'left');
@@ -18,6 +19,7 @@ export const playground = () => {
             css-class="${cssClass}" 
             type="${type}" 
             hollow="${hollow}" 
+            clear="${clear}" 
             size="${size}" 
             icon="${icon}"
             icon-direction="${iconDirection}"
@@ -28,16 +30,18 @@ export const playground = () => {
 
 export const buttonTypes = () => {
     const hollow = boolean('hollow', false);
+    const clear = boolean('clear', false);
     const size = select('size', sizes, 'md');
     const icon = text('icon', '');
     const iconDirection = select('icon-direction', iconDirections, 'left');
     const linkUrl = text('url', '');
     const cssClass = text('css-class', 'm-md');
-    return (types.map(type => 
+    return (types.map(type =>
         `<c-button
             css-class="${cssClass}" 
             type="${type}" 
             hollow="${hollow}" 
+            clear="${clear}" 
             size="${size}" 
             icon="${icon}"
             icon-direction="${iconDirection}"
@@ -49,15 +53,17 @@ export const buttonTypes = () => {
 export const sizeVariations = () => {
     const type = select('type', types, 'primary');
     const hollow = boolean('hollow', false);
+    const clear = boolean('clear', false);
     const icon = text('icon', '');
     const iconDirection = select('icon-direction', iconDirections, 'left');
     const linkUrl = text('url', '');
     const cssClass = text('css-class', 'm-md');
-    return (sizes.map(size => 
+    return (sizes.map(size =>
         `<c-button
             css-class="${cssClass}" 
             type="${type}" 
             hollow="${hollow}" 
+            clear="${clear}" 
             size="${size}" 
             icon="${icon}"
             icon-direction="${iconDirection}"
