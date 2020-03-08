@@ -108,7 +108,10 @@ export namespace Components {
     'open': () => Promise<void>;
     'position': string;
   }
-  interface CTooltip {
+  interface CTab {
+    'controls': string;
+  }
+  interface CTabList {
     'content': boolean;
     'disable': boolean;
     'hideDecoration': boolean;
@@ -116,6 +119,12 @@ export namespace Components {
     'position': string;
     'show': boolean;
     'size': string;
+  }
+  interface CTabPanel {
+    'tabId': string;
+  }
+  interface CTabs {
+    'position': string;
   }
   interface CardBody {
     'cardSubtitle': string;
@@ -232,10 +241,28 @@ declare global {
     new (): HTMLCSideDrawerElement;
   };
 
-  interface HTMLCTooltipElement extends Components.CTooltip, HTMLStencilElement {}
-  var HTMLCTooltipElement: {
-    prototype: HTMLCTooltipElement;
-    new (): HTMLCTooltipElement;
+  interface HTMLCTabElement extends Components.CTab, HTMLStencilElement {}
+  var HTMLCTabElement: {
+    prototype: HTMLCTabElement;
+    new (): HTMLCTabElement;
+  };
+
+  interface HTMLCTabListElement extends Components.CTabList, HTMLStencilElement {}
+  var HTMLCTabListElement: {
+    prototype: HTMLCTabListElement;
+    new (): HTMLCTabListElement;
+  };
+
+  interface HTMLCTabPanelElement extends Components.CTabPanel, HTMLStencilElement {}
+  var HTMLCTabPanelElement: {
+    prototype: HTMLCTabPanelElement;
+    new (): HTMLCTabPanelElement;
+  };
+
+  interface HTMLCTabsElement extends Components.CTabs, HTMLStencilElement {}
+  var HTMLCTabsElement: {
+    prototype: HTMLCTabsElement;
+    new (): HTMLCTabsElement;
   };
 
   interface HTMLCardBodyElement extends Components.CardBody, HTMLStencilElement {}
@@ -273,7 +300,10 @@ declare global {
     'c-navbar-row': HTMLCNavbarRowElement;
     'c-overlay': HTMLCOverlayElement;
     'c-side-drawer': HTMLCSideDrawerElement;
-    'c-tooltip': HTMLCTooltipElement;
+    'c-tab': HTMLCTabElement;
+    'c-tab-list': HTMLCTabListElement;
+    'c-tab-panel': HTMLCTabPanelElement;
+    'c-tabs': HTMLCTabsElement;
     'card-body': HTMLCardBodyElement;
     'card-footer': HTMLCardFooterElement;
     'dropdown-item': HTMLDropdownItemElement;
@@ -374,7 +404,10 @@ declare namespace LocalJSX {
     'onOpenDrawerCompleted'?: (event: CustomEvent<any>) => void;
     'position'?: string;
   }
-  interface CTooltip {
+  interface CTab {
+    'controls'?: string;
+  }
+  interface CTabList {
     'content'?: boolean;
     'disable'?: boolean;
     'hideDecoration'?: boolean;
@@ -382,6 +415,12 @@ declare namespace LocalJSX {
     'position'?: string;
     'show'?: boolean;
     'size'?: string;
+  }
+  interface CTabPanel {
+    'tabId'?: string;
+  }
+  interface CTabs {
+    'position'?: string;
   }
   interface CardBody {
     'cardSubtitle'?: string;
@@ -411,7 +450,10 @@ declare namespace LocalJSX {
     'c-navbar-row': CNavbarRow;
     'c-overlay': COverlay;
     'c-side-drawer': CSideDrawer;
-    'c-tooltip': CTooltip;
+    'c-tab': CTab;
+    'c-tab-list': CTabList;
+    'c-tab-panel': CTabPanel;
+    'c-tabs': CTabs;
     'card-body': CardBody;
     'card-footer': CardFooter;
     'dropdown-item': DropdownItem;
@@ -441,7 +483,10 @@ declare module "@stencil/core" {
       'c-navbar-row': LocalJSX.CNavbarRow & JSXBase.HTMLAttributes<HTMLCNavbarRowElement>;
       'c-overlay': LocalJSX.COverlay & JSXBase.HTMLAttributes<HTMLCOverlayElement>;
       'c-side-drawer': LocalJSX.CSideDrawer & JSXBase.HTMLAttributes<HTMLCSideDrawerElement>;
-      'c-tooltip': LocalJSX.CTooltip & JSXBase.HTMLAttributes<HTMLCTooltipElement>;
+      'c-tab': LocalJSX.CTab & JSXBase.HTMLAttributes<HTMLCTabElement>;
+      'c-tab-list': LocalJSX.CTabList & JSXBase.HTMLAttributes<HTMLCTabListElement>;
+      'c-tab-panel': LocalJSX.CTabPanel & JSXBase.HTMLAttributes<HTMLCTabPanelElement>;
+      'c-tabs': LocalJSX.CTabs & JSXBase.HTMLAttributes<HTMLCTabsElement>;
       'card-body': LocalJSX.CardBody & JSXBase.HTMLAttributes<HTMLCardBodyElement>;
       'card-footer': LocalJSX.CardFooter & JSXBase.HTMLAttributes<HTMLCardFooterElement>;
       'dropdown-item': LocalJSX.DropdownItem & JSXBase.HTMLAttributes<HTMLDropdownItemElement>;

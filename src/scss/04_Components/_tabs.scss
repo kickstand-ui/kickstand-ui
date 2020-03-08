@@ -1,0 +1,155 @@
+@import "../00_Abstracts/index";
+
+.tabs {
+    display: flex;
+
+    *:focus {
+        outline: dotted 1px;
+    }
+
+    .tab-list {
+        display: flex;
+        @include bg-color(light, light);
+        @include p(none);
+        @include m(none);
+
+        .tab-item {
+            display: flex;
+
+            .tab-link {
+                display: inline-block;
+                text-decoration: none;
+                white-space: nowrap;
+                color: color(primary);
+                vertical-align: inherit;
+                @include p(lg);
+
+                @include hover-focus {
+                    outline: none;
+                    text-decoration: underline;
+                }
+
+                &[aria-selected] {
+                    @include border();
+                    @include bg-color(white);
+                    @include shadow(sm);
+                }
+            }
+        }
+    }
+
+    .tab-panel {
+        width: 100%;
+        white-space: normal;
+        @include bg-color(white);
+        @include border();
+        @include p(lg);
+        @include shadow(sm);
+    }
+
+    &.align {
+        &-top {
+            flex-direction: column;
+
+            .tab-list {
+                @include border-b();
+
+                .tab-item {
+                    .tab-link {
+                        &[aria-selected] {
+                            margin-bottom: -1px;
+                            @include border-b(none);
+                        }
+                    }
+                }
+            }
+
+            .tab-panel {
+                @include border-t(none);
+            }
+        }
+
+        &-bottom {
+            flex-direction: column-reverse;
+
+            .tab-list {
+                @include border-t();
+
+                .tab-item {
+                    .tab-link {
+                        &[aria-selected] {
+                            position: relative;
+                            margin-top: -1px;
+                            @include border-t(none);
+                        }
+                    }
+                }
+            }
+
+            .tab-panel {
+                @include border-b(none);
+            }
+        }
+
+        &-left {
+            flex-direction: row;
+
+            .tab-list {
+                flex-direction: column;
+                @include border-r();
+
+                .tab-item {
+                    align-self: flex-end;
+                    width: 100%;
+                    margin-right: -1px;
+
+                    .tab-link {
+                        width: 101%;
+
+                        &[aria-selected] {
+                            position: relative;
+                            margin-right: -1px;
+                            box-shadow: -2px 4px 6px -1px rgba(0, 0, 0, 0.04),
+                                -3px 2px 4px -1px rgba(0, 0, 0, 0.1);
+                            @include border-r(none);
+                        }
+                    }
+                }
+            }
+
+            .tab-panel {
+                @include border-l(none);
+            }
+        }
+
+        &-right {
+            flex-direction: row-reverse;
+            // justify-content: flex-end;
+            .tab-list {
+                flex-direction: column;
+                @include border-l();
+
+                .tab-item {
+                    align-self: flex-start;
+                    width: 100%;
+
+                    .tab-link {
+                        width: 101%;
+
+                        &[aria-selected] {
+                            position: relative;
+                            box-shadow: 2px 4px 6px -1px rgba(0, 0, 0, 0.04),
+                                3px 2px 4px -1px rgba(0, 0, 0, 0.1);
+                            margin-left: -1px;
+                            @include border-l(none);
+                        }
+                    }
+                }
+            }
+
+            .tab-panel {
+                @include border-r(none);
+            }
+        }
+    }
+}
