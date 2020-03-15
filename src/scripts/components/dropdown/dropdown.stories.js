@@ -32,3 +32,16 @@ export const playground = () => {
         </div>
         `);
 };
+
+export const megaMenu = () => {
+    return (`
+        <c-dropdown
+            class="m-lg"
+            dropdown-text="Mega Menu Test" 
+            mega-menu="true"
+            >
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores possimus itaque nulla soluta, mollitia a tempora odit reprehenderit labore excepturi! Odio labore culpa consequuntur tempore iure error cum mollitia iste!
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores possimus itaque nulla soluta, mollitia a tempora odit reprehenderit labore excepturi! Odio labore culpa consequuntur tempore iure error cum mollitia iste!
+        </c-dropdown>
+    `);
+}
