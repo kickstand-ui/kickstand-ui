@@ -82,7 +82,6 @@
 
             .navbar-item {
                 font-weight: 600;
-                @include border-r();
                 @include px(lg);
                 @include my(sm);
 
