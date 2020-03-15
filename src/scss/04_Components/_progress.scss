@@ -1,0 +1,30 @@
+@import "../00_Abstracts/index";
+
+$sizes: (xs, sm, md, lg);
+
+.progress-bar {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    border: 0;
+    position: relative;
+    @include bg-color(light);
+
+    .value {
+        display: block;
+        height: 100%;
+        @include transition-ease-in-out();
+
+        @each $key, $value in $theme-colors {
+            &.#{$key} {
+                @include bg-color($key);
+            }
+        }
+    }
+
+    @each $size in $sizes {
+        &.#{$size} {
+            height: spacing($size);
+        }
+    }
+}
