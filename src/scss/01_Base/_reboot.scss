@@ -249,15 +249,6 @@ label {
 
 button {
     border-radius: 0;
-
-    // Work around a Firefox/IE bug where the transparent `button` background
-    // results in a loss of the default `button` focus styles.
-    //
-    // Credit: https://github.com/suitcss/base/
-    &:focus {
-        outline: 1px dotted;
-        outline: 5px auto -webkit-focus-ring-color;
-    }
 }
 
 // Work around a Firefox/IE bug where the transparent `button` background
