@@ -21,8 +21,8 @@ export const card = () => {
                     lazy="${lazy}"
                     threshold="${threshold}">
                 <card-body card-title="${cardTitle}"
-                             card-subtitle="${cardSubtitle}">
-                             ${bodyText}
+                           card-subtitle="${cardSubtitle}">
+                    ${bodyText}
                 </card-body>
                 <card-footer></card-footer>
             </c-card>`);
