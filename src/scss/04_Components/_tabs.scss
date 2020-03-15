@@ -1,5 +1,7 @@
 @import "../00_Abstracts/index";
 
+$border: solid 1px color(light, darker);
+
 .tabs {
     display: flex;
 
@@ -30,7 +32,7 @@
                 }
 
                 &[aria-selected] {
-                    @include border();
+                    border: $border;
                     @include bg-color(white);
                     @include shadow(sm);
                 }
@@ -41,8 +43,8 @@
     .tab-panel {
         width: 100%;
         white-space: normal;
+        border: $border;
         @include bg-color(white);
-        @include border();
         @include p(lg);
         @include shadow(sm);
     }
@@ -52,7 +54,7 @@
             flex-direction: column;
 
             .tab-list {
-                @include border-b();
+                border-bottom: $border;
 
                 .tab-item {
                     .tab-link {
@@ -73,7 +75,7 @@
             flex-direction: column-reverse;
 
             .tab-list {
-                @include border-t();
+                border-top: $border;
 
                 .tab-item {
                     .tab-link {
@@ -96,7 +98,7 @@
 
             .tab-list {
                 flex-direction: column;
-                @include border-r();
+                border-right: solid 1px color(light);
 
                 .tab-item {
                     align-self: flex-end;
@@ -127,7 +129,7 @@
             // justify-content: flex-end;
             .tab-list {
                 flex-direction: column;
-                @include border-l();
+                border-left: $border;
 
                 .tab-item {
                     align-self: flex-start;
