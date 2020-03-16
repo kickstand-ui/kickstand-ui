@@ -9,7 +9,6 @@ export class DropdownItem {
     @Event() closeDropdown: EventEmitter;
 
     clickHandler() {
-        console.log('close on click', this.closeOnClick);
         if(this.closeOnClick)
             this.closeDropdown.emit();
     }
