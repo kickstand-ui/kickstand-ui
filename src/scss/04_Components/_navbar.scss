@@ -17,6 +17,10 @@
         color: text-color(primary);
         @include p(sm);
 
+        &:focus {
+            outline: 1px dashed text-color(primary);
+        }
+
         .logo {
             max-width: 3rem;
             width: auto;
@@ -55,15 +59,15 @@
         width: 100%;
         max-width: 100%;
 
-        &:focus {
-            outline: none !important;
-        }
-
         .navbar-row {
             width: 100%;
             display: flex;
             justify-content: flex-end;
             align-content: center;
+
+            &:focus {
+                outline: none;
+            }
 
             .navbar-group {
                 display: flex;
@@ -99,7 +103,7 @@
                     text-decoration: none;
 
                     &:focus {
-                        outline: 2px dotted text-color(primary);
+                        outline: 1px dashed text-color(primary);
                     }
                 }
 

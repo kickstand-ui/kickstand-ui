@@ -1,22 +1,25 @@
-@import '../00_Abstracts/index';
-        
-    * {
-        box-sizing: border-box;
+@import "../00_Abstracts/index";
+
+* {
+    box-sizing: border-box;
+
+    &:focus {
+        outline: 1px dashed color(dark);
+    }
+}
+
+html,
+body {
+    font-family: $font-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+
+    code,
+    pre {
+        font-family: $font-monospace;
     }
 
-    html,
-    body {
-        font-family: $font-base;
-        font-size: $font-size-base;
-        line-height: $line-height-base;
-    
-        code,
-        pre {
-            font-family: $font-monospace;
-        }
-
-        img {
-            width: 100%;
-        }
-    }                            
-    
+    img {
+        width: 100%;
+    }
+}
