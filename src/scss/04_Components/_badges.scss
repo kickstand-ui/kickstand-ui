@@ -20,7 +20,7 @@
             &.hollow {
                 background-color: transparent;
                 color: color($color);
-                border: solid 1px color($color);
+                @include border(solid, xxxs, $color);
             }
         }
     }

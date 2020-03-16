@@ -22,6 +22,7 @@ $line-height-base: 1.5;
 $spacing-sizes: (
     auto: auto,
     none: 0,
+    xxxs: 0.0625rem,
     xxs: 0.125rem,
     xs: 0.25rem,
     sm: 0.5rem,
@@ -77,7 +78,7 @@ $z-indexes: (
 // BORDERS
 
 $border-style: solid !default;
-$border-size: xxs !default; // 2px
+$border-size: xxxs !default; // 1px
 $border-color: light, darker !default;
 
 $border-radiuses: (
