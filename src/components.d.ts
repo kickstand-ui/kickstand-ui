@@ -99,6 +99,11 @@ export namespace Components {
     'showOverlay': () => Promise<void>;
     'theme': string;
   }
+  interface CProgressBar {
+    'size': string;
+    'type': string;
+    'value': number;
+  }
   interface CSideDrawer {
     'close': () => Promise<void>;
     'headerText': string;
@@ -235,6 +240,12 @@ declare global {
     new (): HTMLCOverlayElement;
   };
 
+  interface HTMLCProgressBarElement extends Components.CProgressBar, HTMLStencilElement {}
+  var HTMLCProgressBarElement: {
+    prototype: HTMLCProgressBarElement;
+    new (): HTMLCProgressBarElement;
+  };
+
   interface HTMLCSideDrawerElement extends Components.CSideDrawer, HTMLStencilElement {}
   var HTMLCSideDrawerElement: {
     prototype: HTMLCSideDrawerElement;
@@ -299,6 +310,7 @@ declare global {
     'c-navbar-item': HTMLCNavbarItemElement;
     'c-navbar-row': HTMLCNavbarRowElement;
     'c-overlay': HTMLCOverlayElement;
+    'c-progress-bar': HTMLCProgressBarElement;
     'c-side-drawer': HTMLCSideDrawerElement;
     'c-tab': HTMLCTabElement;
     'c-tab-list': HTMLCTabListElement;
@@ -395,6 +407,11 @@ declare namespace LocalJSX {
     'show'?: boolean;
     'theme'?: string;
   }
+  interface CProgressBar {
+    'size'?: string;
+    'type'?: string;
+    'value'?: number;
+  }
   interface CSideDrawer {
     'headerText'?: string;
     'name'?: string;
@@ -449,6 +466,7 @@ declare namespace LocalJSX {
     'c-navbar-item': CNavbarItem;
     'c-navbar-row': CNavbarRow;
     'c-overlay': COverlay;
+    'c-progress-bar': CProgressBar;
     'c-side-drawer': CSideDrawer;
     'c-tab': CTab;
     'c-tab-list': CTabList;
@@ -482,6 +500,7 @@ declare module "@stencil/core" {
       'c-navbar-item': LocalJSX.CNavbarItem & JSXBase.HTMLAttributes<HTMLCNavbarItemElement>;
       'c-navbar-row': LocalJSX.CNavbarRow & JSXBase.HTMLAttributes<HTMLCNavbarRowElement>;
       'c-overlay': LocalJSX.COverlay & JSXBase.HTMLAttributes<HTMLCOverlayElement>;
+      'c-progress-bar': LocalJSX.CProgressBar & JSXBase.HTMLAttributes<HTMLCProgressBarElement>;
       'c-side-drawer': LocalJSX.CSideDrawer & JSXBase.HTMLAttributes<HTMLCSideDrawerElement>;
       'c-tab': LocalJSX.CTab & JSXBase.HTMLAttributes<HTMLCTabElement>;
       'c-tab-list': LocalJSX.CTabList & JSXBase.HTMLAttributes<HTMLCTabListElement>;
