@@ -1,9 +1,8 @@
 @import "../00_Abstracts/index";
 
-$border: solid 1px color(light, darker);
-
 .tabs {
     display: flex;
+    @include shadow(sm);
 
     *:focus {
         outline: dotted 1px;
@@ -24,7 +23,8 @@ $border: solid 1px color(light, darker);
                 white-space: nowrap;
                 color: color(primary);
                 vertical-align: inherit;
-                @include p(lg);
+                @include px(lg);
+                @include py(md);
 
                 @include hover-focus {
                     outline: none;
@@ -32,9 +32,10 @@ $border: solid 1px color(light, darker);
                 }
 
                 &[aria-selected] {
-                    border: $border;
+                    @include border();
                     @include bg-color(white);
                     @include shadow(sm);
+                    @include m(-xxxs);
                 }
             }
         }
@@ -43,10 +44,9 @@ $border: solid 1px color(light, darker);
     .tab-panel {
         width: 100%;
         white-space: normal;
-        border: $border;
+        @include border();
         @include bg-color(white);
         @include p(lg);
-        @include shadow(sm);
     }
 
     &.align {
@@ -54,12 +54,11 @@ $border: solid 1px color(light, darker);
             flex-direction: column;
 
             .tab-list {
-                border-bottom: $border;
+                @include border();
 
                 .tab-item {
                     .tab-link {
                         &[aria-selected] {
-                            margin-bottom: -1px;
                             @include border-b(none);
                         }
                     }
@@ -75,13 +74,12 @@ $border: solid 1px color(light, darker);
             flex-direction: column-reverse;
 
             .tab-list {
-                border-top: $border;
+                @include border();
 
                 .tab-item {
                     .tab-link {
                         &[aria-selected] {
                             position: relative;
-                            margin-top: -1px;
                             @include border-t(none);
                         }
                     }
@@ -98,21 +96,18 @@ $border: solid 1px color(light, darker);
 
             .tab-list {
                 flex-direction: column;
-                border-right: solid 1px color(light);
+                @include border();
 
                 .tab-item {
                     align-self: flex-end;
                     width: 100%;
-                    margin-right: -1px;
+                    @include mr(-xxs);
 
                     .tab-link {
                         width: 101%;
 
                         &[aria-selected] {
-                            position: relative;
-                            margin-right: -1px;
-                            box-shadow: -2px 4px 6px -1px rgba(0, 0, 0, 0.04),
-                                -3px 2px 4px -1px rgba(0, 0, 0, 0.1);
+                            @include shadow();
                             @include border-r(none);
                         }
                     }
@@ -126,10 +121,10 @@ $border: solid 1px color(light, darker);
 
         &-right {
             flex-direction: row-reverse;
-            // justify-content: flex-end;
+
             .tab-list {
                 flex-direction: column;
-                border-left: $border;
+                @include border();
 
                 .tab-item {
                     align-self: flex-start;
@@ -139,10 +134,7 @@ $border: solid 1px color(light, darker);
                         width: 101%;
 
                         &[aria-selected] {
-                            position: relative;
-                            box-shadow: 2px 4px 6px -1px rgba(0, 0, 0, 0.04),
-                                3px 2px 4px -1px rgba(0, 0, 0, 0.1);
-                            margin-left: -1px;
+                            @include shadow();
                             @include border-l(none);
                         }
                     }

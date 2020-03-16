@@ -33,7 +33,6 @@ export class Tabs {
         if (this.tabs.length === 0)
             return;
         
-        console.log('PANELS', this.panels);
         this.panels.forEach(x => x.hidden = true);
         this.setFirstTab();
 
