@@ -3,7 +3,8 @@
 .overlay {
     align-items: center;
     border-radius: inherit;
-    display: none;
+    display: flex;
+    visibility: hidden;
     justify-content: center;
     position: fixed;
     top: 0;
@@ -13,11 +14,13 @@
     pointer-events: auto;
     touch-action: none;
     z-index: z(xl);
-    @include transition-ease-in-out(slow);
+    opacity: 0;
+    @include transition-ease-in-out(fast);
 
     &.opened {
-        display: flex;
-        @include transition-ease-in-out(med);
+        visibility: visible;
+        opacity: 1;
+        @include transition-ease-in-out(fast);
     }
 
     &.light {
