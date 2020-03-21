@@ -7,16 +7,18 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type      | Default  |
-| ---------- | ---------- | ----------- | --------- | -------- |
-| `absolute` | `absolute` |             | `boolean` | `false`  |
-| `show`     | `show`     |             | `boolean` | `false`  |
-| `theme`    | `theme`    |             | `string`  | `'dark'` |
+| Property          | Attribute          | Description | Type                | Default     |
+| ----------------- | ------------------ | ----------- | ------------------- | ----------- |
+| `absolute`        | `absolute`         |             | `boolean`           | `undefined` |
+| `descriptionId`   | `description-id`   |             | `string`            | `undefined` |
+| `requireResponse` | `require-response` |             | `boolean`           | `undefined` |
+| `theme`           | `theme`            |             | `"dark" \| "light"` | `'dark'`    |
+| `titleId`         | `title-id`         |             | `string`            | `undefined` |
 
 
 ## Methods
 
-### `hideOverlay() => Promise<void>`
+### `hide() => Promise<void>`
 
 
 
@@ -26,7 +28,7 @@ Type: `Promise<void>`
 
 
 
-### `showOverlay() => Promise<void>`
+### `show() => Promise<void>`
 
 
 
