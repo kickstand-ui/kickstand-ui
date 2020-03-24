@@ -1,0 +1,35 @@
+@import '../00_Abstracts/index';
+
+.modal {
+    width: 500px;
+    @include bg-color(light);
+    @include p(lg);
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-content: flex-start;
+        @include border-b();
+        @include mb(md);
+
+        .modal-title {
+
+        }
+
+        .modal-close {
+            @include font-size(lg);
+
+            .button {
+                @include p(none);
+            }
+        }
+    }
+
+    .modal-content {
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            @include mt(md);
+        }
+    }
+}
