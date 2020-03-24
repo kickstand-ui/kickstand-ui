@@ -80,6 +80,7 @@ export namespace Components {
     'threshold': number;
   }
   interface CModal {
+    'dismissible': boolean;
     'hide': () => Promise<void>;
     'modalTitle': string;
     'show': () => Promise<void>;
@@ -412,6 +413,7 @@ declare namespace LocalJSX {
     'threshold'?: number;
   }
   interface CModal {
+    'dismissible'?: boolean;
     'modalTitle'?: string;
     'titleId'?: string;
   }
