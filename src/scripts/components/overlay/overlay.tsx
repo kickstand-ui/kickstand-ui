@@ -23,7 +23,9 @@ export class Overlay {
         this.$focusedElBeforeOpen = document.activeElement as HTMLElement;
         this.$focusedElBeforeOpen.setAttribute("aria-expanded", "true");
         this.isShowing = true;
-        setTimeout(() => this.$focusableEls[0].focus(), 100);
+
+        if(this.$focusableEls.length > 0)
+            setTimeout(() => this.$focusableEls[0].focus(), 100);
     }
 
     @Method()
