@@ -1,5 +1,9 @@
 @import "../00_Abstracts/index";
 
+c-button {
+    display: inline-block;
+}
+
 .button {
     display: flex;
     text-decoration: none;

@@ -24,9 +24,7 @@ export class LinkButton implements ComponentInterface {
         let content = [
             this.icon && <i class={`button-icon ${this.icon}`}></i>,
             <span class="button-text">
-                <slot>
-                    Button Text
-                </slot>
+                <slot />
             </span>
         ];
         
