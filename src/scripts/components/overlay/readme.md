@@ -7,13 +7,12 @@
 
 ## Properties
 
-| Property          | Attribute          | Description | Type                | Default     |
-| ----------------- | ------------------ | ----------- | ------------------- | ----------- |
-| `absolute`        | `absolute`         |             | `boolean`           | `undefined` |
-| `descriptionId`   | `description-id`   |             | `string`            | `undefined` |
-| `requireResponse` | `require-response` |             | `boolean`           | `undefined` |
-| `theme`           | `theme`            |             | `"dark" \| "light"` | `'dark'`    |
-| `titleId`         | `title-id`         |             | `string`            | `undefined` |
+| Property      | Attribute     | Description | Type                | Default     |
+| ------------- | ------------- | ----------- | ------------------- | ----------- |
+| `absolute`    | `absolute`    |             | `boolean`           | `undefined` |
+| `dismissible` | `dismissible` |             | `boolean`           | `true`      |
+| `theme`       | `theme`       |             | `"dark" \| "light"` | `'dark'`    |
+| `titleId`     | `title-id`    |             | `string`            | `undefined` |
 
 
 ## Methods
@@ -38,6 +37,19 @@ Type: `Promise<void>`
 
 
 
+
+## Dependencies
+
+### Used by
+
+ - [c-modal](../modal)
+
+### Graph
+```mermaid
+graph TD;
+  c-modal --> c-overlay
+  style c-overlay fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

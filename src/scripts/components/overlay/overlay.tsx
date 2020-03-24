@@ -13,24 +13,24 @@ export class Overlay {
     @Element() $el: HTMLElement;
 
     @Prop() titleId: string;
-    @Prop() descriptionId: string;
     @Prop() absolute: boolean;
     @Prop() theme: 'dark' | 'light' = 'dark';
-    @Prop() requireResponse: boolean;
+    @Prop() dismissible: boolean = true;
 
     @State() isShowing: boolean = false;
 
     @Method()
     async show() {
         this.$focusedElBeforeOpen = document.activeElement as HTMLElement;
+        this.$focusedElBeforeOpen.setAttribute("aria-expanded", "true");
         this.isShowing = true;
         setTimeout(() => this.$firstFocusableEl.focus(), 100);
-        console.log(document.activeElement);
     }
 
     @Method()
     async hide() {
         this.isShowing = false;
+        this.$focusedElBeforeOpen.setAttribute("aria-expanded", "false");
         this.$focusedElBeforeOpen.focus();
     }
 
@@ -44,7 +44,7 @@ export class Overlay {
                 this.handleTab(e);
                 break;
             case KEY_ESC:
-                if (!this.requireResponse)
+                if (this.dismissible)
                     this.hide();
                 break;
             default:
@@ -84,7 +84,7 @@ export class Overlay {
     }
 
     handleScrimClick() {
-        if (!this.requireResponse)
+        if (this.dismissible)
             this.hide();
     }
 
@@ -97,7 +97,7 @@ export class Overlay {
     render() {
         return (<Host class={`overlay ${this.theme} ${this.absolute && 'absolute'} ${this.isShowing && 'opened'}`}>
             <div class="scrim" onClick={() => this.handleScrimClick()}></div>
-            <div class="content" role="dialog" aria-labelledby={this.titleId} aria-describedby={this.descriptionId}>
+            <div class="content" role="dialog" aria-labelledby={this.titleId}>
                 <slot />
             </div>
         </Host>);
