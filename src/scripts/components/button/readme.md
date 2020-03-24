@@ -7,17 +7,16 @@
 
 ## Properties
 
-| Property        | Attribute        | Description | Type       | Default     |
-| --------------- | ---------------- | ----------- | ---------- | ----------- |
-| `clear`         | `clear`          |             | `boolean`  | `undefined` |
-| `clickHandler`  | --               |             | `Function` | `undefined` |
-| `cssClass`      | `css-class`      |             | `string`   | `''`        |
-| `hollow`        | `hollow`         |             | `boolean`  | `undefined` |
-| `href`          | `href`           |             | `string`   | `undefined` |
-| `icon`          | `icon`           |             | `string`   | `undefined` |
-| `iconDirection` | `icon-direction` |             | `string`   | `'left'`    |
-| `size`          | `size`           |             | `string`   | `undefined` |
-| `type`          | `type`           |             | `string`   | `'primary'` |
+| Property        | Attribute        | Description | Type                                                                                                      | Default     |
+| --------------- | ---------------- | ----------- | --------------------------------------------------------------------------------------------------------- | ----------- |
+| `clear`         | `clear`          |             | `boolean`                                                                                                 | `undefined` |
+| `cssClass`      | `css-class`      |             | `string`                                                                                                  | `''`        |
+| `hollow`        | `hollow`         |             | `boolean`                                                                                                 | `undefined` |
+| `href`          | `href`           |             | `string`                                                                                                  | `undefined` |
+| `icon`          | `icon`           |             | `string`                                                                                                  | `undefined` |
+| `iconDirection` | `icon-direction` |             | `"left" \| "right"`                                                                                       | `'left'`    |
+| `size`          | `size`           |             | `"large" \| "medium" \| "small" \| "xlarge" \| "xsmall"`                                                  | `undefined` |
+| `type`          | `type`           |             | `"danger" \| "dark" \| "info" \| "light" \| "link" \| "primary" \| "secondary" \| "success" \| "warning"` | `'primary'` |
 
 
 ## Dependencies

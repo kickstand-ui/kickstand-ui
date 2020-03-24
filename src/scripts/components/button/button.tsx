@@ -4,21 +4,14 @@ import { Component, h, Prop, ComponentInterface } from '@stencil/core';
     tag: 'c-button'
 })
 export class LinkButton implements ComponentInterface {
-    @Prop() type: string = 'primary';
+    @Prop() type: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
     @Prop() hollow: boolean;
     @Prop() clear: boolean;
-    @Prop() size: string;
+    @Prop() size: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
     @Prop() icon: string;
-    @Prop() iconDirection: string = 'left';
+    @Prop() iconDirection: 'left' | 'right' = 'left';
     @Prop() href: string;
-    @Prop() clickHandler: Function;
     @Prop() cssClass: string = '';
-
-
-    _clickHandler() {
-        if(this.clickHandler)
-            this.clickHandler();
-    }
 
     render() {
         let content = [
@@ -28,12 +21,20 @@ export class LinkButton implements ComponentInterface {
             </span>
         ];
         
-        let classes = `button ${this.type} ${this.hollow ? 'hollow' : ''} ${this.clear ? 'clear' : ''} icon-${this.iconDirection} ${this.size} ${this.cssClass}`;
+        let classes = {
+            'button': true,
+            [this.type]: true,
+            [`icon-${this.iconDirection}`]: true,
+            [this.cssClass]: true,
+            [this.size]: true,
+            'hollow': this.hollow,
+            'clear': this.clear
+        };
 
         return (
             this.href
                 ? <a class={classes} href={this.href}>{content}</a>
-                : <button class={classes} onClick={this._clickHandler.bind(this)}>{content}</button >
+                : <button class={classes}>{content}</button >
         );
     }
 }
