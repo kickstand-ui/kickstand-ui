@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default     |
-| -------- | --------- | ----------- | -------- | ----------- |
-| `size`   | `size`    |             | `string` | `'md'`      |
-| `type`   | `type`    |             | `string` | `'primary'` |
-| `value`  | `value`   |             | `number` | `0`         |
+| Property | Attribute | Description | Type                                                                                                      | Default     |
+| -------- | --------- | ----------- | --------------------------------------------------------------------------------------------------------- | ----------- |
+| `size`   | `size`    |             | `string`                                                                                                  | `'md'`      |
+| `type`   | `type`    |             | `"danger" \| "dark" \| "info" \| "light" \| "link" \| "primary" \| "secondary" \| "success" \| "warning"` | `'primary'` |
+| `value`  | `value`   |             | `number`                                                                                                  | `0`         |
 
 
 ----------------------------------------------

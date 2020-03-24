@@ -6,7 +6,7 @@ import { Component, h, Prop, Host } from '@stencil/core';
 export class Alert {
     @Prop() header: string;
     @Prop() note: boolean;
-    @Prop() type: string = 'primary';
+    @Prop() type: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
 
     render() {
         return (

@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type      | Default     |
-| -------- | --------- | ----------- | --------- | ----------- |
-| `hollow` | `hollow`  |             | `boolean` | `undefined` |
-| `type`   | `type`    |             | `string`  | `'primary'` |
+| Property | Attribute | Description | Type                                                                                                      | Default     |
+| -------- | --------- | ----------- | --------------------------------------------------------------------------------------------------------- | ----------- |
+| `hollow` | `hollow`  |             | `boolean`                                                                                                 | `undefined` |
+| `type`   | `type`    |             | `"danger" \| "dark" \| "info" \| "light" \| "link" \| "primary" \| "secondary" \| "success" \| "warning"` | `'primary'` |
 
 
 ----------------------------------------------

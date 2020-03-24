@@ -4,7 +4,7 @@ import { Component, h, Prop, Host, ComponentInterface } from '@stencil/core';
     tag: 'c-progress-bar'
 })
 export class ProgressBar implements ComponentInterface {
-    @Prop() type: string = 'primary';
+    @Prop() type: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
     @Prop() value: number = 0;
     @Prop() size: string = 'md';
 

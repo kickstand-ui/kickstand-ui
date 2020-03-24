@@ -21,25 +21,24 @@ export namespace Components {
   interface CAlert {
     'header': string;
     'note': boolean;
-    'type': string;
+    'type': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
   }
   interface CBadge {
     'hollow': boolean;
-    'type': string;
+    'type': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
   }
   interface CBreadcrumbs {
     'breadcrumbs': IBreadcrumbs[];
   }
   interface CButton {
     'clear': boolean;
-    'clickHandler': Function;
     'cssClass': string;
     'hollow': boolean;
     'href': string;
     'icon': string;
-    'iconDirection': string;
-    'size': string;
-    'type': string;
+    'iconDirection': 'left' | 'right';
+    'size': 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+    'type': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
   }
   interface CCard {
     'alt': string;
@@ -65,7 +64,7 @@ export namespace Components {
   }
   interface CDropdown {
     'buttonIcon': string;
-    'buttonType': string;
+    'buttonType': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'dropdownAlignment': string;
     'dropdownText': string;
     'hideButtonText': boolean;
@@ -110,7 +109,7 @@ export namespace Components {
   }
   interface CProgressBar {
     'size': string;
-    'type': string;
+    'type': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'value': number;
   }
   interface CSideDrawer {
@@ -354,25 +353,24 @@ declare namespace LocalJSX {
   interface CAlert {
     'header'?: string;
     'note'?: boolean;
-    'type'?: string;
+    'type'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
   }
   interface CBadge {
     'hollow'?: boolean;
-    'type'?: string;
+    'type'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
   }
   interface CBreadcrumbs {
     'breadcrumbs'?: IBreadcrumbs[];
   }
   interface CButton {
     'clear'?: boolean;
-    'clickHandler'?: Function;
     'cssClass'?: string;
     'hollow'?: boolean;
     'href'?: string;
     'icon'?: string;
-    'iconDirection'?: string;
-    'size'?: string;
-    'type'?: string;
+    'iconDirection'?: 'left' | 'right';
+    'size'?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+    'type'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
   }
   interface CCard {
     'alt'?: string;
@@ -398,7 +396,7 @@ declare namespace LocalJSX {
   }
   interface CDropdown {
     'buttonIcon'?: string;
-    'buttonType'?: string;
+    'buttonType'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'dropdownAlignment'?: string;
     'dropdownText'?: string;
     'hideButtonText'?: boolean;
@@ -439,7 +437,7 @@ declare namespace LocalJSX {
   }
   interface CProgressBar {
     'size'?: string;
-    'type'?: string;
+    'type'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'value'?: number;
   }
   interface CSideDrawer {

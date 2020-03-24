@@ -4,7 +4,7 @@ import { Component, h, Prop, ComponentInterface, Host } from '@stencil/core';
     tag: 'c-badge'
 })
 export class Badge implements ComponentInterface {
-    @Prop() type: string = 'primary';
+    @Prop() type: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
     @Prop() hollow: boolean;
 
     render() {
