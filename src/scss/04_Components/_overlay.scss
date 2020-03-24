@@ -1,4 +1,4 @@
-@import '../00_Abstracts/index';
+@import "../00_Abstracts/index";
 
 .overlay {
     align-items: center;
@@ -50,5 +50,6 @@
 
     .content {
         position: relative;
+        @include shadow(xl);
     }
 }
