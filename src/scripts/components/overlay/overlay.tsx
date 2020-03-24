@@ -6,8 +6,6 @@ import componentUtils from '../../utils/componentUtils';
 })
 export class Overlay {
     $focusableEls: HTMLElement[];
-    $firstFocusableEl: HTMLElement;
-    $lastFocusableEl: HTMLElement;
     $focusedElBeforeOpen: HTMLElement;
 
     @Element() $el: HTMLElement;
@@ -17,6 +15,7 @@ export class Overlay {
     @Prop() theme: 'dark' | 'light' = 'dark';
     @Prop() dismissible: boolean = true;
 
+    @State() focusIndex: number = 0;
     @State() isShowing: boolean = false;
 
     @Method()
@@ -24,7 +23,7 @@ export class Overlay {
         this.$focusedElBeforeOpen = document.activeElement as HTMLElement;
         this.$focusedElBeforeOpen.setAttribute("aria-expanded", "true");
         this.isShowing = true;
-        setTimeout(() => this.$firstFocusableEl.focus(), 100);
+        setTimeout(() => this.$focusableEls[0].focus(), 100);
     }
 
     @Method()
@@ -44,43 +43,36 @@ export class Overlay {
                 this.handleTab(e);
                 break;
             case KEY_ESC:
-                if (this.dismissible)
-                    this.hide();
+                this.handleEsc();
                 break;
             default:
                 break;
         }
     }
 
-    isAbsolute() {
-        return this.absolute ? 'absolute' : '';
+    handleEsc() {
+        if (this.dismissible)
+            this.hide();
     }
 
     handleTab(e: KeyboardEvent) {
-        if (this.$focusableEls.length === 1) {
-            e.preventDefault();
-            return;
-        }
+        e.preventDefault();
 
         if (e.shiftKey) {
-            this.handleBackwardTab(e);
+            this.handleBackwardTab();
         } else {
-            this.handleForwardTab(e);
+            this.handleForwardTab();
         }
     }
 
-    handleBackwardTab(e: KeyboardEvent) {
-        if (document.activeElement === this.$firstFocusableEl) {
-            e.preventDefault();
-            this.$lastFocusableEl.focus();
-        }
+    handleBackwardTab() {
+        this.focusIndex = this.focusIndex === 0 ? this.$focusableEls.length - 1 : --this.focusIndex;
+        this.$focusableEls[this.focusIndex].focus();
     }
 
-    handleForwardTab(e: KeyboardEvent) {
-        if (document.activeElement === this.$lastFocusableEl) {
-            e.preventDefault();
-            this.$firstFocusableEl.focus();
-        }
+    handleForwardTab() {
+        this.focusIndex = this.$focusableEls.length - 1 === this.focusIndex ? 0 : ++this.focusIndex;
+        this.$focusableEls[this.focusIndex].focus();
     }
 
     handleScrimClick() {
@@ -90,12 +82,17 @@ export class Overlay {
 
     componentDidLoad() {
         this.$focusableEls = Array.from(this.$el.querySelectorAll(componentUtils.focusableElements));
-        this.$firstFocusableEl = this.$focusableEls[0];
-        this.$firstFocusableEl = this.$focusableEls.pop();
     }
 
     render() {
-        return (<Host class={`overlay ${this.theme} ${this.absolute && 'absolute'} ${this.isShowing && 'opened'}`}>
+        let classes = {
+            'overlay': true,
+            [this.theme]: true,
+            'absolute': this.absolute,
+            'opened': this.isShowing
+        };
+
+        return (<Host class={classes}>
             <div class="scrim" onClick={() => this.handleScrimClick()}></div>
             <div class="content" role="dialog" aria-labelledby={this.titleId}>
                 <slot />

@@ -10,6 +10,7 @@ export class Modal implements ComponentInterface {
 
     @Prop() titleId: string;
     @Prop() modalTitle: string;
+    @Prop() dismissible: boolean = true;
 
     @Method()
     async show() {
@@ -24,13 +25,13 @@ export class Modal implements ComponentInterface {
 
     render() {
         return (
-            <c-overlay title-id={this.titleId} ref={el => this.$overlay = el}>
+            <c-overlay title-id={this.titleId} ref={el => this.$overlay = el} dismissible={this.dismissible}>
                 <div class="modal">
                     <header class="modal-header">
                         <h2 class="modal-title" id={this.titleId}>{this.modalTitle}</h2>
                         <c-button onClick={() => this.hide()} class="modal-close" clear>
                             <span class="sr-only">Close Modal</span>
-                            <i class="fal fa-times"></i>
+                            {this.dismissible && <i class="fal fa-times"></i>}
                         </c-button>
                     </header>
                     <div class="modal-content">

@@ -79,6 +79,13 @@ export namespace Components {
     'src': string;
     'threshold': number;
   }
+  interface CModal {
+    'hide': () => Promise<void>;
+    'modalTitle': string;
+    'show': () => Promise<void>;
+    'titleId': string;
+  }
+  interface CModalFooter {}
   interface CNavbar {
     'altText': string;
     'collapseAt': string;
@@ -94,10 +101,11 @@ export namespace Components {
   interface CNavbarRow {}
   interface COverlay {
     'absolute': boolean;
-    'hideOverlay': () => Promise<void>;
-    'show': boolean;
-    'showOverlay': () => Promise<void>;
-    'theme': string;
+    'dismissible': boolean;
+    'hide': () => Promise<void>;
+    'show': () => Promise<void>;
+    'theme': 'dark' | 'light';
+    'titleId': string;
   }
   interface CProgressBar {
     'size': string;
@@ -210,6 +218,18 @@ declare global {
     new (): HTMLCImgElement;
   };
 
+  interface HTMLCModalElement extends Components.CModal, HTMLStencilElement {}
+  var HTMLCModalElement: {
+    prototype: HTMLCModalElement;
+    new (): HTMLCModalElement;
+  };
+
+  interface HTMLCModalFooterElement extends Components.CModalFooter, HTMLStencilElement {}
+  var HTMLCModalFooterElement: {
+    prototype: HTMLCModalFooterElement;
+    new (): HTMLCModalFooterElement;
+  };
+
   interface HTMLCNavbarElement extends Components.CNavbar, HTMLStencilElement {}
   var HTMLCNavbarElement: {
     prototype: HTMLCNavbarElement;
@@ -305,6 +325,8 @@ declare global {
     'c-carousel-slide': HTMLCCarouselSlideElement;
     'c-dropdown': HTMLCDropdownElement;
     'c-img': HTMLCImgElement;
+    'c-modal': HTMLCModalElement;
+    'c-modal-footer': HTMLCModalFooterElement;
     'c-navbar': HTMLCNavbarElement;
     'c-navbar-group': HTMLCNavbarGroupElement;
     'c-navbar-item': HTMLCNavbarItemElement;
@@ -389,6 +411,11 @@ declare namespace LocalJSX {
     'src'?: string;
     'threshold'?: number;
   }
+  interface CModal {
+    'modalTitle'?: string;
+    'titleId'?: string;
+  }
+  interface CModalFooter {}
   interface CNavbar {
     'altText'?: string;
     'collapseAt'?: string;
@@ -404,8 +431,9 @@ declare namespace LocalJSX {
   interface CNavbarRow {}
   interface COverlay {
     'absolute'?: boolean;
-    'show'?: boolean;
-    'theme'?: string;
+    'dismissible'?: boolean;
+    'theme'?: 'dark' | 'light';
+    'titleId'?: string;
   }
   interface CProgressBar {
     'size'?: string;
@@ -461,6 +489,8 @@ declare namespace LocalJSX {
     'c-carousel-slide': CCarouselSlide;
     'c-dropdown': CDropdown;
     'c-img': CImg;
+    'c-modal': CModal;
+    'c-modal-footer': CModalFooter;
     'c-navbar': CNavbar;
     'c-navbar-group': CNavbarGroup;
     'c-navbar-item': CNavbarItem;
@@ -495,6 +525,8 @@ declare module "@stencil/core" {
       'c-carousel-slide': LocalJSX.CCarouselSlide & JSXBase.HTMLAttributes<HTMLCCarouselSlideElement>;
       'c-dropdown': LocalJSX.CDropdown & JSXBase.HTMLAttributes<HTMLCDropdownElement>;
       'c-img': LocalJSX.CImg & JSXBase.HTMLAttributes<HTMLCImgElement>;
+      'c-modal': LocalJSX.CModal & JSXBase.HTMLAttributes<HTMLCModalElement>;
+      'c-modal-footer': LocalJSX.CModalFooter & JSXBase.HTMLAttributes<HTMLCModalFooterElement>;
       'c-navbar': LocalJSX.CNavbar & JSXBase.HTMLAttributes<HTMLCNavbarElement>;
       'c-navbar-group': LocalJSX.CNavbarGroup & JSXBase.HTMLAttributes<HTMLCNavbarGroupElement>;
       'c-navbar-item': LocalJSX.CNavbarItem & JSXBase.HTMLAttributes<HTMLCNavbarItemElement>;
