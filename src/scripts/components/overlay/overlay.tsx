@@ -31,6 +31,7 @@ export class Overlay {
     @Method()
     async hide() {
         this.isShowing = false;
+        this.focusIndex = 0;
         this.$focusedElBeforeOpen.setAttribute("aria-expanded", "false");
         this.$focusedElBeforeOpen.focus();
     }

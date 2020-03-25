@@ -43,11 +43,13 @@ Type: `Promise<void>`
 ### Used by
 
  - [c-modal](../modal)
+ - [c-side-drawer](../side-drawer)
 
 ### Graph
 ```mermaid
 graph TD;
   c-modal --> c-overlay
+  c-side-drawer --> c-overlay
   style c-overlay fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
