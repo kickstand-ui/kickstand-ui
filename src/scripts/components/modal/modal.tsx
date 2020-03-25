@@ -28,11 +28,11 @@ export class Modal implements ComponentInterface {
             <c-overlay title-id={this.titleId} ref={el => this.$overlay = el} dismissible={this.dismissible}>
                 <div class="modal">
                     <header class="modal-header">
-                        <h2 class="modal-title" id={this.titleId}>{this.modalTitle}</h2>
-                        <c-button onClick={() => this.hide()} class="modal-close" clear>
+                        <h3 class="modal-title" id={this.titleId}>{this.modalTitle}</h3>
+                        {this.dismissible && <c-button onClick={() => this.hide()} class="modal-close" clear>
                             <span class="sr-only">Close Modal</span>
-                            {this.dismissible && <i class="fal fa-times"></i>}
-                        </c-button>
+                            <i class="fal fa-times"></i>
+                        </c-button>}
                     </header>
                     <div class="modal-content">
                         <slot />
