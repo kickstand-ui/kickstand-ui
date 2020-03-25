@@ -65,10 +65,11 @@ export namespace Components {
   interface CDropdown {
     'buttonIcon': string;
     'buttonType': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
+    'clearButton': boolean;
     'dropdownAlignment': string;
     'dropdownText': string;
     'hideButtonText': boolean;
-    'hollow': boolean;
+    'hollowButton': boolean;
     'megaMenu': boolean;
   }
   interface CImg {
@@ -113,13 +114,11 @@ export namespace Components {
     'value': number;
   }
   interface CSideDrawer {
-    'close': () => Promise<void>;
     'headerText': string;
+    'hide': () => Promise<void>;
     'name': string;
-    'onDrawerClose': Function;
-    'onDrawerOpen': Function;
-    'open': () => Promise<void>;
-    'position': string;
+    'position': 'left' | 'right';
+    'show': () => Promise<void>;
   }
   interface CTab {
     'controls': string;
@@ -397,10 +396,11 @@ declare namespace LocalJSX {
   interface CDropdown {
     'buttonIcon'?: string;
     'buttonType'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
+    'clearButton'?: boolean;
     'dropdownAlignment'?: string;
     'dropdownText'?: string;
     'hideButtonText'?: boolean;
-    'hollow'?: boolean;
+    'hollowButton'?: boolean;
     'megaMenu'?: boolean;
   }
   interface CImg {
@@ -443,11 +443,7 @@ declare namespace LocalJSX {
   interface CSideDrawer {
     'headerText'?: string;
     'name'?: string;
-    'onCloseDrawerCompleted'?: (event: CustomEvent<any>) => void;
-    'onDrawerClose'?: Function;
-    'onDrawerOpen'?: Function;
-    'onOpenDrawerCompleted'?: (event: CustomEvent<any>) => void;
-    'position'?: string;
+    'position'?: 'left' | 'right';
   }
   interface CTab {
     'controls'?: string;
