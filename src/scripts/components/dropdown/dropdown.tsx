@@ -12,7 +12,7 @@ export class Dropdown {
     @Prop() dropdownText: string;
     @Prop() dropdownAlignment: string;
     @Prop() buttonIcon: string;
-    @Prop() buttonType: string = 'primary';
+    @Prop() buttonType: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
     @Prop() hollow: boolean;
     @Prop() hideButtonText: boolean;
     @Prop() megaMenu: boolean;
@@ -60,9 +60,9 @@ export class Dropdown {
     render() {
         return (
             <Host class={{
-                    'dropdown': true,
-                    'mega-menu': this.megaMenu
-                }}
+                'dropdown': true,
+                'mega-menu': this.megaMenu
+            }}
                 onKeyup={this.keyupHandler.bind(this)}>
                 <button onClick={this.toggleDropdown.bind(this)} class={`button ${this.buttonType} ${this.hollow && 'hollow'} dropdown-button`} aria-haspopup="true" aria-expanded={`${this.expanded}`} aria-controls={`dropdown-${this.dropdownId}`}>
                     {this.buttonIcon && <i class={`button-icon ${this.buttonIcon}`}></i>}
