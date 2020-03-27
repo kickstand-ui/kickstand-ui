@@ -4,41 +4,41 @@ export default { title: 'Grid' };
 
 export const basicGrid = () => {
     return (`
-    <div class="main">
-        <div class="row bg-primary">
-            <div class="col col-2 md:col-6 sm:col-12 bg-primary-light">Column 1</div>
-            <div class="col col-4 md:col-6 sm:col-12 bg-primary-light">Column 2</div>
-            <div class="col col-6 md:col-12 sm:col-12 bg-primary-light">
-                <div class="row">
-                    <div class="col">Sub-column 1</div>
-                    <div class="col">Sub-column 2</div>
-                    <div class="col">Sub-column 3</div>
-                </div>
-            </div>
-        </div>
+    <c-column class="main">
+        <c-row class="bg-primary">
+            <c-column  align="end" class="col-2 md:col-6 sm:col-12 bg-primary-light">Column 1</c-column>
+            <c-column class="col-4 md:col-6 sm:col-12 bg-primary-light">Column 2</c-column>
+            <c-column class="col-6 md:col-12 sm:col-12 bg-primary-light">
+                <c-row>
+                    <c-column>Sub-column 1</c-column>
+                    <c-column>Sub-column 2</c-column>
+                    <c-column>Sub-column 3</c-column>
+                </c-row>
+            </c-column>
+        </c-row>
         <br>
-        <div class="row bg-primary no-gutter">
-            <div class="col col-2 md:col-6 sm:col-12 bg-primary-light">Column 1</div>
-            <div class="col col-4 md:col-6 sm:col-12 bg-primary-light">Column 2</div>
-            <div class="col col-6 md:col-12 sm:col-12 bg-primary-light">
+        <c-row align="end" class="bg-primary" no-gutter>
+            <c-column class="col-2 md:col-6 sm:col-12 bg-primary-light">Column 1</c-column>
+            <c-column class="col-4 md:col-6 sm:col-12 bg-primary-light">Column 2</c-column>
+            <c-column class="col-6 md:col-12 sm:col-12 bg-primary-light">
                 <div class="row">
-                    <div class="col">Sub-column 1</div>
-                    <div class="col">Sub-column 2</div>
-                    <div class="col">Sub-column 3</div>
+                    <c-column>Sub-column 1</c-column>
+                    <c-column>Sub-column 2</c-column>
+                    <c-column>Sub-column 3</c-column>
                 </div>
-            </div>
-        </div>
+            </c-column>
+        </c-row>
         <br>
-        <div class="row bg-primary no-gutter stacked">
-            <div class="col col-4 md:col-6 sm:col-12 bg-primary-light">Column 1</div>
-            <div class="col col-4 md:col-6 sm:col-12 bg-primary-light">Column 2</div>
-            <div class="col col-4 md:col-6 sm:col-12 bg-primary-light">Column 3</div>
-            <div class="col col-4 md:col-6 sm:col-12 bg-primary-light">Column 4</div>
-            <div class="col col-4 md:col-6 sm:col-12 bg-primary-light">Column 5</div>
-            <div class="col col-4 md:col-6 sm:col-12 bg-primary-light">Column 6</div>
-            <div class="col col-4 md:col-6 sm:col-12 bg-primary-light">Column 7</div>
-            <div class="col col-4 md:col-6 sm:col-12 bg-primary-light">Column 8</div>
-        </div>
+        <c-row no-gutter class="bg-primary column">
+            <c-column class="col-4 md:col-6 sm:col-12 bg-primary-light">Column 1</c-column>
+            <c-column class="col-4 md:col-6 sm:col-12 bg-primary-light">Column 2</c-column>
+            <c-column class="col-4 md:col-6 sm:col-12 bg-primary-light">Column 3</c-column>
+            <c-column class="col-4 md:col-6 sm:col-12 bg-primary-light">Column 4</c-column>
+            <c-column class="col-4 md:col-6 sm:col-12 bg-primary-light">Column 5</c-column>
+            <c-column class="col-4 md:col-6 sm:col-12 bg-primary-light">Column 6</c-column>
+            <c-column class="col-4 md:col-6 sm:col-12 bg-primary-light">Column 7</c-column>
+            <c-column class="col-4 md:col-6 sm:col-12 bg-primary-light">Column 8</c-column>
+        </c-row>
     </div>
     `);
 };

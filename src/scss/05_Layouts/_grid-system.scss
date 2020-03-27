@@ -13,68 +13,28 @@ $gutter-size: lg;
     &.no-gutter {
         @include mx(none);
 
-        >.col {
+        > .col {
             @include px(none);
         }
     }
 
-    &.reverse {
-        flex-direction: row-reverse;
-    }
-
-    &.stacked {
-        flex-direction: column;
-
-        &.reverse {
-            flex-direction: column-reverse;
-        }
-    }
-
-    &.nowrap {
-        flex-wrap: nowrap;
-    }
-
-    &.stretch {
-        align-items: stretch;
-    }
-
-    &.justify {
+    &.align-content {
         &-start {
-            justify-content: flex-start;
-        }
-
-        &-end {
-            justify-content: flex-end;
+            .col {
+                align-items: flex-start;
+            }
         }
 
         &-center {
-            justify-content: center;
-        }
-
-        &-space-around {
-            justify-content: space-around;
-        }
-
-        &-space-between {
-            justify-content: space-between;
-        }
-
-        &-space-evenly {
-            justify-content: space-evenly;
-        }
-    }
-
-    &.align {
-        &-start {
-            align-items: flex-start;
-        }
-
-        &-center {
-            align-items: center;
+            .col {
+                align-items: center;
+            }
         }
 
         &-end {
-            align-items: flex-end;
+            .col {
+                align-items: flex-end;
+            }
         }
     }
 
@@ -94,8 +54,7 @@ $gutter-size: lg;
                 flex: 0 0 (100% / $columns) * $i;
             }
 
-            @each $key,
-            $value in $breakpoints {
+            @each $key, $value in $breakpoints {
                 @include breakpoint-below($key) {
                     &.#{$key}\:col-#{$i} {
                         max-width: (100% / $columns) * $i;
@@ -105,17 +64,17 @@ $gutter-size: lg;
             }
         }
 
-        &.align {
+        &.align-item {
             &-start {
-                align-self: flex-start;
+                align-items: flex-start;
             }
 
             &-center {
-                align-self: center;
+                align-items: center;
             }
 
             &-end {
-                align-self: flex-end;
+                align-items: flex-end;
             }
         }
     }

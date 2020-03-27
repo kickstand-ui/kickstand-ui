@@ -66,6 +66,9 @@ export namespace Components {
     'src': string;
     'threshold': number;
   }
+  interface CColumn {
+    'align': 'start' | 'center' | 'end';
+  }
   interface CDropdown {
     'buttonIcon': string;
     'buttonType': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
@@ -116,6 +119,10 @@ export namespace Components {
     'size': string;
     'type': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'value': number;
+  }
+  interface CRow {
+    'align': 'start' | 'center' | 'end';
+    'noGutter': boolean;
   }
   interface CSideDrawer {
     'headerText': string;
@@ -209,6 +216,12 @@ declare global {
     new (): HTMLCCarouselSlideElement;
   };
 
+  interface HTMLCColumnElement extends Components.CColumn, HTMLStencilElement {}
+  var HTMLCColumnElement: {
+    prototype: HTMLCColumnElement;
+    new (): HTMLCColumnElement;
+  };
+
   interface HTMLCDropdownElement extends Components.CDropdown, HTMLStencilElement {}
   var HTMLCDropdownElement: {
     prototype: HTMLCDropdownElement;
@@ -269,6 +282,12 @@ declare global {
     new (): HTMLCProgressBarElement;
   };
 
+  interface HTMLCRowElement extends Components.CRow, HTMLStencilElement {}
+  var HTMLCRowElement: {
+    prototype: HTMLCRowElement;
+    new (): HTMLCRowElement;
+  };
+
   interface HTMLCSideDrawerElement extends Components.CSideDrawer, HTMLStencilElement {}
   var HTMLCSideDrawerElement: {
     prototype: HTMLCSideDrawerElement;
@@ -326,6 +345,7 @@ declare global {
     'c-card': HTMLCCardElement;
     'c-carousel': HTMLCCarouselElement;
     'c-carousel-slide': HTMLCCarouselSlideElement;
+    'c-column': HTMLCColumnElement;
     'c-dropdown': HTMLCDropdownElement;
     'c-img': HTMLCImgElement;
     'c-modal': HTMLCModalElement;
@@ -336,6 +356,7 @@ declare global {
     'c-navbar-row': HTMLCNavbarRowElement;
     'c-overlay': HTMLCOverlayElement;
     'c-progress-bar': HTMLCProgressBarElement;
+    'c-row': HTMLCRowElement;
     'c-side-drawer': HTMLCSideDrawerElement;
     'c-tab': HTMLCTabElement;
     'c-tab-list': HTMLCTabListElement;
@@ -401,6 +422,9 @@ declare namespace LocalJSX {
     'src'?: string;
     'threshold'?: number;
   }
+  interface CColumn {
+    'align'?: 'start' | 'center' | 'end';
+  }
   interface CDropdown {
     'buttonIcon'?: string;
     'buttonType'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
@@ -448,6 +472,10 @@ declare namespace LocalJSX {
     'type'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'value'?: number;
   }
+  interface CRow {
+    'align'?: 'start' | 'center' | 'end';
+    'noGutter'?: boolean;
+  }
   interface CSideDrawer {
     'headerText'?: string;
     'name'?: string;
@@ -491,6 +519,7 @@ declare namespace LocalJSX {
     'c-card': CCard;
     'c-carousel': CCarousel;
     'c-carousel-slide': CCarouselSlide;
+    'c-column': CColumn;
     'c-dropdown': CDropdown;
     'c-img': CImg;
     'c-modal': CModal;
@@ -501,6 +530,7 @@ declare namespace LocalJSX {
     'c-navbar-row': CNavbarRow;
     'c-overlay': COverlay;
     'c-progress-bar': CProgressBar;
+    'c-row': CRow;
     'c-side-drawer': CSideDrawer;
     'c-tab': CTab;
     'c-tab-list': CTabList;
@@ -527,6 +557,7 @@ declare module "@stencil/core" {
       'c-card': LocalJSX.CCard & JSXBase.HTMLAttributes<HTMLCCardElement>;
       'c-carousel': LocalJSX.CCarousel & JSXBase.HTMLAttributes<HTMLCCarouselElement>;
       'c-carousel-slide': LocalJSX.CCarouselSlide & JSXBase.HTMLAttributes<HTMLCCarouselSlideElement>;
+      'c-column': LocalJSX.CColumn & JSXBase.HTMLAttributes<HTMLCColumnElement>;
       'c-dropdown': LocalJSX.CDropdown & JSXBase.HTMLAttributes<HTMLCDropdownElement>;
       'c-img': LocalJSX.CImg & JSXBase.HTMLAttributes<HTMLCImgElement>;
       'c-modal': LocalJSX.CModal & JSXBase.HTMLAttributes<HTMLCModalElement>;
@@ -537,6 +568,7 @@ declare module "@stencil/core" {
       'c-navbar-row': LocalJSX.CNavbarRow & JSXBase.HTMLAttributes<HTMLCNavbarRowElement>;
       'c-overlay': LocalJSX.COverlay & JSXBase.HTMLAttributes<HTMLCOverlayElement>;
       'c-progress-bar': LocalJSX.CProgressBar & JSXBase.HTMLAttributes<HTMLCProgressBarElement>;
+      'c-row': LocalJSX.CRow & JSXBase.HTMLAttributes<HTMLCRowElement>;
       'c-side-drawer': LocalJSX.CSideDrawer & JSXBase.HTMLAttributes<HTMLCSideDrawerElement>;
       'c-tab': LocalJSX.CTab & JSXBase.HTMLAttributes<HTMLCTabElement>;
       'c-tab-list': LocalJSX.CTabList & JSXBase.HTMLAttributes<HTMLCTabListElement>;
