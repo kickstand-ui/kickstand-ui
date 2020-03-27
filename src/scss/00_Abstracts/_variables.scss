@@ -19,17 +19,18 @@ $line-height-base: 1.5;
 
 // SPACING
 
-$spacing-sizes: (
-    auto: auto,
-    none: 0,
-    xxxs: 0.0625rem,
-    xxs: 0.125rem,
-    xs: 0.25rem,
-    sm: 0.5rem,
-    md: 0.75rem,
-    lg: 1rem,
-    xl: 1.25rem,
-    xxl: 2rem
+$spacing-sizes: ( 
+    auto: auto, 
+    none: 0, 
+    xxxs: 0.0625rem, // 1px
+    xxs: 0.125rem,  // 2px
+    xs: 0.25rem,    // 4px
+    sm: 0.5rem,     // 8px
+    md: 0.75rem,    // 12px
+    lg: 1rem,       // 16px
+    xl: 1.25rem,    // 20px
+    xxl: 1.5rem,    // 24px
+    3xl: 2rem       // 32px
 ) !default;
 
 
@@ -51,12 +52,13 @@ $color-variation: 8%;
 
 // BREAKPOINTS
 
-$breakpoints: (
-    xs: 480px,
-    sm: 768px,
-    md: 992px,
-    lg: 1200px,
-    xl: 1440px
+$breakpoints: ( 
+    xxs: 20rem, // 320px
+    xs: 30rem,  // 480px
+    sm: 48rem,  // 768px
+    md: 62rem,  // 992px
+    lg: 75rem,  // 1200px
+    xl: 90rem   // 1440px
 ) !default;
 
 
@@ -83,10 +85,10 @@ $border-color: light, darker !default;
 
 $border-radiuses: (
     none: 0,
-    sm: 0.25rem,
-    md: 0.5rem,
-    lg: 0.75rem,
-    pill: 10rem,
+    sm: 0.25rem,  // 4px
+    md: 0.5rem,   // 8px
+    lg: 0.75rem,  // 12px
+    pill: 10rem,  // 160px
     circle: 50%
 ) !default;
 
