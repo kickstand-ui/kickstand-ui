@@ -1,7 +1,7 @@
-@import '../00_Abstracts/index';
+@import "../00_Abstracts/index";
 
 .modal {
-    width: 500px;
+    max-width: 100%;
     @include bg-color(light);
     @include p(lg);
 
@@ -13,7 +13,6 @@
         @include mb(md);
 
         .modal-title {
-
         }
 
         .modal-close {
@@ -22,6 +21,20 @@
             .button {
                 @include p(none);
             }
+        }
+    }
+
+    &.size {
+        &-sm {
+            width: 300px;
+        }
+
+        &-md {
+            width: 500px;
+        }
+
+        &-lg {
+            width: 800px;
         }
     }
 

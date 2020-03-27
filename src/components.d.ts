@@ -91,6 +91,7 @@ export namespace Components {
     'hide': () => Promise<void>;
     'modalTitle': string;
     'show': () => Promise<void>;
+    'size': 'sm' | 'md' | 'lg';
     'titleId': string;
   }
   interface CModalFooter {}
@@ -460,6 +461,7 @@ declare namespace LocalJSX {
   interface CModal {
     'dismissible'?: boolean;
     'modalTitle'?: string;
+    'size'?: 'sm' | 'md' | 'lg';
     'titleId'?: string;
   }
   interface CModalFooter {}

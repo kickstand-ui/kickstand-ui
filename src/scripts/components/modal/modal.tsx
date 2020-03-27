@@ -11,6 +11,7 @@ export class Modal implements ComponentInterface {
     @Prop() titleId: string;
     @Prop() modalTitle: string;
     @Prop() dismissible: boolean = true;
+    @Prop() size: 'sm' | 'md' | 'lg' = 'md';
 
     @Method()
     async show() {
@@ -26,7 +27,7 @@ export class Modal implements ComponentInterface {
     render() {
         return (
             <c-overlay title-id={this.titleId} ref={el => this.$overlay = el} dismissible={this.dismissible}>
-                <div class="modal">
+                <div class={`modal size-${this.size}`}>
                     <header class="modal-header">
                         <h3 class="modal-title" id={this.titleId}>{this.modalTitle}</h3>
                         {this.dismissible && <c-button onClick={() => this.hide()} class="modal-close" clear>
