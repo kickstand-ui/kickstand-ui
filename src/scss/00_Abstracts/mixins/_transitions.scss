@@ -16,18 +16,17 @@
 
 @mixin fade-in {
     animation-name: fade-in;
-    animation-duration: 2.5s;
+    animation-duration: 1s;
 }
 
 @mixin fade-out {
     animation-name: fade-out;
-    animation-duration: 2.5s;
+    animation-duration: 1s;
 }
 
 @keyframes fade-in {
     from {
-        display: block;
-        opacity: 0;
+        opacity: 0.6;
     }
     to {
         opacity: 1;
@@ -39,7 +38,6 @@
         opacity: 1;
     }
     to {
-        opacity: 0;
-        display: none;
+        opacity: 0.6;
     }
 }

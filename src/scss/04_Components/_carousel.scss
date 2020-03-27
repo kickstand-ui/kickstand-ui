@@ -1,9 +1,12 @@
 @import "../00_Abstracts/index";
 
 .carousel {
+    display: block;
     position: relative;
 
     .slides {
+        @include bg-color(light, dark);
+
         .slide {
             display: none;
             @include fade-out;
@@ -20,11 +23,10 @@
         top: 0;
         bottom: 0;
         width: 10%;
-        color: color(white, 0.50);
+        color: color(white, 0.5);
         background-color: transparent;
         border: none;
         @include font-size(xl);
-
 
         &:focus,
         &:hover {
@@ -59,10 +61,10 @@
         .indicator {
             height: 1rem;
             width: 1rem;
-            background-color: color(light, 0.50);
+            background-color: color(light, 0.5);
             @include radius(circle);
             @include mx(sm);
-            @include transition-ease-in-out(slow);
+            @include transition-ease-in-out(fast);
 
             @include hover-focus {
                 outline: 0;
@@ -73,7 +75,7 @@
             &.active {
                 background-color: color(light);
                 @include shadow(xs);
-                @include transition-ease-in-out(slow);
+                @include transition-ease-in-out(fast);
             }
         }
     }
@@ -88,13 +90,13 @@
             @include border(none);
             @include p(none);
             @include m(none);
-            @include transition-ease-in-out(slow);
+            @include transition-ease-in-out(fast);
 
             &:hover {
                 outline: 0;
                 opacity: 0.75;
                 @include shadow(xs);
-                @include transition-ease-in-out(slow);
+                @include transition-ease-in-out(fast);
             }
 
             &:focus {
@@ -104,7 +106,7 @@
             &.active {
                 opacity: 0.75;
                 @include shadow(xs);
-                @include transition-ease-in-out(slow);
+                @include transition-ease-in-out(fast);
             }
         }
 

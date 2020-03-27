@@ -4,7 +4,7 @@ import { Component, h, Prop, State, Element, Host } from '@stencil/core';
     tag: 'c-carousel'
 })
 export class Carousel {
-    @Element() el: HTMLElement;
+    @Element() $el: HTMLElement;
 
     @Prop() timer: number = 6000;
     @Prop() autoplay: boolean = true;
@@ -14,18 +14,18 @@ export class Carousel {
     @Prop() cssClass: string = '';
 
     @State() slideIndex: number = 0;
-    @State() slides: HTMLCCarouselSlideElement[];
-    @State() indicators: Element[];
+    @State() $slides: HTMLCCarouselSlideElement[];
+    @State() $indicators: Element[];
     @State() slideTimer: number;
     @State() slideDirection: string = 'slide-left';
 
 
     connectedCallback() {
-        this.slides = Array.from(this.el.querySelectorAll('c-carousel-slide'));
+        this.$slides = Array.from(this.$el.querySelectorAll('c-carousel-slide'));
     }
 
     componentDidLoad() {
-        this.indicators = Array.from(this.el.getElementsByClassName('indicator'));
+        this.$indicators = Array.from(this.$el.getElementsByClassName('indicator'));
         this.goToSlide();
     }
 
@@ -34,7 +34,7 @@ export class Carousel {
         this.slideIndex--;
 
         if (this.slideIndex < 0)
-            this.slideIndex = this.slides.length - 1;
+            this.slideIndex = this.$slides.length - 1;
 
         this.goToSlide();
     }
@@ -43,7 +43,7 @@ export class Carousel {
         this.resetSlideTimer();
         this.slideIndex++;
 
-        if (this.slideIndex >= this.slides.length)
+        if (this.slideIndex >= this.$slides.length)
             this.slideIndex = 0;
 
         this.goToSlide();
@@ -69,13 +69,16 @@ export class Carousel {
     }
 
     updateSlide() {
-        this.slides.forEach(slide => slide.querySelector('.slide').classList.remove('active'));
-        this.slides[this.slideIndex].querySelector('.slide').classList.add('active');
+        this.$slides.forEach(slide => slide.classList.remove('active'));
+        this.$slides[this.slideIndex].classList.add('active');
     }
 
     updateIndicator() {
-        this.indicators.forEach(slide => slide.classList.remove('active'));
-        this.indicators[this.slideIndex].classList.add('active');
+        if (!this.showIndicators)
+            return;
+        
+        this.$indicators.forEach(slide => slide.classList.remove('active'));
+        this.$indicators[this.slideIndex].classList.add('active');
     }
 
     render() {
@@ -91,7 +94,7 @@ export class Carousel {
         ];
         let indicators = (
             <div class="indicators">
-                {this.slides.map((slide, index) =>
+                {this.$slides.map((slide, index) =>
                     <button class="indicator" onClick={() => this.selectSlide(index)}>
                         <span class="sr-only">Got to slide {slide ? index + 1 : ''}</span>
                     </button>
@@ -100,7 +103,7 @@ export class Carousel {
         );
         let thumbnailList = (
             <div class="thumbnails">
-                {this.slides.map((slide, index) =>
+                {this.$slides.map((slide, index) =>
                     <button class="indicator" onClick={() => this.selectSlide(index)}>
                         <span class="sr-only">Got to slide {slide ? index + 1 : ''}</span>
                         <c-img lazy src={slide.src} />
