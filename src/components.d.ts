@@ -32,7 +32,11 @@ export namespace Components {
   }
   interface CButton {
     'clear': boolean;
+    'controls': string;
     'cssClass': string;
+    'expanded': boolean;
+    'haspopup': boolean;
+    'hideText': boolean;
     'hollow': boolean;
     'href': string;
     'icon': string;
@@ -66,7 +70,7 @@ export namespace Components {
     'buttonIcon': string;
     'buttonType': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'clearButton': boolean;
-    'dropdownAlignment': string;
+    'dropdownAlignment': 'left' | 'right';
     'dropdownText': string;
     'hideButtonText': boolean;
     'hollowButton': boolean;
@@ -363,7 +367,11 @@ declare namespace LocalJSX {
   }
   interface CButton {
     'clear'?: boolean;
+    'controls'?: string;
     'cssClass'?: string;
+    'expanded'?: boolean;
+    'haspopup'?: boolean;
+    'hideText'?: boolean;
     'hollow'?: boolean;
     'href'?: string;
     'icon'?: string;
@@ -397,7 +405,7 @@ declare namespace LocalJSX {
     'buttonIcon'?: string;
     'buttonType'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'clearButton'?: boolean;
-    'dropdownAlignment'?: string;
+    'dropdownAlignment'?: 'left' | 'right';
     'dropdownText'?: string;
     'hideButtonText'?: boolean;
     'hollowButton'?: boolean;
