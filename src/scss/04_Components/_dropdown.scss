@@ -26,7 +26,7 @@
             @include transition-ease-in-out(med);
         }
 
-        &[aria-expanded="true"] .dropdown-icon {
+        &[aria-expanded] .dropdown-icon {
             transform: rotate(-180deg);
             @include transition-ease-in-out(med);
         }
@@ -99,19 +99,20 @@
         @include transition-ease-in-out(fast);
     }
 
-    [aria-expanded="true"] + .dropdown-contents,
-    [aria-expanded="true"] + .mega-menu-contents {
-        display: block;
-        width: auto;
-        min-width: 100%;
-        @include border();
-        @include py(sm);
-        @include transition-ease-in-out(fast);
-    }
+    &.show {
+        .contents {
+            display: block;
+            width: auto;
+            min-width: 100%;
+            @include border();
+            @include py(sm);
+            @include transition-ease-in-out(fast);
+        }
 
-    [aria-expanded="true"] + .dropdown-contents {
-        display: flex;
-        flex-direction: column;
+        .dropdown-contents {
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
 
