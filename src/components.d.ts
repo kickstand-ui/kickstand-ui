@@ -131,6 +131,7 @@ export namespace Components {
     'name': string;
     'position': 'left' | 'right';
     'show': () => Promise<void>;
+    'size': 'sm' | 'md' | 'lg' | 'xl';
   }
   interface CTab {
     'controls': string;
@@ -497,6 +498,7 @@ declare namespace LocalJSX {
     'headerText'?: string;
     'name'?: string;
     'position'?: 'left' | 'right';
+    'size'?: 'sm' | 'md' | 'lg' | 'xl';
   }
   interface CTab {
     'controls'?: string;

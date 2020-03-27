@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property     | Attribute     | Description | Type                | Default     |
-| ------------ | ------------- | ----------- | ------------------- | ----------- |
-| `headerText` | `header-text` |             | `string`            | `undefined` |
-| `name`       | `name`        |             | `string`            | `undefined` |
-| `position`   | `position`    |             | `"left" \| "right"` | `'left'`    |
+| Property     | Attribute     | Description | Type                           | Default     |
+| ------------ | ------------- | ----------- | ------------------------------ | ----------- |
+| `headerText` | `header-text` |             | `string`                       | `undefined` |
+| `name`       | `name`        |             | `string`                       | `undefined` |
+| `position`   | `position`    |             | `"left" \| "right"`            | `'left'`    |
+| `size`       | `size`        |             | `"lg" \| "md" \| "sm" \| "xl"` | `'sm'`      |
 
 
 ## Methods

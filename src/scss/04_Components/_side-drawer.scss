@@ -1,8 +1,15 @@
 @import "../00_Abstracts/index";
 
+$drawer-sizes: (
+    sm: 16rem,
+    md: 22.5rem,
+    lg: 30rem,
+    xl: 45rem
+);
+
 .side-drawer {
     height: 100%;
-    width: 250px;
+    max-width: 90%;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -12,27 +19,27 @@
     @include bg-color(white);
     @include transition-ease-in-out(med);
 
-    &.left {
-        left: -250px;
-        @include border-r($color: dark, $variant: lighter);
+    @each $direction in (left, right) {
+        &.#{$direction} {
+            @include border-r($color: dark, $variant: lighter);
 
-        &.show {
-            visibility: visible;
-            left: 0;
-        }
-    }
+            @if ($direction == "right") {
+                .drawer-header {
+                    flex-direction: row-reverse;
+                }
+            }
 
-    &.right {
-        right: -250px;
-        @include border-l($color: dark, $variant: lighter);
+            @each $key, $value in $drawer-sizes {
+                &.size-#{$key} {
+                    width: $value;
+                    #{$direction}: -$value;
+                }
+            }
 
-        .drawer-header {
-            flex-direction: row-reverse;
-        }
-
-        &.show {
-            visibility: visible;
-            right: 0;
+            &.show {
+                visibility: visible;
+                #{$direction}: 0;
+            }
         }
     }
 
@@ -44,9 +51,8 @@
         @include font-size(xl);
 
         .drawer-close {
-            @include font-size(lg);
-
             .button {
+                @include font-size(lg);
                 @include p(none);
             }
         }

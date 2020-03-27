@@ -1,4 +1,4 @@
-import { Component, h, Prop, Element, EventEmitter, Event, ComponentInterface, Method, Host, State } from '@stencil/core';
+import { Component, h, Prop, Element, ComponentInterface, Method, State } from '@stencil/core';
 
 @Component({
     tag: 'c-side-drawer'
@@ -10,6 +10,7 @@ export class SideDrawer implements ComponentInterface {
     @Element() $el: HTMLElement;
 
     @Prop() position: 'left' | 'right' = 'left';
+    @Prop() size: 'sm' | 'md' | 'lg' | 'xl' = 'sm';
     @Prop() name: string;
     @Prop() headerText: string;
 
@@ -37,6 +38,7 @@ export class SideDrawer implements ComponentInterface {
     render() {
         let classes = {
             'side-drawer': true,
+            [`size-${this.size}`]: true,
             [this.position]: true,
             'show': this.isShowing
         }
