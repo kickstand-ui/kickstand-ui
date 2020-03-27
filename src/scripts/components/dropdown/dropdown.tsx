@@ -29,9 +29,6 @@ export class Dropdown {
         const KEY_TAB = 9;
         const KEY_ESC = 27;
 
-        if (!this.isExpanded)
-            return;
-
         switch (e.keyCode) {
             case KEY_TAB:
                 this.handleTab(e);
@@ -49,6 +46,9 @@ export class Dropdown {
     }
 
     handleTab(e: KeyboardEvent) {
+        if (!this.isExpanded)
+            return;
+
         e.preventDefault();
 
         if (e.shiftKey) {
@@ -116,7 +116,8 @@ export class Dropdown {
 
         return (
             <Host class={dropDownClasses}>
-                <c-button onClick={this.toggleDropdown.bind(this)}
+                <c-button
+                    onClick={() => this.toggleDropdown()}
                     type={this.buttonType}
                     hollow={this.hollowButton}
                     clear={this.clearButton}
@@ -125,7 +126,7 @@ export class Dropdown {
                     haspopup={true}
                     expanded={this.isExpanded}
                     controls={`dropdown-${this.dropdownId}`}
-                    ref={el => this.$control = el}>
+                    ref={el => this.$control = el.querySelector('button')}>
                     <span class={buttonClasses}>{this.dropdownText}</span>
                     <i class="fas fa-chevron-down dropdown-icon"></i>
                 </c-button>
