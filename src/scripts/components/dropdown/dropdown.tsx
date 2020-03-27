@@ -13,7 +13,7 @@ export class Dropdown {
     @Element() $el: HTMLElement;
 
     @Prop() dropdownText: string;
-    @Prop() dropdownAlignment: string;
+    @Prop() dropdownAlignment: 'left' | 'right' = 'left';
     @Prop() buttonIcon: string;
     @Prop() buttonType: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
     @Prop() hollowButton: boolean;
@@ -28,6 +28,9 @@ export class Dropdown {
     handleKeyDown(e: KeyboardEvent) {
         const KEY_TAB = 9;
         const KEY_ESC = 27;
+
+        if (!this.isExpanded)
+            return;
 
         switch (e.keyCode) {
             case KEY_TAB:
@@ -89,25 +92,48 @@ export class Dropdown {
     close() {
         this.isExpanded = false;
         this.focusIndex = 0;
-        this.$control.setAttribute("aria-expanded", "false");
         setTimeout(() => this.$control.focus());
     }
 
     render() {
+        let dropDownClasses = {
+            'dropdown': true,
+            'show': this.isExpanded,
+            'mega-menu': this.megaMenu
+        };
+
+        let buttonClasses = {
+            'dropdown-text': true,
+            'sr-only': this.hideButtonText
+        };
+
+        let contentClasses = {
+            'contents': true,
+            'mega-menu-contents': this.megaMenu,
+            'dropdown-contents': !this.megaMenu,
+            [`align-${this.dropdownAlignment}`]: !this.megaMenu
+        };
+
         return (
-            <Host class={{
-                'dropdown': true,
-                'mega-menu': this.megaMenu
-            }}>
-                <c-button onClick={this.toggleDropdown.bind(this)} type={this.buttonType} hollow={this.hollowButton} clear={this.clearButton} class={`button ${this.buttonType} ${this.hollowButton && 'hollow'} dropdown-button`} aria-haspopup="true" aria-expanded={`${this.isExpanded}`} aria-controls={`dropdown-${this.dropdownId}`} ref={el => this.$control = el}>
-                    {this.buttonIcon && <i class={`button-icon ${this.buttonIcon}`}></i>}
-                    <span class={{
-                        'dropdown-text': true,
-                        'sr-only': this.hideButtonText
-                    }}>{this.dropdownText}</span>
+            <Host class={dropDownClasses}>
+                <c-button onClick={this.toggleDropdown.bind(this)}
+                    type={this.buttonType}
+                    hollow={this.hollowButton}
+                    clear={this.clearButton}
+                    icon={this.buttonIcon}
+                    cssClass="dropdown-button"
+                    haspopup={true}
+                    expanded={this.isExpanded}
+                    controls={`dropdown-${this.dropdownId}`}
+                    ref={el => this.$control = el}>
+                    <span class={buttonClasses}>{this.dropdownText}</span>
                     <i class="fas fa-chevron-down dropdown-icon"></i>
                 </c-button>
-                <div id={`dropdown-${this.dropdownId}`} class={this.megaMenu ? 'mega-menu-contents' : `dropdown-contents align-${this.dropdownAlignment}`} role={this.megaMenu ? '' : 'list'} tabindex="-1" ref={el => this.$contents = el}>
+                <div id={`dropdown-${this.dropdownId}`}
+                    class={contentClasses}
+                    role={this.megaMenu ? '' : 'list'}
+                    tabindex="-1"
+                    ref={el => this.$contents = el}>
                     <slot />
                 </div>
             </Host>
