@@ -7,16 +7,23 @@ export class LinkButton implements ComponentInterface {
     @Prop() type: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
     @Prop() hollow: boolean;
     @Prop() clear: boolean;
-    @Prop() size: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
-    @Prop() icon: string;
+    @Prop() size: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' = 'medium';
+    @Prop() icon: string = '';
     @Prop() iconDirection: 'left' | 'right' = 'left';
     @Prop() href: string;
+    @Prop() hideText: boolean = false;
     @Prop() cssClass: string = '';
+    @Prop() haspopup: boolean;
+    @Prop() expanded: boolean;
+    @Prop() controls: string;
 
     render() {
         let content = [
             this.icon && <i class={`button-icon ${this.icon}`}></i>,
-            <span class="button-text">
+            <span class={{
+                'button-text': true,
+                'sr-only': this.hideText
+            }}>
                 <slot />
             </span>
         ];
@@ -31,10 +38,16 @@ export class LinkButton implements ComponentInterface {
             'clear': this.clear
         };
 
+        let props = {
+            'aria-haspopup': this.haspopup,
+            'aria-expanded': this.expanded,
+            'aria-controls': this.controls
+        }
+
         return (
             this.href
                 ? <a class={classes} href={this.href}>{content}</a>
-                : <button class={classes}>{content}</button >
+                : <button {...props} class={classes}>{content}</button >
         );
     }
 }
