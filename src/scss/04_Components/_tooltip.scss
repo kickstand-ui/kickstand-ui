@@ -1,0 +1,175 @@
+@import "../00_Abstracts/index";
+
+.tooltip {
+    &:not(.disabled) {
+        position: relative;
+        display: inline-block;
+
+        @include hover-focus-active {
+            cursor: help;
+
+            .text {
+                font-weight: bold;
+            }
+
+            .message {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        .text {
+            @include border-b(dotted, xxxs, dark);
+            @include transition-ease-in-out(fast);
+        }
+
+        .message {
+            visibility: hidden;
+            text-align: center;
+            padding: 0.75rem;
+            min-width: 10rem;
+            max-width: 100vw;
+            white-space: normal;
+            font-weight: normal;
+            font-style: italic;
+            position: absolute;
+            z-index: z(sm);
+            opacity: 0;
+            transition: opacity 0.3s;
+            @include transition-ease-in-out(fast);
+            @include shadow(sm);
+            @include bg-color(white);
+            @include border();
+
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 0;
+                height: 0;
+                border: 10px solid transparent;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 0;
+                height: 0;
+                border: 9px solid transparent;
+            }
+
+            &.top {
+                bottom: 125%;
+                left: 50%;
+                transform: translateX(-50%);
+                @include mb(sm);
+
+                &::before {
+                    top: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-top-color: color(light, darker);
+                }
+
+                &::after {
+                    top: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-top-color: white;
+                }
+            }
+
+            &.bottom {
+                top: 125%;
+                left: 50%;
+                transform: translateX(-50%);
+                @include mt(sm);
+
+                &::before {
+                    bottom: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-bottom-color: color(light, darker);
+                }
+
+                &::after {
+                    bottom: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-bottom-color: white;
+                    @include mb(-xxxs);
+                }
+            }
+
+            &.left {
+                right: 125%;
+                top: 50%;
+                transform: translateY(-50%);
+                @include mr(sm);
+
+                &::before {
+                    left: 100%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    border-left-color: color(light, darker);
+                }
+
+                &::after {
+                    left: 100%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    border-left-color: white;
+                    @include ml(-xxxs);
+                }
+            }
+
+            &.right {
+                left: 125%;
+                top: 50%;
+                transform: translateY(-50%);
+                @include ml(sm);
+
+                &::before {
+                    right: 100%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    border-right-color: color(light, darker);
+                }
+
+                &::after {
+                    right: 100%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    border-right-color: white;
+                    @include mr(-xxxs);
+                }
+            }
+
+            &.size {
+                &-sm {
+                    width: 10rem;
+                }
+
+                &-md {
+                    width: 15rem;
+                }
+
+                &-lg {
+                    width: 20rem;
+                }
+
+                &-xl {
+                    width: 25rem;
+                }
+            }
+        }
+
+        &.show {
+            .message {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}
