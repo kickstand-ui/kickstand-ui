@@ -20,7 +20,7 @@ export const playground = () => {
         });
     });
     return (`
-    <div style="width:300px; height:300px;">
+    <div style="width:300px; height:300px; position:relative;">
         <button class="m-xxl" id="open">Open Overlay</button>
         <c-overlay absolute="${absolute}" theme="${theme}" dismissible="${requireResponse}" id="overlay">
             <button id="close">Close Overlay!</button>
