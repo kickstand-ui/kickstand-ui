@@ -86,6 +86,12 @@ export namespace Components {
     'src': string;
     'threshold': number;
   }
+  interface CLoading {
+    'absolute': boolean;
+    'hide': () => Promise<void>;
+    'show': () => Promise<void>;
+    'type': 'spinner' | 'ellipsis';
+  }
   interface CModal {
     'dismissible': boolean;
     'hide': () => Promise<void>;
@@ -244,6 +250,12 @@ declare global {
     new (): HTMLCImgElement;
   };
 
+  interface HTMLCLoadingElement extends Components.CLoading, HTMLStencilElement {}
+  var HTMLCLoadingElement: {
+    prototype: HTMLCLoadingElement;
+    new (): HTMLCLoadingElement;
+  };
+
   interface HTMLCModalElement extends Components.CModal, HTMLStencilElement {}
   var HTMLCModalElement: {
     prototype: HTMLCModalElement;
@@ -364,6 +376,7 @@ declare global {
     'c-column': HTMLCColumnElement;
     'c-dropdown': HTMLCDropdownElement;
     'c-img': HTMLCImgElement;
+    'c-loading': HTMLCLoadingElement;
     'c-modal': HTMLCModalElement;
     'c-modal-footer': HTMLCModalFooterElement;
     'c-navbar': HTMLCNavbarElement;
@@ -459,6 +472,10 @@ declare namespace LocalJSX {
     'src'?: string;
     'threshold'?: number;
   }
+  interface CLoading {
+    'absolute'?: boolean;
+    'type'?: 'spinner' | 'ellipsis';
+  }
   interface CModal {
     'dismissible'?: boolean;
     'modalTitle'?: string;
@@ -549,6 +566,7 @@ declare namespace LocalJSX {
     'c-column': CColumn;
     'c-dropdown': CDropdown;
     'c-img': CImg;
+    'c-loading': CLoading;
     'c-modal': CModal;
     'c-modal-footer': CModalFooter;
     'c-navbar': CNavbar;
@@ -588,6 +606,7 @@ declare module "@stencil/core" {
       'c-column': LocalJSX.CColumn & JSXBase.HTMLAttributes<HTMLCColumnElement>;
       'c-dropdown': LocalJSX.CDropdown & JSXBase.HTMLAttributes<HTMLCDropdownElement>;
       'c-img': LocalJSX.CImg & JSXBase.HTMLAttributes<HTMLCImgElement>;
+      'c-loading': LocalJSX.CLoading & JSXBase.HTMLAttributes<HTMLCLoadingElement>;
       'c-modal': LocalJSX.CModal & JSXBase.HTMLAttributes<HTMLCModalElement>;
       'c-modal-footer': LocalJSX.CModalFooter & JSXBase.HTMLAttributes<HTMLCModalFooterElement>;
       'c-navbar': LocalJSX.CNavbar & JSXBase.HTMLAttributes<HTMLCNavbarElement>;
