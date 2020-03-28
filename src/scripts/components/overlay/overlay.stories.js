@@ -5,7 +5,7 @@ export default { title: 'Overlay' };
 export const playground = () => {
     const theme = select('theme', ['dark', 'light'], 'dark');
     const absolute = boolean('absolute', false);
-    const requireResponse = boolean('require-response', false);
+    const dismissible = boolean('dismissible', true);
 
     setTimeout(() => {
         let $openButton = document.getElementById('open');
@@ -22,7 +22,7 @@ export const playground = () => {
     return (`
     <div style="width:300px; height:300px; position:relative;">
         <button class="m-xxl" id="open">Open Overlay</button>
-        <c-overlay absolute="${absolute}" theme="${theme}" dismissible="${requireResponse}" id="overlay">
+        <c-overlay absolute="${absolute}" theme="${theme}" dismissible="${dismissible}" id="overlay">
             <button id="close">Close Overlay!</button>
         </c-overlay>
     </div>
