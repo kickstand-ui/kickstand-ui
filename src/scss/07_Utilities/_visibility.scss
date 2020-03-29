@@ -1,35 +1,49 @@
-@import '../00_Abstracts/index';
+@import "../00_Abstracts/index";
 
 .sr-only {
     @include screen-reader-only();
 }
 
-.hidden {
+.visible {
+    visibility: visible !important;
+}
+
+.invisible {
     visibility: hidden !important;
 }
 
-@each $breakpoint, $value in $breakpoints {
-    .#{$breakpoint}:hidden {
-        @include breakpoint-below($breakpoint) {
-            visibility: hidden !important;
-        }
-    }
+.show {
+    display: block !important;
 }
 
-
-.display-none {
+.hide {
     display: none !important;
 }
 
 @each $breakpoint, $value in $breakpoints {
-    .#{$breakpoint}:display-none {
-        @include breakpoint-below($breakpoint) {
+    @include breakpoint-below($breakpoint) {
+        .#{$breakpoint}\:sr-only {
+            @include screen-reader-only();
+        }
+
+        .#{$breakpoint}\:visible {
+            visibility: hidden !important;
+        }
+
+        .#{$breakpoint}\:invisible {
+            visibility: hidden !important;
+        }
+
+        .#{$breakpoint}\:show {
+            display: none !important;
+        }
+
+        .#{$breakpoint}\:show {
+            display: none !important;
+        }
+
+        .#{$breakpoint}\:hide {
             display: none !important;
         }
     }
-}
-
-
-.display-block {
-    display: block !important;
 }
