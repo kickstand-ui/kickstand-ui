@@ -1,6 +1,6 @@
 import { text, select, boolean, number } from "@storybook/addon-knobs";
 
-export default { title: 'Loading' };
+export default { title: 'Loading/Animated Loading' };
 
 const sizes = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
 

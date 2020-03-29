@@ -1,6 +1,6 @@
 import { text, select, boolean } from '@storybook/addon-knobs';
 
-export default { title: 'Progress Bar' };
+export default { title: 'Loading/Progress Bar' };
 
 const types = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
 const sizes = ['xs', 'sm', 'md', 'lg'];
