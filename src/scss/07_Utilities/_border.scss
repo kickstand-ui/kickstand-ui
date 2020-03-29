@@ -1,0 +1,29 @@
+@import '../00_Abstracts/index';
+
+.border {
+    @include border();
+    
+    &-t {
+        @include border-t();
+    }
+
+    &-b {
+        @include border-b();
+    }
+
+    &-l {
+        @include border-l();
+    }
+
+    &-r {
+        @include border-r();
+    }
+
+    &-x {
+        @include border-x();
+    }
+
+    &-y {
+        @include border-y();
+    }
+}
