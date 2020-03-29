@@ -19,6 +19,7 @@
 | `href`          | `href`           |             | `string`                                                                                                  | `undefined` |
 | `icon`          | `icon`           |             | `string`                                                                                                  | `''`        |
 | `iconDirection` | `icon-direction` |             | `"left" \| "right"`                                                                                       | `'left'`    |
+| `loading`       | `loading`        |             | `boolean`                                                                                                 | `undefined` |
 | `size`          | `size`           |             | `"large" \| "medium" \| "small" \| "xlarge" \| "xsmall"`                                                  | `'medium'`  |
 | `type`          | `type`           |             | `"danger" \| "dark" \| "info" \| "light" \| "link" \| "primary" \| "secondary" \| "success" \| "warning"` | `'primary'` |
 
@@ -31,9 +32,16 @@
  - [c-modal](../modal)
  - [c-side-drawer](../side-drawer)
 
+### Depends on
+
+- [c-loading-overlay](../loading)
+
 ### Graph
 ```mermaid
 graph TD;
+  c-button --> c-loading-overlay
+  c-loading-overlay --> c-overlay
+  c-loading-overlay --> c-loading
   c-dropdown --> c-button
   c-modal --> c-button
   c-side-drawer --> c-button

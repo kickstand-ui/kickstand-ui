@@ -10,20 +10,23 @@ export const playground = () => {
     const type = select('type', types, 'primary');
     const hollow = boolean('hollow', false);
     const clear = boolean('clear', false);
+    const loading = boolean('loading', false);
     const size = select('size', sizes, 'md');
     const icon = text('icon', '');
     const iconDirection = select('icon-direction', iconDirections, 'left');
     const linkUrl = text('url', '');
-    const cssClass = text('css-class', 'm-md');
+    const cssClass = text('css-class', '');
     return (`<c-button
             css-class="${cssClass}" 
+            class="m-md"
             type="${type}" 
             hollow="${hollow}" 
             clear="${clear}" 
             size="${size}" 
             icon="${icon}"
             icon-direction="${iconDirection}"
-            url="${linkUrl}">
+            url="${linkUrl}"
+            loading="${loading}">
             ${type} button
         </c-button>`);
 };

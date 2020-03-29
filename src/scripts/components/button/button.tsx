@@ -1,9 +1,11 @@
-import { Component, h, Prop, ComponentInterface } from '@stencil/core';
+import { Component, h, Prop, ComponentInterface, Host } from '@stencil/core';
 
 @Component({
     tag: 'c-button'
 })
 export class LinkButton implements ComponentInterface {
+    $loading: HTMLCLoadingElement;
+
     @Prop() type: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
     @Prop() hollow: boolean;
     @Prop() clear: boolean;
@@ -15,7 +17,14 @@ export class LinkButton implements ComponentInterface {
     @Prop() cssClass: string = '';
     @Prop() haspopup: boolean;
     @Prop() expanded: boolean;
+    @Prop() loading: boolean;
     @Prop() controls: string;
+
+    componentDidRender() {
+        this.loading
+            ? this.$loading.show()
+            : this.$loading.hide();
+    }
 
     render() {
         let content = [
@@ -27,7 +36,7 @@ export class LinkButton implements ComponentInterface {
                 <slot />
             </span>
         ];
-        
+
         let classes = {
             'button': true,
             [this.type]: true,
@@ -45,9 +54,12 @@ export class LinkButton implements ComponentInterface {
         }
 
         return (
-            this.href
-                ? <a class={classes} href={this.href}>{content}</a>
-                : <button {...props} class={classes}>{content}</button >
+            <Host>
+                <c-loading-overlay absolute ref={el => this.$loading = el}></c-loading-overlay>
+                {this.href
+                    ? <a class={classes} href={this.href}>{content}</a>
+                    : <button {...props} class={classes}>{content}</button >}
+            </Host>
         );
     }
 }
