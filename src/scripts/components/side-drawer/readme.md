@@ -50,6 +50,9 @@ Type: `Promise<void>`
 graph TD;
   c-side-drawer --> c-overlay
   c-side-drawer --> c-button
+  c-button --> c-loading-overlay
+  c-loading-overlay --> c-overlay
+  c-loading-overlay --> c-loading
   style c-side-drawer fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -1,53 +1,25 @@
-import { Component, h, Prop, Method, Element, ComponentInterface, Host } from '@stencil/core';
+import { Component, h, Prop, Element, ComponentInterface, Host } from '@stencil/core';
 
 @Component({
     tag: 'c-loading'
 })
 export class Loading implements ComponentInterface {
-    $overlay: HTMLCOverlayElement;
-
     @Element() $el: HTMLElement;
 
     @Prop() type: 'spinner' | 'ellipsis' = 'spinner';
-    @Prop() absolute: boolean = false;
-
-    @Method()
-    async show() {
-        await this.$overlay.show();
-    }
-
-    @Method()
-    async hide() {
-        await this.$overlay.hide();
-    }
+    @Prop() message: string = 'Loading';
+    @Prop() showMessage: boolean;
 
     render() {
-        let $loader: HTMLElement;
-
-        switch (this.type) {
-            case 'ellipsis':
-                $loader = <div class="ellipsis">
+        return (
+            <Host class="loading">
+                <div aria-hidden="true" class={this.type}>
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
                 </div>
-                break;
-            default:
-                $loader = <c-overlay theme="light" dismissible={false} absolute={this.absolute} ref={el => this.$overlay = el}>
-                    <div class="spinner">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </c-overlay>
-                break;
-        }
-
-        return (
-            <Host class="loading">
-                {$loader}
+                <span aria-live="polite" role="alert" class={{ 'sr-only': !this.showMessage}}>{this.message}</span>
             </Host>);
     }
 }

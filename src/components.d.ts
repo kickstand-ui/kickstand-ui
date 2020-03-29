@@ -41,6 +41,7 @@ export namespace Components {
     'href': string;
     'icon': string;
     'iconDirection': 'left' | 'right';
+    'loading': boolean;
     'size': 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
     'type': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
   }
@@ -87,10 +88,17 @@ export namespace Components {
     'threshold': number;
   }
   interface CLoading {
+    'message': string;
+    'showMessage': boolean;
+    'type': 'spinner' | 'ellipsis';
+  }
+  interface CLoadingOverlay {
     'absolute': boolean;
     'hide': () => Promise<void>;
+    'message': string;
     'show': () => Promise<void>;
-    'type': 'spinner' | 'ellipsis';
+    'showMessage': boolean;
+    'size': 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
   }
   interface CModal {
     'dismissible': boolean;
@@ -256,6 +264,12 @@ declare global {
     new (): HTMLCLoadingElement;
   };
 
+  interface HTMLCLoadingOverlayElement extends Components.CLoadingOverlay, HTMLStencilElement {}
+  var HTMLCLoadingOverlayElement: {
+    prototype: HTMLCLoadingOverlayElement;
+    new (): HTMLCLoadingOverlayElement;
+  };
+
   interface HTMLCModalElement extends Components.CModal, HTMLStencilElement {}
   var HTMLCModalElement: {
     prototype: HTMLCModalElement;
@@ -377,6 +391,7 @@ declare global {
     'c-dropdown': HTMLCDropdownElement;
     'c-img': HTMLCImgElement;
     'c-loading': HTMLCLoadingElement;
+    'c-loading-overlay': HTMLCLoadingOverlayElement;
     'c-modal': HTMLCModalElement;
     'c-modal-footer': HTMLCModalFooterElement;
     'c-navbar': HTMLCNavbarElement;
@@ -427,6 +442,7 @@ declare namespace LocalJSX {
     'href'?: string;
     'icon'?: string;
     'iconDirection'?: 'left' | 'right';
+    'loading'?: boolean;
     'size'?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
     'type'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
   }
@@ -473,8 +489,15 @@ declare namespace LocalJSX {
     'threshold'?: number;
   }
   interface CLoading {
-    'absolute'?: boolean;
+    'message'?: string;
+    'showMessage'?: boolean;
     'type'?: 'spinner' | 'ellipsis';
+  }
+  interface CLoadingOverlay {
+    'absolute'?: boolean;
+    'message'?: string;
+    'showMessage'?: boolean;
+    'size'?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
   }
   interface CModal {
     'dismissible'?: boolean;
@@ -567,6 +590,7 @@ declare namespace LocalJSX {
     'c-dropdown': CDropdown;
     'c-img': CImg;
     'c-loading': CLoading;
+    'c-loading-overlay': CLoadingOverlay;
     'c-modal': CModal;
     'c-modal-footer': CModalFooter;
     'c-navbar': CNavbar;
@@ -607,6 +631,7 @@ declare module "@stencil/core" {
       'c-dropdown': LocalJSX.CDropdown & JSXBase.HTMLAttributes<HTMLCDropdownElement>;
       'c-img': LocalJSX.CImg & JSXBase.HTMLAttributes<HTMLCImgElement>;
       'c-loading': LocalJSX.CLoading & JSXBase.HTMLAttributes<HTMLCLoadingElement>;
+      'c-loading-overlay': LocalJSX.CLoadingOverlay & JSXBase.HTMLAttributes<HTMLCLoadingOverlayElement>;
       'c-modal': LocalJSX.CModal & JSXBase.HTMLAttributes<HTMLCModalElement>;
       'c-modal-footer': LocalJSX.CModalFooter & JSXBase.HTMLAttributes<HTMLCModalFooterElement>;
       'c-navbar': LocalJSX.CNavbar & JSXBase.HTMLAttributes<HTMLCNavbarElement>;
