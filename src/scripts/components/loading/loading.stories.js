@@ -11,8 +11,10 @@ export const playground = () => {
     const cssClass = text('class', '')
 
     return (`<div>
-        <c-loading class="${cssClass}" message="${message}" show-message="${showMessage}" type="${type}" />
         <span class="ml-sm">Some test text at 16px.</span>
+        <span>
+            <c-loading class="${cssClass}" message="${message}" show-message="${showMessage}" type="${type}" />
+        </span>
     </div>`);
 }
 
