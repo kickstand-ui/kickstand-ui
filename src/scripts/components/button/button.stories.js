@@ -1,6 +1,6 @@
 import { text, select, boolean } from '@storybook/addon-knobs';
 
-export default { title: 'Button' };
+export default { title: 'Forms/Button' };
 
 const types = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark', 'link'];
 const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
