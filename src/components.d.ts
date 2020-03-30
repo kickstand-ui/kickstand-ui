@@ -131,6 +131,10 @@ export namespace Components {
     'titleId': string;
   }
   interface CProgressBar {
+    'description': string;
+    'hideDescription': boolean;
+    'hideProgressLabel': boolean;
+    'progressLabel': string;
     'size': string;
     'type': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'value': number;
@@ -526,6 +530,10 @@ declare namespace LocalJSX {
     'titleId'?: string;
   }
   interface CProgressBar {
+    'description'?: string;
+    'hideDescription'?: boolean;
+    'hideProgressLabel'?: boolean;
+    'progressLabel'?: string;
     'size'?: string;
     'type'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'value'?: number;

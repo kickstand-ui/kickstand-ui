@@ -8,7 +8,11 @@ const iconDirections = ['left', 'right'];
 
 export const playground = () => {
     const type = select('type', types, 'primary');
-    const size = select('size', sizes, 'md');
     const value = text('value', 25);
-    return (`<c-progress-bar class="m-xxl" size="${size}" type="${type}" value="${value}" />`);
+    const size = select('size', sizes, 'md');
+    const description = text('description', 'Loading...');
+    const hideDescription = boolean('hide-description', false);
+    const progressLabel = text('progress-label', 'Progress');
+    const hideProgressLabel = boolean('hide-progress-label', false);
+    return (`<c-progress-bar class="m-xxl" description="${description}" progress-label="${progressLabel}" hide-progress-label="${hideProgressLabel}" hide-description="${hideDescription}" size="${size}" type="${type}" value="${value}" />`);
 };
