@@ -4,7 +4,7 @@ import { Component, h, Prop, ComponentInterface, Host } from '@stencil/core';
     tag: 'c-button'
 })
 export class LinkButton implements ComponentInterface {
-    $loading: HTMLCLoadingElement;
+    $loading: HTMLCLoadingOverlayElement;
 
     @Prop() type: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
     @Prop() hollow: boolean;
@@ -18,6 +18,7 @@ export class LinkButton implements ComponentInterface {
     @Prop() haspopup: boolean;
     @Prop() expanded: boolean;
     @Prop() loading: boolean;
+    @Prop() disabled: boolean;
     @Prop() controls: string;
 
     componentDidRender() {
@@ -50,7 +51,8 @@ export class LinkButton implements ComponentInterface {
         let props = {
             'aria-haspopup': this.haspopup,
             'aria-expanded': this.expanded,
-            'aria-controls': this.controls
+            'aria-controls': this.controls,
+            'disabled': this.disabled || this.loading
         }
 
         return (

@@ -11,6 +11,7 @@ export const playground = () => {
     const hollow = boolean('hollow', false);
     const clear = boolean('clear', false);
     const loading = boolean('loading', false);
+    const disabled = boolean('disabled', false);
     const size = select('size', sizes, 'md');
     const icon = text('icon', '');
     const iconDirection = select('icon-direction', iconDirections, 'left');
@@ -26,7 +27,8 @@ export const playground = () => {
             icon="${icon}"
             icon-direction="${iconDirection}"
             url="${linkUrl}"
-            loading="${loading}">
+            loading="${loading}"
+            disabled="${disabled}">
             ${type} button
         </c-button>`);
 };

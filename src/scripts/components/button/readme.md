@@ -12,6 +12,7 @@
 | `clear`         | `clear`          |             | `boolean`                                                                                                 | `undefined` |
 | `controls`      | `controls`       |             | `string`                                                                                                  | `undefined` |
 | `cssClass`      | `css-class`      |             | `string`                                                                                                  | `''`        |
+| `disabled`      | `disabled`       |             | `boolean`                                                                                                 | `undefined` |
 | `expanded`      | `expanded`       |             | `boolean`                                                                                                 | `undefined` |
 | `haspopup`      | `haspopup`       |             | `boolean`                                                                                                 | `undefined` |
 | `hideText`      | `hide-text`      |             | `boolean`                                                                                                 | `false`     |

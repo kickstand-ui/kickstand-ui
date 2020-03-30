@@ -34,6 +34,7 @@ export namespace Components {
     'clear': boolean;
     'controls': string;
     'cssClass': string;
+    'disabled': boolean;
     'expanded': boolean;
     'haspopup': boolean;
     'hideText': boolean;
@@ -439,6 +440,7 @@ declare namespace LocalJSX {
     'clear'?: boolean;
     'controls'?: string;
     'cssClass'?: string;
+    'disabled'?: boolean;
     'expanded'?: boolean;
     'haspopup'?: boolean;
     'hideText'?: boolean;
