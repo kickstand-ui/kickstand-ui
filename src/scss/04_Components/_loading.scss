@@ -2,7 +2,7 @@
 
 .loading {
     display: inline-block;
-    
+
     &.show-message {
         display: flex;
         flex-direction: column;
@@ -14,6 +14,7 @@
         position: relative;
         width: 1.75em;
         height: 1.75em;
+        cursor: wait;
 
         div {
             box-sizing: border-box;
@@ -46,6 +47,7 @@
         position: relative;
         width: 2.5em;
         height: 1em;
+        cursor: wait;
 
         div {
             position: absolute;
@@ -80,6 +82,8 @@
 }
 
 .loading-overlay {
+    cursor: wait;
+
     .content {
         @include shadow(none);
     }
