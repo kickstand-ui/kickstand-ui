@@ -1,6 +1,6 @@
 import { text, select, boolean } from "@storybook/addon-knobs";
 
-export default { title: 'Tooltip' };
+export default { title: 'Containers/Tooltip' };
 
 const positions = ['top', 'bottom', 'left', 'right'];
 const sizes = ['sm', 'md', 'lg', 'xl'];

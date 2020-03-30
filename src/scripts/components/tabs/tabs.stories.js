@@ -1,6 +1,6 @@
 import { text, select, boolean } from "@storybook/addon-knobs";
 
-export default { title: 'Tabs' };
+export default { title: 'Containers/Tabs' };
 
 export const defaultTabs = () => {
     const position = select('position', ['top', 'bottom', 'left', 'right'], 'top');

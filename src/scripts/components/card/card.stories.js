@@ -1,6 +1,6 @@
 import { text, select, boolean, number } from "@storybook/addon-knobs";
 
-export default { title: 'Card' };
+export default { title: 'Containers/Card' };
 
 const imgDirections = ['top', 'bottom', 'left', 'right', 'behind'];
 

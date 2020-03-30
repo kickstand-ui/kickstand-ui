@@ -1,6 +1,6 @@
 import { text, select, boolean, number } from "@storybook/addon-knobs";
 
-export default { title: 'Carousel' };
+export default { title: 'Containers/Carousel' };
 
 export const carouselWithImages = () => {
     const timer = number('timer', 6000);
