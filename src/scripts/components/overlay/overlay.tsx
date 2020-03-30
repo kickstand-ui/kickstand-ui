@@ -21,7 +21,7 @@ export class Overlay {
     @Method()
     async show() {
         this.$focusedElBeforeOpen = document.activeElement as HTMLElement;
-        this.$focusedElBeforeOpen.setAttribute("aria-expanded", "true");
+        this.$focusedElBeforeOpen && this.$focusedElBeforeOpen.setAttribute("aria-expanded", "true");
         this.isShowing = true;
 
         if(this.$focusableEls.length > 0)
@@ -32,8 +32,11 @@ export class Overlay {
     async hide() {
         this.isShowing = false;
         this.focusIndex = 0;
-        this.$focusedElBeforeOpen.setAttribute("aria-expanded", "false");
-        this.$focusedElBeforeOpen.focus();
+
+        if (this.$focusedElBeforeOpen) {
+            this.$focusedElBeforeOpen.setAttribute("aria-expanded", "false");
+            this.$focusedElBeforeOpen.focus();
+        }
     }
 
     @Listen('keydown')
