@@ -15,7 +15,7 @@ export class Dropdown {
     @Prop() dropdownText: string;
     @Prop() dropdownAlignment: 'left' | 'right' = 'left';
     @Prop() buttonIcon: string;
-    @Prop() buttonType: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
+    @Prop() buttonColor: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
     @Prop() hollowButton: boolean;
     @Prop() clearButton: boolean;
     @Prop() hideButtonText: boolean;
@@ -118,7 +118,7 @@ export class Dropdown {
             <Host class={dropDownClasses}>
                 <c-button
                     onClick={() => this.toggleDropdown()}
-                    type={this.buttonType}
+                    color={this.buttonColor}
                     hollow={this.hollowButton}
                     clear={this.clearButton}
                     icon={this.buttonIcon}

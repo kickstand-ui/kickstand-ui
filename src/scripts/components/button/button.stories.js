@@ -2,12 +2,12 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 
 export default { title: 'Forms/Button' };
 
-const types = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark', 'link'];
+const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark', 'link'];
 const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
 const iconDirections = ['left', 'right'];
 
 export const playground = () => {
-    const type = select('type', types, 'primary');
+    const color = select('color', colors, 'primary');
     const hollow = boolean('hollow', false);
     const clear = boolean('clear', false);
     const loading = boolean('loading', false);
@@ -20,7 +20,7 @@ export const playground = () => {
     return (`<c-button
             css-class="${cssClass}" 
             class="m-md"
-            type="${type}" 
+            color="${color}" 
             hollow="${hollow}" 
             clear="${clear}" 
             size="${size}" 
@@ -29,11 +29,11 @@ export const playground = () => {
             url="${linkUrl}"
             loading="${loading}"
             disabled="${disabled}">
-            ${type} button
+            ${color} button
         </c-button>`);
 };
 
-export const buttonTypes = () => {
+export const buttoncolors = () => {
     const hollow = boolean('hollow', false);
     const clear = boolean('clear', false);
     const size = select('size', sizes, 'md');
@@ -41,22 +41,22 @@ export const buttonTypes = () => {
     const iconDirection = select('icon-direction', iconDirections, 'left');
     const linkUrl = text('url', '');
     const cssClass = text('css-class', 'm-md');
-    return (types.map(type =>
+    return (colors.map(color =>
         `<c-button
             css-class="${cssClass}" 
-            type="${type}" 
+            color="${color}" 
             hollow="${hollow}" 
             clear="${clear}" 
             size="${size}" 
             icon="${icon}"
             icon-direction="${iconDirection}"
             url="${linkUrl}">
-            ${type} button
+            ${color} button
         </c-button>`).join(""));
 };
 
 export const sizeVariations = () => {
-    const type = select('type', types, 'primary');
+    const color = select('color', colors, 'primary');
     const hollow = boolean('hollow', false);
     const clear = boolean('clear', false);
     const icon = text('icon', '');
@@ -66,22 +66,22 @@ export const sizeVariations = () => {
     return (sizes.map(size =>
         `<c-button
             css-class="${cssClass}" 
-            type="${type}" 
+            color="${color}" 
             hollow="${hollow}" 
             clear="${clear}" 
             size="${size}" 
             icon="${icon}"
             icon-direction="${iconDirection}"
             url="${linkUrl}">
-            ${type} button
+            ${color} button
         </c-button>`).join(''));
 };
 
 export const clickHandler = () => {
-    const type = select('type', types, 'primary');
+    const color = select('color', colors, 'primary');
     const cssClass = text('css-class', 'm-md');
     const button = document.createElement('c-button');
-    button.type = type;
+    button.color = color;
     button.cssClass = cssClass;
     button.clickHandler = () => console.log('You just clicked a button...');
     return button;

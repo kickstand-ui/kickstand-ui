@@ -2,11 +2,11 @@ import { text, select, boolean } from "@storybook/addon-knobs";
 
 export default { title: 'Navigation/Dropdown' };
 
-const types = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
+const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
 export const playground = () => {
     const dropdownText = text('dropdown text', 'Dropdown Test');
     const dropdownAlignment = select('dropdown alignment', ['left', 'right'], 'left');
-    const buttonTypes = select('button type', types, 'primary');
+    const buttonColors = select('button color', colors, 'primary');
     const buttonIcon = text('button icon', '');
     const hollow = boolean('hollow', false);
     const hideButtonText = boolean('hide button text', false);
@@ -17,7 +17,7 @@ export const playground = () => {
                 class="m-lg"
                 dropdown-text="${dropdownText}" 
                 dropdown-alignment="${dropdownAlignment}" 
-                button-type="${buttonTypes}" 
+                button-color="${buttonColors}" 
                 button-icon="${buttonIcon}"
                 hollow="${hollow}"
                 hide-button-text="${hideButtonText}"

@@ -19,19 +19,20 @@ export namespace Components {
     'toggleSlide': () => Promise<void>;
   }
   interface CAlert {
+    'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'header': string;
     'note': boolean;
-    'type': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
   }
   interface CBadge {
+    'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'hollow': boolean;
-    'type': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
   }
   interface CBreadcrumbs {
     'breadcrumbs': IBreadcrumbs[];
   }
   interface CButton {
     'clear': boolean;
+    'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'controls': string;
     'cssClass': string;
     'disabled': boolean;
@@ -44,7 +45,6 @@ export namespace Components {
     'iconDirection': 'left' | 'right';
     'loading': boolean;
     'size': 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
-    'type': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
   }
   interface CCard {
     'alt': string;
@@ -72,8 +72,8 @@ export namespace Components {
     'align': 'start' | 'center' | 'end';
   }
   interface CDropdown {
+    'buttonColor': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'buttonIcon': string;
-    'buttonType': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'clearButton': boolean;
     'dropdownAlignment': 'left' | 'right';
     'dropdownText': string;
@@ -166,12 +166,6 @@ export namespace Components {
   }
   interface CTabPanel {
     'tabId': string;
-  }
-  interface CTable {
-    'hover': boolean;
-    'responsive': boolean;
-    'striped': boolean;
-    'type': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
   }
   interface CTabs {
     'position': string;
@@ -359,12 +353,6 @@ declare global {
     new (): HTMLCTabPanelElement;
   };
 
-  interface HTMLCTableElement extends Components.CTable, HTMLStencilElement {}
-  var HTMLCTableElement: {
-    prototype: HTMLCTableElement;
-    new (): HTMLCTableElement;
-  };
-
   interface HTMLCTabsElement extends Components.CTabs, HTMLStencilElement {}
   var HTMLCTabsElement: {
     prototype: HTMLCTabsElement;
@@ -422,7 +410,6 @@ declare global {
     'c-tab': HTMLCTabElement;
     'c-tab-list': HTMLCTabListElement;
     'c-tab-panel': HTMLCTabPanelElement;
-    'c-table': HTMLCTableElement;
     'c-tabs': HTMLCTabsElement;
     'c-tooltip': HTMLCTooltipElement;
     'card-body': HTMLCardBodyElement;
@@ -438,19 +425,20 @@ declare namespace LocalJSX {
     'heading'?: string;
   }
   interface CAlert {
+    'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'header'?: string;
     'note'?: boolean;
-    'type'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
   }
   interface CBadge {
+    'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'hollow'?: boolean;
-    'type'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
   }
   interface CBreadcrumbs {
     'breadcrumbs'?: IBreadcrumbs[];
   }
   interface CButton {
     'clear'?: boolean;
+    'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'controls'?: string;
     'cssClass'?: string;
     'disabled'?: boolean;
@@ -463,7 +451,6 @@ declare namespace LocalJSX {
     'iconDirection'?: 'left' | 'right';
     'loading'?: boolean;
     'size'?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
-    'type'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
   }
   interface CCard {
     'alt'?: string;
@@ -491,8 +478,8 @@ declare namespace LocalJSX {
     'align'?: 'start' | 'center' | 'end';
   }
   interface CDropdown {
+    'buttonColor'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'buttonIcon'?: string;
-    'buttonType'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'clearButton'?: boolean;
     'dropdownAlignment'?: 'left' | 'right';
     'dropdownText'?: string;
@@ -578,12 +565,6 @@ declare namespace LocalJSX {
   interface CTabPanel {
     'tabId'?: string;
   }
-  interface CTable {
-    'hover'?: boolean;
-    'responsive'?: boolean;
-    'striped'?: boolean;
-    'type'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
-  }
   interface CTabs {
     'position'?: string;
   }
@@ -633,7 +614,6 @@ declare namespace LocalJSX {
     'c-tab': CTab;
     'c-tab-list': CTabList;
     'c-tab-panel': CTabPanel;
-    'c-table': CTable;
     'c-tabs': CTabs;
     'c-tooltip': CTooltip;
     'card-body': CardBody;
@@ -675,7 +655,6 @@ declare module "@stencil/core" {
       'c-tab': LocalJSX.CTab & JSXBase.HTMLAttributes<HTMLCTabElement>;
       'c-tab-list': LocalJSX.CTabList & JSXBase.HTMLAttributes<HTMLCTabListElement>;
       'c-tab-panel': LocalJSX.CTabPanel & JSXBase.HTMLAttributes<HTMLCTabPanelElement>;
-      'c-table': LocalJSX.CTable & JSXBase.HTMLAttributes<HTMLCTableElement>;
       'c-tabs': LocalJSX.CTabs & JSXBase.HTMLAttributes<HTMLCTabsElement>;
       'c-tooltip': LocalJSX.CTooltip & JSXBase.HTMLAttributes<HTMLCTooltipElement>;
       'card-body': LocalJSX.CardBody & JSXBase.HTMLAttributes<HTMLCardBodyElement>;

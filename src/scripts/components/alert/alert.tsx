@@ -6,11 +6,11 @@ import { Component, h, Prop, Host } from '@stencil/core';
 export class Alert {
     @Prop() header: string;
     @Prop() note: boolean;
-    @Prop() type: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
+    @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
 
     render() {
         return (
-            <Host class={`alert ${this.type} ${this.note ? 'note' : ''}`}>
+            <Host class={`alert ${this.color} ${this.note ? 'note' : ''}`}>
                 {this.header &&
                     <header class="alert-header">
                         <h3 class="alert-heading">{this.header}</h3>

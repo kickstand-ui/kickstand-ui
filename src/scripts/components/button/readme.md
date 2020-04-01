@@ -10,6 +10,7 @@
 | Property        | Attribute        | Description | Type                                                                                                      | Default     |
 | --------------- | ---------------- | ----------- | --------------------------------------------------------------------------------------------------------- | ----------- |
 | `clear`         | `clear`          |             | `boolean`                                                                                                 | `undefined` |
+| `color`         | `color`          |             | `"danger" \| "dark" \| "info" \| "light" \| "link" \| "primary" \| "secondary" \| "success" \| "warning"` | `'primary'` |
 | `controls`      | `controls`       |             | `string`                                                                                                  | `undefined` |
 | `cssClass`      | `css-class`      |             | `string`                                                                                                  | `''`        |
 | `disabled`      | `disabled`       |             | `boolean`                                                                                                 | `undefined` |
@@ -22,7 +23,6 @@
 | `iconDirection` | `icon-direction` |             | `"left" \| "right"`                                                                                       | `'left'`    |
 | `loading`       | `loading`        |             | `boolean`                                                                                                 | `undefined` |
 | `size`          | `size`           |             | `"large" \| "medium" \| "small" \| "xlarge" \| "xsmall"`                                                  | `'medium'`  |
-| `type`          | `type`           |             | `"danger" \| "dark" \| "info" \| "light" \| "link" \| "primary" \| "secondary" \| "success" \| "warning"` | `'primary'` |
 
 
 ## Dependencies

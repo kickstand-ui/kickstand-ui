@@ -6,7 +6,7 @@ import { Component, h, Prop, ComponentInterface, Host } from '@stencil/core';
 export class LinkButton implements ComponentInterface {
     $loading: HTMLCLoadingOverlayElement;
 
-    @Prop() type: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
+    @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
     @Prop() hollow: boolean;
     @Prop() clear: boolean;
     @Prop() size: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' = 'medium';
@@ -40,7 +40,7 @@ export class LinkButton implements ComponentInterface {
 
         let classes = {
             'button': true,
-            [this.type]: true,
+            [this.color]: true,
             [`icon-${this.iconDirection}`]: true,
             [this.cssClass]: true,
             [this.size]: true,
