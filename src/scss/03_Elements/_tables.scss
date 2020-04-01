@@ -1,1 +1,43 @@
-@import '../00_Abstracts/index';
+@import "../00_Abstracts/index";
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    @include border();
+
+    &.striped {
+        tbody {
+            tr:nth-child(odd) {
+                @include bg-color(light, light);
+            }
+        }
+    }
+
+    &.hover {
+        tbody {
+            tr {
+                &:hover {
+                    @include bg-color(light);
+                }
+            }
+        }
+    }
+
+    thead {
+        font-weight: bold;
+        @include border-b($size: xxs);
+    }
+
+    th,
+    td {
+        vertical-align: bottom;
+        @include p(sm);
+        @include border();
+    }
+}
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}

@@ -167,6 +167,12 @@ export namespace Components {
   interface CTabPanel {
     'tabId': string;
   }
+  interface CTable {
+    'hover': boolean;
+    'responsive': boolean;
+    'striped': boolean;
+    'type': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
+  }
   interface CTabs {
     'position': string;
   }
@@ -353,6 +359,12 @@ declare global {
     new (): HTMLCTabPanelElement;
   };
 
+  interface HTMLCTableElement extends Components.CTable, HTMLStencilElement {}
+  var HTMLCTableElement: {
+    prototype: HTMLCTableElement;
+    new (): HTMLCTableElement;
+  };
+
   interface HTMLCTabsElement extends Components.CTabs, HTMLStencilElement {}
   var HTMLCTabsElement: {
     prototype: HTMLCTabsElement;
@@ -410,6 +422,7 @@ declare global {
     'c-tab': HTMLCTabElement;
     'c-tab-list': HTMLCTabListElement;
     'c-tab-panel': HTMLCTabPanelElement;
+    'c-table': HTMLCTableElement;
     'c-tabs': HTMLCTabsElement;
     'c-tooltip': HTMLCTooltipElement;
     'card-body': HTMLCardBodyElement;
@@ -565,6 +578,12 @@ declare namespace LocalJSX {
   interface CTabPanel {
     'tabId'?: string;
   }
+  interface CTable {
+    'hover'?: boolean;
+    'responsive'?: boolean;
+    'striped'?: boolean;
+    'type'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
+  }
   interface CTabs {
     'position'?: string;
   }
@@ -614,6 +633,7 @@ declare namespace LocalJSX {
     'c-tab': CTab;
     'c-tab-list': CTabList;
     'c-tab-panel': CTabPanel;
+    'c-table': CTable;
     'c-tabs': CTabs;
     'c-tooltip': CTooltip;
     'card-body': CardBody;
@@ -655,6 +675,7 @@ declare module "@stencil/core" {
       'c-tab': LocalJSX.CTab & JSXBase.HTMLAttributes<HTMLCTabElement>;
       'c-tab-list': LocalJSX.CTabList & JSXBase.HTMLAttributes<HTMLCTabListElement>;
       'c-tab-panel': LocalJSX.CTabPanel & JSXBase.HTMLAttributes<HTMLCTabPanelElement>;
+      'c-table': LocalJSX.CTable & JSXBase.HTMLAttributes<HTMLCTableElement>;
       'c-tabs': LocalJSX.CTabs & JSXBase.HTMLAttributes<HTMLCTabsElement>;
       'c-tooltip': LocalJSX.CTooltip & JSXBase.HTMLAttributes<HTMLCTooltipElement>;
       'card-body': LocalJSX.CardBody & JSXBase.HTMLAttributes<HTMLCardBodyElement>;
