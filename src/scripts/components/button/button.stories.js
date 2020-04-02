@@ -3,7 +3,7 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 export default { title: 'Forms/Button' };
 
 const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark', 'link'];
-const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
+const sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
 const iconDirections = ['left', 'right'];
 
 export const playground = () => {
@@ -12,7 +12,7 @@ export const playground = () => {
     const clear = boolean('clear', false);
     const loading = boolean('loading', false);
     const disabled = boolean('disabled', false);
-    const size = select('size', sizes, 'md');
+    const size = select('size', sizes, 'medium');
     const icon = text('icon', '');
     const iconDirection = select('icon-direction', iconDirections, 'left');
     const linkUrl = text('url', '');
@@ -33,7 +33,7 @@ export const playground = () => {
         </c-button>`);
 };
 
-export const buttoncolors = () => {
+export const buttonColors = () => {
     const hollow = boolean('hollow', false);
     const clear = boolean('clear', false);
     const size = select('size', sizes, 'md');
@@ -75,14 +75,4 @@ export const sizeVariations = () => {
             url="${linkUrl}">
             ${color} button
         </c-button>`).join(''));
-};
-
-export const clickHandler = () => {
-    const color = select('color', colors, 'primary');
-    const cssClass = text('css-class', 'm-md');
-    const button = document.createElement('c-button');
-    button.color = color;
-    button.cssClass = cssClass;
-    button.clickHandler = () => console.log('You just clicked a button...');
-    return button;
 };

@@ -20,6 +20,7 @@ export class LinkButton implements ComponentInterface {
     @Prop() loading: boolean;
     @Prop() disabled: boolean;
     @Prop() controls: string;
+    @Prop() describedBy: string;
 
     componentDidRender() {
         this.loading
@@ -29,7 +30,7 @@ export class LinkButton implements ComponentInterface {
 
     render() {
         let content = [
-            this.icon && <i class={`button-icon ${this.icon}`}></i>,
+            this.icon && <i class={{'button-icon': true, [this.icon]: true, 'm-none': this.hideText}}></i>,
             <span class={{
                 'button-text': true,
                 'sr-only': this.hideText
@@ -52,6 +53,7 @@ export class LinkButton implements ComponentInterface {
             'aria-haspopup': this.haspopup,
             'aria-expanded': this.expanded,
             'aria-controls': this.controls,
+            'aria-described-by': this.describedBy,
             'disabled': this.disabled || this.loading
         }
 

@@ -13,6 +13,7 @@
 | `color`         | `color`          |             | `"danger" \| "dark" \| "info" \| "light" \| "link" \| "primary" \| "secondary" \| "success" \| "warning"` | `'primary'` |
 | `controls`      | `controls`       |             | `string`                                                                                                  | `undefined` |
 | `cssClass`      | `css-class`      |             | `string`                                                                                                  | `''`        |
+| `describedBy`   | `described-by`   |             | `string`                                                                                                  | `undefined` |
 | `disabled`      | `disabled`       |             | `boolean`                                                                                                 | `undefined` |
 | `expanded`      | `expanded`       |             | `boolean`                                                                                                 | `undefined` |
 | `haspopup`      | `haspopup`       |             | `boolean`                                                                                                 | `undefined` |
@@ -32,6 +33,7 @@
  - [c-dropdown](../dropdown)
  - [c-modal](../modal)
  - [c-side-drawer](../side-drawer)
+ - [c-spin-box](../spin-box)
 
 ### Depends on
 
@@ -46,6 +48,7 @@ graph TD;
   c-dropdown --> c-button
   c-modal --> c-button
   c-side-drawer --> c-button
+  c-spin-box --> c-button
   style c-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
