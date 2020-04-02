@@ -19,19 +19,19 @@
 }
 
 @mixin ml($size, $important: false) {
-    margin-left: spacing($size);
+    margin-left: spacing($size, $important);
 }
 
 @mixin mt($size, $important: false) {
-    margin-top: spacing($size);
+    margin-top: spacing($size, $important);
 }
 
 @mixin mr($size, $important: false) {
-    margin-right: spacing($size);
+    margin-right: spacing($size, $important);
 }
 
 @mixin mb($size, $important: false) {
-    margin-bottom: spacing($size);
+    margin-bottom: spacing($size, $important);
 }
 
 @mixin p($top, $right: $top, $bottom: $top, $left: $top, $important: false) {

@@ -22,7 +22,7 @@ export const padding = () => {
 
 export const margin = () => {
     return (`<div class="m-xxl">
-            <h2>Padding</h2>
+            <h2>Margin</h2>
             ${sizes.map(s => `
             <h3>${s}</h3>
             <div class="flex-layout align-start w-100 my-md">
