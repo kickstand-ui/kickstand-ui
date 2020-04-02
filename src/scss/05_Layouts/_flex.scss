@@ -3,19 +3,23 @@
 .flex-layout {
     display: flex;
 
-    &.row {
+    &.inline {
+        display: inline-flex;
+    }
+
+    &.flex-row {
         flex-direction: row;
     }
 
-    &.row-reverse {
+    &.flex-row-reverse {
         flex-direction: row-reverse;
     }
 
-    &.column {
+    &.flex-column {
         flex-direction: column;
     }
 
-    &.column-reverse {
+    &.flex-column-reverse {
         flex-direction: column-reverse;
     }
 
@@ -53,5 +57,9 @@
 
     &.align-center {
         align-items: center;
+    }
+
+    &.align-stretch {
+        align-items: stretch;
     }
 }

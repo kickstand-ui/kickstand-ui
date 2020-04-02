@@ -11,7 +11,7 @@ export class Row {
     render() {
         return (
             <Host class={{
-                'grid-row': true,
+                'row': true,
                 'flex-layout': true,
                 'no-gutter': this.noGutter,
                 [`align-content-${this.align}`]: true

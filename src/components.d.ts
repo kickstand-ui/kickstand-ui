@@ -102,11 +102,6 @@ export namespace Components {
     'showMessage': boolean;
     'size': 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
   }
-  interface CLoading2 {
-    'message': string;
-    'showMessage': boolean;
-    'type': 'spinner' | 'ellipsis';
-  }
   interface CModal {
     'dismissible': boolean;
     'hide': () => Promise<void>;
@@ -297,12 +292,6 @@ declare global {
     new (): HTMLCLoadingOverlayElement;
   };
 
-  interface HTMLCLoading2Element extends Components.CLoading2, HTMLStencilElement {}
-  var HTMLCLoading2Element: {
-    prototype: HTMLCLoading2Element;
-    new (): HTMLCLoading2Element;
-  };
-
   interface HTMLCModalElement extends Components.CModal, HTMLStencilElement {}
   var HTMLCModalElement: {
     prototype: HTMLCModalElement;
@@ -437,7 +426,6 @@ declare global {
     'c-img': HTMLCImgElement;
     'c-loading': HTMLCLoadingElement;
     'c-loading-overlay': HTMLCLoadingOverlayElement;
-    'c-loading2': HTMLCLoading2Element;
     'c-modal': HTMLCModalElement;
     'c-modal-footer': HTMLCModalFooterElement;
     'c-navbar': HTMLCNavbarElement;
@@ -549,11 +537,6 @@ declare namespace LocalJSX {
     'showMessage'?: boolean;
     'size'?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
   }
-  interface CLoading2 {
-    'message'?: string;
-    'showMessage'?: boolean;
-    'type'?: 'spinner' | 'ellipsis';
-  }
   interface CModal {
     'dismissible'?: boolean;
     'modalTitle'?: string;
@@ -664,7 +647,6 @@ declare namespace LocalJSX {
     'c-img': CImg;
     'c-loading': CLoading;
     'c-loading-overlay': CLoadingOverlay;
-    'c-loading2': CLoading2;
     'c-modal': CModal;
     'c-modal-footer': CModalFooter;
     'c-navbar': CNavbar;
@@ -708,7 +690,6 @@ declare module "@stencil/core" {
       'c-img': LocalJSX.CImg & JSXBase.HTMLAttributes<HTMLCImgElement>;
       'c-loading': LocalJSX.CLoading & JSXBase.HTMLAttributes<HTMLCLoadingElement>;
       'c-loading-overlay': LocalJSX.CLoadingOverlay & JSXBase.HTMLAttributes<HTMLCLoadingOverlayElement>;
-      'c-loading2': LocalJSX.CLoading2 & JSXBase.HTMLAttributes<HTMLCLoading2Element>;
       'c-modal': LocalJSX.CModal & JSXBase.HTMLAttributes<HTMLCModalElement>;
       'c-modal-footer': LocalJSX.CModalFooter & JSXBase.HTMLAttributes<HTMLCModalFooterElement>;
       'c-navbar': LocalJSX.CNavbar & JSXBase.HTMLAttributes<HTMLCNavbarElement>;
