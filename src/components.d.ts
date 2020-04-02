@@ -35,6 +35,7 @@ export namespace Components {
     'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'controls': string;
     'cssClass': string;
+    'describedBy': string;
     'disabled': boolean;
     'expanded': boolean;
     'haspopup': boolean;
@@ -101,6 +102,11 @@ export namespace Components {
     'showMessage': boolean;
     'size': 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
   }
+  interface CLoading2 {
+    'message': string;
+    'showMessage': boolean;
+    'type': 'spinner' | 'ellipsis';
+  }
   interface CModal {
     'dismissible': boolean;
     'hide': () => Promise<void>;
@@ -144,6 +150,14 @@ export namespace Components {
     'align': 'start' | 'center' | 'end';
     'noGutter': boolean;
   }
+  interface CSelectList {
+    'absolute': boolean;
+    'dismissible': boolean;
+    'hide': () => Promise<void>;
+    'show': () => Promise<void>;
+    'theme': 'dark' | 'light';
+    'titleId': string;
+  }
   interface CSideDrawer {
     'headerText': string;
     'hide': () => Promise<void>;
@@ -151,6 +165,14 @@ export namespace Components {
     'position': 'left' | 'right';
     'show': () => Promise<void>;
     'size': 'sm' | 'md' | 'lg' | 'xl';
+  }
+  interface CSpinBox {
+    'hideLabel': boolean;
+    'label': string;
+    'max': number;
+    'min': number;
+    'step': number;
+    'value': number;
   }
   interface CTab {
     'controls': string;
@@ -275,6 +297,12 @@ declare global {
     new (): HTMLCLoadingOverlayElement;
   };
 
+  interface HTMLCLoading2Element extends Components.CLoading2, HTMLStencilElement {}
+  var HTMLCLoading2Element: {
+    prototype: HTMLCLoading2Element;
+    new (): HTMLCLoading2Element;
+  };
+
   interface HTMLCModalElement extends Components.CModal, HTMLStencilElement {}
   var HTMLCModalElement: {
     prototype: HTMLCModalElement;
@@ -329,10 +357,22 @@ declare global {
     new (): HTMLCRowElement;
   };
 
+  interface HTMLCSelectListElement extends Components.CSelectList, HTMLStencilElement {}
+  var HTMLCSelectListElement: {
+    prototype: HTMLCSelectListElement;
+    new (): HTMLCSelectListElement;
+  };
+
   interface HTMLCSideDrawerElement extends Components.CSideDrawer, HTMLStencilElement {}
   var HTMLCSideDrawerElement: {
     prototype: HTMLCSideDrawerElement;
     new (): HTMLCSideDrawerElement;
+  };
+
+  interface HTMLCSpinBoxElement extends Components.CSpinBox, HTMLStencilElement {}
+  var HTMLCSpinBoxElement: {
+    prototype: HTMLCSpinBoxElement;
+    new (): HTMLCSpinBoxElement;
   };
 
   interface HTMLCTabElement extends Components.CTab, HTMLStencilElement {}
@@ -397,6 +437,7 @@ declare global {
     'c-img': HTMLCImgElement;
     'c-loading': HTMLCLoadingElement;
     'c-loading-overlay': HTMLCLoadingOverlayElement;
+    'c-loading2': HTMLCLoading2Element;
     'c-modal': HTMLCModalElement;
     'c-modal-footer': HTMLCModalFooterElement;
     'c-navbar': HTMLCNavbarElement;
@@ -406,7 +447,9 @@ declare global {
     'c-overlay': HTMLCOverlayElement;
     'c-progress-bar': HTMLCProgressBarElement;
     'c-row': HTMLCRowElement;
+    'c-select-list': HTMLCSelectListElement;
     'c-side-drawer': HTMLCSideDrawerElement;
+    'c-spin-box': HTMLCSpinBoxElement;
     'c-tab': HTMLCTabElement;
     'c-tab-list': HTMLCTabListElement;
     'c-tab-panel': HTMLCTabPanelElement;
@@ -441,6 +484,7 @@ declare namespace LocalJSX {
     'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'controls'?: string;
     'cssClass'?: string;
+    'describedBy'?: string;
     'disabled'?: boolean;
     'expanded'?: boolean;
     'haspopup'?: boolean;
@@ -505,6 +549,11 @@ declare namespace LocalJSX {
     'showMessage'?: boolean;
     'size'?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
   }
+  interface CLoading2 {
+    'message'?: string;
+    'showMessage'?: boolean;
+    'type'?: 'spinner' | 'ellipsis';
+  }
   interface CModal {
     'dismissible'?: boolean;
     'modalTitle'?: string;
@@ -544,11 +593,25 @@ declare namespace LocalJSX {
     'align'?: 'start' | 'center' | 'end';
     'noGutter'?: boolean;
   }
+  interface CSelectList {
+    'absolute'?: boolean;
+    'dismissible'?: boolean;
+    'theme'?: 'dark' | 'light';
+    'titleId'?: string;
+  }
   interface CSideDrawer {
     'headerText'?: string;
     'name'?: string;
     'position'?: 'left' | 'right';
     'size'?: 'sm' | 'md' | 'lg' | 'xl';
+  }
+  interface CSpinBox {
+    'hideLabel'?: boolean;
+    'label'?: string;
+    'max'?: number;
+    'min'?: number;
+    'step'?: number;
+    'value'?: number;
   }
   interface CTab {
     'controls'?: string;
@@ -601,6 +664,7 @@ declare namespace LocalJSX {
     'c-img': CImg;
     'c-loading': CLoading;
     'c-loading-overlay': CLoadingOverlay;
+    'c-loading2': CLoading2;
     'c-modal': CModal;
     'c-modal-footer': CModalFooter;
     'c-navbar': CNavbar;
@@ -610,7 +674,9 @@ declare namespace LocalJSX {
     'c-overlay': COverlay;
     'c-progress-bar': CProgressBar;
     'c-row': CRow;
+    'c-select-list': CSelectList;
     'c-side-drawer': CSideDrawer;
+    'c-spin-box': CSpinBox;
     'c-tab': CTab;
     'c-tab-list': CTabList;
     'c-tab-panel': CTabPanel;
@@ -642,6 +708,7 @@ declare module "@stencil/core" {
       'c-img': LocalJSX.CImg & JSXBase.HTMLAttributes<HTMLCImgElement>;
       'c-loading': LocalJSX.CLoading & JSXBase.HTMLAttributes<HTMLCLoadingElement>;
       'c-loading-overlay': LocalJSX.CLoadingOverlay & JSXBase.HTMLAttributes<HTMLCLoadingOverlayElement>;
+      'c-loading2': LocalJSX.CLoading2 & JSXBase.HTMLAttributes<HTMLCLoading2Element>;
       'c-modal': LocalJSX.CModal & JSXBase.HTMLAttributes<HTMLCModalElement>;
       'c-modal-footer': LocalJSX.CModalFooter & JSXBase.HTMLAttributes<HTMLCModalFooterElement>;
       'c-navbar': LocalJSX.CNavbar & JSXBase.HTMLAttributes<HTMLCNavbarElement>;
@@ -651,7 +718,9 @@ declare module "@stencil/core" {
       'c-overlay': LocalJSX.COverlay & JSXBase.HTMLAttributes<HTMLCOverlayElement>;
       'c-progress-bar': LocalJSX.CProgressBar & JSXBase.HTMLAttributes<HTMLCProgressBarElement>;
       'c-row': LocalJSX.CRow & JSXBase.HTMLAttributes<HTMLCRowElement>;
+      'c-select-list': LocalJSX.CSelectList & JSXBase.HTMLAttributes<HTMLCSelectListElement>;
       'c-side-drawer': LocalJSX.CSideDrawer & JSXBase.HTMLAttributes<HTMLCSideDrawerElement>;
+      'c-spin-box': LocalJSX.CSpinBox & JSXBase.HTMLAttributes<HTMLCSpinBoxElement>;
       'c-tab': LocalJSX.CTab & JSXBase.HTMLAttributes<HTMLCTabElement>;
       'c-tab-list': LocalJSX.CTabList & JSXBase.HTMLAttributes<HTMLCTabListElement>;
       'c-tab-panel': LocalJSX.CTabPanel & JSXBase.HTMLAttributes<HTMLCTabPanelElement>;

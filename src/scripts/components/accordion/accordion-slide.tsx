@@ -1,14 +1,13 @@
-import { Component, h, Prop, Method, State, Host } from '@stencil/core';
-import componentUtils from '../../utils/componentUtils';
+import { Component, h, Prop, Method, Host } from '@stencil/core';
 
 @Component({
     tag: 'c-accordion-slide'
 })
 export class AccordionSlide {
+    slideId: string = `accordion-slide-${slideIds++}`;
+
     @Prop() heading: string;
     @Prop() expanded: boolean = false;
-
-    @State() slideId = componentUtils.uniqueId();
 
     @Method()
     async toggleSlide() {
@@ -29,3 +28,5 @@ export class AccordionSlide {
         );
     }
 }
+
+let slideIds = 0;

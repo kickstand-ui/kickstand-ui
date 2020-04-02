@@ -1,11 +1,10 @@
 import { Component, h, Prop, State, Element, Host } from '@stencil/core';
-import componentUtils from '../../utils/componentUtils';
 
 @Component({
     tag: 'c-navbar'
 })
 export class Navbar {
-    private navbarId = componentUtils.uniqueId();
+    navbarId: string = `navbar-${navbarIds++}`;
 
     @Element() $el: HTMLElement;
 
@@ -48,3 +47,5 @@ export class Navbar {
         );
     }
 }
+
+let navbarIds = 0;

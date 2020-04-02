@@ -5,7 +5,7 @@ import componentUtils from '../../utils/componentUtils';
     tag: 'c-dropdown'
 })
 export class Dropdown {
-    dropdownId = componentUtils.uniqueId();
+    dropdownId = `dropdown-${dropdownIds++}`;
     $contents: HTMLElement;
     $control: HTMLElement;
     $focusableEls: HTMLElement[];
@@ -141,3 +141,5 @@ export class Dropdown {
         );
     }
 }
+
+let dropdownIds = 0;
