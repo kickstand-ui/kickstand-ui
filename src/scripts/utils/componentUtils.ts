@@ -6,5 +6,24 @@ export default {
         return (template).replace(/[018]/g, c =>
             (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
         );
+    },
+
+    debounce(func: Function, wait: number, immediate: boolean = false) {
+        let timeout: number;
+        
+        return function () {
+            let context = this, args = arguments;
+            let later = () => {
+                timeout = null;
+                if (!immediate)
+                    func.apply(context, args);
+            };
+            let callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+
+            if (callNow)
+                func.apply(context, args);
+        }
     }
 }
