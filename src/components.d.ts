@@ -49,25 +49,29 @@ export namespace Components {
   }
   interface CCard {
     'alt': string;
+    'clickable': boolean;
     'imgDirection': string;
     'imgSrc': string;
     'lazy': boolean;
     'threshold': number;
+    'url': string;
   }
   interface CCarousel {
     'autoplay': boolean;
-    'cssClass': string;
-    'showControls': boolean;
-    'showIndicators': boolean;
+    'hideControls': boolean;
+    'hideIndicators': boolean;
     'thumbnails': boolean;
     'timer': number;
   }
   interface CCarouselSlide {
+    'align': 'start' | 'center' | 'end';
     'alt': string;
-    'cssClass': string;
+    'clickable': boolean;
     'lazy': boolean;
+    'position': 'start' | 'center' | 'end';
     'src': string;
     'threshold': number;
+    'url': string;
   }
   interface CColumn {
     'align': 'start' | 'center' | 'end';
@@ -486,25 +490,29 @@ declare namespace LocalJSX {
   }
   interface CCard {
     'alt'?: string;
+    'clickable'?: boolean;
     'imgDirection'?: string;
     'imgSrc'?: string;
     'lazy'?: boolean;
     'threshold'?: number;
+    'url'?: string;
   }
   interface CCarousel {
     'autoplay'?: boolean;
-    'cssClass'?: string;
-    'showControls'?: boolean;
-    'showIndicators'?: boolean;
+    'hideControls'?: boolean;
+    'hideIndicators'?: boolean;
     'thumbnails'?: boolean;
     'timer'?: number;
   }
   interface CCarouselSlide {
+    'align'?: 'start' | 'center' | 'end';
     'alt'?: string;
-    'cssClass'?: string;
+    'clickable'?: boolean;
     'lazy'?: boolean;
+    'position'?: 'start' | 'center' | 'end';
     'src'?: string;
     'threshold'?: number;
+    'url'?: string;
   }
   interface CColumn {
     'align'?: 'start' | 'center' | 'end';

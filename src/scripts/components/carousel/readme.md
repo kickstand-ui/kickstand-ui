@@ -7,13 +7,16 @@
 
 ## Properties
 
-| Property    | Attribute   | Description | Type      | Default     |
-| ----------- | ----------- | ----------- | --------- | ----------- |
-| `alt`       | `alt`       |             | `string`  | `undefined` |
-| `cssClass`  | `css-class` |             | `string`  | `''`        |
-| `lazy`      | `lazy`      |             | `boolean` | `undefined` |
-| `src`       | `src`       |             | `string`  | `undefined` |
-| `threshold` | `threshold` |             | `number`  | `300`       |
+| Property    | Attribute   | Description | Type                           | Default     |
+| ----------- | ----------- | ----------- | ------------------------------ | ----------- |
+| `align`     | `align`     |             | `"center" \| "end" \| "start"` | `'center'`  |
+| `alt`       | `alt`       |             | `string`                       | `undefined` |
+| `clickable` | `clickable` |             | `boolean`                      | `undefined` |
+| `lazy`      | `lazy`      |             | `boolean`                      | `undefined` |
+| `position`  | `position`  |             | `"center" \| "end" \| "start"` | `'center'`  |
+| `src`       | `src`       |             | `string`                       | `undefined` |
+| `threshold` | `threshold` |             | `number`                       | `300`       |
+| `url`       | `url`       |             | `string`                       | `undefined` |
 
 
 ## Dependencies

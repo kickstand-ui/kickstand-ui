@@ -8,6 +8,8 @@ export const card = () => {
     const imgDir = select('img-direction', imgDirections, 'top');
     const src = text('img-src', 'https://imgix.bustle.com/rehost/2016/9/13/ffa8cec2-85d9-40ad-b386-906b75bf5610.jpg?w=970&h=582&fit=crop&crop=faces&auto=format&q=70');
     const alt = text('alt', 'Days of no nonsense');
+    const url = text('url', '');
+    const clickable = boolean('clickable', false);
     const lazy = boolean('lazy', true);
     const threshold = number('threshold', 300);
     const cardTitle = text('card-title', 'Card Title');
@@ -17,6 +19,8 @@ export const card = () => {
     return(`<c-card img-src="${src}"
                     img-direction="${imgDir}"
                     alt="${alt}"
+                    url="${url}"
+                    clickable="${clickable}"
                     class="w-25 m-xxl"
                     lazy="${lazy}"
                     threshold="${threshold}">

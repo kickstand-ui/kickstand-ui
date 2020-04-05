@@ -1,17 +1,16 @@
-import { Component, h, Prop, State, Element, Host } from '@stencil/core';
+import { Component, h, Prop, State, Element, Host, ComponentInterface } from '@stencil/core';
 
 @Component({
     tag: 'c-carousel'
 })
-export class Carousel {
+export class Carousel implements ComponentInterface {
     @Element() $el: HTMLElement;
 
     @Prop() timer: number = 6000;
-    @Prop() autoplay: boolean = true;
-    @Prop() showIndicators: boolean = true;
-    @Prop() showControls: boolean = true;
+    @Prop() autoplay: boolean;
+    @Prop() hideIndicators: boolean;
+    @Prop() hideControls: boolean;
     @Prop() thumbnails: boolean = false;
-    @Prop() cssClass: string = '';
 
     @State() slideIndex: number = 0;
     @State() $slides: HTMLCCarouselSlideElement[];
@@ -74,9 +73,9 @@ export class Carousel {
     }
 
     updateIndicator() {
-        if (!this.showIndicators)
+        if (this.hideIndicators)
             return;
-        
+
         this.$indicators.forEach(slide => slide.classList.remove('active'));
         this.$indicators[this.slideIndex].classList.add('active');
     }
@@ -113,12 +112,12 @@ export class Carousel {
         );
 
         return (
-            <Host class={`carousel ${this.cssClass}`}>
+            <Host class={`carousel`}>
                 <div class="slides">
                     <slot />
                 </div>
-                {this.showControls && controls}
-                {(this.showIndicators && !this.thumbnails) && indicators}
+                {!this.hideControls && controls}
+                {(!this.hideIndicators && !this.thumbnails) && indicators}
                 {this.thumbnails && thumbnailList}
             </Host>
         );
