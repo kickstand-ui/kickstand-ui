@@ -46,6 +46,7 @@ export namespace Components {
     'iconDirection': 'left' | 'right';
     'loading': boolean;
     'size': 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+    'type': 'button' | 'submit' | 'reset';
   }
   interface CCard {
     'alt': string;
@@ -148,14 +149,6 @@ export namespace Components {
   interface CRow {
     'align': 'start' | 'center' | 'end';
     'noGutter': boolean;
-  }
-  interface CSelectList {
-    'absolute': boolean;
-    'dismissible': boolean;
-    'hide': () => Promise<void>;
-    'show': () => Promise<void>;
-    'theme': 'dark' | 'light';
-    'titleId': string;
   }
   interface CSideDrawer {
     'headerText': string;
@@ -350,12 +343,6 @@ declare global {
     new (): HTMLCRowElement;
   };
 
-  interface HTMLCSelectListElement extends Components.CSelectList, HTMLStencilElement {}
-  var HTMLCSelectListElement: {
-    prototype: HTMLCSelectListElement;
-    new (): HTMLCSelectListElement;
-  };
-
   interface HTMLCSideDrawerElement extends Components.CSideDrawer, HTMLStencilElement {}
   var HTMLCSideDrawerElement: {
     prototype: HTMLCSideDrawerElement;
@@ -439,7 +426,6 @@ declare global {
     'c-overlay': HTMLCOverlayElement;
     'c-progress-bar': HTMLCProgressBarElement;
     'c-row': HTMLCRowElement;
-    'c-select-list': HTMLCSelectListElement;
     'c-side-drawer': HTMLCSideDrawerElement;
     'c-spin-box': HTMLCSpinBoxElement;
     'c-tab': HTMLCTabElement;
@@ -487,6 +473,7 @@ declare namespace LocalJSX {
     'iconDirection'?: 'left' | 'right';
     'loading'?: boolean;
     'size'?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+    'type'?: 'button' | 'submit' | 'reset';
   }
   interface CCard {
     'alt'?: string;
@@ -584,12 +571,6 @@ declare namespace LocalJSX {
     'align'?: 'start' | 'center' | 'end';
     'noGutter'?: boolean;
   }
-  interface CSelectList {
-    'absolute'?: boolean;
-    'dismissible'?: boolean;
-    'theme'?: 'dark' | 'light';
-    'titleId'?: string;
-  }
   interface CSideDrawer {
     'headerText'?: string;
     'name'?: string;
@@ -664,7 +645,6 @@ declare namespace LocalJSX {
     'c-overlay': COverlay;
     'c-progress-bar': CProgressBar;
     'c-row': CRow;
-    'c-select-list': CSelectList;
     'c-side-drawer': CSideDrawer;
     'c-spin-box': CSpinBox;
     'c-tab': CTab;
@@ -707,7 +687,6 @@ declare module "@stencil/core" {
       'c-overlay': LocalJSX.COverlay & JSXBase.HTMLAttributes<HTMLCOverlayElement>;
       'c-progress-bar': LocalJSX.CProgressBar & JSXBase.HTMLAttributes<HTMLCProgressBarElement>;
       'c-row': LocalJSX.CRow & JSXBase.HTMLAttributes<HTMLCRowElement>;
-      'c-select-list': LocalJSX.CSelectList & JSXBase.HTMLAttributes<HTMLCSelectListElement>;
       'c-side-drawer': LocalJSX.CSideDrawer & JSXBase.HTMLAttributes<HTMLCSideDrawerElement>;
       'c-spin-box': LocalJSX.CSpinBox & JSXBase.HTMLAttributes<HTMLCSpinBoxElement>;
       'c-tab': LocalJSX.CTab & JSXBase.HTMLAttributes<HTMLCTabElement>;

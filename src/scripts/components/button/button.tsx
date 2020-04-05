@@ -7,6 +7,7 @@ export class LinkButton implements ComponentInterface {
     $loading: HTMLCLoadingOverlayElement;
 
     @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
+    @Prop() type: 'button' | 'submit' | 'reset' = 'button';
     @Prop() hollow: boolean;
     @Prop() clear: boolean;
     @Prop() size: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' = 'medium';
@@ -54,7 +55,8 @@ export class LinkButton implements ComponentInterface {
             'aria-expanded': this.expanded,
             'aria-controls': this.controls,
             'aria-described-by': this.describedBy,
-            'disabled': this.disabled || this.loading
+            'disabled': this.disabled || this.loading,
+            'type': this.type
         }
 
         return (

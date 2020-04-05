@@ -24,6 +24,7 @@
 | `iconDirection` | `icon-direction` |             | `"left" \| "right"`                                                                                       | `'left'`    |
 | `loading`       | `loading`        |             | `boolean`                                                                                                 | `undefined` |
 | `size`          | `size`           |             | `"large" \| "medium" \| "small" \| "xlarge" \| "xsmall"`                                                  | `'medium'`  |
+| `type`          | `type`           |             | `"button" \| "reset" \| "submit"`                                                                         | `'button'`  |
 
 
 ## Dependencies
