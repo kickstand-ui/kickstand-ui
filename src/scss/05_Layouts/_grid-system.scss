@@ -76,6 +76,10 @@ $gutter-size: lg;
             &-end {
                 align-items: flex-end;
             }
+
+            &-stretch {
+                align-items: stretch;
+            }
         }
     }
 }
