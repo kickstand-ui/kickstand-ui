@@ -1,0 +1,25 @@
+@import "../00_Abstracts/index";
+
+.spin-box {
+    display: inline-flex;
+    align-items: center;
+
+    .form-label {
+        @include pr(sm);
+        @include font-size(sm);
+    }
+
+    .controls {
+        display: inline-flex;
+        align-items: center;
+        @include shadow(sm);
+
+        .form-input {
+            margin: 0;
+            width: 4rem;
+            text-align: center;
+            @include font-size(sm);
+            @include p(sm);
+        }
+    }
+}
