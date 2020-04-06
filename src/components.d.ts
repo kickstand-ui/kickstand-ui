@@ -87,6 +87,18 @@ export namespace Components {
     'hollowButton': boolean;
     'megaMenu': boolean;
   }
+  interface CFormField {
+    'disabled': boolean;
+    'errorMessage': string;
+    'helpText': string;
+    'invalid': boolean;
+    'label': string;
+    'placeholder': string;
+    'required': boolean;
+    'requiredText': string;
+    'tooltipText': string;
+    'type': 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden';
+  }
   interface CImg {
     'alt': string;
     'cssClass': string;
@@ -271,6 +283,12 @@ declare global {
     new (): HTMLCDropdownElement;
   };
 
+  interface HTMLCFormFieldElement extends Components.CFormField, HTMLStencilElement {}
+  var HTMLCFormFieldElement: {
+    prototype: HTMLCFormFieldElement;
+    new (): HTMLCFormFieldElement;
+  };
+
   interface HTMLCImgElement extends Components.CImg, HTMLStencilElement {}
   var HTMLCImgElement: {
     prototype: HTMLCImgElement;
@@ -414,6 +432,7 @@ declare global {
     'c-carousel-slide': HTMLCCarouselSlideElement;
     'c-column': HTMLCColumnElement;
     'c-dropdown': HTMLCDropdownElement;
+    'c-form-field': HTMLCFormFieldElement;
     'c-img': HTMLCImgElement;
     'c-loading': HTMLCLoadingElement;
     'c-loading-overlay': HTMLCLoadingOverlayElement;
@@ -513,6 +532,18 @@ declare namespace LocalJSX {
     'hideButtonText'?: boolean;
     'hollowButton'?: boolean;
     'megaMenu'?: boolean;
+  }
+  interface CFormField {
+    'disabled'?: boolean;
+    'errorMessage'?: string;
+    'helpText'?: string;
+    'invalid'?: boolean;
+    'label'?: string;
+    'placeholder'?: string;
+    'required'?: boolean;
+    'requiredText'?: string;
+    'tooltipText'?: string;
+    'type'?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden';
   }
   interface CImg {
     'alt'?: string;
@@ -633,6 +664,7 @@ declare namespace LocalJSX {
     'c-carousel-slide': CCarouselSlide;
     'c-column': CColumn;
     'c-dropdown': CDropdown;
+    'c-form-field': CFormField;
     'c-img': CImg;
     'c-loading': CLoading;
     'c-loading-overlay': CLoadingOverlay;
@@ -675,6 +707,7 @@ declare module "@stencil/core" {
       'c-carousel-slide': LocalJSX.CCarouselSlide & JSXBase.HTMLAttributes<HTMLCCarouselSlideElement>;
       'c-column': LocalJSX.CColumn & JSXBase.HTMLAttributes<HTMLCColumnElement>;
       'c-dropdown': LocalJSX.CDropdown & JSXBase.HTMLAttributes<HTMLCDropdownElement>;
+      'c-form-field': LocalJSX.CFormField & JSXBase.HTMLAttributes<HTMLCFormFieldElement>;
       'c-img': LocalJSX.CImg & JSXBase.HTMLAttributes<HTMLCImgElement>;
       'c-loading': LocalJSX.CLoading & JSXBase.HTMLAttributes<HTMLCLoadingElement>;
       'c-loading-overlay': LocalJSX.CLoadingOverlay & JSXBase.HTMLAttributes<HTMLCLoadingOverlayElement>;

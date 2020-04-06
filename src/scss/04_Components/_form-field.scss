@@ -1,0 +1,50 @@
+@import "../00_Abstracts/index";
+
+.form-field {
+    display: block;
+    @include pl(lg);
+
+    &.invalid {
+        @include border-l(solid, xxs, danger);
+    }
+
+    .form-label {
+        display: flex;
+        flex-direction: column;
+        @include px(md);
+
+        .field-label {
+            font-weight: bold;
+        }
+
+        .help-text {
+            // font-style: italic;
+            color: color(dark, light);
+            @include font-size(xs);
+        }
+
+        .error-message {
+            @include font-size(xs);
+        }
+    }
+
+    .form-input {
+        width: 100%;
+        @include border($size: xxs);
+        @include p(md);
+
+        &:disabled {
+            cursor: not-allowed;
+            @include bg-color(light);
+        }
+
+        &::placeholder {
+            color: color(dark, lighter);
+            font-style: italic;
+        }
+
+        &[aria-invalid="true"] {
+            @include border($size: xxs, $color: danger);
+        }
+    }
+}

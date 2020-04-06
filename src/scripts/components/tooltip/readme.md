@@ -17,6 +17,19 @@
 | `text`           | `text`            |             | `string`                                 | `undefined` |
 
 
+## Dependencies
+
+### Used by
+
+ - [c-form-field](../form-field)
+
+### Graph
+```mermaid
+graph TD;
+  c-form-field --> c-tooltip
+  style c-tooltip fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
