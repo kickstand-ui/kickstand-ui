@@ -6,18 +6,17 @@ import { Component, h, Prop, ComponentInterface, Host } from '@stencil/core';
 export class LinkButton implements ComponentInterface {
     $loading: HTMLCLoadingOverlayElement;
 
-    @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
+    @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';
     @Prop() type: 'button' | 'submit' | 'reset' = 'button';
-    @Prop() hollow: boolean;
-    @Prop() clear: boolean;
+    @Prop() display: 'solid' | 'hollow' | 'clear' | 'link' = 'solid';
     @Prop() size: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' = 'medium';
     @Prop() icon: string = '';
     @Prop() iconDirection: 'left' | 'right' = 'left';
     @Prop() href: string;
     @Prop() hideText: boolean = false;
     @Prop() cssClass: string = '';
-    @Prop() haspopup: boolean;
-    @Prop() expanded: boolean;
+    @Prop() haspopup: boolean = false;
+    @Prop() expanded: boolean = false;
     @Prop() loading: boolean;
     @Prop() disabled: boolean;
     @Prop() controls: string;
@@ -43,16 +42,15 @@ export class LinkButton implements ComponentInterface {
         let classes = {
             'button': true,
             [this.color]: true,
+            [this.display]: true,
             [`icon-${this.iconDirection}`]: true,
             [this.cssClass]: true,
             [this.size]: true,
-            'hollow': this.hollow,
-            'clear': this.clear
         };
 
         let props = {
-            'aria-haspopup': this.haspopup,
-            'aria-expanded': this.expanded,
+            'aria-haspopup': `${this.haspopup}`,
+            'aria-expanded': this.controls && `${this.expanded}`,
             'aria-controls': this.controls,
             'aria-described-by': this.describedBy,
             'disabled': this.disabled || this.loading,
@@ -60,7 +58,7 @@ export class LinkButton implements ComponentInterface {
         }
 
         return (
-            <Host>
+            <Host class="pointer">
                 <c-loading-overlay absolute ref={el => this.$loading = el}></c-loading-overlay>
                 {this.href
                     ? <a class={classes} href={this.href}>{content}</a>

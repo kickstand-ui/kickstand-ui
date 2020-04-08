@@ -15,9 +15,8 @@ export class Dropdown {
     @Prop() dropdownText: string;
     @Prop() dropdownAlignment: 'left' | 'right' = 'left';
     @Prop() buttonIcon: string;
-    @Prop() buttonColor: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
-    @Prop() hollowButton: boolean;
-    @Prop() clearButton: boolean;
+    @Prop() buttonColor: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';
+    @Prop() buttonDisplay: 'solid' | 'hollow' | 'clear' | 'link' = 'solid';
     @Prop() hideButtonText: boolean;
     @Prop() megaMenu: boolean;
 
@@ -119,22 +118,24 @@ export class Dropdown {
                 <c-button
                     onClick={() => this.toggleDropdown()}
                     color={this.buttonColor}
-                    hollow={this.hollowButton}
-                    clear={this.clearButton}
+                    display={this.buttonDisplay}
                     icon={this.buttonIcon}
                     cssClass="dropdown-button"
                     haspopup={true}
                     expanded={this.isExpanded}
                     controls={`dropdown-${this.dropdownId}`}
-                    ref={el => this.$control = el.querySelector('button')}>
+                    ref={el => this.$control = el.querySelector('button')}
+                >
                     <span class={buttonClasses}>{this.dropdownText}</span>
                     <i class="fas fa-chevron-down dropdown-icon"></i>
                 </c-button>
-                <div id={`dropdown-${this.dropdownId}`}
+                <div
+                    id={`dropdown-${this.dropdownId}`}
                     class={contentClasses}
                     role={this.megaMenu ? '' : 'list'}
                     tabindex="-1"
-                    ref={el => this.$contents = el}>
+                    ref={el => this.$contents = el}
+                >
                     <slot />
                 </div>
             </Host>

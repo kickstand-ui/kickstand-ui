@@ -31,16 +31,15 @@ export namespace Components {
     'breadcrumbs': IBreadcrumbs[];
   }
   interface CButton {
-    'clear': boolean;
-    'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
+    'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'controls': string;
     'cssClass': string;
     'describedBy': string;
     'disabled': boolean;
+    'display': 'solid' | 'hollow' | 'clear' | 'link';
     'expanded': boolean;
     'haspopup': boolean;
     'hideText': boolean;
-    'hollow': boolean;
     'href': string;
     'icon': string;
     'iconDirection': 'left' | 'right';
@@ -78,13 +77,12 @@ export namespace Components {
     'align': 'start' | 'center' | 'end';
   }
   interface CDropdown {
-    'buttonColor': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
+    'buttonColor': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+    'buttonDisplay': 'solid' | 'hollow' | 'clear' | 'link';
     'buttonIcon': string;
-    'clearButton': boolean;
     'dropdownAlignment': 'left' | 'right';
     'dropdownText': string;
     'hideButtonText': boolean;
-    'hollowButton': boolean;
     'megaMenu': boolean;
   }
   interface CFormField {
@@ -477,16 +475,15 @@ declare namespace LocalJSX {
     'breadcrumbs'?: IBreadcrumbs[];
   }
   interface CButton {
-    'clear'?: boolean;
-    'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
+    'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'controls'?: string;
     'cssClass'?: string;
     'describedBy'?: string;
     'disabled'?: boolean;
+    'display'?: 'solid' | 'hollow' | 'clear' | 'link';
     'expanded'?: boolean;
     'haspopup'?: boolean;
     'hideText'?: boolean;
-    'hollow'?: boolean;
     'href'?: string;
     'icon'?: string;
     'iconDirection'?: 'left' | 'right';
@@ -524,13 +521,12 @@ declare namespace LocalJSX {
     'align'?: 'start' | 'center' | 'end';
   }
   interface CDropdown {
-    'buttonColor'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
+    'buttonColor'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+    'buttonDisplay'?: 'solid' | 'hollow' | 'clear' | 'link';
     'buttonIcon'?: string;
-    'clearButton'?: boolean;
     'dropdownAlignment'?: 'left' | 'right';
     'dropdownText'?: string;
     'hideButtonText'?: boolean;
-    'hollowButton'?: boolean;
     'megaMenu'?: boolean;
   }
   interface CFormField {

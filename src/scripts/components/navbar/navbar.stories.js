@@ -17,10 +17,9 @@ export const defaultHeading = () => {
                 </c-navbar-item>
                 <c-navbar-item>
                     <c-dropdown
-                        class="m-lg"
                         dropdown-text="Drop-Down" 
                         dropdown-alignment="right" 
-                        button-type="link" 
+                        display="link" 
                         >
                         <dropdown-item><span>Test 1 Test 1 Test 1 Test 1 Test 1 Test 1</span></dropdown-item>
                         <dropdown-item><a href="#">Test 2</a></dropdown-item>

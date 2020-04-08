@@ -15,12 +15,12 @@ c-button {
     cursor: pointer;
     @include p(md);
     @include shadow(xs);
-    @include transition-ease-in-out(med);
+    @include transition-ease-in-out(fast);
 
     &:focus,
     &:hover:not(:disabled) {
         @include shadow(sm);
-        @include transition-ease-in-out(med);
+        @include transition-ease-in-out(fast);
     }
 
     &:active {
@@ -62,13 +62,13 @@ c-button {
                     border: 2px solid color($color, light);
                     color: color($color, light);
                     @include border(solid, xxs, $color, light);
-                    @include transition-ease-in-out(med);
+                    @include transition-ease-in-out(fast);
                 }
 
                 &:active {
                     color: color($color, dark);
                     @include border(solid, xxs, $color, light);
-                    @include transition-ease-in-out(med);
+                    @include transition-ease-in-out(fast);
                 }
             }
 
@@ -77,7 +77,7 @@ c-button {
                 background-color: transparent;
                 color: color($color);
                 @include shadow(none);
-                @include transition-ease-in-out(med);
+                @include transition-ease-in-out(fast);
 
                 &:focus,
                 &:hover:not(:disabled) {
@@ -91,23 +91,24 @@ c-button {
                     color: color($color, dark);
                 }
             }
-        }
-    }
 
-    &.link {
-        background-color: transparent;
-        display: inline-block;
-        color: color(primary);
-        text-decoration: none;
-        border: 0;
-        @include p(none);
-        @include shadow(none);
+            &.link {
+                background-color: transparent;
+                display: inline-block;
+                color: color($color);
+                text-decoration: none;
+                border: 0;
+                @include p(none);
+                @include shadow(none);
 
-        &:focus,
-        &:hover:not(:disabled) {
-            color: color(primary, light);
-            text-decoration: underline;
-            @include shadow(none);
+                &:focus,
+                &:hover:not(:disabled) {
+                    background-color: transparent;
+                    color: color($color, light);
+                    text-decoration: underline;
+                    @include shadow(none);
+                }
+            }
         }
     }
 

@@ -2,14 +2,14 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 
 export default { title: 'Forms/Button' };
 
-const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark', 'link'];
+const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
+const displays = ['solid', 'hollow', 'clear', 'link'];
 const sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
 const iconDirections = ['left', 'right'];
 
 export const playground = () => {
     const color = select('color', colors, 'primary');
-    const hollow = boolean('hollow', false);
-    const clear = boolean('clear', false);
+    const display = select('display', displays, 'solid');
     const loading = boolean('loading', false);
     const disabled = boolean('disabled', false);
     const size = select('size', sizes, 'medium');
@@ -21,8 +21,7 @@ export const playground = () => {
             css-class="${cssClass}" 
             class="m-md"
             color="${color}" 
-            hollow="${hollow}" 
-            clear="${clear}" 
+            display="${display}" 
             size="${size}" 
             icon="${icon}"
             icon-direction="${iconDirection}"
@@ -52,6 +51,15 @@ export const buttonColors = () => {
             icon-direction="${iconDirection}"
             url="${linkUrl}">
             ${color} button
+        </c-button>`).join(""));
+};
+
+export const buttonDisplay = () => {
+    return (displays.map(d =>
+        `<c-button
+            class="ml-md mt-md" 
+            display="${d}">
+            ${d} button
         </c-button>`).join(""));
 };
 
