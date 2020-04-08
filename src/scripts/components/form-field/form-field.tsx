@@ -38,7 +38,9 @@ export class FormField implements ComponentInterface {
                         {(this.tooltipText && this.tooltipText !== '') && <c-tooltip position="right" text={this.tooltipText} hide-decoration><i class="fas fa-question-circle text-info ml-sm"></i></c-tooltip>}
                     </span>
                     <span class="help-text">{this.helpText}</span>
-                    {(this.invalid && this.errorMessage) && <span class="error-message text-danger"><i class="fas fa-exclamation-triangle mr-xs"></i>{this.errorMessage}</span>}
+                    <span class="error-message text-danger" role="alert" aria-live="assertive">
+                        {(this.invalid && this.errorMessage) && <span><i class="fas fa-exclamation-triangle mr-xs"></i>{this.errorMessage}</span>}
+                    </span>
                 </label>
                 <input id={fieldId} class="form-input" type={this.type} placeholder={this.placeholder} {...props} />
             </Host>
