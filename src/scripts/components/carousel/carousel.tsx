@@ -15,7 +15,7 @@ export class Carousel implements ComponentInterface {
     @State() slideIndex: number = 0;
     @State() $slides: HTMLCCarouselSlideElement[];
     @State() $indicators: Element[];
-    @State() slideTimer: number;
+    @State() slideTimer: NodeJS.Timeout;
     @State() slideDirection: string = 'slide-left';
 
 
