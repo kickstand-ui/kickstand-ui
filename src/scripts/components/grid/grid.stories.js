@@ -10,11 +10,11 @@ export const basicGrid = () => {
             <c-column class="col-2 md:col-6 sm:col-12 bg-primary-light">Column 1</c-column>
             <c-column class="col-4 md:col-6 sm:col-12 bg-primary-light">Column 2</c-column>
             <c-column class="col-6 md:col-12 sm:col-12 bg-primary-light">
-                <div class="row">
+                <c-row>
                     <c-column>Sub-column 1</c-column>
                     <c-column>Sub-column 2</c-column>
                     <c-column>Sub-column 3</c-column>
-                </div>
+                </c-row>
             </c-column>
         </c-row>
         <br>
@@ -23,16 +23,16 @@ export const basicGrid = () => {
             <c-column class="col-2 md:col-6 sm:col-12 bg-primary-light">Column 1</c-column>
             <c-column class="col-4 md:col-6 sm:col-12 bg-primary-light">Column 2</c-column>
             <c-column class="col-6 md:col-12 sm:col-12 bg-primary-light">
-                <div class="row">
+                <c-row>
                     <c-column>Sub-column 1</c-column>
                     <c-column>Sub-column 2</c-column>
                     <c-column>Sub-column 3</c-column>
-                </div>
+                </c-row>
             </c-column>
         </c-row>
         <br>
         <h2>Grid Using Flex-Layout Classes</h2>
-        <c-row class="bg-primary column">
+        <c-row class="bg-primary flex-column">
             <c-column class="col-4 md:col-6 sm:col-12 bg-primary-light">Column 1</c-column>
             <c-column class="col-4 md:col-6 sm:col-12 bg-primary-light">Column 2</c-column>
             <c-column class="col-4 md:col-6 sm:col-12 bg-primary-light">Column 3</c-column>
