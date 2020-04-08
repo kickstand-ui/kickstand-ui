@@ -33,9 +33,9 @@ export class FormField implements ComponentInterface {
             <Host class={classes}>
                 <label id={labelId} class="form-label" htmlFor={fieldId}>
                     <span class="field-label">
-                        {this.label}&nbsp;
+                        {this.label}
                         {this.required && <abbr class="text-danger text-none" title={this.requiredText}>*</abbr>}
-                        {(this.tooltipText && this.tooltipText !== '') && <c-tooltip position="right" text={this.tooltipText} hide-decoration><i class="fas fa-question-circle text-info ml-md"></i></c-tooltip>}
+                        {(this.tooltipText && this.tooltipText !== '') && <c-tooltip position="right" text={this.tooltipText} hide-decoration><i class="fas fa-question-circle text-info ml-sm"></i></c-tooltip>}
                     </span>
                     <span class="help-text">{this.helpText}</span>
                     {(this.invalid && this.errorMessage) && <span class="error-message text-danger"><i class="fas fa-exclamation-triangle mr-xs"></i>{this.errorMessage}</span>}
