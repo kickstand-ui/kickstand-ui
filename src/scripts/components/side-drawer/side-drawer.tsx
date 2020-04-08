@@ -47,7 +47,7 @@ export class SideDrawer implements ComponentInterface {
                 <aside class={classes} ref={el => this.$drawer = el}>
                     <header class="drawer-header">
                         <h3 class="drawer-title">{this.headerText}</h3>
-                        <c-button onClick={() => this.hide()} class="drawer-close" clear>
+                        <c-button onClick={() => this.hide()} class="drawer-close" display="clear">
                             <span class="sr-only">Close Drawer</span>
                             <i class="fal fa-times"></i>
                         </c-button>

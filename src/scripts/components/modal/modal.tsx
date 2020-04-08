@@ -30,7 +30,7 @@ export class Modal implements ComponentInterface {
                 <div class={`modal size-${this.size}`}>
                     <header class="modal-header">
                         <h3 class="modal-title" id={this.titleId}>{this.modalTitle}</h3>
-                        {this.dismissible && <c-button onClick={() => this.hide()} class="modal-close" clear>
+                        {this.dismissible && <c-button onClick={() => this.hide()} display="clear" class="modal-close">
                             <span class="sr-only">Close Modal</span>
                             <i class="fal fa-times"></i>
                         </c-button>}
