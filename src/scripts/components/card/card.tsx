@@ -1,6 +1,4 @@
 import { Component, h, ComponentInterface, Prop, Host, Element } from '@stencil/core';
-import { LinkButton } from '../button/button';
-
 
 @Component({
     tag: 'c-card'
