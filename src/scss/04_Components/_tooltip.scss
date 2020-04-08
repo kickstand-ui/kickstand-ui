@@ -8,10 +8,6 @@
         @include hover-focus-active {
             cursor: help;
 
-            .text {
-                font-weight: bold;
-            }
-
             .message {
                 visibility: visible;
                 opacity: 1;
