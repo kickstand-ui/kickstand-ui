@@ -4,6 +4,7 @@ import { Component, h, Prop, State, Element, Host } from '@stencil/core';
     tag: 'c-navbar'
 })
 export class Navbar {
+    $navbarContent: HTMLElement;
     navbarId: string = `navbar-${navbarIds++}`;
 
     @Element() $el: HTMLElement;
@@ -23,8 +24,7 @@ export class Navbar {
     }
 
     private setDropdownFocus() {
-        let navbarContent: any = this.$el.querySelector('.navbar-content');
-        navbarContent.focus();
+        this.$navbarContent.focus();
     }
 
     render() {
@@ -36,11 +36,17 @@ export class Navbar {
                         {this.tagline && <span class="tagline">{this.tagline}</span>}
                     </a>
                 }
-                <button class="button navbar-toggler" onClick={this.toggleMenu.bind(this)} aria-haspopup="true" aria-expanded={`${this.expanded}`} aria-controls={`navbar-content-${this.navbarId}`}>
+                <button
+                    class="button navbar-toggler"
+                    onClick={this.toggleMenu.bind(this)}
+                    aria-haspopup="true"
+                    aria-expanded={`${this.expanded}`}
+                    aria-controls={`navbar-content-${this.navbarId}`}
+                >
                     <span class="sr-only">toggle menu</span>
                     <i class="fas fa-bars"></i>
                 </button>
-                <div class="navbar-content" id={`navbar-content-${this.navbarId}`} tabindex="-1">
+                <div class="navbar-content" id={`navbar-content-${this.navbarId}`} ref={el => this.$navbarContent = el} tabindex="-1">
                     <slot />
                 </div>
             </Host>
