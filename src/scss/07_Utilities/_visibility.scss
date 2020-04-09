@@ -20,29 +20,29 @@
     display: none !important;
 }
 
-@each $breakpoint, $value in $breakpoints {
-    @include breakpoint-below($breakpoint) {
-        .#{$breakpoint}\:sr-only {
+@each $mq, $value in $media-queries {
+    @include mq($mq) {
+        .#{$mq}\:sr-only {
             @include screen-reader-only();
         }
 
-        .#{$breakpoint}\:visible {
+        .#{$mq}\:visible {
             visibility: hidden !important;
         }
 
-        .#{$breakpoint}\:invisible {
+        .#{$mq}\:invisible {
             visibility: hidden !important;
         }
 
-        .#{$breakpoint}\:show {
+        .#{$mq}\:show {
             display: none !important;
         }
 
-        .#{$breakpoint}\:show {
+        .#{$mq}\:show {
             display: none !important;
         }
 
-        .#{$breakpoint}\:hide {
+        .#{$mq}\:hide {
             display: none !important;
         }
     }

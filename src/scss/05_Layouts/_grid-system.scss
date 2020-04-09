@@ -54,8 +54,8 @@ $gutter-size: lg;
                 flex: 0 0 (100% / $columns) * $i;
             }
 
-            @each $key, $value in $breakpoints {
-                @include breakpoint-below($key) {
+            @each $key, $value in $media-queries {
+                @include mq($key) {
                     &.#{$key}\:col-#{$i} {
                         max-width: (100% / $columns) * $i;
                         flex: 0 0 (100% / $columns) * $i;

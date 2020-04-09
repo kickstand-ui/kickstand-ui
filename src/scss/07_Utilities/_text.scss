@@ -1,4 +1,4 @@
-@import '../00_Abstracts/index';
+@import "../00_Abstracts/index";
 
 .text {
     // Font Size
@@ -7,13 +7,13 @@
             @include font-size($key, true);
         }
 
-        @each $breakpoint, $value in $breakpoints {
-            @include breakpoint-below($breakpoint) {
+        @each $mq, $value in $media-queries {
+            @include mq($mq) {
                 /*
                     sm:text-md
                     xl:text-xl
                 */
-                .#{$breakpoint}\:text-#{$key} {
+                .#{$mq}\:text-#{$key} {
                     @include screen-reader-only;
                 }
             }

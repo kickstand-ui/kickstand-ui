@@ -122,7 +122,7 @@
             @include m(none);
 
             .dropdown-button {
-\                &.link {
+                &.link {
                     cursor: pointer;
                     color: inherit;
                     border: inherit;
@@ -145,9 +145,9 @@
     }
 
     &.collapse {
-        @each $key, $value in $breakpoints {
+        @each $key, $value in $media-queries {
             &-#{$key} {
-                @include breakpoint-below($key) {
+                @include mq($key) {
                     .navbar-item {
                         .dropdown {
                             .dropdown-button {

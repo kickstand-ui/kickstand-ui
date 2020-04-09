@@ -52,13 +52,16 @@ $color-variation: 8%;
 
 // BREAKPOINTS
 
-$breakpoints: ( 
+$media-queries: ( 
     xxs: 20rem, // 320px
     xs: 30rem,  // 480px
     sm: 48rem,  // 768px
     md: 62rem,  // 992px
     lg: 75rem,  // 1200px
-    xl: 90rem   // 1440px
+    xl: 90rem,   // 1440px
+    light-mode: light,
+    dark-mode: dark,
+    print: print
 ) !default;
 
 

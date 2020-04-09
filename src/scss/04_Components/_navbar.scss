@@ -119,9 +119,9 @@
     }
 
     &.collapse {
-        @each $key, $value in $breakpoints {
+        @each $key, $value in $media-queries {
             &-#{$key} {
-                @include breakpoint-below($key) {
+                @include mq($key) {
                     flex-wrap: wrap;
                     align-items: center;
                     justify-content: space-between;
