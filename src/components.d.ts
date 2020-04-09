@@ -96,6 +96,7 @@ export namespace Components {
     'requiredText': string;
     'tooltipText': string;
     'type': 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden';
+    'value'?: string | number | null;
   }
   interface CImg {
     'alt': string;
@@ -535,11 +536,14 @@ declare namespace LocalJSX {
     'helpText'?: string;
     'invalid'?: boolean;
     'label'?: string;
+    'onCOnChange'?: (event: CustomEvent<any>) => void;
+    'onCOnInput'?: (event: CustomEvent<any>) => void;
     'placeholder'?: string;
     'required'?: boolean;
     'requiredText'?: string;
     'tooltipText'?: string;
     'type'?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden';
+    'value'?: string | number | null;
   }
   interface CImg {
     'alt'?: string;

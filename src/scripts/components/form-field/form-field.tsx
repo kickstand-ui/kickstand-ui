@@ -1,4 +1,4 @@
-import { Component, h, Prop, ComponentInterface, Host } from '@stencil/core';
+import { Component, h, Prop, ComponentInterface, Host, Watch, Event, EventEmitter } from '@stencil/core';
 
 @Component({
     tag: 'c-form-field'
@@ -15,8 +15,31 @@ export class FormField implements ComponentInterface {
     @Prop() invalid: boolean = false;
     @Prop() disabled: boolean;
     @Prop() type: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' = 'text';
+    @Prop({ mutable: true }) value?: string | number | null = '';
+
+    @Event() cOnChange!: EventEmitter;
+    @Event() cOnInput!: EventEmitter;
+
+    @Watch('value')
+    protected valueChanged() {
+        this.cOnChange.emit({ value: this.value == null ? this.value : this.value.toString() });
+    }
+
+    private onInput = (ev: Event) => {
+        const input = ev.target as HTMLInputElement | null;
+        if (input) {
+            this.value = input.value || '';
+        }
+        this.cOnInput.emit(ev as KeyboardEvent);
+    }
+
+    private getValue(): string {
+        return typeof this.value === 'number' ? this.value.toString() :
+            (this.value || '').toString();
+    }
 
     render() {
+        let value = this.getValue();
         let fieldId = `form-input-${formFieldIds}`;
         let labelId = `form-label-${formFieldIds}`;
         let props = {
@@ -24,11 +47,11 @@ export class FormField implements ComponentInterface {
             'required': this.required,
             'aria-invalid': this.invalid.toString()
         };
-
         let classes = {
             'form-field': true,
             'invalid': this.invalid,
         };
+
         return (        
             <Host class={classes}>
                 <label id={labelId} class="form-label" htmlFor={fieldId}>
@@ -42,7 +65,15 @@ export class FormField implements ComponentInterface {
                         {(this.invalid && this.errorMessage) && <span><i class="fas fa-exclamation-triangle mr-xs"></i>{this.errorMessage}</span>}
                     </span>
                 </label>
-                <input id={fieldId} class="form-input" type={this.type} placeholder={this.placeholder} {...props} />
+                <input
+                    id={fieldId}
+                    class="form-input"
+                    type={this.type}
+                    placeholder={this.placeholder}
+                    {...props}
+                    value={value}
+                    onInput={this.onInput}
+                />
             </Host>
         );
     }

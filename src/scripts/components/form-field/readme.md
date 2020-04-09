@@ -19,6 +19,15 @@
 | `requiredText` | `required-text` |             | `string`                                                                                          | `'Required'` |
 | `tooltipText`  | `tooltip-text`  |             | `string`                                                                                          | `undefined`  |
 | `type`         | `type`          |             | `"date" \| "email" \| "hidden" \| "number" \| "password" \| "search" \| "tel" \| "text" \| "url"` | `'text'`     |
+| `value`        | `value`         |             | `number \| string`                                                                                | `''`         |
+
+
+## Events
+
+| Event       | Description | Type               |
+| ----------- | ----------- | ------------------ |
+| `cOnChange` |             | `CustomEvent<any>` |
+| `cOnInput`  |             | `CustomEvent<any>` |
 
 
 ## Dependencies

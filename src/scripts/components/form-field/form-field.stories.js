@@ -9,6 +9,7 @@ const iconDirections = ['left', 'right'];
 export const playground = () => {
     const type = select('type', types, 'text');
     const label = text('label', 'Username');
+    const value = text('value', '');
     const helpText = text('help-text', 'Username should contain at least 8 characters and 1 special character');
     const tooltipText = text('tooltip-text', '');
     const errorMessage = text('error-message', 'The Username you entered is missing a special character.');
@@ -29,6 +30,7 @@ export const playground = () => {
             required-text="${requiredText}"
             invalid="${invalid}"
             disabled="${disabled}"
+            value="${value}"
             >
         </c-form-field>
     </div>`);
