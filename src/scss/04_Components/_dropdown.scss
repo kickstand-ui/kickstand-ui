@@ -17,7 +17,6 @@
         align-items: center;
 
         .dropdown-text {
-            // @include ml(xs);
         }
 
         .dropdown-icon {
@@ -26,7 +25,7 @@
             @include transition-ease-in-out(med);
         }
 
-        &[aria-expanded] .dropdown-icon {
+        &[aria-expanded="true"] .dropdown-icon {
             transform: rotate(-180deg);
             @include transition-ease-in-out(med);
         }
