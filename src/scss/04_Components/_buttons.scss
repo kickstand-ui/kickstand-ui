@@ -13,6 +13,7 @@ c-button {
     text-align: center;
     vertical-align: middle;
     position: relative;
+    overflow: hidden;
     cursor: pointer;
     @include p(md);
     @include shadow(xs);
