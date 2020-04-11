@@ -12,10 +12,34 @@ c-button {
     white-space: nowrap;
     text-align: center;
     vertical-align: middle;
+    position: relative;
     cursor: pointer;
     @include p(md);
     @include shadow(xs);
     @include transition-ease-in-out(fast);
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background-color: white;
+        visibility: hidden;
+        z-index: z(xxs);
+    }
+
+    &:not(:active):before {
+        animation: ripple 0.4s cubic-bezier(0, 0, 0.2, 1);
+        transition: visibility 0.4s step-end;
+    }
+
+    &:active:before {
+        visibility: visible;
+    }
 
     &:focus,
     &:hover:not(:disabled) {
@@ -23,33 +47,21 @@ c-button {
         @include transition-ease-in-out(fast);
     }
 
-    &:active {
+    &:active:not(:disabled) {
+        top: 1px;
         @include shadow(inner);
     }
 
     &:disabled {
         opacity: 0.6;
+        cursor: not-allowed;
         @include shadow(inner);
-
-        &:hover {
-            cursor: not-allowed;
-        }
     }
 
     @each $color, $value in $theme-colors {
         &.#{$color} {
             @include border(solid, xxs, $color);
             @include bg-color($color);
-
-            &:focus,
-            &:hover:not(:disabled) {
-                border-color: color($color, light);
-                @include bg-color($color, light);
-            }
-
-            &:active {
-                @include bg-color($color, dark);
-            }
 
             &.hollow {
                 background-color: transparent;
@@ -59,16 +71,6 @@ c-button {
                 &:focus,
                 &:hover:not(:disabled) {
                     background-color: transparent;
-                    border: 2px solid color($color, light);
-                    color: color($color, light);
-                    @include border(solid, xxs, $color, light);
-                    @include transition-ease-in-out(fast);
-                }
-
-                &:active {
-                    color: color($color, dark);
-                    @include border(solid, xxs, $color, light);
-                    @include transition-ease-in-out(fast);
                 }
             }
 
@@ -83,12 +85,6 @@ c-button {
                 &:hover:not(:disabled) {
                     border-color: transparent;
                     background-color: transparent;
-                    color: color($color, light);
-                    border: size(xxs) transparent;
-                }
-
-                &:active {
-                    color: color($color, dark);
                 }
             }
 
@@ -153,5 +149,18 @@ c-button {
                 @include ml(sm);
             }
         }
+    }
+}
+
+@keyframes ripple {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0.5;
+    }
+    100% {
+        width: 150px;
+        height: 150px;
+        opacity: 0;
     }
 }
