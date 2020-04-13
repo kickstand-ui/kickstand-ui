@@ -7,12 +7,12 @@
 
 ## Properties
 
-| Property      | Attribute      | Description | Type                                                     | Default     |
-| ------------- | -------------- | ----------- | -------------------------------------------------------- | ----------- |
-| `absolute`    | `absolute`     |             | `boolean`                                                | `false`     |
-| `message`     | `message`      |             | `string`                                                 | `'Loading'` |
-| `showMessage` | `show-message` |             | `boolean`                                                | `undefined` |
-| `size`        | `size`         |             | `"lg" \| "md" \| "sm" \| "xl" \| "xs" \| "xxl" \| "xxs"` | `'sm'`      |
+| Property      | Attribute      | Description | Type                                                     | Default        |
+| ------------- | -------------- | ----------- | -------------------------------------------------------- | -------------- |
+| `absolute`    | `absolute`     |             | `boolean`                                                | `false`        |
+| `message`     | `message`      |             | `string`                                                 | `'Loading...'` |
+| `showMessage` | `show-message` |             | `boolean`                                                | `undefined`    |
+| `size`        | `size`         |             | `"lg" \| "md" \| "sm" \| "xl" \| "xs" \| "xxl" \| "xxs"` | `'sm'`         |
 
 
 ## Methods
