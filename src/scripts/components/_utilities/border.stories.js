@@ -12,7 +12,7 @@ export const borders = () => {
     </c-row>`);
 };
 
-export const borderSizess = () => {
+export const borderSizes = () => {
     return (`<c-row class="m-xxl">
         ${sizes.map(p => `<c-column class="mx-md bg-light-light border border-${p}">border-${p}</c-column>`).join('')}
     </c-row>`);
