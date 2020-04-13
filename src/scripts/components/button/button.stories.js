@@ -81,6 +81,6 @@ export const sizeVariations = () => {
             icon="${icon}"
             icon-direction="${iconDirection}"
             url="${linkUrl}">
-            ${color} button
+            ${size} button
         </c-button>`).join(''));
 };
