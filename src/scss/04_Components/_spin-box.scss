@@ -3,23 +3,13 @@
 .spin-box {
     display: inline-flex;
     align-items: center;
+    @include shadow(sm);
 
-    .form-label {
-        @include pr(sm);
+    .form-input {
+        margin: 0;
+        width: 4rem;
+        text-align: center;
         @include font-size(sm);
-    }
-
-    .controls {
-        display: inline-flex;
-        align-items: center;
-        @include shadow(sm);
-
-        .form-input {
-            margin: 0;
-            width: 4rem;
-            text-align: center;
-            @include font-size(sm);
-            @include p(sm);
-        }
+        @include p(sm);
     }
 }

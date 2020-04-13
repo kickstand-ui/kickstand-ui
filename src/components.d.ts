@@ -170,10 +170,10 @@ export namespace Components {
     'size': 'sm' | 'md' | 'lg' | 'xl';
   }
   interface CSpinBox {
-    'hideLabel': boolean;
-    'label': string;
+    'labelId': string;
     'max': number;
     'min': number;
+    'spinBoxId': string;
     'step': number;
     'value': number;
   }
@@ -609,10 +609,10 @@ declare namespace LocalJSX {
     'size'?: 'sm' | 'md' | 'lg' | 'xl';
   }
   interface CSpinBox {
-    'hideLabel'?: boolean;
-    'label'?: string;
+    'labelId'?: string;
     'max'?: number;
     'min'?: number;
+    'spinBoxId'?: string;
     'step'?: number;
     'value'?: number;
   }
