@@ -20,9 +20,9 @@
             width: 100%;
             color: color(primary);
             font-weight: bold;
-            @include font-size(md);
+            @include font-size(sm);
             @include border($size: xxs, $color: primary);
-            @include p(lg);
+            @include p(sm);
 
             .accordion-icon {
                 color: color(primary);

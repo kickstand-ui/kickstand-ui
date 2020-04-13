@@ -22,9 +22,7 @@ const accordionData = [
 ];
 
 export const defaultAccordion = () => {
-    return (`<c-accordion class="m-xxl">
-                ${
-        accordionData.map(x => `<c-accordion-slide heading="${x.heading}">${x.bodyText}</c-accordion-slide>`).join('')
-        }
+    return (`<c-accordion class="m-xxl" style="max-width:500px;">
+                ${accordionData.map(x => `<c-accordion-slide heading="${x.heading}">${x.bodyText}</c-accordion-slide>`).join('')}
             </c-accordion>`);
 };
