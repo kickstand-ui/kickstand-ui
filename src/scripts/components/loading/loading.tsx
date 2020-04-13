@@ -19,7 +19,7 @@ export class Loading implements ComponentInterface {
                     <div></div>
                     <div></div>
                 </div>
-                <span aria-live="polite" role="alert" class={{ 'sr-only': !this.showMessage}}>{this.message}</span>
+                <span aria-live="polite" role="alert" class={{ 'message': true, 'sr-only': !this.showMessage}}>{this.message}</span>
             </Host>);
     }
 }

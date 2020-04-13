@@ -9,7 +9,7 @@ export class LoadingOverlay implements ComponentInterface {
     @Element() $el: HTMLElement;
 
     @Prop() absolute: boolean = false;
-    @Prop() message: string = 'Loading';
+    @Prop() message: string = 'Loading...';
     @Prop() size: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' = 'sm';
     @Prop() showMessage: boolean;
 

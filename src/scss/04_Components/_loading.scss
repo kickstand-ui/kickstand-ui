@@ -3,6 +3,10 @@
 .loading {
     display: inline-block;
 
+    .message {
+        font-size: 0.5em;
+    }
+
     &.show-message {
         display: flex;
         flex-direction: column;
@@ -12,7 +16,7 @@
     .spinner {
         display: inline-block;
         position: relative;
-        width: 1.75em;
+        width: 2.5em;
         height: 1.75em;
         cursor: wait;
 
@@ -22,8 +26,8 @@
             position: absolute;
             width: 1.25em;
             height: 1.25em;
-            margin: 0.25em;
-            border: 0.25em solid color(primary);
+            margin: 0.5em;
+            border: 0.175em solid color(primary);
             border-radius: 50%;
             animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
             border-color: color(primary) transparent transparent transparent;
