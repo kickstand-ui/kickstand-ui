@@ -26,4 +26,16 @@
     &-y {
         @include border-y();
     }
+
+    @each $key, $value in $spacing-sizes {
+        &-#{$key} {
+            border-width: spacing($key);
+        }
+    }
+
+    @each $key, $value in $theme-colors {
+        &-#{$key} {
+            border-color: color($key);
+        }
+    }
 }
