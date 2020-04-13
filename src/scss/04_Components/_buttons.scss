@@ -33,7 +33,7 @@ c-button {
         z-index: z(xxs);
     }
 
-    &:not(:active):before {
+    &:not(:active):not(:disabled):before {
         animation: ripple 0.4s cubic-bezier(0, 0, 0.2, 1);
         transition: visibility 0.4s step-end;
     }
