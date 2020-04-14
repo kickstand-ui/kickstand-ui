@@ -12,7 +12,7 @@ export class Navbar {
     @Prop() logoUrl: string;
     @Prop() altText: string;
     @Prop() tagline: string;
-    @Prop() collapseAt: string = 'sm';
+    @Prop() collapseAt: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'sm';
 
     @State() expanded = false;
 

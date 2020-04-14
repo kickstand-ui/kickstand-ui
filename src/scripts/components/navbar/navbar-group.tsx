@@ -4,7 +4,7 @@ import { Component, h, Host, Prop } from '@stencil/core';
     tag: 'c-navbar-group'
 })
 export class NavbarGroup {
-    @Prop() position: string = 'right';
+    @Prop() position: 'left' | 'right' = 'right';
 
     render() {
         return (
