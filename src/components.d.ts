@@ -130,6 +130,8 @@ export namespace Components {
   interface CNavbar {
     'altText': string;
     'collapseAt': 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+    'inverted': boolean;
     'logoUrl': string;
     'tagline': string;
   }
@@ -573,6 +575,8 @@ declare namespace LocalJSX {
   interface CNavbar {
     'altText'?: string;
     'collapseAt'?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+    'inverted'?: boolean;
     'logoUrl'?: string;
     'tagline'?: string;
   }

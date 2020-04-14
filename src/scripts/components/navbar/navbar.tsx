@@ -13,6 +13,8 @@ export class Navbar {
     @Prop() altText: string;
     @Prop() tagline: string;
     @Prop() collapseAt: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'sm';
+    @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';
+    @Prop() inverted: boolean;
 
     @State() expanded = false;
 
@@ -28,8 +30,14 @@ export class Navbar {
     }
 
     render() {
+        let classes = {
+            'navbar': true,
+            [`collapse-${this.collapseAt}`]: true,
+            [this.color]: true,
+            'inverted': this.inverted
+        }
         return (
-            <Host class={`navbar collapse-${this.collapseAt}`} role="navigation">
+            <Host class={classes} role="navigation">
                 {(this.logoUrl || this.tagline) &&
                     <a href="/" class="navbar-branding">
                         {this.logoUrl && <img class="logo" src={this.logoUrl} alt={this.altText} />}

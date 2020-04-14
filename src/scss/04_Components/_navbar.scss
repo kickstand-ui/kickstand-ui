@@ -7,19 +7,13 @@
     justify-content: flex-start;
     position: relative;
     @include font-size(sm);
-    @include bg-color(primary);
 
     .navbar-branding {
         display: flex;
         justify-content: center;
         align-items: center;
         text-decoration: none;
-        color: text-color(primary);
         @include p(sm);
-
-        &:focus {
-            outline: 1px dashed text-color(primary);
-        }
 
         .logo {
             max-width: 3rem;
@@ -42,12 +36,11 @@
     .navbar-toggler {
         display: none;
         background-color: transparent;
-        color: text-color(primary);
-        @include border($color: white);
         @include ml(auto);
         @include mr(sm);
         @include px(md);
         @include py(sm);
+        @include shadow(none);
     }
 
     .navbar-content {
@@ -99,12 +92,7 @@
                 > * {
                     font-weight: 600;
                     white-space: nowrap;
-                    color: text-color(primary);
                     text-decoration: none;
-
-                    &:focus {
-                        outline: 1px dashed text-color(primary);
-                    }
                 }
 
                 &:last-child {
@@ -113,6 +101,71 @@
 
                 @include hover-focus {
                     text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    @each $key, $value in $theme-colors {
+        &.#{$key} {
+            @include bg-color($key);
+
+            .navbar-branding {
+                color: text-color($key);
+
+                &:focus {
+                    outline: 1px dashed text-color($key);
+                }
+            }
+
+            .navbar-toggler {
+                color: text-color($key);
+                @include border($color: text-color($key));
+            }
+
+            .navbar-content {
+                .navbar-row {
+                    .navbar-item {
+                        > * {
+                            color: text-color($key);
+
+                            &:focus {
+                                outline: 1px dashed text-color($key);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.inverted {
+                background-color: white;
+                @include border-b();
+
+                .navbar-branding {
+                    color: color($key);
+
+                    &:focus {
+                        outline: 1px dashed color($key);
+                    }
+                }
+
+                .navbar-toggler {
+                    color: color($key);
+                    border-color: color($key);
+                }
+
+                .navbar-content {
+                    .navbar-row {
+                        .navbar-item {
+                            > * {
+                                color: color($key);
+
+                                &:focus {
+                                    outline: 1px dashed color($key);
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
