@@ -10,10 +10,10 @@ export const playground = () => {
     const type = select('type', types, 'text');
     const label = text('label', 'Username');
     const value = text('value', '');
-    const helpText = text('help-text', 'Username should contain at least 8 characters and 1 special character');
+    const helpText = text('help-text', '');
     const tooltipText = text('tooltip-text', '');
-    const errorMessage = text('error-message', 'The Username you entered is missing a special character.');
-    const placeholder = text('placeholder', 'Placeholder Text');
+    const errorMessage = text('error-message', '');
+    const placeholder = text('placeholder', '');
     const required = boolean('required', false);
     const requiredText = text('required-text', 'Required');
     const invalid = boolean('invalid', false);
