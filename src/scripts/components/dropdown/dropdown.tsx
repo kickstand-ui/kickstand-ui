@@ -12,12 +12,12 @@ export class Dropdown {
 
     @Element() $el: HTMLElement;
 
-    @Prop() dropdownText: string;
-    @Prop() dropdownAlignment: 'left' | 'right' = 'left';
-    @Prop() buttonIcon: string;
-    @Prop() buttonColor: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';
-    @Prop() buttonDisplay: 'solid' | 'hollow' | 'clear' | 'link' = 'solid';
-    @Prop() hideButtonText: boolean;
+    @Prop() text: string;
+    @Prop() position: 'left' | 'right' = 'left';
+    @Prop() icon: string;
+    @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';
+    @Prop() display: 'solid' | 'hollow' | 'clear' | 'link' = 'solid';
+    @Prop() hideText: boolean;
     @Prop() megaMenu: boolean;
 
     @State() isExpanded: boolean = false;
@@ -103,30 +103,30 @@ export class Dropdown {
 
         let buttonClasses = {
             'dropdown-text': true,
-            'sr-only': this.hideButtonText
+            'sr-only': this.hideText
         };
 
         let contentClasses = {
             'contents': true,
             'mega-menu-contents': this.megaMenu,
             'dropdown-contents': !this.megaMenu,
-            [`align-${this.dropdownAlignment}`]: !this.megaMenu
+            [`align-${this.position}`]: !this.megaMenu
         };
 
         return (
             <Host class={dropDownClasses}>
                 <c-button
                     onClick={() => this.toggleDropdown()}
-                    color={this.buttonColor}
-                    display={this.buttonDisplay}
-                    icon={this.buttonIcon}
+                    color={this.color}
+                    display={this.display}
+                    icon={this.icon}
                     cssClass="dropdown-button"
                     haspopup={true}
                     expanded={this.isExpanded}
                     controls={`dropdown-${this.dropdownId}`}
                     ref={el => this.$control = el.querySelector('button')}
                 >
-                    <span class={buttonClasses}>{this.dropdownText}</span>
+                    <span class={buttonClasses}>{this.text}</span>
                     <i class="fas fa-chevron-down dropdown-icon"></i>
                 </c-button>
                 <div

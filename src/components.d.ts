@@ -77,13 +77,13 @@ export namespace Components {
     'align': 'start' | 'center' | 'end';
   }
   interface CDropdown {
-    'buttonColor': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
-    'buttonDisplay': 'solid' | 'hollow' | 'clear' | 'link';
-    'buttonIcon': string;
-    'dropdownAlignment': 'left' | 'right';
-    'dropdownText': string;
-    'hideButtonText': boolean;
+    'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+    'display': 'solid' | 'hollow' | 'clear' | 'link';
+    'hideText': boolean;
+    'icon': string;
     'megaMenu': boolean;
+    'position': 'left' | 'right';
+    'text': string;
   }
   interface CFormField {
     'disabled': boolean;
@@ -129,12 +129,12 @@ export namespace Components {
   interface CModalFooter {}
   interface CNavbar {
     'altText': string;
-    'collapseAt': string;
+    'collapseAt': 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     'logoUrl': string;
     'tagline': string;
   }
   interface CNavbarGroup {
-    'position': string;
+    'position': 'left' | 'right';
   }
   interface CNavbarItem {
     'position': string;
@@ -522,13 +522,13 @@ declare namespace LocalJSX {
     'align'?: 'start' | 'center' | 'end';
   }
   interface CDropdown {
-    'buttonColor'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
-    'buttonDisplay'?: 'solid' | 'hollow' | 'clear' | 'link';
-    'buttonIcon'?: string;
-    'dropdownAlignment'?: 'left' | 'right';
-    'dropdownText'?: string;
-    'hideButtonText'?: boolean;
+    'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+    'display'?: 'solid' | 'hollow' | 'clear' | 'link';
+    'hideText'?: boolean;
+    'icon'?: string;
     'megaMenu'?: boolean;
+    'position'?: 'left' | 'right';
+    'text'?: string;
   }
   interface CFormField {
     'disabled'?: boolean;
@@ -572,12 +572,12 @@ declare namespace LocalJSX {
   interface CModalFooter {}
   interface CNavbar {
     'altText'?: string;
-    'collapseAt'?: string;
+    'collapseAt'?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     'logoUrl'?: string;
     'tagline'?: string;
   }
   interface CNavbarGroup {
-    'position'?: string;
+    'position'?: 'left' | 'right';
   }
   interface CNavbarItem {
     'position'?: string;
