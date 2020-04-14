@@ -8,7 +8,7 @@ export const carouselOptions = () => {
     const thumbnails = boolean('thumbnails', false);
     const hideIndicators = boolean('hide-indicators', false);
     const hideControls = boolean('hide-controls', false);
-    const cssClass = text('class', 'm-md w-33');
+    const cssClass = text('class', 'm-md w-50');
 
     return (`
         <c-carousel autoplay="${autoplay}" thumbnails="${thumbnails}" hide-indicators="${hideIndicators}" hide-controls="${hideControls}" timer="${timer}" class="${cssClass}">
@@ -35,7 +35,7 @@ export const carouselSlideOptions = () => {
     const align = select('align', ['start', 'center', 'end'], 'center');
     const url = text('url', '');
     const clickable = boolean('clickable', false);
-    const cssClass = text('class', 'm-md w-33');
+    const cssClass = text('class', 'm-md w-50');
 
     return (`
         <c-carousel autoplay="true" class="${cssClass}">

@@ -24,6 +24,19 @@ export class CarouselSlide implements ComponentInterface {
             this.$content.addEventListener('click', () => this.$link.click());
     }
 
+    getTextAlignment() {
+        switch (this.align) {
+            case 'start':
+                return 'left';
+            case 'center':
+                return 'center';
+            case 'end':
+                return 'right';
+            default:
+                return 'center';
+        }
+    }
+
     render() {
         let classes = {
             'slide': true,
@@ -35,7 +48,8 @@ export class CarouselSlide implements ComponentInterface {
             'flex-layout': true,
             'flex-column': true,
             [`align-${this.align}`]: true,
-            [`justify-${this.position}`]: true
+            [`justify-${this.position}`]: true,
+            [`text-${this.getTextAlignment()}`]: true
         };
 
         return (

@@ -117,7 +117,7 @@
             }
 
             &.active {
-                opacity: 0.75;
+                opacity: 0.9;
                 @include shadow(xs);
                 @include transition-ease-in-out(fast);
             }
