@@ -7,18 +7,18 @@ const variations = { 'Primary': 'primary', 'Secondary': 'secondary', 'Success': 
 export const badges = () => {
     const color = select('color', variations, 'primary');
     const hollow = boolean('hollow', false);
-    const badgeText = text('text', '3');
-    return (`<h1>Test H1 Header <c-badge 
+    const badgeText = text('text', '6');
+    return (`<h1>Days Since Our Last Nonsense <c-badge 
                        color="${color}" 
                        hollow="${hollow}">
                 ${badgeText}
             </c-badge></h1>
-            <h2>Test H2 Header <c-badge
+            <h2>Days Since Our Last Nonsense <c-badge
                        color="${color}" 
                        hollow="${hollow}">
                 ${badgeText}
             </c-badge></h2>
-            <p>Test Paragraph <c-badge
+            <p>Days Since Our Last Nonsense <c-badge
                        color="${color}" 
                        hollow="${hollow}">
                 ${badgeText}

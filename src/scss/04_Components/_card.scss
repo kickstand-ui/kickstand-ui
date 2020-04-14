@@ -1,4 +1,4 @@
-@import '../00_Abstracts/index';
+@import "../00_Abstracts/index";
 
 .card {
     position: relative;
@@ -32,16 +32,23 @@
             top: 0;
             right: 0;
             bottom: 0;
-            left: 0;    
+            left: 0;
+
+            .card-body {
+                .heading,
+                .subheading,
+                .text {
+                    color: white;
+                    text-shadow: 2px 2px 4px color(dark);
+                }
+            }
         }
     }
-
 
     .card-content {
         @include p(md);
 
         .card-header {
-
         }
 
         .card-body {
@@ -61,7 +68,6 @@
         }
 
         .card-footer {
-
         }
     }
 }
