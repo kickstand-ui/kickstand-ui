@@ -30,10 +30,10 @@ export const navbarProperties = () => {
                 <c-navbar-item>
                     <c-dropdown
                         text="Drop-Down" 
-                        alignment="right" 
+                        position="right" 
                         display="link" 
                         >
-                        <dropdown-item><span>Test 1 Test 1 Test 1 Test 1 Test 1 Test 1</span></dropdown-item>
+                        <dropdown-item><span>Non-clickable drop-down item</span></dropdown-item>
                         <dropdown-item><a href="#">Test 2</a></dropdown-item>
                         <dropdown-item><a href="#">Test 3</a></dropdown-item>
                         <dropdown-item><a href="#">Test 4</a></dropdown-item>
