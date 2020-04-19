@@ -33,8 +33,7 @@ export const playground = () => {
 };
 
 export const buttonColors = () => {
-    const hollow = boolean('hollow', false);
-    const clear = boolean('clear', false);
+    const display = select('display', displays, 'solid');
     const size = select('size', sizes, 'md');
     const icon = text('icon', '');
     const iconDirection = select('icon-direction', iconDirections, 'left');
@@ -44,8 +43,7 @@ export const buttonColors = () => {
         `<c-button
             css-class="${cssClass}" 
             color="${color}" 
-            hollow="${hollow}" 
-            clear="${clear}" 
+            display="${display}" 
             size="${size}" 
             icon="${icon}"
             icon-direction="${iconDirection}"
@@ -65,8 +63,7 @@ export const buttonDisplay = () => {
 
 export const sizeVariations = () => {
     const color = select('color', colors, 'primary');
-    const hollow = boolean('hollow', false);
-    const clear = boolean('clear', false);
+    const display = select('display', displays, 'solid');
     const icon = text('icon', '');
     const iconDirection = select('icon-direction', iconDirections, 'left');
     const linkUrl = text('url', '');
@@ -75,8 +72,7 @@ export const sizeVariations = () => {
         `<c-button
             css-class="${cssClass}" 
             color="${color}" 
-            hollow="${hollow}" 
-            clear="${clear}" 
+            display="${display}" 
             size="${size}" 
             icon="${icon}"
             icon-direction="${iconDirection}"
