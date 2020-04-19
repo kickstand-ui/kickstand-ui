@@ -31,7 +31,7 @@
         width: 100%;
         @include border($size: xxs);
         @include p(md);
-        @include shadow(sm);
+        @include shadow(inner);
 
         &:disabled {
             cursor: not-allowed;

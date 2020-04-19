@@ -3,7 +3,7 @@
 .spin-box {
     display: inline-flex;
     align-items: center;
-    @include shadow(sm);
+    @include shadow(xs);
 
     .form-input {
         margin: 0;
@@ -11,5 +11,7 @@
         text-align: center;
         @include font-size(sm);
         @include p(sm);
+        @include shadow(inner);
+        @include border($size: xxs);
     }
 }
