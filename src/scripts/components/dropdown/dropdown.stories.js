@@ -18,14 +18,14 @@ export const playground = () => {
             <c-dropdown
                 class="m-lg"
                 text="${dropdownText}" 
-                alignment="${dropdownAlignment}" 
+                position="${dropdownAlignment}" 
                 color="${buttonColors}" 
                 icon="${buttonIcon}"
                 display="${display}"
                 hide-text="${hideButtonText}"
                 mega-menu="${megaMenu}"
                 >
-                <dropdown-item><span>Test 1 Test 1 Test 1 Test 1 Test 1 Test 1</span></dropdown-item>
+                <dropdown-item><span>Non-clickable drop-down item</span></dropdown-item>
                 <dropdown-item><a href="#">Test 2</a></dropdown-item>
                 <dropdown-item><a href="#">Test 3</a></dropdown-item>
                 <dropdown-item><a href="#">Test 4</a></dropdown-item>
