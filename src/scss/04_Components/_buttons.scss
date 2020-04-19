@@ -44,7 +44,7 @@ c-button {
 
     &:focus,
     &:hover:not(:disabled) {
-        @include shadow(sm);
+        @include shadow(md);
         @include transition-ease-in-out(fast);
     }
 
@@ -61,8 +61,24 @@ c-button {
 
     @each $color, $value in $theme-colors {
         &.#{$color} {
-            @include border(solid, xxs, $color);
-            @include bg-color($color);
+            &.solid {
+                background-color: color($color);
+                background-image: linear-gradient(
+                    0deg,
+                    color($color) 0%,
+                    color($color, lighter) 100%
+                );
+                color: text-color($color, dark);
+                text-shadow: 2px 2px 4px color($color, darker);
+                @include border(solid, xxs, $color, light);
+                @include border-b(solid, xxs, $color);
+                border-image-slice: 2;
+                border-image-source: linear-gradient(
+                    0deg,
+                    color($color) 0%,
+                    color($color, lighter) 100%
+                );
+            }
 
             &.hollow {
                 background-color: transparent;
