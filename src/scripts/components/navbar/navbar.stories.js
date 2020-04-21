@@ -79,7 +79,7 @@ export const navbarGroupProperties = () => {
 
 export const navbarWithMultipleRows = () => {
     return (`
-    <c-navbar tagline="Group Props">
+    <c-navbar tagline="Multiple Rows">
         <c-navbar-row>
             <c-navbar-group>
                 <c-navbar-item>
@@ -119,7 +119,7 @@ export const navbarWithMultipleRows = () => {
 
 export const navbarWithMultipleGroups = () => {
     return (`
-    <c-navbar tagline="Group Props">
+    <c-navbar tagline="Multiple Groups">
         <c-navbar-row>
             <c-navbar-group position="left">
                 <c-navbar-item>
@@ -131,7 +131,7 @@ export const navbarWithMultipleGroups = () => {
                 <c-navbar-item>
                     <c-dropdown
                         text="Drop-Down" 
-                        position="right" 
+                        position="left" 
                         display="link" 
                         >
                         <dropdown-item><a href="#">First Option - Test 1</a></dropdown-item>

@@ -31,7 +31,8 @@ export const loadingOverlay = () => {
             $loading.show();
         }
     });
-    return (`<div style="width:300px; height:300px; position:relative;">
+    return (`<div style="width:300px; position:relative;">
+        <img src="https://curiousgeorge2015.files.wordpress.com/2016/02/rainn-wilson-dwight-schrute-the-office2.jpg?w=680" alt="dwight schrute with blow torch" />
         <c-loading-overlay size="${size}" absolute="${absolute}" type="${type}" message="${message}" show-message="${showMessage}" />
     </div>`);
 }

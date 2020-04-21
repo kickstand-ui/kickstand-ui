@@ -8,23 +8,20 @@ export const playground = () => {
     setTimeout(() => {
         let $openButton = document.getElementById('open');
         let $modal = document.getElementById('modal');
-        let $closeButton = document.getElementById('close');
+        let $closeButtons = document.querySelectorAll('.close');
 
-        $openButton.addEventListener('click', () => {
-            $modal.show();
-        });
-        $closeButton.addEventListener('click', () => {
-            $modal.hide();
-        });
+        $openButton.addEventListener('click', () => $modal.show());
+        $closeButtons.forEach(x => x.addEventListener('click', () => $modal.hide()));
     });
     return (`
     <div style="width:300px; height:300px;">
         <c-button class="m-xxl" id="open">Open Modal</c-button>
         <c-modal modal-title="Test Modal" size="${size}" id="modal">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nihil ipsum voluptates consectetur sint voluptatum dolores molestias aut possimus, ipsa veritatis qui placeat ea ducimus sapiente atque soluta explicabo! Repellat.
-            <c-modal-footer>
-                <c-button id="close1" clear>Cancel</c-button>
-                <c-button id="close">Close Modal!</c-button>
+            <h4>It's Belscnicle!</h4>
+            <img src="http://vignette1.wikia.nocookie.net/theoffice/images/d/d1/Dwights-special-christmas.jpg" alt="Belscnicle" />
+\            <c-modal-footer>
+                <c-button class="close" display="clear">Cancel</c-button>
+                <c-button class="close">Close Modal!</c-button>
             </c-modal-footer>
         </c-modal>
     </div>

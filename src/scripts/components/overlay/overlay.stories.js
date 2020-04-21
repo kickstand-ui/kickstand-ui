@@ -21,9 +21,9 @@ export const playground = () => {
     });
     return (`
     <div style="width:300px; height:300px; position:relative;">
-        <button class="m-xxl" id="open">Open Overlay</button>
+        <c-button class="m-xxl" id="open">Open Overlay</c-button>
         <c-overlay absolute="${absolute}" theme="${theme}" dismissible="${dismissible}" id="overlay">
-            <button id="close">Close Overlay!</button>
+            <c-button color="light" id="close">Close Overlay!</c-button>
         </c-overlay>
     </div>
     `);

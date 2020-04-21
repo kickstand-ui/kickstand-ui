@@ -42,8 +42,8 @@ export const megaMenu = () => {
             text="Mega Menu Test" 
             mega-menu="true"
             >
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores possimus itaque nulla soluta, mollitia a tempora odit reprehenderit labore excepturi! Odio labore culpa consequuntur tempore iure error cum mollitia iste!
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores possimus itaque nulla soluta, mollitia a tempora odit reprehenderit labore excepturi! Odio labore culpa consequuntur tempore iure error cum mollitia iste!
+            <h3>Mega Menu meets Mega Desk</h3>
+            <img src="https://media1.tenor.com/images/812ea59ea0ddcfbc1e2793092538dfde/tenor.gif">
         </c-dropdown>
     `);
 }
