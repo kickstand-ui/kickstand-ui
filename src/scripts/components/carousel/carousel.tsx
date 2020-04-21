@@ -115,8 +115,8 @@ export class Carousel implements ComponentInterface {
             <Host class={`carousel`}>
                 <div class="slides">
                     <slot />
+                    {!this.hideControls && controls}
                 </div>
-                {!this.hideControls && controls}
                 {(!this.hideIndicators && !this.thumbnails) && indicators}
                 {this.thumbnails && thumbnailList}
             </Host>

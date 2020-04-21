@@ -5,6 +5,7 @@
     position: relative;
 
     .slides {
+        position: relative;
         @include bg-color(light, darker);
 
         .slide {
@@ -29,30 +30,30 @@
             text-shadow: 2px 2px 4px color(dark);
             @include my(xxl);
         }
-    }
 
-    .control {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 10%;
-        color: color(white, 0.5);
-        background-color: transparent;
-        border: none;
-        @include font-size(xl);
+        .control {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 10%;
+            color: color(white, 0.5);
+            background-color: transparent;
+            border: none;
+            @include font-size(xl);
 
-        &:focus,
-        &:hover {
-            outline: 0;
-            color: color(white);
-        }
+            &:focus,
+            &:hover {
+                outline: 0;
+                color: color(white);
+            }
 
-        &.prev {
-            left: 0;
-        }
+            &.prev {
+                left: 0;
+            }
 
-        &.next {
-            right: 0;
+            &.next {
+                right: 0;
+            }
         }
     }
 
