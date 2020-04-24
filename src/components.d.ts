@@ -79,6 +79,7 @@ export namespace Components {
   interface CDropdown {
     'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'display': 'solid' | 'hollow' | 'clear' | 'link';
+    'hideIndicator': boolean;
     'hideText': boolean;
     'icon': string;
     'megaMenu': boolean;
@@ -526,6 +527,7 @@ declare namespace LocalJSX {
   interface CDropdown {
     'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'display'?: 'solid' | 'hollow' | 'clear' | 'link';
+    'hideIndicator'?: boolean;
     'hideText'?: boolean;
     'icon'?: string;
     'megaMenu'?: boolean;

@@ -12,6 +12,7 @@ export const playground = () => {
     const buttonIcon = text('icon', '');
     const display = select('display', displays, 'solid');
     const hideButtonText = boolean('hide-text', false);
+    const hideIndicator = boolean('hide-indicator', false);
     const megaMenu = boolean('mega-menu', false);
     return (`
         <div class="flex-layout ${dropdownAlignment === 'right' ? 'justify-end' : ''}">
@@ -23,6 +24,7 @@ export const playground = () => {
                 icon="${buttonIcon}"
                 display="${display}"
                 hide-text="${hideButtonText}"
+                hide-indicator="${hideIndicator}"
                 mega-menu="${megaMenu}"
                 >
                 <dropdown-item><span>Non-clickable drop-down item</span></dropdown-item>

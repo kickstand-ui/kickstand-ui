@@ -18,6 +18,7 @@ export class Dropdown {
     @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';
     @Prop() display: 'solid' | 'hollow' | 'clear' | 'link' = 'solid';
     @Prop() hideText: boolean;
+    @Prop() hideIndicator: boolean;
     @Prop() megaMenu: boolean;
 
     @State() isExpanded: boolean = false;
@@ -127,7 +128,7 @@ export class Dropdown {
                     ref={el => this.$control = el.querySelector('button')}
                 >
                     <span class={buttonClasses}>{this.text}</span>
-                    <i class="fas fa-chevron-down dropdown-icon"></i>
+                    {!this.hideIndicator && <i class="fas fa-chevron-down dropdown-icon"></i>}
                 </c-button>
                 <div
                     id={`dropdown-${this.dropdownId}`}
