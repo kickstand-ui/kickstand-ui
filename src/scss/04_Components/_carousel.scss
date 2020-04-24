@@ -36,7 +36,7 @@
             top: 0;
             bottom: 0;
             width: 10%;
-            color: color(white, 0.5);
+            color: color(white);
             background-color: transparent;
             border: none;
             @include font-size(xl);
@@ -44,7 +44,6 @@
             &:focus,
             &:hover {
                 outline: 0;
-                color: color(white);
             }
 
             &.prev {
@@ -53,6 +52,10 @@
 
             &.next {
                 right: 0;
+            }
+
+            svg {
+                filter: drop-shadow(0 0 0.25rem color(dark))
             }
         }
     }
