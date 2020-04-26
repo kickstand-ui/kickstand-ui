@@ -1,3 +1,5 @@
+import { select } from "@storybook/addon-knobs";
+
 export default { title: 'Containers/Accordion' };
 
 const accordionData = [
@@ -20,7 +22,9 @@ const accordionData = [
 ];
 
 export const defaultAccordion = () => {
-    return (`<c-accordion class="m-xxl" style="max-width:500px;">
+    const size = select('size', ['sm', 'md', 'lg'], 'md');
+
+    return (`<c-accordion class="m-xxl" size="${size}" style="max-width:500px;">
                 ${accordionData.map(x => `<c-accordion-slide heading="${x.heading}">${x.bodyText}</c-accordion-slide>`).join('')}
             </c-accordion>`);
 };

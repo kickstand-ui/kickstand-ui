@@ -12,7 +12,9 @@ import {
 } from './scripts/components/breadcrumbs/breadcrumbs';
 
 export namespace Components {
-  interface CAccordion {}
+  interface CAccordion {
+    'size': string;
+  }
   interface CAccordionSlide {
     'expanded': boolean;
     'heading': string;
@@ -461,7 +463,9 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface CAccordion {}
+  interface CAccordion {
+    'size'?: string;
+  }
   interface CAccordionSlide {
     'expanded'?: boolean;
     'heading'?: string;

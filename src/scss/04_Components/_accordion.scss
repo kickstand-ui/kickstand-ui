@@ -22,7 +22,7 @@
             font-weight: bold;
             @include font-size(sm);
             @include border($size: xxs, $color: primary);
-            @include p(sm);
+            @include px(lg);
 
             .accordion-icon {
                 color: color(primary);
@@ -55,6 +55,30 @@
                 visibility: visible;
                 @include py(lg);
                 @include border-b($size: xxs);
+            }
+        }
+    }
+
+    &.sm {
+        .accordion-slide {
+            .accordion-heading {
+                @include py(sm);
+            }
+        }
+    }
+
+    &.md {
+        .accordion-slide {
+            .accordion-heading {
+                @include py(md);
+            }
+        }
+    }
+
+    &.lg {
+        .accordion-slide {
+            .accordion-heading {
+                @include py(lg);
             }
         }
     }
