@@ -28,5 +28,9 @@ export const config: Config = {
                 cssnano()
             ]
         })
-    ]
+    ],
+    extras: {
+        cssVarsShim: false,
+        shadowDomShim: false
+    }
 };
