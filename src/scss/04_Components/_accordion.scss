@@ -62,7 +62,7 @@
     &.sm {
         .accordion-slide {
             .accordion-heading {
-                @include py(sm);
+                @include py(md);
             }
         }
     }
@@ -70,7 +70,7 @@
     &.md {
         .accordion-slide {
             .accordion-heading {
-                @include py(md);
+                @include py(lg);
             }
         }
     }
@@ -78,7 +78,7 @@
     &.lg {
         .accordion-slide {
             .accordion-heading {
-                @include py(lg);
+                @include py(xl);
             }
         }
     }
