@@ -12,7 +12,7 @@ export class Row {
         return (
             <Host class={{
                 'row': true,
-                'flex-layout': true,
+                'display-flex': true,
                 'no-gutter': this.noGutter,
                 [`align-content-${this.align}`]: true
             }}>

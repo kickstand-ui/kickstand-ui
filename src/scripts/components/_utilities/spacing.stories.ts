@@ -8,7 +8,7 @@ export const padding = () => {
             <h2>Padding</h2>
             ${sizes.map(s => `
                 <h3>${s}</h3>
-                <div class="flex-layout align-start w-100 my-md">
+                <div class="display-flex align-start w-100 my-md">
                     ${directions.map(d => `<div class="w-100 mx-sm bg-info-lighter p${d}-${s}">
                         <div class="bg-light">p${d}-${s}</div>
                     </div>`).join('')}
@@ -22,7 +22,7 @@ export const margin = () => {
             <h2>Margin</h2>
             ${sizes.map(s => `
             <h3>${s}</h3>
-            <div class="flex-layout align-start w-100 my-md">
+            <div class="display-flex align-start w-100 my-md">
                 ${directions.map(d => `<div class="w-100 mx-sm bg-info-lighter">
                     <div class="bg-light m${d}-${s}">m${d}-${s}</div>
                 </div>`).join('')}

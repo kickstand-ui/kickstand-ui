@@ -45,7 +45,7 @@ export class CarouselSlide implements ComponentInterface {
 
         let contentClasses = {
             'content': true,
-            'flex-layout': true,
+            'display-flex': true,
             'flex-column': true,
             [`align-${this.align}`]: true,
             [`justify-${this.position}`]: true,

@@ -15,7 +15,7 @@ export const playground = () => {
     const hideIndicator = boolean('hide-indicator', false);
     const megaMenu = boolean('mega-menu', false);
     return (`
-        <div class="flex-layout ${dropdownAlignment === 'right' ? 'justify-end' : ''}">
+        <div class="display-flex ${dropdownAlignment === 'right' ? 'justify-end' : ''}">
             <c-dropdown
                 class="m-lg"
                 text="${dropdownText}" 
