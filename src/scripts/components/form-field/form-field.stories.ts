@@ -3,8 +3,6 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 export default { title: 'Forms/Form Field' };
 
 const types = ['text', 'tel', 'url', 'password', 'date', 'email', 'search', 'number', 'hidden'];
-const sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
-const iconDirections = ['left', 'right'];
 
 export const playground = () => {
     const type = select('type', types, 'text');

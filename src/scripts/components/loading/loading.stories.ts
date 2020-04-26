@@ -1,4 +1,4 @@
-import { text, select, boolean, number } from "@storybook/addon-knobs";
+import { text, select, boolean } from "@storybook/addon-knobs";
 
 export default { title: 'Loading/Animated Loading' };
 

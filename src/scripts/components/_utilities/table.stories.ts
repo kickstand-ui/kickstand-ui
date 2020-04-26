@@ -1,4 +1,4 @@
-import { text, select, boolean } from "@storybook/addon-knobs";
+import { boolean } from "@storybook/addon-knobs";
 
 export default { title: 'Utilities/Table' };
 

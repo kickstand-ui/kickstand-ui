@@ -1,4 +1,4 @@
-import { text, select, boolean } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs';
 
 export default { title: 'Dialog/Modal' };
 
@@ -7,7 +7,7 @@ export const playground = () => {
 
     setTimeout(() => {
         let $openButton = document.getElementById('open');
-        let $modal = document.getElementById('modal');
+        let $modal = document.querySelector<HTMLCModalElement>('#modal');
         let $closeButtons = document.querySelectorAll('.close');
 
         $openButton.addEventListener('click', () => $modal.show());
@@ -19,7 +19,7 @@ export const playground = () => {
         <c-modal modal-title="Test Modal" size="${size}" id="modal">
             <h4>It's Belscnicle!</h4>
             <img src="http://vignette1.wikia.nocookie.net/theoffice/images/d/d1/Dwights-special-christmas.jpg" alt="Belscnicle" />
-\            <c-modal-footer>
+            <c-modal-footer>
                 <c-button class="close" display="clear">Cancel</c-button>
                 <c-button class="close">Close Modal!</c-button>
             </c-modal-footer>

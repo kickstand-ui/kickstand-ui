@@ -1,4 +1,4 @@
-import { text, select, boolean, number } from "@storybook/addon-knobs";
+import { select, boolean } from "@storybook/addon-knobs";
 
 export default { title: 'Dialog/Overlay' };
 
@@ -9,7 +9,7 @@ export const playground = () => {
 
     setTimeout(() => {
         let $openButton = document.getElementById('open');
-        let $overlay = document.getElementById('overlay');
+        let $overlay = document.querySelector<HTMLCOverlayElement>('#overlay');
         let $closeButton = document.getElementById('close');
 
         $openButton.addEventListener('click', () => {

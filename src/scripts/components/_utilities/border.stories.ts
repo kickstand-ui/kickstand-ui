@@ -1,5 +1,3 @@
-import { text, select, boolean } from "@storybook/addon-knobs";
-
 export default { title: 'Utilities/Borders' };
 
 const positions = ['', '-t', '-r', '-b', '-l', '-x', '-y'];

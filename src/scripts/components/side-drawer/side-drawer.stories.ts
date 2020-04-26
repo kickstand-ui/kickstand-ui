@@ -1,4 +1,4 @@
-import { text, select, boolean } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs';
 
 export default { title: 'Dialog/Side Drawer' };
 
@@ -8,7 +8,7 @@ export const playground = () => {
 
     setTimeout(() => {
         let $openButton = document.getElementById('open');
-        let $drawer = document.getElementById('drawer');
+        let $drawer = document.querySelector<HTMLCSideDrawerElement>('#drawer');
 
         $openButton.addEventListener('click', () => {
             $drawer.show();

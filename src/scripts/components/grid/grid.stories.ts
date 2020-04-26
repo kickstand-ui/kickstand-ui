@@ -1,5 +1,3 @@
-import { text, select, boolean, number } from "@storybook/addon-knobs";
-
 export default { title: 'Layout/Grid' };
 
 export const basicGrid = () => {

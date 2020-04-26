@@ -1,4 +1,4 @@
-import { text, select, boolean, number } from "@storybook/addon-knobs";
+import { text, boolean, number } from "@storybook/addon-knobs";
 
 export default { title: 'Media/Images' };
 

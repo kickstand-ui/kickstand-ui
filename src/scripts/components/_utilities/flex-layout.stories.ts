@@ -1,4 +1,4 @@
-import { text, select, boolean } from "@storybook/addon-knobs";
+import { select } from "@storybook/addon-knobs";
 
 export default { title: 'Layout/Flex Layout' };
 

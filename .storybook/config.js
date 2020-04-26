@@ -14,4 +14,4 @@ addParameters({
 addDecorator(withKnobs);
 addDecorator(withA11y);
 
-configure(require.context('../src/scripts/components', true, /\.stories\.js$/), module);
+configure(require.context('../src/scripts/components', true, /\.stories\.ts$/), module);

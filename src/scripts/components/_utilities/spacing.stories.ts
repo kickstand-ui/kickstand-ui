@@ -1,10 +1,7 @@
-import { text, select, boolean } from "@storybook/addon-knobs";
-
 export default { title: 'Utilities/Spacing' };
 
 const sizes = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
 const directions = ['', 't', 'r', 'b', 'l', 'x', 'y'];
-const align = ['left', 'center', 'right'];
 
 export const padding = () => {
     return (`<div class="m-xxl">
