@@ -1,6 +1,6 @@
 export default { title: 'Utilities/Spacing' };
 
-const sizes = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
+const sizes = ['xxxs', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'];
 const directions = ['', 't', 'r', 'b', 'l', 'x', 'y'];
 
 export const padding = () => {
@@ -9,7 +9,7 @@ export const padding = () => {
             ${sizes.map(s => `
                 <h3>${s}</h3>
                 <div class="display-flex align-start w-100 my-md">
-                    ${directions.map(d => `<div class="w-100 mx-sm bg-info-lighter p${d}-${s}">
+                    ${directions.map(d => `<div class="w-100 mr-md bg-info-lighter p${d}-${s}">
                         <div class="bg-light">p${d}-${s}</div>
                     </div>`).join('')}
                 </div>
@@ -23,7 +23,7 @@ export const margin = () => {
             ${sizes.map(s => `
             <h3>${s}</h3>
             <div class="display-flex align-start w-100 my-md">
-                ${directions.map(d => `<div class="w-100 mx-sm bg-info-lighter">
+                ${directions.map(d => `<div class="w-100 mr-md bg-info-lighter">
                     <div class="bg-light m${d}-${s}">m${d}-${s}</div>
                 </div>`).join('')}
             </div>
