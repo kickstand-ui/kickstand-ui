@@ -1,11 +1,42 @@
-@import '../00_Abstracts/index';
+@import "../00_Abstracts/index";
 
-$percentages: (10, 20, 25, 30, 33, 40, 50, 60, 66, 70, 75, 80, 90, 100);
+$widths: (10, 20, 25, 30, 33, 40, 50, 60, 66, 70, 75, 80, 90, 100);
+$heights: (25, 50, 75, 100);
 
 // WIDTH
 
-@each $percent in $percentages {
-    .w-#{$percent} {
-        width: #{$percent + '%'} !important;
+@each $width in $widths {
+    .w-#{$width} {
+        width: #{$width + "%"} !important;
+
+        @each $mq, $value in $media-queries {
+            @include mq($mq) {
+                /*
+                    sm:w-100
+                    xl:w-50
+                */
+                .#{$mq}\:w-#{$width} {
+                    width: #{$width + "%"} !important;
+                }
+            }
+        }
+    }
+}
+
+@each $height in $heights {
+    .h-#{$height} {
+        height: #{$height + "%"} !important;
+
+        @each $mq, $value in $media-queries {
+            @include mq($mq) {
+                /*
+                    sm:h-100
+                    xl:h-50
+                */
+                .#{$mq}\:h-#{$height} {
+                    height: #{$height + "%"} !important;
+                }
+            }
+        }
     }
 }
