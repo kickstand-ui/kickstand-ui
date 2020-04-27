@@ -23,7 +23,7 @@ export const carouselOptions = () => {
                 <h2>Asian Jim</h2>
                 <p>(Not really Jim)</p>
             </c-carousel-slide>
-            <c-carousel-slide alt="Jim Pranks Dwight" src="https://img.buzzfeed.com/buzzfeed-static/static/2016-05/4/10/enhanced/webdr06/original-16454-1462371390-5.png">
+            <c-carousel-slide alt="Jim Pranks Dwight" src="https://typeset-beta.imgix.net/rehost%2F2016%2F9%2F29%2Fbed54d5a-3d87-4f44-8f30-70ea3d7ed505.png?w=740&h=416&fit=crop&crop=faces&auto=format&q=70">
                 <h3>Dwight Fights Himself</h3>
             </c-carousel-slide>
         </c-carousel>
