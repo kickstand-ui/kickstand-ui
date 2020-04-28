@@ -12,8 +12,20 @@ export class ProgressBar implements ComponentInterface {
     @Prop() progressLabel: string = 'Progress';
     @Prop() hideProgressLabel: boolean;
 
+    validateValue() {
+        return isNaN(this.value)
+            ? 0
+            : this.value < 0
+                ? 0
+                : this.value > 100
+                    ? 100
+                    : this.value;
+    }
+
 
     render() {
+        this.value = this.validateValue();
+
         return (
             <Host class="progress">
                 <div class="labels">
