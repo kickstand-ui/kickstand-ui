@@ -1,6 +1,6 @@
 import { text, select, boolean } from "@storybook/addon-knobs";
 
-export default { title: 'Navigation/Dropdown' };
+export default { title: 'Dropdown' };
 
 const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
 const displays = ['solid', 'hollow', 'clear', 'link'];

@@ -1,6 +1,6 @@
 import { text, select, boolean } from '@storybook/addon-knobs';
 
-export default { title: 'Forms/Form Field' };
+export default { title: 'Form Field' };
 
 const types = ['text', 'tel', 'url', 'password', 'date', 'email', 'search', 'number', 'hidden'];
 

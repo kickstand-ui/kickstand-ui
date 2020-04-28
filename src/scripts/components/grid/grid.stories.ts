@@ -1,4 +1,4 @@
-export default { title: 'Layout/Grid' };
+export default { title: 'Grid' };
 
 export const basicGrid = () => {
     return (`

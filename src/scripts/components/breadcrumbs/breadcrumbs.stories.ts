@@ -1,10 +1,10 @@
-export default { title: "Navigation/Breadcrumbs" };
+export default { title: "Breadcrumbs" };
 
 const breadcrumbs = [
-    {url: '#', text: 'Home'},
-    {url: '#', text: 'Products'},
-    {url: '#', text: 'Bacon Flavored Toothpaste'},
-    {url: '#', text: 'Details'},
+    { url: '#', text: 'Home' },
+    { url: '#', text: 'Products' },
+    { url: '#', text: 'Bacon Flavored Toothpaste' },
+    { url: '#', text: 'Details' },
 ];
 
 export const breadcrumb = () => {

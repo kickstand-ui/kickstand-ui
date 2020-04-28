@@ -1,6 +1,6 @@
 import { text, select, boolean } from "@storybook/addon-knobs";
 
-export default { title: 'Containers/Badge' };
+export default { title: 'Badge' };
 
 const variations = { 'Primary': 'primary', 'Secondary': 'secondary', 'Success': 'success', 'Info': 'info', 'Warning': 'warning', 'Danger': 'danger', 'Light': 'light', 'Dark': 'dark' };
 

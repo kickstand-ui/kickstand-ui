@@ -1,6 +1,6 @@
 import { text, select, boolean } from "@storybook/addon-knobs";
 
-export default { title: 'Navigation/Navbar' };
+export default { title: 'Navbar' };
 
 const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
 export const navbarProperties = () => {
@@ -144,12 +144,10 @@ export const navbarWithMultipleGroups = () => {
             </c-navbar-group>
             <c-navbar-group>
                 <c-navbar-item>
-                    <c-navbar-item>
-                        <a href="#">Sign Up</a>
-                    </c-navbar-item>
-                    <c-navbar-item class="p-none">
-                        <c-button color="secondary" size="sm">Sign In</c-button>
-                    </c-navbar-item>
+                    <a href="#">Sign Up</a>
+                </c-navbar-item>
+                <c-navbar-item class="p-none">
+                    <c-button color="secondary" size="sm">Sign In</c-button>
                 </c-navbar-item>
             </c-navbar-group>
         </c-navbar-row>

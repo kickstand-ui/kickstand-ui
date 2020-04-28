@@ -1,6 +1,6 @@
 import { select, boolean } from '@storybook/addon-knobs';
 
-export default { title: 'Dialog/Modal' };
+export default { title: 'Modal' };
 
 export const playground = () => {
     const size = select('size', ['sm', 'md', 'lg'], 'md');

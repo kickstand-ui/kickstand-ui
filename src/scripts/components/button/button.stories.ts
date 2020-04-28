@@ -1,6 +1,6 @@
 import { text, select, boolean } from '@storybook/addon-knobs';
 
-export default { title: 'Forms/Button' };
+export default { title: 'Button' };
 
 const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
 const displays = ['solid', 'hollow', 'clear', 'link'];

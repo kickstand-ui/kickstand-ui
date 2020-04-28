@@ -1,4 +1,4 @@
-export default { title: 'Forms/Spin Box' };
+export default { title: 'Spin Box' };
 
 export const playground = () => {
     return (`
