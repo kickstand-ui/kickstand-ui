@@ -1,12 +1,12 @@
 import { text, select, boolean } from "@storybook/addon-knobs";
 
-export default { title: 'Animated Loading' };
+export default { title: 'Loading' };
 
 const sizes = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
 
 export const playground = () => {
     const type = select('type', ['spinner', 'ellipsis'], 'spinner');
-    const message = text('message', 'Loading');
+    const message = text('message', 'Loading...');
     const showMessage = boolean('show-message', false);
     const cssClass = text('class', '')
 
@@ -21,7 +21,7 @@ export const playground = () => {
 export const loadingOverlay = () => {
     const absolute = boolean('absolute', false);
     const type = select('type', ['spinner', 'ellipsis'], 'spinner')
-    const message = text('message', 'Loading');
+    const message = text('message', 'Loading...');
     const showMessage = boolean('show-message', false);
     const size = select('size', sizes, 'sm');
 
