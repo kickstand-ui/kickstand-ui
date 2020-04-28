@@ -17,7 +17,7 @@ export const playground = () => {
     return (`
     <div style="width:300px; height:300px;">
         <c-button class="m-xxl" id="open">Guess What???</c-button>
-        <c-modal modal-title="Toby is back!!!" size="${size}" dismissible="${dismissible}" id="modal">
+        <c-modal modal-title="Toby's back!!!" size="${size}" dismissible="${dismissible}" id="modal">
             <img src="https://media.giphy.com/media/d10dMmzqCYqQ0/giphy.gif" alt="michael scott" />
             <c-modal-footer>
                 <c-button class="close" display="clear">Cancel</c-button>

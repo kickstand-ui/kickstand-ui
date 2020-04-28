@@ -2,7 +2,7 @@
 
 .modal {
     max-width: 100%;
-    @include bg-color(light);
+    @include bg-color(white);
     @include p(lg);
 
     .modal-header {
