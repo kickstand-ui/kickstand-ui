@@ -23,12 +23,6 @@ $drawer-sizes: (
         &.#{$direction} {
             @include border-r($color: dark, $variant: lighter);
 
-            @if ($direction == "right") {
-                .drawer-header {
-                    flex-direction: row-reverse;
-                }
-            }
-
             @each $key, $value in $drawer-sizes {
                 &.size-#{$key} {
                     width: $value;
