@@ -21,6 +21,7 @@ export class LinkButton implements ComponentInterface {
     @Prop() disabled: boolean;
     @Prop() controls: string;
     @Prop() describedBy: string;
+    @Prop() tabIndex: number;
 
     componentDidRender() {
         this.loading
@@ -54,7 +55,8 @@ export class LinkButton implements ComponentInterface {
             'aria-controls': this.controls,
             'aria-described-by': this.describedBy,
             'disabled': this.disabled || this.loading,
-            'type': this.type
+            'type': this.type,
+            'tabindex': this.tabIndex
         }
 
         return (

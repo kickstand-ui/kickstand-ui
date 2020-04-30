@@ -47,6 +47,7 @@ export namespace Components {
     'iconDirection': 'left' | 'right';
     'loading': boolean;
     'size': 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+    'tabIndex': number;
     'type': 'button' | 'submit' | 'reset';
   }
   interface CCard {
@@ -497,6 +498,7 @@ declare namespace LocalJSX {
     'iconDirection'?: 'left' | 'right';
     'loading'?: boolean;
     'size'?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+    'tabIndex'?: number;
     'type'?: 'button' | 'submit' | 'reset';
   }
   interface CCard {
