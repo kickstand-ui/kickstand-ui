@@ -4,14 +4,17 @@
     display: inline-flex;
     align-items: center;
     @include shadow(xs);
+    @include border($size: xxxs);
 
+    .button {
+        @include px(xs);
+    }
     .form-input {
         margin: 0;
         width: 4rem;
         text-align: center;
+        border: none;
         @include font-size(sm);
         @include p(sm);
-        @include shadow(inner);
-        @include border($size: xxs);
     }
 }
