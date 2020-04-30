@@ -71,18 +71,24 @@ export class SpinBox implements ComponentInterface {
     render() {
         return (<Host class="spin-box">
             <c-button
+                color="light"
                 icon="fas fa-chevron-left"
                 onClick={() => this.handleDecrease()}
                 described-by={this.labelId}
-                hide-text>
+                hide-text
+                tab-index="-1"
+            >
                 add
                 </c-button>
             <input type="number" id={this.spinBoxId} value={this.value} min={this.min} max={this.max} step={this.step} class="form-input" onChange={() => this.handleChange()} onBlur={() => this.resetInput()} />
             <c-button
+                color="light"
                 icon="fas fa-chevron-right"
                 onClick={() => this.handleIncrease()}
                 described-by={this.labelId}
-                hide-text>
+                hide-text
+                tab-index="-1"
+            >
                 remove
                 </c-button>
             <div class="sr-only" role="status" aria-live="polite">{this.value}</div>
