@@ -8,17 +8,25 @@
     <link rel="stylesheet" href="./build/clutch.css">
     <script type="module" src="/build/clutch.esm.js"></script>
     <script nomodule src="/build/clutch.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script> -->
     <script src="https://kit.fontawesome.com/9c6e5402c5.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 </head>
 
 <body>
-    <div ng-app="">
+    <div id="app" ng-app="">
+        <div>
+            <span>{{count}}</span>
+        </div>
+        <div>
+            <c-spin-box class="m-xxl" min="-5" :value="count" max="5" />
+        </div>
+
         <p>The value is {{input}}</p>
         <c-form-field value="test"></c-form-field>
-        <p>Header: <input type="text" ng-model="header"></p>
-        <c-alert type="primary" header="{{header}}">
+        <p>Header: <input type="text" v-model="header"></p>
+        <c-alert type="primary" :header="header">
             This is just a test!!!
         </c-alert>
         <button onClick="overlay.show()">Show Overlay</button>
@@ -83,6 +91,14 @@
         let button = document.querySelector('c-button');
         var logMessage = () => console.log('You clicked the button!!!');
         button.clickHandler = logMessage;
+
+        new Vue({
+            el: '#app',
+            data: {
+                header: '',
+                count: 0
+            }
+        })
     </script>
 </body>
 

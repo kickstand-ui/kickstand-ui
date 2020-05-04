@@ -624,6 +624,7 @@ declare namespace LocalJSX {
     'labelId'?: string;
     'max'?: number;
     'min'?: number;
+    'onIonChange'?: (event: CustomEvent<any>) => void;
     'spinBoxId'?: string;
     'step'?: number;
     'value'?: number;

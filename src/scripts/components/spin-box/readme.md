@@ -17,6 +17,13 @@
 | `value`     | `value`       |             | `number` | `0`         |
 
 
+## Events
+
+| Event       | Description | Type               |
+| ----------- | ----------- | ------------------ |
+| `ionChange` |             | `CustomEvent<any>` |
+
+
 ## Dependencies
 
 ### Depends on

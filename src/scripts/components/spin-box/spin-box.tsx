@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host, State, Element, ComponentInterface } from '@stencil/core';
+import { Component, h, Prop, Host, State, Element, ComponentInterface, Watch, Event, EventEmitter } from '@stencil/core';
 import componentUtils from '../../utils/componentUtils';
 
 @Component({
@@ -18,6 +18,14 @@ export class SpinBox implements ComponentInterface {
     // @Prop() onChange: Function;
 
     @State() isUpdating: boolean;
+
+    @Watch('value')
+    protected valueChanged() {
+    //   this.emitStyle();
+      this.ionChange.emit({ value: this.value == null ? this.value : this.value.toString() });
+    }
+
+    @Event() ionChange!: EventEmitter;
 
     handleIncrease(): void {
         if (!this.max || this.value < this.max) {
