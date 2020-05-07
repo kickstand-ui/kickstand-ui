@@ -19,9 +19,9 @@
 
 ## Events
 
-| Event       | Description | Type               |
-| ----------- | ----------- | ------------------ |
-| `ionChange` |             | `CustomEvent<any>` |
+| Event     | Description | Type               |
+| --------- | ----------- | ------------------ |
+| `updated` |             | `CustomEvent<any>` |
 
 
 ## Dependencies

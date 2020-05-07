@@ -15,17 +15,15 @@ export class SpinBox implements ComponentInterface {
     @Prop() step: number = 1;
     @Prop() labelId: string;
     @Prop() spinBoxId: string;
-    // @Prop() onChange: Function;
 
     @State() isUpdating: boolean;
 
     @Watch('value')
     protected valueChanged() {
-    //   this.emitStyle();
-      this.ionChange.emit({ value: this.value == null ? this.value : this.value.toString() });
+        this.updated.emit({ value: this.value == null ? this.value : this.value.toString() });
     }
 
-    @Event() ionChange!: EventEmitter;
+    @Event() updated!: EventEmitter;
 
     handleIncrease(): void {
         if (!this.max || this.value < this.max) {
@@ -55,15 +53,22 @@ export class SpinBox implements ComponentInterface {
         this.debouncedUpdate();
     }
 
-    resetInput(): void {
-        console.log('Blurred', typeof this.value !== 'number' || this.value > this.max || this.value < this.min);
-        if (typeof this.value !== 'number' || this.value > this.max || this.value < this.min) {
-            this.value = this.min;
-
-            if (!this.isUpdating) {
-                // this.onChange();
-            }
+    resetInput(e): void {
+        switch (true) {
+            case typeof this.value !== 'number':
+                this.value = 0;
+                break;
+            case this.max && this.value > this.max:
+                this.value = this.max;
+                break;
+            case this.min && this.value < this.min:
+                this.value = this.min;
+                break;
+            default:
+                this.value = e.target.value;
+                break;
         }
+        console.log('Blurred', this.value);
     }
 
     componentDidLoad() {
@@ -88,7 +93,17 @@ export class SpinBox implements ComponentInterface {
             >
                 add
                 </c-button>
-            <input type="number" id={this.spinBoxId} value={this.value} min={this.min} max={this.max} step={this.step} class="form-input" onChange={() => this.handleChange()} onBlur={() => this.resetInput()} />
+            <input
+                type="number"
+                class="form-input"
+                id={this.spinBoxId}
+                min={this.min}
+                max={this.max}
+                step={this.step}
+                value={this.value}
+                onChange={() => this.handleChange()}
+                onBlur={(e) => this.resetInput(e)}
+            />
             <c-button
                 color="light"
                 icon="fas fa-chevron-right"

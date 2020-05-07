@@ -17,29 +17,14 @@ export class FormField implements ComponentInterface {
     @Prop() type: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' = 'text';
     @Prop({ mutable: true }) value?: string | number | null = '';
 
-    @Event() cOnChange!: EventEmitter;
-    @Event() cOnInput!: EventEmitter;
-
     @Watch('value')
     protected valueChanged() {
-        this.cOnChange.emit({ value: this.value == null ? this.value : this.value.toString() });
+        this.updated.emit({ value: this.value == null ? this.value : this.value.toString() });
     }
 
-    private onInput = (ev: Event) => {
-        const input = ev.target as HTMLInputElement | null;
-        if (input) {
-            this.value = input.value || '';
-        }
-        this.cOnInput.emit(ev as KeyboardEvent);
-    }
-
-    private getValue(): string {
-        return typeof this.value === 'number' ? this.value.toString() :
-            (this.value || '').toString();
-    }
+    @Event() updated!: EventEmitter;
 
     render() {
-        let value = this.getValue();
         let fieldId = `form-input-${formFieldIds}`;
         let labelId = `form-label-${formFieldIds}`;
         let props = {
@@ -71,8 +56,7 @@ export class FormField implements ComponentInterface {
                     type={this.type}
                     placeholder={this.placeholder}
                     {...props}
-                    value={value}
-                    onInput={this.onInput}
+                    value={this.value}
                 />
             </Host>
         );

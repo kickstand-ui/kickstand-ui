@@ -24,10 +24,9 @@
 
 ## Events
 
-| Event       | Description | Type               |
-| ----------- | ----------- | ------------------ |
-| `cOnChange` |             | `CustomEvent<any>` |
-| `cOnInput`  |             | `CustomEvent<any>` |
+| Event     | Description | Type               |
+| --------- | ----------- | ------------------ |
+| `updated` |             | `CustomEvent<any>` |
 
 
 ## Dependencies

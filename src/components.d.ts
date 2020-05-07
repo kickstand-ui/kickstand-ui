@@ -546,8 +546,7 @@ declare namespace LocalJSX {
     'helpText'?: string;
     'invalid'?: boolean;
     'label'?: string;
-    'onCOnChange'?: (event: CustomEvent<any>) => void;
-    'onCOnInput'?: (event: CustomEvent<any>) => void;
+    'onUpdated'?: (event: CustomEvent<any>) => void;
     'placeholder'?: string;
     'required'?: boolean;
     'requiredText'?: string;
@@ -624,7 +623,7 @@ declare namespace LocalJSX {
     'labelId'?: string;
     'max'?: number;
     'min'?: number;
-    'onIonChange'?: (event: CustomEvent<any>) => void;
+    'onUpdated'?: (event: CustomEvent<any>) => void;
     'spinBoxId'?: string;
     'step'?: number;
     'value'?: number;
