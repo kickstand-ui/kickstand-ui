@@ -15,16 +15,16 @@
             width: 4rem;
             text-align: center;
             border: none;
+            -moz-appearance: textfield; /* Firefox */
             @include shadow(none);
             @include font-size(sm);
             @include p(sm);
-            -moz-appearance: textfield; /* Firefox */
 
             // Hide browser input spinners for numbers
             &::-webkit-outer-spin-button,
             &::-webkit-inner-spin-button {
-                -webkit-appearance: none;
                 margin: 0;
+                -webkit-appearance: none;
             }
         }
     }
