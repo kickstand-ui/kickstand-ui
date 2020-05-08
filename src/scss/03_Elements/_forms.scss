@@ -1,13 +1,3 @@
 @import "../00_Abstracts/index";
 
-// Hide browser input spinners for numbers
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
 
-// Hide browser input spinners for numbers in Firefox
-input[type="number"] {
-    -moz-appearance: textfield; /* Firefox */
-}

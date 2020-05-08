@@ -23,6 +23,9 @@
             <c-spin-box class="m-xxl" min="-5" :value="count" max="5" @updated="e => count = e.detail.value" />
         </div>
         <div>
+            <c-form-field type="spin-box" label="Test Input" value="55"></c-form-field>
+        </div>
+        <div>
             <c-form-field label="Test Input" :value="message" @updated="e => message = e.detail.value"></c-form-field>
         </div>
 

@@ -26,6 +26,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [c-form-field](../form-field)
+
 ### Depends on
 
 - [c-button](../button)
@@ -37,6 +41,7 @@ graph TD;
   c-button --> c-loading-overlay
   c-loading-overlay --> c-overlay
   c-loading-overlay --> c-loading
+  c-form-field --> c-spin-box
   style c-spin-box fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

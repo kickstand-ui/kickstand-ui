@@ -1,20 +1,31 @@
 @import "../00_Abstracts/index";
 
-.spin-box {
-    display: inline-flex;
-    align-items: center;
-    @include shadow(xs);
-    @include border($size: xxxs);
+.form-field {
+    .spin-box {
+        display: inline-flex;
+        align-items: center;
+        @include shadow(xs);
+        @include border($size: xxxs);
 
-    .button {
-        @include px(xs);
-    }
-    .form-input {
-        margin: 0;
-        width: 4rem;
-        text-align: center;
-        border: none;
-        @include font-size(sm);
-        @include p(sm);
+        .button {
+            @include px(xs);
+        }
+        .form-input {
+            margin: 0;
+            width: 4rem;
+            text-align: center;
+            border: none;
+            @include shadow(none);
+            @include font-size(sm);
+            @include p(sm);
+            -moz-appearance: textfield; /* Firefox */
+
+            // Hide browser input spinners for numbers
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
     }
 }

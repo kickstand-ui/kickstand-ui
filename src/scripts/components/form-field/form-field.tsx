@@ -4,7 +4,6 @@ import { Component, h, Prop, ComponentInterface, Host, Watch, Event, EventEmitte
     tag: 'c-form-field'
 })
 export class FormField implements ComponentInterface {
-
     @Prop() label: string;
     @Prop() helpText: string;
     @Prop() tooltipText: string;
@@ -14,8 +13,11 @@ export class FormField implements ComponentInterface {
     @Prop() requiredText: string = 'Required';
     @Prop() invalid: boolean = false;
     @Prop() disabled: boolean;
-    @Prop() type: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' = 'text';
+    @Prop() type: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'spin-box' = 'text';
     @Prop({ mutable: true }) value?: string | number | null = '';
+    @Prop() min?: number;
+    @Prop() max?: number;
+    @Prop() step?: number;
 
     @Watch('value')
     protected valueChanged() {
@@ -32,7 +34,6 @@ export class FormField implements ComponentInterface {
         }
     }
 
-
     render() {
         let fieldId = `form-input-${formFieldIds}`;
         let labelId = `form-label-${formFieldIds}`;
@@ -45,10 +46,14 @@ export class FormField implements ComponentInterface {
             'form-field': true,
             'invalid': this.invalid,
         };
+        let labelClasses = {
+            'form-label': true,
+            'pl-none': this.type === 'spin-box'
+        };
 
-        return (
+        return (        
             <Host class={classes}>
-                <label id={labelId} class="form-label" htmlFor={fieldId}>
+                <label id={labelId} class={labelClasses} htmlFor={fieldId}>
                     <span class="field-label">
                         {this.label}
                         {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText}>*</abbr>}
@@ -59,15 +64,29 @@ export class FormField implements ComponentInterface {
                         {(this.invalid && this.errorMessage) && <span><i class="fas fa-exclamation-triangle mr-xs"></i>{this.errorMessage}</span>}
                     </span>
                 </label>
-                <input
-                    id={fieldId}
-                    class="form-input"
-                    type={this.type}
-                    placeholder={this.placeholder}
-                    {...props}
-                    value={this.value}
-                    onInput={(e) => this.onInput(e)}
-                />
+                {this.type === 'spin-box'
+                    ? <c-spin-box
+                        value={Number(this.value)}
+                        min={this.min}
+                        max={this.max}
+                        step={this.step}
+                        label-id={labelId}
+                        spin-box-id={fieldId}
+                    >
+                    </c-spin-box>
+                    : <input
+                        id={fieldId}
+                        class="form-input"
+                        type={this.type}
+                        placeholder={this.placeholder}
+                        min={this.min}
+                        max={this.max}
+                        step={this.step}
+                        {...props}
+                        value={this.value}
+                        onInput={(e) => this.onInput(e)}
+                    />
+                }
             </Host>
         );
     }

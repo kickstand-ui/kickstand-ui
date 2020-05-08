@@ -95,11 +95,14 @@ export namespace Components {
     'helpText': string;
     'invalid': boolean;
     'label': string;
+    'max'?: number;
+    'min'?: number;
     'placeholder': string;
     'required': boolean;
     'requiredText': string;
+    'step'?: number;
     'tooltipText': string;
-    'type': 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden';
+    'type': 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'spin-box';
     'value'?: string | number | null;
   }
   interface CImg {
@@ -546,12 +549,15 @@ declare namespace LocalJSX {
     'helpText'?: string;
     'invalid'?: boolean;
     'label'?: string;
+    'max'?: number;
+    'min'?: number;
     'onUpdated'?: (event: CustomEvent<any>) => void;
     'placeholder'?: string;
     'required'?: boolean;
     'requiredText'?: string;
+    'step'?: number;
     'tooltipText'?: string;
-    'type'?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden';
+    'type'?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'spin-box';
     'value'?: string | number | null;
   }
   interface CImg {
