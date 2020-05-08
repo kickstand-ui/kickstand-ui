@@ -20,9 +20,18 @@ export class FormField implements ComponentInterface {
     @Watch('value')
     protected valueChanged() {
         this.updated.emit({ value: this.value == null ? this.value : this.value.toString() });
+        console.log(this.value)
     }
 
     @Event() updated!: EventEmitter;
+
+    private onInput = (ev: Event) => {
+        const input = ev.target as HTMLInputElement | null;
+        if (input) {
+            this.value = input.value || '';
+        }
+    }
+
 
     render() {
         let fieldId = `form-input-${formFieldIds}`;
@@ -37,7 +46,7 @@ export class FormField implements ComponentInterface {
             'invalid': this.invalid,
         };
 
-        return (        
+        return (
             <Host class={classes}>
                 <label id={labelId} class="form-label" htmlFor={fieldId}>
                     <span class="field-label">
@@ -57,6 +66,7 @@ export class FormField implements ComponentInterface {
                     placeholder={this.placeholder}
                     {...props}
                     value={this.value}
+                    onInput={(e) => this.onInput(e)}
                 />
             </Host>
         );

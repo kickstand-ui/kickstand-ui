@@ -25,63 +25,69 @@ export class SpinBox implements ComponentInterface {
 
     @Event() updated!: EventEmitter;
 
-    handleIncrease(): void {
+    private onInput = (ev: Event) => {
+        this.debouncedUpdate();
+        this.validateInput(ev);
+    }
+
+    private handleIncrease(): void {
         if (!this.max || this.value < this.max) {
             this.value += this.step;
 
             if (this.max && this.value > this.max) {
                 this.value = this.max;
             }
-
-            // this.onChange();
         }
     }
 
-    handleDecrease(): void {
+    private handleDecrease(): void {
         if (this.value > this.min) {
             this.value -= this.step;
 
             if (this.value < this.min) {
                 this.value = this.min;
             }
-
-            // this.onChange();
         }
     }
 
-    handleChange(): void {
-        this.debouncedUpdate();
+    private validateInput(e: Event): void {
+        const input = e.target as HTMLInputElement | null;
+
+        if (input) {
+            switch (true) {
+                case typeof this.value !== 'number':
+                    this.value = 0;
+                    break;
+                case this.max && this.value > this.max:
+                    this.value = this.max;
+                    break;
+                case this.min && this.value < this.min:
+                    this.value = this.min;
+                    break;
+                default:
+                    this.value = Number(input.value) || 0;
+                    break;
+            }
+        }
     }
 
-    resetInput(e): void {
-        switch (true) {
-            case typeof this.value !== 'number':
-                this.value = 0;
-                break;
-            case this.max && this.value > this.max:
-                this.value = this.max;
-                break;
-            case this.min && this.value < this.min:
-                this.value = this.min;
-                break;
-            default:
-                this.value = e.target.value;
-                break;
-        }
-        console.log('Blurred', this.value);
+    private getValue(): string {
+        return typeof this.value === 'number' ? this.value.toString() :
+            (this.value || '').toString();
     }
 
     componentDidLoad() {
         this.debouncedUpdate = componentUtils.debounce(() => {
             if (typeof this.value === 'number') {
                 this.isUpdating = true;
-                // this.onChange();
                 this.isUpdating = false;
             }
         }, 1000);
     }
 
     render() {
+        let value = this.getValue();
+
         return (<Host class="spin-box">
             <c-button
                 color="light"
@@ -100,9 +106,10 @@ export class SpinBox implements ComponentInterface {
                 min={this.min}
                 max={this.max}
                 step={this.step}
-                value={this.value}
-                onChange={() => this.handleChange()}
-                onBlur={(e) => this.resetInput(e)}
+                value={value}
+                onInput={(e) => this.onInput(e)}
+                onKeyUp={(e) => this.validateInput(e)}
+                onBlur={(e) => this.validateInput(e)}
             />
             <c-button
                 color="light"
