@@ -1,7 +1,7 @@
 import { Component, h, Prop, State, Element, Host, ComponentInterface } from '@stencil/core';
 
 @Component({
-    tag: 'c-carousel'
+    tag: 'ks-carousel'
 })
 export class Carousel implements ComponentInterface {
     @Element() $el: HTMLElement;
@@ -20,7 +20,7 @@ export class Carousel implements ComponentInterface {
 
 
     connectedCallback() {
-        this.$slides = Array.from(this.$el.querySelectorAll('c-carousel-slide'));
+        this.$slides = Array.from(this.$el.querySelectorAll('ks-carousel-slide'));
     }
 
     componentDidLoad() {
@@ -105,7 +105,7 @@ export class Carousel implements ComponentInterface {
                 {this.$slides.map((slide, index) =>
                     <button class="indicator" onClick={() => this.selectSlide(index)}>
                         <span class="sr-only">Got to slide {slide ? index + 1 : ''}</span>
-                        <c-img lazy src={slide.src} />
+                        <ks-img lazy src={slide.src} />
                     </button>
                 )}
             </div>

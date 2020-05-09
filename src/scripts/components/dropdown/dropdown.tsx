@@ -2,7 +2,7 @@ import { Component, h, Prop, Host, Element, State, Listen } from '@stencil/core'
 import componentUtils from '../../utils/componentUtils';
 
 @Component({
-    tag: 'c-dropdown'
+    tag: 'ks-dropdown'
 })
 export class Dropdown {
     dropdownId = `dropdown-${dropdownIds++}`;
@@ -116,7 +116,7 @@ export class Dropdown {
 
         return (
             <Host class={dropDownClasses}>
-                <c-button
+                <ks-button
                     onClick={() => this.toggleDropdown()}
                     color={this.color}
                     display={this.display}

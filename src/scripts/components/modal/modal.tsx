@@ -1,7 +1,7 @@
 import { Component, h, Prop, ComponentInterface, Element, Method } from '@stencil/core';
 
 @Component({
-    tag: 'c-modal'
+    tag: 'ks-modal'
 })
 export class Modal implements ComponentInterface {
     $overlay: HTMLCOverlayElement;
@@ -26,11 +26,11 @@ export class Modal implements ComponentInterface {
 
     render() {
         return (
-            <c-overlay title-id={this.titleId} ref={el => this.$overlay = el} dismissible={this.dismissible}>
+            <ks-overlay title-id={this.titleId} ref={el => this.$overlay = el} dismissible={this.dismissible}>
                 <div class={`modal size-${this.size}`}>
                     <header class="modal-header">
                         <h3 class="modal-title" id={this.titleId}>{this.modalTitle}</h3>
-                        {this.dismissible && <c-button onClick={() => this.hide()} display="clear" class="modal-close">
+                        {this.dismissible && <ks-button onClick={() => this.hide()} display="clear" class="modal-close">
                             <span class="sr-only">Close Modal</span>
                             <i class="fal fa-times"></i>
                         </c-button>}

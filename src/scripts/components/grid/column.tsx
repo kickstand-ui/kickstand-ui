@@ -2,7 +2,7 @@ import { Component, Prop, h, Host } from '@stencil/core';
 
 
 @Component({
-    tag: 'c-column'
+    tag: 'ks-column'
 })
 export class Column {
     @Prop() align: 'start' | 'center' | 'end' = 'start';

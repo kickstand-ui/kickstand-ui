@@ -1,7 +1,7 @@
 import { Component, h, ComponentInterface, Prop, Host, Element } from '@stencil/core';
 
 @Component({
-    tag: 'c-card'
+    tag: 'ks-card'
 })
 export class Card implements ComponentInterface {
     $link: HTMLAnchorElement;
@@ -36,8 +36,8 @@ export class Card implements ComponentInterface {
             <Host class={classes}>
                 {this.imgSrc && <div class="card-img">
                     {this.url
-                        ? <a href={this.url} ref={el => this.$link = el}><c-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} /></a>
-                        : <c-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} />}
+                        ? <a href={this.url} ref={el => this.$link = el}><ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} /></a>
+                        : <ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} />}
                 </div>}
                 <div class="card-content">
                     <slot />

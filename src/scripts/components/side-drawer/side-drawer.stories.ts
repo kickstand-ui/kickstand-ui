@@ -16,8 +16,8 @@ export const playground = () => {
     });
     return (`
     <div>
-        <c-button class="m-xxl" id="open">Open Drawer</c-button>
-        <c-side-drawer size="${size}" position="${position}" header-text="Test Drawer" id="drawer">
+        <ks-button class="m-xxl" id="open">Open Drawer</c-button>
+        <ks-side-drawer size="${size}" position="${position}" header-text="Test Drawer" id="drawer">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nihil ipsum voluptates consectetur sint voluptatum dolores molestias aut possimus, ipsa veritatis qui placeat ea ducimus sapiente atque soluta explicabo! Repellat.
         </c-side-drawer>
     </div>

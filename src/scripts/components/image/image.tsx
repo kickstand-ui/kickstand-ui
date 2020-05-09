@@ -2,7 +2,7 @@ import { Component, Element, Prop, State, h } from '@stencil/core';
 
 
 @Component({
-    tag: 'c-img'
+    tag: 'ks-img'
 })
 export class Img {
     @Element() el: HTMLElement;

@@ -1,7 +1,7 @@
 import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
-    tag: 'c-navbar-group'
+    tag: 'ks-navbar-group'
 })
 export class NavbarGroup {
     @Prop() position: 'left' | 'right' = 'right';

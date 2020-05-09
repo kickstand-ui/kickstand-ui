@@ -1,7 +1,7 @@
 import { Component, h, Prop, State, Element, Host } from '@stencil/core';
 
 @Component({
-    tag: 'c-navbar'
+    tag: 'ks-navbar'
 })
 export class Navbar {
     $navbarContent: HTMLElement;

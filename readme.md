@@ -1,6 +1,6 @@
-# Bunzl Clutch
+# Kickstand UI
 
-Clutch is the design system for Bunzl's web applications. It is built using native web components to ensure its cross-platform compatibility.
+Kickstand UI a the design system for building web applications. It is built using native web components to ensure its cross-platform compatibility.
 
 ## Getting Started
 

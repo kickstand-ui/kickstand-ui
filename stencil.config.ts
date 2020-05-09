@@ -5,7 +5,7 @@ import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 
 export const config: Config = {
-    namespace: 'clutch',
+    namespace: 'kickstand-ui',
     outputTargets: [
         {
             type: 'dist',

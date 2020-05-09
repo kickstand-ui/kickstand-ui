@@ -1,7 +1,7 @@
 import { Component, h, Prop, Host } from '@stencil/core';
 
 @Component({
-    tag: 'c-alert'
+    tag: 'ks-alert'
 })
 export class Alert {
     @Prop() header: string;

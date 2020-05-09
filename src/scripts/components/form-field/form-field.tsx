@@ -1,7 +1,7 @@
 import { Component, h, Prop, ComponentInterface, Host, Watch, Event, EventEmitter } from '@stencil/core';
 
 @Component({
-    tag: 'c-form-field'
+    tag: 'ks-form-field'
 })
 export class FormField implements ComponentInterface {
     @Prop() label: string;
@@ -57,7 +57,7 @@ export class FormField implements ComponentInterface {
                     <span class="field-label">
                         {this.label}
                         {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText}>*</abbr>}
-                        {(this.tooltipText && this.tooltipText !== '') && <c-tooltip position="right" text={this.tooltipText} hide-decoration><i class="fas fa-question-circle text-info ml-sm"></i></c-tooltip>}
+                        {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" text={this.tooltipText} hide-decoration><i class="fas fa-question-circle text-info ml-sm"></i></c-tooltip>}
                     </span>
                     <span class="help-text">{this.helpText}</span>
                     <span class="error-message text-danger" role="alert" aria-live="assertive">
@@ -65,7 +65,7 @@ export class FormField implements ComponentInterface {
                     </span>
                 </label>
                 {this.type === 'spin-box'
-                    ? <c-spin-box
+                    ? <ks-spin-box
                         value={Number(this.value)}
                         min={this.min}
                         max={this.max}

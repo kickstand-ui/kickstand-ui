@@ -5,12 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
     <title>Stencil Component Starter</title>
-    <link rel="stylesheet" href="./build/clutch.css">
-    <script type="module" src="/build/clutch.esm.js"></script>
-    <script nomodule src="/build/clutch.js"></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script> -->
+    <link rel="stylesheet" href="./build/kickstand-ui.css">
+    <script type="module" src="/build/kickstand-ui.esm.js"></script>
+    <script nomodule src="/build/kickstand-ui.js"></script>
     <script src="https://kit.fontawesome.com/9c6e5402c5.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 </head>
 
@@ -20,31 +18,31 @@
             <span>{{count}}</span>
         </div>
         <div>
-            <c-spin-box class="m-xxl" min="-5" :value="count" max="5" @updated="e => count = e.detail.value" />
+            <ks-spin-box class="m-xxl" min="-5" :value="count" max="5" @updated="e => count = e.detail.value" />
         </div>
         <div>
-            <c-form-field type="spin-box" label="Test Input" value="55"></c-form-field>
+            <ks-form-field type="spin-box" label="Test Input" value="55"></ks-form-field>
         </div>
         <div>
-            <c-form-field label="Test Input" :value="message" @updated="e => message = e.detail.value"></c-form-field>
+            <ks-form-field label="Test Input" :value="message" @updated="e => message = e.detail.value"></ks-form-field>
         </div>
 
         <p>The value is {{input}}</p>
-        <c-form-field value="test"></c-form-field>
+        <ks-form-field value="test"></ks-form-field>
         <p>Header: <input type="text" v-model="message" /></p>
-        <c-alert type="primary" :header="message">
+        <ks-alert type="primary" :header="message">
             This is just a test!!!
-        </c-alert>
+        </ks-alert>
         <button onClick="overlay.show()">Show Overlay</button>
         <div class="card m-lg" style="height: 300px; width: 300px;">
-            <c-overlay theme="dark" absolute>
+            <ks-overlay theme="dark" absolute>
                 <button onClick="overlay.hide()">Hide Overlay</button>
-            </c-overlay>
+            </ks-overlay>
         </div>
-        <c-button css-class="m-lg">
+        <ks-button css-class="m-lg">
             Click Test
-        </c-button>
-        <!-- <c-carousel>
+        </ks-button>
+        <!-- <ks-carousel>
             <div class="slide">
                 <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100 text-xl" width="800" height="400"
                     xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
@@ -81,29 +79,29 @@
                         dy=".3em">Fourth slide</text>
                 </svg>
             </div>
-        </c-carousel> -->
+        </ks-carousel> -->
 
-        <!-- <c-carousel css-class="w-33" thumbnails>
-            <c-carousel-slide alt="Jim Pranks Dwight"
-                src="http://oyster.ignimgs.com/wordpress/stg.ign.com/2013/05/Stapler_in_jello.jpg"></c-carousel-slide>
-            <c-carousel-slide alt="Jim Pranks Dwight"
-                src="https://www.bing.com/th?id=OIP.vcsEsRm8QqPj0OW_edJICwHaEJ&pid=Api&rs=1"></c-carousel-slide>
-            <c-carousel-slide alt="Jim Pranks Dwight" src="https://moviefellas.files.wordpress.com/2013/05/pilot.jpg">
-            </c-carousel-slide>
-            <c-carousel-slide alt="Jim Pranks Dwight"
-                src="https://www.bing.com/th?id=OIP.TUEcbhF4a8u_LQmqW8wSMQHaEJ&pid=Api&rs=1"></c-carousel-slide>
-            <c-carousel-slide alt="Jim Pranks Dwight"
+        <!-- <ks-carousel css-class="w-33" thumbnails>
+            <ks-carousel-slide alt="Jim Pranks Dwight"
+                src="http://oyster.ignimgs.com/wordpress/stg.ign.com/2013/05/Stapler_in_jello.jpg"></ks-carousel-slide>
+            <ks-carousel-slide alt="Jim Pranks Dwight"
+                src="https://www.bing.com/th?id=OIP.vcsEsRm8QqPj0OW_edJICwHaEJ&pid=Api&rs=1"></ks-carousel-slide>
+            <ks-carousel-slide alt="Jim Pranks Dwight" src="https://moviefellas.files.wordpress.com/2013/05/pilot.jpg">
+            </ks-carousel-slide>
+            <ks-carousel-slide alt="Jim Pranks Dwight"
+                src="https://www.bing.com/th?id=OIP.TUEcbhF4a8u_LQmqW8wSMQHaEJ&pid=Api&rs=1"></ks-carousel-slide>
+            <ks-carousel-slide alt="Jim Pranks Dwight"
                 src="https://img.buzzfeed.com/buzzfeed-static/static/2016-05/4/10/enhanced/webdr06/original-16454-1462371390-5.png">
-            </c-carousel-slide>
-            <c-carousel-slide alt="Jim Pranks Dwight"
+            </ks-carousel-slide>
+            <ks-carousel-slide alt="Jim Pranks Dwight"
                 src="https://img.buzzfeed.com/buzzfeed-static/static/2015-07/17/14/enhanced/webdr08/enhanced-4901-1437158753-3.jpg">
-            </c-carousel-slide>
+            </ks-carousel-slide>
         </c-carousel> -->
     </div>
     <script>
-        var overlay = document.querySelector('c-overlay');
-        let button = document.querySelector('c-button');
-        let spinBox = document.querySelector('c-spin-box');
+        var overlay = document.querySelector('ks-overlay');
+        let button = document.querySelector('ks-button');
+        let spinBox = document.querySelector('ks-spin-box');
         var logMessage = () => console.log('You clicked the button!!!');
         button.clickHandler = logMessage;
         // spinBox.addEventListener('onChange', event => {

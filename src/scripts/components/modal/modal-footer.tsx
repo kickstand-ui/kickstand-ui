@@ -1,7 +1,7 @@
 import { Component, h, Host, ComponentInterface } from '@stencil/core';
 
 @Component({
-    tag: 'c-modal-footer'
+    tag: 'ks-modal-footer'
 })
 export class Modal implements ComponentInterface {
     render() {

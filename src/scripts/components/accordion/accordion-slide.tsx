@@ -1,7 +1,7 @@
 import { Component, h, Prop, Method, Host } from '@stencil/core';
 
 @Component({
-    tag: 'c-accordion-slide'
+    tag: 'ks-accordion-slide'
 })
 export class AccordionSlide {
     slideId: string = `accordion-slide-${slideIds++}`;

@@ -3,11 +3,11 @@ import { addParameters, configure, addDecorator } from '@storybook/html';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
 
-import clutchTheme from './clutchTheme';
+import kickstandUiTheme from './kickstandUiTheme';
 
 addParameters({
     options: {
-        theme: clutchTheme
+        theme: kickstandUiTheme
     }
 });
 

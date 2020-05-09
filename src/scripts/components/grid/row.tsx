@@ -2,7 +2,7 @@ import { Component, Prop, h, Host } from '@stencil/core';
 
 
 @Component({
-    tag: 'c-row'
+    tag: 'ks-row'
 })
 export class Row {
     @Prop() noGutter: boolean;

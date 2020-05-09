@@ -16,7 +16,7 @@ export const playground = () => {
     const megaMenu = boolean('mega-menu', false);
     return (`
         <div class="display-flex ${dropdownAlignment === 'right' ? 'justify-end' : ''}">
-            <c-dropdown
+            <ks-dropdown
                 class="m-lg"
                 text="${dropdownText}" 
                 position="${dropdownAlignment}" 
@@ -39,7 +39,7 @@ export const playground = () => {
 
 export const megaMenu = () => {
     return (`
-        <c-dropdown
+        <ks-dropdown
             class="m-lg"
             text="Mega Menu Test" 
             mega-menu="true"

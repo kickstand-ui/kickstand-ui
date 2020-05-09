@@ -2,7 +2,7 @@ import { Component, h, Element, Prop, Host, ComponentInterface } from '@stencil/
 
 
 @Component({
-    tag: 'c-carousel-slide'
+    tag: 'ks-carousel-slide'
 })
 export class CarouselSlide implements ComponentInterface {
     $link: HTMLAnchorElement;
@@ -54,7 +54,7 @@ export class CarouselSlide implements ComponentInterface {
 
         return (
             <Host class={classes}>
-                {this.src && <c-img class="slide-image" alt={this.alt} lazy={this.lazy} src={this.src} threshold={this.threshold} />}
+                {this.src && <ks-img class="slide-image" alt={this.alt} lazy={this.lazy} src={this.src} threshold={this.threshold} />}
                 <div class={contentClasses} ref={el => this.$content = el}>
                     <slot />
                 </div>

@@ -1,7 +1,7 @@
 import { Component, h, Prop, Method, Element, ComponentInterface, Host } from '@stencil/core';
 
 @Component({
-    tag: 'c-loading-overlay'
+    tag: 'ks-loading-overlay'
 })
 export class LoadingOverlay implements ComponentInterface {
     $overlay: HTMLCOverlayElement;
@@ -26,8 +26,8 @@ export class LoadingOverlay implements ComponentInterface {
     render() {
         return (
             <Host class="loading-overlay">
-                <c-overlay theme="light" dismissible={false} absolute={this.absolute} ref={el => this.$overlay = el}>
-                    <c-loading message={this.message} show-message={this.showMessage} class={`text-${this.size}`} />
+                <ks-overlay theme="light" dismissible={false} absolute={this.absolute} ref={el => this.$overlay = el}>
+                    <ks-loading message={this.message} show-message={this.showMessage} class={`text-${this.size}`} />
                 </c-overlay>
             </Host>);
     }

@@ -11,7 +11,7 @@ export const navbarProperties = () => {
     const color = select('color', colors, 'primary')
     const inverted = boolean('inverted', false);
     return (`
-    <c-navbar
+    <ks-navbar
         logo-url="${logoUrl}" 
         alt-text="${altText}" 
         tagline="${tagline}"
@@ -19,16 +19,16 @@ export const navbarProperties = () => {
         color="${color}"
         inverted="${inverted}"
         >
-        <c-navbar-row>
-            <c-navbar-group>
-                <c-navbar-item>
+        <ks-navbar-row>
+            <ks-navbar-group>
+                <ks-navbar-item>
                     <a href="#">Test</a>
                 </c-navbar-item>
-                <c-navbar-item>
+                <ks-navbar-item>
                     <a href="#">Test 1</a>
                 </c-navbar-item>
-                <c-navbar-item>
-                    <c-dropdown
+                <ks-navbar-item>
+                    <ks-dropdown
                         text="Drop-Down" 
                         position="right" 
                         display="link" 
@@ -49,17 +49,17 @@ export const navbarProperties = () => {
 export const navbarGroupProperties = () => {
     const position = select('position', ['left', 'right'], 'right');
     return (`
-    <c-navbar tagline="Group Props">
-        <c-navbar-row>
-            <c-navbar-group position="${position}">
-                <c-navbar-item>
+    <ks-navbar tagline="Group Props">
+        <ks-navbar-row>
+            <ks-navbar-group position="${position}">
+                <ks-navbar-item>
                     <a href="#">Test</a>
                 </c-navbar-item>
-                <c-navbar-item>
+                <ks-navbar-item>
                     <a href="#">Test 1</a>
                 </c-navbar-item>
-                <c-navbar-item>
-                    <c-dropdown
+                <ks-navbar-item>
+                    <ks-dropdown
                         text="Drop-Down" 
                         position="right" 
                         display="link" 
@@ -79,27 +79,27 @@ export const navbarGroupProperties = () => {
 
 export const navbarWithMultipleRows = () => {
     return (`
-    <c-navbar tagline="Multiple Rows">
-        <c-navbar-row>
-            <c-navbar-group>
-                <c-navbar-item>
+    <ks-navbar tagline="Multiple Rows">
+        <ks-navbar-row>
+            <ks-navbar-group>
+                <ks-navbar-item>
                     <a href="#">Sign Up</a>
                 </c-navbar-item>
-                <c-navbar-item class="pl-none">
-                    <c-button size="sm" color="secondary">Sign In</c-button>
+                <ks-navbar-item class="pl-none">
+                    <ks-button size="sm" color="secondary">Sign In</c-button>
                 </c-navbar-item>
             </c-navbar-group>
         </c-navbar-row>
-        <c-navbar-row>
-            <c-navbar-group>
-                <c-navbar-item>
+        <ks-navbar-row>
+            <ks-navbar-group>
+                <ks-navbar-item>
                     <a href="#">Test</a>
                 </c-navbar-item>
-                <c-navbar-item>
+                <ks-navbar-item>
                     <a href="#">Test 1</a>
                 </c-navbar-item>
-                <c-navbar-item>
-                    <c-dropdown
+                <ks-navbar-item>
+                    <ks-dropdown
                         text="Drop-Down" 
                         position="right" 
                         display="link" 
@@ -119,17 +119,17 @@ export const navbarWithMultipleRows = () => {
 
 export const navbarWithMultipleGroups = () => {
     return (`
-    <c-navbar tagline="Multiple Groups">
-        <c-navbar-row>
-            <c-navbar-group position="left">
-                <c-navbar-item>
+    <ks-navbar tagline="Multiple Groups">
+        <ks-navbar-row>
+            <ks-navbar-group position="left">
+                <ks-navbar-item>
                     <a href="#">Test</a>
                 </c-navbar-item>
-                <c-navbar-item>
+                <ks-navbar-item>
                     <a href="#">Test 1</a>
                 </c-navbar-item>
-                <c-navbar-item>
-                    <c-dropdown
+                <ks-navbar-item>
+                    <ks-dropdown
                         text="Drop-Down" 
                         position="left" 
                         display="link" 
@@ -142,12 +142,12 @@ export const navbarWithMultipleGroups = () => {
                     </c-dropdown>
                 </c-navbar-item>
             </c-navbar-group>
-            <c-navbar-group>
-                <c-navbar-item>
+            <ks-navbar-group>
+                <ks-navbar-item>
                     <a href="#">Sign Up</a>
                 </c-navbar-item>
-                <c-navbar-item class="p-none">
-                    <c-button color="secondary" size="sm">Sign In</c-button>
+                <ks-navbar-item class="p-none">
+                    <ks-button color="secondary" size="sm">Sign In</c-button>
                 </c-navbar-item>
             </c-navbar-group>
         </c-navbar-row>

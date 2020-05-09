@@ -6,7 +6,7 @@ export const playground = () => {
     const value = number('value', 0);
     return (`
     <div class="form-field">
-        <c-spin-box class="m-xxl" min="-5" value=${value} max="5" />
+        <ks-spin-box class="m-xxl" min="-5" value=${value} max="5" />
     </div>
     `);
 }

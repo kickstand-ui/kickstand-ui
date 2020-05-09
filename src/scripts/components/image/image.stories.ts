@@ -14,13 +14,13 @@ export const lazyImage = () => {
             </div>
             <div>
                 <h3>(I was lazy loaded...)</h3>
-                <c-img alt="${alt}" css-class="${cssClass} w-50" lazy="${lazy}" src="${src}" threshold="${threshold}" />
+                <ks-img alt="${alt}" css-class="${cssClass} w-50" lazy="${lazy}" src="${src}" threshold="${threshold}" />
             </div>
             <div style="height:100vh;margin-bottom:500px;">
                 <h2>Scroll Down Some More</h2>
             </div>
             <div>
                 <h3>(So was I...)</h3>
-                <c-img alt="${alt}" css-class="${cssClass} w-50" lazy="${lazy}" src="${src2}" threshold="${threshold}" />
+                <ks-img alt="${alt}" css-class="${cssClass} w-50" lazy="${lazy}" src="${src2}" threshold="${threshold}" />
             </div>`);
 };

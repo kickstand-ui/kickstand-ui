@@ -17,7 +17,7 @@ export const playground = () => {
     const iconDirection = select('icon-direction', iconDirections, 'left');
     const linkUrl = text('url', '');
     const cssClass = text('css-class', '');
-    return (`<c-button
+    return (`<ks-button
             css-class="${cssClass}" 
             class="m-md"
             color="${color}" 
@@ -40,7 +40,7 @@ export const buttonColors = () => {
     const linkUrl = text('url', '');
     const cssClass = text('css-class', 'm-md');
     return (colors.map(color =>
-        `<c-button
+        `<ks-button
             css-class="${cssClass}" 
             color="${color}" 
             display="${display}" 
@@ -54,7 +54,7 @@ export const buttonColors = () => {
 
 export const buttonDisplay = () => {
     return (displays.map(d =>
-        `<c-button
+        `<ks-button
             class="ml-md mt-md" 
             display="${d}">
             ${d} button
@@ -69,7 +69,7 @@ export const sizeVariations = () => {
     const linkUrl = text('url', '');
     const cssClass = text('css-class', 'm-md');
     return (sizes.map(size =>
-        `<c-button
+        `<ks-button
             css-class="${cssClass}" 
             color="${color}" 
             display="${display}" 

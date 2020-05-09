@@ -1,7 +1,7 @@
 import { Component, h, Prop, Host, Element, ComponentInterface } from '@stencil/core';
 
 @Component({
-    tag: 'c-tooltip'
+    tag: 'ks-tooltip'
 })
 export class Tooltip implements ComponentInterface {
     $message: HTMLElement;

@@ -8,17 +8,17 @@ export const badges = () => {
     const color = select('color', variations, 'primary');
     const hollow = boolean('hollow', false);
     const badgeText = text('text', '6');
-    return (`<h1>Days Since Our Last Nonsense <c-badge 
+    return (`<h1>Days Since Our Last Nonsense <ks-badge 
                        color="${color}" 
                        hollow="${hollow}">
                 ${badgeText}
             </c-badge></h1>
-            <h2>Days Since Our Last Nonsense <c-badge
+            <h2>Days Since Our Last Nonsense <ks-badge
                        color="${color}" 
                        hollow="${hollow}">
                 ${badgeText}
             </c-badge></h2>
-            <p>Days Since Our Last Nonsense <c-badge
+            <p>Days Since Our Last Nonsense <ks-badge
                        color="${color}" 
                        hollow="${hollow}">
                 ${badgeText}

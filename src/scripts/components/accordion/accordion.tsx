@@ -1,7 +1,7 @@
 import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
-    tag: 'c-accordion'
+    tag: 'ks-accordion'
 })
 export class Accordion {
     @Prop() size: string = 'md';

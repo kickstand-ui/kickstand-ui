@@ -2,7 +2,7 @@ import { Component, h, Prop, Host, State, Element, ComponentInterface, Watch, Ev
 import componentUtils from '../../utils/componentUtils';
 
 @Component({
-    tag: 'c-spin-box'
+    tag: 'ks-spin-box'
 })
 export class SpinBox implements ComponentInterface {
     debouncedUpdate: Function;
@@ -89,7 +89,7 @@ export class SpinBox implements ComponentInterface {
         let value = this.getValue();
 
         return (<Host class="spin-box">
-            <c-button
+            <ks-button
                 color="light"
                 icon="fas fa-chevron-left"
                 onClick={() => this.handleDecrease()}
@@ -111,7 +111,7 @@ export class SpinBox implements ComponentInterface {
                 onKeyUp={(e) => this.validateInput(e)}
                 onBlur={(e) => this.validateInput(e)}
             />
-            <c-button
+            <ks-button
                 color="light"
                 icon="fas fa-chevron-right"
                 onClick={() => this.handleIncrease()}

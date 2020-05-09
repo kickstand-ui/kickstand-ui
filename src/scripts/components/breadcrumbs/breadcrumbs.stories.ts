@@ -8,7 +8,7 @@ const breadcrumbs = [
 ];
 
 export const breadcrumb = () => {
-    const element = document.createElement('c-breadcrumbs');
+    const element = document.createElement('ks-breadcrumbs');
     element.breadcrumbs = breadcrumbs;
     return element;
 };

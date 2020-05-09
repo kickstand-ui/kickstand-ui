@@ -16,7 +16,7 @@ export const card = () => {
     const cardSubtitle = text('card-subtitle', 'Comfort Food');
     const bodyText = text('body text', `"It's never too early for ice cream, Jim. But we didn't have any ice cream, so this is mayonnaise and black olives. It's comfort food, alright?"`);
 
-    return (`<c-card img-src="${src}"
+    return (`<ks-card img-src="${src}"
                     img-direction="${imgDir}"
                     alt="${alt}"
                     url="${url}"

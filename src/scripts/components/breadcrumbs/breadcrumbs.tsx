@@ -6,7 +6,7 @@ export interface IBreadcrumbs {
 }
 
 @Component({
-    tag: 'c-breadcrumbs'
+    tag: 'ks-breadcrumbs'
 })
 export class Breadcrumbs implements ComponentInterface {
     @Prop() breadcrumbs: IBreadcrumbs[];

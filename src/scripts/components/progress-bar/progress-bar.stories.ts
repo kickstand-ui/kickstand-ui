@@ -13,5 +13,5 @@ export const playground = () => {
     const hideDescription = boolean('hide-description', false);
     const progressLabel = text('progress-label', 'Progress');
     const hideProgressLabel = boolean('hide-progress-label', false);
-    return (`<c-progress-bar class="m-xxl" description="${description}" progress-label="${progressLabel}" hide-progress-label="${hideProgressLabel}" hide-description="${hideDescription}" size="${size}" type="${type}" value="${value}" />`);
+    return (`<ks-progress-bar class="m-xxl" description="${description}" progress-label="${progressLabel}" hide-progress-label="${hideProgressLabel}" hide-description="${hideDescription}" size="${size}" type="${type}" value="${value}" />`);
 };

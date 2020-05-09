@@ -10,7 +10,7 @@ export const widths = () => {
 };
 
 export const heights = () => {
-    return (`<c-row class="m-xxl bg-light" style="height: 300px;">
-        ${heightSizes.map(s => `<c-column class="mx-md p-sm bg-primary-light h-${s}">h-${s}</c-column>`).join('')}
+    return (`<ks-row class="m-xxl bg-light" style="height: 300px;">
+        ${heightSizes.map(s => `<ks-column class="mx-md p-sm bg-primary-light h-${s}">h-${s}</c-column>`).join('')}
     </c-row>`);
 };

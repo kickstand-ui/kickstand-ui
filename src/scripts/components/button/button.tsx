@@ -1,7 +1,7 @@
 import { Component, h, Prop, ComponentInterface, Host } from '@stencil/core';
 
 @Component({
-    tag: 'c-button'
+    tag: 'ks-button'
 })
 export class LinkButton implements ComponentInterface {
     $loading: HTMLCLoadingOverlayElement;
@@ -61,7 +61,7 @@ export class LinkButton implements ComponentInterface {
 
         return (
             <Host class="pointer">
-                <c-loading-overlay absolute ref={el => this.$loading = el}></c-loading-overlay>
+                <ks-loading-overlay absolute ref={el => this.$loading = el}></c-loading-overlay>
                 {this.href
                     ? <a class={classes} href={this.href}>{content}</a>
                     : <button {...props} class={classes}>{content}</button >}

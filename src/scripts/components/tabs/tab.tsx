@@ -1,7 +1,7 @@
 import { Component, h, Prop, Host, Element } from '@stencil/core';
 
 @Component({
-    tag: 'c-tab'
+    tag: 'ks-tab'
 })
 export class Tab {
     @Element() $el: HTMLElement;
