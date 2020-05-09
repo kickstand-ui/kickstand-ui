@@ -8,5 +8,5 @@ export const defaultHeading = () => {
     const color = select('color', colors, 'primary');
     const header = text('header', 'The Facts of Life by Michael Scott');
     const note = boolean('note', false);
-    return (`<ks-alert class="m-xl" header="${header}" note="${note}" color="${color}">${dummyText}</c-alert>`);
+    return (`<ks-alert class="m-xl" header="${header}" note="${note}" color="${color}">${dummyText}</ks-alert>`);
 };

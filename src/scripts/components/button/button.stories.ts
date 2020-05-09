@@ -29,7 +29,7 @@ export const playground = () => {
             loading="${loading}"
             disabled="${disabled}">
             ${color} button
-        </c-button>`);
+        </ks-button>`);
 };
 
 export const buttonColors = () => {
@@ -49,7 +49,7 @@ export const buttonColors = () => {
             icon-direction="${iconDirection}"
             url="${linkUrl}">
             ${color} button
-        </c-button>`).join(""));
+        </ks-button>`).join(""));
 };
 
 export const buttonDisplay = () => {
@@ -58,7 +58,7 @@ export const buttonDisplay = () => {
             class="ml-md mt-md" 
             display="${d}">
             ${d} button
-        </c-button>`).join(""));
+        </ks-button>`).join(""));
 };
 
 export const sizeVariations = () => {
@@ -78,5 +78,5 @@ export const sizeVariations = () => {
             icon-direction="${iconDirection}"
             url="${linkUrl}">
             ${size} button
-        </c-button>`).join(''));
+        </ks-button>`).join(''));
 };

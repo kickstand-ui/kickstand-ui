@@ -1,4 +1,4 @@
-# c-overlay
+# ks-overlay
 
 
 
@@ -42,20 +42,20 @@ Type: `Promise<void>`
 
 ### Used by
 
- - [c-button](../button)
+ - [ks-button](../button)
 
 ### Depends on
 
-- [c-overlay](../overlay)
-- [c-loading]()
+- [ks-overlay](../overlay)
+- [ks-loading]()
 
 ### Graph
 ```mermaid
 graph TD;
-  c-loading-overlay --> c-overlay
-  c-loading-overlay --> c-loading
-  c-button --> c-loading-overlay
-  style c-loading-overlay fill:#f9f,stroke:#333,stroke-width:4px
+  ks-loading-overlay --> ks-overlay
+  ks-loading-overlay --> ks-loading
+  ks-button --> ks-loading-overlay
+  style ks-loading-overlay fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

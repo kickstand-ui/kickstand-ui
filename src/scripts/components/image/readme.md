@@ -1,4 +1,4 @@
-# c-img
+# ks-img
 
 
 
@@ -20,17 +20,17 @@
 
 ### Used by
 
- - [c-card](../card)
- - [c-carousel](../carousel)
- - [c-carousel-slide](../carousel)
+ - [ks-card](../card)
+ - [ks-carousel](../carousel)
+ - [ks-carousel-slide](../carousel)
 
 ### Graph
 ```mermaid
 graph TD;
-  c-card --> c-img
-  c-carousel --> c-img
-  c-carousel-slide --> c-img
-  style c-img fill:#f9f,stroke:#333,stroke-width:4px
+  ks-card --> ks-img
+  ks-carousel --> ks-img
+  ks-carousel-slide --> ks-img
+  style ks-img fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

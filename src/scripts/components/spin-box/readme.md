@@ -1,4 +1,4 @@
-# c-overlay
+# ks-overlay
 
 
 
@@ -28,21 +28,21 @@
 
 ### Used by
 
- - [c-form-field](../form-field)
+ - [ks-form-field](../form-field)
 
 ### Depends on
 
-- [c-button](../button)
+- [ks-button](../button)
 
 ### Graph
 ```mermaid
 graph TD;
-  c-spin-box --> c-button
-  c-button --> c-loading-overlay
-  c-loading-overlay --> c-overlay
-  c-loading-overlay --> c-loading
-  c-form-field --> c-spin-box
-  style c-spin-box fill:#f9f,stroke:#333,stroke-width:4px
+  ks-spin-box --> ks-button
+  ks-button --> ks-loading-overlay
+  ks-loading-overlay --> ks-overlay
+  ks-loading-overlay --> ks-loading
+  ks-form-field --> ks-spin-box
+  style ks-spin-box fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

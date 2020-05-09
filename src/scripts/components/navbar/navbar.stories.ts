@@ -23,10 +23,10 @@ export const navbarProperties = () => {
             <ks-navbar-group>
                 <ks-navbar-item>
                     <a href="#">Test</a>
-                </c-navbar-item>
+                </ks-navbar-item>
                 <ks-navbar-item>
                     <a href="#">Test 1</a>
-                </c-navbar-item>
+                </ks-navbar-item>
                 <ks-navbar-item>
                     <ks-dropdown
                         text="Drop-Down" 
@@ -38,11 +38,11 @@ export const navbarProperties = () => {
                         <dropdown-item><a href="#">Test 3</a></dropdown-item>
                         <dropdown-item><a href="#">Test 4</a></dropdown-item>
                         <dropdown-item><a href="#">Test 5</a></dropdown-item>
-                    </c-dropdown>
-                </c-navbar-item>
-            </c-navbar-group>
-        </c-navbar-row>
-    </c-navbar>
+                    </ks-dropdown>
+                </ks-navbar-item>
+            </ks-navbar-group>
+        </ks-navbar-row>
+    </ks-navbar>
     `);
 };
 
@@ -54,10 +54,10 @@ export const navbarGroupProperties = () => {
             <ks-navbar-group position="${position}">
                 <ks-navbar-item>
                     <a href="#">Test</a>
-                </c-navbar-item>
+                </ks-navbar-item>
                 <ks-navbar-item>
                     <a href="#">Test 1</a>
-                </c-navbar-item>
+                </ks-navbar-item>
                 <ks-navbar-item>
                     <ks-dropdown
                         text="Drop-Down" 
@@ -69,11 +69,11 @@ export const navbarGroupProperties = () => {
                         <dropdown-item><a href="#">Test 3</a></dropdown-item>
                         <dropdown-item><a href="#">Test 4</a></dropdown-item>
                         <dropdown-item><a href="#">Test 5</a></dropdown-item>
-                    </c-dropdown>
-                </c-navbar-item>
-            </c-navbar-group>
-        </c-navbar-row>
-    </c-navbar>
+                    </ks-dropdown>
+                </ks-navbar-item>
+            </ks-navbar-group>
+        </ks-navbar-row>
+    </ks-navbar>
     `);
 };
 
@@ -84,20 +84,20 @@ export const navbarWithMultipleRows = () => {
             <ks-navbar-group>
                 <ks-navbar-item>
                     <a href="#">Sign Up</a>
-                </c-navbar-item>
+                </ks-navbar-item>
                 <ks-navbar-item class="pl-none">
-                    <ks-button size="sm" color="secondary">Sign In</c-button>
-                </c-navbar-item>
-            </c-navbar-group>
-        </c-navbar-row>
+                    <ks-button size="sm" color="secondary">Sign In</ks-button>
+                </ks-navbar-item>
+            </ks-navbar-group>
+        </ks-navbar-row>
         <ks-navbar-row>
             <ks-navbar-group>
                 <ks-navbar-item>
                     <a href="#">Test</a>
-                </c-navbar-item>
+                </ks-navbar-item>
                 <ks-navbar-item>
                     <a href="#">Test 1</a>
-                </c-navbar-item>
+                </ks-navbar-item>
                 <ks-navbar-item>
                     <ks-dropdown
                         text="Drop-Down" 
@@ -109,11 +109,11 @@ export const navbarWithMultipleRows = () => {
                         <dropdown-item><a href="#">Test 3</a></dropdown-item>
                         <dropdown-item><a href="#">Test 4</a></dropdown-item>
                         <dropdown-item><a href="#">Test 5</a></dropdown-item>
-                    </c-dropdown>
-                </c-navbar-item>
-            </c-navbar-group>
-        </c-navbar-row>
-    </c-navbar>
+                    </ks-dropdown>
+                </ks-navbar-item>
+            </ks-navbar-group>
+        </ks-navbar-row>
+    </ks-navbar>
     `);
 };
 
@@ -124,10 +124,10 @@ export const navbarWithMultipleGroups = () => {
             <ks-navbar-group position="left">
                 <ks-navbar-item>
                     <a href="#">Test</a>
-                </c-navbar-item>
+                </ks-navbar-item>
                 <ks-navbar-item>
                     <a href="#">Test 1</a>
-                </c-navbar-item>
+                </ks-navbar-item>
                 <ks-navbar-item>
                     <ks-dropdown
                         text="Drop-Down" 
@@ -139,18 +139,18 @@ export const navbarWithMultipleGroups = () => {
                         <dropdown-item><a href="#">Test 3</a></dropdown-item>
                         <dropdown-item><a href="#">Test 4</a></dropdown-item>
                         <dropdown-item><a href="#">Test 5</a></dropdown-item>
-                    </c-dropdown>
-                </c-navbar-item>
-            </c-navbar-group>
+                    </ks-dropdown>
+                </ks-navbar-item>
+            </ks-navbar-group>
             <ks-navbar-group>
                 <ks-navbar-item>
                     <a href="#">Sign Up</a>
-                </c-navbar-item>
+                </ks-navbar-item>
                 <ks-navbar-item class="p-none">
-                    <ks-button color="secondary" size="sm">Sign In</c-button>
-                </c-navbar-item>
-            </c-navbar-group>
-        </c-navbar-row>
-    </c-navbar>
+                    <ks-button color="secondary" size="sm">Sign In</ks-button>
+                </ks-navbar-item>
+            </ks-navbar-group>
+        </ks-navbar-row>
+    </ks-navbar>
     `);
 };

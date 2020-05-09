@@ -1,4 +1,4 @@
-# c-carousel
+# ks-carousel
 
 
 
@@ -23,13 +23,13 @@
 
 ### Depends on
 
-- [c-img](../image)
+- [ks-img](../image)
 
 ### Graph
 ```mermaid
 graph TD;
-  c-carousel-slide --> c-img
-  style c-carousel-slide fill:#f9f,stroke:#333,stroke-width:4px
+  ks-carousel-slide --> ks-img
+  style ks-carousel-slide fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

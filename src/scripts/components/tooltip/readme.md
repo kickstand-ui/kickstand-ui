@@ -1,4 +1,4 @@
-# c-alert
+# ks-alert
 
 
 
@@ -21,13 +21,13 @@
 
 ### Used by
 
- - [c-form-field](../form-field)
+ - [ks-form-field](../form-field)
 
 ### Graph
 ```mermaid
 graph TD;
-  c-form-field --> c-tooltip
-  style c-tooltip fill:#f9f,stroke:#333,stroke-width:4px
+  ks-form-field --> ks-tooltip
+  style ks-tooltip fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

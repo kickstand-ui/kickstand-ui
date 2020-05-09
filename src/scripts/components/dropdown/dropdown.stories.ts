@@ -32,7 +32,7 @@ export const playground = () => {
                 <dropdown-item><a href="#">Test 3</a></dropdown-item>
                 <dropdown-item><a href="#">Test 4</a></dropdown-item>
                 <dropdown-item><a href="#">Test 5</a></dropdown-item>
-            </c-dropdown>
+            </ks-dropdown>
         </div>
         `);
 };
@@ -46,6 +46,6 @@ export const megaMenu = () => {
             >
             <h3>Mega Menu meets Mega Desk</h3>
             <img src="https://media1.tenor.com/images/812ea59ea0ddcfbc1e2793092538dfde/tenor.gif">
-        </c-dropdown>
+        </ks-dropdown>
     `);
 }

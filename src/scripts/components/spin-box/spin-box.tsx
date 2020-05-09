@@ -98,7 +98,7 @@ export class SpinBox implements ComponentInterface {
                 tab-index="-1"
             >
                 add
-                </c-button>
+                </ks-button>
             <input
                 type="number"
                 class="form-input"
@@ -120,7 +120,7 @@ export class SpinBox implements ComponentInterface {
                 tab-index="-1"
             >
                 remove
-                </c-button>
+                </ks-button>
             <div class="sr-only" role="status" aria-live="polite">{this.value}</div>
         </Host>);
     }

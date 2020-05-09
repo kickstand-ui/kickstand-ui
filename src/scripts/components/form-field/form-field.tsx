@@ -57,7 +57,7 @@ export class FormField implements ComponentInterface {
                     <span class="field-label">
                         {this.label}
                         {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText}>*</abbr>}
-                        {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" text={this.tooltipText} hide-decoration><i class="fas fa-question-circle text-info ml-sm"></i></c-tooltip>}
+                        {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" text={this.tooltipText} hide-decoration><i class="fas fa-question-circle text-info ml-sm"></i></ks-tooltip>}
                     </span>
                     <span class="help-text">{this.helpText}</span>
                     <span class="error-message text-danger" role="alert" aria-live="assertive">
@@ -73,7 +73,7 @@ export class FormField implements ComponentInterface {
                         label-id={labelId}
                         spin-box-id={fieldId}
                     >
-                    </c-spin-box>
+                    </ks-spin-box>
                     : <input
                         id={fieldId}
                         class="form-input"

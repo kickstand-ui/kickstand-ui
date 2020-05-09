@@ -1,4 +1,4 @@
-# c-button
+# ks-button
 
 
 
@@ -31,26 +31,26 @@
 
 ### Used by
 
- - [c-dropdown](../dropdown)
- - [c-modal](../modal)
- - [c-side-drawer](../side-drawer)
- - [c-spin-box](../spin-box)
+ - [ks-dropdown](../dropdown)
+ - [ks-modal](../modal)
+ - [ks-side-drawer](../side-drawer)
+ - [ks-spin-box](../spin-box)
 
 ### Depends on
 
-- [c-loading-overlay](../loading)
+- [ks-loading-overlay](../loading)
 
 ### Graph
 ```mermaid
 graph TD;
-  c-button --> c-loading-overlay
-  c-loading-overlay --> c-overlay
-  c-loading-overlay --> c-loading
-  c-dropdown --> c-button
-  c-modal --> c-button
-  c-side-drawer --> c-button
-  c-spin-box --> c-button
-  style c-button fill:#f9f,stroke:#333,stroke-width:4px
+  ks-button --> ks-loading-overlay
+  ks-loading-overlay --> ks-overlay
+  ks-loading-overlay --> ks-loading
+  ks-dropdown --> ks-button
+  ks-modal --> ks-button
+  ks-side-drawer --> ks-button
+  ks-spin-box --> ks-button
+  style ks-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

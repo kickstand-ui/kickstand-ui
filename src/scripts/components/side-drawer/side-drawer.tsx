@@ -4,7 +4,7 @@ import { Component, h, Prop, Element, ComponentInterface, Method, State } from '
     tag: 'ks-side-drawer'
 })
 export class SideDrawer implements ComponentInterface {
-    $overlay: HTMLCOverlayElement;
+    $overlay: HTMLKsOverlayElement;
     $drawer: HTMLElement;
 
     @Element() $el: HTMLElement;
@@ -50,13 +50,13 @@ export class SideDrawer implements ComponentInterface {
                         <ks-button onClick={() => this.hide()} class="drawer-close" display="clear">
                             <span class="sr-only">Close Drawer</span>
                             <i class="fal fa-times"></i>
-                        </c-button>
+                        </ks-button>
                     </header>
                     <div class="drawer-body">
                         <slot />
                     </div>
                 </aside>
-            </c-overlay>
+            </ks-overlay>
         );
     }
 }

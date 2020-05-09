@@ -4,7 +4,7 @@ import { Component, h, Prop, ComponentInterface, Element, Method } from '@stenci
     tag: 'ks-modal'
 })
 export class Modal implements ComponentInterface {
-    $overlay: HTMLCOverlayElement;
+    $overlay: HTMLKsOverlayElement;
 
     @Element() $el: HTMLElement;
 
@@ -33,13 +33,13 @@ export class Modal implements ComponentInterface {
                         {this.dismissible && <ks-button onClick={() => this.hide()} display="clear" class="modal-close">
                             <span class="sr-only">Close Modal</span>
                             <i class="fal fa-times"></i>
-                        </c-button>}
+                        </ks-button>}
                     </header>
                     <div class="modal-content">
                         <slot />
                     </div>
                 </div>
-            </c-overlay>
+            </ks-overlay>
         );
     }
 }

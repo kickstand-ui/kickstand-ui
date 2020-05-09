@@ -29,5 +29,5 @@ export const card = () => {
                     ${bodyText}
                 </card-body>
                 <card-footer></card-footer>
-            </c-card>`);
+            </ks-card>`);
 };

@@ -1,4 +1,4 @@
-# c-button
+# ks-button
 
 
 
@@ -36,19 +36,19 @@
 
 ### Depends on
 
-- [c-tooltip](../tooltip)
-- [c-spin-box](../spin-box)
+- [ks-tooltip](../tooltip)
+- [ks-spin-box](../spin-box)
 
 ### Graph
 ```mermaid
 graph TD;
-  c-form-field --> c-tooltip
-  c-form-field --> c-spin-box
-  c-spin-box --> c-button
-  c-button --> c-loading-overlay
-  c-loading-overlay --> c-overlay
-  c-loading-overlay --> c-loading
-  style c-form-field fill:#f9f,stroke:#333,stroke-width:4px
+  ks-form-field --> ks-tooltip
+  ks-form-field --> ks-spin-box
+  ks-spin-box --> ks-button
+  ks-button --> ks-loading-overlay
+  ks-loading-overlay --> ks-overlay
+  ks-loading-overlay --> ks-loading
+  style ks-form-field fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

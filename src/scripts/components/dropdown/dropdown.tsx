@@ -129,7 +129,7 @@ export class Dropdown {
                 >
                     <span class={buttonClasses}>{this.text}</span>
                     {!this.hideIndicator && <i class="fas fa-chevron-down dropdown-icon"></i>}
-                </c-button>
+                </ks-button>
                 <div
                     id={`dropdown-${this.dropdownId}`}
                     class={contentClasses}

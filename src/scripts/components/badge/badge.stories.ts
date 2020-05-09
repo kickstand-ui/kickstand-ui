@@ -12,15 +12,15 @@ export const badges = () => {
                        color="${color}" 
                        hollow="${hollow}">
                 ${badgeText}
-            </c-badge></h1>
+            </ks-badge></h1>
             <h2>Days Since Our Last Nonsense <ks-badge
                        color="${color}" 
                        hollow="${hollow}">
                 ${badgeText}
-            </c-badge></h2>
+            </ks-badge></h2>
             <p>Days Since Our Last Nonsense <ks-badge
                        color="${color}" 
                        hollow="${hollow}">
                 ${badgeText}
-            </c-badge></p>`);
+            </ks-badge></p>`);
 };

@@ -17,7 +17,7 @@ export const playground = () => {
     const invalid = boolean('invalid', false);
     const disabled = boolean('disabled', false);
     return (`<div class="m-xxl">
-        <ks-form-field 
+        <c-form-field 
             type="${type}"
             label="${label}" 
             help-text="${helpText}"

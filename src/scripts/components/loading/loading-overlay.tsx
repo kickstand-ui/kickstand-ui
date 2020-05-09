@@ -4,7 +4,7 @@ import { Component, h, Prop, Method, Element, ComponentInterface, Host } from '@
     tag: 'ks-loading-overlay'
 })
 export class LoadingOverlay implements ComponentInterface {
-    $overlay: HTMLCOverlayElement;
+    $overlay: HTMLKsOverlayElement;
 
     @Element() $el: HTMLElement;
 
@@ -28,7 +28,7 @@ export class LoadingOverlay implements ComponentInterface {
             <Host class="loading-overlay">
                 <ks-overlay theme="light" dismissible={false} absolute={this.absolute} ref={el => this.$overlay = el}>
                     <ks-loading message={this.message} show-message={this.showMessage} class={`text-${this.size}`} />
-                </c-overlay>
+                </ks-overlay>
             </Host>);
     }
 }

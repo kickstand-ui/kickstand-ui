@@ -9,7 +9,7 @@ export const playground = () => {
 
     setTimeout(() => {
         let $openButton = document.getElementById('open');
-        let $overlay = document.querySelector<HTMLCOverlayElement>('#overlay');
+        let $overlay = document.querySelector<HTMLKsOverlayElement>('#overlay');
         let $closeButton = document.getElementById('close');
 
         $openButton.addEventListener('click', () => {
@@ -21,10 +21,10 @@ export const playground = () => {
     });
     return (`
     <div style="width:300px; height:300px; position:relative;">
-        <ks-button class="m-xxl" id="open">Open Overlay</c-button>
+        <ks-button class="m-xxl" id="open">Open Overlay</ks-button>
         <ks-overlay absolute="${absolute}" theme="${theme}" dismissible="${dismissible}" id="overlay">
-            <ks-button color="light" id="close">Close Overlay!</c-button>
-        </c-overlay>
+            <ks-button color="light" id="close">Close Overlay!</ks-button>
+        </ks-overlay>
     </div>
     `);
 }

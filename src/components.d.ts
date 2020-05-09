@@ -12,27 +12,35 @@ import {
 } from './scripts/components/breadcrumbs/breadcrumbs';
 
 export namespace Components {
-  interface CAccordion {
+  interface CardBody {
+    'cardSubtitle': string;
+    'cardTitle': string;
+  }
+  interface CardFooter {}
+  interface DropdownItem {
+    'closeOnClick': boolean;
+  }
+  interface KsAccordion {
     'size': string;
   }
-  interface CAccordionSlide {
+  interface KsAccordionSlide {
     'expanded': boolean;
     'heading': string;
     'toggleSlide': () => Promise<void>;
   }
-  interface CAlert {
+  interface KsAlert {
     'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'header': string;
     'note': boolean;
   }
-  interface CBadge {
+  interface KsBadge {
     'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'hollow': boolean;
   }
-  interface CBreadcrumbs {
+  interface KsBreadcrumbs {
     'breadcrumbs': IBreadcrumbs[];
   }
-  interface CButton {
+  interface KsButton {
     'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'controls': string;
     'cssClass': string;
@@ -50,7 +58,7 @@ export namespace Components {
     'tabIndex': number;
     'type': 'button' | 'submit' | 'reset';
   }
-  interface CCard {
+  interface KsCard {
     'alt': string;
     'clickable': boolean;
     'imgDirection': string;
@@ -59,14 +67,14 @@ export namespace Components {
     'threshold': number;
     'url': string;
   }
-  interface CCarousel {
+  interface KsCarousel {
     'autoplay': boolean;
     'hideControls': boolean;
     'hideIndicators': boolean;
     'thumbnails': boolean;
     'timer': number;
   }
-  interface CCarouselSlide {
+  interface KsCarouselSlide {
     'align': 'start' | 'center' | 'end';
     'alt': string;
     'clickable': boolean;
@@ -76,10 +84,10 @@ export namespace Components {
     'threshold': number;
     'url': string;
   }
-  interface CColumn {
+  interface KsColumn {
     'align': 'start' | 'center' | 'end';
   }
-  interface CDropdown {
+  interface KsDropdown {
     'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'display': 'solid' | 'hollow' | 'clear' | 'link';
     'hideIndicator': boolean;
@@ -89,7 +97,7 @@ export namespace Components {
     'position': 'left' | 'right';
     'text': string;
   }
-  interface CFormField {
+  interface KsFormField {
     'disabled': boolean;
     'errorMessage': string;
     'helpText': string;
@@ -105,19 +113,19 @@ export namespace Components {
     'type': 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'spin-box';
     'value'?: string | number | null;
   }
-  interface CImg {
+  interface KsImg {
     'alt': string;
     'cssClass': string;
     'lazy': boolean;
     'src': string;
     'threshold': number;
   }
-  interface CLoading {
+  interface KsLoading {
     'message': string;
     'showMessage': boolean;
     'type': 'spinner' | 'ellipsis';
   }
-  interface CLoadingOverlay {
+  interface KsLoadingOverlay {
     'absolute': boolean;
     'hide': () => Promise<void>;
     'message': string;
@@ -125,7 +133,7 @@ export namespace Components {
     'showMessage': boolean;
     'size': 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
   }
-  interface CModal {
+  interface KsModal {
     'dismissible': boolean;
     'hide': () => Promise<void>;
     'modalTitle': string;
@@ -133,8 +141,8 @@ export namespace Components {
     'size': 'sm' | 'md' | 'lg';
     'titleId': string;
   }
-  interface CModalFooter {}
-  interface CNavbar {
+  interface KsModalFooter {}
+  interface KsNavbar {
     'altText': string;
     'collapseAt': 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
@@ -142,14 +150,14 @@ export namespace Components {
     'logoUrl': string;
     'tagline': string;
   }
-  interface CNavbarGroup {
+  interface KsNavbarGroup {
     'position': 'left' | 'right';
   }
-  interface CNavbarItem {
+  interface KsNavbarItem {
     'position': string;
   }
-  interface CNavbarRow {}
-  interface COverlay {
+  interface KsNavbarRow {}
+  interface KsOverlay {
     'absolute': boolean;
     'dismissible': boolean;
     'hide': () => Promise<void>;
@@ -157,7 +165,7 @@ export namespace Components {
     'theme': 'dark' | 'light';
     'titleId': string;
   }
-  interface CProgressBar {
+  interface KsProgressBar {
     'description': string;
     'hideDescription': boolean;
     'hideProgressLabel': boolean;
@@ -166,11 +174,11 @@ export namespace Components {
     'type': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'value': number;
   }
-  interface CRow {
+  interface KsRow {
     'align': 'start' | 'center' | 'end';
     'noGutter': boolean;
   }
-  interface CSideDrawer {
+  interface KsSideDrawer {
     'headerText': string;
     'hide': () => Promise<void>;
     'name': string;
@@ -178,7 +186,7 @@ export namespace Components {
     'show': () => Promise<void>;
     'size': 'sm' | 'md' | 'lg' | 'xl';
   }
-  interface CSpinBox {
+  interface KsSpinBox {
     'labelId': string;
     'max': number;
     'min': number;
@@ -186,10 +194,10 @@ export namespace Components {
     'step': number;
     'value': number;
   }
-  interface CTab {
+  interface KsTab {
     'controls': string;
   }
-  interface CTabList {
+  interface KsTabList {
     'content': boolean;
     'disable': boolean;
     'hideDecoration': boolean;
@@ -198,13 +206,13 @@ export namespace Components {
     'show': boolean;
     'size': string;
   }
-  interface CTabPanel {
+  interface KsTabPanel {
     'tabId': string;
   }
-  interface CTabs {
+  interface KsTabs {
     'position': string;
   }
-  interface CTooltip {
+  interface KsTooltip {
     'disable': boolean;
     'hideDecoration': boolean;
     'position': 'top' | 'bottom' | 'left' | 'right';
@@ -212,204 +220,10 @@ export namespace Components {
     'size': 'sm' | 'md' | 'lg' | 'xl';
     'text': string;
   }
-  interface CardBody {
-    'cardSubtitle': string;
-    'cardTitle': string;
-  }
-  interface CardFooter {}
-  interface DropdownItem {
-    'closeOnClick': boolean;
-  }
 }
 
 declare global {
 
-
-  interface HTMLCAccordionElement extends Components.CAccordion, HTMLStencilElement {}
-  var HTMLCAccordionElement: {
-    prototype: HTMLCAccordionElement;
-    new (): HTMLCAccordionElement;
-  };
-
-  interface HTMLCAccordionSlideElement extends Components.CAccordionSlide, HTMLStencilElement {}
-  var HTMLCAccordionSlideElement: {
-    prototype: HTMLCAccordionSlideElement;
-    new (): HTMLCAccordionSlideElement;
-  };
-
-  interface HTMLCAlertElement extends Components.CAlert, HTMLStencilElement {}
-  var HTMLCAlertElement: {
-    prototype: HTMLCAlertElement;
-    new (): HTMLCAlertElement;
-  };
-
-  interface HTMLCBadgeElement extends Components.CBadge, HTMLStencilElement {}
-  var HTMLCBadgeElement: {
-    prototype: HTMLCBadgeElement;
-    new (): HTMLCBadgeElement;
-  };
-
-  interface HTMLCBreadcrumbsElement extends Components.CBreadcrumbs, HTMLStencilElement {}
-  var HTMLCBreadcrumbsElement: {
-    prototype: HTMLCBreadcrumbsElement;
-    new (): HTMLCBreadcrumbsElement;
-  };
-
-  interface HTMLCButtonElement extends Components.CButton, HTMLStencilElement {}
-  var HTMLCButtonElement: {
-    prototype: HTMLCButtonElement;
-    new (): HTMLCButtonElement;
-  };
-
-  interface HTMLCCardElement extends Components.CCard, HTMLStencilElement {}
-  var HTMLCCardElement: {
-    prototype: HTMLCCardElement;
-    new (): HTMLCCardElement;
-  };
-
-  interface HTMLCCarouselElement extends Components.CCarousel, HTMLStencilElement {}
-  var HTMLCCarouselElement: {
-    prototype: HTMLCCarouselElement;
-    new (): HTMLCCarouselElement;
-  };
-
-  interface HTMLCCarouselSlideElement extends Components.CCarouselSlide, HTMLStencilElement {}
-  var HTMLCCarouselSlideElement: {
-    prototype: HTMLCCarouselSlideElement;
-    new (): HTMLCCarouselSlideElement;
-  };
-
-  interface HTMLCColumnElement extends Components.CColumn, HTMLStencilElement {}
-  var HTMLCColumnElement: {
-    prototype: HTMLCColumnElement;
-    new (): HTMLCColumnElement;
-  };
-
-  interface HTMLCDropdownElement extends Components.CDropdown, HTMLStencilElement {}
-  var HTMLCDropdownElement: {
-    prototype: HTMLCDropdownElement;
-    new (): HTMLCDropdownElement;
-  };
-
-  interface HTMLCFormFieldElement extends Components.CFormField, HTMLStencilElement {}
-  var HTMLCFormFieldElement: {
-    prototype: HTMLCFormFieldElement;
-    new (): HTMLCFormFieldElement;
-  };
-
-  interface HTMLCImgElement extends Components.CImg, HTMLStencilElement {}
-  var HTMLCImgElement: {
-    prototype: HTMLCImgElement;
-    new (): HTMLCImgElement;
-  };
-
-  interface HTMLCLoadingElement extends Components.CLoading, HTMLStencilElement {}
-  var HTMLCLoadingElement: {
-    prototype: HTMLCLoadingElement;
-    new (): HTMLCLoadingElement;
-  };
-
-  interface HTMLCLoadingOverlayElement extends Components.CLoadingOverlay, HTMLStencilElement {}
-  var HTMLCLoadingOverlayElement: {
-    prototype: HTMLCLoadingOverlayElement;
-    new (): HTMLCLoadingOverlayElement;
-  };
-
-  interface HTMLCModalElement extends Components.CModal, HTMLStencilElement {}
-  var HTMLCModalElement: {
-    prototype: HTMLCModalElement;
-    new (): HTMLCModalElement;
-  };
-
-  interface HTMLCModalFooterElement extends Components.CModalFooter, HTMLStencilElement {}
-  var HTMLCModalFooterElement: {
-    prototype: HTMLCModalFooterElement;
-    new (): HTMLCModalFooterElement;
-  };
-
-  interface HTMLCNavbarElement extends Components.CNavbar, HTMLStencilElement {}
-  var HTMLCNavbarElement: {
-    prototype: HTMLCNavbarElement;
-    new (): HTMLCNavbarElement;
-  };
-
-  interface HTMLCNavbarGroupElement extends Components.CNavbarGroup, HTMLStencilElement {}
-  var HTMLCNavbarGroupElement: {
-    prototype: HTMLCNavbarGroupElement;
-    new (): HTMLCNavbarGroupElement;
-  };
-
-  interface HTMLCNavbarItemElement extends Components.CNavbarItem, HTMLStencilElement {}
-  var HTMLCNavbarItemElement: {
-    prototype: HTMLCNavbarItemElement;
-    new (): HTMLCNavbarItemElement;
-  };
-
-  interface HTMLCNavbarRowElement extends Components.CNavbarRow, HTMLStencilElement {}
-  var HTMLCNavbarRowElement: {
-    prototype: HTMLCNavbarRowElement;
-    new (): HTMLCNavbarRowElement;
-  };
-
-  interface HTMLCOverlayElement extends Components.COverlay, HTMLStencilElement {}
-  var HTMLCOverlayElement: {
-    prototype: HTMLCOverlayElement;
-    new (): HTMLCOverlayElement;
-  };
-
-  interface HTMLCProgressBarElement extends Components.CProgressBar, HTMLStencilElement {}
-  var HTMLCProgressBarElement: {
-    prototype: HTMLCProgressBarElement;
-    new (): HTMLCProgressBarElement;
-  };
-
-  interface HTMLCRowElement extends Components.CRow, HTMLStencilElement {}
-  var HTMLCRowElement: {
-    prototype: HTMLCRowElement;
-    new (): HTMLCRowElement;
-  };
-
-  interface HTMLCSideDrawerElement extends Components.CSideDrawer, HTMLStencilElement {}
-  var HTMLCSideDrawerElement: {
-    prototype: HTMLCSideDrawerElement;
-    new (): HTMLCSideDrawerElement;
-  };
-
-  interface HTMLCSpinBoxElement extends Components.CSpinBox, HTMLStencilElement {}
-  var HTMLCSpinBoxElement: {
-    prototype: HTMLCSpinBoxElement;
-    new (): HTMLCSpinBoxElement;
-  };
-
-  interface HTMLCTabElement extends Components.CTab, HTMLStencilElement {}
-  var HTMLCTabElement: {
-    prototype: HTMLCTabElement;
-    new (): HTMLCTabElement;
-  };
-
-  interface HTMLCTabListElement extends Components.CTabList, HTMLStencilElement {}
-  var HTMLCTabListElement: {
-    prototype: HTMLCTabListElement;
-    new (): HTMLCTabListElement;
-  };
-
-  interface HTMLCTabPanelElement extends Components.CTabPanel, HTMLStencilElement {}
-  var HTMLCTabPanelElement: {
-    prototype: HTMLCTabPanelElement;
-    new (): HTMLCTabPanelElement;
-  };
-
-  interface HTMLCTabsElement extends Components.CTabs, HTMLStencilElement {}
-  var HTMLCTabsElement: {
-    prototype: HTMLCTabsElement;
-    new (): HTMLCTabsElement;
-  };
-
-  interface HTMLCTooltipElement extends Components.CTooltip, HTMLStencilElement {}
-  var HTMLCTooltipElement: {
-    prototype: HTMLCTooltipElement;
-    new (): HTMLCTooltipElement;
-  };
 
   interface HTMLCardBodyElement extends Components.CardBody, HTMLStencilElement {}
   var HTMLCardBodyElement: {
@@ -428,65 +242,260 @@ declare global {
     prototype: HTMLDropdownItemElement;
     new (): HTMLDropdownItemElement;
   };
+
+  interface HTMLKsAccordionElement extends Components.KsAccordion, HTMLStencilElement {}
+  var HTMLKsAccordionElement: {
+    prototype: HTMLKsAccordionElement;
+    new (): HTMLKsAccordionElement;
+  };
+
+  interface HTMLKsAccordionSlideElement extends Components.KsAccordionSlide, HTMLStencilElement {}
+  var HTMLKsAccordionSlideElement: {
+    prototype: HTMLKsAccordionSlideElement;
+    new (): HTMLKsAccordionSlideElement;
+  };
+
+  interface HTMLKsAlertElement extends Components.KsAlert, HTMLStencilElement {}
+  var HTMLKsAlertElement: {
+    prototype: HTMLKsAlertElement;
+    new (): HTMLKsAlertElement;
+  };
+
+  interface HTMLKsBadgeElement extends Components.KsBadge, HTMLStencilElement {}
+  var HTMLKsBadgeElement: {
+    prototype: HTMLKsBadgeElement;
+    new (): HTMLKsBadgeElement;
+  };
+
+  interface HTMLKsBreadcrumbsElement extends Components.KsBreadcrumbs, HTMLStencilElement {}
+  var HTMLKsBreadcrumbsElement: {
+    prototype: HTMLKsBreadcrumbsElement;
+    new (): HTMLKsBreadcrumbsElement;
+  };
+
+  interface HTMLKsButtonElement extends Components.KsButton, HTMLStencilElement {}
+  var HTMLKsButtonElement: {
+    prototype: HTMLKsButtonElement;
+    new (): HTMLKsButtonElement;
+  };
+
+  interface HTMLKsCardElement extends Components.KsCard, HTMLStencilElement {}
+  var HTMLKsCardElement: {
+    prototype: HTMLKsCardElement;
+    new (): HTMLKsCardElement;
+  };
+
+  interface HTMLKsCarouselElement extends Components.KsCarousel, HTMLStencilElement {}
+  var HTMLKsCarouselElement: {
+    prototype: HTMLKsCarouselElement;
+    new (): HTMLKsCarouselElement;
+  };
+
+  interface HTMLKsCarouselSlideElement extends Components.KsCarouselSlide, HTMLStencilElement {}
+  var HTMLKsCarouselSlideElement: {
+    prototype: HTMLKsCarouselSlideElement;
+    new (): HTMLKsCarouselSlideElement;
+  };
+
+  interface HTMLKsColumnElement extends Components.KsColumn, HTMLStencilElement {}
+  var HTMLKsColumnElement: {
+    prototype: HTMLKsColumnElement;
+    new (): HTMLKsColumnElement;
+  };
+
+  interface HTMLKsDropdownElement extends Components.KsDropdown, HTMLStencilElement {}
+  var HTMLKsDropdownElement: {
+    prototype: HTMLKsDropdownElement;
+    new (): HTMLKsDropdownElement;
+  };
+
+  interface HTMLKsFormFieldElement extends Components.KsFormField, HTMLStencilElement {}
+  var HTMLKsFormFieldElement: {
+    prototype: HTMLKsFormFieldElement;
+    new (): HTMLKsFormFieldElement;
+  };
+
+  interface HTMLKsImgElement extends Components.KsImg, HTMLStencilElement {}
+  var HTMLKsImgElement: {
+    prototype: HTMLKsImgElement;
+    new (): HTMLKsImgElement;
+  };
+
+  interface HTMLKsLoadingElement extends Components.KsLoading, HTMLStencilElement {}
+  var HTMLKsLoadingElement: {
+    prototype: HTMLKsLoadingElement;
+    new (): HTMLKsLoadingElement;
+  };
+
+  interface HTMLKsLoadingOverlayElement extends Components.KsLoadingOverlay, HTMLStencilElement {}
+  var HTMLKsLoadingOverlayElement: {
+    prototype: HTMLKsLoadingOverlayElement;
+    new (): HTMLKsLoadingOverlayElement;
+  };
+
+  interface HTMLKsModalElement extends Components.KsModal, HTMLStencilElement {}
+  var HTMLKsModalElement: {
+    prototype: HTMLKsModalElement;
+    new (): HTMLKsModalElement;
+  };
+
+  interface HTMLKsModalFooterElement extends Components.KsModalFooter, HTMLStencilElement {}
+  var HTMLKsModalFooterElement: {
+    prototype: HTMLKsModalFooterElement;
+    new (): HTMLKsModalFooterElement;
+  };
+
+  interface HTMLKsNavbarElement extends Components.KsNavbar, HTMLStencilElement {}
+  var HTMLKsNavbarElement: {
+    prototype: HTMLKsNavbarElement;
+    new (): HTMLKsNavbarElement;
+  };
+
+  interface HTMLKsNavbarGroupElement extends Components.KsNavbarGroup, HTMLStencilElement {}
+  var HTMLKsNavbarGroupElement: {
+    prototype: HTMLKsNavbarGroupElement;
+    new (): HTMLKsNavbarGroupElement;
+  };
+
+  interface HTMLKsNavbarItemElement extends Components.KsNavbarItem, HTMLStencilElement {}
+  var HTMLKsNavbarItemElement: {
+    prototype: HTMLKsNavbarItemElement;
+    new (): HTMLKsNavbarItemElement;
+  };
+
+  interface HTMLKsNavbarRowElement extends Components.KsNavbarRow, HTMLStencilElement {}
+  var HTMLKsNavbarRowElement: {
+    prototype: HTMLKsNavbarRowElement;
+    new (): HTMLKsNavbarRowElement;
+  };
+
+  interface HTMLKsOverlayElement extends Components.KsOverlay, HTMLStencilElement {}
+  var HTMLKsOverlayElement: {
+    prototype: HTMLKsOverlayElement;
+    new (): HTMLKsOverlayElement;
+  };
+
+  interface HTMLKsProgressBarElement extends Components.KsProgressBar, HTMLStencilElement {}
+  var HTMLKsProgressBarElement: {
+    prototype: HTMLKsProgressBarElement;
+    new (): HTMLKsProgressBarElement;
+  };
+
+  interface HTMLKsRowElement extends Components.KsRow, HTMLStencilElement {}
+  var HTMLKsRowElement: {
+    prototype: HTMLKsRowElement;
+    new (): HTMLKsRowElement;
+  };
+
+  interface HTMLKsSideDrawerElement extends Components.KsSideDrawer, HTMLStencilElement {}
+  var HTMLKsSideDrawerElement: {
+    prototype: HTMLKsSideDrawerElement;
+    new (): HTMLKsSideDrawerElement;
+  };
+
+  interface HTMLKsSpinBoxElement extends Components.KsSpinBox, HTMLStencilElement {}
+  var HTMLKsSpinBoxElement: {
+    prototype: HTMLKsSpinBoxElement;
+    new (): HTMLKsSpinBoxElement;
+  };
+
+  interface HTMLKsTabElement extends Components.KsTab, HTMLStencilElement {}
+  var HTMLKsTabElement: {
+    prototype: HTMLKsTabElement;
+    new (): HTMLKsTabElement;
+  };
+
+  interface HTMLKsTabListElement extends Components.KsTabList, HTMLStencilElement {}
+  var HTMLKsTabListElement: {
+    prototype: HTMLKsTabListElement;
+    new (): HTMLKsTabListElement;
+  };
+
+  interface HTMLKsTabPanelElement extends Components.KsTabPanel, HTMLStencilElement {}
+  var HTMLKsTabPanelElement: {
+    prototype: HTMLKsTabPanelElement;
+    new (): HTMLKsTabPanelElement;
+  };
+
+  interface HTMLKsTabsElement extends Components.KsTabs, HTMLStencilElement {}
+  var HTMLKsTabsElement: {
+    prototype: HTMLKsTabsElement;
+    new (): HTMLKsTabsElement;
+  };
+
+  interface HTMLKsTooltipElement extends Components.KsTooltip, HTMLStencilElement {}
+  var HTMLKsTooltipElement: {
+    prototype: HTMLKsTooltipElement;
+    new (): HTMLKsTooltipElement;
+  };
   interface HTMLElementTagNameMap {
-    'ks-accordion': HTMLCAccordionElement;
-    'ks-accordion-slide': HTMLCAccordionSlideElement;
-    'ks-alert': HTMLCAlertElement;
-    'ks-badge': HTMLCBadgeElement;
-    'ks-breadcrumbs': HTMLCBreadcrumbsElement;
-    'ks-button': HTMLCButtonElement;
-    'ks-card': HTMLCCardElement;
-    'ks-carousel': HTMLCCarouselElement;
-    'ks-carousel-slide': HTMLCCarouselSlideElement;
-    'ks-column': HTMLCColumnElement;
-    'ks-dropdown': HTMLCDropdownElement;
-    'ks-form-field': HTMLCFormFieldElement;
-    'ks-img': HTMLCImgElement;
-    'ks-loading': HTMLCLoadingElement;
-    'ks-loading-overlay': HTMLCLoadingOverlayElement;
-    'ks-modal': HTMLCModalElement;
-    'ks-modal-footer': HTMLCModalFooterElement;
-    'ks-navbar': HTMLCNavbarElement;
-    'ks-navbar-group': HTMLCNavbarGroupElement;
-    'ks-navbar-item': HTMLCNavbarItemElement;
-    'ks-navbar-row': HTMLCNavbarRowElement;
-    'ks-overlay': HTMLCOverlayElement;
-    'ks-progress-bar': HTMLCProgressBarElement;
-    'ks-row': HTMLCRowElement;
-    'ks-side-drawer': HTMLCSideDrawerElement;
-    'ks-spin-box': HTMLCSpinBoxElement;
-    'ks-tab': HTMLCTabElement;
-    'ks-tab-list': HTMLCTabListElement;
-    'ks-tab-panel': HTMLCTabPanelElement;
-    'ks-tabs': HTMLCTabsElement;
-    'ks-tooltip': HTMLCTooltipElement;
     'card-body': HTMLCardBodyElement;
     'card-footer': HTMLCardFooterElement;
     'dropdown-item': HTMLDropdownItemElement;
+    'ks-accordion': HTMLKsAccordionElement;
+    'ks-accordion-slide': HTMLKsAccordionSlideElement;
+    'ks-alert': HTMLKsAlertElement;
+    'ks-badge': HTMLKsBadgeElement;
+    'ks-breadcrumbs': HTMLKsBreadcrumbsElement;
+    'ks-button': HTMLKsButtonElement;
+    'ks-card': HTMLKsCardElement;
+    'ks-carousel': HTMLKsCarouselElement;
+    'ks-carousel-slide': HTMLKsCarouselSlideElement;
+    'ks-column': HTMLKsColumnElement;
+    'ks-dropdown': HTMLKsDropdownElement;
+    'ks-form-field': HTMLKsFormFieldElement;
+    'ks-img': HTMLKsImgElement;
+    'ks-loading': HTMLKsLoadingElement;
+    'ks-loading-overlay': HTMLKsLoadingOverlayElement;
+    'ks-modal': HTMLKsModalElement;
+    'ks-modal-footer': HTMLKsModalFooterElement;
+    'ks-navbar': HTMLKsNavbarElement;
+    'ks-navbar-group': HTMLKsNavbarGroupElement;
+    'ks-navbar-item': HTMLKsNavbarItemElement;
+    'ks-navbar-row': HTMLKsNavbarRowElement;
+    'ks-overlay': HTMLKsOverlayElement;
+    'ks-progress-bar': HTMLKsProgressBarElement;
+    'ks-row': HTMLKsRowElement;
+    'ks-side-drawer': HTMLKsSideDrawerElement;
+    'ks-spin-box': HTMLKsSpinBoxElement;
+    'ks-tab': HTMLKsTabElement;
+    'ks-tab-list': HTMLKsTabListElement;
+    'ks-tab-panel': HTMLKsTabPanelElement;
+    'ks-tabs': HTMLKsTabsElement;
+    'ks-tooltip': HTMLKsTooltipElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface CAccordion {
+  interface CardBody {
+    'cardSubtitle'?: string;
+    'cardTitle'?: string;
+  }
+  interface CardFooter {}
+  interface DropdownItem {
+    'closeOnClick'?: boolean;
+    'onCloseDropdown'?: (event: CustomEvent<any>) => void;
+  }
+  interface KsAccordion {
     'size'?: string;
   }
-  interface CAccordionSlide {
+  interface KsAccordionSlide {
     'expanded'?: boolean;
     'heading'?: string;
   }
-  interface CAlert {
+  interface KsAlert {
     'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'header'?: string;
     'note'?: boolean;
   }
-  interface CBadge {
+  interface KsBadge {
     'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'hollow'?: boolean;
   }
-  interface CBreadcrumbs {
+  interface KsBreadcrumbs {
     'breadcrumbs'?: IBreadcrumbs[];
   }
-  interface CButton {
+  interface KsButton {
     'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'controls'?: string;
     'cssClass'?: string;
@@ -504,7 +513,7 @@ declare namespace LocalJSX {
     'tabIndex'?: number;
     'type'?: 'button' | 'submit' | 'reset';
   }
-  interface CCard {
+  interface KsCard {
     'alt'?: string;
     'clickable'?: boolean;
     'imgDirection'?: string;
@@ -513,14 +522,14 @@ declare namespace LocalJSX {
     'threshold'?: number;
     'url'?: string;
   }
-  interface CCarousel {
+  interface KsCarousel {
     'autoplay'?: boolean;
     'hideControls'?: boolean;
     'hideIndicators'?: boolean;
     'thumbnails'?: boolean;
     'timer'?: number;
   }
-  interface CCarouselSlide {
+  interface KsCarouselSlide {
     'align'?: 'start' | 'center' | 'end';
     'alt'?: string;
     'clickable'?: boolean;
@@ -530,10 +539,10 @@ declare namespace LocalJSX {
     'threshold'?: number;
     'url'?: string;
   }
-  interface CColumn {
+  interface KsColumn {
     'align'?: 'start' | 'center' | 'end';
   }
-  interface CDropdown {
+  interface KsDropdown {
     'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'display'?: 'solid' | 'hollow' | 'clear' | 'link';
     'hideIndicator'?: boolean;
@@ -543,7 +552,7 @@ declare namespace LocalJSX {
     'position'?: 'left' | 'right';
     'text'?: string;
   }
-  interface CFormField {
+  interface KsFormField {
     'disabled'?: boolean;
     'errorMessage'?: string;
     'helpText'?: string;
@@ -560,32 +569,32 @@ declare namespace LocalJSX {
     'type'?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'spin-box';
     'value'?: string | number | null;
   }
-  interface CImg {
+  interface KsImg {
     'alt'?: string;
     'cssClass'?: string;
     'lazy'?: boolean;
     'src'?: string;
     'threshold'?: number;
   }
-  interface CLoading {
+  interface KsLoading {
     'message'?: string;
     'showMessage'?: boolean;
     'type'?: 'spinner' | 'ellipsis';
   }
-  interface CLoadingOverlay {
+  interface KsLoadingOverlay {
     'absolute'?: boolean;
     'message'?: string;
     'showMessage'?: boolean;
     'size'?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
   }
-  interface CModal {
+  interface KsModal {
     'dismissible'?: boolean;
     'modalTitle'?: string;
     'size'?: 'sm' | 'md' | 'lg';
     'titleId'?: string;
   }
-  interface CModalFooter {}
-  interface CNavbar {
+  interface KsModalFooter {}
+  interface KsNavbar {
     'altText'?: string;
     'collapseAt'?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
@@ -593,20 +602,20 @@ declare namespace LocalJSX {
     'logoUrl'?: string;
     'tagline'?: string;
   }
-  interface CNavbarGroup {
+  interface KsNavbarGroup {
     'position'?: 'left' | 'right';
   }
-  interface CNavbarItem {
+  interface KsNavbarItem {
     'position'?: string;
   }
-  interface CNavbarRow {}
-  interface COverlay {
+  interface KsNavbarRow {}
+  interface KsOverlay {
     'absolute'?: boolean;
     'dismissible'?: boolean;
     'theme'?: 'dark' | 'light';
     'titleId'?: string;
   }
-  interface CProgressBar {
+  interface KsProgressBar {
     'description'?: string;
     'hideDescription'?: boolean;
     'hideProgressLabel'?: boolean;
@@ -615,17 +624,17 @@ declare namespace LocalJSX {
     'type'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'value'?: number;
   }
-  interface CRow {
+  interface KsRow {
     'align'?: 'start' | 'center' | 'end';
     'noGutter'?: boolean;
   }
-  interface CSideDrawer {
+  interface KsSideDrawer {
     'headerText'?: string;
     'name'?: string;
     'position'?: 'left' | 'right';
     'size'?: 'sm' | 'md' | 'lg' | 'xl';
   }
-  interface CSpinBox {
+  interface KsSpinBox {
     'labelId'?: string;
     'max'?: number;
     'min'?: number;
@@ -634,10 +643,10 @@ declare namespace LocalJSX {
     'step'?: number;
     'value'?: number;
   }
-  interface CTab {
+  interface KsTab {
     'controls'?: string;
   }
-  interface CTabList {
+  interface KsTabList {
     'content'?: boolean;
     'disable'?: boolean;
     'hideDecoration'?: boolean;
@@ -646,13 +655,13 @@ declare namespace LocalJSX {
     'show'?: boolean;
     'size'?: string;
   }
-  interface CTabPanel {
+  interface KsTabPanel {
     'tabId'?: string;
   }
-  interface CTabs {
+  interface KsTabs {
     'position'?: string;
   }
-  interface CTooltip {
+  interface KsTooltip {
     'disable'?: boolean;
     'hideDecoration'?: boolean;
     'position'?: 'top' | 'bottom' | 'left' | 'right';
@@ -660,51 +669,42 @@ declare namespace LocalJSX {
     'size'?: 'sm' | 'md' | 'lg' | 'xl';
     'text'?: string;
   }
-  interface CardBody {
-    'cardSubtitle'?: string;
-    'cardTitle'?: string;
-  }
-  interface CardFooter {}
-  interface DropdownItem {
-    'closeOnClick'?: boolean;
-    'onCloseDropdown'?: (event: CustomEvent<any>) => void;
-  }
 
   interface IntrinsicElements {
-    'ks-accordion': CAccordion;
-    'ks-accordion-slide': CAccordionSlide;
-    'ks-alert': CAlert;
-    'ks-badge': CBadge;
-    'ks-breadcrumbs': CBreadcrumbs;
-    'ks-button': CButton;
-    'ks-card': CCard;
-    'ks-carousel': CCarousel;
-    'ks-carousel-slide': CCarouselSlide;
-    'ks-column': CColumn;
-    'ks-dropdown': CDropdown;
-    'ks-form-field': CFormField;
-    'ks-img': CImg;
-    'ks-loading': CLoading;
-    'ks-loading-overlay': CLoadingOverlay;
-    'ks-modal': CModal;
-    'ks-modal-footer': CModalFooter;
-    'ks-navbar': CNavbar;
-    'ks-navbar-group': CNavbarGroup;
-    'ks-navbar-item': CNavbarItem;
-    'ks-navbar-row': CNavbarRow;
-    'ks-overlay': COverlay;
-    'ks-progress-bar': CProgressBar;
-    'ks-row': CRow;
-    'ks-side-drawer': CSideDrawer;
-    'ks-spin-box': CSpinBox;
-    'ks-tab': CTab;
-    'ks-tab-list': CTabList;
-    'ks-tab-panel': CTabPanel;
-    'ks-tabs': CTabs;
-    'ks-tooltip': CTooltip;
     'card-body': CardBody;
     'card-footer': CardFooter;
     'dropdown-item': DropdownItem;
+    'ks-accordion': KsAccordion;
+    'ks-accordion-slide': KsAccordionSlide;
+    'ks-alert': KsAlert;
+    'ks-badge': KsBadge;
+    'ks-breadcrumbs': KsBreadcrumbs;
+    'ks-button': KsButton;
+    'ks-card': KsCard;
+    'ks-carousel': KsCarousel;
+    'ks-carousel-slide': KsCarouselSlide;
+    'ks-column': KsColumn;
+    'ks-dropdown': KsDropdown;
+    'ks-form-field': KsFormField;
+    'ks-img': KsImg;
+    'ks-loading': KsLoading;
+    'ks-loading-overlay': KsLoadingOverlay;
+    'ks-modal': KsModal;
+    'ks-modal-footer': KsModalFooter;
+    'ks-navbar': KsNavbar;
+    'ks-navbar-group': KsNavbarGroup;
+    'ks-navbar-item': KsNavbarItem;
+    'ks-navbar-row': KsNavbarRow;
+    'ks-overlay': KsOverlay;
+    'ks-progress-bar': KsProgressBar;
+    'ks-row': KsRow;
+    'ks-side-drawer': KsSideDrawer;
+    'ks-spin-box': KsSpinBox;
+    'ks-tab': KsTab;
+    'ks-tab-list': KsTabList;
+    'ks-tab-panel': KsTabPanel;
+    'ks-tabs': KsTabs;
+    'ks-tooltip': KsTooltip;
   }
 }
 
@@ -714,40 +714,40 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'ks-accordion': LocalJSX.CAccordion & JSXBase.HTMLAttributes<HTMLCAccordionElement>;
-      'ks-accordion-slide': LocalJSX.CAccordionSlide & JSXBase.HTMLAttributes<HTMLCAccordionSlideElement>;
-      'ks-alert': LocalJSX.CAlert & JSXBase.HTMLAttributes<HTMLCAlertElement>;
-      'ks-badge': LocalJSX.CBadge & JSXBase.HTMLAttributes<HTMLCBadgeElement>;
-      'ks-breadcrumbs': LocalJSX.CBreadcrumbs & JSXBase.HTMLAttributes<HTMLCBreadcrumbsElement>;
-      'ks-button': LocalJSX.CButton & JSXBase.HTMLAttributes<HTMLCButtonElement>;
-      'ks-card': LocalJSX.CCard & JSXBase.HTMLAttributes<HTMLCCardElement>;
-      'ks-carousel': LocalJSX.CCarousel & JSXBase.HTMLAttributes<HTMLCCarouselElement>;
-      'ks-carousel-slide': LocalJSX.CCarouselSlide & JSXBase.HTMLAttributes<HTMLCCarouselSlideElement>;
-      'ks-column': LocalJSX.CColumn & JSXBase.HTMLAttributes<HTMLCColumnElement>;
-      'ks-dropdown': LocalJSX.CDropdown & JSXBase.HTMLAttributes<HTMLCDropdownElement>;
-      'ks-form-field': LocalJSX.CFormField & JSXBase.HTMLAttributes<HTMLCFormFieldElement>;
-      'ks-img': LocalJSX.CImg & JSXBase.HTMLAttributes<HTMLCImgElement>;
-      'ks-loading': LocalJSX.CLoading & JSXBase.HTMLAttributes<HTMLCLoadingElement>;
-      'ks-loading-overlay': LocalJSX.CLoadingOverlay & JSXBase.HTMLAttributes<HTMLCLoadingOverlayElement>;
-      'ks-modal': LocalJSX.CModal & JSXBase.HTMLAttributes<HTMLCModalElement>;
-      'ks-modal-footer': LocalJSX.CModalFooter & JSXBase.HTMLAttributes<HTMLCModalFooterElement>;
-      'ks-navbar': LocalJSX.CNavbar & JSXBase.HTMLAttributes<HTMLCNavbarElement>;
-      'ks-navbar-group': LocalJSX.CNavbarGroup & JSXBase.HTMLAttributes<HTMLCNavbarGroupElement>;
-      'ks-navbar-item': LocalJSX.CNavbarItem & JSXBase.HTMLAttributes<HTMLCNavbarItemElement>;
-      'ks-navbar-row': LocalJSX.CNavbarRow & JSXBase.HTMLAttributes<HTMLCNavbarRowElement>;
-      'ks-overlay': LocalJSX.COverlay & JSXBase.HTMLAttributes<HTMLCOverlayElement>;
-      'ks-progress-bar': LocalJSX.CProgressBar & JSXBase.HTMLAttributes<HTMLCProgressBarElement>;
-      'ks-row': LocalJSX.CRow & JSXBase.HTMLAttributes<HTMLCRowElement>;
-      'ks-side-drawer': LocalJSX.CSideDrawer & JSXBase.HTMLAttributes<HTMLCSideDrawerElement>;
-      'ks-spin-box': LocalJSX.CSpinBox & JSXBase.HTMLAttributes<HTMLCSpinBoxElement>;
-      'ks-tab': LocalJSX.CTab & JSXBase.HTMLAttributes<HTMLCTabElement>;
-      'ks-tab-list': LocalJSX.CTabList & JSXBase.HTMLAttributes<HTMLCTabListElement>;
-      'ks-tab-panel': LocalJSX.CTabPanel & JSXBase.HTMLAttributes<HTMLCTabPanelElement>;
-      'ks-tabs': LocalJSX.CTabs & JSXBase.HTMLAttributes<HTMLCTabsElement>;
-      'ks-tooltip': LocalJSX.CTooltip & JSXBase.HTMLAttributes<HTMLCTooltipElement>;
       'card-body': LocalJSX.CardBody & JSXBase.HTMLAttributes<HTMLCardBodyElement>;
       'card-footer': LocalJSX.CardFooter & JSXBase.HTMLAttributes<HTMLCardFooterElement>;
       'dropdown-item': LocalJSX.DropdownItem & JSXBase.HTMLAttributes<HTMLDropdownItemElement>;
+      'ks-accordion': LocalJSX.KsAccordion & JSXBase.HTMLAttributes<HTMLKsAccordionElement>;
+      'ks-accordion-slide': LocalJSX.KsAccordionSlide & JSXBase.HTMLAttributes<HTMLKsAccordionSlideElement>;
+      'ks-alert': LocalJSX.KsAlert & JSXBase.HTMLAttributes<HTMLKsAlertElement>;
+      'ks-badge': LocalJSX.KsBadge & JSXBase.HTMLAttributes<HTMLKsBadgeElement>;
+      'ks-breadcrumbs': LocalJSX.KsBreadcrumbs & JSXBase.HTMLAttributes<HTMLKsBreadcrumbsElement>;
+      'ks-button': LocalJSX.KsButton & JSXBase.HTMLAttributes<HTMLKsButtonElement>;
+      'ks-card': LocalJSX.KsCard & JSXBase.HTMLAttributes<HTMLKsCardElement>;
+      'ks-carousel': LocalJSX.KsCarousel & JSXBase.HTMLAttributes<HTMLKsCarouselElement>;
+      'ks-carousel-slide': LocalJSX.KsCarouselSlide & JSXBase.HTMLAttributes<HTMLKsCarouselSlideElement>;
+      'ks-column': LocalJSX.KsColumn & JSXBase.HTMLAttributes<HTMLKsColumnElement>;
+      'ks-dropdown': LocalJSX.KsDropdown & JSXBase.HTMLAttributes<HTMLKsDropdownElement>;
+      'ks-form-field': LocalJSX.KsFormField & JSXBase.HTMLAttributes<HTMLKsFormFieldElement>;
+      'ks-img': LocalJSX.KsImg & JSXBase.HTMLAttributes<HTMLKsImgElement>;
+      'ks-loading': LocalJSX.KsLoading & JSXBase.HTMLAttributes<HTMLKsLoadingElement>;
+      'ks-loading-overlay': LocalJSX.KsLoadingOverlay & JSXBase.HTMLAttributes<HTMLKsLoadingOverlayElement>;
+      'ks-modal': LocalJSX.KsModal & JSXBase.HTMLAttributes<HTMLKsModalElement>;
+      'ks-modal-footer': LocalJSX.KsModalFooter & JSXBase.HTMLAttributes<HTMLKsModalFooterElement>;
+      'ks-navbar': LocalJSX.KsNavbar & JSXBase.HTMLAttributes<HTMLKsNavbarElement>;
+      'ks-navbar-group': LocalJSX.KsNavbarGroup & JSXBase.HTMLAttributes<HTMLKsNavbarGroupElement>;
+      'ks-navbar-item': LocalJSX.KsNavbarItem & JSXBase.HTMLAttributes<HTMLKsNavbarItemElement>;
+      'ks-navbar-row': LocalJSX.KsNavbarRow & JSXBase.HTMLAttributes<HTMLKsNavbarRowElement>;
+      'ks-overlay': LocalJSX.KsOverlay & JSXBase.HTMLAttributes<HTMLKsOverlayElement>;
+      'ks-progress-bar': LocalJSX.KsProgressBar & JSXBase.HTMLAttributes<HTMLKsProgressBarElement>;
+      'ks-row': LocalJSX.KsRow & JSXBase.HTMLAttributes<HTMLKsRowElement>;
+      'ks-side-drawer': LocalJSX.KsSideDrawer & JSXBase.HTMLAttributes<HTMLKsSideDrawerElement>;
+      'ks-spin-box': LocalJSX.KsSpinBox & JSXBase.HTMLAttributes<HTMLKsSpinBoxElement>;
+      'ks-tab': LocalJSX.KsTab & JSXBase.HTMLAttributes<HTMLKsTabElement>;
+      'ks-tab-list': LocalJSX.KsTabList & JSXBase.HTMLAttributes<HTMLKsTabListElement>;
+      'ks-tab-panel': LocalJSX.KsTabPanel & JSXBase.HTMLAttributes<HTMLKsTabPanelElement>;
+      'ks-tabs': LocalJSX.KsTabs & JSXBase.HTMLAttributes<HTMLKsTabsElement>;
+      'ks-tooltip': LocalJSX.KsTooltip & JSXBase.HTMLAttributes<HTMLKsTooltipElement>;
     }
   }
 }

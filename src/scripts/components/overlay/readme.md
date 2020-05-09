@@ -1,4 +1,4 @@
-# c-overlay
+# ks-overlay
 
 
 
@@ -42,17 +42,17 @@ Type: `Promise<void>`
 
 ### Used by
 
- - [c-loading-overlay](../loading)
- - [c-modal](../modal)
- - [c-side-drawer](../side-drawer)
+ - [ks-loading-overlay](../loading)
+ - [ks-modal](../modal)
+ - [ks-side-drawer](../side-drawer)
 
 ### Graph
 ```mermaid
 graph TD;
-  c-loading-overlay --> c-overlay
-  c-modal --> c-overlay
-  c-side-drawer --> c-overlay
-  style c-overlay fill:#f9f,stroke:#333,stroke-width:4px
+  ks-loading-overlay --> ks-overlay
+  ks-modal --> ks-overlay
+  ks-side-drawer --> ks-overlay
+  style ks-overlay fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

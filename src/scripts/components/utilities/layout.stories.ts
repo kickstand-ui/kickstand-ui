@@ -11,6 +11,6 @@ export const widths = () => {
 
 export const heights = () => {
     return (`<ks-row class="m-xxl bg-light" style="height: 300px;">
-        ${heightSizes.map(s => `<ks-column class="mx-md p-sm bg-primary-light h-${s}">h-${s}</c-column>`).join('')}
-    </c-row>`);
+        ${heightSizes.map(s => `<ks-column class="mx-md p-sm bg-primary-light h-${s}">h-${s}</ks-column>`).join('')}
+    </ks-row>`);
 };

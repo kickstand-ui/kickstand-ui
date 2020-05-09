@@ -13,7 +13,7 @@ export class Carousel implements ComponentInterface {
     @Prop() thumbnails: boolean = false;
 
     @State() slideIndex: number = 0;
-    @State() $slides: HTMLCCarouselSlideElement[];
+    @State() $slides: HTMLKsCarouselSlideElement[];
     @State() $indicators: Element[];
     @State() slideTimer: NodeJS.Timeout;
     @State() slideDirection: string = 'slide-left';
