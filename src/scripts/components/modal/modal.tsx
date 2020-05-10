@@ -32,7 +32,7 @@ export class Modal implements ComponentInterface {
                         <h3 class="modal-title" id={this.titleId}>{this.modalTitle}</h3>
                         {this.dismissible && <ks-button onClick={() => this.hide()} display="clear" class="modal-close">
                             <span class="sr-only">Close Modal</span>
-                            <i class="fal fa-times"></i>
+                            <i class="fas fa-times"></i>
                         </ks-button>}
                     </header>
                     <div class="modal-content">

@@ -17,7 +17,7 @@ export const playground = () => {
     const invalid = boolean('invalid', false);
     const disabled = boolean('disabled', false);
     return (`<div class="m-xxl">
-        <c-form-field 
+        <ks-form-field 
             type="${type}"
             label="${label}" 
             help-text="${helpText}"
@@ -30,6 +30,6 @@ export const playground = () => {
             disabled="${disabled}"
             value="${value}"
             >
-        </c-form-field>
+        </ks-form-field>
     </div>`);
 };
