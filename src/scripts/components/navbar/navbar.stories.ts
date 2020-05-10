@@ -146,7 +146,7 @@ export const navbarWithMultipleGroups = () => {
                 <ks-navbar-item>
                     <a href="#">Sign Up</a>
                 </ks-navbar-item>
-                <ks-navbar-item class="p-none">
+                <ks-navbar-item>
                     <ks-button color="secondary" size="sm">Sign In</ks-button>
                 </ks-navbar-item>
             </ks-navbar-group>
