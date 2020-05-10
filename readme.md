@@ -1,8 +1,8 @@
 # Kickstand UI
 
-Kickstand UI a the design system for building web applications. It is built using native web components to ensure its cross-platform compatibility.
+Kickstand UI is a design system for building web applications. It is built using native web components to ensure its cross-platform compatibility.
 
-## Getting Started
+## Running the Project
 
 Install dependencies:
 
