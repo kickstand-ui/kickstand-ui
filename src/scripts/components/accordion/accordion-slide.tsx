@@ -19,7 +19,7 @@ export class AccordionSlide {
             <Host class="accordion-slide">
                 <button class="accordion-heading" role="tab" aria-controls={this.slideId} aria-expanded={`${this.expanded}`} onClick={this.toggleSlide.bind(this)}>
                     <span>{this.heading}</span>
-                    <i class="accordion-icon fas fa-chevron-down"></i>
+                    <ks-icon class="accordion-icon" icon="chevron" />
                 </button>
                 <div class="accordion-content" role="tabpanel" aria-hidden={`${!this.expanded}`} id={this.slideId}>
                     <slot />

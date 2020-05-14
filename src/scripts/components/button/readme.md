@@ -31,6 +31,7 @@
 
 ### Used by
 
+ - [ks-carousel](../carousel)
  - [ks-dropdown](../dropdown)
  - [ks-modal](../modal)
  - [ks-side-drawer](../side-drawer)
@@ -38,14 +39,17 @@
 
 ### Depends on
 
+- [ks-icon](../icon)
 - [ks-loading-overlay](../loading)
 
 ### Graph
 ```mermaid
 graph TD;
+  ks-button --> ks-icon
   ks-button --> ks-loading-overlay
   ks-loading-overlay --> ks-overlay
   ks-loading-overlay --> ks-loading
+  ks-carousel --> ks-button
   ks-dropdown --> ks-button
   ks-modal --> ks-button
   ks-side-drawer --> ks-button

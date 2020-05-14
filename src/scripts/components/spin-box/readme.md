@@ -38,6 +38,7 @@
 ```mermaid
 graph TD;
   ks-spin-box --> ks-button
+  ks-button --> ks-icon
   ks-button --> ks-loading-overlay
   ks-loading-overlay --> ks-overlay
   ks-loading-overlay --> ks-loading

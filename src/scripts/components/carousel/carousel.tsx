@@ -15,7 +15,7 @@ export class Carousel implements ComponentInterface {
     @State() slideIndex: number = 0;
     @State() $slides: HTMLKsCarouselSlideElement[];
     @State() $indicators: Element[];
-    @State() slideTimer: NodeJS.Timeout;
+    @State() slideTimer: any;
     @State() slideDirection: string = 'slide-left';
 
 
@@ -82,14 +82,14 @@ export class Carousel implements ComponentInterface {
 
     render() {
         let controls = [
-            <button class="control prev" onClick={this.prevSlide.bind(this)}>
-                <i class="control-icon fas fa-chevron-left"></i>
+            <ks-button display="link" color="light" class="control prev" onClick={this.prevSlide.bind(this)}>
+                <ks-icon class="control-icon text-xl" icon="chevron" rotate="90" />
                 <span class="sr-only">previous slide</span>
-            </button>,
-            <button class="control next" onClick={this.nextSlide.bind(this)}>
-                <i class="control-icon fas fa-chevron-right"></i>
+            </ks-button>,
+            <ks-button display="link" color="light" class="control next" onClick={this.nextSlide.bind(this)}>
+                <ks-icon class="control-icon text-xl" icon="chevron" rotate="-90" />
                 <span class="sr-only">next slide</span>
-            </button>
+            </ks-button>
         ];
         let indicators = (
             <div class="indicators">

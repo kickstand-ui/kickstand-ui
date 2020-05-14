@@ -44,12 +44,15 @@ Type: `Promise<void>`
 
 - [ks-overlay](../overlay)
 - [ks-button](../button)
+- [ks-icon](../icon)
 
 ### Graph
 ```mermaid
 graph TD;
   ks-side-drawer --> ks-overlay
   ks-side-drawer --> ks-button
+  ks-side-drawer --> ks-icon
+  ks-button --> ks-icon
   ks-button --> ks-loading-overlay
   ks-loading-overlay --> ks-overlay
   ks-loading-overlay --> ks-loading

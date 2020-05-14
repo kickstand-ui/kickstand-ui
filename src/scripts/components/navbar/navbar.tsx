@@ -52,7 +52,7 @@ export class Navbar {
                     aria-controls={`navbar-content-${this.navbarId}`}
                 >
                     <span class="sr-only">toggle menu</span>
-                    <i class="fas fa-bars"></i>
+                    <ks-icon icon="bars" />
                 </button>
                 <div class="navbar-content" id={`navbar-content-${this.navbarId}`} ref={el => this.$navbarContent = el} tabindex="-1">
                     <slot />

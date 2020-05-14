@@ -24,11 +24,14 @@
 ### Depends on
 
 - [ks-button](../button)
+- [ks-icon](../icon)
 
 ### Graph
 ```mermaid
 graph TD;
   ks-dropdown --> ks-button
+  ks-dropdown --> ks-icon
+  ks-button --> ks-icon
   ks-button --> ks-loading-overlay
   ks-loading-overlay --> ks-overlay
   ks-loading-overlay --> ks-loading
