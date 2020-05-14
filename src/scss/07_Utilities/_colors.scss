@@ -18,8 +18,7 @@ $variations: ('lighter', 'light', 'base', 'dark', 'darker');
         ...
     */
     .bg-#{$color} {
-        background-color: color($color) !important;
-        color: text-color($color) !important;
+        @include bg-color($color, $important: true);
     }
 
     @each $variation in $variations {
@@ -38,8 +37,7 @@ $variations: ('lighter', 'light', 'base', 'dark', 'darker');
             ...
         */
         .bg-#{$color}-#{$variation} {
-            background-color: color($color, $variation) !important;
-            color: text-color($color, $variation) !important;
+            @include bg-color($color, $variation, 1, true);
         }
     }
 }
