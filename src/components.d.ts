@@ -113,6 +113,10 @@ export namespace Components {
     'type': 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'spin-box';
     'value'?: string | number | null;
   }
+  interface KsIcon {
+    'icon': 'bars' | 'chevron' | 'close' | 'danger' | 'info' | string;
+    'rotate': string;
+  }
   interface KsImg {
     'alt': string;
     'cssClass': string;
@@ -315,6 +319,12 @@ declare global {
     new (): HTMLKsFormFieldElement;
   };
 
+  interface HTMLKsIconElement extends Components.KsIcon, HTMLStencilElement {}
+  var HTMLKsIconElement: {
+    prototype: HTMLKsIconElement;
+    new (): HTMLKsIconElement;
+  };
+
   interface HTMLKsImgElement extends Components.KsImg, HTMLStencilElement {}
   var HTMLKsImgElement: {
     prototype: HTMLKsImgElement;
@@ -444,6 +454,7 @@ declare global {
     'ks-column': HTMLKsColumnElement;
     'ks-dropdown': HTMLKsDropdownElement;
     'ks-form-field': HTMLKsFormFieldElement;
+    'ks-icon': HTMLKsIconElement;
     'ks-img': HTMLKsImgElement;
     'ks-loading': HTMLKsLoadingElement;
     'ks-loading-overlay': HTMLKsLoadingOverlayElement;
@@ -569,6 +580,10 @@ declare namespace LocalJSX {
     'type'?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'spin-box';
     'value'?: string | number | null;
   }
+  interface KsIcon {
+    'icon'?: 'bars' | 'chevron' | 'close' | 'danger' | 'info' | string;
+    'rotate'?: string;
+  }
   interface KsImg {
     'alt'?: string;
     'cssClass'?: string;
@@ -686,6 +701,7 @@ declare namespace LocalJSX {
     'ks-column': KsColumn;
     'ks-dropdown': KsDropdown;
     'ks-form-field': KsFormField;
+    'ks-icon': KsIcon;
     'ks-img': KsImg;
     'ks-loading': KsLoading;
     'ks-loading-overlay': KsLoadingOverlay;
@@ -729,6 +745,7 @@ declare module "@stencil/core" {
       'ks-column': LocalJSX.KsColumn & JSXBase.HTMLAttributes<HTMLKsColumnElement>;
       'ks-dropdown': LocalJSX.KsDropdown & JSXBase.HTMLAttributes<HTMLKsDropdownElement>;
       'ks-form-field': LocalJSX.KsFormField & JSXBase.HTMLAttributes<HTMLKsFormFieldElement>;
+      'ks-icon': LocalJSX.KsIcon & JSXBase.HTMLAttributes<HTMLKsIconElement>;
       'ks-img': LocalJSX.KsImg & JSXBase.HTMLAttributes<HTMLKsImgElement>;
       'ks-loading': LocalJSX.KsLoading & JSXBase.HTMLAttributes<HTMLKsLoadingElement>;
       'ks-loading-overlay': LocalJSX.KsLoadingOverlay & JSXBase.HTMLAttributes<HTMLKsLoadingOverlayElement>;

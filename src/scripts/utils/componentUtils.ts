@@ -9,7 +9,7 @@ export default {
     },
 
     debounce(func: Function, wait: number, immediate: boolean = false) {
-        let timeout: NodeJS.Timeout;
+        let timeout: any;
         
         return function () {
             let context = this, args = arguments;

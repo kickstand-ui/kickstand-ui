@@ -128,7 +128,7 @@ export class Dropdown {
                     ref={el => this.$control = el.querySelector('button')}
                 >
                     <span class={buttonClasses}>{this.text}</span>
-                    {!this.hideIndicator && <i class="fas fa-chevron-down dropdown-icon"></i>}
+                    {!this.hideIndicator && <ks-icon icon="chevron" class="dropdown-icon" />}
                 </ks-button>
                 <div
                     id={`dropdown-${this.dropdownId}`}

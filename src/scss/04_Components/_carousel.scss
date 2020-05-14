@@ -39,6 +39,8 @@
             color: color(white);
             background-color: transparent;
             border: none;
+            display: flex;
+            outline: 0;
             @include font-size(xl);
 
             &:focus,
@@ -52,6 +54,11 @@
 
             &.next {
                 right: 0;
+            }
+
+            .button {
+                outline: 0;
+                width: 100%;
             }
 
             svg {
@@ -76,24 +83,22 @@
         @include my(md);
 
         .indicator {
-            height: size(xxs);
+            height: spacing(lg);
             width: 1.25rem;
             background-color: transparent;
+            filter: drop-shadow(0 0 0.25rem color(dark));
             @include border(none);
             @include border-b($size: xxs, $color: light, $opacity: 0.5);
             @include mx(sm);
             @include transition-ease-in-out(fast);
-            @include shadow(xs);
 
             @include hover-focus {
                 outline: 0;
                 @include border-b($size: xxs, $color: light, $opacity: 0.75);
-                @include shadow(sm);
             }
 
             &.active {
                 @include border-b($size: xxs, $color: light);
-                @include shadow(xs);
                 @include transition-ease-in-out(fast);
             }
         }

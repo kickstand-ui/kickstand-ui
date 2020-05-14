@@ -42,11 +42,10 @@ $drawer-sizes: (
         justify-content: space-between;
         align-content: center;
         @include border-b();
-        @include font-size(xl);
+        @include font-size(lg);
 
         .drawer-close {
             .button {
-                @include font-size(lg);
                 @include p(none);
             }
         }

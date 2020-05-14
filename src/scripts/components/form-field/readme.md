@@ -37,14 +37,17 @@
 ### Depends on
 
 - [ks-tooltip](../tooltip)
+- [ks-icon](../icon)
 - [ks-spin-box](../spin-box)
 
 ### Graph
 ```mermaid
 graph TD;
   ks-form-field --> ks-tooltip
+  ks-form-field --> ks-icon
   ks-form-field --> ks-spin-box
   ks-spin-box --> ks-button
+  ks-button --> ks-icon
   ks-button --> ks-loading-overlay
   ks-loading-overlay --> ks-overlay
   ks-loading-overlay --> ks-loading
