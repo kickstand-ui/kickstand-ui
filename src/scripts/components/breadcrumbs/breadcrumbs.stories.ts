@@ -8,7 +8,7 @@ const breadcrumbs = [
 ];
 
 export const breadcrumb = () => {
-    const element = document.createElement('ks-breadcrumbs');
-    element.breadcrumbs = breadcrumbs;
-    return element;
+    return (`<ks-breadcrumbs>
+        ${breadcrumbs.map(x => `<ks-crumb url="${x.url}" text="${x.text}"></ks-crumb>`).join('')}
+    </ks-breadcrumbs>`);
 };
