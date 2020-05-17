@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property      | Attribute | Description | Type             | Default     |
-| ------------- | --------- | ----------- | ---------------- | ----------- |
-| `breadcrumbs` | --        |             | `IBreadcrumbs[]` | `undefined` |
+| Property | Attribute | Description | Type     | Default     |
+| -------- | --------- | ----------- | -------- | ----------- |
+| `text`   | `text`    |             | `string` | `undefined` |
+| `url`    | `url`     |             | `string` | `undefined` |
 
 
 ----------------------------------------------

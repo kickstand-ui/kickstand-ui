@@ -7,9 +7,7 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-import {
-  IBreadcrumbs,
-} from './scripts/components/breadcrumbs/breadcrumbs';
+
 
 export namespace Components {
   interface CardBody {
@@ -37,9 +35,7 @@ export namespace Components {
     'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'hollow': boolean;
   }
-  interface KsBreadcrumbs {
-    'breadcrumbs': IBreadcrumbs[];
-  }
+  interface KsBreadcrumbs {}
   interface KsButton {
     'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'controls': string;
@@ -86,6 +82,10 @@ export namespace Components {
   }
   interface KsColumn {
     'align': 'start' | 'center' | 'end';
+  }
+  interface KsCrumb {
+    'text': string;
+    'url': string;
   }
   interface KsDropdown {
     'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
@@ -307,6 +307,12 @@ declare global {
     new (): HTMLKsColumnElement;
   };
 
+  interface HTMLKsCrumbElement extends Components.KsCrumb, HTMLStencilElement {}
+  var HTMLKsCrumbElement: {
+    prototype: HTMLKsCrumbElement;
+    new (): HTMLKsCrumbElement;
+  };
+
   interface HTMLKsDropdownElement extends Components.KsDropdown, HTMLStencilElement {}
   var HTMLKsDropdownElement: {
     prototype: HTMLKsDropdownElement;
@@ -452,6 +458,7 @@ declare global {
     'ks-carousel': HTMLKsCarouselElement;
     'ks-carousel-slide': HTMLKsCarouselSlideElement;
     'ks-column': HTMLKsColumnElement;
+    'ks-crumb': HTMLKsCrumbElement;
     'ks-dropdown': HTMLKsDropdownElement;
     'ks-form-field': HTMLKsFormFieldElement;
     'ks-icon': HTMLKsIconElement;
@@ -503,9 +510,7 @@ declare namespace LocalJSX {
     'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'hollow'?: boolean;
   }
-  interface KsBreadcrumbs {
-    'breadcrumbs'?: IBreadcrumbs[];
-  }
+  interface KsBreadcrumbs {}
   interface KsButton {
     'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'controls'?: string;
@@ -552,6 +557,10 @@ declare namespace LocalJSX {
   }
   interface KsColumn {
     'align'?: 'start' | 'center' | 'end';
+  }
+  interface KsCrumb {
+    'text'?: string;
+    'url'?: string;
   }
   interface KsDropdown {
     'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
@@ -699,6 +708,7 @@ declare namespace LocalJSX {
     'ks-carousel': KsCarousel;
     'ks-carousel-slide': KsCarouselSlide;
     'ks-column': KsColumn;
+    'ks-crumb': KsCrumb;
     'ks-dropdown': KsDropdown;
     'ks-form-field': KsFormField;
     'ks-icon': KsIcon;
@@ -743,6 +753,7 @@ declare module "@stencil/core" {
       'ks-carousel': LocalJSX.KsCarousel & JSXBase.HTMLAttributes<HTMLKsCarouselElement>;
       'ks-carousel-slide': LocalJSX.KsCarouselSlide & JSXBase.HTMLAttributes<HTMLKsCarouselSlideElement>;
       'ks-column': LocalJSX.KsColumn & JSXBase.HTMLAttributes<HTMLKsColumnElement>;
+      'ks-crumb': LocalJSX.KsCrumb & JSXBase.HTMLAttributes<HTMLKsCrumbElement>;
       'ks-dropdown': LocalJSX.KsDropdown & JSXBase.HTMLAttributes<HTMLKsDropdownElement>;
       'ks-form-field': LocalJSX.KsFormField & JSXBase.HTMLAttributes<HTMLKsFormFieldElement>;
       'ks-icon': LocalJSX.KsIcon & JSXBase.HTMLAttributes<HTMLKsIconElement>;
