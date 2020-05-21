@@ -25,7 +25,8 @@
     "storybook": "start-storybook -p 9009 -s www",
     "storybook:watch": "run-p start storybook",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "docs:deploy": "./deploy-docs.sh"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
