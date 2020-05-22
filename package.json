@@ -20,6 +20,7 @@
     "dev": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test:watch": "stencil test --spec --e2e --watchAll",
+    "deploy": "stencil build && publish",
     "generate": "stencil generate",
     "start": "stencil build --watch",
     "storybook": "start-storybook -p 9009 -s www",
