@@ -47,7 +47,7 @@ Type: `Promise<void>`
 ### Depends on
 
 - [ks-overlay](../overlay)
-- [ks-loading](.)
+- [ks-loading]()
 
 ### Graph
 ```mermaid
