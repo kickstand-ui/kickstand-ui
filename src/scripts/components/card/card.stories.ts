@@ -16,18 +16,22 @@ export const card = () => {
     const cardSubtitle = text('card-subtitle', 'Comfort Food');
     const bodyText = text('body text', `"It's never too early for ice cream, Jim. But we didn't have any ice cream, so this is mayonnaise and black olives. It's comfort food, alright?"`);
 
-    return (`<ks-card img-src="${src}"
-                    img-direction="${imgDir}"
-                    alt="${alt}"
-                    url="${url}"
-                    clickable="${clickable}"
-                    class="w-33 m-xxl"
-                    lazy="${lazy}"
-                    threshold="${threshold}">
-                <card-body card-title="${cardTitle}"
-                           card-subtitle="${cardSubtitle}">
-                    ${bodyText}
-                </card-body>
-                <card-footer></card-footer>
-            </ks-card>`);
+    return (`<div class="m-xxl" style="height:500px">
+                <ks-card img-src="${src}"
+                        img-direction="${imgDir}"
+                        alt="${alt}"
+                        url="${url}"
+                        clickable="${clickable}"
+                        class="w-25"
+                        lazy="${lazy}"
+                        threshold="${threshold}">
+                    <card-body card-title="${cardTitle}"
+                            card-subtitle="${cardSubtitle}">
+                        ${bodyText}
+                    </card-body>
+                    <card-footer>
+                        <ks-button>Get One</ks-button>
+                    </card-footer>
+                </ks-card>
+            </div>`);
 };
