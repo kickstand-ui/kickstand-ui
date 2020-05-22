@@ -20,6 +20,7 @@
             width: 100%;
             color: color(primary);
             font-weight: bold;
+            background-color: white;
             @include font-size(sm);
             @include border($size: xxs, $color: primary);
             @include px(lg);
