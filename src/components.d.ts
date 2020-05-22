@@ -63,6 +63,11 @@ export namespace Components {
     'threshold': number;
     'url': string;
   }
+  interface KsCardBody {
+    'cardSubtitle': string;
+    'cardTitle': string;
+  }
+  interface KsCardFooter {}
   interface KsCarousel {
     'autoplay': boolean;
     'hideControls': boolean;
@@ -227,8 +232,6 @@ export namespace Components {
 }
 
 declare global {
-
-
   interface HTMLCardBodyElement extends Components.CardBody, HTMLStencilElement {}
   var HTMLCardBodyElement: {
     prototype: HTMLCardBodyElement;
@@ -240,7 +243,6 @@ declare global {
     prototype: HTMLCardFooterElement;
     new (): HTMLCardFooterElement;
   };
-
   interface HTMLDropdownItemElement extends Components.DropdownItem, HTMLStencilElement {}
   var HTMLDropdownItemElement: {
     prototype: HTMLDropdownItemElement;
@@ -288,7 +290,17 @@ declare global {
     prototype: HTMLKsCardElement;
     new (): HTMLKsCardElement;
   };
+  interface HTMLKsCardBodyElement extends Components.KsCardBody, HTMLStencilElement {}
+  var HTMLKsCardBodyElement: {
+    prototype: HTMLKsCardBodyElement;
+    new (): HTMLKsCardBodyElement;
+  };
 
+  interface HTMLKsCardFooterElement extends Components.KsCardFooter, HTMLStencilElement {}
+  var HTMLKsCardFooterElement: {
+    prototype: HTMLKsCardFooterElement;
+    new (): HTMLKsCardFooterElement;
+  };
   interface HTMLKsCarouselElement extends Components.KsCarousel, HTMLStencilElement {}
   var HTMLKsCarouselElement: {
     prototype: HTMLKsCarouselElement;
@@ -445,8 +457,6 @@ declare global {
     new (): HTMLKsTooltipElement;
   };
   interface HTMLElementTagNameMap {
-    'card-body': HTMLCardBodyElement;
-    'card-footer': HTMLCardFooterElement;
     'dropdown-item': HTMLDropdownItemElement;
     'ks-accordion': HTMLKsAccordionElement;
     'ks-accordion-slide': HTMLKsAccordionSlideElement;
@@ -455,6 +465,8 @@ declare global {
     'ks-breadcrumbs': HTMLKsBreadcrumbsElement;
     'ks-button': HTMLKsButtonElement;
     'ks-card': HTMLKsCardElement;
+    'ks-card-body': HTMLKsCardBodyElement;
+    'ks-card-footer': HTMLKsCardFooterElement;
     'ks-carousel': HTMLKsCarouselElement;
     'ks-carousel-slide': HTMLKsCarouselSlideElement;
     'ks-column': HTMLKsColumnElement;
@@ -538,6 +550,11 @@ declare namespace LocalJSX {
     'threshold'?: number;
     'url'?: string;
   }
+  interface KsCardBody {
+    'cardSubtitle'?: string;
+    'cardTitle'?: string;
+  }
+  interface KsCardFooter {}
   interface KsCarousel {
     'autoplay'?: boolean;
     'hideControls'?: boolean;
@@ -695,8 +712,6 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
-    'card-body': CardBody;
-    'card-footer': CardFooter;
     'dropdown-item': DropdownItem;
     'ks-accordion': KsAccordion;
     'ks-accordion-slide': KsAccordionSlide;
@@ -705,6 +720,8 @@ declare namespace LocalJSX {
     'ks-breadcrumbs': KsBreadcrumbs;
     'ks-button': KsButton;
     'ks-card': KsCard;
+    'ks-card-body': KsCardBody;
+    'ks-card-footer': KsCardFooter;
     'ks-carousel': KsCarousel;
     'ks-carousel-slide': KsCarouselSlide;
     'ks-column': KsColumn;
@@ -740,8 +757,6 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'card-body': LocalJSX.CardBody & JSXBase.HTMLAttributes<HTMLCardBodyElement>;
-      'card-footer': LocalJSX.CardFooter & JSXBase.HTMLAttributes<HTMLCardFooterElement>;
       'dropdown-item': LocalJSX.DropdownItem & JSXBase.HTMLAttributes<HTMLDropdownItemElement>;
       'ks-accordion': LocalJSX.KsAccordion & JSXBase.HTMLAttributes<HTMLKsAccordionElement>;
       'ks-accordion-slide': LocalJSX.KsAccordionSlide & JSXBase.HTMLAttributes<HTMLKsAccordionSlideElement>;
@@ -750,6 +765,8 @@ declare module "@stencil/core" {
       'ks-breadcrumbs': LocalJSX.KsBreadcrumbs & JSXBase.HTMLAttributes<HTMLKsBreadcrumbsElement>;
       'ks-button': LocalJSX.KsButton & JSXBase.HTMLAttributes<HTMLKsButtonElement>;
       'ks-card': LocalJSX.KsCard & JSXBase.HTMLAttributes<HTMLKsCardElement>;
+      'ks-card-body': LocalJSX.KsCardBody & JSXBase.HTMLAttributes<HTMLKsCardBodyElement>;
+      'ks-card-footer': LocalJSX.KsCardFooter & JSXBase.HTMLAttributes<HTMLKsCardFooterElement>;
       'ks-carousel': LocalJSX.KsCarousel & JSXBase.HTMLAttributes<HTMLKsCarouselElement>;
       'ks-carousel-slide': LocalJSX.KsCarouselSlide & JSXBase.HTMLAttributes<HTMLKsCarouselSlideElement>;
       'ks-column': LocalJSX.KsColumn & JSXBase.HTMLAttributes<HTMLKsColumnElement>;

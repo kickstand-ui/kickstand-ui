@@ -1,7 +1,7 @@
 import { Component, h, ComponentInterface, Host } from '@stencil/core';
 
 @Component({
-    tag: 'card-footer'
+    tag: 'ks-card-footer'
 })
 export class CardFooter implements ComponentInterface {
     render() {
