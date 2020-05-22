@@ -10,11 +10,6 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface CardBody {
-    'cardSubtitle': string;
-    'cardTitle': string;
-  }
-  interface CardFooter {}
   interface DropdownItem {
     'closeOnClick': boolean;
   }
@@ -232,17 +227,8 @@ export namespace Components {
 }
 
 declare global {
-  interface HTMLCardBodyElement extends Components.CardBody, HTMLStencilElement {}
-  var HTMLCardBodyElement: {
-    prototype: HTMLCardBodyElement;
-    new (): HTMLCardBodyElement;
-  };
 
-  interface HTMLCardFooterElement extends Components.CardFooter, HTMLStencilElement {}
-  var HTMLCardFooterElement: {
-    prototype: HTMLCardFooterElement;
-    new (): HTMLCardFooterElement;
-  };
+
   interface HTMLDropdownItemElement extends Components.DropdownItem, HTMLStencilElement {}
   var HTMLDropdownItemElement: {
     prototype: HTMLDropdownItemElement;
@@ -290,6 +276,7 @@ declare global {
     prototype: HTMLKsCardElement;
     new (): HTMLKsCardElement;
   };
+
   interface HTMLKsCardBodyElement extends Components.KsCardBody, HTMLStencilElement {}
   var HTMLKsCardBodyElement: {
     prototype: HTMLKsCardBodyElement;
@@ -301,6 +288,7 @@ declare global {
     prototype: HTMLKsCardFooterElement;
     new (): HTMLKsCardFooterElement;
   };
+
   interface HTMLKsCarouselElement extends Components.KsCarousel, HTMLStencilElement {}
   var HTMLKsCarouselElement: {
     prototype: HTMLKsCarouselElement;
@@ -497,11 +485,6 @@ declare global {
 }
 
 declare namespace LocalJSX {
-  interface CardBody {
-    'cardSubtitle'?: string;
-    'cardTitle'?: string;
-  }
-  interface CardFooter {}
   interface DropdownItem {
     'closeOnClick'?: boolean;
     'onCloseDropdown'?: (event: CustomEvent<any>) => void;
