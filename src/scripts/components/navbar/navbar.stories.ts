@@ -33,11 +33,11 @@ export const navbarProperties = () => {
                         position="right" 
                         display="link" 
                         >
-                        <dropdown-item><span>Non-clickable drop-down item</span></dropdown-item>
-                        <dropdown-item><a href="#">Test 2</a></dropdown-item>
-                        <dropdown-item><a href="#">Test 3</a></dropdown-item>
-                        <dropdown-item><a href="#">Test 4</a></dropdown-item>
-                        <dropdown-item><a href="#">Test 5</a></dropdown-item>
+                        <ks-dropdown-item><span>Non-clickable drop-down item</span></dropdown-item>
+                        <ks-dropdown-item><a href="#">Test 2</a></dropdown-item>
+                        <ks-dropdown-item><a href="#">Test 3</a></dropdown-item>
+                        <ks-dropdown-item><a href="#">Test 4</a></dropdown-item>
+                        <ks-dropdown-item><a href="#">Test 5</a></dropdown-item>
                     </ks-dropdown>
                 </ks-navbar-item>
             </ks-navbar-group>
@@ -64,11 +64,11 @@ export const navbarGroupProperties = () => {
                         position="right" 
                         display="link" 
                         >
-                        <dropdown-item><a href="#">First Option - Test 1</a></dropdown-item>
-                        <dropdown-item><a href="#">Test 2</a></dropdown-item>
-                        <dropdown-item><a href="#">Test 3</a></dropdown-item>
-                        <dropdown-item><a href="#">Test 4</a></dropdown-item>
-                        <dropdown-item><a href="#">Test 5</a></dropdown-item>
+                        <ks-dropdown-item><a href="#">First Option - Test 1</a></dropdown-item>
+                        <ks-dropdown-item><a href="#">Test 2</a></dropdown-item>
+                        <ks-dropdown-item><a href="#">Test 3</a></dropdown-item>
+                        <ks-dropdown-item><a href="#">Test 4</a></dropdown-item>
+                        <ks-dropdown-item><a href="#">Test 5</a></dropdown-item>
                     </ks-dropdown>
                 </ks-navbar-item>
             </ks-navbar-group>
@@ -104,11 +104,11 @@ export const navbarWithMultipleRows = () => {
                         position="right" 
                         display="link" 
                         >
-                        <dropdown-item><a href="#">First Option - Test 1</a></dropdown-item>
-                        <dropdown-item><a href="#">Test 2</a></dropdown-item>
-                        <dropdown-item><a href="#">Test 3</a></dropdown-item>
-                        <dropdown-item><a href="#">Test 4</a></dropdown-item>
-                        <dropdown-item><a href="#">Test 5</a></dropdown-item>
+                        <ks-dropdown-item><a href="#">First Option - Test 1</a></dropdown-item>
+                        <ks-dropdown-item><a href="#">Test 2</a></dropdown-item>
+                        <ks-dropdown-item><a href="#">Test 3</a></dropdown-item>
+                        <ks-dropdown-item><a href="#">Test 4</a></dropdown-item>
+                        <ks-dropdown-item><a href="#">Test 5</a></dropdown-item>
                     </ks-dropdown>
                 </ks-navbar-item>
             </ks-navbar-group>
@@ -134,11 +134,11 @@ export const navbarWithMultipleGroups = () => {
                         position="left" 
                         display="link" 
                         >
-                        <dropdown-item><a href="#">First Option - Test 1</a></dropdown-item>
-                        <dropdown-item><a href="#">Test 2</a></dropdown-item>
-                        <dropdown-item><a href="#">Test 3</a></dropdown-item>
-                        <dropdown-item><a href="#">Test 4</a></dropdown-item>
-                        <dropdown-item><a href="#">Test 5</a></dropdown-item>
+                        <ks-dropdown-item><a href="#">First Option - Test 1</a></dropdown-item>
+                        <ks-dropdown-item><a href="#">Test 2</a></dropdown-item>
+                        <ks-dropdown-item><a href="#">Test 3</a></dropdown-item>
+                        <ks-dropdown-item><a href="#">Test 4</a></dropdown-item>
+                        <ks-dropdown-item><a href="#">Test 5</a></dropdown-item>
                     </ks-dropdown>
                 </ks-navbar-item>
             </ks-navbar-group>

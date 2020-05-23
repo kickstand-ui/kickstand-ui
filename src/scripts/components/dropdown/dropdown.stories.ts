@@ -27,11 +27,11 @@ export const playground = () => {
                 hide-indicator="${hideIndicator}"
                 mega-menu="${megaMenu}"
                 >
-                <dropdown-item><span>Non-clickable drop-down item</span></dropdown-item>
-                <dropdown-item><a href="#">Test 2</a></dropdown-item>
-                <dropdown-item><a href="#">Test 3</a></dropdown-item>
-                <dropdown-item><a href="#">Test 4</a></dropdown-item>
-                <dropdown-item><a href="#">Test 5</a></dropdown-item>
+                <ks-dropdown-item><span>Non-clickable drop-down item</span></dropdown-item>
+                <ks-dropdown-item><a href="#">Test 2</a></dropdown-item>
+                <ks-dropdown-item><a href="#">Test 3</a></dropdown-item>
+                <ks-dropdown-item><a href="#">Test 4</a></dropdown-item>
+                <ks-dropdown-item><a href="#">Test 5</a></dropdown-item>
             </ks-dropdown>
         </div>
         `);
