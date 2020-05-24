@@ -1,7 +1,7 @@
 module.exports = {
     title: "Kickstand UI",
     description:
-        "A customizable design systems and component library built with native web components",
+        "The customizable design systems and component library built with native web components",
     head: [
         ["link", { rel: "icon", href: "/images/kickstand_icon.png" }],
         ["link", { rel: "stylesheet", href: "https://unpkg.com/kickstand-ui/dist/kickstand-ui/kickstand-ui.css" }],
@@ -29,6 +29,7 @@ module.exports = {
                 title: "Getting Started",
                 collapsable: true,
                 children: [
+                    "./getting-started/introduction.html",
                     "./getting-started/installation.html",
                     {
                         title: "Framework Integrations",
