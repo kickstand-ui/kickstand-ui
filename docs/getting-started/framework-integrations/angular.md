@@ -146,7 +146,7 @@ export class HomeComponent {
 
 Angular has a pretty good story for integration with web components but there are a few issues with the developer experience. If you want to know what the story is without the bindings go here: [https://stenciljs.com/docs/angular](https://stenciljs.com/docs/angular).
 
-With bindings the web components get wrapped in an Angular component and then immediately become available as Angular Components. Some of the advantages of doing this are that you get types for your components and you also get the ability to use `ngModel` on inputs. You can then consume the Kickstand UI component library as an actual Angular Library and make it feels as though you are interacting with Angular components.
+With bindings the web components get wrapped in an Angular component and then immediately become available as Angular Components. Some of the advantages of doing this are that you get types for your components and you also get the ability to use `ngModel` on inputs. You can then consume the Kickstand UI component library as an actual Angular Library and make it feel as though you are interacting with Angular components.
 
 ### Install
 
