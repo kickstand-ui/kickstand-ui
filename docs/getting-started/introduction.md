@@ -12,11 +12,11 @@
     </a>
 </div>
 
-Kickstand UI is built using StencilJS and Clarion to creat a design system that is very easy to implement in any project because is built completely on standards based Native Web Components and a style framework designed for scale and reusibility.
+Kickstand UI is built using StencilJS and Clarion to create a design system that is very easy to implement in any project because is built completely on standards based Native Web Components and a style framework designed for scale and reusability.
 
 ## Stencil
 
-[Stencil](https://stenciljs.com/) is a compiler that generates Web Components (more specifically, Custom Elements) and is used to build Kuckstand UI's high performant component library. Stencil combines the best concepts of the most popular frameworks into a simple build-time tool.
+[Stencil](https://stenciljs.com/) is a compiler that generates Web Components (more specifically, Custom Elements) and is used to build Kickstand UI's high performance component library. Stencil combines the best concepts of the most popular frameworks into a simple build-time tool.
 
 Kickstand UI takes advantage of Stencil's compiler to provide a number of valuable features such as:
 
@@ -24,22 +24,21 @@ Kickstand UI takes advantage of Stencil's compiler to provide a number of valuab
 - Reactive data-binding
 - Strongly Types Components (if you are using TypeScript)
 - Standards-based Native Web Components
-- Polyfills for lagacy browser support
-
+- Polyfills for legacy browser support
 
 ## Clarion
 
-[Clarion](https://projectclarion.com/) is a style framework for composing design systems and promotes standards-based development built with [SASS](https://sass-lang.com/) and provides a toolbox for design token and style reusibility. It also provides the capability to customize the design system to your meet your brand guidelines.
+[Clarion](https://projectclarion.com/) is a style framework for composing design systems and promotes standards-based development built with [SASS](https://sass-lang.com/) and provides a toolbox for design token and style reusability. It also provides the capability to customize the design system to your meet your brand guidelines.
 
 Some of the features Clarion provides are:
 
 - CLI for managing styles
-- Clear style architecture to make scaling and maintaing the project easier
-- Customizbale design tokens to meet brand needs
-- Reusible `mixins` and `functions` to reduce development time
+- Clear style architecture to make scaling and maintaining the project easier
+- Customizable design tokens to meet brand needs
+- Reusable `mixins` and `functions` to reduce development time
 
 ## What does that mean for you?
 
-What this all comes down to is that by leveraging these technologies, Kickstand UI can be easily implemented in any of your projects regarless of the technologies that are already being used. 
+What this all comes down to is that by leveraging these technologies, Kickstand UI can be easily implemented in any of your projects regardless of the technologies that are already being used.
 
 It also means that you can have a design system that is designed to be customized to match your brand with a few simple value changes rather than extensive overriding of the default CSS.
