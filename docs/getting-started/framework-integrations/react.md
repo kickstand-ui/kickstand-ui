@@ -5,7 +5,7 @@
 If your app isn't already configured with SASS, you will first need to install `node-sass`:
 
 ```bash
-npm install node-sass --save
+npm install -D node-sass
 # or
 yarn add node-sass
 ```
@@ -15,7 +15,7 @@ Rename `src/App.css` to `src/App.scss` and update `src/App.js` to import `src/Ap
 Now import Kickstand UI's styles into the `src/App.scss` file.
 
 ```css
-@import 'kickstand-ui/src/scss/styles';
+@import '~kickstand-ui/src/scss/styles';
 ```
 
 ## Adding Components

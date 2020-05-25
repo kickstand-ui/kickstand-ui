@@ -12,16 +12,16 @@ npm install -D sass-loader sass
 
 ### Import Styles
 
-If you don't already have a main `app.scss` or `styles.scss` file, it is highly recommend that you create one and import it into the `src/main.js` file (it is a good idea to create a separate folder in `src` and add the global style there - `src/scss/styles.scss`):
+If you don't already have a main `app.scss` or `styles.scss` file, it is highly recommend that you create one and import it into the `src/main.js` file (it's a good idea to create a separate folder in `src` and add the global style there - `src/scss/styles.scss`):
 
 ```js
 import 'scss/styles.scss';
 ```
 
-Then import the Kickstand UI files to the global styles file:
+Then import the Kickstand UI files into the global styles file:
 
 ```css
-@import 'kickstand-ui/src/scss/styles';
+@import '~kickstand-ui/src/scss/styles';
 ```
 
 ## Adding Components
