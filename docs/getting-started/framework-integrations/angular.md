@@ -37,7 +37,7 @@ In your main SASS file, add a reference to Kickstand UI in order to take advanta
 @import 'kickstand-ui/src/scss/styles';
 ```
 
-Alternately, you can add a reference to the SASS in the `angular.json` config file _before_ your global styles (again, so that the default styles can easily be overridden):
+_Alternately_, you can add a reference to the SASS in the `angular.json` config file _before_ your global styles (again, so that the default styles can easily be overridden):
 
 ```json
  "styles": [
