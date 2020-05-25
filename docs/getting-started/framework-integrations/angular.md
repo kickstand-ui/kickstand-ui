@@ -1,5 +1,47 @@
 # Angular
 
+## Adding the Styles
+
+After installing Kickstand UI, adding the styles is fairly straight forward. In your `angular.json` config file add a reference to the styles _before_ your global styles (that way your custom styles will easily override the default styles):
+
+```json
+ "styles": [
+   "../node_modules/kickstand-ui/dist/kickstand-ui/kickstand-ui.css"
+    "styles.css",
+  ]
+```
+
+### SASS
+
+If you are using `SASS` and customizing the default implementation, make sure project is configured properly for it. The Angular CLI provide some tooling to properly configure the project.
+
+#### Angular 6+
+
+```bash
+ng config schematics.@schematics/angular:component.styleext scss
+```
+
+#### Angular < 6
+
+```bash
+# install the node-sass compiler
+npm install node-sass --save-dev
+
+# use Angular CLI to configure the project
+ng set defaults.styleExt scss
+```
+
+Add a reference to the SASS in the `angular.json` config file _before_ your global styles (again, so your custom styles will easily override the default styles):
+
+```json
+ "styles": [
+   "../node_modules/kickstand-ui/src/scss/styles.scss"
+    "styles.scss",
+  ]
+```
+
+## Adding Components
+
 ::: tip Note
 This is an adaptation from the [Stencil documentation](https://stenciljs.com/docs/angular).
 :::
