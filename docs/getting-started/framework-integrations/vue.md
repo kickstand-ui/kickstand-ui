@@ -12,7 +12,7 @@ npm install -D sass-loader sass
 
 ### Import Styles
 
-If you don't already have a main `app.scss` or `styles.scss` file, it is highly recommend that you create one and import it into the `src/main.js` file (create a separate folder in `src` and add the global style there - `src/scss/styles.scss`):
+If you don't already have a main `app.scss` or `styles.scss` file, it is highly recommend that you create one and import it into the `src/main.js` file (it is a good idea to create a separate folder in `src` and add the global style there - `src/scss/styles.scss`):
 
 ```js
 import 'scss/styles.scss';
