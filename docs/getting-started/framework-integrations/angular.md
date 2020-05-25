@@ -13,7 +13,7 @@ After installing Kickstand UI, adding the styles is fairly straight forward. In 
 
 ### SASS
 
-If you are using `SASS` and customizing the default implementation, make sure project is configured properly for it. The Angular CLI provide some tooling to properly configure the project.
+If you are using `SASS` and customizing the default implementation, make sure your project is configured properly for it. The Angular CLI provides some tooling to help with this.
 
 #### Angular 6+
 
@@ -31,7 +31,13 @@ npm install node-sass --save-dev
 ng set defaults.styleExt scss
 ```
 
-Add a reference to the SASS in the `angular.json` config file _before_ your global styles (again, so your custom styles will easily override the default styles):
+In your main SASS file, add a reference to Kickstand UI in order to take advantage of tooling that is provided. Make sure it is referenced _before_ your custom styles:
+
+```css
+@import 'kickstand-ui/src/scss/styles';
+```
+
+Alternately, you can add a reference to the SASS in the `angular.json` config file _before_ your global styles (again, so that the default styles can easily be overridden):
 
 ```json
  "styles": [
@@ -138,7 +144,7 @@ export class HomeComponent {
 
 ## Bindings
 
-Angular has a pretty good story for integration with web components but there are a few issues with the developer experience. If you want to know what the story is without the bindings go here: https://stenciljs.com/docs/angular.
+Angular has a pretty good story for integration with web components but there are a few issues with the developer experience. If you want to know what the story is without the bindings go here: [https://stenciljs.com/docs/angular](https://stenciljs.com/docs/angular).
 
 With bindings the web components get wrapped in an Angular component and then immediately become available as Angular Components. Some of the advantages of doing this are that you get types for your components and you also get the ability to use `ngModel` on inputs. You can then consume the Kickstand UI component library as an actual Angular Library and make it feels as though you are interacting with Angular components.
 
