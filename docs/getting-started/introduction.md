@@ -29,7 +29,7 @@ Kickstand UI takes advantage of Stencil's compiler to provide a number of valuab
 
 ## Clarion
 
-[Clarion](https://projectclarion.com/) is a style framework for composing design systems and promotes standards-based development and provides a toolbox for design token and style reusibility. It also provides the capability to customize the design system to your meet your brand guidelines.
+[Clarion](https://projectclarion.com/) is a style framework for composing design systems and promotes standards-based development built with [SASS](https://sass-lang.com/) and provides a toolbox for design token and style reusibility. It also provides the capability to customize the design system to your meet your brand guidelines.
 
 Some of the features Clarion provides are:
 
@@ -38,7 +38,7 @@ Some of the features Clarion provides are:
 - Customizbale design tokens to meet brand needs
 - Reusible `mixins` and `functions` to reduce development time
 
-## What does that mean to you?
+## What does that mean for you?
 
 What this all comes down to is that by leveraging these technologies, Kickstand UI can be easily implemented in any of your projects regarless of the technologies that are already being used. 
 
