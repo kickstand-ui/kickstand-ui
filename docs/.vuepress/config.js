@@ -5,8 +5,7 @@ module.exports = {
     head: [
         ["link", { rel: "icon", href: "/images/kickstand_icon.png" }],
         ["link", { rel: "stylesheet", href: "https://unpkg.com/kickstand-ui/dist/kickstand-ui/kickstand-ui.css" }],
-        ["script", { type: "module", src: "https://unpkg.com/kickstand-ui/dist/kickstand-ui/kickstand-ui.js" }],
-        ["script", { nomodule: true, href: "https://unpkg.com/kickstand-ui/dist/kickstand-ui/kickstand-ui.js" }],
+        ["script", { src: "https://unpkg.com/kickstand-ui/dist/kickstand-ui.js" }],
     ],
     themeConfig: {
         logo: "/images/kickstand_logo.png",
