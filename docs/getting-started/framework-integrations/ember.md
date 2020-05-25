@@ -1,5 +1,34 @@
 # Ember
 
+## Adding Styles
+
+Adding the Kickstand UI styles to your Ember app is fairly straight forward thanks to the `ember-cli-sass` package. If you haven't already configured your project for SASS run the following command to install the required packages:
+
+```bash
+ember install ember-cli-sass
+```
+
+Change the file name `app/styles/app.css` to `app/styles/app.scss` and import the Kickstand UI styles into your `app.scss` file:
+
+```css
+@import 'kickstand-ui/src/scss/styles';
+```
+
+_Alternately_, you can specify the path to the source in the include paths in your `ember-cli-build.js`:
+
+```js
+var app = new EmberApp({
+    sassOptions: {
+        extension: 'scss',
+        includePaths: [
+            'node_modules/kickstand-ui/src/scss'
+        ]
+    }
+});
+```
+
+## Adding Components
+
 ::: tip Note
 This is an adaptation from the [Stencil documentation](https://stenciljs.com/docs/ember).
 :::
