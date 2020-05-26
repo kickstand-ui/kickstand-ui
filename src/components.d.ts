@@ -97,6 +97,9 @@ export namespace Components {
     'position': 'left' | 'right';
     'text': string;
   }
+  interface KsDropdownItem {
+    'closeOnClick': boolean;
+  }
   interface KsFormField {
     'disabled': boolean;
     'errorMessage': string;
@@ -227,14 +230,11 @@ export namespace Components {
 }
 
 declare global {
-
-
   interface HTMLDropdownItemElement extends Components.DropdownItem, HTMLStencilElement {}
   var HTMLDropdownItemElement: {
     prototype: HTMLDropdownItemElement;
     new (): HTMLDropdownItemElement;
   };
-
   interface HTMLKsAccordionElement extends Components.KsAccordion, HTMLStencilElement {}
   var HTMLKsAccordionElement: {
     prototype: HTMLKsAccordionElement;
@@ -317,6 +317,12 @@ declare global {
   var HTMLKsDropdownElement: {
     prototype: HTMLKsDropdownElement;
     new (): HTMLKsDropdownElement;
+  };
+
+  interface HTMLKsDropdownItemElement extends Components.KsDropdownItem, HTMLStencilElement {}
+  var HTMLKsDropdownItemElement: {
+    prototype: HTMLKsDropdownItemElement;
+    new (): HTMLKsDropdownItemElement;
   };
 
   interface HTMLKsFormFieldElement extends Components.KsFormField, HTMLStencilElement {}
@@ -445,7 +451,6 @@ declare global {
     new (): HTMLKsTooltipElement;
   };
   interface HTMLElementTagNameMap {
-    'dropdown-item': HTMLDropdownItemElement;
     'ks-accordion': HTMLKsAccordionElement;
     'ks-accordion-slide': HTMLKsAccordionSlideElement;
     'ks-alert': HTMLKsAlertElement;
@@ -460,6 +465,7 @@ declare global {
     'ks-column': HTMLKsColumnElement;
     'ks-crumb': HTMLKsCrumbElement;
     'ks-dropdown': HTMLKsDropdownElement;
+    'ks-dropdown-item': HTMLKsDropdownItemElement;
     'ks-form-field': HTMLKsFormFieldElement;
     'ks-icon': HTMLKsIconElement;
     'ks-img': HTMLKsImgElement;
@@ -571,6 +577,10 @@ declare namespace LocalJSX {
     'megaMenu'?: boolean;
     'position'?: 'left' | 'right';
     'text'?: string;
+  }
+  interface KsDropdownItem {
+    'closeOnClick'?: boolean;
+    'onCloseDropdown'?: (event: CustomEvent<any>) => void;
   }
   interface KsFormField {
     'disabled'?: boolean;
@@ -695,7 +705,6 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
-    'dropdown-item': DropdownItem;
     'ks-accordion': KsAccordion;
     'ks-accordion-slide': KsAccordionSlide;
     'ks-alert': KsAlert;
@@ -710,6 +719,7 @@ declare namespace LocalJSX {
     'ks-column': KsColumn;
     'ks-crumb': KsCrumb;
     'ks-dropdown': KsDropdown;
+    'ks-dropdown-item': KsDropdownItem;
     'ks-form-field': KsFormField;
     'ks-icon': KsIcon;
     'ks-img': KsImg;
@@ -740,7 +750,6 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'dropdown-item': LocalJSX.DropdownItem & JSXBase.HTMLAttributes<HTMLDropdownItemElement>;
       'ks-accordion': LocalJSX.KsAccordion & JSXBase.HTMLAttributes<HTMLKsAccordionElement>;
       'ks-accordion-slide': LocalJSX.KsAccordionSlide & JSXBase.HTMLAttributes<HTMLKsAccordionSlideElement>;
       'ks-alert': LocalJSX.KsAlert & JSXBase.HTMLAttributes<HTMLKsAlertElement>;
@@ -755,6 +764,7 @@ declare module "@stencil/core" {
       'ks-column': LocalJSX.KsColumn & JSXBase.HTMLAttributes<HTMLKsColumnElement>;
       'ks-crumb': LocalJSX.KsCrumb & JSXBase.HTMLAttributes<HTMLKsCrumbElement>;
       'ks-dropdown': LocalJSX.KsDropdown & JSXBase.HTMLAttributes<HTMLKsDropdownElement>;
+      'ks-dropdown-item': LocalJSX.KsDropdownItem & JSXBase.HTMLAttributes<HTMLKsDropdownItemElement>;
       'ks-form-field': LocalJSX.KsFormField & JSXBase.HTMLAttributes<HTMLKsFormFieldElement>;
       'ks-icon': LocalJSX.KsIcon & JSXBase.HTMLAttributes<HTMLKsIconElement>;
       'ks-img': LocalJSX.KsImg & JSXBase.HTMLAttributes<HTMLKsImgElement>;
