@@ -6,7 +6,7 @@ After installing Kickstand UI, adding the styles is fairly straight forward. In 
 
 ```json
  "styles": [
-   "../node_modules/kickstand-ui/dist/kickstand-ui/kickstand-ui.css"
+    "../node_modules/kickstand-ui/dist/kickstand-ui/kickstand-ui.css"
     "styles.css",
   ]
 ```
@@ -41,7 +41,7 @@ _Alternately_, you can add a reference to the SASS in the `angular.json` config 
 
 ```json
  "styles": [
-   "../node_modules/kickstand-ui/src/scss/styles.scss"
+    "../node_modules/kickstand-ui/src/scss/styles.scss"
     "styles.scss",
   ]
 ```
