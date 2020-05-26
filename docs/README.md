@@ -14,7 +14,7 @@
         <ks-column>
             <ks-card>
                 <ks-card-body card-title="Portable">
-                    Kickstand UI is built with native web components which makes is framework agnostic! You can implement it in any of your projects regardless of the framework you are using.
+                    Kickstand UI is built with native web components which makes it framework agnostic! You can implement it in any of your projects regardless of the framework you are using.
                 </ks-card-body>
                 <ks-card-footer>
                     <ks-button display="hollow" href="/getting-started/installation.html">Add To Your Project</ks-button>
@@ -24,7 +24,7 @@
         <ks-column>
             <ks-card>
                 <ks-card-body card-title="Customizable">
-                    Most applications do not want to use design system right out out of the box. Kickstand UI is designed to be customizable to meet your brand guidelines.
+                    Most applications do not want to use a design system right out of the box. Kickstand UI is designed to be customizable to meet your brand guidelines.
                 </ks-card-body>
                 <ks-card-footer>
                     <ks-button display="hollow" href="/theming/design-tokens.html">Customize Your Project</ks-button>
@@ -34,7 +34,7 @@
         <ks-column>
             <ks-card>
                 <ks-card-body card-title="Performant">
-                    Kickstand UI is very light-weight and supports lazy-loading for browsers that support ES6 modules.
+                    Kickstand UI is very light-weight and allows for component lazy-loading in browsers that support ES6 modules.
                 </ks-card-body>
                 <ks-card-footer>
                     <ks-button display="hollow" href="/getting-started/installation.html">Learn More</ks-button>

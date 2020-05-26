@@ -2,6 +2,10 @@
 
 ## Use Your Design System Anywhere!
 
+Kickstand UI can be easily implemented in any of your projects regardless of the technologies that are already in place.
+
+It also means that you can have a Design System that is designed to be customized to match your brand with a few simple value changes rather than extensive overriding of the default CSS.
+
 <div class="display-flex space-between align-center my-lg">
     <a href="https://stenciljs.com/">
         <img src="/images/stencil_logo.png" alt="stenciljs logo" style="width: 100%; max-width: 250px;" />
@@ -28,7 +32,7 @@ Kickstand UI takes advantage of Stencil's compiler to provide a number of valuab
 
 ## Clarion
 
-[Clarion](https://projectclarion.com/) is a style framework for composing design systems and promotes standards-based development built with [SASS](https://sass-lang.com/) and provides a toolbox for design token and style reusability. It also provides the capability to customize the design system to your meet your brand guidelines.
+[Clarion](https://projectclarion.com/) is a style framework for composing design systems and promotes standards-based development. Leveraging the power of [SASS](https://sass-lang.com/), it provides a toolbox for design token and style reusability. It also provides the capability to customize the design system to your meet your brand guidelines by updating a few values.
 
 Some of the features Clarion provides are:
 
@@ -36,9 +40,3 @@ Some of the features Clarion provides are:
 - Clear style architecture to make scaling and maintaining the project easier
 - Customizable design tokens
 - Reusable `mixins` and `functions` to reduce development time
-
-## What does that mean for you?
-
-What this all comes down to is that by leveraging these technologies, Kickstand UI can be easily implemented in any of your projects regardless of the technologies that are already being used.
-
-It also means that you can have a design system that is designed to be customized to match your brand with a few simple value changes rather than extensive overriding of the default CSS.
