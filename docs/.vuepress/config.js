@@ -1,12 +1,11 @@
 module.exports = {
     title: "Kickstand UI",
     description:
-        "A customizable design systems and component library built with native web components",
+        "The customizable design systems and component library built with native web components",
     head: [
         ["link", { rel: "icon", href: "/images/kickstand_icon.png" }],
         ["link", { rel: "stylesheet", href: "https://unpkg.com/kickstand-ui/dist/kickstand-ui/kickstand-ui.css" }],
-        ["script", { type: "module", src: "https://unpkg.com/kickstand-ui/dist/kickstand-ui/kickstand-ui.js" }],
-        ["script", { nomodule: true, href: "https://unpkg.com/kickstand-ui/dist/kickstand-ui/kickstand-ui.js" }],
+        ["script", { src: "https://unpkg.com/kickstand-ui/dist/kickstand-ui.js" }],
     ],
     themeConfig: {
         logo: "/images/kickstand_logo.png",
@@ -29,14 +28,16 @@ module.exports = {
                 title: "Getting Started",
                 collapsable: true,
                 children: [
+                    "./getting-started/introduction.html",
                     "./getting-started/installation.html",
                     {
                         title: "Framework Integrations",
                         children: [
                             "/getting-started/framework-integrations/overview.html",
+                            "/getting-started/framework-integrations/javascript.html",
+                            "/getting-started/framework-integrations/typescript.html",
                             "/getting-started/framework-integrations/angular.html",
                             "/getting-started/framework-integrations/ember.html",
-                            "/getting-started/framework-integrations/javascript.html",
                             "/getting-started/framework-integrations/react.html",
                             "/getting-started/framework-integrations/vue.html"
                         ]

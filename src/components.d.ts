@@ -10,6 +10,9 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface DropdownItem {
+    'closeOnClick': boolean;
+  }
   interface KsAccordion {
     'size': string;
   }
@@ -227,8 +230,11 @@ export namespace Components {
 }
 
 declare global {
-
-
+  interface HTMLDropdownItemElement extends Components.DropdownItem, HTMLStencilElement {}
+  var HTMLDropdownItemElement: {
+    prototype: HTMLDropdownItemElement;
+    new (): HTMLDropdownItemElement;
+  };
   interface HTMLKsAccordionElement extends Components.KsAccordion, HTMLStencilElement {}
   var HTMLKsAccordionElement: {
     prototype: HTMLKsAccordionElement;
@@ -485,6 +491,10 @@ declare global {
 }
 
 declare namespace LocalJSX {
+  interface DropdownItem {
+    'closeOnClick'?: boolean;
+    'onCloseDropdown'?: (event: CustomEvent<any>) => void;
+  }
   interface KsAccordion {
     'size'?: string;
   }

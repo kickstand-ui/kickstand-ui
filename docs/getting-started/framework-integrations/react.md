@@ -1,1 +1,125 @@
 # React
+
+## Adding Styles
+
+If your app isn't already configured with SASS, you will first need to install `node-sass`:
+
+```bash
+npm install -D node-sass
+# or
+yarn add node-sass
+```
+
+Rename `src/App.css` to `src/App.scss` and update `src/App.js` to import `src/App.scss`. 
+
+Now import Kickstand UI's styles into the `src/App.scss` file.
+
+```css
+@import '~kickstand-ui/src/scss/styles';
+```
+
+## Adding Components
+
+::: tip Note
+This is an adaptation from the [Stencil documentation](https://stenciljs.com/docs/react).
+:::
+
+With an application built using the `create-react-app` script the easiest way to include the component library is to call `defineCustomElements()` from the `index.js` file.
+Note that in this scenario `applyPolyfills` is needed if you are targeting Edge or IE11.
+
+```tsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+import { applyPolyfills, defineCustomElements } from 'kickstand-ui/loader';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
+
+applyPolyfills().then(() => {
+  defineCustomElements();
+});
+```
+
+Following the steps above will enable Kickstand UI to be used in React, however there are some additional complexities that must also be considered. [Custom Elements Everywhere](https://custom-elements-everywhere.com/) contains a synopsis of the current issues. Being aware of these challenges, Kickstand UI has taken action to make sure the components are fully compatible with React. If there is an issue, please [reach out](/contact.html).
+
+### Properties and Events
+
+The largest deficiencies that React currently has when it comes to working with standard HTML Custom Elements is that properties that contain non-scalar data (that is, data that is not a string or number) are not passed properly and custom events are not handled properly. The solution to both of these problems is to wrap the Custom Element in a React component, obtain a `ref` to the Custom Element, and use the `ref` in order to set the non-scalar properties and add event listeners via `addEventListener`. Here is an example showing how this works for the property passing:
+
+```tsx
+import React, { useRef, useEffect } from 'react';
+import { Forecast } from '../models';
+import { iconPaths } from '../util';
+
+const DailyForecast: React.FC<{ forecast: Forecast; scale: string }> = ({ forecast, scale }) => {
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    (elementRef.current as any)!.iconPaths = iconPaths;
+    (elementRef.current as any)!.forecasts = forecast;
+  }, [forecast]);
+
+  return <kws-daily-forecast scale={scale} ref={elementRef}></kws-daily-forecast>;
+};
+
+export default DailyForecast;
+```
+
+In this example, there are three properties: `forecast` is an array of objects, `iconPaths` is an object, and `scale` is a string. Since `scale` is a string it can be handled normally. However, the other two properties are non-scalar and must be set via the `ref` to the Custom Element. Wrapping the Custom Element as such prevents you from having to obtain a `ref` with every instance of `kws-daily-forecast` that you may need since you will instead be using the `DailyForecast` React component as such:
+
+```tsx
+<DailyForecast scale={scale} forecast={f}></DailyForecast>
+```
+
+### Bindings
+
+Manually wrapping all Custom Elements in a React Component is a good practice, but it gets tedious quickly.
+
+With bindings the web components get wrapped in a React component and then immediately become available as React Components. Some of the advantages of doing this are that you get types for your components. One of the main issues with React is that react does not propertly pass properties to web components. Out of the box React can only pass strings and numbers to components and it cannot listen to custom events. With the bindings the components appear as though they are React components and all properties get passed correctly including functions, objects, and arrays. The bindings also account for custom events by creating a prop called `on(EventName)`. These allow React developers to interact with the web components as though they are React components.
+
+#### Install
+
+```bash
+npm install @stencil/react-output-target --save-dev
+```
+
+#### Stencil Config setup
+
+```tsx
+import { Config } from '@stencil/core';
+import { reactOutputTarget } from '@stencil/react-output-target';
+
+export const config: Config = {
+  namespace: 'demo',
+  outputTargets: [
+    reactOutputTarget({
+      componentCorePackage: 'kickstand-ui',
+      proxiesFile: '../component-library-react/src/components.ts',
+    }),
+    {
+      type: 'dist',
+    },
+  ],
+};
+```
+
+##### componentCorePackage
+
+This is the package that gets published that contains just the Kickstand UI web components. This package is then used by the React package as a dependency
+
+##### proxiesFile
+
+This is the output file that gets generated by the outputTarget. This file should be referencing a different package location. In the example case we are choosing a sibling directory’s src directory. We will then create a React package that exports all components defined in this file.
+
+#### Setup of React Component Library
+
+There is an example component library package available on Github so that you can get started. This repo will likely live as a sibling to your Stencil component library. https://github.com/ionic-team/stencil-ds-react-template
+
+#### Usage
+
+```tsx
+import { DemoComponent } from 'component-library-react';
+```

@@ -1,60 +1,42 @@
+<p align="center">
+    <a href="https://kickstand-ui.com/">
+    <img src="https://kickstand-ui.com/images/kickstand_logo.png" alt="kickstand logo" style="max-width:200px; width:100%;" />
+    </a>
+</p>
+
 # Kickstand UI
 
-Kickstand UI is a design system for building web applications. It is built using native web components to ensure its cross-platform compatibility.
+## The Customizable Design System
 
-## Running the Project
+[Check out the Docs &#8594;](https://kickstand-ui.com/)
 
-Install dependencies:
+## Installation
 
-```bash
-npm install
-```
-
-Run Storybook:
+### Package Manager
 
 ```bash
-npm run storybook:watch
+npm install --save kickstand-ui
+
+# or
+
+yarn install kickstand-ui
 ```
 
-Build project for production:
+#### Framework Integrations
 
-```bash
-npm run build
+Once you have installed Kickstand UI check out the documentation on how to implement it into your favorite framework:
+
+- [Angular](/getting-started/framework-integrations/angular.html)
+- [Ember](/getting-started/framework-integrations/ember.html)
+- [JavaScript](/getting-started/framework-integrations/javascript.html)
+- [React](/getting-started/framework-integrations/react.html)
+- [Vue](/getting-started/framework-integrations/vue.html)
+
+### CDN
+
+If you would like to use the components without a JavaScript framework or without any customizations using the design system is as simple as adding a few references onto your HTML page.
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/kickstand-ui/dist/kickstand-ui.css" />
+<script src="https://unpkg.com/kickstand-ui/dist/kickstand-ui.js"></script>
 ```
-
-To run the unit tests for the components:
-
-```bash
-npm test
-```
-
-Run basic dev mode (should rarely be used):
-
-```bash
-npm dev
-```
-
-## Solution Architecture
-
-This design system is built using [Stencil](https://stenciljs.com/) (a compiler for building native web components) and [Clarion](https://projectclarion.com) (a CSS framework for building design systems).
-
-Components are built and tested using [Storybook](https://storybook.js.org/).
-
-
-<!-- ## Using this component
-
-### Script tag
-
-- [Publish to NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages)
-- Put a script tag similar to this `<script src='https://unpkg.com/my-component@0.0.1/dist/mycomponent.js'></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
-
-### Node Modules
-- Run `npm install my-component --save`
-- Put a script tag similar to this `<script src='node_modules/my-component/dist/mycomponent.js'></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
-
-### In a stencil-starter app
-- Run `npm install my-component --save`
-- Add an import to the npm packages `import my-component;`
-- Then you can use the element anywhere in your template, JSX, html etc -->
