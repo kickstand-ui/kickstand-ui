@@ -1,6 +1,6 @@
 # Angular
 
-## Adding the Styles
+## Adding Styles
 
 After installing Kickstand UI, adding the styles is fairly straight forward. In your `angular.json` config file add a reference to the styles _before_ your global styles (that way your custom styles will easily override the default styles):
 
