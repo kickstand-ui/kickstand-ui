@@ -12,17 +12,17 @@
     </a>
 </div>
 
-Kickstand UI is built using StencilJS and Clarion to create a design system that is very easy to implement in any project because is built completely on standards based Native Web Components and a style framework designed for scale and reusability.
+Kickstand UI is built using StencilJS and Clarion to create a design system that is very easy to implement in any project because it is built completely on standards based native Web Components and a style framework designed for scale and reusability.
 
 ## Stencil
 
-[Stencil](https://stenciljs.com/) is a compiler that generates Web Components (more specifically, Custom Elements) and is used to build Kickstand UI's high performance component library. Stencil combines the best concepts of the most popular frameworks into a simple build-time tool.
+[Stencil](https://stenciljs.com/) is a compiler that generates Web Components (more specifically, Custom Elements) and is used to build Kickstand UI's highly performant component library. Stencil combines the best concepts of the most popular frameworks into a simple build-time tool.
 
 Kickstand UI takes advantage of Stencil's compiler to provide a number of valuable features such as:
 
-- Async rendering (inspired by React Fiber)
+- Async rendering
 - Reactive data-binding
-- Strongly Types Components (if you are using TypeScript)
+- Strongly Typed Components (if you are using TypeScript)
 - Standards-based Native Web Components
 - Polyfills for legacy browser support
 
@@ -34,7 +34,7 @@ Some of the features Clarion provides are:
 
 - CLI for managing styles
 - Clear style architecture to make scaling and maintaining the project easier
-- Customizable design tokens to meet brand needs
+- Customizable design tokens
 - Reusable `mixins` and `functions` to reduce development time
 
 ## What does that mean for you?

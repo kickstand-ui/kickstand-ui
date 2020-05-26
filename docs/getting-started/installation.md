@@ -5,7 +5,7 @@
 ```bash
 npm install --save kickstand-ui
 
--- or --
+# or
 
 yarn install kickstand-ui
 ```
