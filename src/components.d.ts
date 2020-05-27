@@ -19,7 +19,7 @@ export namespace Components {
     'toggleSlide': () => Promise<void>;
   }
   interface KsAlert {
-    'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
+    'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'header': string;
     'note': boolean;
   }
@@ -493,7 +493,7 @@ declare namespace LocalJSX {
     'heading'?: string;
   }
   interface KsAlert {
-    'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
+    'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'header'?: string;
     'note'?: boolean;
   }

@@ -3,20 +3,63 @@
 Alerts are designed to provide the user with contextual feedback based on a their actions.
 
 <div class="my-lg">
-    <ks-alert header="The Facts of Life by Michael Scott">
-        “People will never be replaced by machines. In the end, life and business are about human connections. And computers are about trying to murder you in a lake. And to me the choice is easy.”
-        <br>
-        <br>
-        Michael Scott
+    <ks-alert color="primary" class="mb-md">
+        This is a <b>primary</b> alert.
+    </ks-alert>
+    <ks-alert color="secondary" class="mb-md">
+        This is a <b>secondary</b> alert.
+    </ks-alert>
+    <ks-alert color="success" class="mb-md">
+        This is a <b>success</b> alert.
+    </ks-alert>
+    <ks-alert color="info" class="mb-md">
+        This is a <b>info</b> alert.
+    </ks-alert>
+    <ks-alert color="warning" class="mb-md">
+        This is a <b>warning</b> alert.
+    </ks-alert>
+    <ks-alert color="danger" class="mb-md">
+        This is a <b>danger</b> alert.
+    </ks-alert>
+    <ks-alert color="light" class="mb-md">
+        This is a <b>light</b> alert.
+    </ks-alert>
+    <ks-alert color="dark">
+        This is a <b>dark</b> alert.
     </ks-alert>
 </div>
 
 ```html
-<ks-alert header="The Facts of Life by Michael Scott">
-    “People will never be replaced by machines. In the end, life and business are about human connections. And computers are about trying to murder you in a lake. And to me the choice is easy.”
-    <br>
-    <br>
-    Michael Scott
+<ks-alert color="primary">
+    This is a <b>primary</b> alert.
+</ks-alert>
+
+<ks-alert color="secondary">
+    This is a <b>secondary</b> alert.
+</ks-alert>
+
+<ks-alert color="success">
+    This is a <b>success</b> alert.
+</ks-alert>
+
+<ks-alert color="info">
+    This is a <b>info</b> alert.
+</ks-alert>
+
+<ks-alert color="warning">
+    This is a <b>warning</b> alert.
+</ks-alert>
+
+<ks-alert color="danger">
+    This is a <b>danger</b> alert.
+</ks-alert>
+
+<ks-alert color="light">
+    This is a <b>light</b> alert.
+</ks-alert>
+
+<ks-alert color="dark">
+    This is a <b>dark</b> alert.
 </ks-alert>
 ```
 
@@ -33,19 +76,78 @@ Alerts are designed to provide the user with contextual feedback based on a thei
 Notes are used for fixed messages that are always visible and used to call out important information the user should be aware of or warned about.
 
 <div class="my-lg">
-    <ks-alert color="danger" note>
-        "'R' is among the most menacing of sounds. That's why they call it 'murder' and not 'mukduk'."
-        <br>
-        <br>
-        Dwight Schrute
+    <ks-alert color="primary" note class="mb-md">
+        This is a <b>primary</b> alert.
+    </ks-alert>
+    <ks-alert color="secondary" note class="mb-md">
+        This is a <b>secondary</b> alert.
+    </ks-alert>
+    <ks-alert color="success" note class="mb-md">
+        This is a <b>success</b> alert.
+    </ks-alert>
+    <ks-alert color="info" note class="mb-md">
+        This is a <b>info</b> alert.
+    </ks-alert>
+    <ks-alert color="warning" note class="mb-md">
+        This is a <b>warning</b> alert.
+    </ks-alert>
+    <ks-alert color="danger" note class="mb-md">
+        This is a <b>danger</b> alert.
+    </ks-alert>
+    <ks-alert color="light" note class="mb-md">
+        This is a <b>light</b> alert.
+    </ks-alert>
+    <ks-alert color="dark" note>
+        This is a <b>dark</b> alert.
     </ks-alert>
 </div>
 
 ```html
+<ks-alert color="primary" note>
+    This is a <b>primary</b> note.
+</ks-alert>
+
+<ks-alert color="secondary" note>
+    This is a <b>secondary</b> note.
+</ks-alert>
+
+<ks-alert color="success" note>
+    This is a <b>success</b> note.
+</ks-alert>
+
+<ks-alert color="info" note>
+    This is a <b>info</b> note.
+</ks-alert>
+
+<ks-alert color="warning" note>
+    This is a <b>warning</b> note.
+</ks-alert>
+
 <ks-alert color="danger" note>
-    "'R' is among the most menacing of sounds. That's why they call it 'murder' and not 'mukduk'."
-    <br>
-    <br>
-    Dwight Schrute
+    This is a <b>danger</b> note.
+</ks-alert>
+
+<ks-alert color="light" note>
+    This is a <b>light</b> note.
+</ks-alert>
+
+<ks-alert color="dark" note>
+    This is a <b>dark</b> note.
 </ks-alert>
 ```
+
+## Accessibility
+
+Alerts have `role="alert"` on the container to signal to assistive technology that they require the user’s immediate attention.
+
+Depending on the color assigned to the warning,it will also change the politeness of the message to screen reader using the `aria-live` attribute:
+
+| Color | Politeness |
+| ----- | ---------- |
+| `danger` | `"rude"` |
+| `warning` | `"assertive"` |
+| all others | `"polite"` |
+
+### Accessibility for Notes
+
+Since notes are static containers for calling out important information, `role="alert"` and `aria-live` attributes are not set when the `note` property is `true`.

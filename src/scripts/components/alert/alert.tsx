@@ -6,11 +6,36 @@ import { Component, h, Prop, Host } from '@stencil/core';
 export class Alert {
     @Prop() header: string;
     @Prop() note: boolean;
-    @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
+    @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';
+
+    private getAriaLiveSetting() {
+        if(this.note)
+            return false;
+        
+        switch (this.color) {
+            case 'danger':
+                return 'rude';
+            case 'warning':
+                return 'assertive';
+            default:
+                return 'polite';
+        }
+    }
 
     render() {
+        const props = {
+            'role': !this.note && 'alert',
+            ['aria-live']: this.getAriaLiveSetting()
+        };
+
+        const classes = {
+            'alert': true,
+            [this.color]: true,
+            'note': this.note
+        };
+
         return (
-            <Host class={`alert ${this.color} ${this.note ? 'note' : ''}`}>
+            <Host {...props} class={classes}>
                 {this.header &&
                     <header class="alert-header">
                         <h3 class="alert-heading">{this.header}</h3>
