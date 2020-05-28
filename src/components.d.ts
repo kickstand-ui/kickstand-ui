@@ -24,7 +24,7 @@ export namespace Components {
     'note': boolean;
   }
   interface KsBadge {
-    'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
+    'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'hollow': boolean;
   }
   interface KsBreadcrumbs {}
@@ -498,7 +498,7 @@ declare namespace LocalJSX {
     'note'?: boolean;
   }
   interface KsBadge {
-    'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
+    'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'hollow'?: boolean;
   }
   interface KsBreadcrumbs {}

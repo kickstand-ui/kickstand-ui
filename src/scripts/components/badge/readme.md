@@ -1,4 +1,4 @@
-# ks-button
+# ks-badge
 
 
 
@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                                                                                      | Default     |
-| -------- | --------- | ----------- | --------------------------------------------------------------------------------------------------------- | ----------- |
-| `color`  | `color`   |             | `"danger" \| "dark" \| "info" \| "light" \| "link" \| "primary" \| "secondary" \| "success" \| "warning"` | `'primary'` |
-| `hollow` | `hollow`  |             | `boolean`                                                                                                 | `undefined` |
+| Property | Attribute | Description | Type                                                                                            | Default     |
+| -------- | --------- | ----------- | ----------------------------------------------------------------------------------------------- | ----------- |
+| `color`  | `color`   |             | `"danger" \| "dark" \| "info" \| "light" \| "primary" \| "secondary" \| "success" \| "warning"` | `'primary'` |
+| `hollow` | `hollow`  |             | `boolean`                                                                                       | `undefined` |
 
 
 ----------------------------------------------
