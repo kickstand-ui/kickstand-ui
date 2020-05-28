@@ -7,6 +7,7 @@ ks-button {
 
 .button {
     display: flex;
+    align-items: center;
     text-decoration: none;
     line-height: 1;
     white-space: nowrap;
@@ -130,27 +131,27 @@ ks-button {
         }
     }
 
-    &.xsmall {
+    &.xs {
         @include p(xs);
         @include font-size(xs);
     }
 
-    &.small {
+    &.sm {
         @include p(sm);
         @include font-size(sm);
     }
 
-    &.medium {
+    &.md {
         @include p(md);
         @include font-size(sm);
     }
 
-    &.large {
+    &.lg {
         @include p(lg);
         @include font-size(md);
     }
 
-    &.xlarge {
+    &.xl {
         @include p(xl);
         @include font-size(lg);
     }
