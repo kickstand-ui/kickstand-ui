@@ -1,10 +1,5 @@
 import { Component, h, ComponentInterface, Host, Element } from '@stencil/core';
 
-export interface IBreadcrumbs {
-    url: string;
-    text: string;
-}
-
 @Component({
     tag: 'ks-breadcrumbs'
 })
