@@ -42,7 +42,7 @@ export namespace Components {
     'icon': string;
     'iconDirection': 'left' | 'right';
     'loading': boolean;
-    'size': 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+    'size': 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     'tabIndex': number;
     'type': 'button' | 'submit' | 'reset';
   }
@@ -516,7 +516,7 @@ declare namespace LocalJSX {
     'icon'?: string;
     'iconDirection'?: 'left' | 'right';
     'loading'?: boolean;
-    'size'?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+    'size'?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     'tabIndex'?: number;
     'type'?: 'button' | 'submit' | 'reset';
   }
