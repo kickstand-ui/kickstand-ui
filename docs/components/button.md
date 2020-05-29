@@ -66,7 +66,7 @@ Buttons are used to perform actions in forms, modals, and more. Kickstand UI but
 
 ### Disabled
 
-<ks-button disabled>Disabled Button</ks-button>
+<ks-button disabled class="mt-xxl">Disabled Button</ks-button>
 
 ```html
 <ks-button disabled>Disabled Button</ks-button>
@@ -74,15 +74,16 @@ Buttons are used to perform actions in forms, modals, and more. Kickstand UI but
 
 ### Loading
 
-<ks-button loading>Loading Button</ks-button>
+<ks-button loading class="mt-xl">Loading Button</ks-button>
 
 ```html
 <ks-button loading>Loading Button</ks-button>
 ```
+**Note:** If a button is loading, it is also disabled.
 
 ## Icons
 
-<ks-button icon="info">Button With An Icon</ks-button>
+<ks-button icon="info" class="mt-xxl">Button With An Icon</ks-button>
 
 ```html
 <ks-button icon="info">Button With An Icon</ks-button>
@@ -90,7 +91,7 @@ Buttons are used to perform actions in forms, modals, and more. Kickstand UI but
 
 ### Direction
 
-<ks-button icon="info" icon-direction="right">Button With An Icon</ks-button>
+<ks-button icon="info" icon-direction="right" class="mt-xxl">Button With An Icon</ks-button>
 
 ```html
 <ks-button icon="info" icon-direction="right">Button With An Icon</ks-button>
@@ -98,11 +99,44 @@ Buttons are used to perform actions in forms, modals, and more. Kickstand UI but
 
 ### Hide Text
 
-<ks-button icon="info" hide-text>Button With An Icon</ks-button>
+<ks-button icon="info" hide-text class="mt-xxl">Button With An Icon</ks-button>
 
 ```html
 <ks-button icon="info" hide-text>Button With An Icon</ks-button>
 ```
+
+## HREF
+
+If the `href` property is populated, it will change the behavior of therefore change semantics of the markup. Buttons are for performing actions and anchors are for linking to content.
+
+<ks-button class="mt-xxl">I do something</ks-button>
+
+```html
+<ks-button>I do something</ks-button>
+
+<!-- the rendered HTML -->
+<ks-button class="pointer hydrated">
+    ...
+    <button aria-haspopup="false" type="button" class="button primary solid icon-left md">
+        <span class="button-text">I do something</span>
+    </button>
+</ks-button>
+```
+
+<ks-button href="#" class="mt-xxl">I go somewhere</ks-button>
+
+```html
+<ks-button href="#">I go somewhere</ks-button>
+
+<!-- the rendered HTML -->
+<ks-button href="#" class="pointer hydrated">
+    ...
+    <a class="button primary solid icon-left md" href="#">
+        <span class="button-text">I go somewhere</span>
+    </a>
+</ks-button>
+```
+
 
 ## Properties
 
