@@ -14,12 +14,12 @@ export class Card implements ComponentInterface {
     @Prop() lazy: boolean;
     @Prop() threshold: number;
     @Prop() imgDirection: string = 'top';
-    @Prop() url: string;
+    @Prop() href: string;
     @Prop() clickable: boolean;
 
 
     componentDidLoad() {
-        if (this.clickable && this.url)
+        if (this.clickable && this.href)
             this.$el.addEventListener('click', (e) => {
                 if (this.$link !== e.target)
                     this.$link.click();
@@ -30,13 +30,13 @@ export class Card implements ComponentInterface {
         let classes = {
             'card': true,
             [`img-${this.imgDirection}`]: true,
-            'pointer': this.clickable && this.url !== '' && this.url !== undefined
+            'pointer': this.clickable && this.href !== '' && this.href !== undefined
         };
         return (
-            <Host class={classes}>
+            <Host class={classes} role="article">
                 {this.imgSrc && <div class="card-img">
-                    {this.url
-                        ? <a href={this.url} ref={el => this.$link = el}><ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} /></a>
+                    {this.href
+                        ? <a href={this.href} ref={el => this.$link = el}><ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} /></a>
                         : <ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} />}
                 </div>}
                 <div class="card-content">

@@ -49,11 +49,11 @@ export namespace Components {
   interface KsCard {
     'alt': string;
     'clickable': boolean;
+    'href': string;
     'imgDirection': string;
     'imgSrc': string;
     'lazy': boolean;
     'threshold': number;
-    'url': string;
   }
   interface KsCardBody {
     'cardSubtitle': string;
@@ -523,11 +523,11 @@ declare namespace LocalJSX {
   interface KsCard {
     'alt'?: string;
     'clickable'?: boolean;
+    'href'?: string;
     'imgDirection'?: string;
     'imgSrc'?: string;
     'lazy'?: boolean;
     'threshold'?: number;
-    'url'?: string;
   }
   interface KsCardBody {
     'cardSubtitle'?: string;
