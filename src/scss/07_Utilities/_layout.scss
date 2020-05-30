@@ -8,16 +8,16 @@ $heights: (25, 50, 75, 100);
 @each $width in $widths {
     .w-#{$width} {
         width: #{$width + "%"} !important;
+    }
 
-        @each $mq, $value in $media-queries {
-            @include mq($mq) {
-                /*
-                    sm:w-100
-                    xl:w-50
-                */
-                .#{$mq}\:w-#{$width} {
-                    width: #{$width + "%"} !important;
-                }
+    @each $mq, $value in $media-queries {
+        @include mq($mq) {
+            /*
+                sm:w-100
+                xl:w-50
+            */
+            .#{$mq}\:w-#{$width} {
+                width: #{$width + "%"} !important;
             }
         }
     }
@@ -26,16 +26,16 @@ $heights: (25, 50, 75, 100);
 @each $height in $heights {
     .h-#{$height} {
         height: #{$height + "%"} !important;
+    }
 
-        @each $mq, $value in $media-queries {
-            @include mq($mq) {
-                /*
-                    sm:h-100
-                    xl:h-50
-                */
-                .#{$mq}\:h-#{$height} {
-                    height: #{$height + "%"} !important;
-                }
+    @each $mq, $value in $media-queries {
+        @include mq($mq) {
+            /*
+                sm:h-100
+                xl:h-50
+            */
+            .#{$mq}\:h-#{$height} {
+                height: #{$height + "%"} !important;
             }
         }
     }
