@@ -11,12 +11,12 @@
 | ----------- | ----------- | ----------- | ------------------------------ | ----------- |
 | `align`     | `align`     |             | `"center" \| "end" \| "start"` | `'center'`  |
 | `alt`       | `alt`       |             | `string`                       | `undefined` |
-| `clickable` | `clickable` |             | `boolean`                      | `undefined` |
-| `lazy`      | `lazy`      |             | `boolean`                      | `undefined` |
+| `clickable` | `clickable` |             | `boolean`                      | `false`     |
+| `href`      | `href`      |             | `string`                       | `undefined` |
+| `lazy`      | `lazy`      |             | `boolean`                      | `false`     |
 | `position`  | `position`  |             | `"center" \| "end" \| "start"` | `'center'`  |
 | `src`       | `src`       |             | `string`                       | `undefined` |
 | `threshold` | `threshold` |             | `number`                       | `300`       |
-| `url`       | `url`       |             | `string`                       | `undefined` |
 
 
 ## Dependencies

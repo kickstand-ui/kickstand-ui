@@ -12,11 +12,11 @@ export class CarouselSlide implements ComponentInterface {
 
     @Prop() src: string;
     @Prop() alt: string;
-    @Prop() url: string;
+    @Prop() href: string;
     @Prop() align: 'start' | 'center' | 'end' = 'center';
     @Prop() position: 'start' | 'center' | 'end' = 'center';
-    @Prop() clickable: boolean;
-    @Prop() lazy: boolean;
+    @Prop() clickable: boolean = false;
+    @Prop() lazy: boolean = false;
     @Prop() threshold: number = 300;
 
     componentDidLoad() {
@@ -38,9 +38,10 @@ export class CarouselSlide implements ComponentInterface {
     }
 
     render() {
+        let slideId = `carousel_slide_${carouselSlideIds++}`
         let classes = {
             'slide': true,
-            'pointer': this.clickable && this.url !== '' && this.url !== undefined
+            'pointer': this.clickable && this.href !== '' && this.href !== undefined
         };
 
         let contentClasses = {
@@ -53,13 +54,15 @@ export class CarouselSlide implements ComponentInterface {
         };
 
         return (
-            <Host class={classes}>
+            <Host id={slideId} class={classes} role="tabpanel" aria-hidden="true" aria-labelledby={`indicator_for_${slideId}`}>
                 {this.src && <ks-img class="slide-image" alt={this.alt} lazy={this.lazy} src={this.src} threshold={this.threshold} />}
                 <div class={contentClasses} ref={el => this.$content = el}>
                     <slot />
                 </div>
-                {(this.clickable && this.url) && <a href={this.url} class="sr-only" ref={el => this.$link = el}>link to {this.url}</a>}
+                {(this.clickable && this.href) && <a href={this.href} class="sr-only" ref={el => this.$link = el}>link to {this.href}</a>}
             </Host>
         );
     }
 }
+
+let carouselSlideIds = 0;

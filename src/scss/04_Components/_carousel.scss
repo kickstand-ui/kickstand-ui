@@ -12,7 +12,7 @@
             display: none;
             @include fade-out;
 
-            &.active {
+            &[aria-hidden="false"] {
                 display: block;
                 @include fade-in;
             }
@@ -29,6 +29,10 @@
             padding-right: 3.75rem;
             text-shadow: 2px 2px 4px color(dark);
             @include my(xxl);
+
+            > * {
+                color: white;
+            }
         }
 
         .control {
@@ -97,7 +101,7 @@
                 @include border-b($size: xxs, $color: light, $opacity: 0.75);
             }
 
-            &.active {
+            &[aria-selected="true"] {
                 @include border-b($size: xxs, $color: light);
                 @include transition-ease-in-out(fast);
             }
@@ -127,7 +131,7 @@
                 @include shadow(outline);
             }
 
-            &.active {
+            &[aria-selected="true"] {
                 opacity: 0.95;
                 @include shadow(xs);
                 @include transition-ease-in-out(fast);

@@ -33,16 +33,16 @@ export const carouselOptions = () => {
 export const carouselSlideOptions = () => {
     const position = select('position', ['start', 'center', 'end'], 'center');
     const align = select('align', ['start', 'center', 'end'], 'center');
-    const url = text('url', '');
+    const href = text('href', '');
     const clickable = boolean('clickable', false);
     const cssClass = text('class', 'm-md w-50');
 
     return (`
         <ks-carousel autoplay="true" class="${cssClass}">
-            <ks-carousel-slide clickable="${clickable}" url="${url}" position="${position}" align="${align}" alt="Jim Pranks Dwight" src="https://oyster.ignimgs.com/wordpress/stg.ign.com/2013/05/Jims_wall_of_pencils.png">
+            <ks-carousel-slide clickable="${clickable}" href="${href}" position="${position}" align="${align}" alt="Jim Pranks Dwight" src="https://oyster.ignimgs.com/wordpress/stg.ign.com/2013/05/Jims_wall_of_pencils.png">
                 <h2>Desk Fort</h2>
             </ks-carousel-slide>
-            <ks-carousel-slide clickable="${clickable}" url="${url}" position="${position}" align="${align}" alt="Jim Pranks Dwight" src="https://img.buzzfeed.com/buzzfeed-static/static/2015-07/17/14/enhanced/webdr08/enhanced-4901-1437158753-3.jpg">
+            <ks-carousel-slide clickable="${clickable}" href="${href}" position="${position}" align="${align}" alt="Jim Pranks Dwight" src="https://img.buzzfeed.com/buzzfeed-static/static/2015-07/17/14/enhanced/webdr08/enhanced-4901-1437158753-3.jpg">
                 <h3>Pavlov's Dwight</h3>
                 <ks-button>Test Button</ks-button>
             </ks-carousel-slide>

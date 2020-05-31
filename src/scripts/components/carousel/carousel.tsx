@@ -7,9 +7,9 @@ export class Carousel implements ComponentInterface {
     @Element() $el: HTMLElement;
 
     @Prop() timer: number = 6000;
-    @Prop() autoplay: boolean;
-    @Prop() hideIndicators: boolean;
-    @Prop() hideControls: boolean;
+    @Prop() autoplay: boolean = false;
+    @Prop() hideIndicators: boolean = false;
+    @Prop() hideControls: boolean = false;
     @Prop() thumbnails: boolean = false;
 
     @State() slideIndex: number = 0;
@@ -68,16 +68,16 @@ export class Carousel implements ComponentInterface {
     }
 
     updateSlide() {
-        this.$slides.forEach(slide => slide.classList.remove('active'));
-        this.$slides[this.slideIndex].classList.add('active');
+        this.$slides.forEach(slide => slide.setAttribute('aria-hidden', 'true'));
+        this.$slides[this.slideIndex].setAttribute('aria-hidden', 'false');
     }
 
     updateIndicator() {
         if (this.hideIndicators)
             return;
 
-        this.$indicators.forEach(slide => slide.classList.remove('active'));
-        this.$indicators[this.slideIndex].classList.add('active');
+        this.$indicators.forEach(slide => slide.setAttribute('aria-selected', 'false'));
+        this.$indicators[this.slideIndex].setAttribute('aria-selected', 'true');
     }
 
     render() {
@@ -92,20 +92,20 @@ export class Carousel implements ComponentInterface {
             </ks-button>
         ];
         let indicators = (
-            <div class="indicators">
+            <div class="indicators" role="tablist">
                 {this.$slides.map((slide, index) =>
-                    <button class="indicator" onClick={() => this.selectSlide(index)}>
+                    <button id={`indicator_for_${slide.id}`} class="indicator" onClick={() => this.selectSlide(index)} role="tab" aria-selected="false" aria-controls={slide.id}>
                         <span class="sr-only">Got to slide {slide ? index + 1 : ''}</span>
                     </button>
                 )}
             </div>
         );
         let thumbnailList = (
-            <div class="thumbnails">
+            <div class="thumbnails" role="tablist">
                 {this.$slides.map((slide, index) =>
-                    <button class="indicator" onClick={() => this.selectSlide(index)}>
+                    <button id={`indicator_for_${slide.id}`} class="indicator" onClick={() => this.selectSlide(index)} role="tab" aria-selected="false" aria-controls={slide.id}>
                         <span class="sr-only">Got to slide {slide ? index + 1 : ''}</span>
-                        <ks-img lazy src={slide.src} />
+                        <ks-img lazy src={slide.src} alt={`slide ${slide ? index + 1 : ''} image`} />
                     </button>
                 )}
             </div>

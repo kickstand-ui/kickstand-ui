@@ -71,11 +71,11 @@ export namespace Components {
     'align': 'start' | 'center' | 'end';
     'alt': string;
     'clickable': boolean;
+    'href': string;
     'lazy': boolean;
     'position': 'start' | 'center' | 'end';
     'src': string;
     'threshold': number;
-    'url': string;
   }
   interface KsColumn {
     'align': 'start' | 'center' | 'end';
@@ -545,11 +545,11 @@ declare namespace LocalJSX {
     'align'?: 'start' | 'center' | 'end';
     'alt'?: string;
     'clickable'?: boolean;
+    'href'?: string;
     'lazy'?: boolean;
     'position'?: 'start' | 'center' | 'end';
     'src'?: string;
     'threshold'?: number;
-    'url'?: string;
   }
   interface KsColumn {
     'align'?: 'start' | 'center' | 'end';
