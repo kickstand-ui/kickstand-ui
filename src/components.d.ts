@@ -42,18 +42,18 @@ export namespace Components {
     'icon': string;
     'iconDirection': 'left' | 'right';
     'loading': boolean;
-    'size': 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+    'size': 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     'tabIndex': number;
     'type': 'button' | 'submit' | 'reset';
   }
   interface KsCard {
     'alt': string;
     'clickable': boolean;
-    'imgDirection': string;
+    'href': string;
+    'imgDirection': 'top' | 'bottom' | 'left' | 'right' | 'behind';
     'imgSrc': string;
     'lazy': boolean;
     'threshold': number;
-    'url': string;
   }
   interface KsCardBody {
     'cardSubtitle': string;
@@ -516,18 +516,18 @@ declare namespace LocalJSX {
     'icon'?: string;
     'iconDirection'?: 'left' | 'right';
     'loading'?: boolean;
-    'size'?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge';
+    'size'?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     'tabIndex'?: number;
     'type'?: 'button' | 'submit' | 'reset';
   }
   interface KsCard {
     'alt'?: string;
     'clickable'?: boolean;
-    'imgDirection'?: string;
+    'href'?: string;
+    'imgDirection'?: 'top' | 'bottom' | 'left' | 'right' | 'behind';
     'imgSrc'?: string;
     'lazy'?: boolean;
     'threshold'?: number;
-    'url'?: string;
   }
   interface KsCardBody {
     'cardSubtitle'?: string;

@@ -4,7 +4,7 @@ export default { title: 'Button' };
 
 const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
 const displays = ['solid', 'hollow', 'clear', 'link'];
-const sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge'];
+const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
 const iconDirections = ['left', 'right'];
 
 export const playground = () => {
@@ -12,7 +12,7 @@ export const playground = () => {
     const display = select('display', displays, 'solid');
     const loading = boolean('loading', false);
     const disabled = boolean('disabled', false);
-    const size = select('size', sizes, 'medium');
+    const size = select('size', sizes, 'md');
     const icon = text('icon', '');
     const iconDirection = select('icon-direction', iconDirections, 'left');
     const linkUrl = text('url', '');

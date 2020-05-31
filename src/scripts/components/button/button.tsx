@@ -9,7 +9,7 @@ export class LinkButton implements ComponentInterface {
     @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';
     @Prop() type: 'button' | 'submit' | 'reset' = 'button';
     @Prop() display: 'solid' | 'hollow' | 'clear' | 'link' = 'solid';
-    @Prop() size: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' = 'medium';
+    @Prop() size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
     @Prop() icon: string = '';
     @Prop() iconDirection: 'left' | 'right' = 'left';
     @Prop() href: string;

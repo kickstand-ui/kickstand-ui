@@ -1,8 +1,12 @@
 @import '../00_Abstracts/index';
 
 ks-icon {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    height: 1.5em;
     line-height: inherit;
+    margin-top: -0.25em;
+    margin-bottom: -0.25em;
 
     .icon {
         display: inline-block;
@@ -10,7 +14,7 @@ ks-icon {
         height: 1.5em;
         overflow: visible;
         width: 1.5em;
-        margin-top: -0.5em;
-        margin-bottom: -0.5em;
+        margin-top: -0.25em;
+        margin-bottom: -0.25em;
     }
 }

@@ -25,13 +25,13 @@ export const card = () => {
                         class="w-25"
                         lazy="${lazy}"
                         threshold="${threshold}">
-                    <card-body card-title="${cardTitle}"
+                    <ks-card-body card-title="${cardTitle}"
                             card-subtitle="${cardSubtitle}">
                         ${bodyText}
-                    </card-body>
-                    <card-footer>
+                    </ks-card-body>
+                    <ks-card-footer>
                         <ks-button>Get One</ks-button>
-                    </card-footer>
+                    </ks-card-footer>
                 </ks-card>
             </div>`);
 };

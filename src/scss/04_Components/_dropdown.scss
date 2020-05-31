@@ -16,12 +16,13 @@
         display: flex;
         align-items: center;
 
-        .dropdown-text {
-        }
+        .button-text {
+            display: flex;
 
-        .dropdown-icon {
-            @include ml(sm);
-            @include transition-ease-in-out(med);
+            .dropdown-icon {
+                @include ml(sm);
+                @include transition-ease-in-out(med);
+            }    
         }
 
         &[aria-expanded="true"] .dropdown-icon {

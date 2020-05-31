@@ -20,6 +20,13 @@
     display: flex;
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
 
 .flex-row {
     flex-direction: row;
