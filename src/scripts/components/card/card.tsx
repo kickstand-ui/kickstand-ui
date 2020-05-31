@@ -13,7 +13,7 @@ export class Card implements ComponentInterface {
     @Prop() alt: string;
     @Prop() lazy: boolean;
     @Prop() threshold: number;
-    @Prop() imgDirection: string = 'top';
+    @Prop() imgDirection: 'top' | 'bottom' | 'left' | 'right' | 'behind' = 'top';
     @Prop() href: string;
     @Prop() clickable: boolean;
 
