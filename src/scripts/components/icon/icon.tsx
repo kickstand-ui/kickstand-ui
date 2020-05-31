@@ -64,7 +64,6 @@ export class Icons {
                 break;
         }
 
-        console.log('icon', icon);
         return (
             <Host class={`rotate-${this.rotate}`}>
                 {icon}
