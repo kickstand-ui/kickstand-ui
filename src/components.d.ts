@@ -50,7 +50,7 @@ export namespace Components {
     'alt': string;
     'clickable': boolean;
     'href': string;
-    'imgDirection': string;
+    'imgDirection': 'top' | 'bottom' | 'left' | 'right' | 'behind';
     'imgSrc': string;
     'lazy': boolean;
     'threshold': number;
@@ -524,7 +524,7 @@ declare namespace LocalJSX {
     'alt'?: string;
     'clickable'?: boolean;
     'href'?: string;
-    'imgDirection'?: string;
+    'imgDirection'?: 'top' | 'bottom' | 'left' | 'right' | 'behind';
     'imgSrc'?: string;
     'lazy'?: boolean;
     'threshold'?: number;
