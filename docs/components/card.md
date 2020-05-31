@@ -2,7 +2,7 @@
 
 <div class="my-xl w-50 sm:w-75">
     <ks-card
-        img-src="/images/michael_scott.jpg"
+        img-src="/images/demo/michael_scott.jpg"
         alt="Michael Scott"
         >
         <ks-card-body
@@ -19,7 +19,7 @@
 
 ```html
 <ks-card
-    img-src="/images/michael_scott.jpg"
+    img-src="/images/demo/michael_scott.jpg"
     alt="Michael Scott"
     >
     <ks-card-body
@@ -41,7 +41,7 @@ The Kickstand UI Card component is comprised of three tags: `<ks-card>`, `<ks-ca
 ### Top (default)
 
 <div>
-    <ks-card img-src="/images/michael_scott.jpg" alt="Michael Scott" class="w-40 mr-sm mb-sm">
+    <ks-card img-src="/images/demo/michael_scott.jpg" alt="Michael Scott" class="w-40 mr-sm mb-sm">
         <ks-card-body card-title="Meditation Moment" card-subtitle="Comfort Food">
         </ks-card-body>
         <ks-card-footer>
@@ -52,7 +52,7 @@ The Kickstand UI Card component is comprised of three tags: `<ks-card>`, `<ks-ca
 
 ```html
 <ks-card 
-    img-src="/images/michael_scott.jpg"
+    img-src="/images/demo/michael_scott.jpg"
     alt="Michael Scott"
     img-direction="top"
     >
@@ -63,7 +63,7 @@ The Kickstand UI Card component is comprised of three tags: `<ks-card>`, `<ks-ca
 ### Bottom
 
 <div>
-    <ks-card img-src="/images/michael_scott.jpg" alt="Michael Scott" class="w-40 mr-sm mb-sm" img-direction="bottom">
+    <ks-card img-src="/images/demo/michael_scott.jpg" alt="Michael Scott" class="w-40 mr-sm mb-sm" img-direction="bottom">
         <ks-card-body card-title="Meditation Moment" card-subtitle="Comfort Food" img-display="bottom">
         </ks-card-body>
         <ks-card-footer>
@@ -74,7 +74,7 @@ The Kickstand UI Card component is comprised of three tags: `<ks-card>`, `<ks-ca
 
 ```html
 <ks-card
-    img-src="/images/michael_scott.jpg"
+    img-src="/images/demo/michael_scott.jpg"
     alt="Michael Scott"
     img-direction="bottom"
     >
@@ -89,7 +89,7 @@ Since images are very good about drawing the user's attention, it is usually bes
 ### Left
 
 <div>
-    <ks-card img-src="/images/michael_scott.jpg" alt="Michael Scott" class="mr-sm mb-sm" img-direction="left">
+    <ks-card img-src="/images/demo/michael_scott.jpg" alt="Michael Scott" class="mr-sm mb-sm" img-direction="left">
         <ks-card-body card-title="Meditation Moment" card-subtitle="Comfort Food">
         </ks-card-body>
         <ks-card-footer>
@@ -100,7 +100,7 @@ Since images are very good about drawing the user's attention, it is usually bes
 
 ```html
 <ks-card
-    img-src="/images/michael_scott.jpg"
+    img-src="/images/demo/michael_scott.jpg"
     alt="Michael Scott"
     img-direction="left"
     >
@@ -111,7 +111,7 @@ Since images are very good about drawing the user's attention, it is usually bes
 ### Right
 
 <div>
-    <ks-card img-src="/images/michael_scott.jpg" alt="Michael Scott" class="mr-sm mb-sm" img-direction="right">
+    <ks-card img-src="/images/demo/michael_scott.jpg" alt="Michael Scott" class="mr-sm mb-sm" img-direction="right">
         <ks-card-body card-title="Meditation Moment" card-subtitle="Comfort Food">
         </ks-card-body>
         <ks-card-footer>
@@ -122,7 +122,7 @@ Since images are very good about drawing the user's attention, it is usually bes
 
 ```html
 <ks-card
-    img-src="/images/michael_scott.jpg"
+    img-src="/images/demo/michael_scott.jpg"
     alt="Michael Scott"
     img-direction="right"
     >
@@ -133,7 +133,7 @@ Since images are very good about drawing the user's attention, it is usually bes
 ### Behind
 
 <div>
-    <ks-card img-src="/images/michael_scott.jpg" alt="Michael Scott" class="w-70 mr-sm mb-sm" img-direction="behind">
+    <ks-card img-src="/images/demo/michael_scott.jpg" alt="Michael Scott" class="w-70 mr-sm mb-sm" img-direction="behind">
         <ks-card-body card-title="Meditation Moment" card-subtitle="Comfort Food" img-display="bottom">
             "It's never too early for ice cream, Jim. But we didn't have any ice cream, so this is mayonnaise and black olives. It's comfort food, alright?"
         </ks-card-body>
@@ -145,7 +145,7 @@ Since images are very good about drawing the user's attention, it is usually bes
 
 ```html
 <ks-card
-    img-src="/images/michael_scott.jpg"
+    img-src="/images/demo/michael_scott.jpg"
     alt="Michael Scott"
     img-direction="behind"
     >
@@ -162,7 +162,7 @@ As you can see, having text directly over an image can make the text difficult t
 Adding this attribute will make the image clickable.
 
 <div>
-    <ks-card img-src="/images/michael_scott.jpg" alt="Michael Scott" class="w-50 mr-sm mb-sm" href="#">
+    <ks-card img-src="/images/demo/michael_scott.jpg" alt="Michael Scott" class="w-50 mr-sm mb-sm" href="#">
         <ks-card-body card-title="Meditation Moment" card-subtitle="Comfort Food" img-display="bottom">
             "It's never too early for ice cream, Jim. But we didn't have any ice cream, so this is mayonnaise and black olives. It's comfort food, alright?"
         </ks-card-body>
@@ -175,7 +175,7 @@ Adding this attribute will make the image clickable.
 ```html
 <ks-card
     href="#"
-    img-src="/images/michael_scott.jpg"
+    img-src="/images/demo/michael_scott.jpg"
     alt="Michael Scott"
     >
 ...
@@ -187,7 +187,7 @@ Adding this attribute will make the image clickable.
 When the `clickable` attribute is added, the entire card will now be clickable
 
 <div>
-    <ks-card img-src="/images/michael_scott.jpg" alt="Michael Scott" class="w-50 mr-sm mb-sm" href="/components/images.html" clickable>
+    <ks-card img-src="/images/demo/michael_scott.jpg" alt="Michael Scott" class="w-50 mr-sm mb-sm" href="/components/images.html" clickable>
         <ks-card-body card-title="Meditation Moment" card-subtitle="Comfort Food" img-display="bottom">
             "It's never too early for ice cream, Jim. But we didn't have any ice cream, so this is mayonnaise and black olives. It's comfort food, alright?"
         </ks-card-body>
@@ -197,7 +197,7 @@ When the `clickable` attribute is added, the entire card will now be clickable
 ```html
 <ks-card
     href="/components/images.html"
-    clickable img-src="/images/michael_scott.jpg"
+    clickable img-src="/images/demo/michael_scott.jpg"
     alt="Michael Scott"
     >
 ...
