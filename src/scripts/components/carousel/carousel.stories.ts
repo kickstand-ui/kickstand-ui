@@ -31,8 +31,8 @@ export const carouselOptions = () => {
 };
 
 export const carouselSlideOptions = () => {
-    const position = select('position', ['start', 'center', 'end'], 'center');
-    const align = select('align', ['start', 'center', 'end'], 'center');
+    const position = select('position', ['top', 'center', 'bottom'], 'center');
+    const align = select('align', ['left', 'center', 'right'], 'center');
     const href = text('href', '');
     const clickable = boolean('clickable', false);
     const cssClass = text('class', 'm-md w-50');

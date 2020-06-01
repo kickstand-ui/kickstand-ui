@@ -16,6 +16,13 @@
                 display: block;
                 @include fade-in;
             }
+
+            &.pointer {
+                &:focus-within {
+                    outline: spacing(xxxs) dashed color(dark);
+                    outline-offset: spacing(xxs);
+                }
+            }
         }
 
         .content {
@@ -30,7 +37,7 @@
             text-shadow: 2px 2px 4px color(dark);
             @include my(xxl);
 
-            > * {
+            >* {
                 color: white;
             }
         }
@@ -138,7 +145,7 @@
             }
         }
 
-        .indicator + .indicator {
+        .indicator+.indicator {
             @include pl(xs);
         }
     }

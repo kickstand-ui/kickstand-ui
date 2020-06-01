@@ -7,16 +7,16 @@
 
 ## Properties
 
-| Property    | Attribute   | Description | Type                           | Default     |
-| ----------- | ----------- | ----------- | ------------------------------ | ----------- |
-| `align`     | `align`     |             | `"center" \| "end" \| "start"` | `'center'`  |
-| `alt`       | `alt`       |             | `string`                       | `undefined` |
-| `clickable` | `clickable` |             | `boolean`                      | `false`     |
-| `href`      | `href`      |             | `string`                       | `undefined` |
-| `lazy`      | `lazy`      |             | `boolean`                      | `false`     |
-| `position`  | `position`  |             | `"center" \| "end" \| "start"` | `'center'`  |
-| `src`       | `src`       |             | `string`                       | `undefined` |
-| `threshold` | `threshold` |             | `number`                       | `300`       |
+| Property    | Attribute   | Description | Type                            | Default     |
+| ----------- | ----------- | ----------- | ------------------------------- | ----------- |
+| `align`     | `align`     |             | `"center" \| "left" \| "right"` | `'center'`  |
+| `alt`       | `alt`       |             | `string`                        | `undefined` |
+| `clickable` | `clickable` |             | `boolean`                       | `false`     |
+| `href`      | `href`      |             | `string`                        | `undefined` |
+| `lazy`      | `lazy`      |             | `boolean`                       | `false`     |
+| `position`  | `position`  |             | `"bottom" \| "center" \| "top"` | `'center'`  |
+| `src`       | `src`       |             | `string`                        | `undefined` |
+| `threshold` | `threshold` |             | `number`                        | `300`       |
 
 
 ## Dependencies

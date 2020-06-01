@@ -68,12 +68,12 @@ export namespace Components {
     'timer': number;
   }
   interface KsCarouselSlide {
-    'align': 'start' | 'center' | 'end';
+    'align': 'left' | 'center' | 'right';
     'alt': string;
     'clickable': boolean;
     'href': string;
     'lazy': boolean;
-    'position': 'start' | 'center' | 'end';
+    'position': 'top' | 'center' | 'bottom';
     'src': string;
     'threshold': number;
   }
@@ -542,12 +542,12 @@ declare namespace LocalJSX {
     'timer'?: number;
   }
   interface KsCarouselSlide {
-    'align'?: 'start' | 'center' | 'end';
+    'align'?: 'left' | 'center' | 'right';
     'alt'?: string;
     'clickable'?: boolean;
     'href'?: string;
     'lazy'?: boolean;
-    'position'?: 'start' | 'center' | 'end';
+    'position'?: 'top' | 'center' | 'bottom';
     'src'?: string;
     'threshold'?: number;
   }

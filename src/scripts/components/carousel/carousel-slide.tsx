@@ -13,8 +13,8 @@ export class CarouselSlide implements ComponentInterface {
     @Prop() src: string;
     @Prop() alt: string;
     @Prop() href: string;
-    @Prop() align: 'start' | 'center' | 'end' = 'center';
-    @Prop() position: 'start' | 'center' | 'end' = 'center';
+    @Prop() align: 'left' | 'center' | 'right' = 'center';
+    @Prop() position: 'top' | 'center' | 'bottom' = 'center';
     @Prop() clickable: boolean = false;
     @Prop() lazy: boolean = false;
     @Prop() threshold: number = 300;
@@ -24,14 +24,23 @@ export class CarouselSlide implements ComponentInterface {
             this.$content.addEventListener('click', () => this.$link.click());
     }
 
-    getTextAlignment() {
+    getAlignment() {
         switch (this.align) {
-            case 'start':
-                return 'left';
-            case 'center':
+            case 'left':
+                return 'start';
+            case 'right':
+                return 'end';
+            default:
                 return 'center';
-            case 'end':
-                return 'right';
+        }
+    }
+
+    getPosition() {
+        switch (this.position) {
+            case 'top':
+                return 'start';
+            case 'bottom':
+                return 'end';
             default:
                 return 'center';
         }
@@ -48,9 +57,9 @@ export class CarouselSlide implements ComponentInterface {
             'content': true,
             'display-flex': true,
             'flex-column': true,
-            [`align-${this.align}`]: true,
-            [`justify-${this.position}`]: true,
-            [`text-${this.getTextAlignment()}`]: true
+            [`align-${this.getAlignment()}`]: true,
+            [`justify-${this.getPosition()}`]: true,
+            [`text-${this.align}`]: true
         };
 
         return (
