@@ -1,11 +1,10 @@
-import { Component, h, Prop, Host, Element, State, Listen } from '@stencil/core';
+import { Component, h, Prop, Host, Element, State, Listen, Method } from '@stencil/core';
 import componentUtils from '../../utils/componentUtils';
 
 @Component({
     tag: 'ks-dropdown'
 })
 export class Dropdown {
-    dropdownId = `dropdown-${dropdownIds++}`;
     $contents: HTMLElement;
     $control: HTMLElement;
     $focusableEls: HTMLElement[];
@@ -24,6 +23,13 @@ export class Dropdown {
     @State() isExpanded: boolean = false;
     @State() focusIndex: number = 0;
 
+    @Method()
+    async close() {
+        this.isExpanded = false;
+        this.focusIndex = 0;
+        setTimeout(() => this.$control.focus());
+    }
+
     @Listen('keydown')
     handleKeyDown(e: KeyboardEvent) {
         const KEY_TAB = 9;
@@ -39,6 +45,11 @@ export class Dropdown {
             default:
                 break;
         }
+    }
+
+    @Listen('closeDropdown')
+    handleCloseDropdown() {
+        this.close();
     }
 
     handleEsc() {
@@ -72,10 +83,12 @@ export class Dropdown {
     componentDidRender() {
         this.$focusableEls = Array.from(this.$contents.querySelectorAll(componentUtils.focusableElements));
 
-        window.addEventListener('click', (e: any) => {
-            let isChildElement = this.$el.contains(e.target)
+        window.addEventListener('click', (e: MouseEvent) => {
+            let $preventCloseElements = Array.from(document.querySelectorAll('.prevent-dropdown-close'));
+            let isPreventClose = this.$el.contains(e.target as HTMLElement) 
+                || $preventCloseElements.some(x => x.contains(e.target as HTMLElement));
 
-            if (isChildElement)
+            if (isPreventClose)
                 return;
 
             this.isExpanded = false;
@@ -89,13 +102,8 @@ export class Dropdown {
             setTimeout(() => this.$focusableEls[0].focus(), 100);
     }
 
-    close() {
-        this.isExpanded = false;
-        this.focusIndex = 0;
-        setTimeout(() => this.$control.focus());
-    }
-
     render() {
+        let dropdownId = `dropdown-${dropdownIds++}`;
         let dropDownClasses = {
             'dropdown': true,
             'show': this.isExpanded,
@@ -117,6 +125,7 @@ export class Dropdown {
         return (
             <Host class={dropDownClasses}>
                 <ks-button
+                    id={`${dropdownId}-button`}
                     onClick={() => this.toggleDropdown()}
                     color={this.color}
                     display={this.display}
@@ -124,17 +133,17 @@ export class Dropdown {
                     cssClass="dropdown-button"
                     haspopup={true}
                     expanded={this.isExpanded}
-                    controls={`dropdown-${this.dropdownId}`}
+                    controls={dropdownId}
                     ref={el => this.$control = el.querySelector('button')}
                 >
                     <span class={buttonClasses}>{this.text}</span>
                     {!this.hideIndicator && <ks-icon icon="chevron" class="dropdown-icon" />}
                 </ks-button>
                 <div
-                    id={`dropdown-${this.dropdownId}`}
+                    id={dropdownId}
                     class={contentClasses}
                     role={this.megaMenu ? '' : 'list'}
-                    tabindex="-1"
+                    aria-labelledby={`${dropdownId}-button`}
                     ref={el => this.$contents = el}
                 >
                     <slot />

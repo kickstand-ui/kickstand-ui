@@ -40,6 +40,8 @@
         width: auto;
         overflow: hidden;
         white-space: nowrap;
+        max-width: 90vw;
+        overflow-x: scroll;
         @include shadow(sm);
         @include bg-color(white);
         @include px(sm);
@@ -84,11 +86,11 @@
         position: absolute;
         float: none;
         left: 0;
+        right: 0;
         max-width: 100%;
         max-height: 80vh;
         min-width: 200px;
         overflow-y: auto;
-        right: 0;
         z-index: z(xs);
         @include shadow(xs);
         @include bg-color(white);

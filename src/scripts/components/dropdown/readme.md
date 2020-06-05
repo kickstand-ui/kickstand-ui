@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property       | Attribute        | Description | Type      | Default |
-| -------------- | ---------------- | ----------- | --------- | ------- |
-| `closeOnClick` | `close-on-click` |             | `boolean` | `true`  |
+| Property       | Attribute       | Description | Type      | Default |
+| -------------- | --------------- | ----------- | --------- | ------- |
+| `preventClose` | `prevent-close` |             | `boolean` | `false` |
 
 
 ## Events
