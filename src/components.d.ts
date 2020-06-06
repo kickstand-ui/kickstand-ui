@@ -85,6 +85,7 @@ export namespace Components {
     'url': string;
   }
   interface KsDropdown {
+    'close': () => Promise<void>;
     'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'display': 'solid' | 'hollow' | 'clear' | 'link';
     'hideIndicator': boolean;
@@ -95,7 +96,7 @@ export namespace Components {
     'text': string;
   }
   interface KsDropdownItem {
-    'closeOnClick': boolean;
+    'preventClose': boolean;
   }
   interface KsFormField {
     'disabled': boolean;
@@ -569,8 +570,8 @@ declare namespace LocalJSX {
     'text'?: string;
   }
   interface KsDropdownItem {
-    'closeOnClick'?: boolean;
     'onCloseDropdown'?: (event: CustomEvent<any>) => void;
+    'preventClose'?: boolean;
   }
   interface KsFormField {
     'disabled'?: boolean;
