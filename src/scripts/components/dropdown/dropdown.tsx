@@ -16,9 +16,9 @@ export class Dropdown {
     @Prop() icon: string;
     @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';
     @Prop() display: 'solid' | 'hollow' | 'clear' | 'link' = 'solid';
-    @Prop() hideText: boolean;
-    @Prop() hideIndicator: boolean;
-    @Prop() megaMenu: boolean;
+    @Prop() hideText: boolean = false;
+    @Prop() hideIndicator: boolean = false;
+    @Prop() megaMenu: boolean = false;
 
     @State() isExpanded: boolean = false;
     @State() focusIndex: number = 0;
