@@ -23,6 +23,10 @@ $heights: (25, 50, 75, 100);
     }
 }
 
+.w-content {
+    max-width: $content-width !important;
+}
+
 @each $height in $heights {
     .h-#{$height} {
         height: #{$height + "%"} !important;
