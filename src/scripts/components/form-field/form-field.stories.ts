@@ -1,4 +1,4 @@
-import { text, select, boolean } from '@storybook/addon-knobs';
+import { text, select, boolean, number } from '@storybook/addon-knobs';
 
 export default { title: 'Form Field' };
 
@@ -16,6 +16,13 @@ export const playground = () => {
     const requiredText = text('required-text', 'Required');
     const invalid = boolean('invalid', false);
     const disabled = boolean('disabled', false);
+    const min = number('min', undefined);
+    const max = number('max', undefined);
+    const step = number('step', undefined);
+    const minlength = number('minlength', undefined);
+    const maxlength = number('maxlength', undefined);
+    const autocomplete = text('autocomplete', '');
+    const pattern = text('pattern', '');
     return (`<div class="m-xxl">
         <ks-form-field 
             type="${type}"
@@ -29,6 +36,13 @@ export const playground = () => {
             invalid="${invalid}"
             disabled="${disabled}"
             value="${value}"
+            min="${min}"
+            max="${max}"
+            step="${step}"
+            minlength="${minlength}"
+            maxlength="${maxlength}"
+            autocomplete="${autocomplete}"
+            pattern="${pattern}"
             >
         </ks-form-field>
     </div>`);

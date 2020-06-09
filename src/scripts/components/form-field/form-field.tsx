@@ -4,6 +4,8 @@ import { Component, h, Prop, ComponentInterface, Host, Watch, Event, EventEmitte
     tag: 'ks-form-field'
 })
 export class FormField implements ComponentInterface {
+    $input: HTMLInputElement;
+
     @Prop() label: string;
     @Prop() helpText: string;
     @Prop() tooltipText: string;
@@ -11,18 +13,27 @@ export class FormField implements ComponentInterface {
     @Prop() placeholder: string;
     @Prop() required: boolean;
     @Prop() requiredText: string = 'Required';
-    @Prop() invalid: boolean = false;
+    @Prop({ mutable: true }) invalid: boolean = false;
     @Prop() disabled: boolean;
-    @Prop() type: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'spin-box' = 'text';
+    @Prop() type: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' = 'text';
     @Prop({ mutable: true }) value?: string | number | null = '';
     @Prop() min?: number;
     @Prop() max?: number;
     @Prop() step?: number;
+    @Prop() minlength?: number;
+    @Prop() maxlength?: number;
+    @Prop() autocomplete?: string;
+    @Prop() pattern?: string;
 
     @Watch('value')
     protected valueChanged() {
-        this.updated.emit({ value: this.value == null ? this.value : this.value.toString() });
-        console.log(this.value)
+        this.invalid = !this.$input.checkValidity();
+        let detail = {
+            validity: this.$input.validity,
+            value: this.value == null ? this.value : this.value.toString()
+        };
+        this.updated.emit(detail);
+        console.log(detail);
     }
 
     @Event() updated!: EventEmitter;
@@ -32,6 +43,17 @@ export class FormField implements ComponentInterface {
         if (input) {
             this.value = input.value || '';
         }
+    }
+
+    private setProps(props: any) {
+        this.placeholder && (props.placeholder = this.placeholder);
+        this.autocomplete && (props.autocomplete = this.autocomplete);
+        this.minlength && (props.minlength = this.minlength);
+        this.maxlength && (props.maxlength = this.maxlength);
+        this.pattern && (props.pattern = this.pattern);
+        this.min && (props.min = this.min);
+        this.max && (props.max = this.max);
+        this.step && (props.step = this.step);
     }
 
     render() {
@@ -47,16 +69,17 @@ export class FormField implements ComponentInterface {
             'invalid': this.invalid,
         };
         let labelClasses = {
-            'form-label': true,
-            'pl-none': this.type === 'spin-box'
+            'form-label': true
         };
 
-        return (        
+        this.setProps(props);
+
+        return (
             <Host class={classes}>
                 <label id={labelId} class={labelClasses} htmlFor={fieldId}>
                     <span class="field-label">
                         {this.label}
-                        {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText}>*</abbr>}
+                        {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText}>*</abbr>}
                         {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info ml-xs text-xs" /></ks-tooltip>}
                     </span>
                     <span class="help-text">{this.helpText}</span>
@@ -64,29 +87,15 @@ export class FormField implements ComponentInterface {
                         {(this.invalid && this.errorMessage) && <span><ks-icon icon="danger" class="mr-xs" />{this.errorMessage}</span>}
                     </span>
                 </label>
-                {this.type === 'spin-box'
-                    ? <ks-spin-box
-                        value={Number(this.value)}
-                        min={this.min}
-                        max={this.max}
-                        step={this.step}
-                        label-id={labelId}
-                        spin-box-id={fieldId}
-                    >
-                    </ks-spin-box>
-                    : <input
-                        id={fieldId}
-                        class="form-input"
-                        type={this.type}
-                        placeholder={this.placeholder}
-                        min={this.min}
-                        max={this.max}
-                        step={this.step}
-                        {...props}
-                        value={this.value}
-                        onInput={(e) => this.onInput(e)}
-                    />
-                }
+                <input
+                    id={fieldId}
+                    class="form-input"
+                    type={this.type}
+                    {...props}
+                    value={this.value}
+                    onInput={(e) => this.onInput(e)}
+                    ref={el => this.$input = el}
+                />
             </Host>
         );
     }

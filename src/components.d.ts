@@ -99,19 +99,23 @@ export namespace Components {
     'preventClose': boolean;
   }
   interface KsFormField {
+    'autocomplete'?: string;
     'disabled': boolean;
     'errorMessage': string;
     'helpText': string;
     'invalid': boolean;
     'label': string;
     'max'?: number;
+    'maxlength'?: number;
     'min'?: number;
+    'minlength'?: number;
+    'pattern'?: string;
     'placeholder': string;
     'required': boolean;
     'requiredText': string;
     'step'?: number;
     'tooltipText': string;
-    'type': 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'spin-box';
+    'type': 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden';
     'value'?: string | number | null;
   }
   interface KsIcon {
@@ -574,20 +578,24 @@ declare namespace LocalJSX {
     'preventClose'?: boolean;
   }
   interface KsFormField {
+    'autocomplete'?: string;
     'disabled'?: boolean;
     'errorMessage'?: string;
     'helpText'?: string;
     'invalid'?: boolean;
     'label'?: string;
     'max'?: number;
+    'maxlength'?: number;
     'min'?: number;
+    'minlength'?: number;
     'onUpdated'?: (event: CustomEvent<any>) => void;
+    'pattern'?: string;
     'placeholder'?: string;
     'required'?: boolean;
     'requiredText'?: string;
     'step'?: number;
     'tooltipText'?: string;
-    'type'?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'spin-box';
+    'type'?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden';
     'value'?: string | number | null;
   }
   interface KsIcon {
