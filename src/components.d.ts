@@ -100,22 +100,31 @@ export namespace Components {
   }
   interface KsFormField {
     'autocomplete'?: string;
+    'badInputErrorMessage': string;
+    'defaultErrorMessage': string;
     'disabled': boolean;
-    'errorMessage': string;
     'helpText': string;
     'invalid': boolean;
     'label': string;
     'max'?: number;
+    'maxErrorMessage': string;
     'maxlength'?: number;
+    'maxlengthErrorMessage': string;
     'min'?: number;
+    'minErrorMessage': string;
     'minlength'?: number;
+    'minlengthErrorMessage': string;
     'pattern'?: string;
+    'patternErrorMessage': string;
     'placeholder': string;
     'required': boolean;
+    'requiredErrorMessage': string;
     'requiredText': string;
     'step'?: number;
+    'stepErrorMessage': string;
     'tooltipText': string;
     'type': 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden';
+    'typeErrorMessage': string;
     'value'?: string | number | null;
   }
   interface KsIcon {
@@ -579,23 +588,32 @@ declare namespace LocalJSX {
   }
   interface KsFormField {
     'autocomplete'?: string;
+    'badInputErrorMessage'?: string;
+    'defaultErrorMessage'?: string;
     'disabled'?: boolean;
-    'errorMessage'?: string;
     'helpText'?: string;
     'invalid'?: boolean;
     'label'?: string;
     'max'?: number;
+    'maxErrorMessage'?: string;
     'maxlength'?: number;
+    'maxlengthErrorMessage'?: string;
     'min'?: number;
+    'minErrorMessage'?: string;
     'minlength'?: number;
+    'minlengthErrorMessage'?: string;
     'onUpdated'?: (event: CustomEvent<any>) => void;
     'pattern'?: string;
+    'patternErrorMessage'?: string;
     'placeholder'?: string;
     'required'?: boolean;
+    'requiredErrorMessage'?: string;
     'requiredText'?: string;
     'step'?: number;
+    'stepErrorMessage'?: string;
     'tooltipText'?: string;
     'type'?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden';
+    'typeErrorMessage'?: string;
     'value'?: string | number | null;
   }
   interface KsIcon {
