@@ -48,9 +48,9 @@ If you need to provide the user with additional information that may not need to
 
 ```html
 <ks-form-field
-    label="Password"
-    type="password"
-    help-text="Must contain 8 characters and one special character"
+    label="Phone Number"
+    type="tel"
+    tooltip-text="Used for password recovery"
     />
 ```
 

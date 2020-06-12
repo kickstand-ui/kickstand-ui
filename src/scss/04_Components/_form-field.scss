@@ -2,11 +2,6 @@
 
 .form-field {
     display: block;
-    @include pl(lg);
-
-    &.invalid {
-        @include border-l(solid, xxs, danger);
-    }
 
     .form-label {
         display: flex;
@@ -16,7 +11,7 @@
         .field-label {
             font-weight: bold;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
 
             .tooltip {
                 line-height: 1;

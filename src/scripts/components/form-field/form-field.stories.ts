@@ -10,7 +10,7 @@ export const playground = () => {
     const value = text('value', '');
     const helpText = text('help-text', '');
     const tooltipText = text('tooltip-text', '');
-    const errorMessage = text('default-error-message', '');
+    const errorMessage = text('default-error-message', 'The value entered is not valid.');
     const placeholder = text('placeholder', '');
     const required = boolean('required', false);
     const requiredText = text('required-text', 'Required');

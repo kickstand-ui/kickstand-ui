@@ -51,27 +51,26 @@ export class FormField implements ComponentInterface {
     @Event() updated!: EventEmitter;
 
     private getErrorMessage(): string {
-        if (!this.validityState || this.validityState.valid)
-            return;
-
         switch (true) {
-            case this.validityState.badInput === true:
+            case !this.validityState:
+                return this.defaultErrorMessage;
+            case this.validityState?.badInput:
                 return this.badInputErrorMessage;
-            case this.validityState.patternMismatch === true:
+            case this.validityState?.patternMismatch:
                 return this.patternErrorMessage;
-            case this.validityState.rangeOverflow === true:
+            case this.validityState?.rangeOverflow:
                 return this.maxErrorMessage;
-            case this.validityState.rangeUnderflow === true:
+            case this.validityState?.rangeUnderflow:
                 return this.minErrorMessage;
-            case this.validityState.stepMismatch === true:
+            case this.validityState?.stepMismatch:
                 return this.stepErrorMessage;
-            case this.validityState.tooLong === true:
+            case this.validityState?.tooLong:
                 return this.maxlengthErrorMessage;
-            case this.validityState.tooShort === true:
+            case this.validityState?.tooShort:
                 return this.minlengthErrorMessage;
-            case this.validityState.typeMismatch === true:
+            case this.validityState?.typeMismatch:
                 return this.typeErrorMessage;
-            case this.validityState.valueMissing === true:
+            case this.validityState?.valueMissing:
                 return this.requiredErrorMessage;
             default:
                 return this.defaultErrorMessage;
@@ -131,7 +130,7 @@ export class FormField implements ComponentInterface {
                     <span class="error-message text-danger" role="alert" aria-live="assertive">
                         {this.invalid && <span class="error-text">
                             <ks-icon icon="danger" class="mr-xs" />
-                            {this.getErrorMessage()}
+                            <span>{this.getErrorMessage()}</span>
                         </span>}
                     </span>
                 </label>
