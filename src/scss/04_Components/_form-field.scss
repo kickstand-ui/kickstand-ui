@@ -15,6 +15,13 @@
 
         .field-label {
             font-weight: bold;
+            display: flex;
+            align-items: center;
+
+            .tooltip {
+                line-height: 1;
+                @include ml(sm);
+            }
         }
 
         .help-text {
@@ -24,6 +31,12 @@
 
         .error-message {
             @include font-size(xs);
+
+            .error-text {
+                display: flex;
+                align-items: center;
+                @include mb(xs);
+            }
         }
     }
 

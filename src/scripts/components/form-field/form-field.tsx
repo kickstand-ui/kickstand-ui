@@ -78,6 +78,10 @@ export class FormField implements ComponentInterface {
         }
     }
 
+    private getInputName() {
+        return this.label ? this.label.replace(/ /g, '-') : '';
+    }
+
     private onInput = (ev: Event) => {
         const input = ev.target as HTMLInputElement | null;
         if (input) {
@@ -97,8 +101,9 @@ export class FormField implements ComponentInterface {
     }
 
     render() {
-        let fieldId = `form-input-${formFieldIds}`;
-        let labelId = `form-label-${formFieldIds}`;
+        let formFieldId = formFieldIds++;
+        let fieldId = `form-input-${formFieldId}`;
+        let labelId = `form-label-${formFieldId}`;
         let props = {
             'disabled': this.disabled,
             'required': this.required,
@@ -120,11 +125,11 @@ export class FormField implements ComponentInterface {
                     <span class="field-label">
                         {this.label}
                         {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText}>*</abbr>}
-                        {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info ml-xs text-xs" /></ks-tooltip>}
+                        {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size="md" text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info text-xs" /></ks-tooltip>}
                     </span>
                     <span class="help-text">{this.helpText}</span>
-                    <span class={`error-message text-danger`} role="alert" aria-live="assertive">
-                        {this.invalid && <span class="display-flex align-center mb-xs">
+                    <span class="error-message text-danger" role="alert" aria-live="assertive">
+                        {this.invalid && <span class="error-text">
                             <ks-icon icon="danger" class="mr-xs" />
                             {this.getErrorMessage()}
                         </span>}
@@ -134,6 +139,7 @@ export class FormField implements ComponentInterface {
                     id={fieldId}
                     class="form-input"
                     type={this.type}
+                    name={this.getInputName()}
                     {...props}
                     value={this.value}
                     onInput={(e) => this.onInput(e)}

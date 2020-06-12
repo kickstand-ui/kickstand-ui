@@ -10,7 +10,7 @@ export const playground = () => {
     const value = text('value', '');
     const helpText = text('help-text', '');
     const tooltipText = text('tooltip-text', '');
-    const errorMessage = text('error-message', '');
+    const errorMessage = text('default-error-message', '');
     const placeholder = text('placeholder', '');
     const required = boolean('required', false);
     const requiredText = text('required-text', 'Required');
@@ -29,7 +29,7 @@ export const playground = () => {
             label="${label}" 
             help-text="${helpText}"
             tooltip-text="${tooltipText}"
-            error-message="${errorMessage}"
+            default-error-message="${errorMessage}"
             placeholder="${placeholder}"
             required="${required}"
             required-text="${requiredText}"
