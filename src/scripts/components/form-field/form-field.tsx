@@ -4,6 +4,7 @@ import { Component, h, Prop, ComponentInterface, Host, Watch, Event, EventEmitte
     tag: 'ks-form-field'
 })
 export class FormField implements ComponentInterface {
+    formFieldId = formFieldIds++;
     $input: HTMLInputElement;
 
     @Prop() label: string;
@@ -100,9 +101,8 @@ export class FormField implements ComponentInterface {
     }
 
     render() {
-        let formFieldId = formFieldIds++;
-        let fieldId = `form-input-${formFieldId}`;
-        let labelId = `form-label-${formFieldId}`;
+        let fieldId = `form-input-${this.formFieldId}`;
+        let labelId = `form-label-${this.formFieldId}`;
         let props = {
             'disabled': this.disabled,
             'required': this.required,
