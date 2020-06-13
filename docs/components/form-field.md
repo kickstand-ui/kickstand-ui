@@ -60,7 +60,11 @@ If you need to provide the user with additional information that may not need to
 
 ## Error Messages
 
-Error messages can be difficult 
+In order to provide clear error messages to you users, invalid input fields will be bordered in red and the error message will also be display in red to help it stand out from the label and help text. For those users that may not be able to distinguish between the colors, an "alert" icon has been added to call attention to the invalid field and message.
+
+:::tip Note
+The error message is also included in the `<label>` to provide better usability.
+:::
 
 ## Validation
 
@@ -86,6 +90,75 @@ Each fo the validation properties has a corresponding error message you can easi
 :::tip
 To find out more about HTML5 form validation check out this [documentation from MDN](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation).
 :::
+
+## Data Binding
+
+Kickstand UI's components focus on one-way data binding so that data flows in a single direction. What that means is that the variable you bind to the `value` property will not be updated whenever a user enters new content. In order to provide you with the new value, each component wil emit and `updated` event.
+
+### Adding Event Listeners
+
+<div class="my-xl">
+    <ks-form-field label="Name" id="binding-test" class="mb-md" />
+    <b>Bound Value: </b><span id="value"></span>
+    <script>
+        let formField = document.getElementById('binding-test');
+        let value = document.getElementById('value');
+        formField.addEventListener('updated', (e) => {
+            value.innerText = e.detail.value;
+        });
+    </script>
+</div>
+
+```html
+<ks-form-field label="Name" id="binding-test" class="mb-md" />
+<b>Bound Value: </b><span id="value"></span>
+<script>
+    let formField = document.getElementById('binding-test');
+    let value = document.getElementById('value');
+    formField.addEventListener('updated', (e) => {
+        value.innerText = e.detail.value;
+    });
+</script>
+```
+
+:::tip
+Many JavaScript frameworks come with built-in event handling to help simplify your code.
+:::
+
+#### Vue.js
+
+```html
+<ks-form-field label="Name" id="binding-test" @updated="(e) => myMethod(e)" />
+```
+
+#### React
+
+```html
+<ks-form-field label="Name" id="binding-test" onUpdated="(e) => onUpdatedHandler(e)" />
+```
+
+### Event Detail
+
+Event details emit much more that just the value. If you take a look, you will se that it not only emits the value of the field, but also the [ValidityState](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState). This should provide you with more information to manage form validation. 
+
+```json
+{
+    validity: {
+        badInput: false
+        customError: false
+        patternMismatch: false
+        rangeOverflow: false
+        rangeUnderflow: false
+        stepMismatch: false
+        tooLong: false
+        tooShort: false
+        typeMismatch: false
+        valid: true
+        valueMissing: false
+    },
+    value: ""
+}
+```
 
 ## Properties
 
