@@ -129,7 +129,7 @@ export namespace Components {
   }
   interface KsIcon {
     'icon': 'bars' | 'chevron' | 'close' | 'danger' | 'info' | string;
-    'rotate': string;
+    'rotate': '0' | '45' | '90' | '135' | '180' | '225' | '270' | '360' | '-45' | '-90' | '-135' | '-180' | '-225' | '-270' | '-360';
   }
   interface KsImg {
     'alt': string;
@@ -618,7 +618,7 @@ declare namespace LocalJSX {
   }
   interface KsIcon {
     'icon'?: 'bars' | 'chevron' | 'close' | 'danger' | 'info' | string;
-    'rotate'?: string;
+    'rotate'?: '0' | '45' | '90' | '135' | '180' | '225' | '270' | '360' | '-45' | '-90' | '-135' | '-180' | '-225' | '-270' | '-360';
   }
   interface KsImg {
     'alt'?: string;

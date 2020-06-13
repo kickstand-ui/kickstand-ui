@@ -6,7 +6,7 @@ import { Component, h, Host, Prop } from '@stencil/core';
 })
 export class Icons {
     @Prop() icon: 'bars' | 'chevron' | 'close' | 'danger' | 'info' | string;
-    @Prop() rotate: string = '0';
+    @Prop() rotate: '0' | '45' | '90' | '135' | '180' | '225' | '270' | '360' | '-45' | '-90' | '-135' | '-180' | '-225' | '-270' | '-360' = '0';
 
 
     render() {
