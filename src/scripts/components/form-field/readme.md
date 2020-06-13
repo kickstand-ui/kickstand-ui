@@ -40,9 +40,9 @@
 
 ## Events
 
-| Event     | Description | Type               |
-| --------- | ----------- | ------------------ |
-| `updated` |             | `CustomEvent<any>` |
+| Event     | Description | Type                                                                 |
+| --------- | ----------- | -------------------------------------------------------------------- |
+| `updated` |             | `CustomEvent<{ validity: ValidityState; value: string \| number; }>` |
 
 
 ## Dependencies

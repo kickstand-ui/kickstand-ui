@@ -48,7 +48,7 @@ export class FormField implements ComponentInterface {
         console.log(detail);
     }
 
-    @Event() updated!: EventEmitter;
+    @Event() updated!: EventEmitter<{validity: ValidityState, value: string | number}>;
 
     private getErrorMessage(): string {
         switch (true) {

@@ -602,7 +602,7 @@ declare namespace LocalJSX {
     'minErrorMessage'?: string;
     'minlength'?: number;
     'minlengthErrorMessage'?: string;
-    'onUpdated'?: (event: CustomEvent<any>) => void;
+    'onUpdated'?: (event: CustomEvent<{validity: ValidityState, value: string | number}>) => void;
     'pattern'?: string;
     'patternErrorMessage'?: string;
     'placeholder'?: string;
