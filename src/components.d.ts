@@ -133,7 +133,6 @@ export namespace Components {
   }
   interface KsImg {
     'alt': string;
-    'cssClass': string;
     'lazy': boolean;
     'src': string;
     'threshold': number;
@@ -622,7 +621,6 @@ declare namespace LocalJSX {
   }
   interface KsImg {
     'alt'?: string;
-    'cssClass'?: string;
     'lazy'?: boolean;
     'src'?: string;
     'threshold'?: number;
