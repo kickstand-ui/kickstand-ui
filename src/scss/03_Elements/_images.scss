@@ -11,6 +11,10 @@ img {
     vertical-align: middle;
 }
 
+ks-img {
+    display: inline-block;
+}
+
 // 1. Workaround for the SVG overflow bug in IE 11 is still required.
 //    See https://github.com/twbs/bootstrap/issues/26878
 

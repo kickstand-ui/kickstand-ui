@@ -5,9 +5,8 @@ import { Component, Element, Prop, State, h } from '@stencil/core';
     tag: 'ks-img'
 })
 export class Img {
-    @Element() el: HTMLElement;
+    @Element() $el: HTMLElement;
 
-    @Prop() cssClass: string = '';
     @Prop() src: string;
     @Prop() alt: string;
     @Prop() lazy: boolean;
@@ -28,8 +27,8 @@ export class Img {
         this.oldSrc = this.src;
     }
 
-    handleImage() {
-        const image: HTMLImageElement = this.el.querySelector('img');
+    setImgSrc() {
+        const image: HTMLImageElement = this.$el.querySelector('img');
         image.setAttribute('src', image.getAttribute('data-src'));
         image.onload = () => {
             image.removeAttribute('data-src');
@@ -37,12 +36,11 @@ export class Img {
     }
 
     addIntersectionObserver() {
-        if (!this.src) {
+        if (!this.src)
             return;
-        }
 
         if (!this.lazy) {
-            this.handleImage();
+            this.setImgSrc();
             return;
         }
 
@@ -56,7 +54,7 @@ export class Img {
     initializeObserver() {
         this.io = new IntersectionObserver((data: any) => {
             if (data[0].isIntersecting) {
-                this.handleImage();
+                this.setImgSrc();
                 this.removeIntersectionObserver();
             }
         },
@@ -64,13 +62,13 @@ export class Img {
                 rootMargin: `${this.threshold}px 0px`
             });
 
-        this.io.observe(this.el.querySelector('img'));
+        this.io.observe(this.$el.querySelector('img'));
     }
 
     executeFallback() {
         // fall back to setTimeout for Safari and IE
         setTimeout(() => {
-            this.handleImage();
+            this.setImgSrc();
         }, 300);
     }
 
@@ -83,7 +81,7 @@ export class Img {
 
     render() {
         return (
-            <img class={this.cssClass} data-src={this.src} alt={this.alt}></img>
+            <img data-src={this.src} alt={this.alt} />
         );
     }
 }
