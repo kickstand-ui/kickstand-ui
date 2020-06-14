@@ -149,6 +149,7 @@ export namespace Components {
     'show': () => Promise<void>;
     'showMessage': boolean;
     'size': 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+    'type': 'spinner' | 'ellipsis';
   }
   interface KsModal {
     'dismissible': boolean;
@@ -635,6 +636,7 @@ declare namespace LocalJSX {
     'message'?: string;
     'showMessage'?: boolean;
     'size'?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+    'type'?: 'spinner' | 'ellipsis';
   }
   interface KsModal {
     'dismissible'?: boolean;
