@@ -38,10 +38,12 @@ export namespace Components {
     'expanded': boolean;
     'haspopup': boolean;
     'hideText': boolean;
+    'hides': string;
     'href': string;
     'icon': string;
     'iconDirection': 'left' | 'right';
     'loading': boolean;
+    'shows': string;
     'size': 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     'tabIndex': number;
     'type': 'button' | 'submit' | 'reset';
@@ -526,10 +528,12 @@ declare namespace LocalJSX {
     'expanded'?: boolean;
     'haspopup'?: boolean;
     'hideText'?: boolean;
+    'hides'?: string;
     'href'?: string;
     'icon'?: string;
     'iconDirection'?: 'left' | 'right';
     'loading'?: boolean;
+    'shows'?: string;
     'size'?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     'tabIndex'?: number;
     'type'?: 'button' | 'submit' | 'reset';
