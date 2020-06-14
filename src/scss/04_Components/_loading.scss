@@ -5,16 +5,12 @@
     line-height: 1;
 
     .message {
-        @include mx(md);
-    }
-
-    &.show-message {
-        display: inline-flex;
-        align-items: center;
+        @include ml(sm);
     }
 
     .spinner {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
         position: relative;
         width: 1.25em;
         height: 1.25em;
@@ -59,6 +55,7 @@
             height: 0.5em;
             border-radius: 50%;
             background: color(primary);
+            margin-top: -0.125em;
             animation-timing-function: cubic-bezier(0, 1, 1, 0);
 
             &:nth-child(1) {
