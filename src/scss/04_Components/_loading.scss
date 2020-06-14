@@ -1,28 +1,35 @@
 @import "../00_Abstracts/index";
 
 .loading {
-    display: inline-block;
-    line-height: 1;
+    display: inline-flex;
+    align-items: center;
 
     .message {
+        line-height: 1;
         @include ml(sm);
     }
 
+    &.show-message {
+        .spinner {
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+
     .spinner {
-        display: inline-flex;
-        align-items: center;
+        display: inline-block;
         position: relative;
-        width: 1.25em;
-        height: 1.25em;
+        width: 1em;
+        height: 1em;
         cursor: wait;
 
         div {
             box-sizing: border-box;
             display: block;
             position: absolute;
-            width: 1.25em;
-            height: 1.25em;
-            border: 0.175em solid color(primary);
+            width: 1em;
+            height: 1em;
+            border: 0.125em solid color(primary);
             border-radius: 50%;
             animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
             border-color: color(primary) transparent transparent transparent;
@@ -50,12 +57,11 @@
 
         div {
             position: absolute;
-            top: 0.4em;
+            top: 0.25em;
             width: 0.5em;
             height: 0.5em;
             border-radius: 50%;
             background: color(primary);
-            margin-top: -0.125em;
             animation-timing-function: cubic-bezier(0, 1, 1, 0);
 
             &:nth-child(1) {
@@ -91,6 +97,12 @@
         .show-message {
             flex-direction: column;
             align-items: center;
+
+            .message {
+                font-size: 0.75em;
+                margin-top: 0.25em;
+                @include ml(none);
+            }
         }
     }
 }
@@ -99,6 +111,7 @@
     0% {
         transform: scale(0);
     }
+
     100% {
         transform: scale(1);
     }
@@ -108,6 +121,7 @@
     0% {
         transform: translate(0, 0);
     }
+
     100% {
         transform: translate(0.75em, 0);
     }
@@ -117,6 +131,7 @@
     0% {
         transform: scale(1);
     }
+
     100% {
         transform: scale(0);
     }
@@ -126,6 +141,7 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }

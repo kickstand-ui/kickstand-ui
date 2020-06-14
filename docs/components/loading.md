@@ -19,7 +19,7 @@ There are two ways to display loading indicators - inline or in an overlay.
 <div class="my-xl">
     <ks-loading type="spinner" message="Spinner Loading..." show-message />
     <br />
-    <span>Test Text</span><ks-loading type="ellipsis" message="Ellipsis Loading..." show-message />
+    <ks-loading type="ellipsis" message="Ellipsis Loading..." show-message />
 </div>
 
 ```html
