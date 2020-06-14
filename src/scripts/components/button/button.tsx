@@ -1,10 +1,12 @@
-import { Component, h, Prop, ComponentInterface, Host } from '@stencil/core';
+import { Component, h, Prop, ComponentInterface, Host, Element } from '@stencil/core';
 
 @Component({
     tag: 'ks-button'
 })
 export class LinkButton implements ComponentInterface {
     $loading: HTMLKsLoadingOverlayElement;
+
+    @Element() $el: HTMLElement;
 
     @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';
     @Prop() type: 'button' | 'submit' | 'reset' = 'button';
@@ -22,11 +24,48 @@ export class LinkButton implements ComponentInterface {
     @Prop() controls: string;
     @Prop() describedBy: string;
     @Prop() tabIndex: number;
+    @Prop() shows: string;
+    @Prop() hides: string;
 
     componentDidRender() {
         this.loading
             ? this.$loading.show()
             : this.$loading.hide();
+
+        this.setEventListeners();
+    }
+
+    private setEventListeners() {
+        this.setOpensListener();
+        this.setHidesListener();
+    }
+
+    private setOpensListener() {
+        if(!this.shows)
+            return;
+
+        let $showsComponent = document.getElementById(this.shows) as HTMLKsOverlayElement;
+
+        if(!$showsComponent)
+            return;
+
+        this.haspopup = true;
+        this.controls = this.shows;
+        this.$el.addEventListener('click', () => $showsComponent.show());
+    }
+
+    private setHidesListener() {
+        if(!this.hides)
+            return;
+
+        let $hidesComponent = document.getElementById(this.hides) as HTMLKsOverlayElement;
+
+        if(!$hidesComponent)
+            return;
+
+        this.haspopup = true;
+        this.controls = this.hides;
+        this.$el.addEventListener('click', () => $hidesComponent.hide());
     }
 
     render() {

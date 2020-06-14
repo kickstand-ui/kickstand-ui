@@ -38,10 +38,12 @@ export namespace Components {
     'expanded': boolean;
     'haspopup': boolean;
     'hideText': boolean;
+    'hides': string;
     'href': string;
     'icon': string;
     'iconDirection': 'left' | 'right';
     'loading': boolean;
+    'shows': string;
     'size': 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     'tabIndex': number;
     'type': 'button' | 'submit' | 'reset';
@@ -149,6 +151,7 @@ export namespace Components {
     'show': () => Promise<void>;
     'showMessage': boolean;
     'size': 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+    'type': 'spinner' | 'ellipsis';
   }
   interface KsModal {
     'dismissible': boolean;
@@ -525,10 +528,12 @@ declare namespace LocalJSX {
     'expanded'?: boolean;
     'haspopup'?: boolean;
     'hideText'?: boolean;
+    'hides'?: string;
     'href'?: string;
     'icon'?: string;
     'iconDirection'?: 'left' | 'right';
     'loading'?: boolean;
+    'shows'?: string;
     'size'?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     'tabIndex'?: number;
     'type'?: 'button' | 'submit' | 'reset';
@@ -635,6 +640,7 @@ declare namespace LocalJSX {
     'message'?: string;
     'showMessage'?: boolean;
     'size'?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+    'type'?: 'spinner' | 'ellipsis';
   }
   interface KsModal {
     'dismissible'?: boolean;

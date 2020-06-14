@@ -11,8 +11,9 @@
 | ------------- | -------------- | ----------- | -------------------------------------------------------- | -------------- |
 | `absolute`    | `absolute`     |             | `boolean`                                                | `false`        |
 | `message`     | `message`      |             | `string`                                                 | `'Loading...'` |
-| `showMessage` | `show-message` |             | `boolean`                                                | `undefined`    |
+| `showMessage` | `show-message` |             | `boolean`                                                | `false`        |
 | `size`        | `size`         |             | `"lg" \| "md" \| "sm" \| "xl" \| "xs" \| "xxl" \| "xxs"` | `'sm'`         |
+| `type`        | `type`         |             | `"ellipsis" \| "spinner"`                                | `'spinner'`    |
 
 
 ## Methods

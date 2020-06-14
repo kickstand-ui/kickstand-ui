@@ -13,7 +13,7 @@ npm install
 Run Storybook:
 
 ```bash
-npm run storybook:watch
+npm run dev:storybook
 ```
 
 Build project for production:

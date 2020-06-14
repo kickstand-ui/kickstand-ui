@@ -7,8 +7,8 @@ export class Loading implements ComponentInterface {
     @Element() $el: HTMLElement;
 
     @Prop() type: 'spinner' | 'ellipsis' = 'spinner';
-    @Prop() message: string = 'Loading';
-    @Prop() showMessage: boolean;
+    @Prop() message: string = 'Loading...';
+    @Prop() showMessage: boolean = false;
 
     render() {
         return (

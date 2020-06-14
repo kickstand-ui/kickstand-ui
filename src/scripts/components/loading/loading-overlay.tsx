@@ -11,7 +11,8 @@ export class LoadingOverlay implements ComponentInterface {
     @Prop() absolute: boolean = false;
     @Prop() message: string = 'Loading...';
     @Prop() size: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' = 'sm';
-    @Prop() showMessage: boolean;
+    @Prop() showMessage: boolean = false;
+    @Prop() type: 'spinner' | 'ellipsis' = 'spinner';
 
     @Method()
     async show() {
@@ -27,7 +28,7 @@ export class LoadingOverlay implements ComponentInterface {
         return (
             <Host class="loading-overlay">
                 <ks-overlay theme="light" dismissible={false} absolute={this.absolute} ref={el => this.$overlay = el}>
-                    <ks-loading message={this.message} show-message={this.showMessage} class={`text-${this.size}`} />
+                    <ks-loading type={this.type} message={this.message} show-message={this.showMessage} class={`text-${this.size}`} />
                 </ks-overlay>
             </Host>);
     }
