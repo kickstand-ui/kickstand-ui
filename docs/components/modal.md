@@ -79,7 +79,7 @@ The `<ks-modal-footer>` does not have any custom properties available, but it do
 ```
 
 :::tip Note
-It is important to choose what the behavior will be and try to be as consistent as possible, especially as it pertains to multiple actions. If you are undecided, start with least important action on the left moving to the most important action on the right.
+It is important to choose what the footer behavior will be and try to be as consistent as possible, especially as it pertains to multiple actions. If you are undecided, start with least important action on the left moving to the most important action on the right because of the alignment. If you decide something else works better for you, change it. Whatever you decide to do, _be consistent_ in all of your modals.
 :::
 
 <div class="my-xl">
@@ -109,7 +109,7 @@ It is important to choose what the behavior will be and try to be as consistent 
 
 ## Prevent Close
 
-By default, Kickstand UI's modals can be dismissed using the close button or the escape key. You have the ability to prevent your modals from being dismissed without a user taking an action using the `prevent-close` property. When it is set to `true`, the close button will be removed, clicking the overlay will not dismiss the modal, and pressing the escape key will also not dismiss the modal. This will force the user to acknowledge the modal.
+By default, Kickstand UI's modals can be dismissed using the close button, using the escape key, or clicking the overlay. You have the ability to prevent your modals from being dismissed without a user taking an action using the `prevent-close` property. When it is set to `true`, the close button will be removed, clicking the overlay will not dismiss the modal, and pressing the escape key will also not dismiss the modal. This will force the user to acknowledge the modal.
 
 <div class="my-xl">
     <ks-button shows="prevent-close_modal">Show Modal</ks-button>
