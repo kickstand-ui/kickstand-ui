@@ -13,7 +13,7 @@ export class Overlay {
     @Prop() titleId: string;
     @Prop() absolute: boolean;
     @Prop() theme: 'dark' | 'light' = 'dark';
-    @Prop() dismissible: boolean = true;
+    @Prop() preventClose: boolean = false;
 
     @State() focusIndex: number = 0;
     @State() isShowing: boolean = false;
@@ -57,7 +57,7 @@ export class Overlay {
     }
 
     handleEsc() {
-        if (this.dismissible)
+        if (!this.preventClose)
             this.hide();
     }
 
@@ -82,7 +82,7 @@ export class Overlay {
     }
 
     handleScrimClick() {
-        if (this.dismissible)
+        if (!this.preventClose)
             this.hide();
     }
 

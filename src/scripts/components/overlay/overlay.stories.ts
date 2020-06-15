@@ -5,7 +5,7 @@ export default { title: 'Overlay' };
 export const playground = () => {
     const theme = select('theme', ['dark', 'light'], 'dark');
     const absolute = boolean('absolute', false);
-    const dismissible = boolean('dismissible', true);
+    const preventClose = boolean('prevent-close', true);
 
     setTimeout(() => {
         let $openButton = document.getElementById('open');
@@ -22,7 +22,7 @@ export const playground = () => {
     return (`
     <div style="width:300px; height:300px; position:relative;">
         <ks-button class="m-xxl" id="open">Open Overlay</ks-button>
-        <ks-overlay absolute="${absolute}" theme="${theme}" dismissible="${dismissible}" id="overlay">
+        <ks-overlay absolute="${absolute}" theme="${theme}" prevent-close="${preventClose}" id="overlay">
             <ks-button color="light" id="close">Close Overlay!</ks-button>
         </ks-overlay>
     </div>

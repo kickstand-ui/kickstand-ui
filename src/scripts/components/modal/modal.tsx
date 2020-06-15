@@ -5,12 +5,12 @@ import { Component, h, Prop, ComponentInterface, Element, Method } from '@stenci
 })
 export class Modal implements ComponentInterface {
     $overlay: HTMLKsOverlayElement;
+    titleId = `modal-title-${modalIds++}`;
 
     @Element() $el: HTMLElement;
 
-    @Prop() titleId: string;
     @Prop() modalTitle: string;
-    @Prop() dismissible: boolean = true;
+    @Prop() preventClose: boolean = false;
     @Prop() size: 'sm' | 'md' | 'lg' = 'md';
 
     @Method()
@@ -23,14 +23,13 @@ export class Modal implements ComponentInterface {
         await this.$overlay.hide();
     }
 
-
     render() {
         return (
-            <ks-overlay title-id={this.titleId} ref={el => this.$overlay = el} dismissible={this.dismissible}>
+            <ks-overlay title-id={this.titleId} ref={el => this.$overlay = el} prevent-close={this.preventClose}>
                 <div class={`modal size-${this.size}`}>
                     <header class="modal-header">
                         <h3 class="modal-title" id={this.titleId}>{this.modalTitle}</h3>
-                        {this.dismissible && <ks-button onClick={() => this.hide()} display="clear" class="modal-close">
+                        {!this.preventClose && <ks-button onClick={() => this.hide()} display="clear" class="modal-close">
                             <span class="sr-only">Close Modal</span>
                             <ks-icon icon="close" />
                         </ks-button>}
@@ -43,3 +42,5 @@ export class Modal implements ComponentInterface {
         );
     }
 }
+
+let modalIds = 0;

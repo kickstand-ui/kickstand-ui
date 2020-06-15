@@ -174,7 +174,6 @@ If you are using the (`<ks-button>` element)[/components/button.html] you can ta
 <ks-button hides="show_overlay">Hide Overlay</ks-button>
 ```
 
-
 ## Properties
 
 ### Loading
