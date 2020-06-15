@@ -2,6 +2,8 @@
 
 .modal {
     max-width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
     @include bg-color(white);
     @include p(lg);
 
