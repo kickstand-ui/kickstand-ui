@@ -154,12 +154,11 @@ export namespace Components {
     'type': 'spinner' | 'ellipsis';
   }
   interface KsModal {
-    'dismissible': boolean;
     'hide': () => Promise<void>;
     'modalTitle': string;
+    'preventClose': boolean;
     'show': () => Promise<void>;
     'size': 'sm' | 'md' | 'lg';
-    'titleId': string;
   }
   interface KsModalFooter {}
   interface KsNavbar {
@@ -179,8 +178,8 @@ export namespace Components {
   interface KsNavbarRow {}
   interface KsOverlay {
     'absolute': boolean;
-    'dismissible': boolean;
     'hide': () => Promise<void>;
+    'preventClose': boolean;
     'show': () => Promise<void>;
     'theme': 'dark' | 'light';
     'titleId': string;
@@ -643,10 +642,9 @@ declare namespace LocalJSX {
     'type'?: 'spinner' | 'ellipsis';
   }
   interface KsModal {
-    'dismissible'?: boolean;
     'modalTitle'?: string;
+    'preventClose'?: boolean;
     'size'?: 'sm' | 'md' | 'lg';
-    'titleId'?: string;
   }
   interface KsModalFooter {}
   interface KsNavbar {
@@ -666,7 +664,7 @@ declare namespace LocalJSX {
   interface KsNavbarRow {}
   interface KsOverlay {
     'absolute'?: boolean;
-    'dismissible'?: boolean;
+    'preventClose'?: boolean;
     'theme'?: 'dark' | 'light';
     'titleId'?: string;
   }

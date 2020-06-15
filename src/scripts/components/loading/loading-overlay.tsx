@@ -27,7 +27,7 @@ export class LoadingOverlay implements ComponentInterface {
     render() {
         return (
             <Host class="loading-overlay">
-                <ks-overlay theme="light" dismissible={false} absolute={this.absolute} ref={el => this.$overlay = el}>
+                <ks-overlay theme="light" prevent-close absolute={this.absolute} ref={el => this.$overlay = el}>
                     <ks-loading type={this.type} message={this.message} show-message={this.showMessage} class={`text-${this.size}`} />
                 </ks-overlay>
             </Host>);

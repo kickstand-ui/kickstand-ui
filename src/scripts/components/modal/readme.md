@@ -1,4 +1,4 @@
-# ks-button
+# ks-modal
 
 
 
