@@ -9,12 +9,12 @@ export class Navbar {
 
     @Element() $el: HTMLElement;
 
-    @Prop() logoUrl: string;
     @Prop() altText: string;
-    @Prop() tagline: string;
-    @Prop() collapseAt: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'sm';
+    @Prop() collapse: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'sm';
     @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';
-    @Prop() inverted: boolean;
+    @Prop() inverted: boolean = false;
+    @Prop() logoUrl: string;
+    @Prop() tagline: string;
 
     @State() expanded = false;
 
@@ -32,7 +32,7 @@ export class Navbar {
     render() {
         let classes = {
             'navbar': true,
-            [`collapse-${this.collapseAt}`]: true,
+            [`collapse-${this.collapse}`]: true,
             [this.color]: true,
             'inverted': this.inverted
         }

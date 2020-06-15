@@ -1,11 +1,9 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Host } from '@stencil/core';
 
 @Component({
     tag: 'ks-navbar-item'
 })
 export class NavbarItem {
-    @Prop() position: string = 'right';
-
     render() {
         return (
             <Host class={`navbar-item`}>

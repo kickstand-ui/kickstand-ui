@@ -163,7 +163,7 @@ export namespace Components {
   interface KsModalFooter {}
   interface KsNavbar {
     'altText': string;
-    'collapseAt': 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    'collapse': 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'inverted': boolean;
     'logoUrl': string;
@@ -172,9 +172,7 @@ export namespace Components {
   interface KsNavbarGroup {
     'position': 'left' | 'right';
   }
-  interface KsNavbarItem {
-    'position': string;
-  }
+  interface KsNavbarItem {}
   interface KsNavbarRow {}
   interface KsOverlay {
     'absolute': boolean;
@@ -649,7 +647,7 @@ declare namespace LocalJSX {
   interface KsModalFooter {}
   interface KsNavbar {
     'altText'?: string;
-    'collapseAt'?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    'collapse'?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'inverted'?: boolean;
     'logoUrl'?: string;
@@ -658,9 +656,7 @@ declare namespace LocalJSX {
   interface KsNavbarGroup {
     'position'?: 'left' | 'right';
   }
-  interface KsNavbarItem {
-    'position'?: string;
-  }
+  interface KsNavbarItem {}
   interface KsNavbarRow {}
   interface KsOverlay {
     'absolute'?: boolean;
