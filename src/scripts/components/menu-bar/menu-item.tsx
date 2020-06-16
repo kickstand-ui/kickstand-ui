@@ -12,7 +12,8 @@ export class MenuItem implements ComponentInterface {
         let $link = this.$el.querySelector('a');
 
         let isActive = $link 
-            ? $link.href == window.location.pathname 
+            ? $link.href == window.location.pathname
+             
             : false;
 
         if(isActive)
@@ -23,7 +24,7 @@ export class MenuItem implements ComponentInterface {
 
     render() {
         let classes = {
-            'main-menu': true,
+            'menu-item': true,
             'active': this.getActiveStatus()
         };
 
