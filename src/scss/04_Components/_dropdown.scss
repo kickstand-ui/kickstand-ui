@@ -115,8 +115,8 @@
     }
 }
 
-.navbar {
-    .navbar-item {
+.menu-bar {
+    .menu-item {
         .dropdown {
             @include m(none);
 
@@ -148,7 +148,7 @@
         @each $key, $value in $media-queries {
             &-#{$key} {
                 @include mq($key) {
-                    .navbar-item {
+                    .menu-item {
                         .dropdown {
                             .dropdown-button {
                                 width: 100%;

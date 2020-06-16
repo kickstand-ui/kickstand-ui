@@ -153,6 +153,19 @@ export namespace Components {
     'size': 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
     'type': 'spinner' | 'ellipsis';
   }
+  interface KsMenuBar {
+    'altText': string;
+    'collapse': 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+    'inverted': boolean;
+    'logoUrl': string;
+    'tagline': string;
+  }
+  interface KsMenuGroup {
+    'position': 'left' | 'right';
+  }
+  interface KsMenuItem {}
+  interface KsMenuRow {}
   interface KsModal {
     'hide': () => Promise<void>;
     'modalTitle': string;
@@ -161,19 +174,6 @@ export namespace Components {
     'size': 'sm' | 'md' | 'lg';
   }
   interface KsModalFooter {}
-  interface KsNavbar {
-    'altText': string;
-    'collapse': 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-    'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
-    'inverted': boolean;
-    'logoUrl': string;
-    'tagline': string;
-  }
-  interface KsNavbarGroup {
-    'position': 'left' | 'right';
-  }
-  interface KsNavbarItem {}
-  interface KsNavbarRow {}
   interface KsOverlay {
     'absolute': boolean;
     'hide': () => Promise<void>;
@@ -362,6 +362,30 @@ declare global {
     new (): HTMLKsLoadingOverlayElement;
   };
 
+  interface HTMLKsMenuBarElement extends Components.KsMenuBar, HTMLStencilElement {}
+  var HTMLKsMenuBarElement: {
+    prototype: HTMLKsMenuBarElement;
+    new (): HTMLKsMenuBarElement;
+  };
+
+  interface HTMLKsMenuGroupElement extends Components.KsMenuGroup, HTMLStencilElement {}
+  var HTMLKsMenuGroupElement: {
+    prototype: HTMLKsMenuGroupElement;
+    new (): HTMLKsMenuGroupElement;
+  };
+
+  interface HTMLKsMenuItemElement extends Components.KsMenuItem, HTMLStencilElement {}
+  var HTMLKsMenuItemElement: {
+    prototype: HTMLKsMenuItemElement;
+    new (): HTMLKsMenuItemElement;
+  };
+
+  interface HTMLKsMenuRowElement extends Components.KsMenuRow, HTMLStencilElement {}
+  var HTMLKsMenuRowElement: {
+    prototype: HTMLKsMenuRowElement;
+    new (): HTMLKsMenuRowElement;
+  };
+
   interface HTMLKsModalElement extends Components.KsModal, HTMLStencilElement {}
   var HTMLKsModalElement: {
     prototype: HTMLKsModalElement;
@@ -372,30 +396,6 @@ declare global {
   var HTMLKsModalFooterElement: {
     prototype: HTMLKsModalFooterElement;
     new (): HTMLKsModalFooterElement;
-  };
-
-  interface HTMLKsNavbarElement extends Components.KsNavbar, HTMLStencilElement {}
-  var HTMLKsNavbarElement: {
-    prototype: HTMLKsNavbarElement;
-    new (): HTMLKsNavbarElement;
-  };
-
-  interface HTMLKsNavbarGroupElement extends Components.KsNavbarGroup, HTMLStencilElement {}
-  var HTMLKsNavbarGroupElement: {
-    prototype: HTMLKsNavbarGroupElement;
-    new (): HTMLKsNavbarGroupElement;
-  };
-
-  interface HTMLKsNavbarItemElement extends Components.KsNavbarItem, HTMLStencilElement {}
-  var HTMLKsNavbarItemElement: {
-    prototype: HTMLKsNavbarItemElement;
-    new (): HTMLKsNavbarItemElement;
-  };
-
-  interface HTMLKsNavbarRowElement extends Components.KsNavbarRow, HTMLStencilElement {}
-  var HTMLKsNavbarRowElement: {
-    prototype: HTMLKsNavbarRowElement;
-    new (): HTMLKsNavbarRowElement;
   };
 
   interface HTMLKsOverlayElement extends Components.KsOverlay, HTMLStencilElement {}
@@ -478,12 +478,12 @@ declare global {
     'ks-img': HTMLKsImgElement;
     'ks-loading': HTMLKsLoadingElement;
     'ks-loading-overlay': HTMLKsLoadingOverlayElement;
+    'ks-menu-bar': HTMLKsMenuBarElement;
+    'ks-menu-group': HTMLKsMenuGroupElement;
+    'ks-menu-item': HTMLKsMenuItemElement;
+    'ks-menu-row': HTMLKsMenuRowElement;
     'ks-modal': HTMLKsModalElement;
     'ks-modal-footer': HTMLKsModalFooterElement;
-    'ks-navbar': HTMLKsNavbarElement;
-    'ks-navbar-group': HTMLKsNavbarGroupElement;
-    'ks-navbar-item': HTMLKsNavbarItemElement;
-    'ks-navbar-row': HTMLKsNavbarRowElement;
     'ks-overlay': HTMLKsOverlayElement;
     'ks-progress-bar': HTMLKsProgressBarElement;
     'ks-row': HTMLKsRowElement;
@@ -639,13 +639,7 @@ declare namespace LocalJSX {
     'size'?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
     'type'?: 'spinner' | 'ellipsis';
   }
-  interface KsModal {
-    'modalTitle'?: string;
-    'preventClose'?: boolean;
-    'size'?: 'sm' | 'md' | 'lg';
-  }
-  interface KsModalFooter {}
-  interface KsNavbar {
+  interface KsMenuBar {
     'altText'?: string;
     'collapse'?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
@@ -653,11 +647,17 @@ declare namespace LocalJSX {
     'logoUrl'?: string;
     'tagline'?: string;
   }
-  interface KsNavbarGroup {
+  interface KsMenuGroup {
     'position'?: 'left' | 'right';
   }
-  interface KsNavbarItem {}
-  interface KsNavbarRow {}
+  interface KsMenuItem {}
+  interface KsMenuRow {}
+  interface KsModal {
+    'modalTitle'?: string;
+    'preventClose'?: boolean;
+    'size'?: 'sm' | 'md' | 'lg';
+  }
+  interface KsModalFooter {}
   interface KsOverlay {
     'absolute'?: boolean;
     'preventClose'?: boolean;
@@ -740,12 +740,12 @@ declare namespace LocalJSX {
     'ks-img': KsImg;
     'ks-loading': KsLoading;
     'ks-loading-overlay': KsLoadingOverlay;
+    'ks-menu-bar': KsMenuBar;
+    'ks-menu-group': KsMenuGroup;
+    'ks-menu-item': KsMenuItem;
+    'ks-menu-row': KsMenuRow;
     'ks-modal': KsModal;
     'ks-modal-footer': KsModalFooter;
-    'ks-navbar': KsNavbar;
-    'ks-navbar-group': KsNavbarGroup;
-    'ks-navbar-item': KsNavbarItem;
-    'ks-navbar-row': KsNavbarRow;
     'ks-overlay': KsOverlay;
     'ks-progress-bar': KsProgressBar;
     'ks-row': KsRow;
@@ -785,12 +785,12 @@ declare module "@stencil/core" {
       'ks-img': LocalJSX.KsImg & JSXBase.HTMLAttributes<HTMLKsImgElement>;
       'ks-loading': LocalJSX.KsLoading & JSXBase.HTMLAttributes<HTMLKsLoadingElement>;
       'ks-loading-overlay': LocalJSX.KsLoadingOverlay & JSXBase.HTMLAttributes<HTMLKsLoadingOverlayElement>;
+      'ks-menu-bar': LocalJSX.KsMenuBar & JSXBase.HTMLAttributes<HTMLKsMenuBarElement>;
+      'ks-menu-group': LocalJSX.KsMenuGroup & JSXBase.HTMLAttributes<HTMLKsMenuGroupElement>;
+      'ks-menu-item': LocalJSX.KsMenuItem & JSXBase.HTMLAttributes<HTMLKsMenuItemElement>;
+      'ks-menu-row': LocalJSX.KsMenuRow & JSXBase.HTMLAttributes<HTMLKsMenuRowElement>;
       'ks-modal': LocalJSX.KsModal & JSXBase.HTMLAttributes<HTMLKsModalElement>;
       'ks-modal-footer': LocalJSX.KsModalFooter & JSXBase.HTMLAttributes<HTMLKsModalFooterElement>;
-      'ks-navbar': LocalJSX.KsNavbar & JSXBase.HTMLAttributes<HTMLKsNavbarElement>;
-      'ks-navbar-group': LocalJSX.KsNavbarGroup & JSXBase.HTMLAttributes<HTMLKsNavbarGroupElement>;
-      'ks-navbar-item': LocalJSX.KsNavbarItem & JSXBase.HTMLAttributes<HTMLKsNavbarItemElement>;
-      'ks-navbar-row': LocalJSX.KsNavbarRow & JSXBase.HTMLAttributes<HTMLKsNavbarRowElement>;
       'ks-overlay': LocalJSX.KsOverlay & JSXBase.HTMLAttributes<HTMLKsOverlayElement>;
       'ks-progress-bar': LocalJSX.KsProgressBar & JSXBase.HTMLAttributes<HTMLKsProgressBarElement>;
       'ks-row': LocalJSX.KsRow & JSXBase.HTMLAttributes<HTMLKsRowElement>;

@@ -1,11 +1,11 @@
-import { Component, h, Prop, State, Element, Host } from '@stencil/core';
+import { Component, h, Prop, State, Element, Host, ComponentInterface } from '@stencil/core';
 
 @Component({
-    tag: 'ks-navbar'
+    tag: 'ks-menu-bar'
 })
-export class Navbar {
-    $navbarContent: HTMLElement;
-    navbarId: string = `navbar-${navbarIds++}`;
+export class MenuBar implements ComponentInterface {
+    $menuContent: HTMLElement;
+    menuId: string = `menu-${menuIds++}`;
 
     @Element() $el: HTMLElement;
 
@@ -26,12 +26,12 @@ export class Navbar {
     }
 
     private setDropdownFocus() {
-        this.$navbarContent.focus();
+        this.$menuContent.focus();
     }
 
     render() {
         let classes = {
-            'navbar': true,
+            'menu-bar': true,
             [`collapse-${this.collapse}`]: true,
             [this.color]: true,
             'inverted': this.inverted
@@ -39,22 +39,22 @@ export class Navbar {
         return (
             <Host class={classes} role="navigation">
                 {(this.logoUrl || this.tagline) &&
-                    <a href="/" class="navbar-branding">
+                    <a href="/" class="menu-branding">
                         {this.logoUrl && <img class="logo" src={this.logoUrl} alt={this.altText} />}
                         {this.tagline && <span class="tagline">{this.tagline}</span>}
                     </a>
                 }
                 <button
-                    class="button navbar-toggler"
+                    class="button menu-toggler"
                     onClick={this.toggleMenu.bind(this)}
                     aria-haspopup="true"
                     aria-expanded={`${this.expanded}`}
-                    aria-controls={`navbar-content-${this.navbarId}`}
+                    aria-controls={`menu-content-${this.menuId}`}
                 >
                     <span class="sr-only">toggle menu</span>
                     <ks-icon icon="bars" />
                 </button>
-                <div class="navbar-content" id={`navbar-content-${this.navbarId}`} ref={el => this.$navbarContent = el} tabindex="-1">
+                <div class="menu-content" id={`menu-content-${this.menuId}`} ref={el => this.$menuContent = el} tabindex="-1">
                     <slot />
                 </div>
             </Host>
@@ -62,4 +62,4 @@ export class Navbar {
     }
 }
 
-let navbarIds = 0;
+let menuIds = 0;
