@@ -12,8 +12,7 @@ export class MenuItem implements ComponentInterface {
         let $link = this.$el.querySelector('a');
 
         let isActive = $link 
-            ? $link.href == window.location.pathname
-             
+            ? $link.getAttribute('href') === window.location.pathname
             : false;
 
         if(isActive)
