@@ -109,7 +109,7 @@ Each of the colors in the theme palette are available for styling your menu bar.
 
 ## Inverted
 
-By adding the `inverted` property to you menu bar component, you can set the background color to white and the link text to the selected `color`.
+By adding the `inverted` property to your menu bar component, you can set the background color to white and the link text to the selected `color`.
 
 <div class="my-xl">
     <ks-menu-bar tagline="Inverted Menu" inverted>
@@ -143,9 +143,13 @@ By adding the `inverted` property to you menu bar component, you can set the bac
 </ks-menu-bar>
 ```
 
+:::warning Accessibility
+Please ensure that the text color has a sufficient contrast ratio before you implement it.
+:::
+
 ## Collapse
 
-Menus can can contain varying amounts of content which can make displaying on different device sizes difficult. Using the `collapse` property you can control the responsiveness of your menus and control when the menu collapses. Options range from `xxs`-`xl` screen sizes.
+Menus can can contain varying amounts of content which can make displaying on different device sizes difficult. Using the `collapse` property you can control the responsiveness of your menus - when the menu collapses. Options range from `xxs`-`xl` screen sizes.
 
 <div class="my-xl">
     <ks-menu-bar tagline="Collapse at XL" collapse="xl">
