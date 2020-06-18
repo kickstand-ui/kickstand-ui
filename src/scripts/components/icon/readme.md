@@ -22,8 +22,8 @@
  - [ks-carousel](../carousel)
  - [ks-dropdown](../dropdown)
  - [ks-form-field](../form-field)
+ - [ks-menu-bar](../menu-bar)
  - [ks-modal](../modal)
- - [ks-navbar](../navbar)
  - [ks-side-drawer](../side-drawer)
 
 ### Graph
@@ -34,8 +34,8 @@ graph TD;
   ks-carousel --> ks-icon
   ks-dropdown --> ks-icon
   ks-form-field --> ks-icon
+  ks-menu-bar --> ks-icon
   ks-modal --> ks-icon
-  ks-navbar --> ks-icon
   ks-side-drawer --> ks-icon
   style ks-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```

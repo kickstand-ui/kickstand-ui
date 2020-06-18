@@ -60,12 +60,12 @@ module.exports = {
                     "/components/icons.html",
                     "/components/images.html",
                     "/components/loading.html",
+                    "/components/menu-bar.html",
                     "/components/modal.html",
-                    "/components/navbar.html",
                     "/components/overlay.html",
                     "/components/progress-bar.html",
                     "/components/side-drawer.html",
-                    "/components/spin-box.html",
+                    // "/components/spin-box.html",
                     "/components/tabs.html",
                     "/components/tooltip.html"
                 ]

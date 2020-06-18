@@ -1,14 +1,15 @@
 @import "../00_Abstracts/index";
 
-.navbar {
+.menu-bar {
     align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     position: relative;
     @include font-size(sm);
+    @include shadow(sm);
 
-    .navbar-branding {
+    .menu-branding {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -29,40 +30,40 @@
             white-space: nowrap;
             text-decoration: none;
             @include font-size(md);
+        }
+
+        .logo ~ .tagline {
             @include ml(sm);
         }
     }
 
-    .navbar-toggler {
+    .menu-toggler {
         display: none;
         background-color: transparent;
         @include ml(auto);
         @include mr(sm);
-        @include px(md);
-        @include py(sm);
+        @include p(sm);
         @include shadow(none);
     }
 
-    .navbar-content {
+    .menu-content {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-content: center;
+        align-items: center;
         flex-basis: auto;
         width: 100%;
         max-width: 100%;
 
-        .navbar-row {
+        .menu-row {
             width: 100%;
             display: flex;
             justify-content: flex-end;
             align-content: center;
+            align-items: center;
 
-            &:focus {
-                outline: none;
-            }
-
-            .navbar-group {
+            .menu-group {
                 display: flex;
                 align-items: center;
 
@@ -77,9 +78,9 @@
                 }
             }
 
-            .navbar-item {
+            .menu-item {
                 font-weight: 600;
-                @include px(lg);
+                @include px(sm);
                 @include my(sm);
 
                 &.active {
@@ -110,7 +111,7 @@
         &.#{$key} {
             @include bg-color($key);
 
-            .navbar-branding {
+            .menu-branding {
                 color: text-color($key);
 
                 &:focus {
@@ -118,14 +119,18 @@
                 }
             }
 
-            .navbar-toggler {
+            .menu-toggler {
                 color: text-color($key);
                 @include border($color: text-color($key));
+
+                &:focus {
+                    outline: 1px dashed text-color($key);
+                }
             }
 
-            .navbar-content {
-                .navbar-row {
-                    .navbar-item {
+            .menu-content {
+                .menu-row {
+                    .menu-item {
                         > * {
                             color: text-color($key);
 
@@ -141,7 +146,7 @@
                 background-color: white;
                 @include border-b();
 
-                .navbar-branding {
+                .menu-branding {
                     color: color($key);
 
                     &:focus {
@@ -149,14 +154,14 @@
                     }
                 }
 
-                .navbar-toggler {
+                .menu-toggler {
                     color: color($key);
                     border-color: color($key);
                 }
 
-                .navbar-content {
-                    .navbar-row {
-                        .navbar-item {
+                .menu-content {
+                    .menu-row {
+                        .menu-item {
                             > * {
                                 color: color($key);
 
@@ -179,23 +184,23 @@
                     align-items: center;
                     justify-content: space-between;
 
-                    .navbar-toggler {
-                        display: block;
+                    .menu-toggler {
+                        display: inline-flex;
                     }
 
-                    .navbar-content {
+                    .menu-content {
                         display: none;
                         flex-basis: 100%;
                         flex-grow: 1;
                         align-items: center;
                         flex-direction: column;
 
-                        .navbar-row {
+                        .menu-row {
                             flex-direction: column;
                             justify-content: flex-start;
                             align-items: flex-start;
 
-                            .navbar-group {
+                            .menu-group {
                                 flex-direction: column;
                                 justify-content: start;
                                 align-items: flex-start;
@@ -203,7 +208,7 @@
                                 @include mx(none);
                             }
 
-                            .navbar-item {
+                            .menu-item {
                                 width: 100%;
                                 text-align: left;
                                 @include border(none);
@@ -216,7 +221,7 @@
                         }
                     }
 
-                    [aria-expanded="true"] + .navbar-content {
+                    [aria-expanded="true"] + .menu-content {
                         display: block;
                         @include border-t();
                         @include transition-ease-in-out(fast);
