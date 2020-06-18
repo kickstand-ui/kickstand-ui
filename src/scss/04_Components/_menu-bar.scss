@@ -30,6 +30,9 @@
             white-space: nowrap;
             text-decoration: none;
             @include font-size(md);
+        }
+
+        .logo ~ .tagline {
             @include ml(sm);
         }
     }
@@ -77,7 +80,7 @@
 
             .menu-item {
                 font-weight: 600;
-                @include px(lg);
+                @include px(sm);
                 @include my(sm);
 
                 &.active {
