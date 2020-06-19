@@ -11,7 +11,6 @@ export class SideDrawer implements ComponentInterface {
 
     @Prop() position: 'left' | 'right' = 'left';
     @Prop() size: 'sm' | 'md' | 'lg' | 'xl' = 'sm';
-    @Prop() name: string;
     @Prop() headerText: string;
 
     @State() isShowing: boolean;
