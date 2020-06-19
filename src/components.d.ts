@@ -183,12 +183,12 @@ export namespace Components {
     'titleId': string;
   }
   interface KsProgressBar {
+    'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'description': string;
     'hideDescription': boolean;
     'hideProgressLabel': boolean;
     'progressLabel': string;
-    'size': string;
-    'type': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
+    'size': 'xs' | 'sm' | 'md' | 'lg';
     'value': number;
   }
   interface KsRow {
@@ -665,12 +665,12 @@ declare namespace LocalJSX {
     'titleId'?: string;
   }
   interface KsProgressBar {
+    'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     'description'?: string;
     'hideDescription'?: boolean;
     'hideProgressLabel'?: boolean;
     'progressLabel'?: string;
-    'size'?: string;
-    'type'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
+    'size'?: 'xs' | 'sm' | 'md' | 'lg';
     'value'?: number;
   }
   interface KsRow {
