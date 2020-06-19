@@ -1,6 +1,6 @@
 {
     "name": "kickstand-ui",
-    "version": "0.8.6",
+    "version": "0.9.0",
     "description": "The Customizable Design System",
     "main": "dist/index.js",
     "module": "dist/index.mjs",
@@ -17,17 +17,17 @@
     ],
     "scripts": {
         "build": "stencil build --docs",
-        "dev": "stencil build --dev --watch --serve",
-        "test": "stencil test --spec --e2e",
-        "test:watch": "stencil test --spec --e2e --watchAll",
+        "build:docs": "vuepress build docs",
         "deploy": "stencil build && publish",
+        "deploy:docs": "./deploy-docs.sh",
+        "dev": "stencil build --dev --watch --serve",
+        "dev:docs": "vuepress dev docs",
+        "dev:storybook": "run-p start storybook",
         "generate": "stencil generate",
         "start": "stencil build --dev --watch",
         "storybook": "start-storybook -p 9009 -s www",
-        "dev:storybook": "run-p start storybook",
-        "docs:dev": "vuepress dev docs",
-        "docs:build": "vuepress build docs",
-        "docs:deploy": "./deploy-docs.sh"
+        "test": "stencil test --spec --e2e",
+        "test:watch": "stencil test --spec --e2e --watchAll"
     },
     "devDependencies": {
         "@babel/core": "^7.8.4",
