@@ -109,7 +109,7 @@ It is important to choose what the footer behavior will be and try to be as cons
 
 ## Prevent Close
 
-By default, Kickstand UI's modals can be dismissed using the close button, using the escape key, or clicking the overlay. You have the ability to prevent your modals from being dismissed without a user taking an action using the `prevent-close` property. When it is set to `true`, the close button will be removed, clicking the overlay will not dismiss the modal, and pressing the escape key will also not dismiss the modal. This will force the user to acknowledge the modal.
+By default, Kickstand UI's modal can be dismissed using the close button, the escape key, or clicking the overlay. You have the ability to require users to take a specific action before your modal will close using the `prevent-close` property. When it is set to `true`, the close button will be removed and clicking the overlay or pressing the escape key will not dismiss the modal.
 
 <div class="my-xl">
     <ks-button shows="prevent-close_modal">Show Modal</ks-button>
@@ -133,6 +133,73 @@ By default, Kickstand UI's modals can be dismissed using the close button, using
 </ks-modal>
 ```
 
+## Showing and Hiding
+
+If you are using the [`<ks-button>` element](/components/button.html) you can take advantage of the `shows` and `hides` properties to open and close any of the components built using the [overlay](/components/overlay.html) component.
+
+<div class="my-xl display-flex">
+    <ks-button shows="button_modal">Show Modal using Button</ks-button>
+    <ks-modal modal-title="Basic Modal" id="button_modal">
+        “Presents are the best way to show someone how much you care. It's like this tangible thing that you can point to and say, ‘Hey, man, I love you this many dollars worth.’”<br>
+        <i>- Michael Scott</i>
+        <ks-modal-footer>
+            <ks-button hides="button_modal">Close</ks-button>
+        </ks-modal-footer>
+    </ks-modal>
+</div>
+
+```html
+    <ks-button shows="button_modal">Show Modal using Button</ks-button>
+    <ks-modal modal-title="Basic Modal" id="button_modal">
+        ...
+        <ks-modal-footer>
+            <ks-button hides="button_modal">Close</ks-button>
+        </ks-modal-footer>
+    </ks-modal>
+```
+
+You can also programmatically show and hide overlays. It is as simple as using JavaScript to select the element and call the `show()` or `hide()` methods. Here is a simple example that will show the overlay when the button is clicked and hide it after 3 seconds.
+
+<div class="my-xl">
+    <ks-button id="js_button">Show Modal Programmatically</ks-button>
+    <ks-modal modal-title="Basic Modal" id="test_modal">
+        “I took her to the hospital. And the doctors tried to save her life, they did the best they could. And she is going to be okay.”<br>
+        <i>- Michael Scott</i>
+        <div class="mt-sm">(I will close in 3 seconds)</div>
+    </ks-modal>
+    <script>
+        let testButton = document.getElementById('js_button');
+        let testModal = document.getElementById('test_modal');
+        testButton.addEventListener('click', () => {
+            testModal.show();
+            setTimeout(function() {
+                testModal.hide();
+            }, 3000);
+        });
+    </script>
+</div>
+
+```html
+<ks-button id="test_button">Show Overlay</ks-button>
+<ks-modal modal-title="Basic Modal" id="test_modal">
+    ...
+</ks-modal>
+<script>
+    let testButton = document.getElementById('test_button');
+    let testModal = document.getElementById('test_modal');
+
+    // add click event listener to button
+    testButton.addEventListener('click', () => {
+        // show loading overlay
+        testModal.show();
+
+        // hide after 3 seconds
+        setTimeout(function() {
+            testModal.hide();
+        }, 3000);
+    });
+</script>
+```
 
 ## Properties
 
@@ -141,3 +208,17 @@ By default, Kickstand UI's modals can be dismissed using the close button, using
 | `modalTitle`  | `modal-title`  | text to display with loading icon | `string`        | `undefined` |
 | `preventClose` | `prevent-close` | allows you to require acknowledgement before closing the modal | `boolean`     | `false`    |
 | `size`        | `size`         | the size of the modal            | `"sm"`, `"md"` or `"lg"` | `"md"`         |
+
+## Methods
+
+### `hide() => Promise<void>`
+
+#### Returns
+
+Type: `Promise<void>`
+
+### `show() => Promise<void>`
+
+#### Returns
+
+Type: `Promise<void>`

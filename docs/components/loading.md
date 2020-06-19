@@ -156,7 +156,7 @@ Showing and hiding the loading overlay is as simple as using JavaScript to selec
 
 ### Button Attributes
 
-If you are using the (`<ks-button>` element)[/components/button.html] you can take advantage of the `shows` and `hides` properties.
+If you are using the [`<ks-button>` element](/components/button.html) you can take advantage of the `shows` and `hides` properties to open and close any of the components built using the [overlay](/components/overlay.html) component.
 
 <div class="my-xl display-flex">
     <div class="p-xl" style="position:relative;width:300px;height:150px;">
