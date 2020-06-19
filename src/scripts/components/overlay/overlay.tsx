@@ -7,6 +7,7 @@ import componentUtils from '../../utils/componentUtils';
 export class Overlay {
     $focusableEls: HTMLElement[];
     $focusedElBeforeOpen: HTMLElement;
+    $content: HTMLElement;
 
     @Element() $el: HTMLElement;
 
@@ -26,6 +27,8 @@ export class Overlay {
 
         if(this.$focusableEls.length > 0)
             setTimeout(() => this.$focusableEls[0].focus(), 100);
+        else
+            setTimeout(() => this.$content.focus(), 100);
     }
 
     @Method()
@@ -100,7 +103,7 @@ export class Overlay {
 
         return (<Host class={classes}>
             <div class="scrim" onClick={() => this.handleScrimClick()}></div>
-            <div class="content" role="dialog" aria-labelledby={this.titleId}>
+            <div class="content" role="dialog" aria-labelledby={this.titleId} tabindex="-1" ref={el => this.$content = el}>
                 <slot />
             </div>
         </Host>);

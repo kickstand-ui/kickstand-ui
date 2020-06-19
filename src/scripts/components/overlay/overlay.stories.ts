@@ -28,3 +28,18 @@ export const playground = () => {
     </div>
     `);
 }
+
+export const themes = () => {
+    return (`
+    <div class="m-xl">
+        <ks-button shows="light_overlay">Show Light Overlay</ks-button>
+        <ks-button shows="dark_overlay">Show Dark Overlay</ks-button>
+        <ks-overlay theme="light" id="light_overlay">
+            <ks-img style="max-width:500px;" lazy src="/images/demo/michael_scott_jesus.jpg" alt="Michael Scott dressed as Jesus" />
+        </ks-overlay>
+        <ks-overlay theme="dark" id="dark_overlay">
+            <ks-img lazy src="/images/demo/prison_mike.jpeg" alt="Prison Mike" />
+        </ks-overlay>
+    </div>
+    `);
+}
