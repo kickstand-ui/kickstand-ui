@@ -47,6 +47,10 @@ $drawer-sizes: (
         .drawer-close {
             .button {
                 @include p(none);
+
+                .button-text {
+                    display: inline-flex;    
+                }
             }
         }
     }
