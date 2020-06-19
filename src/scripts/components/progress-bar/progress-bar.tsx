@@ -4,9 +4,9 @@ import { Component, h, Prop, Host, ComponentInterface } from '@stencil/core';
     tag: 'ks-progress-bar'
 })
 export class ProgressBar implements ComponentInterface {
-    @Prop() type: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
+    @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
     @Prop() value: number = 0;
-    @Prop() size: string = 'md';
+    @Prop() size: 'xs' | 'sm' | 'md' | 'lg' = 'md';
     @Prop() description: string = 'Loading...';
     @Prop() hideDescription: boolean;
     @Prop() progressLabel: string = 'Progress';
@@ -36,7 +36,7 @@ export class ProgressBar implements ComponentInterface {
                     }}>{this.progressLabel}: {this.value}%</span>
                 </div>
                 <span class={`progress-bar ${this.size}`} aria-valuemin="0" aria-valuemax="100" aria-valuenow={this.value.toString()} role="progressbar">
-                    <span class={`value ${this.type}`} style={{ width: `${this.value}%` }}></span>
+                    <span class={`value ${this.color}`} style={{ width: `${this.value}%` }}></span>
                 </span>
             </Host>
         );
