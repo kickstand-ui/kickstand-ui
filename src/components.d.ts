@@ -80,7 +80,7 @@ export namespace Components {
     'threshold': number;
   }
   interface KsColumn {
-    'align': 'start' | 'center' | 'end';
+    'position': 'start' | 'center' | 'end' | 'stretch';
   }
   interface KsCrumb {
     'text': string;
@@ -192,8 +192,8 @@ export namespace Components {
     'value': number;
   }
   interface KsRow {
-    'align': 'start' | 'center' | 'end';
     'noGutter': boolean;
+    'position': 'start' | 'center' | 'end';
   }
   interface KsSideDrawer {
     'headerText': string;
@@ -565,7 +565,7 @@ declare namespace LocalJSX {
     'threshold'?: number;
   }
   interface KsColumn {
-    'align'?: 'start' | 'center' | 'end';
+    'position'?: 'start' | 'center' | 'end' | 'stretch';
   }
   interface KsCrumb {
     'text'?: string;
@@ -672,8 +672,8 @@ declare namespace LocalJSX {
     'value'?: number;
   }
   interface KsRow {
-    'align'?: 'start' | 'center' | 'end';
     'noGutter'?: boolean;
+    'position'?: 'start' | 'center' | 'end';
   }
   interface KsSideDrawer {
     'headerText'?: string;

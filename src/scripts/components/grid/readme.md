@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type                           | Default     |
-| ---------- | ----------- | ----------- | ------------------------------ | ----------- |
-| `align`    | `align`     |             | `"center" \| "end" \| "start"` | `'start'`   |
-| `noGutter` | `no-gutter` |             | `boolean`                      | `undefined` |
+| Property   | Attribute   | Description | Type                           | Default   |
+| ---------- | ----------- | ----------- | ------------------------------ | --------- |
+| `noGutter` | `no-gutter` |             | `boolean`                      | `false`   |
+| `position` | `position`  |             | `"center" \| "end" \| "start"` | `'start'` |
 
 
 ----------------------------------------------
