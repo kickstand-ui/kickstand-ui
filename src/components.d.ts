@@ -80,7 +80,7 @@ export namespace Components {
     'threshold': number;
   }
   interface KsColumn {
-    'align': 'start' | 'center' | 'end';
+    'align': 'start' | 'center' | 'end' | 'stretch';
   }
   interface KsCrumb {
     'text': string;
@@ -565,7 +565,7 @@ declare namespace LocalJSX {
     'threshold'?: number;
   }
   interface KsColumn {
-    'align'?: 'start' | 'center' | 'end';
+    'align'?: 'start' | 'center' | 'end' | 'stretch';
   }
   interface KsCrumb {
     'text'?: string;

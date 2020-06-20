@@ -36,6 +36,12 @@ $gutter-size: lg;
                 align-items: flex-end;
             }
         }
+
+        &-stretch {
+            .col {
+                align-items: stretch;
+            }
+        }
     }
 
     .col {
@@ -67,7 +73,7 @@ $gutter-size: lg;
         }
 
 
-        &.align-item {
+        &.align-items {
             &-start {
                 align-items: flex-start;
             }

@@ -5,7 +5,7 @@ import { Component, Prop, h, Host } from '@stencil/core';
     tag: 'ks-column'
 })
 export class Column {
-    @Prop() align: 'start' | 'center' | 'end' = 'start';
+    @Prop() align: 'start' | 'center' | 'end' | 'stretch' = 'start';
 
     render() {
         return (

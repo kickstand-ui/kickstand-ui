@@ -5,7 +5,7 @@ import { Component, Prop, h, Host } from '@stencil/core';
     tag: 'ks-row'
 })
 export class Row {
-    @Prop() noGutter: boolean;
+    @Prop() noGutter: boolean = false;
     @Prop() align: 'start' | 'center' | 'end' = 'start';
 
     render() {
