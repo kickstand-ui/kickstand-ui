@@ -10,9 +10,8 @@ export class Tooltip implements ComponentInterface {
 
     @Prop() position: 'top' | 'bottom' | 'left' | 'right' = 'top';
     @Prop() size: 'sm' | 'md' | 'lg' | 'xl' = 'sm';
-    @Prop() show: boolean;
-    @Prop() disable: boolean;
-    @Prop() hideDecoration: boolean;
+    @Prop() disable: boolean = false;
+    @Prop() hideDecoration: boolean = false;
     @Prop() text: string;
 
     componentDidRender() {
@@ -23,7 +22,6 @@ export class Tooltip implements ComponentInterface {
     render() {
         let classes = {
             'tooltip': true,
-            'show': this.show,
             'disabled': this.disable
         };
 

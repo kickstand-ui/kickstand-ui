@@ -9,10 +9,9 @@
 
 | Property         | Attribute         | Description | Type                                     | Default     |
 | ---------------- | ----------------- | ----------- | ---------------------------------------- | ----------- |
-| `disable`        | `disable`         |             | `boolean`                                | `undefined` |
-| `hideDecoration` | `hide-decoration` |             | `boolean`                                | `undefined` |
+| `disable`        | `disable`         |             | `boolean`                                | `false`     |
+| `hideDecoration` | `hide-decoration` |             | `boolean`                                | `false`     |
 | `position`       | `position`        |             | `"bottom" \| "left" \| "right" \| "top"` | `'top'`     |
-| `show`           | `show`            |             | `boolean`                                | `undefined` |
 | `size`           | `size`            |             | `"lg" \| "md" \| "sm" \| "xl"`           | `'sm'`      |
 | `text`           | `text`            |             | `string`                                 | `undefined` |
 
