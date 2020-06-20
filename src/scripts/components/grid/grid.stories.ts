@@ -40,6 +40,37 @@ export const basicGrid = () => {
             <ks-column class="col-4 md:col-6 sm:col-12 bg-primary-light">Column 7</ks-column>
             <ks-column class="col-4 md:col-6 sm:col-12 bg-primary-light">Column 8</ks-column>
         </ks-row>
+
+        <div class="my-xl">
+            <ks-row position="end" style="height:200px;">
+                <ks-column class="bg-primary-lighter border border-primary">
+                    <span class="bg-light p-sm">I do what the row says</span>
+                </ks-column>
+                <ks-column class="bg-primary-lighter border border-primary">
+                    <span class="bg-light p-sm">I do what the row says</span>
+                </ks-column>
+                <ks-column class="bg-primary-lighter border border-primary" position="start">
+                    <span class="bg-light p-sm">I do what I want!</span>
+                </ks-column>
+            </ks-row>
+        </div>
+        <div class="my-xl">
+            <ks-row style="height:200px;">
+                <ks-column position="start" class="bg-primary-lighter border border-primary">
+                    <span class="bg-light p-sm w-100">Start</span>
+                </ks-column>
+                <ks-column position="center" class="bg-primary-lighter border border-primary">
+                    <span class="bg-light p-sm w-100">Center</span>
+                </ks-column>
+                <ks-column position="end" class="bg-primary-lighter border border-primary">
+                    <span class="bg-light p-sm w-100">End</span>
+                </ks-column>
+                <ks-column position="stretch" class="bg-primary-lighter border border-primary">
+                    <span class="bg-light p-sm w-100">Stretch</span>
+                </ks-column>
+            </ks-row>
+        </div>
+
     </div>
     `);
 };

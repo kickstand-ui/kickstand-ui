@@ -6,7 +6,7 @@ import { Component, Prop, h, Host } from '@stencil/core';
 })
 export class Row {
     @Prop() noGutter: boolean = false;
-    @Prop() align: 'start' | 'center' | 'end' = 'start';
+    @Prop() position: 'start' | 'center' | 'end' = 'start';
 
     render() {
         return (
@@ -14,7 +14,7 @@ export class Row {
                 'row': true,
                 'display-flex': true,
                 'no-gutter': this.noGutter,
-                [`align-content-${this.align}`]: true
+                [`align-content-${this.position}`]: this.position !== undefined
             }}>
                 <slot />
             </Host>

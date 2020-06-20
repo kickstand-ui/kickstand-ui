@@ -5,13 +5,13 @@ import { Component, Prop, h, Host } from '@stencil/core';
     tag: 'ks-column'
 })
 export class Column {
-    @Prop() align: 'start' | 'center' | 'end' | 'stretch' = 'start';
+    @Prop() position: 'start' | 'center' | 'end' | 'stretch';
 
     render() {
         return (
             <Host class={{
                 'col': true,
-                [`align-items-${this.align}`]: true
+                [`align-items-${this.position}`]: this.position !== undefined
             }}>
                 <slot />
             </Host>
