@@ -53,7 +53,9 @@ $gutter-size: lg;
                 max-width: (100% / $columns) * $i;
                 flex: 0 0 (100% / $columns) * $i;
             }
+        }
 
+        @for $i from 1 through $columns {
             @each $key, $value in $media-queries {
                 @include mq($key) {
                     &.#{$key}\:col-#{$i} {
@@ -63,6 +65,7 @@ $gutter-size: lg;
                 }
             }
         }
+
 
         &.align-item {
             &-start {
