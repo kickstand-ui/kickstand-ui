@@ -4,10 +4,6 @@
     display: flex;
     @include shadow(sm);
 
-    *:focus {
-        outline: dotted 1px;
-    }
-
     .tab-list {
         display: flex;
         @include bg-color(light, light);
@@ -16,6 +12,11 @@
 
         .tab-item {
             display: flex;
+
+            &:focus-within {
+                outline: spacing(xxxs) dashed color(dark);
+                outline-offset: spacing(xxs);
+            }
 
             .tab-link {
                 display: inline-block;
@@ -28,7 +29,7 @@
 
                 @include hover-focus {
                     outline: none;
-                    text-decoration: underline;
+                    text-decoration: none;
                 }
 
                 &[aria-selected] {

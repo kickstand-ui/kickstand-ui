@@ -11,7 +11,7 @@ export class Tab {
     render() {
         return (
             <Host class="tab-item" role="presentation">
-                <a class="tab-link" role="tab" href={`#${this.controls}`} id={`tab-${this.controls}`} tabindex="-1" aria-controls={this.controls}>
+                <a class="tab-link" role="tab" href={`#${this.controls}`} id={`tab-${this.controls}`} aria-controls={this.controls}>
                     <slot />
                 </a>
             </Host>
