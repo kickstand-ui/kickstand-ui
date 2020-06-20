@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type     | Default |
-| ---------- | ---------- | ----------- | -------- | ------- |
-| `position` | `position` |             | `string` | `'top'` |
+| Property   | Attribute  | Description | Type                                     | Default |
+| ---------- | ---------- | ----------- | ---------------------------------------- | ------- |
+| `position` | `position` |             | `"bottom" \| "left" \| "right" \| "top"` | `'top'` |
 
 
 ----------------------------------------------

@@ -198,7 +198,6 @@ export namespace Components {
   interface KsSideDrawer {
     'headerText': string;
     'hide': () => Promise<void>;
-    'name': string;
     'position': 'left' | 'right';
     'show': () => Promise<void>;
     'size': 'sm' | 'md' | 'lg' | 'xl';
@@ -227,7 +226,7 @@ export namespace Components {
     'tabId': string;
   }
   interface KsTabs {
-    'position': string;
+    'position': 'top' | 'bottom' | 'left' | 'right';
   }
   interface KsTooltip {
     'disable': boolean;
@@ -679,7 +678,6 @@ declare namespace LocalJSX {
   }
   interface KsSideDrawer {
     'headerText'?: string;
-    'name'?: string;
     'position'?: 'left' | 'right';
     'size'?: 'sm' | 'md' | 'lg' | 'xl';
   }
@@ -708,7 +706,7 @@ declare namespace LocalJSX {
     'tabId'?: string;
   }
   interface KsTabs {
-    'position'?: string;
+    'position'?: 'top' | 'bottom' | 'left' | 'right';
   }
   interface KsTooltip {
     'disable'?: boolean;
