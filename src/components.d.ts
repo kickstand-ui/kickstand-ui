@@ -232,7 +232,6 @@ export namespace Components {
     'disable': boolean;
     'hideDecoration': boolean;
     'position': 'top' | 'bottom' | 'left' | 'right';
-    'show': boolean;
     'size': 'sm' | 'md' | 'lg' | 'xl';
     'text': string;
   }
@@ -712,7 +711,6 @@ declare namespace LocalJSX {
     'disable'?: boolean;
     'hideDecoration'?: boolean;
     'position'?: 'top' | 'bottom' | 'left' | 'right';
-    'show'?: boolean;
     'size'?: 'sm' | 'md' | 'lg' | 'xl';
     'text'?: string;
   }

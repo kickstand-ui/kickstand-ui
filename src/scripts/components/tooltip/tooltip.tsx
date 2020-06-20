@@ -22,7 +22,6 @@ export class Tooltip implements ComponentInterface {
     render() {
         let classes = {
             'tooltip': true,
-            'show': this.show,
             'disabled': this.disable
         };
 
