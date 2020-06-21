@@ -14,3 +14,13 @@ export const heights = () => {
         ${heightSizes.map(s => `<ks-column class="mx-md p-sm bg-primary-light h-${s}">h-${s}</ks-column>`).join('')}
     </ks-row>`);
 };
+
+export const flex = () => {
+    return (`
+    <div class="my-xl display-flex space-between align-start md:flex-column md:justify-start p-sm bg-primary" style="height: 250px;">
+        <div class="p-sm bg-light border border-dark">Item 1</div>
+        <div class="p-sm bg-light border border-dark">Item 2</div>
+        <div class="p-sm bg-light border border-dark">Item 3</div>
+    </div>
+    `);
+};
