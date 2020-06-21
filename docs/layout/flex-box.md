@@ -316,7 +316,6 @@ All of the flexbox utility classes have responsive capabilities as well. If you 
 </div>
 ```
 
-
 ## Available Classes
 
 | Class                 | CSS Rule                            |
