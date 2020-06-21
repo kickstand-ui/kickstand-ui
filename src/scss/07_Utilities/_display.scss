@@ -83,3 +83,131 @@
 .align-stretch {
     align-items: stretch;
 }
+
+@each $key, $value in $media-queries {
+    .#{$key}\:display-block {
+        @include mq($key) {
+            display: block;
+        }
+    }
+    
+    .#{$key}\:display-inline {
+        @include mq($key) {
+            display: inline;
+        }
+    }
+    
+    .#{$key}\:display-inline-block {
+        @include mq($key) {
+            display: inline-block;
+        }
+    }
+    
+    .#{$key}\:display-inline-flex {
+        @include mq($key) {
+            display: inline-flex;
+        }
+    }
+    
+    .#{$key}\:display-flex {
+        @include mq($key) {
+            display: flex;
+        }
+    }
+    
+    .#{$key}\:flex-wrap {
+        @include mq($key) {
+            flex-wrap: wrap;
+        }
+    }
+    
+    .#{$key}\:flex-nowrap {
+        @include mq($key) {
+            flex-wrap: nowrap;
+        }
+    }
+    
+    .#{$key}\:flex-row {
+        @include mq($key) {
+            flex-direction: row;
+        }
+    }
+    
+    .#{$key}\:flex-row-reverse {
+        @include mq($key) {
+            flex-direction: row-reverse;
+        }
+    }
+    
+    .#{$key}\:flex-column {
+        @include mq($key) {
+            flex-direction: column;
+        }
+    }
+    
+    .#{$key}\:flex-column-reverse {
+        @include mq($key) {
+            flex-direction: column-reverse;
+        }
+    }
+    
+    .#{$key}\:space-between {
+        @include mq($key) {
+            justify-content: space-between;
+        }
+    }
+    
+    .#{$key}\:space-around {
+        @include mq($key) {
+            justify-content: space-around;
+        }
+    }
+    
+    .#{$key}\:space-evenly {
+        @include mq($key) {
+            justify-content: space-evenly;
+        }
+    }
+    
+    .#{$key}\:justify-center {
+        @include mq($key) {
+            justify-content: center;
+        }
+    }
+    
+    .#{$key}\:justify-start {
+        @include mq($key) {
+            justify-content: flex-start;
+        }
+    }
+    
+    .#{$key}\:justify-end {
+        @include mq($key) {
+            justify-content: flex-end;
+        }
+    }
+    
+    .#{$key}\:align-start {
+        @include mq($key) {
+            align-items: flex-start;
+        }
+    }
+    
+    .#{$key}\:align-end {
+        @include mq($key) {
+            align-items: flex-end;
+        }
+    }
+    
+    .#{$key}\:align-center {
+        @include mq($key) {
+            align-items: center;
+        }
+    }
+    
+    .#{$key}\:align-stretch {
+        @include mq($key) {
+            align-items: stretch;
+        }
+    }    
+}
