@@ -1,5 +1,13 @@
 # Spacing
 
+The spacing utility classes are designed to make positioning quick and easy.
+
+The pattern for the utility classes is fairly intuitive:
+
+- `p` for "padding" or `m` for "margin"
+- if you wish to add a margin on only part of the container you can specify a direction - top (`t`), right (`r`), bottom (`b`), left (`l`), top and bottom (`y`), or left and right (`x`)
+- finally, add the size of the spacing you would like (`auto`, `none`, and `xxxs`-`xxxl`)
+
 ## Padding
 
 <div class="my-xxl">
