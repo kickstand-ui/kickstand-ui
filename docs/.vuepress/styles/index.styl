@@ -38,5 +38,71 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .custom-block.tip {
-    border-color: #2c5374;
+    border-color: #2c5374
+}
+
+table {
+    &:not(.table) {
+        border-collapse: collapse
+        margin: 1rem 0
+        display: block
+        overflow-x: auto
+
+        tr {
+            border-top: 1px solid #dfe2e5
+
+            &:nth-child(2n) {
+                background-color: #f6f8fa;
+            }
+
+            th, td {
+                border: 1px solid #dfe2e5
+                padding: 0.6em 1em
+            }
+        }
+    }
+}
+
+table.table {
+    width: 100%;
+    border-collapse: collapse;
+    display: table
+    border: .0625rem solid #bcbcbc;
+
+    &.striped {
+        tbody {
+            tr:nth-child(odd) {
+                background-color: #f9f9f9;
+            }
+        }
+    }
+
+    &.hover {
+        tbody {
+            tr {
+                &:hover {
+                    background-color: #e5e5e5;
+                }
+            }
+        }
+    }
+
+    thead {
+        font-weight: bold;
+        border-bottom: solid 0.125rem #bcbcbc;
+    }
+
+    tr { 
+        background-color: white;
+        
+        th,
+        td {
+            vertical-align: bottom;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            border: solid 0.0625rem #bcbcbc;
+        }
+    }
 }
