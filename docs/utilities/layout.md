@@ -65,3 +65,7 @@ You can also change the layout based on the user's screen size using the respons
 <div class="my-xl">
     <div class="bg-light p-sm w-50 md:w-100">I will be 50% width until a medium screen.</div>
 </div>
+
+```html
+<div class="w-50 md:w-100">I will be 50% width until a medium screen.</div>
+```

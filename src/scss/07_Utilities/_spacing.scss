@@ -71,4 +71,105 @@
     .mb-#{$size} {
         @include mb($size, $important: true);
     }
+
+    @each $mq, $value in $media-queries {
+        // Padding
+        .#{key}\:p-#{$size} {
+            @include mq($mq) {
+                @include p($size, $important: true);
+            }
+        }
+
+        // Padding X
+        .#{key}\:px-#{$size} {
+            @include mq($mq) {
+                @include px($size, $important: true);
+            }
+        }
+
+        // Padding Y
+        .#{key}\:py-#{$size} {
+            @include mq($mq) {
+                @include py($size, $important: true);
+            }
+        }
+
+        // Padding Left
+        .#{key}\:pl-#{$size} {
+            @include mq($mq) {
+                @include pl($size, $important: true);
+            }
+        }
+
+        // Padding Right
+        .#{key}\:pr-#{$size} {
+            @include mq($mq) {
+                @include pr($size, $important: true);
+            }
+        }
+
+        // Padding Top
+        .#{key}\:pt-#{$size} {
+            @include mq($mq) {
+                @include pt($size, $important: true);
+            }
+        }
+
+        // Padding Bottom
+        .#{key}\:pb-#{$size} {
+            @include mq($mq) {
+                @include pb($size, $important: true);
+            }
+        }
+
+
+        // Margin
+        .#{key}\:m-#{$size} {
+            @include mq($mq) {
+                @include m($size, $important: true);
+            }
+        }
+
+        // Margin X
+        .#{key}\:mx-#{$size} {
+            @include mq($mq) {
+                @include mx($size, $important: true);
+            }
+        }
+
+        // Margin Y
+        .#{key}\:my-#{$size} {
+            @include mq($mq) {
+                @include my($size, $important: true);
+            }
+        }
+
+        // Margin Left
+        .#{key}\:ml-#{$size} {
+            @include mq($mq) {
+                @include ml($size, $important: true);
+            }
+        }
+
+        // Margin Right
+        .#{key}\:mr-#{$size} {
+            @include mq($mq) {
+                @include mr($size, $important: true);
+            }
+        }
+
+        // Margin Top
+        .#{key}\:mt-#{$size} {
+            @include mq($mq) {
+                @include mt($size, $important: true);
+            }
+        }
+
+        // Margin Bottom
+        .#{key}\:mb-#{$size} {
+            @include mq($mq) {
+                @include mb($size, $important: true);
+            }
+        }
+    }
 }
