@@ -3,6 +3,7 @@ module.exports = {
     description:
         "The customizable design systems and component library built with native web components",
     head: [
+        ["meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }],
         ["link", { rel: "icon", href: "/images/kickstand_icon.png" }],
         ["link", { rel: "stylesheet", href: "https://unpkg.com/kickstand-ui/dist/kickstand-ui/kickstand-ui.css" }],
         ["script", { src: "https://unpkg.com/kickstand-ui/dist/kickstand-ui.js" }],
