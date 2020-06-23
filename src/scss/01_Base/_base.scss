@@ -11,13 +11,13 @@
 
 html,
 body {
-    font-family: $font-base;
     font-size: $font-size-base;
     line-height: $line-height-base;
+    @include font(base);
 
     code,
     pre {
-        font-family: $font-monospace;
+        @include font(monospace);
     }
 
     img {

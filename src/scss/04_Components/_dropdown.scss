@@ -35,13 +35,13 @@
         display: none;
         left: 0;
         position: absolute;
-        z-index: z(xs);
         list-style: none;
         width: auto;
         overflow: hidden;
         white-space: nowrap;
         max-width: 90vw;
         overflow-x: scroll;
+        @include z-index(xs);
         @include shadow(sm);
         @include bg-color(white);
         @include px(sm);
@@ -90,7 +90,7 @@
         max-width: 100%;
         min-width: 200px;
         overflow-y: auto;
-        z-index: z(xs);
+        @include z-index(xs);
         @include shadow(xs);
         @include bg-color(white);
         @include px(sm);
