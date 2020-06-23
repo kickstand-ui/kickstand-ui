@@ -42,7 +42,7 @@ Use drop-down menus to toggle a list of contextual actions or content.
 
 ## Position
 
-Depending on where the drop-down it placed on the page, you may want to have the portion align differently to endure visibility.  having the menus align to the `left` or `right` should provide you with that flexibility.
+Depending on where the drop-down is placed on the page, you may want to have the portion align differently to ensure visibility. Having the menus align to the `left` or `right` should provide you with that flexibility.
 
 <div class="my-xxl display-flex space-between">
     <ks-dropdown text="Left Aligned" position="left">
@@ -139,7 +139,7 @@ Drop-down menus are great for displaying a list of available actions, however me
 
 ## Prevent Close
 
-The `prevent-close` is the only custom property on the `<ks-dropdown-item>` element. By default, when the element or any of its contents are clicked, the drop-down will automatically close. Because `<ks-dropdown-item>` elements can contain more than just links or buttons (such as forms), this may not be the desired behavior. To prevent this from happening, setting `prevent-close` to `true` will prevent this from happening. Users will still be able to use the `esc` key or clicking outside of the drop-down to close the menu, but this will prevent it from closing while they click within the drop-down item.
+The `prevent-close` is the only custom property on the `<ks-dropdown-item>` element. By default, when the element or any of its contents are clicked, the drop-down will automatically close. Because `<ks-dropdown-item>` elements can contain more than just links or buttons (such as forms), this may not be the desired behavior. To prevent this from happening, set `prevent-close` to `true`.  Users will still be able to use the `esc` key or click outside of the drop-down to close the menu but it won't close when clicking within the drop-down item.
 
 <div class="my-xl">
     <ks-dropdown text="Prevent Close">
