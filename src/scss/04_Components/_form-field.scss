@@ -14,6 +14,8 @@
 
             .tooltip {
                 line-height: 1;
+                display: inline-flex;
+                align-items: center;
                 @include ml(sm);
             }
         }
