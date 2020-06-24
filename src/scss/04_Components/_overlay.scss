@@ -12,8 +12,8 @@
     bottom: 0;
     pointer-events: auto;
     touch-action: none;
-    z-index: z(xl);
     opacity: 0;
+    @include z-index(xl);
     @include transition-ease-in-out(fast);
 
     &.opened {

@@ -1,6 +1,15 @@
 @import '../variables';
 @import 'colors';
 
+@function default-border($setting) {
+    @if map-has-key($border, $setting) {
+        @return map-get($border, $setting);
+    } 
+    @else {
+        @error "Invalid default border value: '#{$setting}'.";
+    }
+}
+
 @function border($style, $size, $color, $variant: base, $opacity: 1, $important: false) {
     @if($important == true) {
         @return $style spacing($size) split-color-list($color, $variant, $opacity) !important;

@@ -33,7 +33,7 @@
 // 3. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
 // 4. Change the default tap highlight to be completely transparent in iOS.
 body {
-    font-family: $font-base;
+    @include font(base);
     line-height: $line-height-base;
     background-color: color(white); // 2
     -webkit-text-size-adjust: 100%; // 3

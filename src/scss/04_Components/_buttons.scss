@@ -32,7 +32,7 @@ ks-button {
         border-radius: 50%;
         background-color: white;
         visibility: hidden;
-        z-index: z(xxs);
+        @include z-index(xxs);
     }
 
     &:not(:active):not(:disabled):before {

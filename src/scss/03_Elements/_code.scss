@@ -4,7 +4,7 @@ pre,
 code,
 kbd,
 samp {
-    font-family: $font-monospace;
+    @include font(monospace);
     @include font-size(sm); // Correct the odd `em` font sizing in all browsers.
 }
 

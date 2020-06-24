@@ -28,9 +28,9 @@
             white-space: normal;
             font-weight: normal;
             position: absolute;
-            z-index: z(sm);
             opacity: 0;
             transition: opacity 0.3s;
+            @include z-index(sm);
             @include transition-ease-in-out(fast);
             @include shadow(sm);
             @include bg-color(white);

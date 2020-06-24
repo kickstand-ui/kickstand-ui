@@ -3,7 +3,7 @@
 %heading {
     @include mt(none); // 1
     @include mb(md);
-    font-family: $font-accent;
+    @include font(accent);
 }
 
 h1 {
