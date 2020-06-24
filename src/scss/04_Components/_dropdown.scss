@@ -49,6 +49,19 @@
         @include m(none);
         @include transition-ease-in-out(fast);
 
+        &.collapse {
+            @each $key, $value in $media-queries {
+                &-#{$key} {
+                    @include mq($key) {
+                        position: fixed;
+                        left: 0;
+                        right: 0;
+                        @include mx(lg);
+                    }
+                }
+            }
+        }
+
         .dropdown-item {
             > * {
                 text-align: left;

@@ -14,8 +14,9 @@ export const playground = () => {
     const hideButtonText = boolean('hide-text', false);
     const hideIndicator = boolean('hide-indicator', false);
     const megaMenu = boolean('mega-menu', false);
+    const collapse = select('collapse', ['xxs', 'xs', 'sm', 'md', 'lg', 'xl'], 'xs');
     return (`
-        <div class="display-flex ${dropdownAlignment === 'right' ? 'justify-end' : ''}">
+        <div class="display-flex pl-xxl ${dropdownAlignment === 'right' ? 'justify-end' : ''}">
             <ks-dropdown
                 class="m-lg"
                 text="${dropdownText}" 
@@ -26,6 +27,7 @@ export const playground = () => {
                 hide-text="${hideButtonText}"
                 hide-indicator="${hideIndicator}"
                 mega-menu="${megaMenu}"
+                collapse="${collapse}"
                 >
                 <ks-dropdown-item prevent-close><span>Non-clickable drop-down item with very long text</span></ks-dropdown-item>
                 <ks-dropdown-item><a href="#">Test 2</a></ks-dropdown-item>
