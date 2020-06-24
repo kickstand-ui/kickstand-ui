@@ -70,7 +70,7 @@ export class LinkButton implements ComponentInterface {
 
     render() {
         let content = [
-            this.icon && <ks-icon icon={this.icon} class={{'button-icon': true, 'm-none': this.hideText}} />,
+            this.icon && <ks-icon icon={this.icon} class={{'button-icon': true, 'mx-none': this.hideText}} />,
             <span class={{
                 'button-text': true,
                 'sr-only': this.hideText
