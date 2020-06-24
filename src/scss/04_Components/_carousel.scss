@@ -17,6 +17,10 @@
                 @include fade-in;
             }
 
+            .slide-image {
+                width: 100%;
+            }
+
             &.pointer {
                 &:focus-within {
                     outline: spacing(xxxs) dashed color(dark);
