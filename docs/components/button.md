@@ -74,10 +74,33 @@ Buttons are used to perform actions in forms, modals, and more. Kickstand UI but
 
 ### Loading
 
-<ks-button loading class="mt-xl">Loading Button</ks-button>
+<div class="my-xl">
+    <ks-button id="loading_button">Click To Load</ks-button>
+    <script>
+        let loadingButton = document.getElementById('loading_button');
+        loadingButton.addEventListener('click', function () {
+            loadingButton.loading = true;
+            setTimeout(function () {
+                loadingButton.loading = false;
+            }, 3000);
+        });
+    </script>
+</div>
 
 ```html
-<ks-button loading>Loading Button</ks-button>
+<ks-button id="loading_button">Click To Load</ks-button>
+
+<script>
+    let loadingButton = document.getElementById('loading_button');
+
+    loadingButton.addEventListener('click', function () {
+        loadingButton.loading = true;
+
+        setTimeout(function () {
+            loadingButton.loading = false;
+        }, 3000);
+    });
+</script>
 ```
 **Note:** If a button is loading, it is also disabled.
 
@@ -137,7 +160,6 @@ If the `href` property is populated, it will change the behavior of therefore ch
 </ks-button>
 ```
 
-
 ## Properties
 
 | Property        | Attribute        | Description | Type         | Default     |
@@ -158,4 +180,3 @@ If the `href` property is populated, it will change the behavior of therefore ch
 | `size`          | `size`           | controls the size of the button            | `"md"`, `"lg"`, `"sm"`, `"xl"`, or `"xs"` | `'md'`      |
 | `tabIndex`      | `tab-index`      | adds a `tabindex` attribute on the button element            | `number`                                                                                        | `undefined` |
 | `type`          | `type`           | controls the button `type` attribute            | `"button"`, `"reset"`, or `"submit"` | `'button'`  |
-
