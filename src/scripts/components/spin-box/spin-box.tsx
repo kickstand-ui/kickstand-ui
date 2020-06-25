@@ -72,8 +72,7 @@ export class SpinBox implements ComponentInterface {
     }
 
     private getValue(): string {
-        return typeof this.value === 'number' ? this.value.toString() :
-            (this.value || '').toString();
+        return this.value.toString();
     }
 
     componentDidLoad() {
