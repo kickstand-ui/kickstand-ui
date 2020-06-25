@@ -88,6 +88,7 @@ export namespace Components {
   }
   interface KsDropdown {
     'close': () => Promise<void>;
+    'collapse': 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     'color': 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'display': 'solid' | 'hollow' | 'clear' | 'link';
     'hideIndicator': boolean;
@@ -572,6 +573,7 @@ declare namespace LocalJSX {
     'url'?: string;
   }
   interface KsDropdown {
+    'collapse'?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     'color'?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
     'display'?: 'solid' | 'hollow' | 'clear' | 'link';
     'hideIndicator'?: boolean;

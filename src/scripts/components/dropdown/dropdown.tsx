@@ -19,6 +19,7 @@ export class Dropdown {
     @Prop() hideText: boolean = false;
     @Prop() hideIndicator: boolean = false;
     @Prop() megaMenu: boolean = false;
+    @Prop() collapse: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'xs';
 
     @State() isExpanded: boolean = false;
     @State() focusIndex: number = 0;
@@ -119,7 +120,8 @@ export class Dropdown {
             'contents': true,
             'mega-menu-contents': this.megaMenu,
             'dropdown-contents': !this.megaMenu,
-            [`align-${this.position}`]: !this.megaMenu
+            [`align-${this.position}`]: !this.megaMenu,
+            [`collapse-${this.collapse}`]: !this.megaMenu
         };
 
         return (
