@@ -209,6 +209,7 @@ There may be an occasion where you need prevent the drop-down from closing when 
 | `hideText`      | `hide-text`      | `boolean`          | `false` | toggles drop-down button visibility (if `true`, it will still be visible to screen readers)            |
 | `hideIndicator` | `hide-indicator` | `boolean`          | `false` | toggles whether the drop-down button indicator (chevron) is displayed            |
 | `megaMenu`      | `mega-menu`      | `boolean`          | `false` | controls whether the menu displays as a mega menu |
+| `collapse`      | `collapse`       | `xxs`, `xs`, `sm`, `md`, `lg`, or `xl`         | `xs` | controls when the dropdown contents will adjust to fit the viewport for smaller screen sizes |
 
 #### Methods
 
