@@ -92,7 +92,7 @@ export class Carousel implements ComponentInterface {
             </ks-button>
         ];
         let indicators = (
-            <div class="indicators" role="tablist">
+            <div class={`indicators ${this.hideIndicators && 'sr-only'}`} role="tablist">
                 {this.$slides.map((slide, index) =>
                     <button id={`indicator_for_${slide.id}`} class="indicator" onClick={() => this.selectSlide(index)} role="tab" aria-selected="false" aria-controls={slide.id}>
                         <span class="sr-only">Got to slide {slide ? index + 1 : ''}</span>
@@ -117,7 +117,7 @@ export class Carousel implements ComponentInterface {
                     <slot />
                     {!this.hideControls && controls}
                 </div>
-                {(!this.hideIndicators && !this.thumbnails) && indicators}
+                {!this.thumbnails && indicators}
                 {this.thumbnails && thumbnailList}
             </Host>
         );
