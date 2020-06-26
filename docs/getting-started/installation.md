@@ -10,6 +10,17 @@ npm install --save kickstand-ui
 yarn install kickstand-ui
 ```
 
+### Add To Your Project
+
+```js
+import { applyPolyfills, defineCustomElements } from 'kickstand-ui/loader';
+
+// Apply the polyfills and bind the custom elements to the window object
+applyPolyfills().then(() => {
+    defineCustomElements();
+});
+```
+
 ### Framework Integrations
 
 Once you have installed Kickstand UI, check out the documentation on how to implement it into your favorite framework:
@@ -21,7 +32,7 @@ Once you have installed Kickstand UI, check out the documentation on how to impl
 
 ## CDN
 
-If you would like to use the components without a JavaScript framework, adding the design system to your project is as simple as adding a few references onto your HTML page.
+You can also add it to your project by dropping a couple of tags.
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/kickstand-ui/dist/kickstand-ui.css" />
