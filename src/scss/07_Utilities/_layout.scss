@@ -5,12 +5,18 @@ $heights: (25, 50, 75, 100);
 
 // WIDTH
 
+.w-content {
+    max-width: $content-width !important;
+}
+
 @each $width in $widths {
     .w-#{$width} {
         width: #{$width + "%"} !important;
     }
+}
 
-    @each $mq, $value in $media-queries {
+@each $mq, $value in $media-queries {
+    @each $width in $widths {
         @include mq($mq) {
             /*
                 sm:w-100
@@ -23,16 +29,14 @@ $heights: (25, 50, 75, 100);
     }
 }
 
-.w-content {
-    max-width: $content-width !important;
-}
-
 @each $height in $heights {
     .h-#{$height} {
         height: #{$height + "%"} !important;
     }
+}
 
-    @each $mq, $value in $media-queries {
+@each $mq, $value in $media-queries {
+    @each $height in $heights {
         @include mq($mq) {
             /*
                 sm:h-100

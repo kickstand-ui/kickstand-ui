@@ -24,3 +24,9 @@ export const flex = () => {
     </div>
     `);
 };
+
+export const responsive = () => (`
+    <div class="m-xxl">
+        <div class="p-lg bg-light w-25 md:w-50 sm:w-75">test content</div>
+    </div>
+`);

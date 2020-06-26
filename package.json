@@ -1,7 +1,7 @@
 {
     "name": "kickstand-ui",
-    "version": "0.18.0",
-    "description": "The Customizable Design System",
+    "version": "0.18.1",
+    "description": "The Design System You Can Use Anywhere",
     "main": "dist/index.js",
     "module": "dist/index.mjs",
     "es2015": "dist/esm/index.mjs",
