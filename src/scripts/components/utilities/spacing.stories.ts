@@ -30,3 +30,11 @@ export const margin = () => {
             <br>`).join('')}
         </div>`);
 };
+
+export const responsive = () => (`
+    <div class="m-xl">
+        <span class="p-md md:p-xl sm:p-md bg-info-lighter">
+            <span class="bg-light">I have a "md" padding normally, but an "xl" padding on small screens</span>
+        </span>
+    </div>
+`);

@@ -1,18 +1,22 @@
 @import "../00_Abstracts/index";
 
 .text {
+
     // Font Size
     @each $key, $value in $font-sizes {
         &-#{$key} {
             @include font-size($key, true);
         }
+    }
 
-        @each $mq, $value in $media-queries {
+    @each $mq, $value in $media-queries {
+        @each $key, $value in $font-sizes {
             @include mq($mq) {
+
                 /*
-                    sm:text-md
-                    xl:text-xl
-                */
+                sm:text-md
+                xl:text-xl
+            */
                 .#{$mq}\:text-#{$key} {
                     @include screen-reader-only;
                 }

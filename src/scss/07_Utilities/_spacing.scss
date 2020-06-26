@@ -1,6 +1,8 @@
 @import '../00_Abstracts/index';
 
-@each $size, $value in $spacing-sizes {
+@each $size,
+$value in $spacing-sizes {
+
     // Padding
     .p-#{$size} {
         @include p($size, $important: true);
@@ -71,103 +73,82 @@
     .mb-#{$size} {
         @include mb($size, $important: true);
     }
+}
 
-    @each $mq, $value in $media-queries {
-        // Padding
-        .#{key}\:p-#{$size} {
-            @include mq($mq) {
+@each $mq, $value in $media-queries {
+    @include mq($mq) {
+
+        @each $size,
+        $value in $spacing-sizes {
+
+            // Padding
+            .#{$mq}\:p-#{$size} {
                 @include p($size, $important: true);
             }
-        }
 
-        // Padding X
-        .#{key}\:px-#{$size} {
-            @include mq($mq) {
+            // Padding X
+            .#{$mq}\:px-#{$size} {
                 @include px($size, $important: true);
             }
-        }
 
-        // Padding Y
-        .#{key}\:py-#{$size} {
-            @include mq($mq) {
+            // Padding Y
+            .#{$mq}\:py-#{$size} {
                 @include py($size, $important: true);
             }
-        }
 
-        // Padding Left
-        .#{key}\:pl-#{$size} {
-            @include mq($mq) {
+            // Padding Left
+            .#{$mq}\:pl-#{$size} {
                 @include pl($size, $important: true);
             }
-        }
 
-        // Padding Right
-        .#{key}\:pr-#{$size} {
-            @include mq($mq) {
+            // Padding Right
+            .#{$mq}\:pr-#{$size} {
                 @include pr($size, $important: true);
             }
-        }
 
-        // Padding Top
-        .#{key}\:pt-#{$size} {
-            @include mq($mq) {
+            // Padding Top
+            .#{$mq}\:pt-#{$size} {
                 @include pt($size, $important: true);
             }
-        }
 
-        // Padding Bottom
-        .#{key}\:pb-#{$size} {
-            @include mq($mq) {
+            // Padding Bottom
+            .#{$mq}\:pb-#{$size} {
                 @include pb($size, $important: true);
             }
-        }
 
 
-        // Margin
-        .#{key}\:m-#{$size} {
-            @include mq($mq) {
+            // Margin
+            .#{$mq}\:m-#{$size} {
                 @include m($size, $important: true);
             }
-        }
 
-        // Margin X
-        .#{key}\:mx-#{$size} {
-            @include mq($mq) {
+            // Margin X
+            .#{$mq}\:mx-#{$size} {
                 @include mx($size, $important: true);
             }
-        }
 
-        // Margin Y
-        .#{key}\:my-#{$size} {
-            @include mq($mq) {
+            // Margin Y
+            .#{$mq}\:my-#{$size} {
                 @include my($size, $important: true);
             }
-        }
 
-        // Margin Left
-        .#{key}\:ml-#{$size} {
-            @include mq($mq) {
+            // Margin Left
+            .#{$mq}\:ml-#{$size} {
                 @include ml($size, $important: true);
             }
-        }
 
-        // Margin Right
-        .#{key}\:mr-#{$size} {
-            @include mq($mq) {
+            // Margin Right
+            .#{$mq}\:mr-#{$size} {
                 @include mr($size, $important: true);
             }
-        }
 
-        // Margin Top
-        .#{key}\:mt-#{$size} {
-            @include mq($mq) {
+            // Margin Top
+            .#{$mq}\:mt-#{$size} {
                 @include mt($size, $important: true);
             }
-        }
 
-        // Margin Bottom
-        .#{key}\:mb-#{$size} {
-            @include mq($mq) {
+            // Margin Bottom
+            .#{$mq}\:mb-#{$size} {
                 @include mb($size, $important: true);
             }
         }
