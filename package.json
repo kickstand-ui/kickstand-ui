@@ -24,7 +24,7 @@
         "dev:docs": "vuepress dev docs",
         "dev:storybook": "run-p start storybook",
         "generate": "stencil generate",
-        "start": "stencil build --dev --watch",
+        "start": "stencil build --watch",
         "storybook": "start-storybook -p 9009 -s www",
         "test": "stencil test --spec --e2e",
         "test:watch": "stencil test --spec --e2e --watchAll"
