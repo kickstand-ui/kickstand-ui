@@ -63,15 +63,7 @@ Alerts are designed to provide the user with contextual feedback based on a thei
 </ks-alert>
 ```
 
-## Properties
-
-| Property | Attribute | Type   | Default | Description |
-| -------- | --------- | ------ | ------- | ----------- |
-| `color`  | `color`   | `"danger"`, `"dark"`, `"info"`, `"light"`, `"link"`, `"primary"`, `"secondary"`, `"success"`, or `"warning"` | `'primary'` | the color of the button based on the theme color palette           |
-| `header` | `header`  | `string`   | `undefined` | the header text for the alert            |
-| `note`   | `note`    | `boolean`  | `undefined` | display alert as a note            |
-
-### Notes
+## Notes
 
 Notes are used for fixed messages that are always visible and used to call out important information the user should be aware of or warned about.
 
@@ -136,6 +128,20 @@ Notes are used for fixed messages that are always visible and used to call out i
 </ks-alert>
 ```
 
+## Headings
+
+You can add some more structure to your alerts by adding a heading to your using the `header` property.
+
+<div class="my-xl">
+    <ks-alert header="Alert Heading" class="mb-xl">This is an alert with a heading.</ks-alert>
+    <ks-alert header="Note Heading" note>This is an note with a heading.</ks-alert>
+</div>
+
+```html
+<ks-alert header="Alert Heading">This is an alert with a heading.</ks-alert>
+<ks-alert header="Note Heading" note>This is a note with a heading.</ks-alert>
+```
+
 ## Accessibility
 
 Alerts have `role="alert"` on the container to signal to assistive technology that they require the user’s immediate attention.
@@ -151,3 +157,11 @@ Depending on the color assigned to the warning,it will also change the politenes
 ### Accessibility for Notes
 
 Since notes are static containers for calling out important information, `role="alert"` and `aria-live` attributes are not set when the `note` property is `true`.
+
+## Properties
+
+| Property | Attribute | Type   | Default | Description |
+| -------- | --------- | ------ | ------- | ----------- |
+| `color`  | `color`   | `"danger"`, `"dark"`, `"info"`, `"light"`, `"link"`, `"primary"`, `"secondary"`, `"success"`, or `"warning"` | `'primary'` | the color of the button based on the theme color palette           |
+| `header` | `header`  | `string`   | `undefined` | the header text for the alert            |
+| `note`   | `note`    | `boolean`  | `undefined` | display alert as a note            |
