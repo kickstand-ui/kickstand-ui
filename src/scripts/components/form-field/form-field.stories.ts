@@ -2,7 +2,7 @@ import { text, select, boolean, number } from '@storybook/addon-knobs';
 
 export default { title: 'Form Field' };
 
-const types = ['text', 'tel', 'url', 'password', 'date', 'email', 'search', 'number', 'hidden', 'spin-box'];
+const types = ['text', 'tel', 'url', 'password', 'date', 'email', 'search', 'number', 'hidden', 'spin-box', 'textarea'];
 
 export const playground = () => {
     const type = select('type', types, 'text');
