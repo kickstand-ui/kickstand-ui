@@ -21,7 +21,11 @@ applyPolyfills().then(() => {
 });
 ```
 
-### Framework Integrations
+### Styles
+
+Kickstand UI was written using [SASS](https://sass-lang.com/) and to take advantage of all of the built-in tooling and customization capabilities you should plan on using it in your project. You can import them into your project from `kickstand-ui/src/scss/styles`. If not you can always use the compiled CSS located in `kickstand-ui/dist/kickstand-ui/kickstand-ui.css`.
+
+## Framework Integrations
 
 Once you have installed Kickstand UI, check out the documentation on how to implement it into your favorite framework:
 
