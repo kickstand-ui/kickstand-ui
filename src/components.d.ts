@@ -81,8 +81,7 @@ export namespace Components {
         "position": 'start' | 'center' | 'end' | 'stretch';
     }
     interface KsCrumb {
-        "text": string;
-        "url": string;
+        "href": string;
     }
     interface KsDropdown {
         "close": () => Promise<void>;
@@ -569,8 +568,7 @@ declare namespace LocalJSX {
         "position"?: 'start' | 'center' | 'end' | 'stretch';
     }
     interface KsCrumb {
-        "text"?: string;
-        "url"?: string;
+        "href"?: string;
     }
     interface KsDropdown {
         "collapse"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
