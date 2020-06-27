@@ -1,3 +1,0 @@
-# Spin Box
-
-## Coming Soon!
