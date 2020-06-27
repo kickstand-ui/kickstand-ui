@@ -5,7 +5,7 @@ import { Component, h, Prop, ComponentInterface, Host, Watch, Event, EventEmitte
 })
 export class FormField implements ComponentInterface {
     formFieldId = formFieldIds++;
-    $input: HTMLInputElement;
+    $input: HTMLInputElement | HTMLTextAreaElement;
 
     @Prop() label: string;
     @Prop() helpText: string;
@@ -15,7 +15,7 @@ export class FormField implements ComponentInterface {
     @Prop() requiredText: string = 'Required';
     @Prop({ mutable: true }) invalid: boolean = false;
     @Prop() disabled: boolean;
-    @Prop() type: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' = 'text';
+    @Prop() type: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'textarea' = 'text';
     @Prop({ mutable: true }) value?: string | number | null = '';
     @Prop() pattern?: string;
     @Prop() min?: number;
@@ -39,9 +39,14 @@ export class FormField implements ComponentInterface {
 
     @Watch('value')
     protected valueChanged() {
+        if (this.$input && this.$input.value !== this.value) {
+            this.$input.value = this.value.toString();
+        }
+
         this.validityState = this.$input.validity;
         this.invalid = !this.$input.checkValidity();
         let detail = {
+            isValid: !this.invalid,
             validity: this.validityState,
             value: this.value == null ? this.value : this.value.toString()
         };
@@ -49,7 +54,7 @@ export class FormField implements ComponentInterface {
         console.log(detail);
     }
 
-    @Event() updated!: EventEmitter<{validity: ValidityState, value: string | number}>;
+    @Event() updated!: EventEmitter<{ validity: ValidityState, value: string | number }>;
 
     private getErrorMessage(): string {
         switch (true) {
@@ -82,7 +87,7 @@ export class FormField implements ComponentInterface {
         return this.label ? this.label.replace(/ /g, '-') : '';
     }
 
-    private onInput = (ev: Event) => {
+    private onInput(ev: Event) {
         const input = ev.target as HTMLInputElement | null;
         if (input) {
             this.value = input.value || '';
@@ -134,16 +139,28 @@ export class FormField implements ComponentInterface {
                         </span>}
                     </span>
                 </label>
-                <input
-                    id={fieldId}
-                    class="form-input"
-                    type={this.type}
-                    name={this.getInputName()}
-                    {...props}
-                    value={this.value}
-                    onInput={(e) => this.onInput(e)}
-                    ref={el => this.$input = el}
-                />
+                {this.type === 'textarea'
+                    ? <textarea
+                        id={fieldId}
+                        class="form-input"
+                        name={this.getInputName()}
+                        {...props}
+                        onInput={(e) => this.onInput(e)}
+                        ref={el => this.$input = el}
+                    >
+                        {this.value}
+                    </textarea>
+                    : <input
+                        id={fieldId}
+                        class="form-input"
+                        type={this.type}
+                        name={this.getInputName()}
+                        {...props}
+                        value={this.value}
+                        onInput={(e) => this.onInput(e)}
+                        ref={el => this.$input = el}
+                    />
+                }
             </Host>
         );
     }

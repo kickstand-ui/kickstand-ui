@@ -124,7 +124,7 @@ export namespace Components {
         "step"?: number;
         "stepErrorMessage": string;
         "tooltipText": string;
-        "type": 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden';
+        "type": 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'textarea';
         "typeErrorMessage": string;
         "value"?: string | number | null;
     }
@@ -603,7 +603,7 @@ declare namespace LocalJSX {
         "minErrorMessage"?: string;
         "minlength"?: number;
         "minlengthErrorMessage"?: string;
-        "onUpdated"?: (event: CustomEvent<{validity: ValidityState, value: string | number}>) => void;
+        "onUpdated"?: (event: CustomEvent<{ validity: ValidityState, value: string | number }>) => void;
         "pattern"?: string;
         "patternErrorMessage"?: string;
         "placeholder"?: string;
@@ -613,7 +613,7 @@ declare namespace LocalJSX {
         "step"?: number;
         "stepErrorMessage"?: string;
         "tooltipText"?: string;
-        "type"?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden';
+        "type"?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'textarea';
         "typeErrorMessage"?: string;
         "value"?: string | number | null;
     }
