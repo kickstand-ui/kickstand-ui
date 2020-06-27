@@ -30,8 +30,8 @@ export class FormField implements ComponentInterface {
     @Prop() maxErrorMessage: string = `Your value must be no greater than ${this.max}.`;
     @Prop() minErrorMessage: string = `Your value must be no less than ${this.min}.`;
     @Prop() stepErrorMessage: string = `Your value must be divisible by ${this.step}.`;
-    @Prop() maxlengthErrorMessage: string = `Your value must be less than ${this.maxlength} characters.`;
-    @Prop() minlengthErrorMessage: string = `Your value must be greater than ${this.minlength} characters.`;
+    @Prop() maxlengthErrorMessage: string = `Your value must be no more than ${this.maxlength} characters.`;
+    @Prop() minlengthErrorMessage: string = `Your value must be at least ${this.minlength} characters.`;
     @Prop() typeErrorMessage: string = `Your value must be a valid ${this.type === 'tel' ? 'telephone number' : this.type}.`;
     @Prop() requiredErrorMessage: string = `This field is required.`;
 
