@@ -10,20 +10,6 @@ If your app was created using Vue CLI, adding SASS support is as easy as install
 npm install -D sass-loader sass
 ```
 
-### Import Styles
-
-If you don't already have a main `app.scss` or `styles.scss` file, it is highly recommend that you create one and import it into the `src/main.js` file (it's a good idea to create a separate folder in `src` and add the global style there - `src/scss/styles.scss`):
-
-```js
-import 'scss/styles.scss';
-```
-
-Then import the Kickstand UI files into the global styles file:
-
-```css
-@import '~kickstand-ui/src/scss/styles';
-```
-
 ## Adding Components
 
 ::: tip Note
@@ -42,6 +28,7 @@ Assuming you’ve run `npm install --save kickstand-ui` beforehand, you import t
 import Vue from 'vue';
 import App from './App.vue';
 
+import 'kickstand-ui/dist/kickstand-ui/kickstand-ui.css';
 import { applyPolyfills, defineCustomElements } from 'kickstand-ui/loader';
 
 Vue.config.productionTip = false;
@@ -61,3 +48,19 @@ new Vue({
 ```
 
 Kickstand UI components should now be available in any of your Vue components.
+
+## Using SASS
+
+If you are using SASS, you do not need to import the CSS file as it is outlined above.
+
+If you don't already have a main `app.scss` or `styles.scss` file, it is highly recommend that you create one and import it into the `src/main.js` file (it's a good idea to create a separate `scss` folder in `src` and add the global style there - `src/scss/styles.scss`):
+
+```js
+import 'scss/styles.scss';
+```
+
+Then import the Kickstand UI files into the global styles file:
+
+```css
+@import '~kickstand-ui/src/scss/styles';
+```

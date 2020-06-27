@@ -5,8 +5,8 @@
             <h1 class="text-xxl">Kickstand UI</h1>
             <h2 class="border-none">The Customizable Design System</h2>
             <div>
-                <ks-button size="large">Get Started</ks-button>
-                <ks-button display="hollow" size="large" class="ml-sm">Github</ks-button>
+                <ks-button size="large" href="/getting-started/installation.html">Get Started</ks-button>
+                <ks-button display="hollow" size="large" class="ml-sm" href="https://github.com/break-stuff/kickstand-ui">Github</ks-button>
             </div>
         </div>
     </div>
@@ -37,7 +37,7 @@
                     Kickstand UI is very light-weight and allows for component lazy-loading in browsers that support ES6 modules.
                 </ks-card-body>
                 <ks-card-footer>
-                    <ks-button display="hollow" href="/getting-started/installation.html">Learn More</ks-button>
+                    <ks-button display="hollow" href="/getting-started/introduction.html">Learn More</ks-button>
                 </ks-card-footer>
             </ks-card>
         </ks-column>

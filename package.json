@@ -1,7 +1,7 @@
 {
     "name": "kickstand-ui-documentation",
     "version": "1.0.0",
-    "description": "The Design System You Can Use Anywhere",
+    "description": "Documentation for the Kickstand UI Design System",
     "main": "dist/index.js",
     "module": "dist/index.mjs",
     "es2015": "dist/esm/index.mjs",

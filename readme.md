@@ -1,53 +1,21 @@
-<p align="center">
-    <a href="https://kickstand-ui.com/">
-    <img src="https://kickstand-ui.com/images/kickstand_logo.png" alt="kickstand logo" style="max-width:200px; width:100%;" />
-    </a>
-</p>
+# Getting Started
 
-# Kickstand UI
+The official documentation for [Kickstand UI](https://kickstand-ui.com/).
 
-## The Design System You Can Use Anywhere
-
-[Check out the Docs &#8594;](https://kickstand-ui.com/)
-
-## Installation
-
-### Package Manager
+## Install Dependencies
 
 ```bash
-npm install --save kickstand-ui
-
-# or
-
-yarn install kickstand-ui
+npm install
 ```
 
-### Add To Your Project
+## Run the Docs
 
-```js
-import { applyPolyfills, defineCustomElements } from 'kickstand-ui/loader';
-
-// Apply the polyfills and bind the custom elements to the window object
-applyPolyfills().then(() => {
-    defineCustomElements();
-});
+```bash
+npm run dev
 ```
 
-#### Framework Integrations
+## Deploy the Docs
 
-Once you have installed Kickstand UI check out the documentation on how to implement it into your favorite framework:
-
-- [Angular](/getting-started/framework-integrations/angular.html)
-- [Ember](/getting-started/framework-integrations/ember.html)
-- [JavaScript](/getting-started/framework-integrations/javascript.html)
-- [React](/getting-started/framework-integrations/react.html)
-- [Vue](/getting-started/framework-integrations/vue.html)
-
-### CDN
-
-You can also add it to your project by dropping a couple of tags.
-
-```html
-<link rel="stylesheet" href="https://unpkg.com/kickstand-ui/dist/kickstand-ui.css" />
-<script src="https://unpkg.com/kickstand-ui/dist/kickstand-ui.js"></script>
+```bash
+npm run deploy
 ```
