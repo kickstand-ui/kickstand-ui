@@ -26,7 +26,8 @@ Clicking a label automatically sets the focus on associated input field, so havi
     <ks-form-field
         label="Password"
         type="password"
-        help-text="Must contain 8 characters and one special character"
+        help-text="Must contain at least 8 characters"
+        minlength="8"
         />
 </div>
 
@@ -34,7 +35,8 @@ Clicking a label automatically sets the focus on associated input field, so havi
 <ks-form-field
     label="Password"
     type="password"
-    help-text="Must contain 8 characters and one special character"
+    help-text="Must contain at least 8 characters"
+    minlength="8"
     />
 ```
 
@@ -93,7 +95,7 @@ To find out more about HTML5 form validation check out this [documentation from 
 
 ## Data Binding
 
-Kickstand UI's components focus on one-way data binding so that data flows in a single direction. What that means is that the variable you bind to the `value` property will not be updated whenever a user enters new content. In order to provide you with the new value, each component wil emit and `updated` event.
+Kickstand UI's components focus on one-way data binding so that data flows in a single direction. What that means is that the variable you bind to the `value` property will not be updated whenever a user enters new content. In order to provide you with the new value, each component will emit and `updated` event.
 
 ### Adding Event Listeners
 
@@ -139,10 +141,11 @@ Many JavaScript frameworks come with built-in event handling to help simplify yo
 
 ### Event Detail
 
-Event details emit much more that just the value. If you take a look, you will se that it not only emits the value of the field, but also the [ValidityState](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState). This should provide you with more information to manage form validation. 
+Event details emit much more that just the value. If you take a look, you will se that it not only emits the value of the field, but also the [ValidityState](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState) and `isValid` for a quick identifier for validity. This should provide you with more information to manage form validation.
 
 ```json
 {
+    isValid: true,
     validity: {
         badInput: false
         customError: false
@@ -160,6 +163,24 @@ Event details emit much more that just the value. If you take a look, you will s
 }
 ```
 
+## Textarea
+
+A `textarea` is for adding multi-line plain-text editing. This is very useful when you want to allow users to enter a large amount of free-form text, for example a comment on a review or feedback form.
+
+<div class="my-xl">
+    <ks-form-field
+        label="Comments"
+        type="textarea"
+        />
+</div>
+
+```html
+<ks-form-field
+    label="Comments"
+    type="textarea"
+    />
+```
+
 ## Properties
 
 | Property                | Attribute                 | Description | Type                                                                                                            | Default      |
@@ -174,15 +195,15 @@ Event details emit much more that just the value. If you take a look, you will s
 | `max`                   | `max`                     | the max value for `number` and `spin-box` input types            | `number`                                                                                                        | `undefined`  |
 | `maxErrorMessage`       | `max-error-message`       | the error message that will display if the `max` value has been exceeded            | `string`                                                                                          | `Your value must be no greater than {max}.`                                     |
 | `maxlength`             | `maxlength`               | the maximum number of characters a field will allow            | `number`                                                                                          | `undefined`                                                                             |
-| `maxlengthErrorMessage` | `maxlength-error-message` | the error message that will display if the `maxlength` value is exceeded            | `string`                                                                                          | `Your value must be less than {maxlength} characters.`                          |
+| `maxlengthErrorMessage` | `maxlength-error-message` | the error message that will display if the `maxlength` value is exceeded            | `string`                                                                                          | `Your value must be no more than {maxlength} characters.`                          |
 | `min`                   | `min`                     | the min value for `number` and `spin-box` input types            | `number`                                                                                                        | `undefined`  |
 | `minErrorMessage`       | `min-error-message`       | the error message that will display if the value is less than the `min`            | `string`                                                                                          | `Your value must be no less than {min}.`                                        |
 | `minlength`             | `minlength`               | the minimum number of characters the value must be            | `number`                                                                                          | `undefined`                                                                             |
-| `minlengthErrorMessage` | `minlength-error-message` | the error message that is displayed if the value length is less than the `minlength`            | `string`                                                                                          | `Your value must be greater than {minlength} characters.`    |
+| `minlengthErrorMessage` | `minlength-error-message` | the error message that is displayed if the value length is less than the `minlength`            | `string`                                                                                          | `Your value must be at least {minlength} characters.`    |
 | `pattern`               | `pattern`                 | a regular expression used validate the value            | `string`                                                                                          | `undefined`                                                                             |
 | `patternErrorMessage`   | `pattern-error-message`   | the error message displayed if the value does not match the `pattern`            | `string`                                                                                          | `There was a problem processing the value.`                                           |
 | `placeholder`           | `placeholder`             | placeholder text that will display within the form field            | `string`                                                                                                        | `undefined`  |
-| `required`              | `required`                | toggles whether the form is required            | `boolean`                                                                                                       | `undefined`  |
+| `required`              | `required`                | toggles whether the form field is required            | `boolean`                                                                                                       | `undefined`  |
 | `requiredErrorMessage`  | `required-error-message`  | the error message displayed if `required` is `true` and is missing a value            | `string`                                                                                          | `This field is required.`                                                            |
 | `requiredText`          | `required-text`           | the text that will display when the required indicator is hovered or screen readers read the indicator            | `string`                                                                                                        | `'Required'` |
 | `step`                  | `step`                    | when using a `spin-box` the amount it will increment/decrement            | `number`                                                                                                        | `undefined`  |
@@ -196,4 +217,4 @@ Event details emit much more that just the value. If you take a look, you will s
 
 | Event     | Description | Type               |
 | --------- | ----------- | ------------------ |
-| `updated` | this event will execute each time the value is updated            | `CustomEvent<{ validity: ValidityState; value: string \| number; }>` |
+| `updated` | this event will execute each time the value is updated            | `CustomEvent<{ isValid: boolean, validity: ValidityState; value: string \| number; }>` |
