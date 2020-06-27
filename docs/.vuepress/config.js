@@ -3,7 +3,13 @@ module.exports = {
     description:
         "The customizable design systems and component library built with native web components",
     head: [
-        ["meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }],
+        [
+            "meta",
+            {
+                name: "viewport",
+                content: "width=device-width, initial-scale=1.0"
+            }
+        ],
         ["link", { rel: "icon", href: "/images/kickstand_icon.png" }]
     ],
     themeConfig: {
@@ -104,10 +110,16 @@ module.exports = {
     },
     plugins: [
         [
-          '@vuepress/google-analytics',
-          {
-            'ga': 'UA-106134260-3' // UA-00000000-0
-          }
+            "@vuepress/google-analytics",
+            {
+                ga: "UA-106134260-3" // UA-00000000-0
+            }
+        ],
+        [
+            "sitemap",
+            {
+                hostname: "https://kickstand-ui.com/"
+            }
         ]
     ]
 };
