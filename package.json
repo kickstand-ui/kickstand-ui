@@ -17,11 +17,8 @@
     ],
     "scripts": {
         "build": "stencil build --docs",
-        "build:docs": "vuepress build docs",
         "deploy": "stencil build && publish",
-        "deploy:docs": "./deploy-docs.sh",
         "dev": "stencil build --dev --watch --serve",
-        "dev:docs": "vuepress dev docs",
         "dev:storybook": "run-p start storybook",
         "generate": "stencil generate",
         "start": "stencil build --watch",
@@ -42,7 +39,6 @@
         "@storybook/addon-viewport": "^5.3.19",
         "@storybook/html": "^5.3.19",
         "@types/autoprefixer": "^9.7.2",
-        "@vuepress/plugin-google-analytics": "^1.5.2",
         "autoprefixer": "^9.8.4",
         "babel-loader": "^8.1.0",
         "css-loader": "^3.6.0",
@@ -53,7 +49,6 @@
         "sass-loader": "^8.0.2",
         "style-loader": "^1.2.1",
         "ts-loader": "^7.0.5",
-        "vuepress": "^1.5.2"
     },
     "author": "Burton Smith <burton@breakstuff.io>",
     "repository": {
