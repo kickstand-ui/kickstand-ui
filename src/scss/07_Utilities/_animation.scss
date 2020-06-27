@@ -1,9 +1,0 @@
-@import '../00_Abstracts/index';
-
-.animate {
-    @each $key, $value in $transitions {
-        &-#{$key} {
-            @include transition-ease-in-out($key);
-        }
-    }
-}
