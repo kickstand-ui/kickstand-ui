@@ -39,6 +39,6 @@ Once you have installed Kickstand UI, check out the documentation on how to impl
 You can also add it to your project by dropping a couple of tags.
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/kickstand-ui/dist/kickstand-ui.css" />
+<link rel="stylesheet" href="https://unpkg.com/kickstand-ui/dist/kickstand-ui/kickstand-ui.css" />
 <script src="https://unpkg.com/kickstand-ui/dist/kickstand-ui.js"></script>
 ```
