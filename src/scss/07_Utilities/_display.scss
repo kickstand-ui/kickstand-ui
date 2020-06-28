@@ -1,5 +1,7 @@
 @import '../00_Abstracts/index';
 
+$breakpoints: (xl, lg, md, sm, xs, xxs, print);
+
 .display-block {
     display: block;
 }
@@ -84,7 +86,7 @@
     align-items: stretch;
 }
 
-@each $key, $value in $media-queries {
+@each $key, $value in $breakpoints {
     .#{$key}\:display-block {
         @include mq($key) {
             display: block;
