@@ -4,34 +4,33 @@ Breadcrumbs are a navigation tool to provide a visual reference to the current p
 
 <div class="my-lg">
     <ks-breadcrumbs>
-        <ks-crumb url="#" text="Home"></ks-crumb>
-        <ks-crumb url="#" text="Products"></ks-crumb>
-        <ks-crumb url="#" text="Bacon Flavored Toothpaste"></ks-crumb>
-        <ks-crumb url="#" text="Details"></ks-crumb>
+        <ks-crumb href="#">Home</ks-crumb>
+        <ks-crumb href="#">Products</ks-crumb>
+        <ks-crumb href="#">Bacon Flavored Toothpaste</ks-crumb>
+        <ks-crumb href="#">Details</ks-crumb>
     </ks-breadcrumbs>
 </div>
 
 ```html
 <ks-breadcrumbs>
-    <ks-crumb url="#" text="Home"></ks-crumb>
-    <ks-crumb url="#" text="Products"></ks-crumb>
-    <ks-crumb url="#" text="Bacon Flavored Toothpaste"></ks-crumb>
-    <ks-crumb url="#" text="Details"></ks-crumb>
+    <ks-crumb href="#">Home</ks-crumb>
+    <ks-crumb href="#">Products</ks-crumb>
+    <ks-crumb href="#">Bacon Flavored Toothpaste</ks-crumb>
+    <ks-crumb href="#">Details</ks-crumb>
 </ks-breadcrumbs>
 ```
 
 ## Properties
 
-### ks-breadcrumbs
+### `<ks-breadcrumbs>`
 
 The `<ks-breadcrumbs>` has no custom properties.
 
-### ks-crumb
+### `<ks-crumb>`
 
 | Property | Attribute | Type     | Default     | Description |
 | -------- | --------- | -------- | ----------- | ----------- |
-| `text`   | `text`    | `string` | `undefined` | link text   |
-| `url`    | `url`     | `string` | `undefined` | url of the page in the hierarchy |
+| `href`    | `href`     | `string` | `undefined` | url of the page in the hierarchy |
 
 ## Accessibility
 
