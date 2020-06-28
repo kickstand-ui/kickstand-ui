@@ -1,7 +1,8 @@
 import { Component, h, ComponentInterface, Prop, Host, Element } from '@stencil/core';
 
 @Component({
-    tag: 'ks-card'
+    tag: 'ks-card',
+    styleUrl: 'card.scss'
 })
 export class Card implements ComponentInterface {
     $link: HTMLAnchorElement;

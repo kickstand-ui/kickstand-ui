@@ -1,7 +1,8 @@
 import { Component, h, Prop, Host, ComponentInterface } from '@stencil/core';
 
 @Component({
-    tag: 'ks-progress-bar'
+    tag: 'ks-progress-bar',
+    styleUrl: 'progress-bar.scss'
 })
 export class ProgressBar implements ComponentInterface {
     @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';

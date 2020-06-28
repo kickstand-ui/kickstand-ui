@@ -1,7 +1,8 @@
 import { Component, h, Prop, Element, ComponentInterface, Host } from '@stencil/core';
 
 @Component({
-    tag: 'ks-loading'
+    tag: 'ks-loading',
+    styleUrl: 'loading.scss'
 })
 export class Loading implements ComponentInterface {
     @Element() $el: HTMLElement;

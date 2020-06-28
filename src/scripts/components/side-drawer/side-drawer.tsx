@@ -1,7 +1,8 @@
 import { Component, h, Prop, Element, ComponentInterface, Method, State } from '@stencil/core';
 
 @Component({
-    tag: 'ks-side-drawer'
+    tag: 'ks-side-drawer',
+    styleUrl: 'side-drawer.scss'
 })
 export class SideDrawer implements ComponentInterface {
     $overlay: HTMLKsOverlayElement;

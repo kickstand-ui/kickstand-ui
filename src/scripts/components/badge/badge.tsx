@@ -1,7 +1,8 @@
 import { Component, h, Prop, ComponentInterface, Host } from '@stencil/core';
 
 @Component({
-    tag: 'ks-badge'
+    tag: 'ks-badge',
+    styleUrl: 'badge.scss'
 })
 export class Badge implements ComponentInterface {
     @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';

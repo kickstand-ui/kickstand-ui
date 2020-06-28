@@ -1,7 +1,8 @@
 import { Component, h, Prop, Host, Element } from '@stencil/core';
 
 @Component({
-    tag: 'ks-tabs'
+    tag: 'ks-tabs',
+    styleUrl: 'tabs.scss'
 })
 export class Tabs {
     $panels: HTMLKsTabPanelElement[];

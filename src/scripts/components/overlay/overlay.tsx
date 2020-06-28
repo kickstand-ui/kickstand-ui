@@ -2,7 +2,8 @@ import { Component, h, Prop, Method, Host, State, Element, Listen } from '@stenc
 import componentUtils from '../../utils/componentUtils';
 
 @Component({
-    tag: 'ks-overlay'
+    tag: 'ks-overlay',
+    styleUrl: 'overlay.scss'
 })
 export class Overlay {
     $focusableEls: HTMLElement[];

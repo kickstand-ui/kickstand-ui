@@ -1,7 +1,8 @@
 import { Component, h, ComponentInterface, Host, Element } from '@stencil/core';
 
 @Component({
-    tag: 'ks-breadcrumbs'
+    tag: 'ks-breadcrumbs',
+    styleUrl: 'breadcrumbs.scss'
 })
 export class Breadcrumbs implements ComponentInterface {
     $crumbs: HTMLKsCrumbElement[];

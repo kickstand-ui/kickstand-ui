@@ -1,7 +1,8 @@
 import { Component, h, Prop, ComponentInterface, Host, Element } from '@stencil/core';
 
 @Component({
-    tag: 'ks-button'
+    tag: 'ks-button',
+    styleUrl: 'button.scss'
 })
 export class LinkButton implements ComponentInterface {
     $loading: HTMLKsLoadingOverlayElement;

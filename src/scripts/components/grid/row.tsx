@@ -2,7 +2,8 @@ import { Component, Prop, h, Host } from '@stencil/core';
 
 
 @Component({
-    tag: 'ks-row'
+    tag: 'ks-row',
+    styleUrl: 'grid.scss'
 })
 export class Row {
     @Prop() noGutter: boolean = false;

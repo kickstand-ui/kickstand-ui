@@ -1,7 +1,8 @@
 import { Component, h, Prop, Method, Element, ComponentInterface, Host } from '@stencil/core';
 
 @Component({
-    tag: 'ks-loading-overlay'
+    tag: 'ks-loading-overlay',
+    styleUrl: 'loading.scss'
 })
 export class LoadingOverlay implements ComponentInterface {
     $overlay: HTMLKsOverlayElement;
