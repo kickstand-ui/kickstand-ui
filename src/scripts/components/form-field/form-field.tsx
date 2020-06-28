@@ -5,7 +5,7 @@ import { Component, h, Prop, ComponentInterface, Host, Watch, Event, EventEmitte
 })
 export class FormField implements ComponentInterface {
     formFieldId = formFieldIds++;
-    $input: HTMLInputElement | HTMLTextAreaElement;
+    $input: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
 
     @Prop() label: string;
     @Prop() helpText: string;
@@ -15,7 +15,7 @@ export class FormField implements ComponentInterface {
     @Prop() requiredText: string = 'Required';
     @Prop({ mutable: true }) invalid: boolean = false;
     @Prop() disabled: boolean;
-    @Prop() type: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'textarea' = 'text';
+    @Prop() type: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'textarea' | 'select' | 'datalist' = 'text';
     @Prop({ mutable: true }) value?: string | number | null = '';
     @Prop() pattern?: string;
     @Prop() min?: number;
@@ -108,10 +108,12 @@ export class FormField implements ComponentInterface {
     render() {
         let fieldId = `form-input-${this.formFieldId}`;
         let labelId = `form-label-${this.formFieldId}`;
+        let listId = `form-list-${this.formFieldId}`;
         let props = {
             'disabled': this.disabled,
             'required': this.required,
-            'aria-invalid': this.invalid.toString()
+            'aria-invalid': this.invalid.toString(),
+            'list': this.type === 'datalist' && listId
         };
         let classes = {
             'form-field': true,
@@ -139,28 +141,49 @@ export class FormField implements ComponentInterface {
                         </span>}
                     </span>
                 </label>
-                {this.type === 'textarea'
-                    ? <textarea
-                        id={fieldId}
-                        class="form-input"
-                        name={this.getInputName()}
-                        {...props}
-                        onInput={(e) => this.onInput(e)}
-                        ref={el => this.$input = el}
-                    >
-                        {this.value}
-                    </textarea>
-                    : <input
-                        id={fieldId}
-                        class="form-input"
-                        type={this.type}
-                        name={this.getInputName()}
-                        {...props}
-                        value={this.value}
-                        onInput={(e) => this.onInput(e)}
-                        ref={el => this.$input = el}
-                    />
-                }
+                {{
+                    'textarea': (
+                        <textarea
+                            id={fieldId}
+                            class="form-input"
+                            name={this.getInputName()}
+                            {...props}
+                            onInput={(e) => this.onInput(e)}
+                            ref={el => this.$input = el}
+                        >
+                            {this.value}
+                        </textarea>
+                    ),
+                    'select': (
+                        <select
+                            id={fieldId}
+                            class="form-input"
+                            name={this.getInputName()}
+                            {...props}
+                            onInput={(e) => this.onInput(e)}
+                            ref={el => this.$input = el}
+                        >
+                            <slot />
+                        </select>
+                    )
+                }[this.type] || (
+                    <div>
+                        <input
+                            id={fieldId}
+                            class="form-input"
+                            type={this.type}
+                            name={this.getInputName()}
+                            {...props}
+                            value={this.value}
+                            onInput={(e) => this.onInput(e)}
+                            ref={el => this.$input = el}
+                        />
+                        {this.type === 'datalist' && <datalist id={listId}>
+                            <slot />
+                        </datalist>}
+                    </div>
+                )
+            }
             </Host>
         );
     }

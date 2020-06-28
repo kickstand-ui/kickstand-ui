@@ -123,7 +123,7 @@ export namespace Components {
         "step"?: number;
         "stepErrorMessage": string;
         "tooltipText": string;
-        "type": 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'textarea';
+        "type": 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'textarea' | 'select' | 'datalist';
         "typeErrorMessage": string;
         "value"?: string | number | null;
     }
@@ -611,7 +611,7 @@ declare namespace LocalJSX {
         "step"?: number;
         "stepErrorMessage"?: string;
         "tooltipText"?: string;
-        "type"?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'textarea';
+        "type"?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'textarea' | 'select' | 'datalist';
         "typeErrorMessage"?: string;
         "value"?: string | number | null;
     }
