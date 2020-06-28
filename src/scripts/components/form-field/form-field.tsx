@@ -1,7 +1,8 @@
 import { Component, h, Prop, ComponentInterface, Host, Watch, Event, EventEmitter, State } from '@stencil/core';
 
 @Component({
-    tag: 'ks-form-field'
+    tag: 'ks-form-field',
+    styleUrl: 'form-field.scss'
 })
 export class FormField implements ComponentInterface {
     formFieldId = formFieldIds++;

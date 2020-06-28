@@ -2,7 +2,8 @@ import { Component, h, Host, Prop } from '@stencil/core';
 
 
 @Component({
-    tag: 'ks-icon'
+    tag: 'ks-icon',
+    styleUrl: 'icon.scss'
 })
 export class Icons {
     @Prop() icon: 'bars' | 'chevron' | 'close' | 'danger' | 'info' | string;

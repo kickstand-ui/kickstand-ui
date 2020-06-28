@@ -1,7 +1,8 @@
 import { Component, h, Prop, State, Element, Host, ComponentInterface } from '@stencil/core';
 
 @Component({
-    tag: 'ks-menu-bar'
+    tag: 'ks-menu-bar',
+    styleUrl: 'menu-bar.scss'
 })
 export class MenuBar implements ComponentInterface {
     $menuContent: HTMLElement;

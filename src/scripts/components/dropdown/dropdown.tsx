@@ -2,7 +2,8 @@ import { Component, h, Prop, Host, Element, State, Listen, Method } from '@stenc
 import componentUtils from '../../utils/componentUtils';
 
 @Component({
-    tag: 'ks-dropdown'
+    tag: 'ks-dropdown',
+    styleUrl: 'dropdown.scss'
 })
 export class Dropdown {
     $contents: HTMLElement;

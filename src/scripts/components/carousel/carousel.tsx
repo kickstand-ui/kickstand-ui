@@ -1,7 +1,8 @@
 import { Component, h, Prop, State, Element, Host, ComponentInterface } from '@stencil/core';
 
 @Component({
-    tag: 'ks-carousel'
+    tag: 'ks-carousel',
+    styleUrl: 'carousel.scss'
 })
 export class Carousel implements ComponentInterface {
     @Element() $el: HTMLElement;

@@ -1,7 +1,8 @@
 import { Component, h, Prop, ComponentInterface, Element, Method } from '@stencil/core';
 
 @Component({
-    tag: 'ks-modal'
+    tag: 'ks-modal',
+    styleUrl: 'modal.scss'
 })
 export class Modal implements ComponentInterface {
     $overlay: HTMLKsOverlayElement;

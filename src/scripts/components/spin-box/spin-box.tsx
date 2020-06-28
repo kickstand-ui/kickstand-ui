@@ -2,7 +2,8 @@ import { Component, h, Prop, Host, State, Element, ComponentInterface, Watch, Ev
 import componentUtils from '../../utils/componentUtils';
 
 @Component({
-    tag: 'ks-spin-box'
+    tag: 'ks-spin-box',
+    styleUrl: 'spin-box.scss'
 })
 export class SpinBox implements ComponentInterface {
     debouncedUpdate: Function;
