@@ -9,7 +9,8 @@ export class Breadcrumbs implements ComponentInterface {
     @Element() $el: HTMLElement;
 
     connectedCallback() {
-        this.$crumbs = Array.from(this.$el.querySelectorAll('ks-crumb'));
+        this.$crumbs = Array.from(this.$el.children) as HTMLKsCrumbElement[];
+        this.$crumbs.forEach(x => x.hidden = true);
     }
 
     private isLastCrumb(index: number): boolean {
@@ -23,7 +24,7 @@ export class Breadcrumbs implements ComponentInterface {
                 <ol class="breadcrumbs">
                     {this.$crumbs.map((crumb, index) =>
                         <li class={{ 'breadcrumb': true, 'current': this.isLastCrumb(index) }}>
-                            <a {...{ class: 'link', ['aria-current']: this.isLastCrumb(index) && 'page', href: crumb.url }}>{crumb.text}</a>
+                            <a {...{ class: 'link', ['aria-current']: this.isLastCrumb(index) && 'page', href: crumb.href }}>{crumb.innerHTML}</a>
                         </li>
                     )}
                 </ol>

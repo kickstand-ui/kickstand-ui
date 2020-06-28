@@ -9,6 +9,6 @@ const breadcrumbs = [
 
 export const breadcrumb = () => {
     return (`<ks-breadcrumbs>
-        ${breadcrumbs.map(x => `<ks-crumb url="${x.url}" text="${x.text}"></ks-crumb>`).join('')}
+        ${breadcrumbs.map(x => `<ks-crumb href="${x.url}">${x.text}</ks-crumb>`).join('')}
     </ks-breadcrumbs>`);
 };

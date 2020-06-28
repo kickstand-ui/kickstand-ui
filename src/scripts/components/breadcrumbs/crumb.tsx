@@ -4,8 +4,7 @@ import { Component, Prop, ComponentInterface} from '@stencil/core';
     tag: 'ks-crumb'
 })
 export class Crumbs implements ComponentInterface {
-    @Prop() url: string;
-    @Prop() text: string;
+    @Prop() href: string;
 
     render() {
         return;
