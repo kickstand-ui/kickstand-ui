@@ -181,6 +181,64 @@ A `textarea` is for adding multi-line plain-text editing. This is very useful wh
     />
 ```
 
+## Select
+
+Setting the `type` property to `select` allows you nest a list of options within the form field component to provide the user available options.
+
+<div class="my-xl">
+    <ks-form-field
+        label="Options"
+        type="select"
+        >
+        <option value="1" selected>Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+    </ks-form-field>
+</div>
+
+```html
+<ks-form-field
+    label="Options"
+    type="select"
+    >
+    <option value="1" selected>Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+</ks-form-field>
+```
+
+## Datalist
+
+Similar to the `select` input, the `type` to `datalist` will provide you a list of options, but the options are also _searchable_.
+
+<div class="my-xl">
+    <ks-form-field
+        label="Options"
+        type="datalist"
+        >
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Value 1</option>
+        <option>Value 2</option>
+        <option>Selection 1</option>
+        <option>Selection 2</option>
+    </ks-form-field>
+</div>
+
+```html
+<ks-form-field
+    label="Options"
+    type="datalist"
+    >
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Value 1</option>
+    <option>Value 2</option>
+    <option>Selection 1</option>
+    <option>Selection 2</option>
+</ks-form-field>
+```
+
 ## Properties
 
 | Property                | Attribute                 | Description | Type                                                                                                            | Default      |
