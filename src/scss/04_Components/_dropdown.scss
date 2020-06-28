@@ -1,5 +1,7 @@
 @import "../00_Abstracts/index";
 
+$breakpoints: (xl, lg, md, sm, xs, xxs);
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -50,7 +52,7 @@
         @include transition-ease-in-out(fast);
 
         &.collapse {
-            @each $key, $value in $media-queries {
+            @each $key, $value in $breakpoints {
                 &-#{$key} {
                     @include mq($key) {
                         position: fixed;
@@ -158,7 +160,7 @@
     }
 
     &.collapse {
-        @each $key, $value in $media-queries {
+        @each $key, $value in $breakpoints {
             &-#{$key} {
                 @include mq($key) {
                     .menu-item {

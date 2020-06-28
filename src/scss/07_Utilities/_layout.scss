@@ -2,6 +2,7 @@
 
 $widths: (10, 20, 25, 30, 33, 40, 50, 60, 66, 70, 75, 80, 90, 100);
 $heights: (25, 50, 75, 100);
+$breakpoints: (xl, lg, md, sm, xs, xxs, print);
 
 // WIDTH
 
@@ -15,7 +16,7 @@ $heights: (25, 50, 75, 100);
     }
 }
 
-@each $mq, $value in $media-queries {
+@each $mq, $value in $breakpoints {
     @each $width in $widths {
         @include mq($mq) {
             /*
@@ -35,7 +36,7 @@ $heights: (25, 50, 75, 100);
     }
 }
 
-@each $mq, $value in $media-queries {
+@each $mq, $value in $breakpoints {
     @each $height in $heights {
         @include mq($mq) {
             /*

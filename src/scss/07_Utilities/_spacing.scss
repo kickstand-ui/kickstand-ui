@@ -1,5 +1,7 @@
 @import '../00_Abstracts/index';
 
+$breakpoints: (xl, lg, md, sm, xs, xxs, print);
+
 @each $size,
 $value in $spacing-sizes {
 
@@ -75,7 +77,7 @@ $value in $spacing-sizes {
     }
 }
 
-@each $mq, $value in $media-queries {
+@each $mq, $value in $breakpoints {
     @include mq($mq) {
 
         @each $size,

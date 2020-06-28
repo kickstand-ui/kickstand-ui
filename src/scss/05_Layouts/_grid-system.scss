@@ -2,6 +2,7 @@
 
 $columns: 12;
 $gutter-size: sm;
+$breakpoints: (xl, lg, md, sm, xs, xxs);
 
 .row {
     display: flex;
@@ -62,7 +63,7 @@ $gutter-size: sm;
         }
 
         @for $i from 1 through $columns {
-            @each $key, $value in $media-queries {
+            @each $key, $value in $breakpoints {
                 @include mq($key) {
                     &.#{$key}\:col-#{$i} {
                         max-width: (100% / $columns) * $i;
