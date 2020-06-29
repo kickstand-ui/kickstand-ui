@@ -18,6 +18,10 @@ It also means that you can have a Design System that is designed to be customize
 
 Kickstand UI is built using StencilJS and Clarion to create a design system that is very easy to implement in any project because it is built completely on standards based native Web Components and a style framework designed for scale and reusability.
 
+### Performant
+
+It is also important to note that, since Kickstand UI is a framework-less design system, it is incredibly light-weight. The initial size is about `8KB` of CSS and `7KB` of JavaScript in modern browsers!
+
 ## Stencil
 
 [Stencil](https://stenciljs.com/) is a compiler that generates Web Components (more specifically, Custom Elements) and is used to build Kickstand UI's highly performant component library. Stencil combines the best concepts of the most popular frameworks into a simple build-time tool.
