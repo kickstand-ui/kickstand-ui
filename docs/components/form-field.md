@@ -106,7 +106,7 @@ Kickstand UI's components focus on one-way data binding so that data flows in a 
         if (!window.formField) {
             let formField = document.getElementById('binding-test');
             let value = document.getElementById('value');
-            formField.addEventListener('updated', (e) => {
+            formField.addEventListener('updated', function (e) {
                 value.innerText = e.detail.value;
             });
         }
@@ -119,7 +119,7 @@ Kickstand UI's components focus on one-way data binding so that data flows in a 
 <script>
     let formField = document.getElementById('binding-test');
     let value = document.getElementById('value');
-    formField.addEventListener('updated', (e) => {
+    formField.addEventListener('updated', function (e) {
         value.innerText = e.detail.value;
     });
 </script>
