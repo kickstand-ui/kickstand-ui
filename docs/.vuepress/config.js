@@ -75,11 +75,11 @@ module.exports = {
                     "/components/tooltip.html"
                 ]
             },
-            {
-                title: "Content",
-                collapsable: true,
-                children: []
-            },
+            // {
+            //     title: "Content",
+            //     collapsable: true,
+            //     children: []
+            // },
             {
                 title: "Layout",
                 collapsable: true,
@@ -103,7 +103,7 @@ module.exports = {
                 collapsable: true,
                 children: [
                     "/theming/design-tokens.html",
-                    "/theming/customizing-components.html"
+                    // "/theming/customizing-components.html"
                 ]
             }
         ]
