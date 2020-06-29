@@ -34,10 +34,12 @@
         <ks-column>
             <ks-card>
                 <ks-card-body card-title="Performant">
-                    Kickstand UI is very light-weight and allows for component lazy-loading in browsers that support ES6 modules.
+                    <p>
+                        Kickstand UI is very light-weight and allows for component lazy-loading in browsers that support ES6 modules. The initial load is about <code>8KB</code> of CSS and <code>7KB</code> of JavaScript.
+                    </p>
                 </ks-card-body>
                 <ks-card-footer>
-                    <ks-button display="hollow" href="/getting-started/introduction.html">Learn More</ks-button>
+                    <ks-button display="hollow" href="/getting-started/introduction.html">Find Out Why</ks-button>
                 </ks-card-footer>
             </ks-card>
         </ks-column>

@@ -1,13 +1,13 @@
 module.exports = {
     title: "Kickstand UI",
     description:
-        "The customizable design systems and component library built with native web components",
+        "The web component Design System and UI library you can use anywhere!",
     head: [
         [
             "meta",
             {
                 name: "viewport",
-                content: "width=device-width, initial-scale=1.0"
+                content: "width=device-width, initial-scale=1, shrink-to-fit=no"
             }
         ],
         ["link", { rel: "icon", href: "/images/kickstand_icon.png" }]
