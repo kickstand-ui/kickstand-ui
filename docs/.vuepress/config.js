@@ -1,7 +1,7 @@
 module.exports = {
     title: "Kickstand UI",
     description:
-        "The web component Design System and UI library you can use anywhere!",
+        "The Design System You Can Use Everywhere!",
     head: [
         [
             "meta",

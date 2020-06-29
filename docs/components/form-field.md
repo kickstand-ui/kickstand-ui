@@ -103,11 +103,13 @@ Kickstand UI's components focus on one-way data binding so that data flows in a 
     <ks-form-field label="Name" id="binding-test" class="mb-md" />
     <b>Bound Value: </b><span id="value"></span>
     <script>
-        let formField = document.getElementById('binding-test');
-        let value = document.getElementById('value');
-        formField.addEventListener('updated', (e) => {
-            value.innerText = e.detail.value;
-        });
+        if (!window.formField) {
+            let formField = document.getElementById('binding-test');
+            let value = document.getElementById('value');
+            formField.addEventListener('updated', function (e) {
+                value.innerText = e.detail.value;
+            });
+        }
     </script>
 </div>
 
@@ -117,7 +119,7 @@ Kickstand UI's components focus on one-way data binding so that data flows in a 
 <script>
     let formField = document.getElementById('binding-test');
     let value = document.getElementById('value');
-    formField.addEventListener('updated', (e) => {
+    formField.addEventListener('updated', function (e) {
         value.innerText = e.detail.value;
     });
 </script>
@@ -243,7 +245,7 @@ Similar to the `select` input, the `type` to `datalist` will provide you a list 
 
 | Property                | Attribute                 | Description | Type                                                                                                            | Default      |
 | ----------------------- | ------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------- | ------------ |
-| `autocomplete`          | `autocomplete`            | read [here](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#Values) for more information on available values and features            | `string`                                                                                          | `on`                                                                             |
+| `autocomplete`          | `autocomplete`            | check out the [documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#Values) for more information on available values and features            | `string`                                                                                          | `on`                                                                             |
 | `badInputErrorMessage`  | `bad-input-error-message` | the message that displays when the `badInput` validation is `true`            | `string`                                                                                          | `There was a problem processing your value.`                                           |
 | `defaultErrorMessage`   | `default-error-message`   | the message that will display if `invalid` is set to `true`            | `string`                                                                                          | `The value entered is not valid.`                                                     |
 | `disabled`              | `disabled`                | disable form fields            | `boolean`                                                                                                       | `undefined`  |
