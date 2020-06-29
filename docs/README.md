@@ -1,9 +1,9 @@
 <div>
     <div class="display-flex align-center">
-        <img class="w-33" src="/images/kickstand_logo.png" alt="kickstand logo" />
+        <img class="w-25" src="/images/kickstand_logo.png" alt="kickstand logo" />
         <div class="ml-lg">
             <h1 class="text-xxl">Kickstand UI</h1>
-            <h2 class="border-none">The Customizable Design System</h2>
+            <h2 class="border-none">The Design System You Can Use <em>Everywhere</em>!</h2>
             <div>
                 <ks-button size="large" href="/getting-started/installation.html">Get Started</ks-button>
                 <ks-button display="hollow" size="large" class="ml-sm" href="https://github.com/break-stuff/kickstand-ui">Github</ks-button>
@@ -39,7 +39,7 @@
                     </p>
                 </ks-card-body>
                 <ks-card-footer>
-                    <ks-button display="hollow" href="/getting-started/introduction.html">Find Out Why</ks-button>
+                    <ks-button display="hollow" href="/getting-started/introduction.html">Find Out How</ks-button>
                 </ks-card-footer>
             </ks-card>
         </ks-column>
