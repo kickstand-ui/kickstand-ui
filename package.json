@@ -1,6 +1,6 @@
 {
     "name": "kickstand-ui",
-    "version": "0.22.0",
+    "version": "0.22.1",
     "description": "The Design System You Can Use Anywhere",
     "main": "dist/index.js",
     "module": "dist/index.mjs",
@@ -58,7 +58,7 @@
     "bugs": {
         "url": "https://github.com/break-stuff/kickstand-ui/issues"
     },
-    "homepage": "https://kickstand-ui.com/",
+    "homepage": "https://kickstand-ui.com",
     "license": "MIT",
     "keywords": [
         "css",
