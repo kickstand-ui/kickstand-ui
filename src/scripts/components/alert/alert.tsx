@@ -15,7 +15,6 @@ export class Alert {
         
         switch (this.color) {
             case 'danger':
-                return 'rude';
             case 'warning':
                 return 'assertive';
             default:
