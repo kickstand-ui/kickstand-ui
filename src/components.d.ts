@@ -43,6 +43,7 @@ export namespace Components {
         "shows": string;
         "size": 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "tabIndex": number;
+        "target": string;
         "type": 'button' | 'submit' | 'reset';
     }
     interface KsCard {
@@ -530,6 +531,7 @@ declare namespace LocalJSX {
         "shows"?: string;
         "size"?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "tabIndex"?: number;
+        "target"?: string;
         "type"?: 'button' | 'submit' | 'reset';
     }
     interface KsCard {

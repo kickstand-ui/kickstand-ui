@@ -15,7 +15,8 @@ export const playground = () => {
     const size = select('size', sizes, 'md');
     const icon = text('icon', '');
     const iconDirection = select('icon-direction', iconDirections, 'left');
-    const linkUrl = text('url', '');
+    const linkUrl = text('href', '');
+    const target = text('target', '');
     const cssClass = text('css-class', '');
     return (`<ks-button
             css-class="${cssClass}" 
@@ -25,9 +26,10 @@ export const playground = () => {
             size="${size}" 
             icon="${icon}"
             icon-direction="${iconDirection}"
-            url="${linkUrl}"
+            href="${linkUrl}"
             loading="${loading}"
-            disabled="${disabled}">
+            disabled="${disabled}"
+            target="${target}">
             ${color} button
         </ks-button>`);
 };
