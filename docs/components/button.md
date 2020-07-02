@@ -160,6 +160,10 @@ If the `href` property is populated, it will change the behavior of therefore ch
 </ks-button>
 ```
 
+## Target
+
+The `target` property behaves the same as the standard [HTML attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target). When used, the `<ks-button>` component will automatically add `rel="noreferrer noopener"` for performance and security purposes.
+
 ## Properties
 
 | Property        | Attribute        | Description | Type         | Default     |
@@ -179,4 +183,5 @@ If the `href` property is populated, it will change the behavior of therefore ch
 | `loading`       | `loading`        | enabling this will show the loading icon and disable the button            | `boolean` | `undefined` |
 | `size`          | `size`           | controls the size of the button            | `"md"`, `"lg"`, `"sm"`, `"xl"`, or `"xs"` | `'md'`      |
 | `tabIndex`      | `tab-index`      | adds a `tabindex` attribute on the button element            | `number`                                                                                        | `undefined` |
+| `target`        | `target`         | adds `target` [attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target) to anchor tags            | `string`                                                                                        | `undefined` |
 | `type`          | `type`           | controls the button `type` attribute            | `"button"`, `"reset"`, or `"submit"` | `'button'`  |
