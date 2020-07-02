@@ -26,6 +26,7 @@
 | `shows`         | `shows`          |             | `string`                                                                                        | `undefined` |
 | `size`          | `size`           |             | `"lg" \| "md" \| "sm" \| "xl" \| "xs"`                                                          | `'md'`      |
 | `tabIndex`      | `tab-index`      |             | `number`                                                                                        | `undefined` |
+| `target`        | `target`         |             | `string`                                                                                        | `undefined` |
 | `type`          | `type`           |             | `"button" \| "reset" \| "submit"`                                                               | `'button'`  |
 
 

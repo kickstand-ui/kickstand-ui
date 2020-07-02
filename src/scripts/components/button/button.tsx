@@ -27,6 +27,7 @@ export class LinkButton implements ComponentInterface {
     @Prop() tabIndex: number;
     @Prop() shows: string;
     @Prop() hides: string;
+    @Prop() target: string;
 
     componentDidRender() {
         this.loading
@@ -69,6 +70,15 @@ export class LinkButton implements ComponentInterface {
         this.$el.addEventListener('click', () => $hidesComponent.hide());
     }
 
+    private getAnchorProps() {
+        let props = {};
+
+        (this.href && this.target) && (props['target'] = this.target); 
+        (this.target && this.href) && (props['rel'] = 'noreferrer noopener');
+
+        return props;
+    }
+
     render() {
         let content = [
             this.icon && <ks-icon icon={this.icon} class={{'button-icon': true, 'mx-none': this.hideText}} />,
@@ -103,7 +113,7 @@ export class LinkButton implements ComponentInterface {
             <Host class="pointer">
                 <ks-loading-overlay absolute ref={el => this.$loading = el}></ks-loading-overlay>
                 {this.href
-                    ? <a class={classes} href={this.href}>{content}</a>
+                    ? <a class={classes} {...this.getAnchorProps()} href={this.href}>{content}</a>
                     : <button {...props} class={classes}>{content}</button >}
             </Host>
         );
