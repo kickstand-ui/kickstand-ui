@@ -126,6 +126,7 @@ export namespace Components {
         "tooltipText": string;
         "type": 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'textarea' | 'select' | 'datalist';
         "typeErrorMessage": string;
+        "validateOnInput": boolean;
         "value"?: string | number | null;
     }
     interface KsIcon {
@@ -603,6 +604,7 @@ declare namespace LocalJSX {
         "minErrorMessage"?: string;
         "minlength"?: number;
         "minlengthErrorMessage"?: string;
+        "onBlurred"?: (event: CustomEvent<any>) => void;
         "onUpdated"?: (event: CustomEvent<{ validity: ValidityState, value: string | number }>) => void;
         "pattern"?: string;
         "patternErrorMessage"?: string;
@@ -615,6 +617,7 @@ declare namespace LocalJSX {
         "tooltipText"?: string;
         "type"?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'textarea' | 'select' | 'datalist';
         "typeErrorMessage"?: string;
+        "validateOnInput"?: boolean;
         "value"?: string | number | null;
     }
     interface KsIcon {
