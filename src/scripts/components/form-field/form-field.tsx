@@ -35,6 +35,10 @@ export class FormField implements ComponentInterface {
     @Prop() minlengthErrorMessage: string = `Your value must be at least ${this.minlength} characters.`;
     @Prop() typeErrorMessage: string = `Your value must be a valid ${this.type === 'tel' ? 'telephone number' : this.type}.`;
     @Prop() requiredErrorMessage: string = `This field is required.`;
+    @Prop({ mutable: true }) validateOnInput: boolean = false;
+
+    @Event() updated!: EventEmitter<{ validity: ValidityState, value: string | number }>;
+    @Event() blurred!: EventEmitter;
 
     @State() validityState: ValidityState;
 
@@ -45,7 +49,10 @@ export class FormField implements ComponentInterface {
         }
 
         this.validityState = this.$input.validity;
-        this.invalid = !this.$input.checkValidity();
+
+        if(this.validateOnInput)
+            this.invalid = !this.$input.checkValidity();
+
         let detail = {
             isValid: !this.invalid,
             validity: this.validityState,
@@ -54,8 +61,6 @@ export class FormField implements ComponentInterface {
         this.updated.emit(detail);
         console.log(detail);
     }
-
-    @Event() updated!: EventEmitter<{ validity: ValidityState, value: string | number }>;
 
     private getErrorMessage(): string {
         switch (true) {
@@ -95,6 +100,17 @@ export class FormField implements ComponentInterface {
         }
     }
 
+    private onBlur() {
+        if (!this.validateOnInput) {
+            this.invalid = !this.$input.checkValidity();
+
+            if(this.invalid)
+                this.validateOnInput = true;
+        }
+
+        this.blurred.emit();
+    }
+
     private setProps(props: any) {
         this.placeholder && (props.placeholder = this.placeholder);
         this.autocomplete && (props.autocomplete = this.autocomplete);
@@ -124,6 +140,52 @@ export class FormField implements ComponentInterface {
             'form-label': true
         };
 
+        let fieldInput = {
+            'textarea': (
+                <textarea
+                    id={fieldId}
+                    class="form-input"
+                    name={this.getInputName()}
+                    {...props}
+                    onInput={(e) => this.onInput(e)}
+                    onBlur={() => this.onBlur()}
+                    ref={el => this.$input = el}
+                >
+                    {this.value}
+                </textarea>
+            ),
+            'select': (
+                <select
+                    id={fieldId}
+                    class="form-input"
+                    name={this.getInputName()}
+                    {...props}
+                    onInput={(e) => this.onInput(e)}
+                    onBlur={() => this.onBlur()}
+                    ref={el => this.$input = el}
+                >
+                    <slot />
+                </select>
+            )
+        }[this.type] || (
+            <div>
+                <input
+                    id={fieldId}
+                    class="form-input"
+                    type={this.type}
+                    name={this.getInputName()}
+                    {...props}
+                    value={this.value}
+                    onInput={(e) => this.onInput(e)}
+                    onBlur={() => this.onBlur()}
+                    ref={el => this.$input = el}
+                />
+                {this.type === 'datalist' && <datalist id={listId}>
+                    <slot />
+                </datalist>}
+            </div>
+        );
+
         this.setProps(props);
 
         return (
@@ -142,49 +204,7 @@ export class FormField implements ComponentInterface {
                         </span>}
                     </span>
                 </label>
-                {{
-                    'textarea': (
-                        <textarea
-                            id={fieldId}
-                            class="form-input"
-                            name={this.getInputName()}
-                            {...props}
-                            onInput={(e) => this.onInput(e)}
-                            ref={el => this.$input = el}
-                        >
-                            {this.value}
-                        </textarea>
-                    ),
-                    'select': (
-                        <select
-                            id={fieldId}
-                            class="form-input"
-                            name={this.getInputName()}
-                            {...props}
-                            onInput={(e) => this.onInput(e)}
-                            ref={el => this.$input = el}
-                        >
-                            <slot />
-                        </select>
-                    )
-                }[this.type] || (
-                    <div>
-                        <input
-                            id={fieldId}
-                            class="form-input"
-                            type={this.type}
-                            name={this.getInputName()}
-                            {...props}
-                            value={this.value}
-                            onInput={(e) => this.onInput(e)}
-                            ref={el => this.$input = el}
-                        />
-                        {this.type === 'datalist' && <datalist id={listId}>
-                            <slot />
-                        </datalist>}
-                    </div>
-                )
-            }
+                {fieldInput}
             </Host>
         );
     }

@@ -35,6 +35,7 @@
 | `tooltipText`           | `tooltip-text`            |             | `string`                                                                                                                                  | `undefined`                                                                             |
 | `type`                  | `type`                    |             | `"datalist" \| "date" \| "email" \| "hidden" \| "number" \| "password" \| "search" \| "select" \| "tel" \| "text" \| "textarea" \| "url"` | `'text'`                                                                                |
 | `typeErrorMessage`      | `type-error-message`      |             | `string`                                                                                                                                  | ``Your value must be a valid ${this.type === 'tel' ? 'telephone number' : this.type}.`` |
+| `validateOnInput`       | `validate-on-input`       |             | `boolean`                                                                                                                                 | `false`                                                                                 |
 | `value`                 | `value`                   |             | `number \| string`                                                                                                                        | `''`                                                                                    |
 
 
@@ -42,6 +43,7 @@
 
 | Event     | Description | Type                                                                 |
 | --------- | ----------- | -------------------------------------------------------------------- |
+| `blurred` |             | `CustomEvent<any>`                                                   |
 | `updated` |             | `CustomEvent<{ validity: ValidityState; value: string \| number; }>` |
 
 

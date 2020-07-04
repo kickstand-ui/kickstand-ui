@@ -23,6 +23,7 @@ export const playground = () => {
     const maxlength = number('maxlength', undefined);
     const autocomplete = text('autocomplete', '');
     const pattern = text('pattern', '');
+    const validateOnInput = boolean('validate-on-input', false);
     return (`<div class="m-xxl">
         <ks-form-field 
             type="${type}"
@@ -43,6 +44,7 @@ export const playground = () => {
             maxlength="${maxlength}"
             autocomplete="${autocomplete}"
             pattern="${pattern}"
+            validate-on-input="${validateOnInput}"
             >
         </ks-form-field>
     </div>`);
@@ -67,6 +69,7 @@ export const selectTest = () => {
     const maxlength = number('maxlength', undefined);
     const autocomplete = text('autocomplete', '');
     const pattern = text('pattern', '');
+    const validateOnInput = boolean('validate-on-input', false);
     return (`<div class="m-xxl">
         <ks-form-field 
             type="${type}"
@@ -87,6 +90,7 @@ export const selectTest = () => {
             maxlength="${maxlength}"
             autocomplete="${autocomplete}"
             pattern="${pattern}"
+            validate-on-input="${validateOnInput}"
             >
             <option selected>Choose a value</option>
             <option>Value 1</option>
