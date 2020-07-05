@@ -129,12 +129,12 @@ export class FormField implements ComponentInterface {
         let props = {
             'disabled': this.disabled,
             'required': this.required,
-            'aria-invalid': this.invalid.toString(),
+            'aria-invalid': !this.disabled && this.invalid.toString(),
             'list': this.type === 'datalist' && listId
         };
         let classes = {
             'form-field': true,
-            'invalid': this.invalid,
+            'invalid': this.invalid && !this.disabled
         };
         let labelClasses = {
             'form-label': true
@@ -198,7 +198,7 @@ export class FormField implements ComponentInterface {
                     </span>
                     <span class="help-text">{this.helpText}</span>
                     <span class="error-message text-danger" role="alert" aria-live="assertive">
-                        {this.invalid && <span class="error-text">
+                        {(this.invalid && !this.disabled) && <span class="error-text">
                             <ks-icon icon="danger" class="mr-xs" />
                             <span>{this.getErrorMessage()}</span>
                         </span>}
