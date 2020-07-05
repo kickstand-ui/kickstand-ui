@@ -1,4 +1,5 @@
 import { Component, h, Prop, ComponentInterface, Host, Watch, Event, EventEmitter, State } from '@stencil/core';
+import utils from '../../utils/componentUtils';
 
 @Component({
     tag: 'ks-form-field',
@@ -36,6 +37,7 @@ export class FormField implements ComponentInterface {
     @Prop() typeErrorMessage: string = `Your value must be a valid ${this.type === 'tel' ? 'telephone number' : this.type}.`;
     @Prop() requiredErrorMessage: string = `This field is required.`;
     @Prop({ mutable: true }) validateOnInput: boolean = false;
+    @Prop() debounce: number = 0;
 
     @Event() updated!: EventEmitter<{ validity: ValidityState, value: string | number }>;
     @Event() blurred!: EventEmitter;
@@ -50,7 +52,7 @@ export class FormField implements ComponentInterface {
 
         this.validityState = this.$input.validity;
 
-        if(this.validateOnInput)
+        if (this.validateOnInput)
             this.invalid = !this.$input.checkValidity();
 
         let detail = {
@@ -60,6 +62,11 @@ export class FormField implements ComponentInterface {
         };
         this.updated.emit(detail);
         console.log(detail);
+    }
+
+    private getValue(): string {
+        return typeof this.value === 'number' ? this.value.toString() :
+            (this.value || '').toString();
     }
 
     private getErrorMessage(): string {
@@ -94,17 +101,19 @@ export class FormField implements ComponentInterface {
     }
 
     private onInput(ev: Event) {
-        const input = ev.target as HTMLInputElement | null;
-        if (input) {
-            this.value = input.value || '';
-        }
+        utils.debounce(() => {
+            const input = ev.target as HTMLInputElement | null;
+            if (input) {
+                this.value = input.value || '';
+            }
+        }, this.debounce);
     }
 
     private onBlur() {
         if (!this.validateOnInput) {
             this.invalid = !this.$input.checkValidity();
 
-            if(this.invalid)
+            if (this.invalid)
                 this.validateOnInput = true;
         }
 
@@ -126,6 +135,7 @@ export class FormField implements ComponentInterface {
         let fieldId = `form-input-${this.formFieldId}`;
         let labelId = `form-label-${this.formFieldId}`;
         let listId = `form-list-${this.formFieldId}`;
+        let value = this.getValue();
         let props = {
             'disabled': this.disabled,
             'required': this.required,
@@ -151,7 +161,7 @@ export class FormField implements ComponentInterface {
                     onBlur={() => this.onBlur()}
                     ref={el => this.$input = el}
                 >
-                    {this.value}
+                    {value}
                 </textarea>
             ),
             'select': (
@@ -168,23 +178,23 @@ export class FormField implements ComponentInterface {
                 </select>
             )
         }[this.type] || (
-            <div>
-                <input
-                    id={fieldId}
-                    class="form-input"
-                    type={this.type}
-                    name={this.getInputName()}
-                    {...props}
-                    value={this.value}
-                    onInput={(e) => this.onInput(e)}
-                    onBlur={() => this.onBlur()}
-                    ref={el => this.$input = el}
-                />
-                {this.type === 'datalist' && <datalist id={listId}>
-                    <slot />
-                </datalist>}
-            </div>
-        );
+                <div>
+                    <input
+                        id={fieldId}
+                        class="form-input"
+                        type={this.type}
+                        name={this.getInputName()}
+                        {...props}
+                        value={value}
+                        onInput={(e) => this.onInput(e)}
+                        onBlur={() => this.onBlur()}
+                        ref={el => this.$input = el}
+                    />
+                    {this.type === 'datalist' && <datalist id={listId}>
+                        <slot />
+                    </datalist>}
+                </div>
+            );
 
         this.setProps(props);
 
