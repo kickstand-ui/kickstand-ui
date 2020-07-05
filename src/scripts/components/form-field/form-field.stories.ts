@@ -24,6 +24,7 @@ export const playground = () => {
     const autocomplete = text('autocomplete', '');
     const pattern = text('pattern', '');
     const validateOnInput = boolean('validate-on-input', false);
+    const debounce = number('debounce', 0);
     return (`<div class="m-xxl">
         <ks-form-field 
             type="${type}"
@@ -44,7 +45,8 @@ export const playground = () => {
             maxlength="${maxlength}"
             autocomplete="${autocomplete}"
             pattern="${pattern}"
-            validate-on-input="${validateOnInput}"
+            validate-on-input="${validateOnInput}",
+            debounce="${debounce}"
             >
         </ks-form-field>
     </div>`);
@@ -70,6 +72,7 @@ export const selectTest = () => {
     const autocomplete = text('autocomplete', '');
     const pattern = text('pattern', '');
     const validateOnInput = boolean('validate-on-input', false);
+    const debounce = number('debounce', 0);
     return (`<div class="m-xxl">
         <ks-form-field 
             type="${type}"
@@ -91,6 +94,7 @@ export const selectTest = () => {
             autocomplete="${autocomplete}"
             pattern="${pattern}"
             validate-on-input="${validateOnInput}"
+            debounce="${debounce}"
             >
             <option selected>Choose a value</option>
             <option>Value 1</option>

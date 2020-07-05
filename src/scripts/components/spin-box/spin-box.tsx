@@ -1,5 +1,5 @@
 import { Component, h, Prop, Host, State, Element, ComponentInterface, Watch, Event, EventEmitter } from '@stencil/core';
-import componentUtils from '../../utils/componentUtils';
+// import componentUtils from '../../utils/componentUtils';
 
 @Component({
     tag: 'ks-spin-box',
@@ -77,12 +77,12 @@ export class SpinBox implements ComponentInterface {
     }
 
     componentDidLoad() {
-        this.debouncedUpdate = componentUtils.debounce(() => {
-            if (typeof this.value === 'number') {
-                this.isUpdating = true;
-                this.isUpdating = false;
-            }
-        }, 1000);
+        // this.debouncedUpdate = componentUtils.debounce(() => {
+        //     if (typeof this.value === 'number') {
+        //         this.isUpdating = true;
+        //         this.isUpdating = false;
+        //     }
+        // }, 1000);
     }
 
     render() {

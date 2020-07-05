@@ -102,6 +102,7 @@ export namespace Components {
     interface KsFormField {
         "autocomplete"?: string;
         "badInputErrorMessage": string;
+        "debounce": number;
         "defaultErrorMessage": string;
         "disabled": boolean;
         "helpText": string;
@@ -591,6 +592,7 @@ declare namespace LocalJSX {
     interface KsFormField {
         "autocomplete"?: string;
         "badInputErrorMessage"?: string;
+        "debounce"?: number;
         "defaultErrorMessage"?: string;
         "disabled"?: boolean;
         "helpText"?: string;
