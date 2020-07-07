@@ -49,6 +49,7 @@ export namespace Components {
     interface KsCard {
         "alt": string;
         "clickable": boolean;
+        "collapse": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "href": string;
         "imgDirection": 'top' | 'bottom' | 'left' | 'right' | 'behind';
         "imgSrc": string;
@@ -539,6 +540,7 @@ declare namespace LocalJSX {
     interface KsCard {
         "alt"?: string;
         "clickable"?: boolean;
+        "collapse"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "href"?: string;
         "imgDirection"?: 'top' | 'bottom' | 'left' | 'right' | 'behind';
         "imgSrc"?: string;
