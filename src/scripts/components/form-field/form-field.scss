@@ -42,6 +42,10 @@
         @include p(md);
         @include shadow(inner);
 
+        &:not(textarea) {
+            height: 3.25rem;
+        }
+
         &:disabled {
             cursor: not-allowed;
             @include bg-color(light);
