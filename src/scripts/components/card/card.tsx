@@ -16,7 +16,8 @@ export class Card implements ComponentInterface {
     @Prop() threshold: number;
     @Prop() imgDirection: 'top' | 'bottom' | 'left' | 'right' | 'behind' = 'top';
     @Prop() href: string;
-    @Prop() clickable: boolean;
+    @Prop() clickable: boolean = false;
+    @Prop() collapse: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'xs';
 
 
     componentDidLoad() {
@@ -31,7 +32,8 @@ export class Card implements ComponentInterface {
         let classes = {
             'card': true,
             [`img-${this.imgDirection}`]: true,
-            'pointer': this.clickable && this.href !== '' && this.href !== undefined
+            'pointer': this.clickable && this.href !== '' && this.href !== undefined,
+            [`collapse-${this.collapse}`]: true
         };
         return (
             <Host class={classes} role="article">

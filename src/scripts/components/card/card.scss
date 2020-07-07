@@ -45,6 +45,16 @@
         }
     }
 
+    &.collapse {
+        @each $key, $value in $media-queries {
+            &-#{$key} {
+                @include mq($key) {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
     .card-content {
         display: flex;
         flex-direction: column;

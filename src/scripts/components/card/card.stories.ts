@@ -10,6 +10,7 @@ export const card = () => {
     const alt = text('alt', 'Michael Scott');
     const url = text('url', '');
     const clickable = boolean('clickable', false);
+    const collapse = select('collapse', ['xxs', 'xs', 'sm', 'md', 'lg', 'xl'], 'xs');
     const lazy = boolean('lazy', true);
     const threshold = number('threshold', 300);
     const cardTitle = text('card-title', 'Meditation Moment');
@@ -24,7 +25,9 @@ export const card = () => {
                         clickable="${clickable}"
                         class="w-25"
                         lazy="${lazy}"
-                        threshold="${threshold}">
+                        threshold="${threshold}"
+                        collapse="${collapse}"
+                        >
                     <ks-card-body card-title="${cardTitle}"
                             card-subtitle="${cardSubtitle}">
                         ${bodyText}
