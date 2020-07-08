@@ -15,6 +15,14 @@
 | `titleId`      | `title-id`      |             | `string`            | `undefined` |
 
 
+## Events
+
+| Event    | Description | Type               |
+| -------- | ----------- | ------------------ |
+| `hidden` |             | `CustomEvent<any>` |
+| `shown`  |             | `CustomEvent<any>` |
+
+
 ## Methods
 
 ### `hide() => Promise<void>`

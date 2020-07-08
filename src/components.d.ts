@@ -670,6 +670,8 @@ declare namespace LocalJSX {
     }
     interface KsOverlay {
         "absolute"?: boolean;
+        "onHidden"?: (event: CustomEvent<any>) => void;
+        "onShown"?: (event: CustomEvent<any>) => void;
         "preventClose"?: boolean;
         "theme"?: 'dark' | 'light';
         "titleId"?: string;
