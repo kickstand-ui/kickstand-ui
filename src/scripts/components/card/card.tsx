@@ -33,7 +33,7 @@ export class Card implements ComponentInterface {
             'card': true,
             [`img-${this.imgDirection}`]: true,
             'pointer': this.clickable && this.href !== '' && this.href !== undefined,
-            [`collapse-${this.collapse}`]: true
+            [`collapse-${this.collapse}`]: this.imgDirection !== 'behind'
         };
         return (
             <Host class={classes} role="article">
