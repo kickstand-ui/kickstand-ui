@@ -1,4 +1,4 @@
-import { Component, h, Prop, Method, Host, State, Element, Listen } from '@stencil/core';
+import { Component, h, Prop, Method, Host, State, Element, Listen, Event, EventEmitter } from '@stencil/core';
 import componentUtils from '../../utils/componentUtils';
 
 @Component({
@@ -17,6 +17,9 @@ export class Overlay {
     @Prop() theme: 'dark' | 'light' = 'dark';
     @Prop() preventClose: boolean = false;
 
+    @Event() shown!: EventEmitter;
+    @Event() hidden!: EventEmitter;
+
     @State() focusIndex: number = 0;
     @State() isShowing: boolean = false;
 
@@ -30,6 +33,8 @@ export class Overlay {
             setTimeout(() => this.$focusableEls[0].focus(), 100);
         else
             setTimeout(() => this.$content.focus(), 100);
+
+        this.shown.emit();
     }
 
     @Method()
@@ -41,6 +46,8 @@ export class Overlay {
             this.$focusedElBeforeOpen.setAttribute("aria-expanded", "false");
             this.$focusedElBeforeOpen.focus();
         }
+
+        this.hidden.emit();
     }
 
     @Listen('keydown')
