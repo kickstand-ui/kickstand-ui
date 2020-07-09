@@ -209,6 +209,27 @@ You can also programmatically show and hide overlays. It is as simple as using J
 | `preventClose` | `prevent-close` | allows you to require acknowledgement before closing the modal | `boolean`     | `false`    |
 | `size`        | `size`         | the size of the modal            | `"sm"`, `"md"` or `"lg"` | `"md"`         |
 
+## Events
+
+| Event    | Description                    | Type               |
+| -------- | ------------------------------ | ------------------ |
+| `hidden` | emitted when modal is hidden   | `CustomEvent<any>` |
+| `shown`  | emitted when modal is shown    | `CustomEvent<any>` |
+
+```html
+<ks-modal id="my_modal">
+    ...
+</ks-modal>
+
+<script>
+    let myModal = document.getElementById('my_modal');
+
+    myModal.addEventListener('hidden', () => {
+        // do something...
+    });
+</script>
+```
+
 ## Methods
 
 ### `hide() => Promise<void>`

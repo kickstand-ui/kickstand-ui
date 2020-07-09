@@ -155,6 +155,27 @@ You can also programmatically show and hide overlays. It is as simple as using J
 | `theme`        | `theme`         | `"dark"` or `"light"` | `'dark'`    | the color of the overlay            |
 | `titleId`      | `title-id`      | `string`            | `undefined` | associates a header or label as a description for the overlay             |
 
+## Events
+
+| Event    | Description                    | Type               |
+| -------- | ------------------------------ | ------------------ |
+| `hidden` | emitted when overlay is hidden | `CustomEvent<any>` |
+| `shown`  | emitted when overlay is shown  | `CustomEvent<any>` |
+
+```html
+<ks-overlay id="my_overlay">
+    ...
+</ks-overlay>
+
+<script>
+    let myOverlay = document.getElementById('my_overlay');
+
+    myOverlay.addEventListener('hidden', () => {
+        // do something...
+    });
+</script>
+```
+
 ## Methods
 
 ### `hide() => Promise<void>`

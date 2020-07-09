@@ -194,6 +194,27 @@ If you are using the [`<ks-button>` element](/components/button.html) you can ta
 | `size`        | `size`         | size of icon            | `"lg"`, `"md"`, `"sm"`, `"xl"`, `"xs"`, `"xxl"`, or `"xxs"` | `'sm'`         |
 | `type`        | `type`         | type of icon            | `"ellipsis"` or `"spinner"` | `'spinner'`         |
 
+## Events
+
+| Event    | Description                    | Type               |
+| -------- | ------------------------------ | ------------------ |
+| `hidden` | emitted when overlay is hidden | `CustomEvent<any>` |
+| `shown`  | emitted when overlay is shown  | `CustomEvent<any>` |
+
+```html
+<ks-loading-overlay id="my_overlay">
+    ...
+</ks-loading-overlay>
+
+<script>
+    let myOverlay = document.getElementById('my_overlay');
+
+    myOverlay.addEventListener('hidden', () => {
+        // do something...
+    });
+</script>
+```
+
 ## Methods
 
 ### `hide() => Promise<void>`

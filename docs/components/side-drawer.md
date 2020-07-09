@@ -161,6 +161,26 @@ You can also programmatically show and hide side-drawers. It is as simple as usi
 | `position`   | `position`    | Where on the viewport the drawer will come from            | `"left"` or `"right"`            | `'left'`    |
 | `size`       | `size`        | How wide the Side-Drawer will be            | `"lg"`, `"md"`, `"sm"`, or`"xl"` | `'sm'`      |
 
+## Events
+
+| Event    | Description                    | Type               |
+| -------- | ------------------------------ | ------------------ |
+| `hidden` | emitted when drawer is hidden   | `CustomEvent<any>` |
+| `shown`  | emitted when drawer is shown    | `CustomEvent<any>` |
+
+```html
+<ks-side-drawer id="my_drawer">
+    ...
+</ks-side-drawer>
+
+<script>
+    let myDrawer = document.getElementById('my_drawer');
+
+    myDrawer.addEventListener('hidden', () => {
+        // do something...
+    });
+</script>
+```
 
 ## Methods
 
