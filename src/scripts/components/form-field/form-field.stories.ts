@@ -25,6 +25,7 @@ export const playground = () => {
     const pattern = text('pattern', '');
     const validateOnInput = boolean('validate-on-input', false);
     const debounce = number('debounce', 0);
+    const datalist = boolean('datalist', false);
     return (`<div class="m-xxl">
         <ks-form-field 
             type="${type}"
@@ -47,7 +48,12 @@ export const playground = () => {
             pattern="${pattern}"
             validate-on-input="${validateOnInput}",
             debounce="${debounce}"
+            datalist="${datalist}"
             >
+            <option selected>Choose a value</option>
+            <option>Value 1</option>
+            <option>Value 2</option>
+            <option>Value 3</option>
         </ks-form-field>
     </div>`);
 };

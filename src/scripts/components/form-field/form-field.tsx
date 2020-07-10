@@ -1,4 +1,4 @@
-import { Component, h, Prop, ComponentInterface, Host, Watch, Event, EventEmitter, State } from '@stencil/core';
+import { Component, h, Prop, ComponentInterface, Host, Watch, Event, EventEmitter, State, Element } from '@stencil/core';
 import utils from '../../utils/componentUtils';
 
 @Component({
@@ -9,6 +9,8 @@ export class FormField implements ComponentInterface {
     formFieldId = formFieldIds++;
     $input: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
 
+    @Element() $el: HTMLElement;
+
     @Prop() label: string;
     @Prop() helpText: string;
     @Prop() tooltipText: string;
@@ -17,7 +19,7 @@ export class FormField implements ComponentInterface {
     @Prop() requiredText: string = 'Required';
     @Prop({ mutable: true }) invalid: boolean = false;
     @Prop() disabled: boolean;
-    @Prop() type: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select' | 'datalist' = 'text';
+    @Prop() type: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select' = 'text';
     @Prop({ mutable: true }) value?: string | number | null = '';
     @Prop() pattern?: string;
     @Prop() min?: number;
@@ -38,6 +40,7 @@ export class FormField implements ComponentInterface {
     @Prop() requiredErrorMessage: string = `This field is required.`;
     @Prop({ mutable: true }) validateOnInput: boolean = false;
     @Prop() debounce: number = 0;
+    @Prop() datalist: boolean = false;
 
     @Event() updated!: EventEmitter<{ validity: ValidityState, value: string | number }>;
     @Event() blurred!: EventEmitter;
@@ -120,6 +123,13 @@ export class FormField implements ComponentInterface {
         this.blurred.emit();
     }
 
+    componentDidLoad() {
+        if(this.type !== 'select' || this.datalist) {
+            const $options = Array.from(this.$el.querySelectorAll('option')) as HTMLElement[];
+            $options.forEach(x => x.hidden = true);
+        }
+    }
+
     private setProps(props: any) {
         this.placeholder && (props.placeholder = this.placeholder);
         this.autocomplete && (props.autocomplete = this.autocomplete);
@@ -140,7 +150,7 @@ export class FormField implements ComponentInterface {
             'disabled': this.disabled,
             'required': this.required,
             'aria-invalid': !this.disabled && this.invalid.toString(),
-            'list': this.type === 'datalist' && listId
+            'list': this.datalist && listId
         };
         let classes = {
             'form-field': true,
@@ -190,7 +200,7 @@ export class FormField implements ComponentInterface {
                         onBlur={() => this.onBlur()}
                         ref={el => this.$input = el}
                     />
-                    {this.type === 'datalist' && <datalist id={listId}>
+                    {this.datalist && <datalist id={listId}>
                         <slot />
                     </datalist>}
                 </div>
