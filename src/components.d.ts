@@ -103,6 +103,7 @@ export namespace Components {
     interface KsFormField {
         "autocomplete"?: string;
         "badInputErrorMessage": string;
+        "datalist": boolean;
         "debounce": number;
         "defaultErrorMessage": string;
         "disabled": boolean;
@@ -126,7 +127,7 @@ export namespace Components {
         "step"?: number;
         "stepErrorMessage": string;
         "tooltipText": string;
-        "type": 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select' | 'datalist';
+        "type": 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select';
         "typeErrorMessage": string;
         "validateOnInput": boolean;
         "value"?: string | number | null;
@@ -594,6 +595,7 @@ declare namespace LocalJSX {
     interface KsFormField {
         "autocomplete"?: string;
         "badInputErrorMessage"?: string;
+        "datalist"?: boolean;
         "debounce"?: number;
         "defaultErrorMessage"?: string;
         "disabled"?: boolean;
@@ -619,7 +621,7 @@ declare namespace LocalJSX {
         "step"?: number;
         "stepErrorMessage"?: string;
         "tooltipText"?: string;
-        "type"?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select' | 'datalist';
+        "type"?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select';
         "typeErrorMessage"?: string;
         "validateOnInput"?: boolean;
         "value"?: string | number | null;
