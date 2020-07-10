@@ -215,33 +215,32 @@ Setting the `type` property to `select` allows you nest a list of options within
 
 ## Datalist
 
-Similar to the `select` input, the `type` to `datalist` will provide you a list of options, but the options are also _searchable_.
+Similar to the `select` input, the `type` to `datalist` will provide you a list of suggestions that are filterable. In order to display the datalist options, make sure the `datalist` property is `true`
 
 <div class="my-xl">
     <ks-form-field
-        label="Options"
-        type="datalist"
+        label="Email"
+        type="email"
+        datalist
         >
-        <option>Option 1</option>
-        <option>Option 2</option>
-        <option>Value 1</option>
-        <option>Value 2</option>
-        <option>Selection 1</option>
-        <option>Selection 2</option>
+        <option>michael.scott@dundermifflin.com</option>
+        <option>dwight.schrutte@dundermifflin.com</option>
+        <option>pam.beasley@dundermifflin.com</option>
+        <option>jim.halpert@dundermifflin.com</option>
+        <option>meradith.palmer@dundermifflin.com</option>
     </ks-form-field>
 </div>
 
 ```html
 <ks-form-field
-    label="Options"
+    label="Email"
     type="datalist"
     >
-    <option>Option 1</option>
-    <option>Option 2</option>
-    <option>Value 1</option>
-    <option>Value 2</option>
-    <option>Selection 1</option>
-    <option>Selection 2</option>
+    <option>michael.scott@dundermifflin.com</option>
+    <option>dwight.schrutte@dundermifflin.com</option>
+    <option>pam.beasley@dundermifflin.com</option>
+    <option>jim.halpert@dundermifflin.com</option>
+    <option>meradith.palmer@dundermifflin.com</option>
 </ks-form-field>
 ```
 
