@@ -1,0 +1,12 @@
+@import "../../../scss/00_Abstracts/index";
+
+.form {
+    display: block;
+    @include border(solid, xxs, light, darker);
+    @include p(lg);
+    @include bg-color(light, light);
+
+    form > * {
+        @include mb(lg);
+    }
+}
