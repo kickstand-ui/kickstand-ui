@@ -26,6 +26,7 @@
 | `minErrorMessage`       | `min-error-message`       |             | `string`                                                                                                                                                               | ``Your value must be no less than ${this.min}.``                                        |
 | `minlength`             | `minlength`               |             | `number`                                                                                                                                                               | `undefined`                                                                             |
 | `minlengthErrorMessage` | `minlength-error-message` |             | `string`                                                                                                                                                               | ``Your value must be at least ${this.minlength} characters.``                           |
+| `name`                  | `name`                    |             | `string`                                                                                                                                                               | `undefined`                                                                             |
 | `pattern`               | `pattern`                 |             | `string`                                                                                                                                                               | `undefined`                                                                             |
 | `patternErrorMessage`   | `pattern-error-message`   |             | `string`                                                                                                                                                               | `'There was a problem processing the value.'`                                           |
 | `placeholder`           | `placeholder`             |             | `string`                                                                                                                                                               | `undefined`                                                                             |
@@ -43,10 +44,23 @@
 
 ## Events
 
-| Event     | Description | Type                                                                 |
-| --------- | ----------- | -------------------------------------------------------------------- |
-| `blurred` |             | `CustomEvent<any>`                                                   |
-| `updated` |             | `CustomEvent<{ validity: ValidityState; value: string \| number; }>` |
+| Event     | Description | Type                          |
+| --------- | ----------- | ----------------------------- |
+| `blurred` |             | `CustomEvent<any>`            |
+| `updated` |             | `CustomEvent<IFormFieldData>` |
+
+
+## Methods
+
+### `validate() => Promise<IFormFieldData>`
+
+
+
+#### Returns
+
+Type: `Promise<IFormFieldData>`
+
+
 
 
 ## Dependencies

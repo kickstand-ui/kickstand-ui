@@ -1,5 +1,12 @@
-import { Component, h, Prop, ComponentInterface, Host, Watch, Event, EventEmitter, State, Element } from '@stencil/core';
+import { Component, h, Prop, ComponentInterface, Host, Watch, Event, EventEmitter, State, Element, Method } from '@stencil/core';
 import utils from '../../utils/componentUtils';
+
+export interface IFormFieldData {
+    isValid: boolean;
+    name: string;
+    validity: ValidityState;
+    value: string | number;
+}
 
 @Component({
     tag: 'ks-form-field',
@@ -15,6 +22,7 @@ export class FormField implements ComponentInterface {
     @Prop() helpText: string;
     @Prop() tooltipText: string;
     @Prop() placeholder: string;
+    @Prop() name: string;
     @Prop() required: boolean;
     @Prop() requiredText: string = 'Required';
     @Prop({ mutable: true }) invalid: boolean = false;
@@ -42,10 +50,18 @@ export class FormField implements ComponentInterface {
     @Prop() debounce: number = 0;
     @Prop() datalist: boolean = false;
 
-    @Event() updated!: EventEmitter<{ validity: ValidityState, value: string | number }>;
+    @Event() updated!: EventEmitter<IFormFieldData>;
     @Event() blurred!: EventEmitter;
 
     @State() validityState: ValidityState;
+
+    @Method()
+    async validate() {
+        this.invalid = !this.$input.checkValidity();
+        this.validateOnInput = true;
+
+        return this.validateField();
+    }
 
     @Watch('value')
     protected valueChanged() {
@@ -53,18 +69,30 @@ export class FormField implements ComponentInterface {
             this.$input.value = this.value.toString();
         }
 
-        this.validityState = this.$input.validity;
-
         if (this.validateOnInput)
             this.invalid = !this.$input.checkValidity();
 
-        let detail = {
-            isValid: !this.invalid,
+        let detail = this.validateField();
+
+        this.updated.emit(detail);
+    }
+
+    componentDidLoad() {
+        if (this.type !== 'select' || this.datalist) {
+            const $options = Array.from(this.$el.querySelectorAll('option')) as HTMLElement[];
+            $options.forEach(x => x.hidden = true);
+        }
+    }
+
+    private validateField(): IFormFieldData {
+        this.validityState = this.$input.validity;
+
+        return {
+            isValid: this.$input.checkValidity(),
+            name: this.$input.name,
             validity: this.validityState,
             value: this.value == null ? this.value : this.value.toString()
         };
-        this.updated.emit(detail);
-        console.log(detail);
     }
 
     private getValue(): string {
@@ -100,15 +128,16 @@ export class FormField implements ComponentInterface {
     }
 
     private getInputName() {
-        return this.label ? this.label.replace(/ /g, '-') : '';
+        return this.name || this.label ? this.label.toLowerCase().replace(/ /g, '-') : '';
     }
 
     private onInput(ev: Event) {
         utils.debounce(() => {
             const input = ev.target as HTMLInputElement | null;
-            if (input) {
+
+            if (input)
                 this.value = input.value || '';
-            }
+
         }, this.debounce);
     }
 
@@ -121,13 +150,6 @@ export class FormField implements ComponentInterface {
         }
 
         this.blurred.emit();
-    }
-
-    componentDidLoad() {
-        if(this.type !== 'select' || this.datalist) {
-            const $options = Array.from(this.$el.querySelectorAll('option')) as HTMLElement[];
-            $options.forEach(x => x.hidden = true);
-        }
     }
 
     private setProps(props: any) {

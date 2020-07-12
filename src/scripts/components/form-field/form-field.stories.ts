@@ -10,6 +10,7 @@ export const playground = () => {
     const value = text('value', '');
     const helpText = text('help-text', '');
     const tooltipText = text('tooltip-text', '');
+    const name = text('name', '');
     const errorMessage = text('default-error-message', 'The value entered is not valid.');
     const placeholder = text('placeholder', '');
     const required = boolean('required', false);
@@ -32,6 +33,7 @@ export const playground = () => {
             label="${label}" 
             help-text="${helpText}"
             tooltip-text="${tooltipText}"
+            name="${name}"
             default-error-message="${errorMessage}"
             placeholder="${placeholder}"
             required="${required}"
