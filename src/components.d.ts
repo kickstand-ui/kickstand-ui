@@ -5,6 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { IFormData } from "./scripts/components/form/form";
+import { IFormFieldData } from "./scripts/components/form-field/form-field";
 export namespace Components {
     interface KsAccordion {
         "size": string;
@@ -100,6 +102,13 @@ export namespace Components {
     interface KsDropdownItem {
         "preventClose": boolean;
     }
+    interface KsForm {
+        "action": string;
+        "errorMessage": string;
+        "invalid": boolean;
+        "method": 'get' | 'post';
+        "target": '_self' | '_blank' | '_parent' | '_top';
+    }
     interface KsFormField {
         "autocomplete"?: string;
         "badInputErrorMessage": string;
@@ -118,6 +127,7 @@ export namespace Components {
         "minErrorMessage": string;
         "minlength"?: number;
         "minlengthErrorMessage": string;
+        "name": string;
         "pattern"?: string;
         "patternErrorMessage": string;
         "placeholder": string;
@@ -129,6 +139,7 @@ export namespace Components {
         "tooltipText": string;
         "type": 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select';
         "typeErrorMessage": string;
+        "validate": () => Promise<IFormFieldData>;
         "validateOnInput": boolean;
         "value"?: string | number | null;
     }
@@ -333,6 +344,12 @@ declare global {
         prototype: HTMLKsDropdownItemElement;
         new (): HTMLKsDropdownItemElement;
     };
+    interface HTMLKsFormElement extends Components.KsForm, HTMLStencilElement {
+    }
+    var HTMLKsFormElement: {
+        prototype: HTMLKsFormElement;
+        new (): HTMLKsFormElement;
+    };
     interface HTMLKsFormFieldElement extends Components.KsFormField, HTMLStencilElement {
     }
     var HTMLKsFormFieldElement: {
@@ -475,6 +492,7 @@ declare global {
         "ks-crumb": HTMLKsCrumbElement;
         "ks-dropdown": HTMLKsDropdownElement;
         "ks-dropdown-item": HTMLKsDropdownItemElement;
+        "ks-form": HTMLKsFormElement;
         "ks-form-field": HTMLKsFormFieldElement;
         "ks-icon": HTMLKsIconElement;
         "ks-img": HTMLKsImgElement;
@@ -592,6 +610,14 @@ declare namespace LocalJSX {
         "onCloseDropdown"?: (event: CustomEvent<any>) => void;
         "preventClose"?: boolean;
     }
+    interface KsForm {
+        "action"?: string;
+        "errorMessage"?: string;
+        "invalid"?: boolean;
+        "method"?: 'get' | 'post';
+        "onSubmitted"?: (event: CustomEvent<IFormData>) => void;
+        "target"?: '_self' | '_blank' | '_parent' | '_top';
+    }
     interface KsFormField {
         "autocomplete"?: string;
         "badInputErrorMessage"?: string;
@@ -610,8 +636,9 @@ declare namespace LocalJSX {
         "minErrorMessage"?: string;
         "minlength"?: number;
         "minlengthErrorMessage"?: string;
+        "name"?: string;
         "onBlurred"?: (event: CustomEvent<any>) => void;
-        "onUpdated"?: (event: CustomEvent<{ validity: ValidityState, value: string | number }>) => void;
+        "onUpdated"?: (event: CustomEvent<IFormFieldData>) => void;
         "pattern"?: string;
         "patternErrorMessage"?: string;
         "placeholder"?: string;
@@ -746,6 +773,7 @@ declare namespace LocalJSX {
         "ks-crumb": KsCrumb;
         "ks-dropdown": KsDropdown;
         "ks-dropdown-item": KsDropdownItem;
+        "ks-form": KsForm;
         "ks-form-field": KsFormField;
         "ks-icon": KsIcon;
         "ks-img": KsImg;
@@ -788,6 +816,7 @@ declare module "@stencil/core" {
             "ks-crumb": LocalJSX.KsCrumb & JSXBase.HTMLAttributes<HTMLKsCrumbElement>;
             "ks-dropdown": LocalJSX.KsDropdown & JSXBase.HTMLAttributes<HTMLKsDropdownElement>;
             "ks-dropdown-item": LocalJSX.KsDropdownItem & JSXBase.HTMLAttributes<HTMLKsDropdownItemElement>;
+            "ks-form": LocalJSX.KsForm & JSXBase.HTMLAttributes<HTMLKsFormElement>;
             "ks-form-field": LocalJSX.KsFormField & JSXBase.HTMLAttributes<HTMLKsFormFieldElement>;
             "ks-icon": LocalJSX.KsIcon & JSXBase.HTMLAttributes<HTMLKsIconElement>;
             "ks-img": LocalJSX.KsImg & JSXBase.HTMLAttributes<HTMLKsImgElement>;

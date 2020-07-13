@@ -9,6 +9,8 @@
         &.#{$color} {
             @include border(solid, xxs, $color);
             @include shadow(sm);
+            @include bg-color($color, 0.05);
+            color: color(dark);
         }
 
         &.note.#{$color} {

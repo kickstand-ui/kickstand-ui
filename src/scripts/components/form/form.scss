@@ -1,0 +1,32 @@
+@import "../../../scss/00_Abstracts/index";
+
+.form-wrapper {
+    display: block;
+    @include border(solid, xxs, light);
+    @include p(lg);
+    @include bg-color(light, light);
+
+    .form {
+        > {
+            *:not(:last-child) {
+                @include mb(lg);
+            }
+
+            :last-child {
+                @include mt(lg);
+            }
+
+            :nth-last-child(2) {
+                @include mb(none);
+            }
+        }
+
+        .form-error {
+            .alert-body {
+                display: flex;
+                align-items: center;
+                color: color(dark);
+            }
+        }
+    }
+}
