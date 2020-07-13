@@ -29,32 +29,42 @@ export class Form implements ComponentInterface {
     }
 
     private submitHandler(e) {
-        e.preventDefault();
         this.invalid = !this.$form.checkValidity();
+
+        if (!this.action || this.invalid)
+            e.preventDefault();
+
+        let formData = this.getFormData();
+
+        this.submitted.emit(formData);
+    }
+
+    private getFormData() {
         let formFieldData: IFormFieldData[] = [];
 
         this.$formFields.forEach(async x => {
             let fieldData = await x.validate();
-
             formFieldData.push(fieldData);
         });
 
-        let formData = {
+        return {
             isValid: !this.invalid,
             formFieldData
         };
-
-        console.log('form-data', formData);
-        this.submitted.emit(formData);
     }
 
     render() {
 
         return (
-            <Host class="form">
-                <form ref={el => this.$form = el} onSubmit={(e) => this.submitHandler(e)} {...{ 'novalidate': !this.action }}>
+            <Host class="form-wrapper">
+                <form class="form" ref={el => this.$form = el} onSubmit={(e) => this.submitHandler(e)} novalidate>
                     <slot />
-                    <ks-alert class={{ 'hide': !this.invalid }} color="danger"><ks-icon icon="danger" class="text-danger mr-sm" />{this.errorMessage}</ks-alert>
+                    <ks-alert class={{ 'form-error': true, 'hide': !this.invalid }} color="danger">
+                        {this.invalid && [
+                            <ks-icon icon="danger" class="text-danger mr-sm" />,
+                            <span class="error-message">{this.errorMessage}</span>
+                        ]}
+                    </ks-alert>
                 </form>
             </Host>
         );
