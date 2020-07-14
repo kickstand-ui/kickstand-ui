@@ -61,6 +61,7 @@ module.exports = {
                     "/components/card.html",
                     "/components/carousel.html",
                     "/components/dropdown.html",
+                    "/components/form.html",
                     "/components/form-field.html",
                     "/components/icons.html",
                     "/components/images.html",

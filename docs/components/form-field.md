@@ -97,6 +97,23 @@ To find out more about HTML5 form validation check out this [documentation from 
 
 By default the form field will be validated once the user leaves the form field (`onBlur`). If you need to override this behavior to when the user presses the key (`onInput`), you can add the `validate-on-input` property to override the default behavior.
 
+### `validate()`
+
+You can also manually trigger field validation by selecting the field and executing the `validate()` method.
+
+```html
+<ks-form-field id="username" label="Username" required />
+<script>
+    let username = document.getElementById('username');
+    username.validate();
+
+    // you can also get the field data
+    username.validate().then(fieldData => {
+        // do something awesome
+    });
+</script>
+```
+
 ## Data Binding
 
 Kickstand UI's components focus on one-way data binding so that data flows in a single direction. What that means is that the variable you bind to the `value` property will not be updated whenever a user enters new content. In order to provide you with the new value, each component will emit and `updated` event.
@@ -283,3 +300,12 @@ Similar to the `select` input, the `type` to `datalist` will provide you a list 
 | --------- | ----------- | ------------------ |
 | `blurred` | Adds event listener for the `onBlur` event of input field            | `CustomEvent<any>`                                                   |
 | `updated` | this event will execute each time the value is updated            | `CustomEvent<{ isValid: boolean, validity: ValidityState; value: string \| number; }>` |
+
+
+## Methods
+
+### `validate() => Promise<IFormFieldData>`
+
+#### Returns
+
+Type: `Promise<IFormFieldData>`
