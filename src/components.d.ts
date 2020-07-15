@@ -104,6 +104,7 @@ export namespace Components {
     }
     interface KsForm {
         "action": string;
+        "enctype": 'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain';
         "errorMessage": string;
         "invalid": boolean;
         "method": 'get' | 'post';
@@ -612,6 +613,7 @@ declare namespace LocalJSX {
     }
     interface KsForm {
         "action"?: string;
+        "enctype"?: 'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain';
         "errorMessage"?: string;
         "invalid"?: boolean;
         "method"?: 'get' | 'post';

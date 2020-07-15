@@ -19,6 +19,7 @@ export class Form implements ComponentInterface {
     @Prop() action: string;
     @Prop() target: '_self' | '_blank' | '_parent' | '_top';
     @Prop() method: 'get' | 'post';
+    @Prop() enctype: 'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain';
     @Prop({ mutable: true }) invalid: boolean = false;
     @Prop() errorMessage: string = 'One or more of the from fields are not valid. Please, review the form and try again.';
 
