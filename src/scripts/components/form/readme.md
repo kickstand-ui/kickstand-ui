@@ -7,13 +7,14 @@
 
 ## Properties
 
-| Property       | Attribute       | Description | Type                                         | Default                                                                                  |
-| -------------- | --------------- | ----------- | -------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `action`       | `action`        |             | `string`                                     | `undefined`                                                                              |
-| `errorMessage` | `error-message` |             | `string`                                     | `'One or more of the from fields are not valid. Please, review the form and try again.'` |
-| `invalid`      | `invalid`       |             | `boolean`                                    | `false`                                                                                  |
-| `method`       | `method`        |             | `"get" \| "post"`                            | `undefined`                                                                              |
-| `target`       | `target`        |             | `"_blank" \| "_parent" \| "_self" \| "_top"` | `undefined`                                                                              |
+| Property       | Attribute       | Description | Type                                                                           | Default                                                                                  |
+| -------------- | --------------- | ----------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
+| `action`       | `action`        |             | `string`                                                                       | `undefined`                                                                              |
+| `enctype`      | `enctype`       |             | `"application/x-www-form-urlencoded" \| "multipart/form-data" \| "text/plain"` | `undefined`                                                                              |
+| `errorMessage` | `error-message` |             | `string`                                                                       | `'One or more of the from fields are not valid. Please, review the form and try again.'` |
+| `invalid`      | `invalid`       |             | `boolean`                                                                      | `false`                                                                                  |
+| `method`       | `method`        |             | `"get" \| "post"`                                                              | `undefined`                                                                              |
+| `target`       | `target`        |             | `"_blank" \| "_parent" \| "_self" \| "_top"`                                   | `undefined`                                                                              |
 
 
 ## Events
