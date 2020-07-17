@@ -111,3 +111,7 @@ export const selectTest = () => {
         </ks-form-field>
     </div>`);
 };
+
+export const checkbox = () => {
+    return (`<ks-checkbox />`)
+}

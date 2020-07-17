@@ -27,7 +27,7 @@ export class FormField implements ComponentInterface {
     @Prop() requiredText: string = 'Required';
     @Prop({ mutable: true }) invalid: boolean = false;
     @Prop() disabled: boolean;
-    @Prop() type: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select' = 'text';
+    @Prop() type: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select' | 'checkbox' = 'text';
     @Prop({ mutable: true }) value?: string | number | null = '';
     @Prop() pattern?: string;
     @Prop() min?: number;

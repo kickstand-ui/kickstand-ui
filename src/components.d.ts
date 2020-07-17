@@ -81,6 +81,10 @@ export namespace Components {
         "src": string;
         "threshold": number;
     }
+    interface KsCheckbox {
+        "checked": boolean;
+        "label": string;
+    }
     interface KsColumn {
         "position": 'start' | 'center' | 'end' | 'stretch';
     }
@@ -138,7 +142,7 @@ export namespace Components {
         "step"?: number;
         "stepErrorMessage": string;
         "tooltipText": string;
-        "type": 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select';
+        "type": 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select' | 'checkbox';
         "typeErrorMessage": string;
         "validate": () => Promise<IFormFieldData>;
         "validateOnInput": boolean;
@@ -321,6 +325,12 @@ declare global {
         prototype: HTMLKsCarouselSlideElement;
         new (): HTMLKsCarouselSlideElement;
     };
+    interface HTMLKsCheckboxElement extends Components.KsCheckbox, HTMLStencilElement {
+    }
+    var HTMLKsCheckboxElement: {
+        prototype: HTMLKsCheckboxElement;
+        new (): HTMLKsCheckboxElement;
+    };
     interface HTMLKsColumnElement extends Components.KsColumn, HTMLStencilElement {
     }
     var HTMLKsColumnElement: {
@@ -489,6 +499,7 @@ declare global {
         "ks-card-footer": HTMLKsCardFooterElement;
         "ks-carousel": HTMLKsCarouselElement;
         "ks-carousel-slide": HTMLKsCarouselSlideElement;
+        "ks-checkbox": HTMLKsCheckboxElement;
         "ks-column": HTMLKsColumnElement;
         "ks-crumb": HTMLKsCrumbElement;
         "ks-dropdown": HTMLKsDropdownElement;
@@ -590,6 +601,10 @@ declare namespace LocalJSX {
         "src"?: string;
         "threshold"?: number;
     }
+    interface KsCheckbox {
+        "checked"?: boolean;
+        "label"?: string;
+    }
     interface KsColumn {
         "position"?: 'start' | 'center' | 'end' | 'stretch';
     }
@@ -650,7 +665,7 @@ declare namespace LocalJSX {
         "step"?: number;
         "stepErrorMessage"?: string;
         "tooltipText"?: string;
-        "type"?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select';
+        "type"?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select' | 'checkbox';
         "typeErrorMessage"?: string;
         "validateOnInput"?: boolean;
         "value"?: string | number | null;
@@ -771,6 +786,7 @@ declare namespace LocalJSX {
         "ks-card-footer": KsCardFooter;
         "ks-carousel": KsCarousel;
         "ks-carousel-slide": KsCarouselSlide;
+        "ks-checkbox": KsCheckbox;
         "ks-column": KsColumn;
         "ks-crumb": KsCrumb;
         "ks-dropdown": KsDropdown;
@@ -814,6 +830,7 @@ declare module "@stencil/core" {
             "ks-card-footer": LocalJSX.KsCardFooter & JSXBase.HTMLAttributes<HTMLKsCardFooterElement>;
             "ks-carousel": LocalJSX.KsCarousel & JSXBase.HTMLAttributes<HTMLKsCarouselElement>;
             "ks-carousel-slide": LocalJSX.KsCarouselSlide & JSXBase.HTMLAttributes<HTMLKsCarouselSlideElement>;
+            "ks-checkbox": LocalJSX.KsCheckbox & JSXBase.HTMLAttributes<HTMLKsCheckboxElement>;
             "ks-column": LocalJSX.KsColumn & JSXBase.HTMLAttributes<HTMLKsColumnElement>;
             "ks-crumb": LocalJSX.KsCrumb & JSXBase.HTMLAttributes<HTMLKsCrumbElement>;
             "ks-dropdown": LocalJSX.KsDropdown & JSXBase.HTMLAttributes<HTMLKsDropdownElement>;
