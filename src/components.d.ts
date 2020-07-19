@@ -5,8 +5,9 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { IFormData } from "./scripts/components/form/form";
 import { IFormFieldData } from "./scripts/components/form-field/form-field";
+import { IFormData } from "./scripts/components/form/form";
+import { IFormFieldData as IFormFieldData1 } from "./scripts/components/form-field/form-field";
 export namespace Components {
     interface KsAccordion {
         "size": string;
@@ -81,6 +82,15 @@ export namespace Components {
         "src": string;
         "threshold": number;
     }
+    interface KsCheckbox {
+        "checked": boolean;
+        "label": string;
+        "name": string;
+        "required": boolean;
+        "requiredText": string;
+        "tooltipText": string;
+        "validate": () => Promise<IFormFieldData>;
+    }
     interface KsColumn {
         "position": 'start' | 'center' | 'end' | 'stretch';
     }
@@ -113,6 +123,7 @@ export namespace Components {
     interface KsFormField {
         "autocomplete"?: string;
         "badInputErrorMessage": string;
+        "checked": boolean;
         "datalist": boolean;
         "debounce": number;
         "defaultErrorMessage": string;
@@ -138,7 +149,7 @@ export namespace Components {
         "step"?: number;
         "stepErrorMessage": string;
         "tooltipText": string;
-        "type": 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select';
+        "type": 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select' | 'checkbox';
         "typeErrorMessage": string;
         "validate": () => Promise<IFormFieldData>;
         "validateOnInput": boolean;
@@ -208,6 +219,11 @@ export namespace Components {
         "progressLabel": string;
         "size": 'xs' | 'sm' | 'md' | 'lg';
         "value": number;
+    }
+    interface KsRadio {
+        "checked": boolean;
+        "inline": boolean;
+        "label": string;
     }
     interface KsRow {
         "noGutter": boolean;
@@ -321,6 +337,12 @@ declare global {
         prototype: HTMLKsCarouselSlideElement;
         new (): HTMLKsCarouselSlideElement;
     };
+    interface HTMLKsCheckboxElement extends Components.KsCheckbox, HTMLStencilElement {
+    }
+    var HTMLKsCheckboxElement: {
+        prototype: HTMLKsCheckboxElement;
+        new (): HTMLKsCheckboxElement;
+    };
     interface HTMLKsColumnElement extends Components.KsColumn, HTMLStencilElement {
     }
     var HTMLKsColumnElement: {
@@ -429,6 +451,12 @@ declare global {
         prototype: HTMLKsProgressBarElement;
         new (): HTMLKsProgressBarElement;
     };
+    interface HTMLKsRadioElement extends Components.KsRadio, HTMLStencilElement {
+    }
+    var HTMLKsRadioElement: {
+        prototype: HTMLKsRadioElement;
+        new (): HTMLKsRadioElement;
+    };
     interface HTMLKsRowElement extends Components.KsRow, HTMLStencilElement {
     }
     var HTMLKsRowElement: {
@@ -489,6 +517,7 @@ declare global {
         "ks-card-footer": HTMLKsCardFooterElement;
         "ks-carousel": HTMLKsCarouselElement;
         "ks-carousel-slide": HTMLKsCarouselSlideElement;
+        "ks-checkbox": HTMLKsCheckboxElement;
         "ks-column": HTMLKsColumnElement;
         "ks-crumb": HTMLKsCrumbElement;
         "ks-dropdown": HTMLKsDropdownElement;
@@ -507,6 +536,7 @@ declare global {
         "ks-modal-footer": HTMLKsModalFooterElement;
         "ks-overlay": HTMLKsOverlayElement;
         "ks-progress-bar": HTMLKsProgressBarElement;
+        "ks-radio": HTMLKsRadioElement;
         "ks-row": HTMLKsRowElement;
         "ks-side-drawer": HTMLKsSideDrawerElement;
         "ks-spin-box": HTMLKsSpinBoxElement;
@@ -590,6 +620,15 @@ declare namespace LocalJSX {
         "src"?: string;
         "threshold"?: number;
     }
+    interface KsCheckbox {
+        "checked"?: boolean;
+        "label"?: string;
+        "name"?: string;
+        "onChanged"?: (event: CustomEvent<IFormFieldData>) => void;
+        "required"?: boolean;
+        "requiredText"?: string;
+        "tooltipText"?: string;
+    }
     interface KsColumn {
         "position"?: 'start' | 'center' | 'end' | 'stretch';
     }
@@ -623,6 +662,7 @@ declare namespace LocalJSX {
     interface KsFormField {
         "autocomplete"?: string;
         "badInputErrorMessage"?: string;
+        "checked"?: boolean;
         "datalist"?: boolean;
         "debounce"?: number;
         "defaultErrorMessage"?: string;
@@ -650,7 +690,7 @@ declare namespace LocalJSX {
         "step"?: number;
         "stepErrorMessage"?: string;
         "tooltipText"?: string;
-        "type"?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select';
+        "type"?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select' | 'checkbox';
         "typeErrorMessage"?: string;
         "validateOnInput"?: boolean;
         "value"?: string | number | null;
@@ -716,6 +756,11 @@ declare namespace LocalJSX {
         "size"?: 'xs' | 'sm' | 'md' | 'lg';
         "value"?: number;
     }
+    interface KsRadio {
+        "checked"?: boolean;
+        "inline"?: boolean;
+        "label"?: string;
+    }
     interface KsRow {
         "noGutter"?: boolean;
         "position"?: 'start' | 'center' | 'end';
@@ -771,6 +816,7 @@ declare namespace LocalJSX {
         "ks-card-footer": KsCardFooter;
         "ks-carousel": KsCarousel;
         "ks-carousel-slide": KsCarouselSlide;
+        "ks-checkbox": KsCheckbox;
         "ks-column": KsColumn;
         "ks-crumb": KsCrumb;
         "ks-dropdown": KsDropdown;
@@ -789,6 +835,7 @@ declare namespace LocalJSX {
         "ks-modal-footer": KsModalFooter;
         "ks-overlay": KsOverlay;
         "ks-progress-bar": KsProgressBar;
+        "ks-radio": KsRadio;
         "ks-row": KsRow;
         "ks-side-drawer": KsSideDrawer;
         "ks-spin-box": KsSpinBox;
@@ -814,6 +861,7 @@ declare module "@stencil/core" {
             "ks-card-footer": LocalJSX.KsCardFooter & JSXBase.HTMLAttributes<HTMLKsCardFooterElement>;
             "ks-carousel": LocalJSX.KsCarousel & JSXBase.HTMLAttributes<HTMLKsCarouselElement>;
             "ks-carousel-slide": LocalJSX.KsCarouselSlide & JSXBase.HTMLAttributes<HTMLKsCarouselSlideElement>;
+            "ks-checkbox": LocalJSX.KsCheckbox & JSXBase.HTMLAttributes<HTMLKsCheckboxElement>;
             "ks-column": LocalJSX.KsColumn & JSXBase.HTMLAttributes<HTMLKsColumnElement>;
             "ks-crumb": LocalJSX.KsCrumb & JSXBase.HTMLAttributes<HTMLKsCrumbElement>;
             "ks-dropdown": LocalJSX.KsDropdown & JSXBase.HTMLAttributes<HTMLKsDropdownElement>;
@@ -832,6 +880,7 @@ declare module "@stencil/core" {
             "ks-modal-footer": LocalJSX.KsModalFooter & JSXBase.HTMLAttributes<HTMLKsModalFooterElement>;
             "ks-overlay": LocalJSX.KsOverlay & JSXBase.HTMLAttributes<HTMLKsOverlayElement>;
             "ks-progress-bar": LocalJSX.KsProgressBar & JSXBase.HTMLAttributes<HTMLKsProgressBarElement>;
+            "ks-radio": LocalJSX.KsRadio & JSXBase.HTMLAttributes<HTMLKsRadioElement>;
             "ks-row": LocalJSX.KsRow & JSXBase.HTMLAttributes<HTMLKsRowElement>;
             "ks-side-drawer": LocalJSX.KsSideDrawer & JSXBase.HTMLAttributes<HTMLKsSideDrawerElement>;
             "ks-spin-box": LocalJSX.KsSpinBox & JSXBase.HTMLAttributes<HTMLKsSpinBoxElement>;

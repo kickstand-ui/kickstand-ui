@@ -20,6 +20,7 @@
  - [ks-accordion-slide](../accordion)
  - [ks-button](../button)
  - [ks-carousel](../carousel)
+ - [ks-checkbox](../form-field)
  - [ks-dropdown](../dropdown)
  - [ks-form](../form)
  - [ks-form-field](../form-field)
@@ -33,6 +34,7 @@ graph TD;
   ks-accordion-slide --> ks-icon
   ks-button --> ks-icon
   ks-carousel --> ks-icon
+  ks-checkbox --> ks-icon
   ks-dropdown --> ks-icon
   ks-form --> ks-icon
   ks-form-field --> ks-icon

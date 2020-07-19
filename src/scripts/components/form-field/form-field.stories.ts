@@ -2,7 +2,7 @@ import { text, select, boolean, number } from '@storybook/addon-knobs';
 
 export default { title: 'Form Field' };
 
-const types = ['text', 'tel', 'url', 'password', 'date', 'email', 'search', 'number', 'hidden', 'color', 'file', 'month', 'range', 'spin-box', 'textarea', 'select', 'datalist'];
+const types = ['text', 'tel', 'url', 'password', 'date', 'email', 'search', 'number', 'hidden', 'color', 'file', 'month', 'range', 'spin-box', 'textarea', 'select', 'datalist', 'checkbox'];
 
 export const playground = () => {
     const type = select('type', types, 'text');
@@ -111,3 +111,33 @@ export const selectTest = () => {
         </ks-form-field>
     </div>`);
 };
+
+export const checkbox = () => {
+    const label = text('label', 'Checkbox');
+    const checked = boolean('checked', false);
+    const tooltipText = text('tooltip-text', '');
+    const required = boolean('required', false);
+    const requiredText = text('required-text', 'Required');
+
+    return (`
+    <div class="m-xxl">
+        <ks-checkbox 
+            label="${label}" 
+            checked="${checked}" 
+            tooltip-text="${tooltipText}" 
+            required="${required}" 
+            required-text="${requiredText}"
+            />
+    </div>
+    `)
+}
+
+export const radio = () => {
+    return (`
+    <div class="m-xxl">
+        <ks-radio />
+        <ks-radio />
+        <ks-radio />
+    </div>
+    `)
+}
