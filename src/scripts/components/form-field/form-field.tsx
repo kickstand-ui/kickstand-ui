@@ -49,6 +49,7 @@ export class FormField implements ComponentInterface {
     @Prop({ mutable: true }) validateOnInput: boolean = false;
     @Prop() debounce: number = 0;
     @Prop() datalist: boolean = false;
+    @Prop() checked: boolean = false;
 
     @Event() updated!: EventEmitter<IFormFieldData>;
     @Event() blurred!: EventEmitter;
@@ -232,21 +233,45 @@ export class FormField implements ComponentInterface {
 
         return (
             <Host class={classes}>
-                <label id={labelId} class={labelClasses} htmlFor={fieldId}>
-                    <span class="field-label">
-                        {this.label}
-                        {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText}>*</abbr>}
-                        {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size="md" text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info text-xs" /></ks-tooltip>}
-                    </span>
-                    <span class="help-text">{this.helpText}</span>
-                    <span class="error-message text-danger" role="alert" aria-live="assertive">
-                        {(this.invalid && !this.disabled) && <span class="error-text">
-                            <ks-icon icon="danger" class="mr-xs" />
-                            <span>{this.getErrorMessage()}</span>
-                        </span>}
-                    </span>
-                </label>
-                {fieldInput}
+                {
+                    {
+                        'checkbox': (
+                            [
+                                <div class="error-message text-danger" role="alert" aria-live="assertive">
+                                    {(this.invalid && !this.disabled) && <div class="error-text">
+                                        <ks-icon icon="danger" class="mr-xs" />
+                                        <span>{this.getErrorMessage()}</span>
+                                    </div>}
+                                </div>,
+                                <ks-checkbox
+                                    label={this.label}
+                                    checked={this.checked}
+                                    tooltip-text={this.tooltipText}
+                                    required={this.required}
+                                    required-text={this.requiredText}
+                                />
+                            ]
+                        )
+                    }[this.type] || (
+                        [
+                            <label id={labelId} class={labelClasses} htmlFor={fieldId}>
+                                <span class="field-label">
+                                    {this.label}
+                                    {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText}>*</abbr>}
+                                    {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size="md" text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info text-xs" /></ks-tooltip>}
+                                </span>
+                                <span class="help-text">{this.helpText}</span>
+                                <span class="error-message text-danger" role="alert" aria-live="assertive">
+                                    {(this.invalid && !this.disabled) && <span class="error-text">
+                                        <ks-icon icon="danger" class="mr-xs" />
+                                        <span>{this.getErrorMessage()}</span>
+                                    </span>}
+                                </span>
+                            </label>,
+                            ( fieldInput )
+                        ]
+                    )
+                }
             </Host>
         );
     }
