@@ -64,37 +64,66 @@
     }
 }
 
-.cbx {
+.checkbox {
     margin: auto;
     user-select: none;
     cursor: pointer;
 
-    span {
-        display: inline-block;
-        vertical-align: middle;
-        transform: translate3d(0, 0, 0);
+    &:focus-within {
+        outline: spacing(xxxs) dashed color(dark);
+        outline-offset: spacing(xxs);
+    }
 
-        &:first-child {
+    .checkbox-input {
+        @include screen-reader-only();
+
+        &:checked+.checkbox-label {
+            .checkbox-icon {
+                background: color(primary);
+                border-color: color(primary);
+        
+                svg {
+                    stroke-dashoffset: 0;
+                }
+        
+                &:before {
+                    opacity: 0;
+                    @include transition-ease-in-out();
+                }
+            }
+        }        
+    }
+
+    .checkbox-label {
+        &:hover {
+            border-color: color(primary);
+            cursor: pointer;
+        }    
+
+        .checkbox-icon {
+            display: inline-block;
+            vertical-align: middle;
+            transform: translate3d(0, 0, 0);
             position: relative;
             width: 1.125em;
             height: 1.125em;
             transform: scale(1);
             vertical-align: middle;
-            border: 0.0625em solid color(dark);
+            border: 0.125em solid color(dark);
             @include transition-ease-in-out();
 
             svg {
                 position: absolute;
-                top: 0.1875em;
-                left: 0.125em;
+                top: 0.09375em;
+                left: 0.0625em;
                 fill: none;
                 stroke: #FFFFFF;
                 stroke-width: 2;
                 stroke-dasharray: 1em;
                 stroke-dashoffset: 1em;
-                transition: all .3s ease-in-out;
                 transition-delay: .1s;
-                transform: translate3d(0,0,0);
+                transform: translate3d(0, 0, 0);
+                @include transition-ease-in-out();
             }
 
             &:before {
@@ -109,29 +138,79 @@
             }
         }
 
-        &:last-child {
-            @include pl(md);
+        .checkbox-description {
+            display: inline-block;
+            vertical-align: middle;
+            transform: translate3d(0, 0, 0);    
+            @include pl(sm);
         }
-    }
-
-    &:hover span:first-child {
-        border-color: color(primary);
     }
 }
 
-.inp-cbx:checked+.cbx {
-    span {
-        &:first-child {
-            background: color(primary);
-            border-color: color(primary);
+.radio {
+    display: block;
 
-            svg {
-                stroke-dashoffset: 0;
+    &.inline {
+        display: inline-block;
+    }
+
+    .input-wrapper {
+        display: inline-block;
+
+        &:focus-within {
+            outline: spacing(xxxs) dashed color(dark);
+            outline-offset: spacing(xxs);
+        }
+
+        .radio-button {
+            @include screen-reader-only();
+
+            &:checked {
+                &+.radio-label {
+                    &:before {
+                        border-color: color(primary);
+                    }
+
+                    &:after {
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+
+        .radio-label {
+            display: inline-block;
+            min-height: 1.25em;
+            position: relative;
+            padding-left: 1.75em;
+            margin-bottom: 0;
+            cursor: pointer;
+            vertical-align: bottom;
+
+            &:before,
+            &:after {
+                position: absolute;
+                content: '';
+                border-radius: 50%;
+                transition-property: transform, border-color;
+                @include transition-ease-in-out();
             }
 
             &:before {
-                opacity: 0;
-                @include transition-ease-in-out();
+                left: 0;
+                top: 0.125em;
+                width: 1.25em;
+                height: 1.25em;
+                border: 2px solid color(dark);
+            }
+
+            &:after {
+                top: (1.25em / 2) - (0.625em / 2) + 0.125em;
+                left: (1.25em / 2) - (0.625em / 2);
+                width: 0.625em;
+                height: 0.625em;
+                transform: scale(0);
+                background: color(primary);
             }
         }
     }

@@ -20,11 +20,13 @@
 
 ### Used by
 
+ - [ks-checkbox](../form-field)
  - [ks-form-field](../form-field)
 
 ### Graph
 ```mermaid
 graph TD;
+  ks-checkbox --> ks-tooltip
   ks-form-field --> ks-tooltip
   style ks-tooltip fill:#f9f,stroke:#333,stroke-width:4px
 ```

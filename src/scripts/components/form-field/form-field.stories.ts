@@ -113,5 +113,31 @@ export const selectTest = () => {
 };
 
 export const checkbox = () => {
-    return (`<ks-checkbox />`)
+    const label = text('label', 'Checkbox');
+    const checked = boolean('checked', false);
+    const tooltipText = text('tooltip-text', '');
+    const required = boolean('required', false);
+    const requiredText = text('required-text', 'Required');
+
+    return (`
+    <div class="m-xxl">
+        <ks-checkbox 
+            label="${label}" 
+            checked="${checked}" 
+            tooltip-text="${tooltipText}" 
+            required="${required}" 
+            required-text="${requiredText}"
+            />
+    </div>
+    `)
+}
+
+export const radio = () => {
+    return (`
+    <div class="m-xxl">
+        <ks-radio />
+        <ks-radio />
+        <ks-radio />
+    </div>
+    `)
 }
