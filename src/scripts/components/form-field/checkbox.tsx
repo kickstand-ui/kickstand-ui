@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host, Event, EventEmitter } from '@stencil/core';
+import { Component, h, Prop, Host, Event, EventEmitter, Method } from '@stencil/core';
 import { IFormFieldData } from './form-field';
 
 @Component({
@@ -7,14 +7,41 @@ import { IFormFieldData } from './form-field';
 })
 export class Alert {
     checkboxId = checkboxIds++;
+    $checkbox: HTMLInputElement;
 
     @Prop() label: string;
     @Prop() checked: boolean = false;
     @Prop() required: boolean;
     @Prop() tooltipText: string;
     @Prop() requiredText: string = 'Required';
+    @Prop() name: string;
 
-    @Event() updated!: EventEmitter<IFormFieldData>;
+    @Event() changed!: EventEmitter<IFormFieldData>;
+
+    @Method()
+    async validate() {
+        return this.validateField();
+    }
+
+
+    private changeHandler() {
+        let detail = this.validateField();
+
+        this.changed.emit(detail);
+    }
+
+    private validateField() {
+        this.checked = this.$checkbox.checked;
+
+        let fieldData: IFormFieldData = {
+            isValid: this.$checkbox.checkValidity(),
+            value: this.checked,
+            validity: this.$checkbox.validity,
+            name: this.name
+        };
+
+        return fieldData;
+    }
 
     render() {
         let props = {
@@ -25,7 +52,7 @@ export class Alert {
 
         return (
             <Host class="checkbox">
-                <input class="checkbox-input" type="checkbox" {...props} />
+                <input class="checkbox-input" type="checkbox" {...props} onChange={() => this.changeHandler()} ref={el => this.$checkbox = el} />
                 <label class="checkbox-label" htmlFor={`checkbox-${this.checkboxId}`}>
                     <span class="checkbox-icon">
                         <svg width="0.75em" height="0.625em" viewBox="0 0 12 10">

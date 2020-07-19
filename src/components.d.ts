@@ -85,9 +85,11 @@ export namespace Components {
     interface KsCheckbox {
         "checked": boolean;
         "label": string;
+        "name": string;
         "required": boolean;
         "requiredText": string;
         "tooltipText": string;
+        "validate": () => Promise<IFormFieldData>;
     }
     interface KsColumn {
         "position": 'start' | 'center' | 'end' | 'stretch';
@@ -621,7 +623,8 @@ declare namespace LocalJSX {
     interface KsCheckbox {
         "checked"?: boolean;
         "label"?: string;
-        "onUpdated"?: (event: CustomEvent<IFormFieldData>) => void;
+        "name"?: string;
+        "onChanged"?: (event: CustomEvent<IFormFieldData>) => void;
         "required"?: boolean;
         "requiredText"?: string;
         "tooltipText"?: string;

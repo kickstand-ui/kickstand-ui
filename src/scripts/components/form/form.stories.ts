@@ -19,6 +19,7 @@ export const form = () => {
         >
         <ks-form-field label="Name" required></ks-form-field>
         <ks-form-field label="Email" type="email" value="bad.email"></ks-form-field>
+        <ks-form-field label="Accept Terms and Conditions" type="checkbox" required></ks-form-field>
         <ks-button type="submit">Submit</ks-button>
     </ks-form>`);
 };

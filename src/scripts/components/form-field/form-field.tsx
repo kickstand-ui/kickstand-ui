@@ -5,7 +5,7 @@ export interface IFormFieldData {
     isValid: boolean;
     name: string;
     validity: ValidityState;
-    value: string | number;
+    value: string | number | boolean;
 }
 
 @Component({
@@ -15,6 +15,7 @@ export interface IFormFieldData {
 export class FormField implements ComponentInterface {
     formFieldId = formFieldIds++;
     $input: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
+    $checkbox: HTMLKsCheckboxElement;
 
     @Element() $el: HTMLElement;
 
@@ -58,14 +59,16 @@ export class FormField implements ComponentInterface {
 
     @Method()
     async validate() {
-        this.invalid = !this.$input.checkValidity();
-        this.validateOnInput = true;
+        if (this.type !== 'checkbox') {
+            this.invalid = !this.$input.checkValidity();
+            this.validateOnInput = true;
+        }
 
         return this.validateField();
     }
 
     @Watch('value')
-    protected valueChanged() {
+    protected async valueChanged() {
         if (this.$input && this.$input.value !== this.value) {
             this.$input.value = this.value.toString();
         }
@@ -73,9 +76,16 @@ export class FormField implements ComponentInterface {
         if (this.validateOnInput)
             this.invalid = !this.$input.checkValidity();
 
-        let detail = this.validateField();
+        let detail = await this.validateField();
 
         this.updated.emit(detail);
+    }
+
+    handleCheckboxChange(e) {
+        let checkboxData: IFormFieldData = e.detail;
+        this.invalid = !checkboxData.isValid;
+        this.validityState = checkboxData.validity
+        this.updated.emit(checkboxData);
     }
 
     componentDidLoad() {
@@ -85,7 +95,14 @@ export class FormField implements ComponentInterface {
         }
     }
 
-    private validateField(): IFormFieldData {
+    private async validateField(): Promise<IFormFieldData> {
+        if (this.$checkbox) {
+            let checkboxFieldData = await this.$checkbox.validate();
+            this.invalid = !checkboxFieldData.isValid;
+            this.validityState = checkboxFieldData.validity;
+            return checkboxFieldData;
+        }
+
         this.validityState = this.$input.validity;
 
         return {
@@ -236,21 +253,24 @@ export class FormField implements ComponentInterface {
                 {
                     {
                         'checkbox': (
-                            [
+                            <div>
                                 <div class="error-message text-danger" role="alert" aria-live="assertive">
                                     {(this.invalid && !this.disabled) && <div class="error-text">
                                         <ks-icon icon="danger" class="mr-xs" />
                                         <span>{this.getErrorMessage()}</span>
                                     </div>}
-                                </div>,
+                                </div>
                                 <ks-checkbox
                                     label={this.label}
                                     checked={this.checked}
                                     tooltip-text={this.tooltipText}
                                     required={this.required}
                                     required-text={this.requiredText}
+                                    name={this.getInputName()}
+                                    onChanged={e => this.handleCheckboxChange(e)}
+                                    ref={el => this.$checkbox = el}
                                 />
-                            ]
+                            </div>
                         )
                     }[this.type] || (
                         [
@@ -268,7 +288,7 @@ export class FormField implements ComponentInterface {
                                     </span>}
                                 </span>
                             </label>,
-                            ( fieldInput )
+                            (fieldInput)
                         ]
                     )
                 }
