@@ -1,6 +1,6 @@
 # Form Field
 
-Forms are some of the most complex user interactions in modern application design. The Kickstand UI form field component is design to abstract away some of that complexity and provide a consistent user experience as well as some features to improve usability.
+Forms are some of the most complex user interactions in modern application development. The Kickstand UI form field component is design to abstract away some of that complexity and provide a consistent user experience as well as some features to improve usability.
 
 <div class="my-xl">
     <ks-form-field label="Username" />
@@ -124,13 +124,13 @@ Kickstand UI's components focus on one-way data binding so that data flows in a 
     <ks-form-field label="Name" id="binding-test" class="mb-md" />
     <b>Bound Value: </b><span id="value"></span>
     <script>
-        if (!window.formField) {
+        (function(){
             let formField = document.getElementById('binding-test');
             let value = document.getElementById('value');
             formField.addEventListener('updated', function (e) {
                 value.innerText = e.detail.value;
             });
-        }
+        })();
     </script>
 </div>
 
