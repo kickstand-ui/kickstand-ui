@@ -5,7 +5,7 @@ export interface IFormFieldData {
     isValid: boolean;
     name: string;
     validity: ValidityState;
-    value: string | number | boolean;
+    value: string | number | boolean | any[];
 }
 
 @Component({
@@ -16,6 +16,7 @@ export class FormField implements ComponentInterface {
     formFieldId = formFieldIds++;
     $input: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
     $checkbox: HTMLKsCheckboxElement;
+    $checklist: HTMLKsChecklistElement;
 
     @Element() $el: HTMLElement;
 
@@ -28,8 +29,7 @@ export class FormField implements ComponentInterface {
     @Prop() requiredText: string = 'Required';
     @Prop({ mutable: true }) invalid: boolean = false;
     @Prop() disabled: boolean;
-    @Prop() type: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select' | 'checkbox' = 'text';
-    @Prop({ mutable: true }) value?: string | number | null = '';
+    @Prop({ mutable: true }) value?: string | number | any[] | null = '';
     @Prop() pattern?: string;
     @Prop() min?: number;
     @Prop() max?: number;
@@ -37,6 +37,24 @@ export class FormField implements ComponentInterface {
     @Prop() minlength?: number;
     @Prop() maxlength?: number;
     @Prop() autocomplete?: string;
+    @Prop() type: 'checkbox'
+        | 'checklist'
+        | 'color'
+        | 'date'
+        | 'email'
+        | 'file'
+        | 'hidden'
+        | 'month'
+        | 'number'
+        | 'password'
+        | 'radiolist'
+        | 'range'
+        | 'search'
+        | 'select'
+        | 'tel'
+        | 'text'
+        | 'textarea'
+        | 'url' = 'text';
     @Prop() defaultErrorMessage: string = 'The value entered is not valid.';
     @Prop() badInputErrorMessage: string = 'There was a problem processing the value.';
     @Prop() patternErrorMessage: string = 'There was a problem processing the value.';
@@ -59,7 +77,7 @@ export class FormField implements ComponentInterface {
 
     @Method()
     async validate() {
-        if (this.type !== 'checkbox') {
+        if (!this.$checkbox && !this.$checklist) {
             this.invalid = !this.$input.checkValidity();
             this.validateOnInput = true;
         }
@@ -81,7 +99,7 @@ export class FormField implements ComponentInterface {
         this.updated.emit(detail);
     }
 
-    handleCheckboxChange(e) {
+    handleComponentChange(e) {
         let checkboxData: IFormFieldData = e.detail;
         this.invalid = !checkboxData.isValid;
         this.validityState = checkboxData.validity
@@ -96,21 +114,26 @@ export class FormField implements ComponentInterface {
     }
 
     private async validateField(): Promise<IFormFieldData> {
-        if (this.$checkbox) {
-            let checkboxFieldData = await this.$checkbox.validate();
-            this.invalid = !checkboxFieldData.isValid;
-            this.validityState = checkboxFieldData.validity;
-            return checkboxFieldData;
+        switch (true) {
+            case this.$checkbox !== undefined:
+                let checkboxFieldData = await this.$checkbox.validate();
+                this.invalid = !checkboxFieldData.isValid;
+                this.validityState = checkboxFieldData.validity;
+                return checkboxFieldData;
+            case this.$checklist !== undefined:
+                let checklistData = await this.$checklist.validate();
+                this.invalid = !checklistData.isValid;
+                this.validityState = checklistData.validity;
+                return checklistData;
+            default:
+                this.validityState = this.$input.validity;
+                return {
+                    isValid: this.$input.checkValidity(),
+                    name: this.$input.name,
+                    validity: this.validityState,
+                    value: this.value == null ? this.value : this.value.toString()
+                };
         }
-
-        this.validityState = this.$input.validity;
-
-        return {
-            isValid: this.$input.checkValidity(),
-            name: this.$input.name,
-            validity: this.validityState,
-            value: this.value == null ? this.value : this.value.toString()
-        };
     }
 
     private getValue(): string {
@@ -267,10 +290,46 @@ export class FormField implements ComponentInterface {
                                     required={this.required}
                                     required-text={this.requiredText}
                                     name={this.getInputName()}
-                                    onChanged={e => this.handleCheckboxChange(e)}
+                                    onChanged={e => this.handleComponentChange(e)}
                                     ref={el => this.$checkbox = el}
                                 />
                             </div>
+                        ),
+                        'checklist': (
+                            <ks-checklist
+                                label={this.label}
+                                tooltip-text={this.tooltipText}
+                                required={this.required}
+                                required-text={this.requiredText}
+                                required-error-message={this.requiredErrorMessage}
+                                type="checkbox"
+                                name={this.getInputName()}
+                                help-text={this.helpText}
+                                invalid={this.invalid}
+                                disabled={this.disabled}
+                                ref={el => this.$checklist = el}
+                                onChecked={e => this.handleComponentChange(e)}
+                            >
+                                <slot />
+                            </ks-checklist>
+                        ),
+                        'radiolist': (
+                            <ks-checklist
+                                label={this.label}
+                                tooltip-text={this.tooltipText}
+                                required={this.required}
+                                required-text={this.requiredText}
+                                required-error-message={this.requiredErrorMessage}
+                                type="radio"
+                                name={this.getInputName()}
+                                help-text={this.helpText}
+                                invalid={this.invalid}
+                                disabled={this.disabled}
+                                ref={el => this.$checklist = el}
+                                onChecked={e => this.handleComponentChange(e)}
+                            >
+                                <slot />
+                            </ks-checklist>
                         )
                     }[this.type] || (
                         [

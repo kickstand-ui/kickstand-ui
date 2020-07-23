@@ -1,16 +1,16 @@
-import { Component, h, Prop, Host, Event, EventEmitter, Method } from '@stencil/core';
+import { Component, h, Prop, Host, Event, EventEmitter, Method, ComponentInterface } from '@stencil/core';
 import { IFormFieldData } from './form-field';
 
 @Component({
     tag: 'ks-checkbox',
     styleUrl: 'form-field.scss'
 })
-export class Alert {
+export class Checkbox implements ComponentInterface {
     checkboxId = checkboxIds++;
     $checkbox: HTMLInputElement;
 
     @Prop() label: string;
-    @Prop() checked: boolean = false;
+    @Prop({ mutable: true, reflect: true }) checked: boolean = false;
     @Prop() required: boolean;
     @Prop() tooltipText: string;
     @Prop() requiredText: string = 'Required';

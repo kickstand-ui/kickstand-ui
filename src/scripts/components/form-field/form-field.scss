@@ -6,7 +6,6 @@
     .form-label {
         display: flex;
         flex-direction: column;
-        @include px(md);
 
         .field-label {
             font-weight: bold;
@@ -22,6 +21,7 @@
 
         .help-text {
             color: color(dark, light);
+            font-weight: normal;
             @include font-size(xs);
         }
 
@@ -81,24 +81,24 @@
             .checkbox-icon {
                 background: color(primary);
                 border-color: color(primary);
-        
+
                 svg {
                     stroke-dashoffset: 0;
                 }
-        
+
                 &:before {
                     opacity: 0;
                     @include transition-ease-in-out();
                 }
             }
-        }        
+        }
     }
 
     .checkbox-label {
         &:hover {
             border-color: color(primary);
             cursor: pointer;
-        }    
+        }
 
         .checkbox-icon {
             display: inline-block;
@@ -141,8 +141,20 @@
         .checkbox-description {
             display: inline-block;
             vertical-align: middle;
-            transform: translate3d(0, 0, 0);    
+            transform: translate3d(0, 0, 0);
             @include pl(sm);
+        }
+    }
+}
+
+.checklist {
+    fieldset {
+        display: inline-flex;
+        flex-direction: column;
+
+        legend {
+            font-weight: bold;
+            @include mb(none);
         }
     }
 }
