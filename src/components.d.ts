@@ -91,6 +91,19 @@ export namespace Components {
         "tooltipText": string;
         "validate": () => Promise<IFormFieldData>;
     }
+    interface KsChecklist {
+        "disabled": boolean;
+        "helpText": string;
+        "invalid": boolean;
+        "label": string;
+        "name": string;
+        "required": boolean;
+        "requiredErrorMessage": string;
+        "requiredText": string;
+        "tooltipText": string;
+        "type": 'checkbox' | 'radio';
+        "validate": () => Promise<IFormFieldData>;
+    }
     interface KsColumn {
         "position": 'start' | 'center' | 'end' | 'stretch';
     }
@@ -149,11 +162,28 @@ export namespace Components {
         "step"?: number;
         "stepErrorMessage": string;
         "tooltipText": string;
-        "type": 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select' | 'checkbox';
+        "type": 'checkbox'
+        | 'checklist'
+        | 'color'
+        | 'date'
+        | 'email'
+        | 'file'
+        | 'hidden'
+        | 'month'
+        | 'number'
+        | 'password'
+        | 'radiolist'
+        | 'range'
+        | 'search'
+        | 'select'
+        | 'tel'
+        | 'text'
+        | 'textarea'
+        | 'url';
         "typeErrorMessage": string;
         "validate": () => Promise<IFormFieldData>;
         "validateOnInput": boolean;
-        "value"?: string | number | null;
+        "value"?: string | number | any[] | null;
     }
     interface KsIcon {
         "icon": 'bars' | 'chevron' | 'close' | 'danger' | 'info' | string;
@@ -224,6 +254,7 @@ export namespace Components {
         "checked": boolean;
         "inline": boolean;
         "label": string;
+        "name": string;
     }
     interface KsRow {
         "noGutter": boolean;
@@ -342,6 +373,12 @@ declare global {
     var HTMLKsCheckboxElement: {
         prototype: HTMLKsCheckboxElement;
         new (): HTMLKsCheckboxElement;
+    };
+    interface HTMLKsChecklistElement extends Components.KsChecklist, HTMLStencilElement {
+    }
+    var HTMLKsChecklistElement: {
+        prototype: HTMLKsChecklistElement;
+        new (): HTMLKsChecklistElement;
     };
     interface HTMLKsColumnElement extends Components.KsColumn, HTMLStencilElement {
     }
@@ -518,6 +555,7 @@ declare global {
         "ks-carousel": HTMLKsCarouselElement;
         "ks-carousel-slide": HTMLKsCarouselSlideElement;
         "ks-checkbox": HTMLKsCheckboxElement;
+        "ks-checklist": HTMLKsChecklistElement;
         "ks-column": HTMLKsColumnElement;
         "ks-crumb": HTMLKsCrumbElement;
         "ks-dropdown": HTMLKsDropdownElement;
@@ -629,6 +667,19 @@ declare namespace LocalJSX {
         "requiredText"?: string;
         "tooltipText"?: string;
     }
+    interface KsChecklist {
+        "disabled"?: boolean;
+        "helpText"?: string;
+        "invalid"?: boolean;
+        "label"?: string;
+        "name"?: string;
+        "onChecked"?: (event: CustomEvent<IFormFieldData>) => void;
+        "required"?: boolean;
+        "requiredErrorMessage"?: string;
+        "requiredText"?: string;
+        "tooltipText"?: string;
+        "type"?: 'checkbox' | 'radio';
+    }
     interface KsColumn {
         "position"?: 'start' | 'center' | 'end' | 'stretch';
     }
@@ -690,10 +741,27 @@ declare namespace LocalJSX {
         "step"?: number;
         "stepErrorMessage"?: string;
         "tooltipText"?: string;
-        "type"?: 'text' | 'tel' | 'url' | 'password' | 'date' | 'email' | 'search' | 'number' | 'hidden' | 'color' | 'file' | 'month' | 'range' | 'textarea' | 'select' | 'checkbox';
+        "type"?: 'checkbox'
+        | 'checklist'
+        | 'color'
+        | 'date'
+        | 'email'
+        | 'file'
+        | 'hidden'
+        | 'month'
+        | 'number'
+        | 'password'
+        | 'radiolist'
+        | 'range'
+        | 'search'
+        | 'select'
+        | 'tel'
+        | 'text'
+        | 'textarea'
+        | 'url';
         "typeErrorMessage"?: string;
         "validateOnInput"?: boolean;
-        "value"?: string | number | null;
+        "value"?: string | number | any[] | null;
     }
     interface KsIcon {
         "icon"?: 'bars' | 'chevron' | 'close' | 'danger' | 'info' | string;
@@ -760,6 +828,8 @@ declare namespace LocalJSX {
         "checked"?: boolean;
         "inline"?: boolean;
         "label"?: string;
+        "name"?: string;
+        "onSelected"?: (event: CustomEvent<any>) => void;
     }
     interface KsRow {
         "noGutter"?: boolean;
@@ -817,6 +887,7 @@ declare namespace LocalJSX {
         "ks-carousel": KsCarousel;
         "ks-carousel-slide": KsCarouselSlide;
         "ks-checkbox": KsCheckbox;
+        "ks-checklist": KsChecklist;
         "ks-column": KsColumn;
         "ks-crumb": KsCrumb;
         "ks-dropdown": KsDropdown;
@@ -862,6 +933,7 @@ declare module "@stencil/core" {
             "ks-carousel": LocalJSX.KsCarousel & JSXBase.HTMLAttributes<HTMLKsCarouselElement>;
             "ks-carousel-slide": LocalJSX.KsCarouselSlide & JSXBase.HTMLAttributes<HTMLKsCarouselSlideElement>;
             "ks-checkbox": LocalJSX.KsCheckbox & JSXBase.HTMLAttributes<HTMLKsCheckboxElement>;
+            "ks-checklist": LocalJSX.KsChecklist & JSXBase.HTMLAttributes<HTMLKsChecklistElement>;
             "ks-column": LocalJSX.KsColumn & JSXBase.HTMLAttributes<HTMLKsColumnElement>;
             "ks-crumb": LocalJSX.KsCrumb & JSXBase.HTMLAttributes<HTMLKsCrumbElement>;
             "ks-dropdown": LocalJSX.KsDropdown & JSXBase.HTMLAttributes<HTMLKsDropdownElement>;
