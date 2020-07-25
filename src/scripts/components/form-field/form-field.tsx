@@ -202,6 +202,8 @@ export class FormField implements ComponentInterface {
         this.min && (props.min = this.min);
         this.max && (props.max = this.max);
         this.step && (props.step = this.step);
+
+        return props;
     }
 
     render() {
@@ -215,6 +217,7 @@ export class FormField implements ComponentInterface {
             'aria-invalid': !this.disabled && this.invalid.toString(),
             'list': this.datalist && listId
         };
+        props = this.setProps(props);
         let classes = {
             'form-field': true,
             'invalid': this.invalid && !this.disabled
@@ -222,7 +225,6 @@ export class FormField implements ComponentInterface {
         let labelClasses = {
             'form-label': true
         };
-
         let fieldInput = {
             'textarea': (
                 <textarea
@@ -268,8 +270,6 @@ export class FormField implements ComponentInterface {
                     </datalist>}
                 </div>
             );
-
-        this.setProps(props);
 
         return (
             <Host class={classes}>
