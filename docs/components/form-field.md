@@ -2,12 +2,339 @@
 
 Forms are some of the most complex user interactions in modern application development. The Kickstand UI form field component is design to abstract away some of that complexity and provide a consistent user experience as well as some features to improve usability.
 
+One of the primary goals of Kickstand UI is to take advantage of native browser functionality as often as possible, so the `<ks-form-field>` component leverages HTML5 input elements and validation to reduce code size increase functionality.
+
+## Text (Default)
+
 <div class="my-xl">
     <ks-form-field label="Username" />
 </div>
 
 ```html
 <ks-form-field label="Username" />
+```
+
+## Checkbox
+
+<div class="my-xl">
+    <ks-form-field type="checkbox" label="I declare bankruptcy" />
+</div>
+
+```html
+<ks-form-field type="checkbox" label="I declare bankruptcy" />
+```
+
+## Checklist
+
+Checklists are great if users need to be able to choose multiple options from a predetermined list. Kickstand UI's checklist leverages the existing `<option>` element to provide the checklist options and just like the option element you can pre-select options using the `select` attribute as well as specify alternate values with the `value` attribute.
+
+<div class="my-xl">
+    <ks-form-field type="checklist" label="Choose your next office mates">
+        <option selected>michael.scott@dundermifflin.com</option>
+        <option>dwight.schrutte@dundermifflin.com</option>
+        <option selected>pam.beasley@dundermifflin.com</option>
+        <option>jim.halpert@dundermifflin.com</option>
+        <option>Meredith.palmer@dundermifflin.com</option>
+    </ks-form-field>
+</div>
+
+```html
+<ks-form-field type="checklist" label="Choose your next office mates">
+    <option selected>michael.scott@dundermifflin.com</option>
+    <option>dwight.schrutte@dundermifflin.com</option>
+    <option selected>pam.beasley@dundermifflin.com</option>
+    <option>jim.halpert@dundermifflin.com</option>
+    <option>Meredith.palmer@dundermifflin.com</option>
+</ks-form-field>
+```
+
+### Value
+
+You can also specify a value if you would like the selected values to be different from the display text.
+
+<div class="my-xl">
+    <ks-form-field type="checklist" label="Choose your next office mates">
+        <option value="michael.scott@dundermifflin.com" selected>Michael Scott</option>
+        <option value="dwight.schrutte@dundermifflin.com">Dwight Schrutte</option>
+        <option value="pam.beasley@dundermifflin.com" selected>Pam Beasley</option>
+        <option value="jim.halpert@dundermifflin.com">Jim Halpert</option>
+        <option value="Meredith.palmer@dundermifflin.com">Meredith Palmer</option>
+    </ks-form-field>
+</div>
+
+```html
+<ks-form-field type="checklist" label="Choose your next office mates">
+    <option value="michael.scott@dundermifflin.com" selected>Michael Scott</option>
+    <option value="dwight.schrutte@dundermifflin.com">Dwight Schrutte</option>
+    <option value="pam.beasley@dundermifflin.com" selected>Pam Beasley</option>
+    <option value="jim.halpert@dundermifflin.com">Jim Halpert</option>
+    <option value="Meredith.palmer@dundermifflin.com">Meredith Palmer</option>
+</ks-form-field>
+```
+
+The value returned from a checklist form field is an array of the values that have been selected.
+
+## Color
+
+The color input utilizes the HTML5 color-picker for users to select colors colors from a color wheel or manually enter it in various formats. The value returned is in hexadecimal format.
+
+<div class="my-xl">
+    <ks-form-field type="color" label="Your favorite color" />
+</div>
+
+```html
+<ks-form-field type="color" label="Your favorite color" />
+```
+
+:::tip Note
+The HTML5 `color` input type is not supported by [all browsers](https://caniuse.com/#feat=input-color). If it is not supported, the input will fall back to a text box where the user can enter a color value.
+:::
+
+## Datalist
+
+Similar to the `select` input, the `type` to `datalist` will provide you a list of suggestions that are filterable. In order to display the datalist options, make sure the `datalist` property is `true`
+
+<div class="my-xl">
+    <ks-form-field
+        label="Email"
+        type="email"
+        datalist
+        >
+        <option>michael.scott@dundermifflin.com</option>
+        <option>dwight.schrutte@dundermifflin.com</option>
+        <option>pam.beasley@dundermifflin.com</option>
+        <option>jim.halpert@dundermifflin.com</option>
+        <option>Meredith.palmer@dundermifflin.com</option>
+    </ks-form-field>
+</div>
+
+```html
+<ks-form-field
+    label="Email"
+    type="datalist"
+    datalist
+    >
+    <option>michael.scott@dundermifflin.com</option>
+    <option>dwight.schrutte@dundermifflin.com</option>
+    <option>pam.beasley@dundermifflin.com</option>
+    <option>jim.halpert@dundermifflin.com</option>
+    <option>Meredith.palmer@dundermifflin.com</option>
+</ks-form-field>
+```
+
+:::warning
+The HTML5 `datalist` feature is supported by all [modern browsers](https://caniuse.com/#feat=datalist), but is not consistently implemented. Make sure you test in different browsers to ensure you get the user experience you are looking for.
+:::
+
+## Date
+
+<div class="my-xl">
+    <ks-form-field type="date" label="Choose your birthday" />
+</div>
+
+```html
+<ks-form-field type="date" label="Choose your birthday" />
+```
+
+### Month
+
+<div class="my-xl">
+    <ks-form-field type="month" label="Credit Card Expiration" />
+</div>
+
+```html
+<ks-form-field type="month" label="Credit Card Expiration" />
+```
+
+### Week
+
+<div class="my-xl">
+    <ks-form-field type="week" label="Week of your reservation" />
+</div>
+
+```html
+<ks-form-field type="week" label="Week of your reservation" />
+```
+
+### Time
+
+<div class="my-xl">
+    <ks-form-field type="time" label="What time is it?" />
+</div>
+
+```html
+<ks-form-field type="time" label="What time is it?" />
+```
+
+:::warning
+The "date" input types (`date`, `month`, `week`, `time`, etc.) do not have great [browser coverage](https://caniuse.com/#feat=input-datetime). Please make sure to test to ensure you have the desired user experience. There are also polyfills available, to provide consistency across browsers.
+:::
+
+## Email
+
+<div class="my-xl">
+    <ks-form-field type="email" label="Email" />
+</div>
+
+```html
+<ks-form-field type="email" label="Email" />
+```
+
+### Custom Validation
+
+The email type can work nicely with the `pattern` attribute to create custom validation. The following example allows only emails with a specific domain.
+
+<div class="my-xl">
+    <ks-form-field type="email" help-text="Use your dundermifflin.com email" label="Email" minlength="7" pattern=".+@dundermifflin.com" />
+</div>
+
+```html
+<ks-form-field type="email"  label="Email" pattern=".+@dundermifflin.com" />
+```
+
+## Number
+
+<div class="my-xl">
+    <ks-form-field type="number" label="Age" />
+</div>
+
+```html
+<ks-form-field type="number" label="Age" />
+```
+
+### Min/Max Value
+
+You can control the minimum and maximum values using the `min` and `max` attributes.
+
+<div class="my-xl">
+    <ks-form-field type="number" min="5" max="10" label="Pick a number between 5 and 10" />
+</div>
+
+```html
+<ks-form-field
+    type="number"
+    min="5"
+    max="10"
+    label="Pick a number between 5 and 10"
+    />
+```
+
+## Password
+
+<div class="my-xl">
+    <ks-form-field type="password" label="Password" />
+</div>
+
+```html
+<ks-form-field type="password" label="Password" />
+```
+
+## Radiolist
+
+Checklists are great if users need to be able to choose multiple options from a predetermined list. Kickstand UI's checklist leverages the existing `<option>` element to provide the checklist options and just like the option element you can pre-select options using the `select` attribute as well as specify alternate values with the `value` attribute.
+
+<div class="my-xl">
+    <ks-form-field type="radiolist" label="Choose your next office mate">
+        <option value="michael.scott@dundermifflin.com">Michael Scott</option>
+        <option value="dwight.schrutte@dundermifflin.com">Dwight Schrutte</option>
+        <option value="pam.beasley@dundermifflin.com" selected>Pam Beasley</option>
+        <option value="jim.halpert@dundermifflin.com">Jim Halpert</option>
+        <option value="Meredith.palmer@dundermifflin.com">Meredith Palmer</option>
+    </ks-form-field>
+</div>
+
+```html
+<ks-form-field type="radiolist" label="Choose your next office mate">
+    <option value="michael.scott@dundermifflin.com">Michael Scott</option>
+    <option value="dwight.schrutte@dundermifflin.com">Dwight Schrutte</option>
+    <option value="pam.beasley@dundermifflin.com" selected>Pam Beasley</option>
+    <option value="jim.halpert@dundermifflin.com">Jim Halpert</option>
+    <option value="Meredith.palmer@dundermifflin.com">Meredith Palmer</option>
+</ks-form-field>
+```
+
+
+## Range
+
+<div class="my-xl">
+    <ks-form-field type="range" label="Volume" />
+</div>
+
+```html
+<ks-form-field type="range" label="Volume" />
+```
+
+## Tel
+
+<div class="my-xl">
+    <ks-form-field
+        type="tel"
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        label="Telephone Number"
+        help-text="XXX-XXX-XXXX"
+        />
+</div>
+
+```html
+<ks-form-field
+    type="tel"
+    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+    label="Telephone Number"
+    help-text="XXX-XXX-XXXX"
+    />
+```
+
+It is important to note that the `tel` input type does not provide any default validation (because phone numbers patterns can vary), so it is important to use it in conjunction with the `pattern` attribute. Using the `tel` input.
+
+:::tip Note
+Before you decide to ditch the `tel` input type for the standard `text` field, there are still some benefits to using `tel`:
+
+- It can provide a custom keyboard for mobile and touch enabled devices
+- Browser and third-party autocomplete tools can use it to speed up your user's form entry
+:::
+
+## Textarea
+
+A `textarea` is for adding multi-line plain-text editing. This is very useful when you want to allow users to enter a large amount of free-form text, for example a comment on a review or feedback form.
+
+<div class="my-xl">
+    <ks-form-field
+        label="Comments"
+        type="textarea"
+        />
+</div>
+
+```html
+<ks-form-field
+    label="Comments"
+    type="textarea"
+    />
+```
+
+## Select
+
+Setting the `type` property to `select` allows you nest a list of options within the form field component to provide the user available options.
+
+<div class="my-xl">
+    <ks-form-field
+        label="Options"
+        type="select"
+        >
+        <option value="1" selected>Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+    </ks-form-field>
+</div>
+
+```html
+<ks-form-field
+    label="Options"
+    type="select"
+    >
+    <option value="1" selected>Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+</ks-form-field>
 ```
 
 ## Label
@@ -104,19 +431,21 @@ You can also manually trigger field validation by selecting the field and execut
 ```html
 <ks-form-field id="username" label="Username" required />
 <script>
-    let username = document.getElementById('username');
-    username.validate();
+    (function(){
+        let username = document.getElementById('username');
+        username.validate();
 
-    // you can also get the field data
-    username.validate().then(fieldData => {
-        // do something awesome
-    });
+        // you can also get the field data
+        username.validate().then(fieldData => {
+            // do something awesome
+        });
+    })();
 </script>
 ```
 
 ## Data Binding
 
-Kickstand UI's components focus on one-way data binding so that data flows in a single direction. What that means is that the variable you bind to the `value` property will not be updated whenever a user enters new content. In order to provide you with the new value, each component will emit and `updated` event.
+Kickstand UI's components use one-way data binding so that data flows in a single direction. What that means is that the variable you bind to the `value` property will not be updated whenever a user enters new content. In order to provide you with the new value, each component will emit and `updated` event.
 
 ### Adding Event Listeners
 
@@ -138,11 +467,13 @@ Kickstand UI's components focus on one-way data binding so that data flows in a 
 <ks-form-field label="Name" id="binding-test" class="mb-md" />
 <b>Bound Value: </b><span id="value"></span>
 <script>
-    let formField = document.getElementById('binding-test');
-    let value = document.getElementById('value');
-    formField.addEventListener('updated', function (e) {
-        value.innerText = e.detail.value;
-    });
+    (function(){
+        let formField = document.getElementById('binding-test');
+        let value = document.getElementById('value');
+        formField.addEventListener('updated', function (e) {
+            value.innerText = e.detail.value;
+        });
+    })();
 </script>
 ```
 
@@ -184,81 +515,6 @@ Event details emit much more that just the value. If you take a look, you will s
     },
     value: ""
 }
-```
-
-## Textarea
-
-A `textarea` is for adding multi-line plain-text editing. This is very useful when you want to allow users to enter a large amount of free-form text, for example a comment on a review or feedback form.
-
-<div class="my-xl">
-    <ks-form-field
-        label="Comments"
-        type="textarea"
-        />
-</div>
-
-```html
-<ks-form-field
-    label="Comments"
-    type="textarea"
-    />
-```
-
-## Select
-
-Setting the `type` property to `select` allows you nest a list of options within the form field component to provide the user available options.
-
-<div class="my-xl">
-    <ks-form-field
-        label="Options"
-        type="select"
-        >
-        <option value="1" selected>Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-    </ks-form-field>
-</div>
-
-```html
-<ks-form-field
-    label="Options"
-    type="select"
-    >
-    <option value="1" selected>Option 1</option>
-    <option value="2">Option 2</option>
-    <option value="3">Option 3</option>
-</ks-form-field>
-```
-
-## Datalist
-
-Similar to the `select` input, the `type` to `datalist` will provide you a list of suggestions that are filterable. In order to display the datalist options, make sure the `datalist` property is `true`
-
-<div class="my-xl">
-    <ks-form-field
-        label="Email"
-        type="email"
-        datalist
-        >
-        <option>michael.scott@dundermifflin.com</option>
-        <option>dwight.schrutte@dundermifflin.com</option>
-        <option>pam.beasley@dundermifflin.com</option>
-        <option>jim.halpert@dundermifflin.com</option>
-        <option>meradith.palmer@dundermifflin.com</option>
-    </ks-form-field>
-</div>
-
-```html
-<ks-form-field
-    label="Email"
-    type="datalist"
-    >
-    <option>michael.scott@dundermifflin.com</option>
-    <option>dwight.schrutte@dundermifflin.com</option>
-    <option>pam.beasley@dundermifflin.com</option>
-    <option>jim.halpert@dundermifflin.com</option>
-    <option>meradith.palmer@dundermifflin.com</option>
-</ks-form-field>
 ```
 
 ## Properties
