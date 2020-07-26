@@ -5,6 +5,9 @@ import { Component, Element, Prop, State, h } from '@stencil/core';
     tag: 'ks-img'
 })
 export class Img {
+    $image: HTMLImageElement;
+    io: IntersectionObserver;
+
     @Element() $el: HTMLElement;
 
     @Prop() src: string;
@@ -14,25 +17,20 @@ export class Img {
 
     @State() oldSrc: string;
 
-    io: IntersectionObserver;
-
     componentDidLoad() {
         this.addIntersectionObserver();
     }
 
     componentWillUpdate() {
-        if (this.src !== this.oldSrc) {
+        if (this.src !== this.oldSrc)
             this.addIntersectionObserver();
-        }
+
         this.oldSrc = this.src;
     }
 
     setImgSrc() {
-        const image: HTMLImageElement = this.$el.querySelector('img');
-        image.setAttribute('src', image.getAttribute('data-src'));
-        image.onload = () => {
-            image.removeAttribute('data-src');
-        };
+        this.$image.setAttribute('src', this.$image.getAttribute('data-src'));
+        this.$image.onload = () => this.$image.removeAttribute('data-src');
     }
 
     addIntersectionObserver() {
@@ -62,14 +60,12 @@ export class Img {
                 rootMargin: `${this.threshold}px 0px`
             });
 
-        this.io.observe(this.$el.querySelector('img'));
+        this.io.observe(this.$image);
     }
 
     executeFallback() {
         // fall back to setTimeout for Safari and IE
-        setTimeout(() => {
-            this.setImgSrc();
-        }, 300);
+        setTimeout(() => this.setImgSrc(), 300);
     }
 
     removeIntersectionObserver() {
@@ -81,7 +77,7 @@ export class Img {
 
     render() {
         return (
-            <img data-src={this.src} alt={this.alt} />
+            <img data-src={this.src} alt={this.alt} ref={el => this.$image = el} />
         );
     }
 }

@@ -27,7 +27,7 @@ export class Modal implements ComponentInterface {
     render() {
         return (
             <ks-overlay title-id={this.titleId} ref={el => this.$overlay = el} prevent-close={this.preventClose}>
-                <div class={`modal size-${this.size}`}>
+                <div class={`ks-modal size-${this.size}`}>
                     <header class="modal-header">
                         <h3 class="modal-title" id={this.titleId}>{this.modalTitle}</h3>
                         {!this.preventClose && <ks-button onClick={() => this.hide()} display="clear" class="modal-close">

@@ -220,7 +220,7 @@ export class FormField implements ComponentInterface {
         };
         props = this.setProps(props);
         let classes = {
-            'form-field': true,
+            'ks-form-field': true,
             'invalid': this.invalid && !this.disabled
         };
         let labelClasses = {
@@ -277,26 +277,24 @@ export class FormField implements ComponentInterface {
             <Host class={classes}>
                 {
                     {
-                        'checkbox': (
-                            <div>
-                                <div class="error-message text-danger" role="alert" aria-live="assertive">
-                                    {(this.invalid && !this.disabled) && <div class="error-text">
-                                        <ks-icon icon="danger" class="mr-xs" />
-                                        <span>{this.getErrorMessage()}</span>
-                                    </div>}
-                                </div>
-                                <ks-checkbox
-                                    label={this.label}
-                                    checked={this.checked}
-                                    tooltip-text={this.tooltipText}
-                                    required={this.required}
-                                    required-text={this.requiredText}
-                                    name={this.getInputName()}
-                                    onChanged={e => this.handleComponentChange(e)}
-                                    ref={el => this.$checkbox = el}
-                                />
-                            </div>
-                        ),
+                        'checkbox': [
+                            <div class="error-message text-danger" role="alert" aria-live="assertive">
+                                {(this.invalid && !this.disabled) && <div class="error-text">
+                                    <ks-icon icon="danger" class="mr-xs" />
+                                    <span>{this.getErrorMessage()}</span>
+                                </div>}
+                            </div>,
+                            <ks-checkbox
+                                label={this.label}
+                                checked={this.checked}
+                                tooltip-text={this.tooltipText}
+                                required={this.required}
+                                required-text={this.requiredText}
+                                name={this.getInputName()}
+                                onChanged={e => this.handleComponentChange(e)}
+                                ref={el => this.$checkbox = el}
+                            />
+                        ],
                         'checklist': (
                             <ks-checklist
                                 label={this.label}

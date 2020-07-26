@@ -103,7 +103,7 @@ export class Overlay {
 
     render() {
         let classes = {
-            'overlay': true,
+            'ks-overlay': true,
             [this.theme]: true,
             'absolute': this.absolute,
             'opened': this.isShowing

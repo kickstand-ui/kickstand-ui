@@ -1,6 +1,6 @@
 @import "../../../scss/00_Abstracts/index";
 
-.form-field {
+.ks-form-field {
     display: block;
 
     .form-label {
@@ -179,7 +179,7 @@
     }
 }
 
-.checkbox {
+.ks-checkbox {
     user-select: none;
     cursor: pointer;
 
@@ -261,7 +261,7 @@
     }
 }
 
-.checklist {
+.ks-checklist {
     fieldset {
         display: inline-flex;
         flex-direction: column;
@@ -273,7 +273,7 @@
     }
 }
 
-.radio {
+.ks-radio {
     display: block;
 
     &.inline {

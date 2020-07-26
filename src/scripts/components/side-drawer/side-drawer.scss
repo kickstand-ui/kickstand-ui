@@ -7,7 +7,7 @@ $drawer-sizes: (
     xl: 45rem
 );
 
-.side-drawer {
+.ks-side-drawer {
     height: 100%;
     max-width: 90%;
     position: fixed;
@@ -45,7 +45,7 @@ $drawer-sizes: (
         @include font-size(lg);
 
         .drawer-close {
-            .button {
+            .ks-button {
                 @include p(none);
 
                 .button-text {

@@ -9,7 +9,7 @@ export class Accordion {
 
     render() {
         return (
-            <Host class={`accordion ${this.size}`} role="tablist">
+            <Host class={`ks-accordion ${this.size}`} role="tablist">
                 <slot />
             </Host>
         );

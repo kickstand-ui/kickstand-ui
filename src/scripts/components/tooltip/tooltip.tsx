@@ -22,7 +22,7 @@ export class Tooltip implements ComponentInterface {
 
     render() {
         let classes = {
-            'tooltip': true,
+            'ks-tooltip': true,
             'disabled': this.disable
         };
 

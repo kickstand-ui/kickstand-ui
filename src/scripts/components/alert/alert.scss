@@ -1,6 +1,6 @@
 @import "../../../scss/00_Abstracts/index";
 
-.alert {
+.ks-alert {
     display: block;
     @include p(lg);
     @include shadow(sm);

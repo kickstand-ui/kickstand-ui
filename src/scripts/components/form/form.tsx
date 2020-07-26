@@ -57,7 +57,7 @@ export class Form implements ComponentInterface {
     render() {
 
         return (
-            <Host class="form-wrapper">
+            <Host class="ks-form-wrapper">
                 <form class="form" ref={el => this.$form = el} onSubmit={(e) => this.submitHandler(e)} novalidate>
                     <slot />
                     <ks-alert class={{ 'form-error': true, 'hide': !this.invalid }} color="danger">

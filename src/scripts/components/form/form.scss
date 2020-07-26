@@ -1,6 +1,6 @@
 @import "../../../scss/00_Abstracts/index";
 
-.form-wrapper {
+.ks-form-wrapper {
     display: block;
     @include border(solid, xxs, light);
     @include p(lg);

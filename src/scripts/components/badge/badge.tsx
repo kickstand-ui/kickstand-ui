@@ -9,8 +9,13 @@ export class Badge implements ComponentInterface {
     @Prop() hollow: boolean;
 
     render() {
+        let classes= {
+            'ks-badge': true,
+            [`${this.color}`]: true,
+            'hollow': this.hollow
+        };
         return (
-            <Host class={`badge ${this.color}${this.hollow ? ' hollow' :  ''}`}>
+            <Host class={classes}>
                 <slot />
             </Host>
         );

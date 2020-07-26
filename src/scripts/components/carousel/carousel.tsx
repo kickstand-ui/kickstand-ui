@@ -113,7 +113,7 @@ export class Carousel implements ComponentInterface {
         );
 
         return (
-            <Host class={`carousel`}>
+            <Host class={`ks-carousel`}>
                 <div class="slides">
                     <slot />
                     {!this.hideControls && controls}

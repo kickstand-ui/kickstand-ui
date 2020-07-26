@@ -22,7 +22,7 @@ export class Breadcrumbs implements ComponentInterface {
         return (
             <Host role="navigation" aria-label="breadcrumbs">
                 <slot />
-                <ol class="breadcrumbs">
+                <ol class="ks-breadcrumbs">
                     {this.$crumbs.map((crumb, index) =>
                         <li class={{ 'breadcrumb': true, 'current': this.isLastCrumb(index) }}>
                             <a {...{ class: 'link', ['aria-current']: this.isLastCrumb(index) && 'page', href: crumb.href }}>{crumb.innerHTML}</a>

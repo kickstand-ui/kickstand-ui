@@ -91,7 +91,7 @@ export class LinkButton implements ComponentInterface {
         ];
 
         let classes = {
-            'button': true,
+            'ks-button': true,
             [this.color]: true,
             [this.display]: true,
             [`icon-${this.iconDirection}`]: true,

@@ -107,7 +107,7 @@ export class Dropdown {
     render() {
         let dropdownId = `dropdown-${dropdownIds++}`;
         let dropDownClasses = {
-            'dropdown': true,
+            'ks-dropdown': true,
             'show': this.isExpanded,
             'mega-menu': this.megaMenu
         };

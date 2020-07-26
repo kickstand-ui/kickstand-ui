@@ -20,7 +20,7 @@ export class Radio implements ComponentInterface {
 
     render() {
         let classes = {
-            'radio': true,
+            'ks-radio': true,
             'inline': this.inline
         }
         return (

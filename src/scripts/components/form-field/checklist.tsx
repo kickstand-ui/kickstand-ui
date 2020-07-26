@@ -99,7 +99,7 @@ export class Checklist implements ComponentInterface {
 
     render() {
         return (
-            <Host class="checklist">
+            <Host class="ks-checklist">
                 <fieldset>
                     <legend class="form-label">
                         <span class="field-label">

@@ -4,7 +4,7 @@ $columns: 12;
 $gutter-size: sm;
 $breakpoints: (xl, lg, md, sm, xs, xxs);
 
-.row {
+.ks-row {
     display: flex;
     flex-wrap: wrap;
     flex-basis: 0;

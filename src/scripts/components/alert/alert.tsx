@@ -29,7 +29,7 @@ export class Alert {
         };
 
         const classes = {
-            'alert': true,
+            'ks-alert': true,
             [this.color]: true,
             'note': this.note
         };

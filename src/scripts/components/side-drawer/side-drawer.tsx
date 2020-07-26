@@ -37,7 +37,7 @@ export class SideDrawer implements ComponentInterface {
 
     render() {
         let classes = {
-            'side-drawer': true,
+            'ks-side-drawer': true,
             [`size-${this.size}`]: true,
             [this.position]: true,
             'show': this.isShowing

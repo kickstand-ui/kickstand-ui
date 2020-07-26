@@ -13,7 +13,7 @@ export class Loading implements ComponentInterface {
 
     render() {
         return (
-            <Host class={{ 'loading': true, 'show-message': this.showMessage }}>
+            <Host class={{ 'ks-loading': true, 'show-message': this.showMessage }}>
                 <div aria-hidden="true" class={this.type}>
                     <div></div>
                     <div></div>

@@ -32,7 +32,7 @@ export class MenuBar implements ComponentInterface {
 
     render() {
         let classes = {
-            'menu-bar': true,
+            'ks-menu-bar': true,
             [`collapse-${this.collapse}`]: true,
             [this.color]: true,
             'inverted': this.inverted

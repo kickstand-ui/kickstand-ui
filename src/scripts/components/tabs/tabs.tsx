@@ -106,7 +106,7 @@ export class Tabs {
 
     render() {
         return (
-            <Host class={`tabs align-${this.position}`}>
+            <Host class={`ks-tabs align-${this.position}`}>
                 <slot />
             </Host>
         );

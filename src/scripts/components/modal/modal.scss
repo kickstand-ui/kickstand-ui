@@ -1,6 +1,6 @@
 @import "../../../scss/00_Abstracts/index";
 
-.modal {
+.ks-modal {
     max-width: 100%;
     max-height: 90vh;
     overflow-y: auto;
@@ -20,7 +20,7 @@
         .modal-close {
             @include font-size(lg);
 
-            .button {
+            .ks-button {
                 @include p(none);
 
                 .button-text {

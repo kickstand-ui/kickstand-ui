@@ -1,13 +1,13 @@
 @import "../../../scss/00_Abstracts/index";
 
-.form-field {
+.ks-form-field {
     .spin-box {
         display: inline-flex;
         align-items: center;
         @include shadow(xs);
         @include border($size: xxxs);
 
-        .button {
+        .ks-button {
             @include px(xs);
         }
         .form-input {

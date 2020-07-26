@@ -51,7 +51,7 @@ export class Checkbox implements ComponentInterface {
         };
 
         return (
-            <Host class="checkbox">
+            <Host class="ks-checkbox">
                 <input class="checkbox-input" type="checkbox" {...props} onChange={() => this.changeHandler()} ref={el => this.$checkbox = el} />
                 <label class="checkbox-label" htmlFor={`checkbox-${this.checkboxId}`}>
                     <span class="checkbox-icon">

@@ -76,19 +76,10 @@ export class SpinBox implements ComponentInterface {
         return this.value.toString();
     }
 
-    componentDidLoad() {
-        // this.debouncedUpdate = componentUtils.debounce(() => {
-        //     if (typeof this.value === 'number') {
-        //         this.isUpdating = true;
-        //         this.isUpdating = false;
-        //     }
-        // }, 1000);
-    }
-
     render() {
         let value = this.getValue();
 
-        return (<Host class="spin-box">
+        return (<Host class="ks-spin-box">
             <ks-button
                 color="light"
                 icon="fas fa-chevron-left"
