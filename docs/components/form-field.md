@@ -451,11 +451,11 @@ Kickstand UI's components use one-way data binding so that data flows in a singl
 
 <div class="my-xl">
     <ks-form-field label="Name" id="binding-test" class="mb-md" />
-    <b>Bound Value: </b><span id="value"></span>
+    <b>Bound Value: </b><span id="bound-value"></span>
     <script>
         (function(){
             let formField = document.getElementById('binding-test');
-            let value = document.getElementById('value');
+            let value = document.getElementById('bound-value');
             formField.addEventListener('updated', function (e) {
                 value.innerText = e.detail.value;
             });
@@ -465,11 +465,11 @@ Kickstand UI's components use one-way data binding so that data flows in a singl
 
 ```html
 <ks-form-field label="Name" id="binding-test" class="mb-md" />
-<b>Bound Value: </b><span id="value"></span>
+<b>Bound Value: </b><span id="bound-value"></span>
 <script>
     (function(){
         let formField = document.getElementById('binding-test');
-        let value = document.getElementById('value');
+        let value = document.getElementById('bound-value');
         formField.addEventListener('updated', function (e) {
             value.innerText = e.detail.value;
         });
@@ -515,6 +515,50 @@ Event details emit much more that just the value. If you take a look, you will s
     },
     value: ""
 }
+```
+
+## Debounce
+
+_Debouncing_ is a technique to help improve the performance of your application. The idea is to delay time-consuming tasks until the user is done doing what they are doing.
+
+For example, if you have an input that performs a server-side action when the user types into an input, you may want to wait until the user is finished typing before you perform the action rather than each time they press a key.
+
+<div class="my-xl">
+    <ks-form-field id="with-debounce" debounce="5000" label="With Debounce" />
+    <br>
+    <ks-form-field id="without-debounce" label="Without Debounce" />
+    <script>
+        (function(){
+            let withDebounce = document.getElementById('with-debounce');
+            let withoutDebounce = document.getElementById('without-debounce');
+            withDebounce.addEventListener('updated', function(e) {
+                alert(`I waited until you finished entering: ${e.detail.value}`);
+            });
+            withoutDebounce.addEventListener('updated', function(e) {
+                alert(`You entered: ${e.detail.value}`);
+            });
+        })();
+    </script>
+</div>
+
+```html
+<ks-form-field id="with-debounce" debounce="1000" label="With Debounce" />
+<ks-form-field id="without-debounce" label="Without Debounce" />
+
+<script>
+    (function(){
+        let withDebounce = document.getElementById('with-debounce');
+        let withoutDebounce = document.getElementById('without-debounce');
+
+        withDebounce.addEventListener('updated', function(e) {
+            alert(`I waited until you finished entering: ${e.detail.value}`);
+        });
+        
+        withoutDebounce.addEventListener('updated', function(e) {
+            alert(`You entered: ${e.detail.value}`);
+        });
+    })();
+</script>
 ```
 
 ## Properties
