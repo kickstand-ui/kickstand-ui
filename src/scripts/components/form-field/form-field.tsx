@@ -241,36 +241,37 @@ export class FormField implements ComponentInterface {
                 </textarea>
             ),
             'select': (
-                <select
-                    id={fieldId}
-                    class="form-input"
-                    name={this.getInputName()}
-                    {...props}
-                    onInput={(e) => this.onInput(e)}
-                    onBlur={() => this.onBlur()}
-                    ref={el => this.$input = el}
-                >
-                    <slot />
-                </select>
-            )
-        }[this.type] || (
-                <div>
-                    <input
+                <div class="select-wrapper">
+                    <select
                         id={fieldId}
                         class="form-input"
-                        type={this.type}
                         name={this.getInputName()}
                         {...props}
-                        value={value}
                         onInput={(e) => this.onInput(e)}
                         onBlur={() => this.onBlur()}
                         ref={el => this.$input = el}
-                    />
-                    {this.datalist && <datalist id={listId}>
+                    >
                         <slot />
-                    </datalist>}
+                    </select>
+                    <ks-icon class="select-icon" icon="chevron" />
                 </div>
-            );
+            )
+        }[this.type] || [
+                <input
+                    id={fieldId}
+                    class="form-input"
+                    type={this.type}
+                    name={this.getInputName()}
+                    {...props}
+                    value={value}
+                    onInput={(e) => this.onInput(e)}
+                    onBlur={() => this.onBlur()}
+                    ref={el => this.$input = el}
+                />,
+                this.datalist && <datalist id={listId}>
+                    <slot />
+                </datalist>
+            ];
 
         return (
             <Host class={classes}>

@@ -159,6 +159,24 @@
             @include border($size: xxs, $color: danger);
         }
     }
+
+    .select-wrapper {
+        display: flex;
+        align-items: center;
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            border-radius: 0;
+        }
+
+        .select-icon {
+            pointer-events: none;
+            @include ml(-xxxl);
+        }
+    }
 }
 
 .checkbox {
