@@ -46,6 +46,103 @@
             height: 3.25rem;
         }
 
+        &[type="range"] {
+            -webkit-appearance: none;
+            border: 0;
+            height: 2rem;
+            @include shadow(none);
+            @include p(none);
+
+            &::-webkit-slider-runnable-track {
+                cursor: pointer;
+                width: 100%;
+                height: 0.75rem;
+                background: color(primary);
+                border-radius: 0;
+                @include shadow(xs);
+                @include border($color: dark);
+            }
+
+            &::-webkit-slider-thumb {
+                cursor: pointer;
+                height: 1.5rem;
+                width: 1.5rem;
+                border-radius: 1rem;
+                background: white;
+                -webkit-appearance: none;
+                @include mt(-sm);
+                @include shadow(sm);
+                @include border($color: dark);
+            }
+
+            &::-moz-range-track {
+                cursor: pointer;
+                width: 100%;
+                height: 0.75rem;
+                background: color(primary);
+                border-radius: 0;
+                @include shadow(xs);
+                @include border($color: dark);
+            }
+
+            &::-moz-range-thumb {
+                cursor: pointer;
+                height: 1.5rem;
+                width: 1.5rem;
+                border-radius: 1rem;
+                background: white;
+                @include shadow(sm);
+                @include border($color: dark);
+            }
+
+            &::-ms-track {
+                cursor: pointer;
+                width: 100%;
+                background: transparent;
+                border-color: transparent;
+                color: transparent;
+            }
+
+            &::-ms-fill-lower {
+                background: color(primary);
+                border-radius: 1rem;
+                @include border($color: dark);
+                @include shadow(xs);
+            }
+
+            &::-ms-fill-upper {
+                background: color(primary);
+                border-radius: 1rem;
+                @include border($color: dark);
+                @include shadow(xs);
+            }
+
+            &::-ms-thumb {
+                cursor: pointer;
+                height: 1.5rem;
+                width: 1.5rem;
+                border-radius: 1rem;
+                background: white;
+                @include mt(xxxs);
+                @include shadow(sm);
+                @include border($color: dark);
+            }
+
+            &:focus {
+                &::-webkit-slider-runnable-track {
+                    background: color(primary);
+                }
+
+                &::-ms-fill-lower {
+                    background: color(primary);
+                }
+
+                &::-ms-fill-upper {
+                    background: color(primary);
+                }
+            }
+        }
+
         &:disabled {
             cursor: not-allowed;
             @include bg-color(light);

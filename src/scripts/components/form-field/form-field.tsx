@@ -202,6 +202,7 @@ export class FormField implements ComponentInterface {
         this.min && (props.min = this.min);
         this.max && (props.max = this.max);
         this.step && (props.step = this.step);
+        this.type === 'range' && (props.title = this.getValue());
 
         return props;
     }
