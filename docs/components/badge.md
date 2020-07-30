@@ -50,7 +50,6 @@ A badge is a special label used to call out specific information.
 <ks-badge color="dark" hollow>dark</ks-badge>
 ```
 
-
 ## Properties
 
 | Property | Attribute | Type   | Default | Description |

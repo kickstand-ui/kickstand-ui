@@ -36,14 +36,7 @@ Accordions are used to group and toggle (expand/collapse) sections of content
 </ks-accordion>
 ```
 
-## Properties
-
-| Property   | Attribute  | Type      | Default     | Description |
-| ---------- | ---------- | --------- | ----------- | ----------- |
-| `expanded` | `expanded` | `boolean` | `false`     | manually control a slide's visibility |
-| `heading`  | `heading`  | `string`  | `undefined` | setting the slide heading's text |
-
-### Expanded
+## Expanded
 
 ```html
 <!-- setting it in markup -->
@@ -61,25 +54,7 @@ Accordions are used to group and toggle (expand/collapse) sections of content
 </ks-accordion>
 ```
 
-### Using JavaScript
-
-```html
-<ks-accordion>
-    <ks-accordion-slide heading="Heading Text" id="slide_1">
-        ...
-    </ks-accordion-slide>
-</ks-accordion>
-
-<script>
-    let slide1 = document.querySelector('#slide_1');
-    slide1.expanded = true;
-    slide1.heading = "Michael Gary Scott";
-</script>
-```
-
-## Methods
-
-### `toggleSlide() => Promise<void>`
+## Toggle Slide
 
 <br />
 Rather than expanding and collapsing the slide by setting the `expanded` property, you can use the `toggleSlide()`method.
@@ -97,3 +72,17 @@ Rather than expanding and collapsing the slide by setting the `expanded` propert
 </script>
 ```
 
+## Properties
+
+| Property   | Attribute  | Type      | Default     | Description |
+| ---------- | ---------- | --------- | ----------- | ----------- |
+| `expanded` | `expanded` | `boolean` | `false`     | manually control a slide's visibility |
+| `heading`  | `heading`  | `string`  | `undefined` | setting the slide heading's text |
+
+## Methods
+
+### `toggleSlide() => Promise<void>`
+
+#### Returns
+
+Type: `Promise<void>`
