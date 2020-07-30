@@ -224,6 +224,20 @@ When the `clickable` attribute is added, the entire card will now be clickable
 
 Adding these attributes will add a `<header>` element to the body of the card to wrap the title and subtitle.
 
+## Accessibility
+
+### ks-card
+
+Since cards tend to be stand-alone content from the main content, the `<ks-card>` element has the `role="article"` attribute.
+
+### ks-card-body
+
+When using the `card-title` and `card-subtitle` attributes, they will be wrapped in a `<heading>` tag to provide good semantics and structure for assistive technologies.
+
+### ks-card-footer
+
+The footer has the `role="contentinfo"` attribute added to it to provide assistive technologies with a landmark to let it know they have reached the end of the article and there is additional information or links that pertain to it.
+
 ## Properties
 
 ### `<ks-card>`
@@ -248,17 +262,3 @@ Adding these attributes will add a `<header>` element to the body of the card to
 ### `<ks-card-footer>`
 
 There are no custom properties for the `<ks-card-footer>` element.
-
-## Accessibility
-
-### ks-card
-
-Since cards tend to be stand-alone content from the main content, the `<ks-card>` element has the `role="article"` attribute.
-
-### ks-card-body
-
-When using the `card-title` and `card-subtitle` attributes, they will be wrapped in a `<heading>` tag to provide good semantics and structure for assistive technologies.
-
-### ks-card-footer
-
-The footer has the `role="contentinfo"` attribute added to it to provide assistive technologies with a landmark to let it know they have reached the end of the article and there is additional information or links that pertain to it.

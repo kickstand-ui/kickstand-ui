@@ -1,7 +1,7 @@
 # Carousel
 
 <div class="my-xl">
-    <ks-carousel autoplay>
+    <ks-carousel>
         <ks-carousel-slide
             alt="Jim Pranks Dwight"
             src="/images/demo/stapler_in_jello.jpg"
@@ -36,7 +36,7 @@
 </div>
 
 ```html
-<ks-carousel autoplay>
+<ks-carousel>
     <ks-carousel-slide
         alt="Jim Pranks Dwight"
         src="/images/demo/stapler_in_jello.jpg"
@@ -69,6 +69,10 @@
     </ks-carousel-slide>
 </ks-carousel>
 ```
+
+:::tip Note
+Before using a carousel, please consider an alternate way of displaying content to your users. Carousel engagement is incredibly low, accessibility is difficult to get right, and can be distracting from your message. For more information, check out [shouldiuseacarousel.com](http://shouldiuseacarousel.com/).
+:::
 
 ## Hide Indicators
 
@@ -301,6 +305,18 @@ There are a number of great properties available for `<ks-carousel-slide>`, but 
     </tr>
 </table>
 
+## Accessibility
+
+:::warning
+Carousels, in general, are not very accessible and are not actually very effective ways of displaying content. They should be avoided as much as possible in favor of static relevant images with meaningful content.
+:::
+
+In order to make the carousel _more_ accessible, it is treated like a tab component and the following roles and states have been implemented:
+
+- The slides are assigned `role="tabpanel"` and the indicators are assigned `role="tablist"` and `role="tab"` respectively.
+- The slides are hidden by default (`aria-hidden="true"`) and are set to false when they are selected
+- Indicators are not selected by default (`aria-selected="false"`) and are set to true when the related slide has been selected
+
 ## Properties
 
 ### Carousel Props
@@ -325,15 +341,3 @@ There are a number of great properties available for `<ks-carousel-slide>`, but 
 | `threshold` | `threshold` | `number`                          | `300`       | how soon the lazy-loaded image should load before the component enters the viewport (in pixels)            |
 | `clickable` | `clickable` | `boolean`                         | `false`     | makes entire slide clickable |
 | `href`      | `href`      | `string`                          | `undefined` | where to link the slide to |
-
-## Accessibility
-
-:::warning
-Carousels, in general, are not very accessible and are not actually very effective ways of displaying content. They should be avoided as much as possible in favor of static relevant images with meaningful content.
-:::
-
-In order to make the carousel _more_ accessible, it is treated like a tab component and the following roles and states have been implemented:
-
-- The slides are assigned `role="tabpanel"` and the indicators are assigned `role="tablist"` and `role="tab"` respectively.
-- The slides are hidden by default (`aria-hidden="true"`) and are set to false when they are selected
-- Indicators are not selected by default (`aria-selected="false"`) and are set to true when the related slide has been selected

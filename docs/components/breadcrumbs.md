@@ -20,6 +20,10 @@ Breadcrumbs are a navigation tool to provide a visual reference to the current p
 </ks-breadcrumbs>
 ```
 
+## Accessibility
+
+The last item in the breadcrumb will have the attribute `aria-current="page"` to indicate the page they are on, so be sure that the page the user is currently on is included as the last item in the breadcrumb.
+
 ## Properties
 
 ### `<ks-breadcrumbs>`
@@ -30,8 +34,4 @@ The `<ks-breadcrumbs>` has no custom properties.
 
 | Property | Attribute | Type     | Default     | Description |
 | -------- | --------- | -------- | ----------- | ----------- |
-| `href`    | `href`     | `string` | `undefined` | url of the page in the hierarchy |
-
-## Accessibility
-
-The last item in the breadcrumb will have the attribute `aria-current="page"` to indicate the page they are on, so be sure that the page the user is currently on is included as the last item in the breadcrumb.
+| `href`   | `href`    | `string` | `undefined` | url of the page in the hierarchy |

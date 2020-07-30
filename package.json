@@ -34,6 +34,6 @@
     "homepage": "https://kickstand-ui.com/",
     "license": "MIT",
     "dependencies": {
-        "kickstand-ui": "^0.33.0"
+        "kickstand-ui": "^0.35.0"
     }
 }
