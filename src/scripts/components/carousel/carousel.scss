@@ -6,19 +6,24 @@
 
     .slides {
         position: relative;
-        @include bg-color(light, darker);
+        width: 100%;
+        overflow: hidden;
 
         .slide {
-            display: none;
-            @include fade-out;
+            position: relative;
+            float: left;
+            width: 100%;
+            margin-right: -100%;
+            backface-visibility: hidden;
+            visibility: hidden;
+            opacity: 0;
+            @include transition-ease-in-out(slow);
 
             &[aria-hidden="false"] {
+                visibility: visible;
                 display: block;
-                @include fade-in;
-            }
-
-            .slide-image {
-                width: 100%;
+                opacity: 1;
+                @include transition-ease-in-out(slow);
             }
 
             &.pointer {
@@ -27,58 +32,67 @@
                     outline-offset: spacing(xxs);
                 }
             }
-        }
 
-        .content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            color: white;
-            padding-left: 3.75rem;
-            padding-right: 3.75rem;
-            text-shadow: 2px 2px 4px color(dark);
-            @include my(xxl);
-
-            >* {
-                color: white;
-            }
-        }
-
-        .control {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 10%;
-            color: color(white);
-            background-color: transparent;
-            border: none;
-            display: flex;
-            outline: 0;
-            @include font-size(xl);
-
-            &:focus,
-            &:hover {
-                outline: 0;
-            }
-
-            &.prev {
-                left: 0;
-            }
-
-            &.next {
-                right: 0;
-            }
-
-            .ks-button {
-                outline: 0;
+            .slide-image {
                 width: 100%;
+
+                img {
+                    display: block;
+                    width: 100%;
+                }
             }
 
-            svg {
-                filter: drop-shadow(0 0 0.25rem color(dark));
+            .content {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                color: white;
+                padding-left: 3.75rem;
+                padding-right: 3.75rem;
+                text-shadow: 2px 2px 4px color(dark);
+                @include my(xxl);
+
+                >* {
+                    color: white;
+                }
             }
+        }
+    }
+
+    .control {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 10%;
+        color: color(white);
+        background-color: transparent;
+        border: none;
+        display: flex;
+        outline: 0;
+        @include font-size(xl);
+
+        &:focus,
+        &:hover {
+            outline: 0;
+        }
+
+        &.prev {
+            left: 0;
+        }
+
+        &.next {
+            right: 0;
+        }
+
+        .ks-button {
+            outline: 0;
+            width: 100%;
+        }
+
+        svg {
+            filter: drop-shadow(0 0 0.25rem color(dark));
         }
     }
 
@@ -86,6 +100,12 @@
         position: absolute;
         display: flex;
         justify-content: space-between;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        @include z-index(xs);
     }
 
     .indicators {
@@ -93,9 +113,12 @@
         justify-content: center;
         position: absolute;
         bottom: 0;
-        width: 100%;
-        @include mx(auto);
-        @include my(md);
+        right: 0;
+        left: 0;
+        margin-right: 10%;
+        margin-left: 10%;
+        @include mb(xxxl);
+        @include z-index(sm);
 
         .indicator {
             height: spacing(lg);
@@ -103,17 +126,17 @@
             background-color: transparent;
             filter: drop-shadow(0 0 0.25rem color(dark));
             @include border(none);
-            @include border-b($size: xxs, $color: light, $opacity: 0.5);
+            @include border-b($size: xxs, $color: light, $variant: lighter, $opacity: 0.7);
             @include mx(sm);
             @include transition-ease-in-out(fast);
 
             @include hover-focus {
                 outline: 0;
-                @include border-b($size: xxs, $color: light, $opacity: 0.75);
+                @include border-b($size: xxs, $color: light, $variant: lighter, $opacity: 0.9);
             }
 
             &[aria-selected="true"] {
-                @include border-b($size: xxs, $color: light);
+                @include border-b($size: xxs, $color: light, $variant: light);
                 @include transition-ease-in-out(fast);
             }
         }
@@ -121,8 +144,9 @@
 
     .thumbnails {
         display: flex;
+        position: absolute;
 
-        .indicator {
+        .thumbnail {
             flex-grow: 1;
             flex-basis: 0;
             opacity: 0.5;

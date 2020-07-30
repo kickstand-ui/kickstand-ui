@@ -14,18 +14,16 @@ export class Carousel implements ComponentInterface {
     @Prop() thumbnails: boolean = false;
 
     @State() slideIndex: number = 0;
-    @State() $slides: HTMLKsCarouselSlideElement[];
-    @State() $indicators: Element[];
     @State() slideTimer: any;
-    @State() slideDirection: string = 'slide-left';
 
+    $slides: HTMLKsCarouselSlideElement[];
+    $indicators: Element[] = [];
 
     connectedCallback() {
         this.$slides = Array.from(this.$el.querySelectorAll('ks-carousel-slide'));
     }
 
     componentDidLoad() {
-        this.$indicators = Array.from(this.$el.getElementsByClassName('indicator'));
         this.goToSlide();
     }
 
@@ -82,29 +80,34 @@ export class Carousel implements ComponentInterface {
     }
 
     render() {
-        let controls = [
-            <ks-button display="link" color="light" class="control prev" onClick={this.prevSlide.bind(this)}>
-                <ks-icon class="control-icon text-xl" icon="chevron" rotate="90" />
-                <span class="sr-only">previous slide</span>
-            </ks-button>,
-            <ks-button display="link" color="light" class="control next" onClick={this.nextSlide.bind(this)}>
-                <ks-icon class="control-icon text-xl" icon="chevron" rotate="-90" />
-                <span class="sr-only">next slide</span>
-            </ks-button>
-        ];
+        let indicatorClasses = {
+            'indicators': true,
+            'sr-only': this.hideIndicators
+        };
         let indicators = (
-            <div class={`indicators ${this.hideIndicators && 'sr-only'}`} role="tablist">
+            <div class={indicatorClasses} role="tablist">
                 {this.$slides.map((slide, index) =>
-                    <button id={`indicator_for_${slide.id}`} class="indicator" onClick={() => this.selectSlide(index)} role="tab" aria-selected="false" aria-controls={slide.id}>
+                    <button id={`indicator_for_${slide.id}`} class="indicator" onClick={() => this.selectSlide(index)} role="tab" aria-selected="false" aria-controls={slide.id} ref={el => this.$indicators.push(el)}>
                         <span class="sr-only">Got to slide {slide ? index + 1 : ''}</span>
                     </button>
                 )}
             </div>
         );
+        let controls = [
+            !this.hideControls && <ks-button display="link" color="light" class="control prev" onClick={this.prevSlide.bind(this)}>
+                <ks-icon class="control-icon text-xl" icon="chevron" rotate="90" />
+                <span class="sr-only">previous slide</span>
+            </ks-button>,
+            (!this.hideIndicators && !this.thumbnails) && indicators,
+            !this.hideControls && <ks-button display="link" color="light" class="control next" onClick={this.nextSlide.bind(this)}>
+                <ks-icon class="control-icon text-xl" icon="chevron" rotate="-90" />
+                <span class="sr-only">next slide</span>
+            </ks-button>,
+        ];
         let thumbnailList = (
             <div class="thumbnails" role="tablist">
                 {this.$slides.map((slide, index) =>
-                    <button id={`indicator_for_${slide.id}`} class="indicator" onClick={() => this.selectSlide(index)} role="tab" aria-selected="false" aria-controls={slide.id}>
+                    <button id={`indicator_for_${slide.id}`} class="thumbnail" onClick={() => this.selectSlide(index)} role="tab" aria-selected="false" aria-controls={slide.id} ref={el => this.$indicators.push(el)}>
                         <span class="sr-only">Got to slide {slide ? index + 1 : ''}</span>
                         <ks-img lazy src={slide.src} alt={`slide ${slide ? index + 1 : ''} image`} />
                     </button>
@@ -113,12 +116,11 @@ export class Carousel implements ComponentInterface {
         );
 
         return (
-            <Host class={`ks-carousel`}>
+            <Host class="ks-carousel">
                 <div class="slides">
                     <slot />
-                    {!this.hideControls && controls}
                 </div>
-                {!this.thumbnails && indicators}
+                {controls}
                 {this.thumbnails && thumbnailList}
             </Host>
         );
