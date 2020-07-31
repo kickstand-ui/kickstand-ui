@@ -98,7 +98,7 @@ export class Carousel implements ComponentInterface {
                 <ks-icon class="control-icon text-xl" icon="chevron" rotate="90" />
                 <span class="sr-only">previous slide</span>
             </ks-button>,
-            (!this.hideIndicators && !this.thumbnails) && indicators,
+            !this.thumbnails && indicators,
             !this.hideControls && <ks-button display="link" color="light" class="control next" onClick={this.nextSlide.bind(this)}>
                 <ks-icon class="control-icon text-xl" icon="chevron" rotate="-90" />
                 <span class="sr-only">next slide</span>
@@ -117,10 +117,12 @@ export class Carousel implements ComponentInterface {
 
         return (
             <Host class="ks-carousel">
-                <div class="slides">
-                    <slot />
+                <div class="slide-wrapper">
+                    <div class="slides">
+                        <slot />
+                    </div>
+                    {controls}
                 </div>
-                {controls}
                 {this.thumbnails && thumbnailList}
             </Host>
         );

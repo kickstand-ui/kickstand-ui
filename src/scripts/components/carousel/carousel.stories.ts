@@ -27,6 +27,7 @@ export const carouselOptions = () => {
                 <h3>Dwight Fights Himself</h3>
             </ks-carousel-slide>
         </ks-carousel>
+        <p>Here is some content</p>
     `);
 };
 
