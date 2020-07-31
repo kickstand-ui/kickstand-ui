@@ -57,10 +57,10 @@ export class FormField implements ComponentInterface {
         | 'url' = 'text';
     @Prop() defaultErrorMessage: string = 'The value entered is not valid.';
     @Prop() badInputErrorMessage: string = 'There was a problem processing the value.';
-    @Prop() patternErrorMessage: string = 'There was a problem processing the value.';
+    @Prop() patternErrorMessage: string = 'The value was not in the right format.';
     @Prop() maxErrorMessage: string = `Your value must be no greater than ${this.max}.`;
     @Prop() minErrorMessage: string = `Your value must be no less than ${this.min}.`;
-    @Prop() stepErrorMessage: string = `Your value must be divisible by ${this.step}.`;
+    @Prop() stepErrorMessage: string = `Your value must be divisible by ${this.step || 1}.`;
     @Prop() maxlengthErrorMessage: string = `Your value must be no more than ${this.maxlength} characters.`;
     @Prop() minlengthErrorMessage: string = `Your value must be at least ${this.minlength} characters.`;
     @Prop() typeErrorMessage: string = `Your value must be a valid ${this.type === 'tel' ? 'telephone number' : this.type}.`;
@@ -87,9 +87,8 @@ export class FormField implements ComponentInterface {
 
     @Watch('value')
     protected async valueChanged() {
-        if (this.$input && this.$input.value !== this.value) {
+        if (this.$input && this.$input.value !== this.value)
             this.$input.value = this.value.toString();
-        }
 
         if (this.validateOnInput)
             this.invalid = !this.$input.checkValidity();
@@ -273,84 +272,84 @@ export class FormField implements ComponentInterface {
                 </datalist>
             ];
 
+        let formField = {
+            'checkbox': [
+                <div class="error-message text-danger" role="alert" aria-live="assertive">
+                    {(this.invalid && !this.disabled) && <div class="error-text">
+                        <ks-icon icon="danger" class="mr-xs" />
+                        <span>{this.getErrorMessage()}</span>
+                    </div>}
+                </div>,
+                <ks-checkbox
+                    label={this.label}
+                    checked={this.checked}
+                    tooltip-text={this.tooltipText}
+                    required={this.required}
+                    required-text={this.requiredText}
+                    name={this.getInputName()}
+                    onChanged={e => this.handleComponentChange(e)}
+                    ref={el => this.$checkbox = el}
+                />
+            ],
+            'checklist': (
+                <ks-checklist
+                    label={this.label}
+                    tooltip-text={this.tooltipText}
+                    required={this.required}
+                    required-text={this.requiredText}
+                    required-error-message={this.requiredErrorMessage}
+                    type="checkbox"
+                    name={this.getInputName()}
+                    help-text={this.helpText}
+                    invalid={this.invalid}
+                    disabled={this.disabled}
+                    ref={el => this.$checklist = el}
+                    onChecked={e => this.handleComponentChange(e)}
+                >
+                    <slot />
+                </ks-checklist>
+            ),
+            'radiolist': (
+                <ks-checklist
+                    label={this.label}
+                    tooltip-text={this.tooltipText}
+                    required={this.required}
+                    required-text={this.requiredText}
+                    required-error-message={this.requiredErrorMessage}
+                    type="radio"
+                    name={this.getInputName()}
+                    help-text={this.helpText}
+                    invalid={this.invalid}
+                    disabled={this.disabled}
+                    ref={el => this.$checklist = el}
+                    onChecked={e => this.handleComponentChange(e)}
+                >
+                    <slot />
+                </ks-checklist>
+            )
+        }[this.type] || (
+                [
+                    <label id={labelId} class={labelClasses} htmlFor={fieldId}>
+                        <span class="field-label">
+                            {this.label}
+                            {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText}>*</abbr>}
+                            {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size="md" text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info text-xs" /></ks-tooltip>}
+                        </span>
+                        <span class="help-text">{this.helpText}</span>
+                        <span class="error-message text-danger" role="alert" aria-live="assertive">
+                            {(this.invalid && !this.disabled) && <span class="error-text">
+                                <ks-icon icon="danger" class="mr-xs" />
+                                <span>{this.getErrorMessage()}</span>
+                            </span>}
+                        </span>
+                    </label>,
+                    (fieldInput)
+                ]
+            );
+
         return (
             <Host class={classes}>
-                {
-                    {
-                        'checkbox': [
-                            <div class="error-message text-danger" role="alert" aria-live="assertive">
-                                {(this.invalid && !this.disabled) && <div class="error-text">
-                                    <ks-icon icon="danger" class="mr-xs" />
-                                    <span>{this.getErrorMessage()}</span>
-                                </div>}
-                            </div>,
-                            <ks-checkbox
-                                label={this.label}
-                                checked={this.checked}
-                                tooltip-text={this.tooltipText}
-                                required={this.required}
-                                required-text={this.requiredText}
-                                name={this.getInputName()}
-                                onChanged={e => this.handleComponentChange(e)}
-                                ref={el => this.$checkbox = el}
-                            />
-                        ],
-                        'checklist': (
-                            <ks-checklist
-                                label={this.label}
-                                tooltip-text={this.tooltipText}
-                                required={this.required}
-                                required-text={this.requiredText}
-                                required-error-message={this.requiredErrorMessage}
-                                type="checkbox"
-                                name={this.getInputName()}
-                                help-text={this.helpText}
-                                invalid={this.invalid}
-                                disabled={this.disabled}
-                                ref={el => this.$checklist = el}
-                                onChecked={e => this.handleComponentChange(e)}
-                            >
-                                <slot />
-                            </ks-checklist>
-                        ),
-                        'radiolist': (
-                            <ks-checklist
-                                label={this.label}
-                                tooltip-text={this.tooltipText}
-                                required={this.required}
-                                required-text={this.requiredText}
-                                required-error-message={this.requiredErrorMessage}
-                                type="radio"
-                                name={this.getInputName()}
-                                help-text={this.helpText}
-                                invalid={this.invalid}
-                                disabled={this.disabled}
-                                ref={el => this.$checklist = el}
-                                onChecked={e => this.handleComponentChange(e)}
-                            >
-                                <slot />
-                            </ks-checklist>
-                        )
-                    }[this.type] || (
-                        [
-                            <label id={labelId} class={labelClasses} htmlFor={fieldId}>
-                                <span class="field-label">
-                                    {this.label}
-                                    {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText}>*</abbr>}
-                                    {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size="md" text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info text-xs" /></ks-tooltip>}
-                                </span>
-                                <span class="help-text">{this.helpText}</span>
-                                <span class="error-message text-danger" role="alert" aria-live="assertive">
-                                    {(this.invalid && !this.disabled) && <span class="error-text">
-                                        <ks-icon icon="danger" class="mr-xs" />
-                                        <span>{this.getErrorMessage()}</span>
-                                    </span>}
-                                </span>
-                            </label>,
-                            (fieldInput)
-                        ]
-                    )
-                }
+                {formField}
             </Host>
         );
     }
