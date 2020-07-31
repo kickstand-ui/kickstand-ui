@@ -4,147 +4,150 @@
     display: block;
     position: relative;
 
-    .slides {
+    .slide-wrapper {
         position: relative;
-        width: 100%;
-        overflow: hidden;
-
-        .slide {
+        
+        .slides {
             position: relative;
-            float: left;
             width: 100%;
-            margin-right: -100%;
-            backface-visibility: hidden;
-            visibility: hidden;
-            opacity: 0;
-            @include transition-ease-in-out(slow);
+            overflow: hidden;
 
-            &[aria-hidden="false"] {
-                visibility: visible;
-                display: block;
-                opacity: 1;
-                @include transition-ease-in-out(slow);
-            }
-
-            &.pointer {
-                &:focus-within {
-                    outline: spacing(xxxs) dashed color(dark);
-                    outline-offset: spacing(xxs);
-                }
-            }
-
-            .slide-image {
+            .slide {
+                position: relative;
+                float: left;
                 width: 100%;
+                margin-right: -100%;
+                backface-visibility: hidden;
+                visibility: hidden;
+                opacity: 0;
+                @include transition-ease-in-out(slow);
 
-                img {
+                &[aria-hidden="false"] {
+                    visibility: visible;
                     display: block;
+                    opacity: 1;
+                    @include transition-ease-in-out(slow);
+                }
+
+                &.pointer {
+                    &:focus-within {
+                        outline: spacing(xxxs) dashed color(dark);
+                        outline-offset: spacing(xxs);
+                    }
+                }
+
+                .slide-image {
                     width: 100%;
+
+                    img {
+                        display: block;
+                        width: 100%;
+                    }
                 }
-            }
 
-            .content {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                color: white;
-                padding-left: 3.75rem;
-                padding-right: 3.75rem;
-                text-shadow: 2px 2px 4px color(dark);
-                @include my(xxl);
-
-                >* {
+                .content {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
                     color: white;
+                    padding-left: 3.75rem;
+                    padding-right: 3.75rem;
+                    text-shadow: 2px 2px 4px color(dark);
+                    @include my(xxl);
+
+                    >* {
+                        color: white;
+                    }
                 }
             }
         }
-    }
 
-    .control {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 10%;
-        color: color(white);
-        background-color: transparent;
-        border: none;
-        display: flex;
-        outline: 0;
-        @include font-size(xl);
-
-        &:focus,
-        &:hover {
-            outline: 0;
-        }
-
-        &.prev {
-            left: 0;
-        }
-
-        &.next {
-            right: 0;
-        }
-
-        .ks-button {
-            outline: 0;
-            width: 100%;
-        }
-
-        svg {
-            filter: drop-shadow(0 0 0.25rem color(dark));
-        }
-    }
-
-    .controls {
-        position: absolute;
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        @include z-index(xs);
-    }
-
-    .indicators {
-        display: flex;
-        justify-content: center;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        margin-right: 10%;
-        margin-left: 10%;
-        @include mb(xxxl);
-        @include z-index(sm);
-
-        .indicator {
-            height: spacing(lg);
-            width: 1.25rem;
+        .control {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 10%;
+            color: color(white);
             background-color: transparent;
-            filter: drop-shadow(0 0 0.25rem color(dark));
-            @include border(none);
-            @include border-b($size: xxs, $color: light, $variant: lighter, $opacity: 0.7);
-            @include mx(sm);
-            @include transition-ease-in-out(fast);
+            border: none;
+            display: flex;
+            outline: 0;
+            @include font-size(xl);
 
-            @include hover-focus {
+            &:focus,
+            &:hover {
                 outline: 0;
-                @include border-b($size: xxs, $color: light, $variant: lighter, $opacity: 0.9);
             }
 
-            &[aria-selected="true"] {
-                @include border-b($size: xxs, $color: light, $variant: light);
+            &.prev {
+                left: 0;
+            }
+
+            &.next {
+                right: 0;
+            }
+
+            .ks-button {
+                outline: 0;
+                width: 100%;
+            }
+
+            svg {
+                filter: drop-shadow(0 0 0.25rem color(dark));
+            }
+        }
+
+        .controls {
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            @include z-index(xs);
+        }
+
+        .indicators {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin-right: 10%;
+            margin-left: 10%;
+            @include mb(xxxl);
+            @include z-index(sm);
+
+            .indicator {
+                height: spacing(lg);
+                width: 1.25rem;
+                background-color: transparent;
+                filter: drop-shadow(0 0 0.25rem color(dark));
+                @include border(none);
+                @include border-b($size: xxs, $color: light, $variant: lighter, $opacity: 0.7);
+                @include mx(sm);
                 @include transition-ease-in-out(fast);
+
+                @include hover-focus {
+                    outline: 0;
+                    @include border-b($size: xxs, $color: light, $variant: lighter, $opacity: 0.9);
+                }
+
+                &[aria-selected="true"] {
+                    @include border-b($size: xxs, $color: light, $variant: light);
+                    @include transition-ease-in-out(fast);
+                }
             }
         }
     }
 
     .thumbnails {
         display: flex;
-        position: absolute;
 
         .thumbnail {
             flex-grow: 1;
