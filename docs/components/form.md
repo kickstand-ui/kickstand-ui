@@ -101,6 +101,12 @@ You can also manually change the validation state of you form by using the `inva
 Client-side validation is not a replacement for server-side validation. Be sure that you also validate data coming from the client on the server to insure data integrity and the safety of your application.
 :::
 
+## Accessibility
+
+The form itself is fairly straight forward, but one point of interest for accessibility is that the form error message is using the [`<ks-alert>`](/components/alert.html) component, which means that it has the `role="alert"` as well as the `aria-live="assertive"`.
+
+The error message will also be accompanied by an icon for those users that are not able to distinguish the error from the colored text.
+
 ## Properties
 
 | Property       | Attribute       | Description                                                                          | Type                                            | Default                                                                                  |

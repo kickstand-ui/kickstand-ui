@@ -195,6 +195,14 @@ There may be an occasion where you need prevent the drop-down from closing when 
 </div>
 ```
 
+## Accessibility
+
+The dropdown button itself has a number of accessibility features to provide users with the information they need to interact with the component such as `aria-haspopup` (to identify that the control has hidden content), `aria-expanded` (to signify if the dropdown content is displayed), and `aria-controls` (to associate the button with the dropdown content).
+
+Once the dropdown is expanded the focus will be set on the first selectable element. The dropdown can also be close using the `esc` key. If it is used, the focus will be set back on the dropdown button.
+
+If a standard dropdown is used (not a mega-menu), then the dropdown items have the attribute `role="listitem"` so that the user knows they are presented with a list of options.
+
 ## Properties
 
 ### `<ks-dropdown>`

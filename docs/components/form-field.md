@@ -561,6 +561,19 @@ For example, if you have an input that performs a server-side action when the us
 </script>
 ```
 
+## Accessibility
+
+Accessibility was paramount when the Form Field component was designed. Most of the elements of this component utilize native browser features, but the features that have been added were designed with usability and accessibility in mind.
+
+Some of the features include:
+
+- Inputs all use IDs, names, and labels.
+- Labels are associated to with inputs using the `for` attribute.
+- Labels, Help Text, and Error Messages all display above the input to prevent the on-screen keyboard from blocking important text.
+- Error messages use `role="alert"` with the `aria-live="assertive"` to announce when validation errors occur
+- Error messages are accompanied with an icon to help users who cannot distinguish the error message based on color.
+- Default input validation occurs when the user leaves the field in order to prevent premature invalid responses. If a form field is `invalid` the validation will then occur on input to provide realtime feedback to the user when the issue is resolved.
+
 ## Properties
 
 | Property                | Attribute                 | Description | Type                                                                                                            | Default      |

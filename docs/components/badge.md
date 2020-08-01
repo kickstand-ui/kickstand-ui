@@ -50,6 +50,14 @@ A badge is a special label used to call out specific information.
 <ks-badge color="dark" hollow>dark</ks-badge>
 ```
 
+:::warning
+As you can see, some of the `hollow` badges above are hard to see against a white background. Please make sure you use these cautiously and test them for sufficient color contrast.
+:::
+
+## Accessibility
+
+When using the default badge, the background and text colors should have sufficient contrast to meet the WCAG 2.0 AA standard. As noted above, please use caution when using the `hollow` badge and validate the contrast ratio are accessible.
+
 ## Properties
 
 | Property | Attribute | Type   | Default | Description |

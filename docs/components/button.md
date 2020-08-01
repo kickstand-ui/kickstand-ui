@@ -62,6 +62,10 @@ Buttons are used to perform actions in forms, modals, and more. Kickstand UI but
 <ks-button display="link">link button</ks-button>
 ```
 
+:::warning
+The `solid` display option will automatically select and appropriate contrasting color to meet the WCAG 2.0 AA standard, but the other are up to your discretion. Please make sure you use these cautiously and test them for sufficient color contrast.
+:::
+
 ## States
 
 ### Disabled
@@ -163,6 +167,15 @@ If the `href` property is populated, it will change the behavior of therefore ch
 ## Target
 
 The `target` property behaves the same as the standard [HTML attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target). When used, the `<ks-button>` component will automatically add `rel="noreferrer noopener"` for performance and security purposes.
+
+## Accessibility
+
+There are a number of accessibility features built in to the button to promote the a great user experience for all of your users.
+
+- For solid buttons, basic background and text color contrast is built-in to promote readability.
+- Automatic tag selection for links vs buttons promotes good semantics.
+- The `hide-text` property hides the text in the UI, but still makes it available for screen readers.
+- Additional `aria` attributes are available through properties (ex - `controls`, `described-by`, `haspopup`, etc.) to provide you with the controls you need to make your application more accessible.
 
 ## Properties
 

@@ -314,8 +314,8 @@ Carousels, in general, are not very accessible and are not actually very effecti
 In order to make the carousel _more_ accessible, it is treated like a tab component and the following roles and states have been implemented:
 
 - The slides are assigned `role="tabpanel"` and the indicators are assigned `role="tablist"` and `role="tab"` respectively.
-- The slides are hidden by default (`aria-hidden="true"`) and are set to false when they are selected
-- Indicators are not selected by default (`aria-selected="false"`) and are set to true when the related slide has been selected
+- The slides are hidden by default (`aria-hidden="true"`) and are set to `false` when they are selected
+- Indicators are not selected by default (`aria-selected="false"`) and are set to `true` when the related slide has been selected
 
 ## Properties
 
