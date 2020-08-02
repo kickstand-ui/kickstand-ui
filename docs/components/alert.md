@@ -146,7 +146,7 @@ You can add some more structure to your alerts by adding a heading to your using
 
 Alerts have `role="alert"` on the container to signal to assistive technology that they require the user’s immediate attention.
 
-Depending on the color assigned to the warning,it will also change the politeness of the message to screen reader using the `aria-live` attribute:
+Depending on the color assigned to the warning, it will also change the politeness of the message to screen reader using the `aria-live` attribute:
 
 | Color                  | Politeness    |
 | ---------------------- | ------------- |

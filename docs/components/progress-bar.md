@@ -149,6 +149,13 @@ You can control the color of the progress bar to help convey statuses.
     />
 ```
 
+## Accessibility
+
+The progress bar component has several attributes added to it to provide assistive technologies the necessary information to give the user relevant context:
+
+- The component uses `role="progressbar"` to indicate that the user's request has been received and the application is making progress toward completing the requested action.
+- The attributes `aria-valuemin`, `aria-valuemax`, and `aria-valuenow` have been added to provide the context of their progress.
+
 ## Properties
 
 | Property            | Attribute             | Description | Type                                                                                                      | Default        |

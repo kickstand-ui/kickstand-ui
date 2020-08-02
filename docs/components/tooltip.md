@@ -86,6 +86,11 @@ The `text` property sets the content within the tooltip. Something unique about 
 <p>I have fancy <ks-tooltip text="This is <em>really</em> important!">content</ks-tooltip>.</p>
 ```
 
+## Accessibility
+
+- The `<ks-tooltip>` component has the `aria-haspopup="true"` to indicate to assistive technologies that hidden content exists.
+- The tooltip uses `role="tooltip"` so that the content is automatically read to the user when the tooltip is revealed.
+
 ## Properties
 
 | Property         | Attribute         | Description | Type                                        | Default     |

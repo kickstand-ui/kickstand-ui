@@ -168,14 +168,16 @@ You can also programmatically show and hide overlays. It is as simple as using J
         <div class="mt-sm">(I will close in 3 seconds)</div>
     </ks-modal>
     <script>
-        let testButton = document.getElementById('js_button');
-        let testModal = document.getElementById('test_modal');
-        testButton.addEventListener('click', () => {
-            testModal.show();
-            setTimeout(function() {
-                testModal.hide();
-            }, 3000);
-        });
+        (function () {
+            let testButton = document.getElementById('js_button');
+            let testModal = document.getElementById('test_modal');
+            testButton.addEventListener('click', () => {
+                testModal.show();
+                setTimeout(function() {
+                    testModal.hide();
+                }, 3000);
+            });
+        })();
     </script>
 </div>
 
@@ -201,20 +203,34 @@ You can also programmatically show and hide overlays. It is as simple as using J
 </script>
 ```
 
+## Accessibility
+
+The modal component is built using the [`<ks-overlay>`](/components/overlay.html) component and inherits accessibility features from that such as:
+
+- The modal has the `role="dialog"` to help assistive technology identify the modal's content as being grouped and separated from the rest of the page content.
+- When opened, the focus will be set on the first clickable element within the modal.
+- The element that triggered the modal will have the attribute `aria-expanded="true"` automatically added.
+- When the user tabs, the focus will stay isolated within the modal to prevent elements outside the modal from being selected.
+- When the modal is closed, the focus will go back to the element the user was on before the modal was opened so they do not lose their place in the document.
+- Once the modal is closed, the element that triggered the modal will have the attribute `aria-expanded="true"` automatically added.
+- The modal title will be used to label the overlay using the `aria-labelledby` attribute.
+- The modal can be closed using the `esc` key for keyboard users.
+- If you are using the `shows` and `hides` controls on the `<ks-button>` component, the button will automatically be populated with the appropriate `aria-haspopup`, `aria-expanded`, and `aria-controls` attributes on the button.
+
 ## Properties
 
-| Property      | Attribute      | Description | Type           | Default        |
-| ------------- | -------------- | ----------- | -------------- | -------------- |
-| `modalTitle`  | `modal-title`  | text to display with loading icon | `string`        | `undefined` |
-| `preventClose` | `prevent-close` | allows you to require acknowledgement before closing the modal | `boolean`     | `false`    |
-| `size`        | `size`         | the size of the modal            | `"sm"`, `"md"` or `"lg"` | `"md"`         |
+| Property       | Attribute       | Description                                                    | Type                     | Default     |
+| -------------- | --------------- | -------------------------------------------------------------- | ------------------------ | ----------- |
+| `modalTitle`   | `modal-title`   | text to display with loading icon                              | `string`                 | `undefined` |
+| `preventClose` | `prevent-close` | allows you to require acknowledgement before closing the modal | `boolean`                | `false`     |
+| `size`         | `size`          | the size of the modal                                          | `"sm"`, `"md"` or `"lg"` | `"md"`      |
 
 ## Events
 
-| Event    | Description                    | Type               |
-| -------- | ------------------------------ | ------------------ |
-| `hidden` | emitted when modal is hidden   | `CustomEvent<any>` |
-| `shown`  | emitted when modal is shown    | `CustomEvent<any>` |
+| Event    | Description                  | Type               |
+| -------- | ---------------------------- | ------------------ |
+| `hidden` | emitted when modal is hidden | `CustomEvent<any>` |
+| `shown`  | emitted when modal is shown  | `CustomEvent<any>` |
 
 ```html
 <ks-modal id="my_modal">

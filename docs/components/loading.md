@@ -174,6 +174,12 @@ If you are using the [`<ks-button>` element](/components/button.html) you can ta
 <ks-button hides="show_overlay">Hide Overlay</ks-button>
 ```
 
+## Accessibility
+
+The loading icon itself is hidden to screen readers using `aria-hidden="true"` attribute, but the message is announced when the icons is displayed using the `role="alert"` and `aria-live="polite"` attributes.
+
+The loading overlay has the same features, but is also built with the [`<ks-overlay>`](/components/overlay.html) component and takes advantage of its accessibility features. The main feature is that it uses the `role="dialog"` attribute to notify screen readers that a dialog is open when the loading overlay is displayed.
+
 ## Properties
 
 ### Loading

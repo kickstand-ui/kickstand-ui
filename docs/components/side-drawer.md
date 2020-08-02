@@ -119,14 +119,16 @@ You can also programmatically show and hide side-drawers. It is as simple as usi
         <p>I will close in 3 seconds...</p>
     </ks-side-drawer>
     <script>
-        let testButton = document.getElementById('test_button');
-        let testDrawer = document.getElementById('test_drawer');
-        testButton.addEventListener('click', () => {
-            testDrawer.show();
-            setTimeout(function() {
-                testDrawer.hide();
-            }, 3000);
-        });
+        (function(){
+            let testButton = document.getElementById('test_button');
+            let testDrawer = document.getElementById('test_drawer');
+            testButton.addEventListener('click', () => {
+                testDrawer.show();
+                setTimeout(function() {
+                    testDrawer.hide();
+                }, 3000);
+            });
+        })();
     </script>
 </div>
 
@@ -152,6 +154,19 @@ You can also programmatically show and hide side-drawers. It is as simple as usi
 </script>
 ```
 
+## Accessibility
+
+The side-drawer component is built using the [`<ks-overlay>`](/components/overlay.html) component and inherits accessibility features from that such as:
+
+- The side-drawer has the `role="dialog"` to help assistive technology identify the side-drawer's content as being grouped and separated from the rest of the page content.
+- When opened, the focus will be set on the first clickable element within the side-drawer.
+- The element that triggered the side-drawer will have the attribute `aria-expanded="true"` automatically added.
+- When the user tabs, the focus will stay isolated within the side-drawer to prevent elements outside the side-drawer from being selected.
+- When the side-drawer is closed, the focus will go back to the element the user was on before the side-drawer was opened so they do not lose their place in the document.
+- Once the side-drawer is closed, the element that triggered the side-drawer will have the attribute `aria-expanded="true"` automatically added.
+- The side-drawer title will be used to label the side-drawer using the `aria-labelledby` attribute.
+- The side-drawer can be closed using the `esc` key for keyboard users.
+- If you are using the `shows` and `hides` controls on the `<ks-button>` component, the button will automatically be populated with the appropriate `aria-haspopup`, `aria-expanded`, and `aria-controls` attributes on the button.
 
 ## Properties
 

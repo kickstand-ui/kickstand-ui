@@ -1,6 +1,6 @@
 # Overlay
 
-Kickstand UI's Overlay component is designed to display content in a layer above your existing content and is a flexible component used to build other components in UI library like the [loading]('/components/loading.html'), [modal]('/components/modal.html'), and [side drawer]('/components/side-drawer.html') components.
+Kickstand UI's Overlay component is designed to display content in a layer above your existing content and is a flexible component used to build other components in UI library like the [loading](/components/loading.html), [modal](/components/modal.html), and [side drawer](/components/side-drawer.html) components.
 
 <div class="my-xl">
     <ks-button shows="basic_overlay">Show Overlay</ks-button>
@@ -113,14 +113,16 @@ You can also programmatically show and hide overlays. It is as simple as using J
         </div>
     </ks-overlay>
     <script>
-        let testButton = document.getElementById('test_button');
-        let testOverlay = document.getElementById('test_overlay');
-        testButton.addEventListener('click', () => {
-            testOverlay.show();
-            setTimeout(function() {
-                testOverlay.hide();
-            }, 3000);
-        });
+        (function(){
+            let testButton = document.getElementById('test_button');
+            let testOverlay = document.getElementById('test_overlay');
+            testButton.addEventListener('click', () => {
+                testOverlay.show();
+                setTimeout(function() {
+                    testOverlay.hide();
+                }, 3000);
+            });
+        })();
     </script>
 </div>
 
@@ -145,6 +147,21 @@ You can also programmatically show and hide overlays. It is as simple as using J
     });
 </script>
 ```
+
+## Accessibility
+
+The overlay component has a number of built-in accessibility features to make overlay management easier for you:
+
+- The overlay has the `role="dialog"` to help assistive technology identify the overlay's content as being grouped and separated from the rest of the page content.
+- When opened, the focus will be set on the first clickable element within the overlay.
+- The element that triggered the overlay will have the attribute `aria-expanded="true"` automatically added.
+- When the user tabs, the focus will stay isolated within the overlay to prevent elements outside the overlay from being selected.
+- When the overlay is closed, the focus will go back to the element the user was on before the overlay was opened so they do not lose their place in the document.
+- Once the overlay is closed, the element that triggered the overlay will have the attribute `aria-expanded="true"` automatically added.
+- The overlay title will be used to label the overlay using the `aria-labelledby` attribute.
+- The overlay can be closed using the `esc` key for keyboard users.
+- If you are using the `shows` and `hides` controls on the `<ks-button>` component, the button will automatically be populated with the appropriate `aria-haspopup`, `aria-expanded`, and `aria-controls` attributes on the button.
+
 
 ## Properties
 

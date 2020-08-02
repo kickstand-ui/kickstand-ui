@@ -392,6 +392,16 @@ A menu item doesn't have any unique properties that you can set, but it does pro
 </ks-menu-bar>
 ```
 
+## Accessibility
+
+In order for assistive technologies to identify this as a navigational landmark, the menu uses the `role="navigation"` attribute.
+
+For the menu bar colors, basic background and text color contrast is built-in to promote readability and meet the WCAG 2.0 standard, but when using the `inverted` color option, please test to ensure that sufficient color contrast standards are met.
+
+The mobile menu toggle button uses the `aria-haspopup` and `aria-controls` attributes to provide assistive technologies with the information on how to interact with the menu as well as the `aria-expanded` attribute to indicate whether the menu is opened or closed.
+
+The `<ks-menu-item>` also has a built-in feature for identifying if the current page is one of the menu items. If so, the menu item will be assigned the `active` class, but the link item will also the `aria-current="page"` attribute assigned to it to notify assistive technologies that they are currently on that page.
+
 ## Properties
 
 ### `<ks-menu>`

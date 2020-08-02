@@ -72,6 +72,12 @@ Rather than expanding and collapsing the slide by setting the `expanded` propert
 </script>
 ```
 
+## Accessibility
+
+Each of the headings has `role="tab"` and the content body has `role="tabpanel"` to help screen readers identify and associate interactive elements. The header also uses the `aria-controls` attribute to associate the header with the slide content.
+
+When a slide is expanded the header has the attribute `aria-expanded="true"` to communicate to screen readers that the content is visible. Otherwise the `aria-expanded` attribute is set to `false`.
+
 ## Properties
 
 | Property   | Attribute  | Type      | Default     | Description |
