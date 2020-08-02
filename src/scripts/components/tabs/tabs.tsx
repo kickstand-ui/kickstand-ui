@@ -42,8 +42,9 @@ export class Tabs implements ComponentInterface {
         });
     }
 
-    clickHandler(e: UIEvent) {
+    clickHandler(e: UIEvent, index: number) {
         let $tab = e.target as HTMLButtonElement;
+        this.selectedIndex = index;
 
         // Remove all current selected tabs
         this.$tabList
@@ -57,9 +58,7 @@ export class Tabs implements ComponentInterface {
         this.$tabPanels.forEach(p => p.setAttribute("hidden", 'true'));
 
         // Show the selected panel
-        this.$tabPanels
-            .find(tab => tab.id === $tab.getAttribute('aria-controls'))
-            .removeAttribute('hidden');
+        this.$tabPanels[index].removeAttribute('hidden');
     }
 
     keydownHandler(e) {
@@ -109,13 +108,13 @@ export class Tabs implements ComponentInterface {
     render() {
         return (
             <Host class={`ks-tabs align-${this.position}`}>
-                <div 
-                    role="tablist" 
-                    class="tab-list" 
-                    aria-label={this.label} 
-                    ref={el => this.$tabList = el} 
+                <div
+                    role="tablist"
+                    class="tab-list"
+                    aria-label={this.label}
+                    ref={el => this.$tabList = el}
                     onKeyDown={e => this.keydownHandler(e)}
-                    >
+                >
                     {this.$tabPanels.map((tab, index) =>
                         <button
                             role="tab"
@@ -124,7 +123,7 @@ export class Tabs implements ComponentInterface {
                             aria-controls={tab.id || `${this.tabId}_tab_${index}`}
                             id={`${tab.id || `${this.tabId}_${index}`}_tab_button`}
                             tabIndex={index === 0 ? 0 : -1}
-                            onClick={e => this.clickHandler(e)}
+                            onClick={e => this.clickHandler(e, index)}
                         >
                             {tab.tabText}
                         </button>
