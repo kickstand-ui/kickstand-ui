@@ -6,6 +6,7 @@ import { Component, h, Prop, Host, Element, ComponentInterface } from '@stencil/
 })
 export class Tooltip implements ComponentInterface {
     $message: HTMLElement;
+    tooltipId = `tooltip_${tooltipIds++}`;
 
     @Element() $el: HTMLElement;
 
@@ -26,18 +27,22 @@ export class Tooltip implements ComponentInterface {
             'disabled': this.disable
         };
 
-        let props = {
-            tabindex: this.disable ? -1 : 0,
-            ['aria-haspopup']: !this.disable
-        };
+        let wrapperProps = {
+            ['aria-describedby']: !this.disable && this.tooltipId,
+            'class': {
+                'text': !this.hideDecoration
+            }
+        }
 
         return (
-            <Host class={classes} {...props}>
-                <span class={{ 'text': !this.hideDecoration }}>
+            <Host class={classes} tabIndex={this.disable ? -1 : 0}>
+                <span {...wrapperProps}>
                     <slot />
                 </span>
-                {!this.disable && <span class={`message ${this.position} size-${this.size}`} role="tooltip" ref={el => this.$message = el}></span>}
+                {!this.disable && <span id={this.tooltipId} class={`message ${this.position} size-${this.size}`} role="tooltip" ref={el => this.$message = el}></span>}
             </Host>
         );
     }
 }
+
+let tooltipIds = 0;
