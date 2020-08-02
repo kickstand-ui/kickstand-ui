@@ -565,7 +565,7 @@ For example, if you have an input that performs a server-side action when the us
 
 Accessibility was paramount when the Form Field component was designed. Most of the elements of this component utilize native browser features, but the features that have been added were designed with usability and accessibility in mind.
 
-Some of the features include:
+These features include:
 
 - Inputs all use IDs, names, and labels.
 - Labels are associated to with inputs using the `for` attribute.
