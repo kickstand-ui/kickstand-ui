@@ -93,6 +93,14 @@ You can configure the position of the tabs using the `position` property. The av
 </ks-tabs>
 ```
 
+## Accessibility
+
+A number of features have been added to the tab components to make tabs more identifiable and accessible for assistive technologies:
+
+- The `<ks-tab-list>` component has `role="tablist"`
+- The `<ks-tab>` component has `role="tab"` and uses `aria-controls` to associate the tab with the tab panel.
+- The `<ks-tab-panel>` component has `role="tabpanel"` and uses the `aria-labelledby` to use the tab content to describe the tab.
+
 ## Properties
 
 ### `<ks-tabs>`
