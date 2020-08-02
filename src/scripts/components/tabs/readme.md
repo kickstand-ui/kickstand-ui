@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type                                     | Default |
-| ---------- | ---------- | ----------- | ---------------------------------------- | ------- |
-| `position` | `position` |             | `"bottom" \| "left" \| "right" \| "top"` | `'top'` |
+| Property   | Attribute  | Description | Type                                     | Default     |
+| ---------- | ---------- | ----------- | ---------------------------------------- | ----------- |
+| `label`    | `label`    |             | `string`                                 | `undefined` |
+| `position` | `position` |             | `"bottom" \| "left" \| "right" \| "top"` | `'top'`     |
 
 
 ----------------------------------------------

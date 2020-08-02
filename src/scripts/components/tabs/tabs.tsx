@@ -1,112 +1,135 @@
-import { Component, h, Prop, Host, Element } from '@stencil/core';
+import { Component, h, Prop, Host, Element, State, ComponentInterface } from '@stencil/core';
 
 @Component({
     tag: 'ks-tabs',
     styleUrl: 'tabs.scss'
 })
-export class Tabs {
-    $panels: HTMLKsTabPanelElement[];
-    $tabs: HTMLKsTabElement[];
-    $tabLinks: HTMLAnchorElement[];
+export class Tabs implements ComponentInterface {
+    $tabPanels: HTMLKsTabElement[];
+    $tabs: HTMLButtonElement[];
     $tabList: HTMLElement;
-    $firstTab: HTMLElement;
-    $firstPanel: HTMLElement;
     $selectedTab: HTMLElement = null;
-    selectedIndex: number = 0;
-    tabId: string = `tabs-${tabsIds++}`;
-    
+    tabId: string = `tabs_${tabsIds++}`;
+
     @Element() $el: HTMLElement;
 
     @Prop() position: 'top' | 'bottom' | 'left' | 'right' = 'top';
+    @Prop() label: string;
 
-    componentDidLoad() { 
+    @State() selectedIndex: number = 0;
+
+    connectedCallback() {
         this.initElements();
         this.initTabs();
     }
 
+    componentDidLoad() {
+        this.$tabs = Array.from(this.$el.querySelectorAll('[role="tab"]')) as HTMLButtonElement[];
+    }
+
     initElements() {
-        this.$panels = Array.from(this.$el.querySelectorAll('ks-tab-panel')) as HTMLKsTabPanelElement[];
-        this.$tabs = Array.from(this.$el.querySelectorAll('ks-tab')) as HTMLKsTabElement[];
-        this.$tabLinks = Array.from(this.$el.querySelectorAll('.tab-link'));
-        this.$tabList = this.$el.querySelector('.tab-list');
-        this.$firstTab = this.$el.querySelector('.tab-link');
-        this.$firstPanel = this.$el.querySelector('.tab-panel');
+        this.$tabPanels = Array.from(this.$el.querySelectorAll('ks-tab')) as HTMLKsTabElement[];
     }
 
     initTabs() {
-        if (this.$tabLinks.length === 0)
+        if (this.$tabPanels.length === 0)
             return;
-        
-        this.$panels.forEach((panel, index) => {
-            panel.hidden = true;
-            panel.tabId = `${this.tabId}-${index}`;
-        });
 
-        this.setFirstTab();
-
-        this.$tabLinks.forEach((x) => {
-            x.addEventListener('click', (e) => this.clickHandler(e));
-        });
-
-        this.$tabs.forEach((tab, index) => {
-            tab.controls = `${this.tabId}-${index}`;
+        this.$tabPanels.forEach((tab, index) => {
+            tab.hidden = index > 0;
+            tab.id = tab.id || `${this.tabId}_tab_${index}`;
+            tab.setAttribute('aria-labelledby', `${tab.id || `${this.tabId}_tab_${index}`}_button`);
         });
     }
 
-    setFirstTab() {
-        this.$firstTab.setAttribute('aria-selected', 'true');
-        this.$firstPanel.hidden = false;
+    clickHandler(e: UIEvent) {
+        let $tab = e.target as HTMLButtonElement;
+
+        // Remove all current selected tabs
+        this.$tabList
+            .querySelectorAll('[aria-selected="true"]')
+            .forEach(t => t.setAttribute("aria-selected", 'false'));
+
+        // Set this tab as selected
+        $tab.setAttribute("aria-selected", 'true');
+
+        // Hide all tab panels
+        this.$tabPanels.forEach(p => p.setAttribute("hidden", 'true'));
+
+        // Show the selected panel
+        this.$tabPanels
+            .find(tab => tab.id === $tab.getAttribute('aria-controls'))
+            .removeAttribute('hidden');
     }
 
-    clickHandler(e) {
-        e.preventDefault();
+    keydownHandler(e) {
+        // Move right
+        if (e.keyCode === 39 || e.keyCode === 37) {
+            this.deselectTab();
 
-        this.$selectedTab = this.$tabList.querySelector('[aria-selected="true"]');
+            if (e.keyCode === 39) {
+                this.goToNextTab();
+            } else if (e.keyCode === 37) {
+                this.goToPreviousTab();
+            }
 
-        if (e.currentTarget !== this.$selectedTab) {
-            this.switchTab(this.$selectedTab, e.currentTarget);
+            this.selectTab();
         }
     }
 
-    switchTab($oldTab, $newTab) {
-        this.resetOldTab($oldTab);
-        this.setNewTab($newTab);
-    }
-
-    setNewTab($newTab) {
-        $newTab.focus();
-        $newTab.setAttribute('tabindex', '0');
-        $newTab.setAttribute('aria-selected', 'true');
-
-        this.selectedIndex = this.$tabLinks.indexOf($newTab);
-        this.$panels[this.selectedIndex].hidden = false;
-    }
-
-    resetOldTab($oldTab) {
-        $oldTab.removeAttribute('aria-selected');
-
-        let index = this.$tabLinks.indexOf($oldTab);
-        this.$panels[index].hidden = true;
-    }
-
-    getKeyDirection(e) {
-        let index = this.$tabLinks.indexOf(e.currentTarget);
-
-        switch (e.which) {
-            case 37:
-                return index - 1 < 0 ? this.$tabLinks.length - 1 : index - 1;
-            case 39:
-                return index + 1 > this.$tabLinks.length - 1 ? 0 : index + 1;
-            case 40:
-                return -1;
-            default:
-                return null;
+    goToNextTab() {
+        this.selectedIndex++;
+        // If it's the last tab, go to the first
+        if (this.selectedIndex >= this.$tabs.length) {
+            this.selectedIndex = 0;
         }
+    }
+
+    goToPreviousTab() {
+        this.selectedIndex--;
+        // If it's the first tab, move to the last
+        if (this.selectedIndex < 0) {
+            this.selectedIndex = this.$tabs.length - 1;
+        }
+    }
+
+    deselectTab() {
+        this.$tabs[this.selectedIndex].setAttribute("tabindex", '-1');
+        this.$tabs[this.selectedIndex].setAttribute("aria-selected", 'false');
+        this.$tabPanels[this.selectedIndex].setAttribute("hidden", 'true');
+    }
+
+    selectTab() {
+        this.$tabs[this.selectedIndex].setAttribute("tabindex", '0');
+        this.$tabs[this.selectedIndex].setAttribute("aria-selected", 'true');
+        this.$tabPanels[this.selectedIndex].removeAttribute("hidden");
+        this.$tabs[this.selectedIndex].focus();
     }
 
     render() {
         return (
             <Host class={`ks-tabs align-${this.position}`}>
+                <div 
+                    role="tablist" 
+                    class="tab-list" 
+                    aria-label={this.label} 
+                    ref={el => this.$tabList = el} 
+                    onKeyDown={e => this.keydownHandler(e)}
+                    >
+                    {this.$tabPanels.map((tab, index) =>
+                        <button
+                            role="tab"
+                            class="tab-item"
+                            aria-selected={`${index === 0}`}
+                            aria-controls={tab.id || `${this.tabId}_tab_${index}`}
+                            id={`${tab.id || `${this.tabId}_${index}`}_tab_button`}
+                            tabIndex={index === 0 ? 0 : -1}
+                            onClick={e => this.clickHandler(e)}
+                        >
+                            {tab.tabText}
+                        </button>
+                    )}
+                </div>
                 <slot />
             </Host>
         );

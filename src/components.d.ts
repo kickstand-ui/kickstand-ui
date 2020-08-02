@@ -276,21 +276,10 @@ export namespace Components {
         "value": number;
     }
     interface KsTab {
-        "controls": string;
-    }
-    interface KsTabList {
-        "content": boolean;
-        "disable": boolean;
-        "hideDecoration": boolean;
-        "name": string;
-        "position": string;
-        "show": boolean;
-        "size": string;
-    }
-    interface KsTabPanel {
-        "tabId": string;
+        "tabText": string;
     }
     interface KsTabs {
+        "label": string;
         "position": 'top' | 'bottom' | 'left' | 'right';
     }
     interface KsTooltip {
@@ -518,18 +507,6 @@ declare global {
         prototype: HTMLKsTabElement;
         new (): HTMLKsTabElement;
     };
-    interface HTMLKsTabListElement extends Components.KsTabList, HTMLStencilElement {
-    }
-    var HTMLKsTabListElement: {
-        prototype: HTMLKsTabListElement;
-        new (): HTMLKsTabListElement;
-    };
-    interface HTMLKsTabPanelElement extends Components.KsTabPanel, HTMLStencilElement {
-    }
-    var HTMLKsTabPanelElement: {
-        prototype: HTMLKsTabPanelElement;
-        new (): HTMLKsTabPanelElement;
-    };
     interface HTMLKsTabsElement extends Components.KsTabs, HTMLStencilElement {
     }
     var HTMLKsTabsElement: {
@@ -579,8 +556,6 @@ declare global {
         "ks-side-drawer": HTMLKsSideDrawerElement;
         "ks-spin-box": HTMLKsSpinBoxElement;
         "ks-tab": HTMLKsTabElement;
-        "ks-tab-list": HTMLKsTabListElement;
-        "ks-tab-panel": HTMLKsTabPanelElement;
         "ks-tabs": HTMLKsTabsElement;
         "ks-tooltip": HTMLKsTooltipElement;
     }
@@ -850,21 +825,10 @@ declare namespace LocalJSX {
         "value"?: number;
     }
     interface KsTab {
-        "controls"?: string;
-    }
-    interface KsTabList {
-        "content"?: boolean;
-        "disable"?: boolean;
-        "hideDecoration"?: boolean;
-        "name"?: string;
-        "position"?: string;
-        "show"?: boolean;
-        "size"?: string;
-    }
-    interface KsTabPanel {
-        "tabId"?: string;
+        "tabText"?: string;
     }
     interface KsTabs {
+        "label"?: string;
         "position"?: 'top' | 'bottom' | 'left' | 'right';
     }
     interface KsTooltip {
@@ -911,8 +875,6 @@ declare namespace LocalJSX {
         "ks-side-drawer": KsSideDrawer;
         "ks-spin-box": KsSpinBox;
         "ks-tab": KsTab;
-        "ks-tab-list": KsTabList;
-        "ks-tab-panel": KsTabPanel;
         "ks-tabs": KsTabs;
         "ks-tooltip": KsTooltip;
     }
@@ -957,8 +919,6 @@ declare module "@stencil/core" {
             "ks-side-drawer": LocalJSX.KsSideDrawer & JSXBase.HTMLAttributes<HTMLKsSideDrawerElement>;
             "ks-spin-box": LocalJSX.KsSpinBox & JSXBase.HTMLAttributes<HTMLKsSpinBoxElement>;
             "ks-tab": LocalJSX.KsTab & JSXBase.HTMLAttributes<HTMLKsTabElement>;
-            "ks-tab-list": LocalJSX.KsTabList & JSXBase.HTMLAttributes<HTMLKsTabListElement>;
-            "ks-tab-panel": LocalJSX.KsTabPanel & JSXBase.HTMLAttributes<HTMLKsTabPanelElement>;
             "ks-tabs": LocalJSX.KsTabs & JSXBase.HTMLAttributes<HTMLKsTabsElement>;
             "ks-tooltip": LocalJSX.KsTooltip & JSXBase.HTMLAttributes<HTMLKsTooltipElement>;
         }
