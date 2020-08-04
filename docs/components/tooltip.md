@@ -88,8 +88,7 @@ The `text` property sets the content within the tooltip. Something unique about 
 
 ## Accessibility
 
-- The `<ks-tooltip>` component has the `aria-haspopup="true"` to indicate to assistive technologies that hidden content exists.
-- The tooltip uses `role="tooltip"` so that the content is automatically read to the user when the tooltip is revealed.
+The tooltip uses `role="tooltip"` so that the content is automatically read to the user when the tooltip is revealed. The element wrapped in the tooltip that the user hovers or focuses on uses the `aria-describedby` attribute to associate the content with the tooltip.
 
 ## Properties
 

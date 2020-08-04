@@ -1,6 +1,17 @@
 # Installation
 
+## CDN
+
+Installing Kickstand UI is as easy as adding a few tags to your page.
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/kickstand-ui/dist/kickstand-ui/kickstand-ui.css" />
+<script src="https://unpkg.com/kickstand-ui/dist/kickstand-ui.js"></script>
+```
+
 ## Package Manager
+
+If you are using build tools or a framework, you can add it to your project as an NPM package.
 
 ```bash
 npm install --save kickstand-ui
@@ -33,12 +44,3 @@ Once you have installed Kickstand UI, check out the documentation on how to impl
 - [Ember](/getting-started/framework-integrations/ember.html)
 - [React](/getting-started/framework-integrations/react.html)
 - [Vue](/getting-started/framework-integrations/vue.html)
-
-## CDN
-
-You can also add it to your project by dropping a couple of tags.
-
-```html
-<link rel="stylesheet" href="https://unpkg.com/kickstand-ui/dist/kickstand-ui/kickstand-ui.css" />
-<script src="https://unpkg.com/kickstand-ui/dist/kickstand-ui.js"></script>
-```
