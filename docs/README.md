@@ -50,10 +50,11 @@ Supported browsers include **Chrome**, **Chromium-based browsers** (this include
 ## Framework Support
 
 <div class="display-flex space-around my-lg">
-    <img src="/images/frameworks/HTML5.jpg" alt="HTML5" title="HTML5" style="width:auto; height:96px;" />
-    <img src="/images/frameworks/vuejs.png" alt="Vuejs" title="Vuejs" style="width:auto; height:96px;" />
-    <img src="/images/frameworks/react.png" alt="React" title="React" style="width:auto; height:96px;" />
-    <img src="/images/frameworks/angular.png" alt="Angular" title="Angular" style="width:auto; height:96px;" />
+    <img src="/images/frameworks/HTML5.JPG" alt="HTML5" title="HTML5" style="width:auto; height:80px;" />
+    <img src="/images/frameworks/vuejs.png" alt="Vuejs" title="Vuejs" style="width:auto; height:80px;" />
+    <img src="/images/frameworks/react.png" alt="React" title="React" style="width:auto; height:80px;" />
+    <img src="/images/frameworks/angular.png" alt="Angular" title="Angular" style="width:auto; height:80px;" />
+    <img src="/images/frameworks/emberjs.png" alt="Ember" title="Ember" style="width:auto; height:80px;" />
 </div>
 
 Kickstand UI is built with native web components which makes it framework agnostic! You can implement it in any of your projects regardless of the framework you are using.

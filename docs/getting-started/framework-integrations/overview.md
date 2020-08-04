@@ -1,4 +1,4 @@
-# Overview
+# Framework Overview
 
 Integrating Kickstand UI into your framework is not _required_ in order to take advantage of the component library.   However, doing so enables the web components to behave like part of the framework.
 

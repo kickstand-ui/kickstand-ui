@@ -109,7 +109,9 @@ import { DemoComponent } from 'component-library-react';
 
 ## Using SASS
 
+:::tip Note
 If you are using SASS, you do not need to import the CSS file as it is outlined above.
+:::
 
 If your app isn't already configured with SASS, you will first need to install `node-sass`:
 

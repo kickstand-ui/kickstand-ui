@@ -4,13 +4,13 @@ Kickstand UI's grid provides a responsive layout system for you user interfaces.
 
 <div class="my-xl">
     <ks-row>
-        <ks-column class="bg-primary-lighter border border-primary">
+        <ks-column class="bg-light border border-light-darker">
             Column 1
         </ks-column>
-        <ks-column class="bg-primary-lighter border border-primary">
+        <ks-column class="bg-light border border-light-darker">
             Column 2
         </ks-column>
-        <ks-column class="bg-primary-lighter border border-primary">
+        <ks-column class="bg-light border border-light-darker">
             Column 3
         </ks-column>
     </ks-row>
@@ -39,13 +39,13 @@ The default behavior is that each of the columns will be evenly distributed acro
 
 <div class="my-xl">
     <ks-row>
-        <ks-column class="bg-primary-lighter border border-primary col-6">
+        <ks-column class="bg-light border border-light-darker col-6">
             <span>col-6</span>
         </ks-column>
-        <ks-column class="bg-primary-lighter border border-primary">
+        <ks-column class="bg-light border border-light-darker">
             <span>col-3 (automatically)</span>
         </ks-column>
-        <ks-column class="bg-primary-lighter border border-primary">
+        <ks-column class="bg-light border border-light-darker">
             <span>col-3 (automatically)</span>
         </ks-column>
     </ks-row>
@@ -69,13 +69,13 @@ The grid is based on a 12 column system so column sizes can be set using a class
 
 <div class="my-xl">
     <ks-row>
-        <ks-column class="bg-primary-lighter border border-primary col-2">
+        <ks-column class="bg-light border border-light-darker col-2">
             col-2
         </ks-column>
-        <ks-column class="bg-primary-lighter border border-primary col-7">
+        <ks-column class="bg-light border border-light-darker col-7">
             col-7
         </ks-column>
-        <ks-column class="bg-primary-lighter border border-primary col-3">
+        <ks-column class="bg-light border border-light-darker col-3">
             col-3
         </ks-column>
     </ks-row>
@@ -101,17 +101,17 @@ Based on the user's screen size you may want the layout to display differently. 
 
 <div class="my-xl">
     <ks-row>
-        <ks-column class="bg-primary-lighter border border-primary col-2 md:col-6 sm:col-12">
+        <ks-column class="bg-light border border-light-darker col-2 md:col-6 sm:col-12">
             col-2<br>
             md:col-6<br>
             sm:col-12
         </ks-column>
-        <ks-column class="bg-primary-lighter border border-primary col-7 md:col-6 sm:col-12">
+        <ks-column class="bg-light border border-light-darker col-7 md:col-6 sm:col-12">
             col-7<br>
             md:col-6<br>
             sm:col-12
         </ks-column>
-        <ks-column class="bg-primary-lighter border border-primary col-3 md:col-12">
+        <ks-column class="bg-light border border-light-darker col-3 md:col-12">
             col-3<br>
             md:col-12
         </ks-column>
@@ -143,14 +143,14 @@ There are two ways to vertically position content within the grid system - on th
 
 <div class="my-xl">
     <ks-row position="end" style="height:200px;">
-        <ks-column class="bg-primary-lighter border border-primary">
-            <span class="bg-light p-sm">I do what the row says</span>
+        <ks-column class="bg-light border border-light-darker">
+            I do what the row says
         </ks-column>
-        <ks-column class="bg-primary-lighter border border-primary">
-            <span class="bg-light p-sm">I do what the row says</span>
+        <ks-column class="bg-light border border-light-darker">
+            I do what the row says
         </ks-column>
-        <ks-column class="bg-primary-lighter border border-primary" position="start">
-            <span class="bg-light p-sm">I do what I want!</span>
+        <ks-column class="bg-light border border-light-darker" position="start">
+            I do what I want!
         </ks-column>
     </ks-row>
 </div>
@@ -158,13 +158,13 @@ There are two ways to vertically position content within the grid system - on th
 ```html
 <ks-row position="end" style="height:200px;">
     <ks-column>
-        <span class="bg-light p-sm">I do what the row says</span>
+        I do what the row says
     </ks-column>
     <ks-column>
-        <span class="bg-light p-sm">I do what the row says</span>
+        I do what the row says
     </ks-column>
     <ks-column position="start">
-        <span class="bg-light p-sm">I do what I want!</span>
+        I do what I want!
     </ks-column>
 </ks-row>
 ```
@@ -173,17 +173,17 @@ There are two ways to vertically position content within the grid system - on th
 
 <div class="my-xl">
     <ks-row style="height:200px;">
-        <ks-column position="start" class="bg-primary-lighter border border-primary">
-            <span class="bg-light p-sm w-100">Start</span>
+        <ks-column position="start" class="bg-light border border-light-darker">
+            Start
         </ks-column>
-        <ks-column position="center" class="bg-primary-lighter border border-primary">
-            <span class="bg-light p-sm w-100">Center</span>
+        <ks-column position="center" class="bg-light border border-light-darker">
+            Center
         </ks-column>
-        <ks-column position="end" class="bg-primary-lighter border border-primary">
-            <span class="bg-light p-sm w-100">End</span>
+        <ks-column position="end" class="bg-light border border-light-darker">
+            End
         </ks-column>
-        <ks-column position="stretch" class="bg-primary-lighter border border-primary">
-            <span class="bg-light p-sm w-100">Stretch</span>
+        <ks-column position="stretch" class="bg-light border border-light-darker">
+            Stretch
         </ks-column>
     </ks-row>
 </div>
@@ -191,16 +191,16 @@ There are two ways to vertically position content within the grid system - on th
 ```html
 <ks-row position="end" style="height:200px;">
     <ks-column position="start">
-        <span class="bg-light p-sm w-100">Start</span>
+        Start
     </ks-column>
     <ks-column position="center">
-        <span class="bg-light p-sm w-100">Center</span>
+        Center
     </ks-column>
     <ks-column position="end">
-        <span class="bg-light p-sm w-100">End</span>
+        End
     </ks-column>
     <ks-column position="stretch">
-        <span class="bg-light p-sm w-100">Stretch</span>
+        Stretch
     </ks-column>
 </ks-row>
 ```
@@ -211,14 +211,14 @@ You have the ability to remove gutters from the layout using the `no-gutters` pr
 
 <div class="my-xl">
     <ks-row no-gutter>
-        <ks-column class="bg-primary-lighter border border-primary">
-            <span class="bg-light p-sm w-100">Column 1</span>
+        <ks-column class="bg-light border border-light-darker">
+            Column 1
         </ks-column>
-        <ks-column class="bg-primary-lighter border border-primary">
-            <span class="bg-light p-sm w-100">Column 2</span>
+        <ks-column class="bg-light border border-light-darker">
+            Column 2
         </ks-column>
-        <ks-column class="bg-primary-lighter border border-primary">
-            <span class="bg-light p-sm w-100">Column 3</span>
+        <ks-column class="bg-light border border-light-darker">
+            Column 3
         </ks-column>
     </ks-row>
 </div>
@@ -226,13 +226,13 @@ You have the ability to remove gutters from the layout using the `no-gutters` pr
 ```html
 <ks-row no-gutter>
     <ks-column>
-        <span class="bg-light p-sm w-100">Column 1</span>
+        Column 1
     </ks-column>
     <ks-column>
-        <span class="bg-light p-sm w-100">Column 2</span>
+        Column 2
     </ks-column>
     <ks-column>
-        <span class="bg-light p-sm w-100">Column 3</span>
+        Column 3
     </ks-column>
 </ks-row>
 ```

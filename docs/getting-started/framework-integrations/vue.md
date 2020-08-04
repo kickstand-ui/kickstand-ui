@@ -1,15 +1,5 @@
 # Vue
 
-## Adding Styles
-
-### Configuring Your Project
-
-If your app was created using Vue CLI, adding SASS support is as easy as installing `sass-loader`:
-
-```bash
-npm install -D sass-loader sass
-```
-
 ## Adding Components
 
 ::: tip Note
@@ -51,7 +41,18 @@ Kickstand UI components should now be available in any of your Vue components.
 
 ## Using SASS
 
+
+:::tip Note
 If you are using SASS, you do not need to import the CSS file as it is outlined above.
+:::
+
+### Configuring Your Project
+
+If your app was created using Vue CLI, adding SASS support is as easy as installing `sass-loader`:
+
+```bash
+npm install -D sass-loader sass
+```
 
 If you don't already have a main `app.scss` or `styles.scss` file, it is highly recommend that you create one and import it into the `src/main.js` file (it's a good idea to create a separate `scss` folder in `src` and add the global style there - `src/scss/styles.scss`):
 
