@@ -6,47 +6,58 @@ module.exports = {
             "meta",
             {
                 name: "viewport",
-                content:
-                    "width=device-width, initial-scale=1, shrink-to-fit=no",
-            },
+                content: "width=device-width, initial-scale=1, shrink-to-fit=no"
+            }
+        ],
+        [
+            "meta",
             {
                 property: "og:image",
-                content: "/images/kickstand_title_logo.png",
-            },
+                content: "/images/kickstand_title_logo.png"
+            }
+        ],
+        [
+            "meta",
             {
                 property: "og:title",
-                content: "Kickstand UI",
-            },
+                content: "Kickstand UI"
+            }
+        ],
+        [
+            "meta",
             {
                 property: "og:description",
-                content: "The Design System You Can Use Everywhere!",
-            },
+                content: "The Design System You Can Use Everywhere!"
+            }
+        ],
+        [
+            "meta",
             {
                 property: "twitter:image",
-                content: "/images/kickstand_title_logo.png",
-            },
-            { property: "twitter:card", content: "summary_large_image" },
-            { property: "twitter:creator", content: "@stuffbreaker" },
-            { property: "robots", content: "index, follow" },
-            { property: "HandheldFriendly", content: "True" },
+                content: "/images/kickstand_title_logo.png"
+            }
         ],
-        ["link", { rel: "icon", href: "/images/kickstand_icon.png" }],
+        ["meta", { property: "twitter:card", content: "summary_large_image" }],
+        ["meta", { property: "twitter:creator", content: "@stuffbreaker" }],
+        ["meta", { property: "robots", content: "index, follow" }],
+        ["meta", { property: "HandheldFriendly", content: "True" }],
+        ["link", { rel: "icon", href: "/images/kickstand_icon.png" }]
     ],
     themeConfig: {
         logo: "/images/kickstand_logo_small.png",
         nav: [
             {
                 text: "Contact",
-                link: "/contact.html",
+                link: "/contact.html"
             },
             {
                 text: "NPM",
-                link: "https://www.npmjs.com/package/kickstand-ui",
+                link: "https://www.npmjs.com/package/kickstand-ui"
             },
             {
                 text: "GitHub",
-                link: "https://github.com/break-stuff/kickstand-ui",
-            },
+                link: "https://github.com/break-stuff/kickstand-ui"
+            }
         ],
         sidebar: [
             {
@@ -65,10 +76,10 @@ module.exports = {
                             "/getting-started/framework-integrations/angular.html",
                             "/getting-started/framework-integrations/ember.html",
                             "/getting-started/framework-integrations/react.html",
-                            "/getting-started/framework-integrations/vue.html",
-                        ],
-                    },
-                ],
+                            "/getting-started/framework-integrations/vue.html"
+                        ]
+                    }
+                ]
             },
             {
                 title: "Components",
@@ -94,8 +105,8 @@ module.exports = {
                     "/components/side-drawer.html",
                     // "/components/spin-box.html",
                     "/components/tabs.html",
-                    "/components/tooltip.html",
-                ],
+                    "/components/tooltip.html"
+                ]
             },
             // {
             //     title: "Content",
@@ -105,7 +116,7 @@ module.exports = {
             {
                 title: "Layout",
                 collapsable: true,
-                children: ["/layout/grid.html", "/layout/flex-box.html"],
+                children: ["/layout/grid.html", "/layout/flex-box.html"]
             },
             {
                 title: "Utilities",
@@ -117,31 +128,31 @@ module.exports = {
                     "/utilities/layout.html",
                     "/utilities/spacing.html",
                     "/utilities/table.html",
-                    "/utilities/text.html",
-                ],
+                    "/utilities/text.html"
+                ]
             },
             {
                 title: "Theming",
                 collapsable: true,
                 children: [
-                    "/theming/design-tokens.html",
+                    "/theming/design-tokens.html"
                     // "/theming/customizing-components.html"
-                ],
-            },
-        ],
+                ]
+            }
+        ]
     },
     plugins: [
         [
             "@vuepress/google-analytics",
             {
-                ga: "UA-106134260-3", // UA-00000000-0
-            },
+                ga: "UA-106134260-3" // UA-00000000-0
+            }
         ],
         [
             "sitemap",
             {
-                hostname: "https://kickstand-ui.com/",
-            },
-        ],
-    ],
+                hostname: "https://kickstand-ui.com/"
+            }
+        ]
+    ]
 };
