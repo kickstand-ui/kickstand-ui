@@ -34,7 +34,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
             @include font-size(md);
         }
 
-        .logo ~ .tagline {
+        .logo~.tagline {
             @include ml(sm);
         }
     }
@@ -86,13 +86,13 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                 @include my(sm);
 
                 &.active {
-                    > * {
+                    >* {
                         text-decoration: underline;
                         font-weight: 900;
                     }
                 }
 
-                > * {
+                >* {
                     font-weight: 600;
                     white-space: nowrap;
                     text-decoration: none;
@@ -105,11 +105,33 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                 @include hover-focus {
                     text-decoration: underline;
                 }
+
+                .ks-dropdown {
+                    @include m(none);
+
+                    .dropdown-button {
+                        &.link {
+                            cursor: pointer;
+                            border: inherit;
+                            line-height: inherit;
+                            height: inherit;
+                            padding: inherit;
+                            font-weight: bold;
+                            @include m(none);
+
+                            @include hover-focus {
+                                background-color: inherit;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
 
-    @each $key, $value in $theme-colors {
+    @each $key,
+    $value in $theme-colors {
         &.#{$key} {
             @include bg-color($key);
 
@@ -133,13 +155,26 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
             .menu-content {
                 .menu-row {
                     .menu-item {
-                        > * {
+                        >* {
                             color: text-color($key);
 
                             &:focus {
                                 outline: 1px dashed text-color($key);
                             }
                         }
+
+                        .ks-dropdown {
+                            .dropdown-button {
+                                &.link {
+                                    color: text-color($key);
+
+                                    &:focus {
+                                        outline: 1px dashed text-color($key);
+                                    }
+                                }
+                            }
+                        }
+
                     }
                 }
             }
@@ -164,7 +199,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                 .menu-content {
                     .menu-row {
                         .menu-item {
-                            > * {
+                            >* {
                                 color: color($key);
 
                                 &:focus {
@@ -179,7 +214,9 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
     }
 
     &.collapse {
-        @each $key, $value in $breakpoints {
+
+        @each $key,
+        $value in $breakpoints {
             &-#{$key} {
                 @include mq($key) {
                     flex-wrap: wrap;
@@ -215,15 +252,29 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                                 text-align: left;
                                 @include border(none);
 
-                                > * {
+                                >* {
                                     display: block;
                                     width: 100%;
+                                }
+
+                                .ks-dropdown {
+                                    .dropdown-button {
+                                        width: 100%;
+                                        text-align: left;
+                                    }
+
+                                    .dropdown-contents {
+                                        position: relative;
+                                        width: 100vw;
+                                        max-width: 100vw;
+                                        @include mx(-sm);
+                                    }
                                 }
                             }
                         }
                     }
 
-                    [aria-expanded="true"] + .menu-content {
+                    [aria-expanded="true"]+.menu-content {
                         display: block;
                         @include border-t();
                         @include transition-ease-in-out(fast);
