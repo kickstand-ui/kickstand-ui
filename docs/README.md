@@ -25,6 +25,8 @@ The Kickstand UI framework is designed to make your application as usable as pos
 
 In the documentation for each of the components, there is an _Accessibility_ section with all of the relevant information about any features that have been added to make the component more accessible and any information you should know to ensure your application is accessible.
 
+If you feel that an improvement can be made to provide a better user experience or better accessibility, please [reach out](./contact.md).
+
 ## Developer Experience (DX)
 
 One of the priorities of Kickstand UI is to make creating applications as effortless as possible to developers and content creators while keeping it flexible enough to meet your needs. You should be able to prototype and develop feature-rich applications with very little custom code. However, if you need to customize the framework, you can add custom design tokens and CSS to get the look and feel you are looking for.
