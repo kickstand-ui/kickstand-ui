@@ -113,7 +113,7 @@ Based on the user's screen size you may want the layout to display differently. 
         </ks-column>
         <ks-column class="bg-light border border-light-darker col-3 md:col-12">
             col-3<br>
-            md:col-12
+            md:col-12<br><br>
         </ks-column>
     </ks-row>
 </div>
