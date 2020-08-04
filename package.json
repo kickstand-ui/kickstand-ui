@@ -1,6 +1,6 @@
 {
     "name": "kickstand-ui",
-    "version": "0.37.3",
+    "version": "0.37.4",
     "description": "The Design System You Can Use Anywhere",
     "main": "dist/index.js",
     "module": "dist/index.mjs",
@@ -18,8 +18,8 @@
     "scripts": {
         "build": "stencil build --docs",
         "deploy": "stencil build && publish",
-        "dev": "stencil build --dev --watch --serve",
-        "dev:storybook": "run-p start storybook",
+        "serve": "stencil build --dev --watch --serve",
+        "dev": "run-p start storybook",
         "generate": "stencil generate",
         "start": "stencil build --watch",
         "storybook": "start-storybook -p 9009 -s www",
