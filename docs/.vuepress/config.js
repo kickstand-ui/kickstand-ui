@@ -13,7 +13,7 @@ module.exports = {
             "meta",
             {
                 property: "og:image",
-                content: "/images/kickstand_title_logo.png"
+                content: "https://kickstand-ui.com/images/kickstand_logo.png"
             }
         ],
         [
@@ -33,8 +33,8 @@ module.exports = {
         [
             "meta",
             {
-                property: "twitter:image",
-                content: "/images/kickstand_title_logo.png"
+                property: "twitter:image:src",
+                content: "https://kickstand-ui.com/images/kickstand_logo.png"
             }
         ],
         ["meta", { property: "twitter:card", content: "summary_large_image" }],
