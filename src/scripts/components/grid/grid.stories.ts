@@ -74,3 +74,22 @@ export const basicGrid = () => {
     </div>
     `);
 };
+
+export const gridAlignment = () => {
+    return (`
+    <ks-row position="end" style="height:200px;">
+        <ks-column position="start">
+            <span class="bg-light p-sm w-100">Start</span>
+        </ks-column>
+        <ks-column position="center">
+            <span class="bg-light p-sm w-100">Center</span>
+        </ks-column>
+        <ks-column position="end">
+            <span class="bg-light p-sm w-100">End</span>
+        </ks-column>
+        <ks-column position="stretch">
+            <span class="bg-light p-sm w-100">Stretch</span>
+        </ks-column>
+    </ks-row>
+    `);
+};

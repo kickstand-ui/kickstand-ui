@@ -75,19 +75,19 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
         &.align-items {
             &-start {
-                align-items: flex-start;
+                align-self: flex-start;
             }
 
             &-center {
-                align-items: center;
+                align-self: center;
             }
 
             &-end {
-                align-items: flex-end;
+                align-self: flex-end;
             }
 
             &-stretch {
-                align-items: stretch;
+                align-self: stretch;
             }
         }
     }
