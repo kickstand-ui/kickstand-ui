@@ -22,25 +22,25 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
     &.align-content {
         &-start {
             .col {
-                align-items: flex-start;
+                align-self: flex-start;
             }
         }
 
         &-center {
             .col {
-                align-items: center;
+                align-self: center;
             }
         }
 
         &-end {
             .col {
-                align-items: flex-end;
+                align-self: flex-end;
             }
         }
 
         &-stretch {
             .col {
-                align-items: stretch;
+                align-self: stretch;
             }
         }
     }
