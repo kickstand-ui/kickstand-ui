@@ -1,6 +1,6 @@
 # Introduction
 
-## Use Your Design System Anywhere!
+## Use Your Design System _Everywhere_!
 
 Kickstand UI can be easily implemented in any of your projects regardless of the technologies that are already in place.
 

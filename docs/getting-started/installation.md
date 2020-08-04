@@ -38,9 +38,14 @@ Kickstand UI was written using [SASS](https://sass-lang.com/) and to take advant
 
 ## Framework Integrations
 
-Once you have installed Kickstand UI, check out the documentation on how to implement it into your favorite framework:
+<div class="display-flex space-around my-lg">
+    <img src="/images/frameworks/HTML5.JPG" alt="HTML5" title="HTML5" style="width:auto; height:80px;" />
+    <img src="/images/frameworks/vuejs.png" alt="Vuejs" title="Vuejs" style="width:auto; height:80px;" />
+    <img src="/images/frameworks/react.png" alt="React" title="React" style="width:auto; height:80px;" />
+    <img src="/images/frameworks/angular.png" alt="Angular" title="Angular" style="width:auto; height:80px;" />
+    <img src="/images/frameworks/emberjs.png" alt="Ember" title="Ember" style="width:auto; height:80px;" />
+</div>
 
-- [Angular](/getting-started/framework-integrations/angular.html)
-- [Ember](/getting-started/framework-integrations/ember.html)
-- [React](/getting-started/framework-integrations/react.html)
-- [Vue](/getting-started/framework-integrations/vue.html)
+Kickstand UI is built with native web components which makes it framework agnostic! You can implement it in any of your projects regardless of the framework you are using.
+
+<ks-button display="hollow" href="/getting-started/framework-integrations/overview.html">Add To Your Project</ks-button>

@@ -35,12 +35,13 @@ module.exports = {
                 children: [
                     "./getting-started/introduction.html",
                     "./getting-started/installation.html",
+                    "./getting-started/how-to-use.html",
                     {
                         title: "Framework Integrations",
                         children: [
                             "/getting-started/framework-integrations/overview.html",
-                            "/getting-started/framework-integrations/javascript.html",
-                            "/getting-started/framework-integrations/typescript.html",
+                            // "/getting-started/framework-integrations/javascript.html",
+                            // "/getting-started/framework-integrations/typescript.html",
                             "/getting-started/framework-integrations/angular.html",
                             "/getting-started/framework-integrations/ember.html",
                             "/getting-started/framework-integrations/react.html",
