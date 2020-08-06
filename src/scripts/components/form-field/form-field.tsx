@@ -142,8 +142,6 @@ export class FormField implements ComponentInterface {
 
     private getErrorMessage(): string {
         switch (true) {
-            case !this.validityState:
-                return this.defaultErrorMessage;
             case this.validityState?.badInput:
                 return this.badInputErrorMessage;
             case this.validityState?.patternMismatch:
@@ -181,9 +179,9 @@ export class FormField implements ComponentInterface {
         }, this.debounce);
     }
 
-    private onBlur() {
+    private async onBlur() {
         if (!this.validateOnInput) {
-            this.invalid = !this.$input.checkValidity();
+            await this.validate();
 
             if (this.invalid)
                 this.validateOnInput = true;
