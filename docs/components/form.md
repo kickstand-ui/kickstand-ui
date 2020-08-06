@@ -31,37 +31,39 @@ To collect form data easily, a custom event emitter has been added to provide fi
     isValid: false,
     formFieldData: [
         {
-            isValid: false
-            name: "name"
-            validity: ValidityState
-            badInput: false
-            customError: false
-            patternMismatch: false
-            rangeOverflow: false
-            rangeUnderflow: false
-            stepMismatch: false
-            tooLong: false
-            tooShort: false
-            typeMismatch: false
-            valid: false
-            valueMissing: true
+            isValid: false,
+            name: "name",
+            validity: {
+                badInput: false,
+                customError: false,
+                patternMismatch: false,
+                rangeOverflow: false,
+                rangeUnderflow: false,
+                stepMismatch: false,
+                tooLong: false,
+                tooShort: false,
+                typeMismatch: false,
+                valid: false,
+                valueMissing: true
+            },
             value: ""
         },
         {
-            isValid: false
-            name: "email"
-            validity: ValidityState
-            badInput: false
-            customError: false
-            patternMismatch: false
-            rangeOverflow: false
-            rangeUnderflow: false
-            stepMismatch: false
-            tooLong: false
-            tooShort: false
-            typeMismatch: true
-            valid: false
-            valueMissing: false
+            isValid: false,
+            name: "email",
+            validity: {
+                badInput: false,
+                customError: false,
+                patternMismatch: false,
+                rangeOverflow: false,
+                rangeUnderflow: false,
+                stepMismatch: false,
+                tooLong: false,
+                tooShort: false,
+                typeMismatch: true,
+                valid: false,
+                valueMissing: false
+            },
             value: "bad.email"
         }
     ]
