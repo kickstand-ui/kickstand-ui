@@ -1,7 +1,6 @@
 module.exports = {
     title: "Kickstand UI",
-    description:
-        "The Design System You Can Use Everywhere!",
+    description: "The Design System You Can Use Everywhere!",
     head: [
         [
             "meta",
@@ -10,6 +9,38 @@ module.exports = {
                 content: "width=device-width, initial-scale=1, shrink-to-fit=no"
             }
         ],
+        [
+            "meta",
+            {
+                property: "og:image",
+                content: "https://kickstand-ui.com/images/kickstand_logo.png"
+            }
+        ],
+        [
+            "meta",
+            {
+                property: "og:title",
+                content: "Kickstand UI"
+            }
+        ],
+        [
+            "meta",
+            {
+                property: "og:description",
+                content: "The Design System You Can Use Everywhere!"
+            }
+        ],
+        [
+            "meta",
+            {
+                property: "twitter:image:src",
+                content: "https://kickstand-ui.com/images/kickstand_logo.png"
+            }
+        ],
+        ["meta", { property: "twitter:card", content: "summary_large_image" }],
+        ["meta", { property: "twitter:creator", content: "@stuffbreaker" }],
+        ["meta", { property: "robots", content: "index, follow" }],
+        ["meta", { property: "HandheldFriendly", content: "True" }],
         ["link", { rel: "icon", href: "/images/kickstand_icon.png" }]
     ],
     themeConfig: {
@@ -104,7 +135,7 @@ module.exports = {
                 title: "Theming",
                 collapsable: true,
                 children: [
-                    "/theming/design-tokens.html",
+                    "/theming/design-tokens.html"
                     // "/theming/customizing-components.html"
                 ]
             }
