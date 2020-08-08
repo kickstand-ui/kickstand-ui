@@ -41,7 +41,7 @@ One of the priorities of Kickstand UI is to make creating applications as effort
     <img src="/images/browsers/firefox.png" alt="Firefox" title="Firefox" style="width:64px; height:64px;" />
     <img src="/images/browsers/safari.png" alt="Safari" title="Safari" style="width:64px; height:64px;" />
     <img src="/images/browsers/opera.png" alt="Opera" title="Opera" style="width:64px; height:64px;" />
-    <img src="/images/browsers/edge.jpeg" alt="Edge" title="Edge" style="width:64px; height:64px;" />
+    <img src="/images/browsers/edge.jpeg" alt="Edge" title="Edge" style="width:auto; height:64px;" />
     <img src="/images/browsers/internet_explorer.png" alt="Internet Explorer 11" title="Internet Explorer 11" style="width:64px; height:64px;" />
 </div>
 

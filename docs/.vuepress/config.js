@@ -44,7 +44,7 @@ module.exports = {
         ["link", { rel: "icon", href: "/images/kickstand_icon.png" }]
     ],
     themeConfig: {
-        logo: "/images/kickstand_logo_small.png",
+        logo: "/images/kickstand_logo_2.svg",
         nav: [
             {
                 text: "Contact",
