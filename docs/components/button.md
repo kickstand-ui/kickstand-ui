@@ -81,13 +81,15 @@ The `solid` display option will automatically select and appropriate contrasting
 <div class="my-xl">
     <ks-button id="loading_button">Click To Load</ks-button>
     <script>
-        let loadingButton = document.getElementById('loading_button');
-        loadingButton.addEventListener('click', function () {
-            loadingButton.loading = true;
-            setTimeout(function () {
-                loadingButton.loading = false;
-            }, 3000);
-        });
+        (function (){
+            let loadingButton = document.getElementById('loading_button');
+            loadingButton.addEventListener('click', function () {
+                loadingButton.loading = true;
+                setTimeout(function () {
+                    loadingButton.loading = false;
+                }, 3000);
+            });
+        })();
     </script>
 </div>
 
@@ -95,15 +97,15 @@ The `solid` display option will automatically select and appropriate contrasting
 <ks-button id="loading_button">Click To Load</ks-button>
 
 <script>
-    let loadingButton = document.getElementById('loading_button');
-
-    loadingButton.addEventListener('click', function () {
-        loadingButton.loading = true;
-
-        setTimeout(function () {
-            loadingButton.loading = false;
-        }, 3000);
-    });
+    (function (){
+        let loadingButton = document.getElementById('loading_button');
+        loadingButton.addEventListener('click', function () {
+            loadingButton.loading = true;
+            setTimeout(function () {
+                loadingButton.loading = false;
+            }, 3000);
+        });
+    })();
 </script>
 ```
 **Note:** If a button is loading, it is also disabled.
@@ -153,7 +155,7 @@ If the `href` property is populated, it will change the behavior of therefore ch
 <ks-button href="#" class="mt-xxl">I go somewhere</ks-button>
 
 ```html
-<ks-button href="#">I go somewhere</ks-button>
+<ks-button href="#href">I go somewhere</ks-button>
 
 <!-- the rendered HTML -->
 <ks-button href="#" class="pointer hydrated">
@@ -179,22 +181,22 @@ There are a number of accessibility features built in to the button to promote t
 
 ## Properties
 
-| Property        | Attribute        | Description | Type         | Default     |
-| --------------- | ---------------- | ----------- | ------------ | ----------- |
-| `color`         | `color`          | button color based on theme palette            | `"danger"`, `"dark"`, `"info"`, `"light"`, `"primary"`, `"secondary"`, `"success"`, or `"warning"` | `'primary'` |
-| `controls`      | `controls`       | adds `aria-controls` attribute to button element           | `string` | `undefined` |
-| `cssClass`      | `css-class`      | passes class directly to button element | `string` | `''` |
-| `describedBy`   | `described-by`   | adds `aria-describedby` attribute to button element            | `string` | `undefined` |
-| `disabled`      | `disabled`       | enables/disables button            | `boolean` | `undefined` |
-| `display`       | `display`        | controls the display type            | `"clear"`, `"hollow"`, `"link"`, or `"solid"` | `'solid'`   |
-| `expanded`      | `expanded`       | controls `aria-expanded` attribute on the button element | `boolean` | `false`     |
-| `haspopup`      | `haspopup`       | adds `aria-haspopup` attribute to button element | `boolean` | `false` |
-| `hideText`      | `hide-text`      | controls whether or not text is displayed (hidden text will still be visible to screen readers) | `boolean`  | `false`     |
-| `href`          | `href`           | adding this value will convert the button to a link | `string` | `undefined` |
-| `icon`          | `icon`           | the name of the icon you would like to display            | `string` | `''`        |
-| `iconDirection` | `icon-direction` | the direction of the icon            | `"left"` or `"right"` | `'left'`    |
-| `loading`       | `loading`        | enabling this will show the loading icon and disable the button            | `boolean` | `undefined` |
-| `size`          | `size`           | controls the size of the button            | `"md"`, `"lg"`, `"sm"`, `"xl"`, or `"xs"` | `'md'`      |
-| `tabIndex`      | `tab-index`      | adds a `tabindex` attribute on the button element            | `number`                                                                                        | `undefined` |
-| `target`        | `target`         | adds `target` [attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target) to anchor tags            | `string`                                                                                        | `undefined` |
-| `type`          | `type`           | controls the button `type` attribute            | `"button"`, `"reset"`, or `"submit"` | `'button'`  |
+| Property        | Attribute        | Description                                                                                                       | Type                                                                                               | Default     |
+| --------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------- |
+| `color`         | `color`          | button color based on theme palette                                                                               | `"danger"`, `"dark"`, `"info"`, `"light"`, `"primary"`, `"secondary"`, `"success"`, or `"warning"` | `'primary'` |
+| `controls`      | `controls`       | adds `aria-controls` attribute to button element                                                                  | `string`                                                                                           | `undefined` |
+| `cssClass`      | `css-class`      | passes class directly to button element                                                                           | `string`                                                                                           | `''`        |
+| `describedBy`   | `described-by`   | adds `aria-describedby` attribute to button element                                                               | `string`                                                                                           | `undefined` |
+| `disabled`      | `disabled`       | enables/disables button                                                                                           | `boolean`                                                                                          | `undefined` |
+| `display`       | `display`        | controls the display type                                                                                         | `"clear"`, `"hollow"`, `"link"`, or `"solid"`                                                      | `'solid'`   |
+| `expanded`      | `expanded`       | controls `aria-expanded` attribute on the button element                                                          | `boolean`                                                                                          | `false`     |
+| `haspopup`      | `haspopup`       | adds `aria-haspopup` attribute to button element                                                                  | `boolean`                                                                                          | `false`     |
+| `hideText`      | `hide-text`      | controls whether or not text is displayed (hidden text will still be visible to screen readers)                   | `boolean`                                                                                          | `false`     |
+| `href`          | `href`           | adding this value will convert the button to a link                                                               | `string`                                                                                           | `undefined` |
+| `icon`          | `icon`           | the name of the icon you would like to display                                                                    | `string`                                                                                           | `''`        |
+| `iconDirection` | `icon-direction` | the direction of the icon                                                                                         | `"left"` or `"right"`                                                                              | `'left'`    |
+| `loading`       | `loading`        | enabling this will show the loading icon and disable the button                                                   | `boolean`                                                                                          | `undefined` |
+| `size`          | `size`           | controls the size of the button                                                                                   | `"md"`, `"lg"`, `"sm"`, `"xl"`, or `"xs"`                                                          | `'md'`      |
+| `tabIndex`      | `tab-index`      | adds a `tabindex` attribute on the button element                                                                 | `number`                                                                                           | `undefined` |
+| `target`        | `target`         | adds `target` [attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target) to anchor tags | `string`                                                                                           | `undefined` |
+| `type`          | `type`           | controls the button `type` attribute                                                                              | `"button"`, `"reset"`, or `"submit"`                                                               | `'button'`  |
