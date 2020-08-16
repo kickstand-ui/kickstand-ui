@@ -115,15 +115,26 @@ $theme-colors: (
     'success': #669c1f,
     'info': #509BCE,
     'warning': #e1a900,
-    'danger': #c70000,
-    'light': #e5e5e5,
-    'dark': #494949
+    'danger': #c70000
 ) !default;
 ```
 
 #### Usage
 
 You can take advantage of these values both as [utility classes](/utilities/colors.html) and as [mixins and functions](https://projectclarion.com/framework/documentation/functions/colors.html).
+
+There will be two additional values added to the palette - `light` and `dark`. These colors will be _automatically generated_ based on the `primary` color. If you would like to specify your own `light` or `dark` color, you can add them to the map and the compiler will pick up your colors rather than auto-generate them.
+
+There are additional settings availbale that will allow you to tweak the default colors depending on the brighness and saturation of your `primary` color.
+
+```scss
+$light-saturation: 0% !default;
+$light-lightness: 50% !default;
+$dark-saturation: 0% !default;
+$dark-darkness: 5% !default;
+```
+
+If you already have a bright `primary` color, you may want to _decrease_ the `$light-lightness` and _increase_ the `$dark-darkness`.
 
 ### Variation
 
