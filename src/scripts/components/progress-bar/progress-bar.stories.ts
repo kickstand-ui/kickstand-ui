@@ -6,12 +6,12 @@ const types = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', '
 const sizes = ['xs', 'sm', 'md', 'lg'];
 
 export const playground = () => {
-    const type = select('type', types, 'primary');
+    const color = select('color', types, 'primary');
     const value = number('value', 25);
     const size = select('size', sizes, 'md');
     const description = text('description', 'Loading...');
     const hideDescription = boolean('hide-description', false);
     const progressLabel = text('progress-label', 'Progress');
     const hideProgressLabel = boolean('hide-progress-label', false);
-    return (`<ks-progress-bar class="m-xxl" description="${description}" progress-label="${progressLabel}" hide-progress-label="${hideProgressLabel}" hide-description="${hideDescription}" size="${size}" type="${type}" value="${value}" />`);
+    return (`<ks-progress-bar class="m-xxl" color="${color}" description="${description}" progress-label="${progressLabel}" hide-progress-label="${hideProgressLabel}" hide-description="${hideDescription}" size="${size}" value="${value}" />`);
 };
