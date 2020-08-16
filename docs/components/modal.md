@@ -96,12 +96,22 @@ It is important to choose what the footer behavior will be and try to be as cons
 </div>
 
 ```html
-<ks-button shows="multi_action_modal">Show Modal with Multiple Actions</ks-button>
-<ks-modal modal-title="Modal with Multiple Actions" id="multi_action_modal" size="lg">
+<ks-button shows="multi_action_modal"
+    >Show Modal with Multiple Actions</ks-button
+>
+<ks-modal
+    modal-title="Modal with Multiple Actions"
+    id="multi_action_modal"
+    size="lg"
+>
     ...
     <ks-modal-footer>
-        <ks-button display="clear" hides="multi_action_modal">Least Important</ks-button>
-        <ks-button display="hollow" hides="multi_action_modal">Semi-Important</ks-button>
+        <ks-button display="clear" hides="multi_action_modal"
+            >Least Important</ks-button
+        >
+        <ks-button display="hollow" hides="multi_action_modal"
+            >Semi-Important</ks-button
+        >
         <ks-button hides="multi_action_modal">Very Important</ks-button>
     </ks-modal-footer>
 </ks-modal>
@@ -149,16 +159,16 @@ If you are using the [`<ks-button>` element](/components/button.html) you can ta
 </div>
 
 ```html
-    <ks-button shows="button_modal">Show Modal using Button</ks-button>
-    <ks-modal modal-title="Basic Modal" id="button_modal">
-        ...
-        <ks-modal-footer>
-            <ks-button hides="button_modal">Close</ks-button>
-        </ks-modal-footer>
-    </ks-modal>
+<ks-button shows="button_modal">Show Modal using Button</ks-button>
+<ks-modal modal-title="Basic Modal" id="button_modal">
+    ...
+    <ks-modal-footer>
+        <ks-button hides="button_modal">Close</ks-button>
+    </ks-modal-footer>
+</ks-modal>
 ```
 
-You can also programmatically show and hide overlays. It is as simple as using JavaScript to select the element and call the `show()` or `hide()` methods. Here is a simple example that will show the overlay when the button is clicked and hide it after 3 seconds.
+You can also programmatically show and hide modals. It is as simple as using JavaScript to select the element and call the `show()` or `hide()` methods. Here is a simple example that will show the overlay when the button is clicked and hide it after 3 seconds.
 
 <div class="my-xl">
     <ks-button id="js_button">Show Modal Programmatically</ks-button>
@@ -187,19 +197,21 @@ You can also programmatically show and hide overlays. It is as simple as using J
     ...
 </ks-modal>
 <script>
-    let testButton = document.getElementById('test_button');
-    let testModal = document.getElementById('test_modal');
+    (function() {
+        let testButton = document.getElementById("test_button");
+        let testModal = document.getElementById("test_modal");
 
-    // add click event listener to button
-    testButton.addEventListener('click', () => {
-        // show loading overlay
-        testModal.show();
+        // add click event listener to button
+        testButton.addEventListener("click", () => {
+            // show loading overlay
+            testModal.show();
 
-        // hide after 3 seconds
-        setTimeout(function() {
-            testModal.hide();
-        }, 3000);
-    });
+            // hide after 3 seconds
+            setTimeout(function() {
+                testModal.hide();
+            }, 3000);
+        });
+    })();
 </script>
 ```
 
@@ -207,15 +219,15 @@ You can also programmatically show and hide overlays. It is as simple as using J
 
 The modal component is built using the [`<ks-overlay>`](/components/overlay.html) component and inherits accessibility features from that such as:
 
-- The modal has the `role="dialog"` to help assistive technology identify the modal's content as being grouped and separated from the rest of the page content.
-- When opened, the focus will be set on the first clickable element within the modal.
-- The element that triggered the modal will have the attribute `aria-expanded="true"` automatically added.
-- When the user tabs, the focus will stay isolated within the modal to prevent elements outside the modal from being selected.
-- When the modal is closed, the focus will go back to the element the user was on before the modal was opened so they do not lose their place in the document.
-- Once the modal is closed, the element that triggered the modal will have the attribute `aria-expanded="true"` automatically added.
-- The modal title will be used to label the overlay using the `aria-labelledby` attribute.
-- The modal can be closed using the `esc` key for keyboard users.
-- If you are using the `shows` and `hides` controls on the `<ks-button>` component, the button will automatically be populated with the appropriate `aria-haspopup`, `aria-expanded`, and `aria-controls` attributes on the button.
+-   The modal has the `role="dialog"` to help assistive technology identify the modal's content as being grouped and separated from the rest of the page content.
+-   When opened, the focus will be set on the first clickable element within the modal.
+-   The element that triggered the modal will have the attribute `aria-expanded="true"` automatically added.
+-   When the user tabs, the focus will stay isolated within the modal to prevent elements outside the modal from being selected.
+-   When the modal is closed, the focus will go back to the element the user was on before the modal was opened so they do not lose their place in the document.
+-   Once the modal is closed, the element that triggered the modal will have the attribute `aria-expanded="true"` automatically added.
+-   The modal title will be used to label the overlay using the `aria-labelledby` attribute.
+-   The modal can be closed using the `esc` key for keyboard users.
+-   If you are using the `shows` and `hides` controls on the `<ks-button>` component, the button will automatically be populated with the appropriate `aria-haspopup`, `aria-expanded`, and `aria-controls` attributes on the button.
 
 ## Properties
 
@@ -238,9 +250,9 @@ The modal component is built using the [`<ks-overlay>`](/components/overlay.html
 </ks-modal>
 
 <script>
-    let myModal = document.getElementById('my_modal');
+    let myModal = document.getElementById("my_modal");
 
-    myModal.addEventListener('hidden', () => {
+    myModal.addEventListener("hidden", () => {
         // do something...
     });
 </script>
