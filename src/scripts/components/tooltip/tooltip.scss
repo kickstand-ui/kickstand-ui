@@ -64,7 +64,7 @@
                     top: 100%;
                     left: 50%;
                     transform: translateX(-50%);
-                    border-top-color: color(light, darker);
+                    border-top-color: color(default-border(color));
                 }
 
                 &::after {
@@ -85,7 +85,7 @@
                     bottom: 100%;
                     left: 50%;
                     transform: translateX(-50%);
-                    border-bottom-color: color(light, darker);
+                    border-bottom-color: color(default-border(color));
                 }
 
                 &::after {
@@ -107,7 +107,7 @@
                     left: 100%;
                     top: 50%;
                     transform: translateY(-50%);
-                    border-left-color: color(light, darker);
+                    border-left-color: color(default-border(color));
                 }
 
                 &::after {
@@ -129,7 +129,7 @@
                     right: 100%;
                     top: 50%;
                     transform: translateY(-50%);
-                    border-right-color: color(light, darker);
+                    border-right-color: color(default-border(color));
                 }
 
                 &::after {

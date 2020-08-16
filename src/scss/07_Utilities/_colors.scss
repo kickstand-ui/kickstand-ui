@@ -2,7 +2,7 @@
 
 $variations: ('lighter', 'light', 'base', 'dark', 'darker');
 
-@each $color, $value in $theme-colors {
+@each $color, $value in get-colors() {
     /*
         .text-primary
         .text-secondary

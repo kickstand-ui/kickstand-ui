@@ -33,7 +33,7 @@
         }
     }
 
-    @each $key, $value in $theme-colors {
+    @each $key, $value in get-colors() {
         &-#{$key} {
             border-color: color($key);
         }

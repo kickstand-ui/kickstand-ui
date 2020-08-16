@@ -6,13 +6,12 @@
 
     .tab-list {
         display: flex;
-        @include bg-color(light, light);
+        @include bg-color(light, lighter);
         @include p(none);
         @include m(none);
 
         .tab-item {
             display: flex;
-            // display: inline-block;
             text-decoration: none;
             white-space: nowrap;
             color: color(primary);
@@ -34,6 +33,7 @@
             &[aria-selected="true"] {
                 @include border();
                 @include bg-color(white);
+                color: color(primary);
                 @include shadow(sm);
                 @include m(-xxxs);
             }

@@ -12,7 +12,7 @@
     @include radius(pill);
     @include shadow(xs);
 
-    @each $color, $value in $theme-colors {
+    @each $color, $value in get-colors() {
         &.#{$color} {
             background-color: color($color);
             color: text-color($color);

@@ -131,7 +131,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
     }
 
     @each $key,
-    $value in $theme-colors {
+    $value in get-colors() {
         &.#{$key} {
             @include bg-color($key);
 

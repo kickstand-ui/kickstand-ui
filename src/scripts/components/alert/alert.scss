@@ -5,7 +5,7 @@
     @include p(lg);
     @include shadow(sm);
 
-    @each $color, $value in $theme-colors {
+    @each $color, $value in get-colors() {
         &.#{$color} {
             @include border(solid, xxs, $color);
             @include shadow(sm);
