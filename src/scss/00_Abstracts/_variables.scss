@@ -43,15 +43,17 @@ $spacing-sizes: (
 $theme-colors: (
     'primary': #2c5374,
     'secondary': #ac3f00,
-    'success': #669c1f,
+    'success': #4f821a,
     'info': #509BCE,
     'warning': #e1a900,
-    'danger': #c70000,
-    'light': #e5e5e5,
-    'dark': #494949
+    'danger': #b32e2e
 ) !default;
 
 $color-variation: 8% !default;
+$light-saturation: 0% !default;
+$light-lightness: 50% !default;
+$dark-saturation: 0% !default;
+$dark-darkness: 5% !default;
 
 
 // MEDIA QUERIES
@@ -89,7 +91,7 @@ $z-indexes: (
 $border: (	
     style: solid,
     size: xxxs,    // from $spacing-sizes
-    color: light darker
+    color: light
 ) !default;
 
 $border-radiuses: (
