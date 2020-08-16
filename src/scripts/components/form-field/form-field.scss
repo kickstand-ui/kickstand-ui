@@ -224,6 +224,7 @@
             transform: scale(1);
             vertical-align: middle;
             border: 0.125em solid color(dark);
+            background-color: white;
             @include transition-ease-in-out();
 
             svg {

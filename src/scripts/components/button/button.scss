@@ -61,7 +61,7 @@ ks-button {
         @include shadow(inner);
     }
 
-    @each $color, $value in $theme-colors {
+    @each $color, $value in get-colors() {
         &.#{$color} {
             &.solid {
                 background-color: color($color);
@@ -71,7 +71,7 @@ ks-button {
                     color($color, lighter) 100%
                 );
                 color: text-color($color, dark);
-                text-shadow: 2px 2px 4px color($color, darker);
+                text-shadow: 2px 2px 4px color($color, dark);
                 @include border(solid, xxs, $color, light);
                 @include border-b(solid, xxs, $color);
                 border-image-slice: 2;
@@ -108,6 +108,7 @@ ks-button {
                 &:hover:not(:disabled) {
                     border-color: transparent;
                     background-color: transparent;
+                    text-shadow: 2px 2px 4px color(dark, 0.25);
                 }
             }
 

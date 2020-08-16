@@ -25,14 +25,14 @@ $sizes: (xs, sm, md, lg);
         max-width: 100%;
         border: 0;
         position: relative;
-        @include bg-color(light);
+        @include bg-color(light, light);
 
         .value {
             display: block;
             height: 100%;
             @include transition-ease-in-out();
 
-            @each $key, $value in $theme-colors {
+            @each $key, $value in get-colors() {
                 &.#{$key} {
                     @include bg-color($key);
                 }

@@ -48,7 +48,7 @@
             visibility: hidden;
             overflow: hidden;
             @include px(lg);
-            @include border-x($size: xxs);
+            @include border-x($size: xxs, $color: primary);
             @include transition-ease-in-out(fast);
 
             &[aria-hidden="false"] {

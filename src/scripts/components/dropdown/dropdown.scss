@@ -22,7 +22,6 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
             align-items: center;
 
             .dropdown-icon {
-                // @include ml(sm);
                 @include transition-ease-in-out(med);
             }    
         }
@@ -80,7 +79,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
             a,
             button {
                 @include hover-focus {
-                    background-color: color(light, light);
+                    background-color: color(light, lighter);
                 }
             }
         }

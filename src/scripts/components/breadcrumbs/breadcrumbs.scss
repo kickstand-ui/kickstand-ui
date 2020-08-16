@@ -23,7 +23,7 @@ ks-breadcrumbs {
             }
 
             &[aria-current="page"] {
-                color: color(black);
+                color: color(dark);
                 @include font-size(sm);
             }
         }
