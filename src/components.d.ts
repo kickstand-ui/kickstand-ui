@@ -279,6 +279,7 @@ export namespace Components {
         "tabText": string;
     }
     interface KsTabs {
+        "align": 'start' | 'center' | 'end' | 'justified';
         "label": string;
         "position": 'top' | 'bottom' | 'left' | 'right';
     }
@@ -828,6 +829,7 @@ declare namespace LocalJSX {
         "tabText"?: string;
     }
     interface KsTabs {
+        "align"?: 'start' | 'center' | 'end' | 'justified';
         "label"?: string;
         "position"?: 'top' | 'bottom' | 'left' | 'right';
     }

@@ -14,6 +14,7 @@ export class Tabs implements ComponentInterface {
     @Element() $el: HTMLElement;
 
     @Prop() position: 'top' | 'bottom' | 'left' | 'right' = 'top';
+    @Prop() align: 'start' | 'center' | 'end' | 'justified' = 'start';
     @Prop() label: string;
 
     @State() selectedIndex: number = 0;
@@ -110,7 +111,7 @@ export class Tabs implements ComponentInterface {
             <Host class={`ks-tabs align-${this.position}`}>
                 <div
                     role="tablist"
-                    class="tab-list"
+                    class={`tab-list justify-${this.align}`}
                     aria-label={this.label}
                     ref={el => this.$tabList = el}
                     onKeyDown={e => this.keydownHandler(e)}
