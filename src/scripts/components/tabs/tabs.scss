@@ -10,8 +10,13 @@
         @include p(none);
         @include m(none);
 
+        &.justify-justified {
+            .tab-item {
+                width: 100%;
+                text-align: center;
+            }
+        }
         .tab-item {
-            display: flex;
             text-decoration: none;
             white-space: nowrap;
             color: color(primary);
@@ -55,6 +60,10 @@
             .tab-list {
                 @include border();
 
+                .justify-justified & {
+                    height: 100%;
+                }
+
                 .tab-item {
                     &[aria-selected="true"] {
                         @include border-b(none);
@@ -72,7 +81,7 @@
 
             .tab-list {
                 @include border();
-
+                
                 .tab-item {
                     &[aria-selected="true"] {
                         position: relative;
@@ -92,6 +101,12 @@
             .tab-list {
                 flex-direction: column;
                 @include border();
+
+                &.justify-justified {
+                    .tab-item {
+                        height: 100%;
+                    }
+                }
 
                 .tab-item {
                     align-self: flex-end;
@@ -118,6 +133,12 @@
             .tab-list {
                 flex-direction: column;
                 @include border();
+
+                &.justify-justified {
+                    .tab-item {
+                        height: 100%;
+                    }
+                }
 
                 .tab-item {
                     align-self: flex-start;

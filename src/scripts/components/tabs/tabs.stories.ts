@@ -4,8 +4,9 @@ export default { title: 'Tabs' };
 
 export const defaultTabs = () => {
     const position = select('position', ['top', 'bottom', 'left', 'right'], 'top');
+    const align = select('align', ['start', 'center', 'end', 'justified'], 'start');
     return (`                            
-        <ks-tabs class="m-xxl" position="${position}" style="max-width: 900px;">
+        <ks-tabs class="m-xxl" position="${position}" align="${align}" style="max-width: 900px;">
             <ks-tab tab-text="Three Hole Punch Jim">
                 <img src="https://badgerherald.com/media/2014/10/Halloween-Jim_Three-Hole-Punch-Jim.jpg" alt="jim" />
             </ks-tab>

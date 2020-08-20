@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type                                     | Default     |
-| ---------- | ---------- | ----------- | ---------------------------------------- | ----------- |
-| `label`    | `label`    |             | `string`                                 | `undefined` |
-| `position` | `position` |             | `"bottom" \| "left" \| "right" \| "top"` | `'top'`     |
+| Property   | Attribute  | Description | Type                                          | Default     |
+| ---------- | ---------- | ----------- | --------------------------------------------- | ----------- |
+| `align`    | `align`    |             | `"center" \| "end" \| "justified" \| "start"` | `'start'`   |
+| `label`    | `label`    |             | `string`                                      | `undefined` |
+| `position` | `position` |             | `"bottom" \| "left" \| "right" \| "top"`      | `'top'`     |
 
 
 ----------------------------------------------
