@@ -130,6 +130,136 @@ You can configure the position of the tabs using the `position` property. The av
 </ks-tabs>
 ```
 
+## Alignment
+
+You can also control the alignment of the tabs within the `tab-list` container using the `align` property. The available options are `start`, `center`, `end`, and `justified`. Tabs will be aligned at the `start` of the container by default.
+
+### Start
+
+<div class="my=xl">
+    <ks-tabs align="start">
+        <ks-tab tab-text="Dwight">
+            <img src="/images/demo/costumes/dwight_joker.jpg" alt="Dwight dressed as The Joker" />
+        </ks-tab>
+        <ks-tab tab-text="Creed">
+            <img src="/images/demo/costumes/creed_joker.jpg" alt="Creed dressed as The Joker" />
+        </ks-tab>
+        <ks-tab tab-text="Kevin">
+            <img src="/images/demo/costumes/kevin_joker.jpeg" alt="Kevin dressed as The Joker" />
+        </ks-tab>
+    </ks-tabs>
+</div>
+
+```html
+<ks-tabs align="start">
+    <ks-tab tab-text="Dwight">
+        <img src="/images/demo/costumes/dwight_joker.jpg" alt="Dwight dressed as The Joker" />
+    </ks-tab>
+    <ks-tab tab-text="Creed">
+        <img src="/images/demo/costumes/creed_joker.jpg" alt="Creed dressed as The Joker" />
+    </ks-tab>
+    <ks-tab tab-text="Kevin">
+        <img src="/images/demo/costumes/kevin_joker.jpg" alt="Kevin dressed as The Joker" />
+    </ks-tab>
+</ks-tabs>
+```
+
+### Center
+
+<div class="my=xl">
+    <ks-tabs align="center">
+        <ks-tab tab-text="Black Widow">
+            <img src="/images/demo/costumes/black_widow.jpg" alt="Meredith dressed as Black Widow" />
+        </ks-tab>
+        <ks-tab tab-text="Dracula">
+            <img src="/images/demo/costumes/dracula.jpg" alt="Daryl dressed as Dracula" />
+        </ks-tab>
+        <ks-tab tab-text="Justin Bieber">
+            <img src="/images/demo/costumes/justin_bieber.jpg" alt="Ryan dressed as Justin Bieber" />
+        </ks-tab>
+    </ks-tabs>
+</div>
+
+```html
+<ks-tabs align="center">
+    <ks-tab tab-text="Black Widow">
+        <img src="/images/demo/costumes/black_widow.jpg" alt="Meredith dressed as Black Widow" />
+    </ks-tab>
+    <ks-tab tab-text="Dracula">
+        <img src="/images/demo/costumes/dracula.jpg" alt="Daryl dressed as Dracula" />
+    </ks-tab>
+    <ks-tab tab-text="Justin Bieber">
+        <img src="/images/demo/costumes/justin_bieber.jpg" alt="Ryan dressed as Justin Bieber" />
+    </ks-tab>
+</ks-tabs>
+```
+
+### End
+
+<div class="my=xl">
+    <ks-tabs align="end">
+        <ks-tab tab-text="Lady Gaga">
+            <img src="/images/demo/costumes/lady_gaga.jpg" alt="Gabe dressed as Lady Gaga" />
+        </ks-tab>
+        <ks-tab tab-text="Nancy Reagan">
+            <img src="/images/demo/costumes/nancy_reagan.jpg" alt="Angela dressed as Nancy Reagan" />
+        </ks-tab>
+        <ks-tab tab-text="Raggedy Ann">
+            <img src="/images/demo/costumes/raggedy_ann.jpg" alt="Phillis dressed as Raggedy Ann" />
+        </ks-tab>
+    </ks-tabs>
+</div>
+
+```html
+<ks-tabs align="end">
+    <ks-tab tab-text="Lady Gaga">
+        <img src="/images/demo/costumes/lady_gaga.jpg" alt="Gabe dressed as Lady Gaga" />
+    </ks-tab>
+    <ks-tab tab-text="Nancy Reagan">
+        <img src="/images/demo/costumes/nancy_reagan.jpg" alt="Angela dressed as Nancy Reagan" />
+    </ks-tab>
+    <ks-tab tab-text="Raggedy Ann">
+        <img src="/images/demo/costumes/raggedy_ann.jpg" alt="Phillis dressed as Raggedy Ann" />
+    </ks-tab>
+</ks-tabs>
+```
+
+### Justified
+
+<div class="my=xl">
+    <ks-tabs align="justified">
+        <ks-tab tab-text="Three Hole Punch Jim">
+            <img src="/images/demo/costumes/three_hole_punch_jim.jpg" alt="three-hole-punch jim" />
+        </ks-tab>
+        <ks-tab tab-text="Dave">
+            <img src="/images/demo/costumes/jim_as_dave.jpg" alt="jim dressed as dave" />
+        </ks-tab>
+        <ks-tab tab-text="Facebook">
+            <img src="/images/demo/costumes/jim_as_facebook.jpg" alt="jim dressed as facebook" />
+        </ks-tab>
+        <ks-tab tab-text="Popeye">
+            <img src="/images/demo/costumes/jim_as_popeye.jpeg" alt="jim dressed as popeye" />
+        </ks-tab>
+    </ks-tabs>
+</div>
+
+```html
+<ks-tabs align="justified">
+    <ks-tab tab-text="Three Hole Punch Jim">
+        <img src="/images/demo/costumes/three_hole_punch_jim.jpg" alt="three-hole-punch jim" />
+    </ks-tab>
+    <ks-tab tab-text="Dave">
+        <img src="/images/demo/costumes/jim_as_dave.jpg" alt="jim dressed as dave" />
+    </ks-tab>
+    <ks-tab tab-text="Facebook">
+        <img src="/images/demo/costumes/jim_as_facebook.jpg" alt="jim dressed as facebook" />
+    </ks-tab>
+    <ks-tab tab-text="Popeye">
+        <img src="/images/demo/costumes/jim_as_popeye.jpeg" alt="jim dressed as popeye" />
+    </ks-tab>
+</ks-tabs>
+```
+
 ## Accessibility
 
 A number of features have been added to the tab components to make tabs more identifiable and accessible for assistive technologies:
@@ -145,7 +275,8 @@ A number of features have been added to the tab components to make tabs more ide
 
 | Property   | Attribute  | Description                                     | Type                                | Default |
 | ---------- | ---------- | ----------------------------------------------- | ----------------------------------- | ------- |
-| `position` | `position` | the position of the tabs around the tab content | `top`, `bottom`, `left`, or `right` | `'top'` |
+| `position` | `position` | the position of the tabs around the tab content | `top`, `bottom`, `left`, or `right` | `top` |
+| `align`    | `align`    | the alignment if the tabs                       | `start`, `center`, `end`, or `justified` | `start` |
 
 ### `<ks-tab>`
 
