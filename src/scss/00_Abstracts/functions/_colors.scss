@@ -5,12 +5,12 @@
     $result: $theme-colors;
 
     @if not map-has-key($map: $theme-colors, $key: 'light') {
-        $light: lighten(mix(saturate(map-get($theme-colors, 'primary'), $light-saturation), grayscale(map-get($theme-colors, 'primary'))), $light-lightness);
+        $light: lighten(mix(map-get($theme-colors, 'primary'), grayscale(map-get($theme-colors, 'primary')), $light-saturation), $light-lightness);
         $result: map-merge($result, ('light': $light));
     }
 
     @if not map-has-key($map: $theme-colors, $key: 'dark') {
-        $dark: darken(mix(saturate(map-get($theme-colors, 'primary'), $dark-saturation), grayscale(map-get($theme-colors, 'primary'))), $dark-darkness);
+        $dark: darken(mix(map-get($theme-colors, 'primary'), grayscale(map-get($theme-colors, 'primary')), $dark-saturation), $dark-darkness);
         $result: map-merge($result, ('dark': $dark));
     }
 
