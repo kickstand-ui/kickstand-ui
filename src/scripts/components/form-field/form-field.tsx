@@ -1,5 +1,5 @@
 import { Component, h, Prop, ComponentInterface, Host, Watch, Event, EventEmitter, State, Element, Method } from '@stencil/core';
-import utils from '../../utils/componentUtils';
+import { debounce } from '../../utils/componentUtils';
 
 export interface IFormFieldData {
     isValid: boolean;
@@ -14,6 +14,10 @@ export interface IFormFieldData {
 })
 export class FormField implements ComponentInterface {
     formFieldId = formFieldIds++;
+    fieldId = `form_input_${this.formFieldId}`;
+    labelId = `form_label_${this.formFieldId}`;
+    listId = `form_list_${this.formFieldId}`;
+
     $input: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
     $checkbox: HTMLKsCheckboxElement;
     $checklist: HTMLKsChecklistElement;
@@ -170,7 +174,7 @@ export class FormField implements ComponentInterface {
     }
 
     private onInput(ev: Event) {
-        utils.debounce(() => {
+        debounce(() => {
             const input = ev.target as HTMLInputElement | null;
 
             if (input)
@@ -205,15 +209,12 @@ export class FormField implements ComponentInterface {
     }
 
     render() {
-        let fieldId = `form-input-${this.formFieldId}`;
-        let labelId = `form-label-${this.formFieldId}`;
-        let listId = `form-list-${this.formFieldId}`;
         let value = this.getValue();
         let props = {
             'disabled': this.disabled,
             'required': this.required,
             'aria-invalid': !this.disabled && this.invalid.toString(),
-            'list': this.datalist && listId
+            'list': this.datalist && this.listId
         };
         props = this.setProps(props);
         let classes = {
@@ -226,7 +227,7 @@ export class FormField implements ComponentInterface {
         let fieldInput = {
             'textarea': (
                 <textarea
-                    id={fieldId}
+                    id={this.fieldId}
                     class="form-input"
                     name={this.getInputName()}
                     {...props}
@@ -240,7 +241,7 @@ export class FormField implements ComponentInterface {
             'select': (
                 <div class="select-wrapper">
                     <select
-                        id={fieldId}
+                        id={this.fieldId}
                         class="form-input"
                         name={this.getInputName()}
                         {...props}
@@ -255,7 +256,7 @@ export class FormField implements ComponentInterface {
             )
         }[this.type] || [
                 <input
-                    id={fieldId}
+                    id={this.fieldId}
                     class="form-input"
                     type={this.type}
                     name={this.getInputName()}
@@ -265,7 +266,7 @@ export class FormField implements ComponentInterface {
                     onBlur={() => this.onBlur()}
                     ref={el => this.$input = el}
                 />,
-                this.datalist && <datalist id={listId}>
+                this.datalist && <datalist id={this.listId}>
                     <slot />
                 </datalist>
             ];
@@ -327,7 +328,7 @@ export class FormField implements ComponentInterface {
             )
         }[this.type] || (
                 [
-                    <label id={labelId} class={labelClasses} htmlFor={fieldId}>
+                    <label id={this.labelId} class={labelClasses} htmlFor={this.fieldId}>
                         <span class="field-label">
                             {this.label}
                             {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText}>*</abbr>}

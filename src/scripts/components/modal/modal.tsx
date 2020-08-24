@@ -6,7 +6,7 @@ import { Component, h, Prop, ComponentInterface, Element, Method } from '@stenci
 })
 export class Modal implements ComponentInterface {
     $overlay: HTMLKsOverlayElement;
-    titleId = `modal-title-${modalIds++}`;
+    titleId = `modal_title_${modalIds++}`;
 
     @Element() $el: HTMLElement;
 

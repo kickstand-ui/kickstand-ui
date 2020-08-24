@@ -1,4 +1,5 @@
 import { Component, h, Prop, Host, Element, State, ComponentInterface } from '@stencil/core';
+import { keyCodes } from '../../utils/componentUtils';
 
 @Component({
     tag: 'ks-tabs',
@@ -63,18 +64,16 @@ export class Tabs implements ComponentInterface {
     }
 
     keydownHandler(e) {
-        // Move right
-        if (e.keyCode === 39 || e.keyCode === 37) {
-            this.deselectTab();
+        if (e.keyCode !== keyCodes.RIGHT_ARROW && e.keyCode !== keyCodes.LEFT_ARROW)
+            return;
 
-            if (e.keyCode === 39) {
-                this.goToNextTab();
-            } else if (e.keyCode === 37) {
-                this.goToPreviousTab();
-            }
+        this.deselectTab();
 
-            this.selectTab();
-        }
+        e.keyCode === keyCodes.RIGHT_ARROW 
+            ? this.goToNextTab() 
+            : this.goToPreviousTab();
+
+        this.selectTab();
     }
 
     goToNextTab() {

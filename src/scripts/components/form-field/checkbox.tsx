@@ -6,7 +6,7 @@ import { IFormFieldData } from './form-field';
     styleUrl: 'form-field.scss'
 })
 export class Checkbox implements ComponentInterface {
-    checkboxId = checkboxIds++;
+    checkboxId = `checkbox_${checkboxIds++}`;
     $checkbox: HTMLInputElement;
 
     @Prop() label: string;
@@ -45,7 +45,7 @@ export class Checkbox implements ComponentInterface {
 
     render() {
         let props = {
-            'id': `checkbox-${this.checkboxId}`,
+            'id': this.checkboxId,
             'checked': this.checked,
             'required': this.required
         };
@@ -53,7 +53,7 @@ export class Checkbox implements ComponentInterface {
         return (
             <Host class="ks-checkbox">
                 <input class="checkbox-input" type="checkbox" {...props} onChange={() => this.changeHandler()} ref={el => this.$checkbox = el} />
-                <label class="checkbox-label" htmlFor={`checkbox-${this.checkboxId}`}>
+                <label class="checkbox-label" htmlFor={this.checkboxId}>
                     <span class="checkbox-icon">
                         <svg width="0.75em" height="0.625em" viewBox="0 0 12 10">
                             <polyline points="1.5 6 4.5 9 10.5 1"></polyline>

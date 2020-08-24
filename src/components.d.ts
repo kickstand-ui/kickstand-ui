@@ -10,7 +10,7 @@ import { IFormData } from "./scripts/components/form/form";
 import { IFormFieldData as IFormFieldData1 } from "./scripts/components/form-field/form-field";
 export namespace Components {
     interface KsAccordion {
-        "size": string;
+        "size": 'sm' | 'md' | 'lg';
     }
     interface KsAccordionSlide {
         "expanded": boolean;
@@ -563,7 +563,7 @@ declare global {
 }
 declare namespace LocalJSX {
     interface KsAccordion {
-        "size"?: string;
+        "size"?: 'sm' | 'md' | 'lg';
     }
     interface KsAccordionSlide {
         "expanded"?: boolean;

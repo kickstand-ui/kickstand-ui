@@ -6,7 +6,7 @@ import { Component, h, Prop, State, Element, Host, ComponentInterface } from '@s
 })
 export class MenuBar implements ComponentInterface {
     $menuContent: HTMLElement;
-    menuId: string = `menu-${menuIds++}`;
+    menuId: string = `menu_${menuIds++}`;
 
     @Element() $el: HTMLElement;
 

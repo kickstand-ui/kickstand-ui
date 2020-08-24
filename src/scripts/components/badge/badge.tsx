@@ -6,7 +6,7 @@ import { Component, h, Prop, ComponentInterface, Host } from '@stencil/core';
 })
 export class Badge implements ComponentInterface {
     @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';
-    @Prop() hollow: boolean;
+    @Prop() hollow: boolean = false;
 
     render() {
         let classes= {

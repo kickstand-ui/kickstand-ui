@@ -5,7 +5,7 @@ import { Component, h, Host, Prop } from '@stencil/core';
     styleUrl: 'accordion.scss'
 })
 export class Accordion {
-    @Prop() size: string = 'md';
+    @Prop() size: 'sm' | 'md' | 'lg' = 'md';
 
     render() {
         return (

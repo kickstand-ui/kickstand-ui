@@ -6,7 +6,6 @@ import { IFormFieldData } from './form-field';
     styleUrl: 'form-field.scss'
 })
 export class Checklist implements ComponentInterface {
-    checklistId = checklistIds++;
     $checkbox: HTMLInputElement;
     $options: HTMLOptionElement[];
 
@@ -126,5 +125,3 @@ export class Checklist implements ComponentInterface {
         );
     }
 }
-
-let checklistIds = 0;
