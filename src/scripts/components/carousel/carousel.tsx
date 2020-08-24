@@ -18,13 +18,23 @@ export class Carousel implements ComponentInterface {
 
     $slides: HTMLKsCarouselSlideElement[];
     $indicators: Element[] = [];
+    carouselId = `carousel_${carouselIds++}`;
 
     connectedCallback() {
-        this.$slides = Array.from(this.$el.querySelectorAll('ks-carousel-slide'));
+        this.initSlides();
     }
 
     componentDidLoad() {
         this.goToSlide();
+    }
+
+    initSlides() {
+        this.$slides = Array.from(this.$el.querySelectorAll('ks-carousel-slide'));
+
+        this.$slides.forEach((slide, index) => {
+            slide.id = slide.id || `${this.carouselId}_slide_${index}`;
+            slide.setAttribute('aria-labelledby', `${slide.id}_indicator`);
+        });
     }
 
     prevSlide() {
@@ -87,7 +97,15 @@ export class Carousel implements ComponentInterface {
         let indicators = (
             <div class={indicatorClasses} role="tablist">
                 {this.$slides.map((slide, index) =>
-                    <button id={`indicator_for_${slide.id}`} class="indicator" onClick={() => this.selectSlide(index)} role="tab" aria-selected="false" aria-controls={slide.id} ref={el => this.$indicators.push(el)}>
+                    <button
+                        id={`${slide.id}_indicator`}
+                        class="indicator"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls={slide.id}
+                        ref={el => this.$indicators.push(el)}
+                        onClick={() => this.selectSlide(index)}
+                        >
                         <span class="sr-only">Got to slide {slide ? index + 1 : ''}</span>
                     </button>
                 )}
@@ -107,7 +125,7 @@ export class Carousel implements ComponentInterface {
         let thumbnailList = (
             <div class="thumbnails" role="tablist">
                 {this.$slides.map((slide, index) =>
-                    <button id={`indicator_for_${slide.id}`} class="thumbnail" onClick={() => this.selectSlide(index)} role="tab" aria-selected="false" aria-controls={slide.id} ref={el => this.$indicators.push(el)}>
+                    <button id={`${slide.id}_indicator`} class="thumbnail" onClick={() => this.selectSlide(index)} role="tab" aria-selected="false" aria-controls={slide.id} ref={el => this.$indicators.push(el)}>
                         <span class="sr-only">Got to slide {slide ? index + 1 : ''}</span>
                         <ks-img lazy src={slide.src} alt={`slide ${slide ? index + 1 : ''} image`} />
                     </button>
@@ -128,3 +146,5 @@ export class Carousel implements ComponentInterface {
         );
     }
 }
+
+let carouselIds = 0;
