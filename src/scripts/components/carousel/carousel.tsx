@@ -87,7 +87,15 @@ export class Carousel implements ComponentInterface {
         let indicators = (
             <div class={indicatorClasses} role="tablist">
                 {this.$slides.map((slide, index) =>
-                    <button id={`indicator_for_${slide.id}`} class="indicator" onClick={() => this.selectSlide(index)} role="tab" aria-selected="false" aria-controls={slide.id} ref={el => this.$indicators.push(el)}>
+                    <button 
+                        id={`indicator_for_carousel_slide_${index}`} 
+                        class="indicator" 
+                        role="tab" 
+                        aria-selected="false" 
+                        aria-controls={slide.id} 
+                        ref={el => this.$indicators.push(el)}
+                        onClick={() => this.selectSlide(index)} 
+                        >
                         <span class="sr-only">Got to slide {slide ? index + 1 : ''}</span>
                     </button>
                 )}
