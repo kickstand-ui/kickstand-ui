@@ -11,7 +11,7 @@
 | -------- | --------- | ----------- | ----------------------------------------------------------------------------------------------- | ----------- |
 | `color`  | `color`   |             | `"danger" \| "dark" \| "info" \| "light" \| "primary" \| "secondary" \| "success" \| "warning"` | `'primary'` |
 | `header` | `header`  |             | `string`                                                                                        | `undefined` |
-| `note`   | `note`    |             | `boolean`                                                                                       | `undefined` |
+| `note`   | `note`    |             | `boolean`                                                                                       | `false`     |
 
 
 ## Dependencies

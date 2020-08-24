@@ -1,5 +1,5 @@
 import { Component, h, Prop, Host, Element, State, Listen, Method } from '@stencil/core';
-import componentUtils from '../../utils/componentUtils';
+import { FOCUSABLE_ELEMENTS } from '../../utils/componentUtils';
 
 @Component({
     tag: 'ks-dropdown',
@@ -9,6 +9,7 @@ export class Dropdown {
     $contents: HTMLElement;
     $control: HTMLElement;
     $focusableEls: HTMLElement[];
+    dropdownId = `dropdown_${dropdownIds++}`;
 
     @Element() $el: HTMLElement;
 
@@ -83,7 +84,7 @@ export class Dropdown {
 
 
     componentDidRender() {
-        this.$focusableEls = Array.from(this.$contents.querySelectorAll(componentUtils.focusableElements));
+        this.$focusableEls = Array.from(this.$contents.querySelectorAll(FOCUSABLE_ELEMENTS));
 
         window.addEventListener('click', (e: MouseEvent) => {
             let $preventCloseElements = Array.from(document.querySelectorAll('.prevent-dropdown-close'));
@@ -105,7 +106,6 @@ export class Dropdown {
     }
 
     render() {
-        let dropdownId = `dropdown-${dropdownIds++}`;
         let dropDownClasses = {
             'ks-dropdown': true,
             'show': this.isExpanded,
@@ -128,7 +128,7 @@ export class Dropdown {
         return (
             <Host class={dropDownClasses}>
                 <ks-button
-                    id={`${dropdownId}-button`}
+                    id={`${this.dropdownId}-button`}
                     onClick={() => this.toggleDropdown()}
                     color={this.color}
                     display={this.display}
@@ -136,17 +136,17 @@ export class Dropdown {
                     cssClass="dropdown-button"
                     haspopup={true}
                     expanded={this.isExpanded}
-                    controls={dropdownId}
+                    controls={this.dropdownId}
                     ref={el => this.$control = el.querySelector('button')}
                 >
                     <span class={buttonClasses}>{this.text}</span>
                     {!this.hideIndicator && <ks-icon icon="chevron" class="dropdown-icon" />}
                 </ks-button>
                 <div
-                    id={dropdownId}
+                    id={this.dropdownId}
                     class={contentClasses}
                     role={this.megaMenu ? '' : 'list'}
-                    aria-labelledby={`${dropdownId}-button`}
+                    aria-labelledby={`${this.dropdownId}-button`}
                     ref={el => this.$contents = el}
                 >
                     <slot />

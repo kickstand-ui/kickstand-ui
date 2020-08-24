@@ -5,7 +5,7 @@ import { Component, h, Prop, Host, ComponentInterface, Event, EventEmitter } fro
     styleUrl: 'form-field.scss'
 })
 export class Radio implements ComponentInterface {
-    radioButtonId = radioButtonIds++;
+    radioButtonId = `radio_${radioButtonIds++}`;
 
     @Prop() label: string;
     @Prop() checked: boolean;
@@ -26,8 +26,8 @@ export class Radio implements ComponentInterface {
         return (
             <Host class={classes}>
                 <div class="input-wrapper">
-                    <input class="radio-button" id={`radio-${this.radioButtonId}`} type="radio" name={this.name} checked={this.checked} onChange={() => this.handleClick()} />
-                    <label class="radio-label" htmlFor={`radio-${this.radioButtonId}`}>{this.label}</label>
+                    <input class="radio-button" id={this.radioButtonId} type="radio" name={this.name} checked={this.checked} onChange={() => this.handleClick()} />
+                    <label class="radio-label" htmlFor={this.radioButtonId}>{this.label}</label>
                 </div>
             </Host>
         );

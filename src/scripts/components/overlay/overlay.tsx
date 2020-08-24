@@ -1,5 +1,5 @@
 import { Component, h, Prop, Method, Host, State, Element, Listen, Event, EventEmitter } from '@stencil/core';
-import componentUtils from '../../utils/componentUtils';
+import { FOCUSABLE_ELEMENTS } from '../../utils/componentUtils';
 
 @Component({
     tag: 'ks-overlay',
@@ -98,7 +98,7 @@ export class Overlay {
     }
 
     componentDidLoad() {
-        this.$focusableEls = Array.from(this.$el.querySelectorAll(componentUtils.focusableElements));
+        this.$focusableEls = Array.from(this.$el.querySelectorAll(FOCUSABLE_ELEMENTS));
     }
 
     render() {

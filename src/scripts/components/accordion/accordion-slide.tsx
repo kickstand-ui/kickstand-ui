@@ -4,7 +4,7 @@ import { Component, h, Prop, Method, Host } from '@stencil/core';
     tag: 'ks-accordion-slide'
 })
 export class AccordionSlide {
-    slideId: string = `accordion-slide-${slideIds++}`;
+    slideId: string = `accordion_slide_${slideIds++}`;
 
     @Prop() heading: string;
     @Prop() expanded: boolean = false;
