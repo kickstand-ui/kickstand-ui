@@ -7,9 +7,8 @@ import { Component, h, Element, Prop, Host, ComponentInterface } from '@stencil/
 export class CarouselSlide implements ComponentInterface {
     $link: HTMLAnchorElement;
     $content: HTMLElement;
-    slideId = `carousel_slide_${carouselSlideIds++}`
 
-    @Element() el: HTMLElement;
+    @Element() $el: HTMLElement;
 
     @Prop() src: string;
     @Prop() alt: string;
@@ -63,7 +62,7 @@ export class CarouselSlide implements ComponentInterface {
         };
 
         return (
-            <Host id={this.slideId} class={classes} role="tabpanel" aria-hidden="true" aria-labelledby={`indicator_for_${this.slideId}`}>
+            <Host class={classes} role="tabpanel" aria-hidden="true">
                 {this.src && <ks-img class="slide-image" alt={this.alt} lazy={this.lazy} src={this.src} threshold={this.threshold} />}
                 <div class={contentClasses} ref={el => this.$content = el}>
                     <slot />
@@ -73,5 +72,3 @@ export class CarouselSlide implements ComponentInterface {
         );
     }
 }
-
-let carouselSlideIds = 0;
