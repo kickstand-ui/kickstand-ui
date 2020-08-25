@@ -86,6 +86,15 @@ $z-indexes: (
 ) !default;
 
 
+// OUTLINE
+
+$outline: (	
+    style: dashed,
+    size: xxxs,    // from $spacing-sizes
+    color: dark,
+    offset: xxs    // from $spacing-sizes
+) !default;
+
 // BORDERS
 
 $border: (	

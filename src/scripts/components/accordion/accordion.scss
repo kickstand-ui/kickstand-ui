@@ -31,7 +31,8 @@
             }
 
             &:focus {
-                outline: 1px dashed color(dark);
+                // outline: 1px dashed color(dark);
+                @include outline();
             }
 
             &[aria-expanded="true"] {

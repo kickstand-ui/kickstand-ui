@@ -16,7 +16,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         justify-content: center;
         align-items: center;
         text-decoration: none;
-        @include p(sm);
+        @include m(sm);
 
         .logo {
             max-width: 3rem;
@@ -140,6 +140,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
                 &:focus {
                     outline: 1px dashed text-color($key);
+                    outline-offset: spacing(xxs);
                 }
             }
 
@@ -149,6 +150,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
                 &:focus {
                     outline: 1px dashed text-color($key);
+                    outline-offset: spacing(xxs);
                 }
             }
 
@@ -160,6 +162,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
                             &:focus {
                                 outline: 1px dashed text-color($key);
+                                outline-offset: spacing(xxs);
                             }
                         }
 
@@ -170,11 +173,11 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
                                     &:focus {
                                         outline: 1px dashed text-color($key);
+                                        outline-offset: spacing(xxs);
                                     }
                                 }
                             }
                         }
-
                     }
                 }
             }
@@ -188,6 +191,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
                     &:focus {
                         outline: 1px dashed color($key);
+                        outline-offset: spacing(xxs);
                     }
                 }
 
@@ -204,6 +208,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
                                 &:focus {
                                     outline: 1px dashed color($key);
+                                    outline-offset: spacing(xxs);
                                 }
                             }
                         }

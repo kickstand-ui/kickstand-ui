@@ -4,8 +4,7 @@
     box-sizing: border-box;
 
     &:focus {
-        outline: spacing(xxxs) dashed color(dark);
-        outline-offset: spacing(xxs);
+        @include outline();
     }
 }
 
