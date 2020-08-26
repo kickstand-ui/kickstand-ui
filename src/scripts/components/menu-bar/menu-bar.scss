@@ -139,8 +139,8 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                 color: text-color($key);
 
                 &:focus {
-                    outline: 1px dashed text-color($key);
-                    outline-offset: spacing(xxs);
+                    @include outline();
+                    outline-color: text-color($key);
                 }
             }
 
@@ -149,8 +149,8 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                 @include border($color: text-color($key));
 
                 &:focus {
-                    outline: 1px dashed text-color($key);
-                    outline-offset: spacing(xxs);
+                    @include outline();
+                    outline-color: text-color($key);
                 }
             }
 
@@ -161,8 +161,8 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                             color: text-color($key);
 
                             &:focus {
-                                outline: 1px dashed text-color($key);
-                                outline-offset: spacing(xxs);
+                                @include outline();
+                                outline-color: text-color($key);            
                             }
                         }
 
@@ -172,8 +172,8 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                                     color: text-color($key);
 
                                     &:focus {
-                                        outline: 1px dashed text-color($key);
-                                        outline-offset: spacing(xxs);
+                                        @include outline();
+                                        outline-color: text-color($key);                    
                                     }
                                 }
                             }
@@ -190,8 +190,8 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                     color: color($key);
 
                     &:focus {
-                        outline: 1px dashed color($key);
-                        outline-offset: spacing(xxs);
+                        @include outline();
+                        outline-color: text-color($key);    
                     }
                 }
 
@@ -207,8 +207,8 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                                 color: color($key);
 
                                 &:focus {
-                                    outline: 1px dashed color($key);
-                                    outline-offset: spacing(xxs);
+                                    @include outline();
+                                    outline-color: text-color($key);                
                                 }
                             }
                         }

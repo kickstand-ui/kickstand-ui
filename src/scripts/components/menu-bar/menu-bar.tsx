@@ -55,7 +55,7 @@ export class MenuBar implements ComponentInterface {
                     <span class="sr-only">toggle menu</span>
                     <ks-icon icon="bars" />
                 </button>
-                <div class="menu-content" id={`menu-content-${this.menuId}`} ref={el => this.$menuContent = el} tabindex="-1">
+                <div class="menu-content" id={`menu-content-${this.menuId}`} ref={el => this.$menuContent = el}>
                     <slot />
                 </div>
             </Host>
