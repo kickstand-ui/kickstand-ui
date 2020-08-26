@@ -184,8 +184,9 @@
     cursor: pointer;
 
     &:focus-within {
-        outline: spacing(xxxs) dashed color(dark);
-        outline-offset: spacing(xxs);
+        // outline: spacing(xxxs) dashed color(dark);
+        // outline-offset: spacing(xxs);
+        @include outline();
     }
 
     .checkbox-input {
@@ -285,8 +286,9 @@
         display: inline-block;
 
         &:focus-within {
-            outline: spacing(xxxs) dashed color(dark);
-            outline-offset: spacing(xxs);
+            // outline: spacing(xxxs) dashed color(dark);
+            // outline-offset: spacing(xxs);
+            @include outline();
         }
 
         .radio-button {

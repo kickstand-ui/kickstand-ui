@@ -1,0 +1,11 @@
+@import '../functions/borders';
+
+@mixin outline($style: default-outline(style), $size: default-outline(size), $offset: default-outline(offset), $color: default-outline(color), $variant: base, $opacity: 1, $important: false) {
+    @if($important == true) {
+        outline: $style spacing($size) split-color-list($color, $variant, $opacity) !important;
+        outline-offset: spacing($size) !important;
+    } @else {
+        outline: $style spacing($size) split-color-list($color, $variant, $opacity);
+        outline-offset: spacing($size);
+    }
+}

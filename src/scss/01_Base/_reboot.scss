@@ -52,19 +52,6 @@ body {
 // See https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible
 // and https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/
 
-[tabindex="-1"]:focus:not(:focus-visible) {
-    outline: 2px;
-    outline-style: solid;
-    outline-color: color(primary, 0.5);
-}
-
-*:focus {
-    outline: 2px;
-    outline-style: solid;
-    outline-color: color(primary, 0.5);
-}
-
-
 // Content grouping
 //
 // 1. Reset Firefox's gray color
@@ -390,15 +377,13 @@ progress {
 }
 
 
-// 1. Correct the outline style in Safari.
-// 2. This overrides the extra rounded corners on search inputs in iOS so that our
-//    `.form-control` class can properly style them. Note that this cannot simply
-//    be added to `.form-control` as it's not specific enough. For details, see
-//    https://github.com/twbs/bootstrap/issues/11586.
+// This overrides the extra rounded corners on search inputs in iOS so that our
+// `.form-control` class can properly style them. Note that this cannot simply
+// be added to `.form-control` as it's not specific enough. For details, see
+// https://github.com/twbs/bootstrap/issues/11586.
 
 [type="search"] {
-    outline-offset: -2px; // 1
-    -webkit-appearance: textfield; // 2
+    -webkit-appearance: textfield;
 }
 
 // Remove the inner padding in Chrome and Safari on macOS.
