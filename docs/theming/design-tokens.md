@@ -26,17 +26,20 @@ There are 3 default font types set up to start out with (`accent`, `base`, and `
 
 For performance reasons, the default values that have been set for these variables are system fonts. For further reading on this, check out Marcin Wichary's excellent [Smashing Magazine article](https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/).
 
-| Type | Description |
-|---|---|
-| Accent | This is primarily used for things like headings or blockquotes. This should help those pieces of your design stand out from the rest of your content.
-| Base | This is the default font for your site. If it is not text that should stand out more than other text, it should be using this font. This font should be simple and easy to read at both large and small font sizes. |
-| Monospace | If you are creating a tutorial site that has code snippets or special call-out text, this font is an excellent way to help highlight those parts of your application. |
+| Type      | Description                                                                                                                                                                                                         |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Accent    | This is primarily used for things like headings or blockquotes. This should help those pieces of your design stand out from the rest of your content.                                                               |
+| Base      | This is the default font for your site. If it is not text that should stand out more than other text, it should be using this font. This font should be simple and easy to read at both large and small font sizes. |
+| Monospace | If you are creating a tutorial site that has code snippets or special call-out text, this font is an excellent way to help highlight those parts of your application.                                               |
 
 ```scss
 $fonts: (
-    accent: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-    base: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-    monospace: 'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
+    accent:
+        '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+    base:
+        '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+    monospace:
+        'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
 ) !default;
 ```
 
@@ -54,13 +57,19 @@ The default font sizes are `xxs-xxl`. They use `rem`'s for the unit of measure. 
 
 ```scss
 $font-sizes: (
-    xxs: 0.75rem, // 12px
-    xs: 0.875rem, // 14px
-    sm: 1rem,     // 16px
-    md: 1.25rem,  // 30px
-    lg: 1.5rem,   // 24px
-    xl: 2rem,     // 32px
-    xxl: 3rem     // 48px
+    xxs: 0.75rem,
+    // 12px
+    xs: 0.875rem,
+    // 14px
+    sm: 1rem,
+    // 16px
+    md: 1.25rem,
+    // 30px
+    lg: 1.5rem,
+    // 24px
+    xl: 2rem,
+    // 32px
+    xxl: 3rem // 48px,
 ) !default;
 ```
 
@@ -82,15 +91,23 @@ The spacing variables control things like padding and margins for your site. At 
 $spacing-sizes: (
     auto: auto,
     none: 0,
-    xxxs: 0.0625rem, // 1px
-    xxs: 0.125rem,   // 2px
-    xs: 0.25rem,     // 4px
-    sm: 0.5rem,      // 8px
-    md: 0.75rem,     // 12px
-    lg: 1rem,        // 16px
-    xl: 1.25rem,     // 20px
-    xxl: 1.5rem,     // 24px
-    xxxl: 2rem       // 32px
+    xxxs: 0.0625rem,
+    // 1px
+    xxs: 0.125rem,
+    // 2px
+    xs: 0.25rem,
+    // 4px
+    sm: 0.5rem,
+    // 8px
+    md: 0.75rem,
+    // 12px
+    lg: 1rem,
+    // 16px
+    xl: 1.25rem,
+    // 20px
+    xxl: 1.5rem,
+    // 24px
+    xxxl: 2rem // 32px,
 ) !default;
 ```
 
@@ -110,12 +127,12 @@ Colors are easily one of the most complex things about your site. Trying to capt
 
 ```scss
 $theme-colors: (
-    'primary': #2c5374,
-    'secondary': #ac3f00,
-    'success': #669c1f,
-    'info': #509BCE,
-    'warning': #e1a900,
-    'danger': #c70000
+    "primary": #2c5374,
+    "secondary": #ac3f00,
+    "success": #669c1f,
+    "info": #509bce,
+    "warning": #e1a900,
+    "danger": #c70000,
 ) !default;
 ```
 
@@ -152,15 +169,21 @@ These are also the values used to create the responsive utility classes.
 
 ```scss
 $media-queries: (
-    xxs: 20rem,  // 320px
-    xs: 30rem,   // 480px
-    sm: 48rem,   // 768px
-    md: 62rem,   // 992px
-    lg: 75rem,   // 1200px
-    xl: 90rem,   // 1440px
+    xxs: 20rem,
+    // 320px
+    xs: 30rem,
+    // 480px
+    sm: 48rem,
+    // 768px
+    md: 62rem,
+    // 992px
+    lg: 75rem,
+    // 1200px
+    xl: 90rem,
+    // 1440px
     light-mode: light,
     dark-mode: dark,
-    print: print
+    print: print,
 ) !default;
 ```
 
@@ -189,9 +212,7 @@ In your style sheets:
 In your markup:
 
 ```html
-<div class="my-component w-25 md:w-50 xs:w-100 print:hide">
-    ...
-</div>
+<div class="my-component w-25 md:w-50 xs:w-100 print:hide">...</div>
 ```
 
 ## Z-Index
@@ -210,7 +231,7 @@ $z-indexes: (
     md: 100,
     lg: 200,
     xl: 500,
-    trump: 99999
+    trump: 99999,
 ) !default;
 ```
 
@@ -223,8 +244,9 @@ The default border variable is a little unique from the other variables in that 
 ```scss
 $border: (
     style: solid,
-    size: xxxs,    // from $spacing-sizes
-    color: light lighter
+    size: xxxs,
+    // from $spacing-sizes
+    color: light lighter,
 ) !default;
 ```
 
@@ -235,17 +257,57 @@ These are pretty straight forward. This is a way to keep your rounded corners co
 ```scss
 $border-radiuses: (
     none: 0,
-    sm: 0.25rem,  // 4px
-    md: 0.5rem,   // 8px
-    lg: 0.75rem,  // 12px
-    pill: 10rem,  // 160px
-    circle: 50%
+    sm: 0.25rem,
+    // 4px
+    md: 0.5rem,
+    // 8px
+    lg: 0.75rem,
+    // 12px
+    pill: 10rem,
+    // 160px
+    circle: 50%,
 ) !default;
 ```
 
 #### Usage
 
 Use the border radius [mixins](https://projectclarion.com/framework/documentation/mixins/border-radius.html) to take advantage of these values.
+
+## Outline
+
+These are the settings for the default outline style when focused on elements.
+
+```scss
+$outline: (
+    style: dashed,
+    size: xxxs,
+    // from $spacing-sizes
+    color: dark,
+    offset: xxs // from $spacing-sizes,
+) !default;
+```
+
+### Usage
+
+```scss
+button {
+    &:focus {
+        @include outline();
+    }
+}
+```
+
+You can also override the default values, by passing parameters into the mixin:
+
+```scss
+// outline($style, $size, $offset, $color, $variant, $opacity, $important)
+
+button {
+    &:focus {
+        @include outline(solid, xxs, none, dark, lighter, 0.75, true);
+    }
+}
+```
 
 ## Shadows
 
@@ -260,7 +322,7 @@ $shadows: (
     sm: "0 3px 5px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12)",
     md: "0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.10)",
     lg: "0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05)",
-    xl: "0 20px 40px rgba(0, 0, 0, 0.20)"
+    xl: "0 20px 40px rgba(0, 0, 0, 0.20)",
 ) !default;
 ```
 
@@ -272,9 +334,9 @@ This set of values is where you can keep track of your transition speeds for you
 $transitions: (
     xslow: 2s,
     slow: 1s,
-    med: .5s,
-    fast: .3s,
-    xfast: .1s
+    med: 0.5s,
+    fast: 0.3s,
+    xfast: 0.1s,
 ) !default;
 ```
 
@@ -282,8 +344,8 @@ $transitions: (
 
 As you can see, all of these variables are decorated with the `!default` attribute. This means you can easily override them with your own values. When you create a custom theme:
 
-- Create a separate file for all of your reusable values
-- Make sure your customizations do not have the `!default` attribute
-- Compile your SASS. When the SASS compiler builds your CSS file, it will pick up your custom values and override the default values.
+-   Create a separate file for all of your reusable values
+-   Make sure your customizations do not have the `!default` attribute
+-   Compile your SASS. When the SASS compiler builds your CSS file, it will pick up your custom values and override the default values.
 
 That's it!

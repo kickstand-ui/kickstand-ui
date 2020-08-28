@@ -103,6 +103,7 @@ module.exports = {
                     "/components/overlay.html",
                     "/components/progress-bar.html",
                     "/components/side-drawer.html",
+                    "/components/switch.html",
                     // "/components/spin-box.html",
                     "/components/tabs.html",
                     "/components/tooltip.html"

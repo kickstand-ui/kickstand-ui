@@ -22,8 +22,8 @@
     },
     "devDependencies": {
         "@babel/core": "^7.11.1",
-        "@vuepress/plugin-google-analytics": "^1.5.3",
-        "vuepress": "^1.5.3",
+        "@vuepress/plugin-google-analytics": "^1.5.4",
+        "vuepress": "^1.5.4",
         "vuepress-plugin-sitemap": "^2.3.1"
     },
     "author": "Burton Smith <burton@breakstuff.io>",
@@ -34,6 +34,6 @@
     "homepage": "https://kickstand-ui.com/",
     "license": "MIT",
     "dependencies": {
-        "kickstand-ui": "^1.2.3"
+        "kickstand-ui": "^1.4.0"
     }
 }
