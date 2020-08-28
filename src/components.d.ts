@@ -275,6 +275,12 @@ export namespace Components {
         "step": number;
         "value": number;
     }
+    interface KsSwitch {
+        "checked": boolean;
+        "disable": boolean;
+        "label": string;
+        "name": string;
+    }
     interface KsTab {
         "tabText": string;
     }
@@ -502,6 +508,12 @@ declare global {
         prototype: HTMLKsSpinBoxElement;
         new (): HTMLKsSpinBoxElement;
     };
+    interface HTMLKsSwitchElement extends Components.KsSwitch, HTMLStencilElement {
+    }
+    var HTMLKsSwitchElement: {
+        prototype: HTMLKsSwitchElement;
+        new (): HTMLKsSwitchElement;
+    };
     interface HTMLKsTabElement extends Components.KsTab, HTMLStencilElement {
     }
     var HTMLKsTabElement: {
@@ -556,6 +568,7 @@ declare global {
         "ks-row": HTMLKsRowElement;
         "ks-side-drawer": HTMLKsSideDrawerElement;
         "ks-spin-box": HTMLKsSpinBoxElement;
+        "ks-switch": HTMLKsSwitchElement;
         "ks-tab": HTMLKsTabElement;
         "ks-tabs": HTMLKsTabsElement;
         "ks-tooltip": HTMLKsTooltipElement;
@@ -825,6 +838,13 @@ declare namespace LocalJSX {
         "step"?: number;
         "value"?: number;
     }
+    interface KsSwitch {
+        "checked"?: boolean;
+        "disable"?: boolean;
+        "label"?: string;
+        "name"?: string;
+        "onUpdated"?: (event: CustomEvent<any>) => void;
+    }
     interface KsTab {
         "tabText"?: string;
     }
@@ -876,6 +896,7 @@ declare namespace LocalJSX {
         "ks-row": KsRow;
         "ks-side-drawer": KsSideDrawer;
         "ks-spin-box": KsSpinBox;
+        "ks-switch": KsSwitch;
         "ks-tab": KsTab;
         "ks-tabs": KsTabs;
         "ks-tooltip": KsTooltip;
@@ -920,6 +941,7 @@ declare module "@stencil/core" {
             "ks-row": LocalJSX.KsRow & JSXBase.HTMLAttributes<HTMLKsRowElement>;
             "ks-side-drawer": LocalJSX.KsSideDrawer & JSXBase.HTMLAttributes<HTMLKsSideDrawerElement>;
             "ks-spin-box": LocalJSX.KsSpinBox & JSXBase.HTMLAttributes<HTMLKsSpinBoxElement>;
+            "ks-switch": LocalJSX.KsSwitch & JSXBase.HTMLAttributes<HTMLKsSwitchElement>;
             "ks-tab": LocalJSX.KsTab & JSXBase.HTMLAttributes<HTMLKsTabElement>;
             "ks-tabs": LocalJSX.KsTabs & JSXBase.HTMLAttributes<HTMLKsTabsElement>;
             "ks-tooltip": LocalJSX.KsTooltip & JSXBase.HTMLAttributes<HTMLKsTooltipElement>;
