@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type                           | Default   |
-| ---------- | ----------- | ----------- | ------------------------------ | --------- |
-| `noGutter` | `no-gutter` |             | `boolean`                      | `false`   |
-| `position` | `position`  |             | `"center" \| "end" \| "start"` | `'start'` |
+| Property   | Attribute  | Description | Type                                                                                   | Default   |
+| ---------- | ---------- | ----------- | -------------------------------------------------------------------------------------- | --------- |
+| `gutter`   | `gutter`   |             | `"lg" \| "md" \| "none" \| "sm" \| "xl" \| "xs" \| "xxl" \| "xxs" \| "xxxl" \| "xxxs"` | `'sm'`    |
+| `position` | `position` |             | `"center" \| "end" \| "start"`                                                         | `'start'` |
 
 
 ----------------------------------------------
