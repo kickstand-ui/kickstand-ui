@@ -1,7 +1,6 @@
 @import "../../../scss/00_Abstracts/index";
 
 $columns: 12;
-$gutter-size: sm;
 $breakpoints: (xl, lg, md, sm, xs, xxs);
 
 .ks-row {
@@ -9,13 +8,18 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
     flex-wrap: wrap;
     flex-basis: 0;
     flex-grow: 1;
-    @include mx(-$gutter-size);
 
-    &.no-gutter {
-        @include mx(none);
+    @each $key, $value in $spacing-sizes {
+        $gutter-size: $value / 2;
 
-        > .col {
-            @include px(none);
+        &.gutter-#{$key} {
+            margin-left: -$gutter-size;
+            margin-right: -$gutter-size;
+
+            >.col {
+                padding-left: $gutter-size;
+                padding-right: $gutter-size;
+            }
         }
     }
 
@@ -51,8 +55,6 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         flex-grow: 1;
         max-width: 100%;
         width: 100%;
-        @include py(md);
-        @include px($gutter-size);
 
         @for $i from 1 through $columns {
             &.col-#{$i} {
@@ -62,7 +64,9 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         }
 
         @for $i from 1 through $columns {
-            @each $key, $value in $breakpoints {
+
+            @each $key,
+            $value in $breakpoints {
                 @include mq($key) {
                     &.#{$key}\:col-#{$i} {
                         max-width: (100% / $columns) * $i;

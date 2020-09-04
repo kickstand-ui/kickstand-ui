@@ -257,7 +257,7 @@ export namespace Components {
         "name": string;
     }
     interface KsRow {
-        "noGutter": boolean;
+        "gutter": 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "position": 'start' | 'center' | 'end';
     }
     interface KsSideDrawer {
@@ -821,7 +821,7 @@ declare namespace LocalJSX {
         "onSelected"?: (event: CustomEvent<any>) => void;
     }
     interface KsRow {
-        "noGutter"?: boolean;
+        "gutter"?: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "position"?: 'start' | 'center' | 'end';
     }
     interface KsSideDrawer {

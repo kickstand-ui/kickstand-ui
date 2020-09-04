@@ -1,3 +1,5 @@
+import { text } from "@storybook/addon-knobs";
+
 export default { title: 'Grid' };
 
 export const basicGrid = () => {
@@ -72,6 +74,26 @@ export const basicGrid = () => {
         </div>
 
     </div>
+    `);
+};
+
+export const gutters = () => {
+    const gutter = text('gutter', 'sm');
+    return (`
+    <ks-row gutter="${gutter}">
+        <ks-column>
+            <span class="bg-light w-100">Start</span>
+        </ks-column>
+        <ks-column>
+            <span class="bg-light w-100">Center</span>
+        </ks-column>
+        <ks-column>
+            <span class="bg-light w-100">End</span>
+        </ks-column>
+        <ks-column>
+            <span class="bg-light w-100">Stretch</span>
+        </ks-column>
+    </ks-row>
     `);
 };
 
