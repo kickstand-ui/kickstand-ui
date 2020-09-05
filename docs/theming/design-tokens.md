@@ -57,19 +57,13 @@ The default font sizes are `xxs-xxl`. They use `rem`'s for the unit of measure. 
 
 ```scss
 $font-sizes: (
-    xxs: 0.75rem,
-    // 12px
-    xs: 0.875rem,
-    // 14px
-    sm: 1rem,
-    // 16px
-    md: 1.25rem,
-    // 30px
-    lg: 1.5rem,
-    // 24px
-    xl: 2rem,
-    // 32px
-    xxl: 3rem // 48px,
+    xxs: 0.75rem, // 12px
+    xs: 0.875rem, // 14px
+    sm: 1rem,     // 16px
+    md: 1.25rem,  // 30px
+    lg: 1.5rem,   // 24px
+    xl: 2rem,     // 32px
+    xxl: 3rem     // 48px,
 ) !default;
 ```
 
@@ -91,23 +85,15 @@ The spacing variables control things like padding and margins for your site. At 
 $spacing-sizes: (
     auto: auto,
     none: 0,
-    xxxs: 0.0625rem,
-    // 1px
-    xxs: 0.125rem,
-    // 2px
-    xs: 0.25rem,
-    // 4px
-    sm: 0.5rem,
-    // 8px
-    md: 0.75rem,
-    // 12px
-    lg: 1rem,
-    // 16px
-    xl: 1.25rem,
-    // 20px
-    xxl: 1.5rem,
-    // 24px
-    xxxl: 2rem // 32px,
+    xxxs: 0.0625rem, // 1px
+    xxs: 0.125rem,   // 2px
+    xs: 0.25rem,     // 4px
+    sm: 0.5rem,      // 8px
+    md: 0.75rem,     // 12px
+    lg: 1rem,        // 16px
+    xl: 1.25rem,     // 20px
+    xxl: 1.5rem,     // 24px
+    xxxl: 2rem       // 32px,
 ) !default;
 ```
 
@@ -169,18 +155,12 @@ These are also the values used to create the responsive utility classes.
 
 ```scss
 $media-queries: (
-    xxs: 20rem,
-    // 320px
-    xs: 30rem,
-    // 480px
-    sm: 48rem,
-    // 768px
-    md: 62rem,
-    // 992px
-    lg: 75rem,
-    // 1200px
-    xl: 90rem,
-    // 1440px
+    xxs: 20rem, // 320px
+    xs: 30rem,  // 480px
+    sm: 48rem,  // 768px
+    md: 62rem,  // 992px
+    lg: 75rem,  // 1200px
+    xl: 90rem,  // 1440px
     light-mode: light,
     dark-mode: dark,
     print: print,
@@ -244,8 +224,7 @@ The default border variable is a little unique from the other variables in that 
 ```scss
 $border: (
     style: solid,
-    size: xxxs,
-    // from $spacing-sizes
+    size: xxxs, // from $spacing-sizes
     color: light lighter,
 ) !default;
 ```
@@ -257,14 +236,10 @@ These are pretty straight forward. This is a way to keep your rounded corners co
 ```scss
 $border-radiuses: (
     none: 0,
-    sm: 0.25rem,
-    // 4px
-    md: 0.5rem,
-    // 8px
-    lg: 0.75rem,
-    // 12px
-    pill: 10rem,
-    // 160px
+    sm: 0.25rem, // 4px
+    md: 0.5rem,  // 8px
+    lg: 0.75rem, // 12px
+    pill: 10rem, // 160px
     circle: 50%,
 ) !default;
 ```
@@ -280,8 +255,7 @@ These are the settings for the default outline style when focused on elements.
 ```scss
 $outline: (
     style: dashed,
-    size: xxxs,
-    // from $spacing-sizes
+    size: xxxs, // from $spacing-sizes
     color: dark,
     offset: xxs // from $spacing-sizes,
 ) !default;
@@ -344,8 +318,8 @@ $transitions: (
 
 As you can see, all of these variables are decorated with the `!default` attribute. This means you can easily override them with your own values. When you create a custom theme:
 
--   Create a separate file for all of your reusable values
--   Make sure your customizations do not have the `!default` attribute
--   Compile your SASS. When the SASS compiler builds your CSS file, it will pick up your custom values and override the default values.
+- Create a separate file for all of your reusable values
+- Make sure your customizations do not have the `!default` attribute
+- Compile your SASS. When the SASS compiler builds your CSS file, it will pick up your custom values and override the default values.
 
 That's it!
