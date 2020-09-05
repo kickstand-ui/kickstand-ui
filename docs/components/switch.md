@@ -1,3 +1,27 @@
+---
+{
+    "description": "Kickstand UI's switch component is an interactive element used to toggle features or settings 'on' or 'off' or to activate or deactivate something.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Switch Component - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/switch.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI's switch component is an interactive element used to toggle features or settings 'on' or 'off' or to activate or deactivate something."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/switch.png"
+        }
+    ]
+}
+---
+
 # Switch
 
 A switch is an interactive element used to toggle features or settings "on" or "off" or to activate or deactivate something. A switch can be a stand-alone control or can be grouped with other controls such as form field or other switches, but they are independent from the other controls.
@@ -45,6 +69,32 @@ If you need to customize the layout or placement of the label, this component wo
 ```html
 <ks-switch label="Show Pricing" class="flex-row-reverse space-between w-100"></ks-switch>
 ```
+
+## Getting Values
+
+```html
+<ks-switch label="Show Pricing" id="pricing"></ks-switch>
+<script>
+    (function(){
+        const switch = document.getElementById('pricing');
+        switch.addEventListener('updated', function (event) {
+            const value = event.detail.value;
+            // do something awesome
+        });
+    })();
+</script>
+```
+
+The data coming back from the event on the `event.detail` is an object with a `name` (for identification purposes) and the `value` (`true` or `false`).
+
+```ts
+{
+    name: string,
+    value: boolean
+}
+```
+
+The `name` will use the `name` property value. If one is not provided, it will derive a name from the label.
 
 ## Accessibility
 

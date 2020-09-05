@@ -1,6 +1,31 @@
+---
+{
+    "description": "Kickstand UI's grid provides a responsive layout system for your user interfaces.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Grid Layout - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/grid.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI's grid provides a responsive layout system for your user interfaces."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/grid.png"
+        }
+    ]
+}
+---
+
+
 # Grid
 
-Kickstand UI's grid provides a responsive layout system for you user interfaces.
+Kickstand UI's grid provides a responsive layout system for your user interfaces.
 
 <div class="my-xl">
     <ks-row>
