@@ -1,3 +1,19 @@
+---
+{
+    "description": "Kickstand UI is designed to be customizable to meet your needs. Update the design tokens to match your brand.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Design Tokens - Kickstand UI"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI is designed to be customizable to meet your needs. Update the design tokens to match your brand."
+        }
+    ]
+}
+---
+
 # Design Tokens
 
 Design tokens are a set of values that you reuse throughout your application to create visual consistency throughout your applications. As you will see, there are many different types of design tokens available including typography, spacing units, and color.

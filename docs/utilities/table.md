@@ -1,6 +1,30 @@
+---
+{
+    "description": "Kickstand UI's table utilities are designed to provide consistency with your table designs.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Table Utilities - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/table.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI's table utilities are designed to provide consistency with your table designs."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/table.png"
+        }
+    ]
+}
+---
+
 # Table
 
-To provide consistency with your table designs, Kickstand UI provides a `table` utility class.
+Kickstand UI's table utilities are designed to provide consistency with your table designs.
 
 <div class="my-xl">
     <table class="table">

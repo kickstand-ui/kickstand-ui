@@ -1,9 +1,35 @@
+---
+{
+    "description": "Kickstand UI's side-drawer component enables quick access to interactive menus and content anywhere in your application.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Side-Drawer Component - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/side-drawer.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI's side-drawer component enables quick access to interactive menus and content anywhere in your application."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/side-drawer.png"
+        }
+    ]
+}
+---
+
 # Side Drawer
+
+Kickstand UI's side-drawer component enables quick access to interactive menus and content anywhere in your application.
 
 <div class="my-xl">
     <ks-button shows="basic_drawer">Open Drawer</ks-button>
     <ks-side-drawer header-text="Basic Drawer" id="basic_drawer">
-        <p>“I’m not a millionaire. I thought I would be by the time I was 30, but I wasn’t even close. Then I thought maybe by 40, but by 40 I had less money than I did when I was 30.”</p> 
+        <p>“I’m not a millionaire. I thought I would be by the time I was 30, but I wasn’t even close. Then I thought maybe by 40, but by 40 I had less money than I did when I was 30.”</p>
         <p>– Michael Scott</p>
     </ks-side-drawer>
 </div>
@@ -11,7 +37,7 @@
 ```html
 <ks-button shows="basic_drawer">Open Drawer</ks-button>
 <ks-side-drawer header-text="Basic Drawer" id="basic_drawer">
-    <p>“I’m not a millionaire. I thought I would be by the time I was 30, but I wasn’t even close. Then I thought maybe by 40, but by 40 I had less money than I did when I was 30.”</p> 
+    <p>“I’m not a millionaire. I thought I would be by the time I was 30, but I wasn’t even close. Then I thought maybe by 40, but by 40 I had less money than I did when I was 30.”</p>
     <p>– Michael Scott</p>
 </ks-side-drawer>
 ```
@@ -22,11 +48,11 @@
     <ks-button shows="left_drawer">Open Left Drawer</ks-button>
     <ks-button shows="right_drawer">Open Right Drawer</ks-button>
     <ks-side-drawer position="left" header-text="Left Drawer" id="left_drawer">
-        <p>“I am running away from my responsibilities. And it feels good.”</p> 
+        <p>“I am running away from my responsibilities. And it feels good.”</p>
         <p>– Michael Scott</p>
     </ks-side-drawer>
     <ks-side-drawer position="right" header-text="Right Drawer" id="right_drawer">
-        <p>“I’m not usually the butt of the joke. I’m usually the face of the joke.”</p> 
+        <p>“I’m not usually the butt of the joke. I’m usually the face of the joke.”</p>
         <p>– Michael Scott</p>
     </ks-side-drawer>
 </div>
@@ -35,11 +61,11 @@
     <ks-button shows="left_drawer">Open Left Drawer</ks-button>
     <ks-button shows="right_drawer">Open Right Drawer</ks-button>
     <ks-side-drawer position="left" header-text="Left Drawer" id="left_drawer">
-        <p>“I am running away from my responsibilities. And it feels good.”</p> 
+        <p>“I am running away from my responsibilities. And it feels good.”</p>
         <p>– Michael Scott</p>
     </ks-side-drawer>
     <ks-side-drawer position="right" header-text="Right Drawer" id="right_drawer">
-        <p>“I’m not usually the butt of the joke. I’m usually the face of the joke.”</p> 
+        <p>“I’m not usually the butt of the joke. I’m usually the face of the joke.”</p>
         <p>– Michael Scott</p>
     </ks-side-drawer>
 ```
@@ -52,19 +78,19 @@
     <ks-button class="mb-md" shows="lg_drawer">Open Large Drawer</ks-button><br>
     <ks-button class="mb-md" shows="xl_drawer">Open X-Large Drawer</ks-button>
     <ks-side-drawer size="sm" header-text="Small Drawer" id="sm_drawer">
-        <p>“And I knew exactly what to do. But in a much more real sense, I had no idea what to do.”</p> 
+        <p>“And I knew exactly what to do. But in a much more real sense, I had no idea what to do.”</p>
         <p>– Michael Scott</p>
     </ks-side-drawer>
     <ks-side-drawer size="md" header-text="Medium Drawer" id="md_drawer">
-        <p>“Would I rather be feared or loved? Easy. Both. I want people to be afraid of how much they love me.”</p> 
+        <p>“Would I rather be feared or loved? Easy. Both. I want people to be afraid of how much they love me.”</p>
         <p>– Michael Scott</p>
     </ks-side-drawer>
     <ks-side-drawer size="lg" header-text="Large Drawer" id="lg_drawer">
-        <p>“Abraham Lincoln once said that ‘If you’re a racist, I will attack you with the North,” and these are the principles I carry with me in the workplace.”</p> 
+        <p>“Abraham Lincoln once said that ‘If you’re a racist, I will attack you with the North,” and these are the principles I carry with me in the workplace.”</p>
         <p>– Michael Scott</p>
     </ks-side-drawer>
     <ks-side-drawer size="xl" header-text="X-Large Drawer" id="xl_drawer">
-        <p>“As it turns out, you can’t just check someone into rehab against their will. They have to do it voluntarily. They have to hit rock bottom. So I think I know what I need to do at this point. I need to find ways to push Meredith to the bottom. Um. I think I can do it.”</p> 
+        <p>“As it turns out, you can’t just check someone into rehab against their will. They have to do it voluntarily. They have to hit rock bottom. So I think I know what I need to do at this point. I need to find ways to push Meredith to the bottom. Um. I think I can do it.”</p>
         <p>– Michael Scott</p>
     </ks-side-drawer>
 </div>
@@ -76,19 +102,19 @@
 <ks-button shows="xl_drawer">Open X-Large Drawer</ks-button>
 
 <ks-side-drawer size="sm" header-text="Small Drawer" id="sm_drawer">
-    <p>“And I knew exactly what to do. But in a much more real sense, I had no idea what to do.”</p> 
+    <p>“And I knew exactly what to do. But in a much more real sense, I had no idea what to do.”</p>
     <p>– Michael Scott</p>
 </ks-side-drawer>
 <ks-side-drawer size="md" header-text="Medium Drawer" id="md_drawer">
-    <p>“Would I rather be feared or loved? Easy. Both. I want people to be afraid of how much they love me.”</p> 
+    <p>“Would I rather be feared or loved? Easy. Both. I want people to be afraid of how much they love me.”</p>
     <p>– Michael Scott</p>
 </ks-side-drawer>
 <ks-side-drawer size="lg" header-text="Large Drawer" id="lg_drawer">
-    <p>“Abraham Lincoln once said that ‘If you’re a racist, I will attack you with the North,” and these are the principles I carry with me in the workplace.”</p> 
+    <p>“Abraham Lincoln once said that ‘If you’re a racist, I will attack you with the North,” and these are the principles I carry with me in the workplace.”</p>
     <p>– Michael Scott</p>
 </ks-side-drawer>
 <ks-side-drawer size="xl" header-text="X-Large Drawer" id="xl_drawer">
-    <p>“As it turns out, you can’t just check someone into rehab against their will. They have to do it voluntarily. They have to hit rock bottom. So I think I know what I need to do at this point. I need to find ways to push Meredith to the bottom. Um. I think I can do it.”</p> 
+    <p>“As it turns out, you can’t just check someone into rehab against their will. They have to do it voluntarily. They have to hit rock bottom. So I think I know what I need to do at this point. I need to find ways to push Meredith to the bottom. Um. I think I can do it.”</p>
     <p>– Michael Scott</p>
 </ks-side-drawer>
 ```

@@ -1,3 +1,19 @@
+---
+{
+    "description": "Kickstand UI can be easily implemented in any of your projects regardless of the technologies that are already in place.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Introduction - Kickstand UI"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI can be easily implemented in any of your projects regardless of the technologies that are already in place."
+        }
+    ]
+}
+---
+
 # Introduction
 
 ## Use Your Design System _Everywhere_!

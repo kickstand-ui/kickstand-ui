@@ -1,3 +1,19 @@
+---
+{
+    "description": "Installing Kickstand UI is as easy as adding a few tags to your page. You can also install it using your favorite package manager.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Installation - Kickstand UI"
+        },
+        {
+            "property": "og:description",
+            "content": "Installing Kickstand UI is as easy as adding a few tags to your page. You can also install it using your favorite package manager."
+        }
+    ]
+}
+---
+
 # Installation
 
 ## CDN

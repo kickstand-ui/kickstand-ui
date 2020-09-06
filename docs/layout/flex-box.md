@@ -1,6 +1,30 @@
+---
+{
+    "description": "Kickstand UI's flex layout utility classes are designed to create dynamic layouts without writing any custom styles.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Flex Layout - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/flex-layout.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI's flex layout utility classes are designed to create dynamic layouts without writing any custom styles."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/flex-layout.png"
+        }
+    ]
+}
+---
+
 # Flex Layouts
 
-There are a number of utility classes available for creating flex layouts. These classes are designed to create simple layouts without writing any custom styles. For more advanced layouts, check out Kickstand UI's [grid system](/layout/grid.html).
+There are a number of utility classes available for creating flex layouts. These classes are designed to create dynamic layouts without writing any custom styles. For more advanced layouts, check out Kickstand UI's [grid system](/layout/grid.html).
 
 :::tip
 For additional information on _flexbox_ check out this great guide on [CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background). Also check out [Flexbox Zombies](https://geddski.teachable.com/p/flexbox-zombies) for a fun way to learn more about using flexbox.

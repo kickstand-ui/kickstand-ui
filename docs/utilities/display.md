@@ -1,31 +1,55 @@
+---
+{
+    "description": "Kickstand UI's display utility classes provide a way for you to easily adjust responsive layouts.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Display Utilities - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/display.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI's display utility classes provide a way for you to easily adjust responsive layouts."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/display.png"
+        }
+    ]
+}
+---
+
 # Display
 
-Kickstand UI's display utility classes provide a way for you to easily adjust layouts.
+Kickstand UI's display utility classes provide a way for you to easily adjust responsive layouts.
 
 ## Classes
 
 | Class                                             | CSS Rule                           |
 | ------------------------------------------------- | ---------------------------------- |
 | `display-block`                                   | `display: block;`                  |
+| `display-flex` [more info](/layout/flex-box.html) | `display: flex;`                   |
 | `display-inline`                                  | `display: inline;`                 |
 | `display-inline-block`                            | `display: inline-block;`           |
-| `display-flex` [more info](/layout/flex-box.html) | `display: flex;`                   |
 | `display-inline-flex`                             | `display: inline-flex;`            |
 
 
 <div class="my-xl">
     <div class="bg-light p-lg my-md display-block">display-block</div>
-    <div class="bg-light p-lg my-md display-inline">display-inline</div>
-    <div class="bg-light p-lg my-md display-inline-block">display-inline-block</div>
     <div class="bg-light p-lg my-md display-flex">display-flex</div>
+    <div class="bg-light p-lg my-md display-inline-block">display-inline-block</div>
+    <div class="bg-light p-lg my-md display-inline">display-inline</div>
     <div class="bg-light p-lg my-md display-inline-flex">display-inline-flex</div>
 </div>
 
 ```html
 <div class="bg-light p-lg my-md display-block">display-block</div>
+<div class="bg-light p-lg my-md display-flex">display-flex</div>
 <div class="bg-light p-lg my-md display-inline">display-inline</div>
 <div class="bg-light p-lg my-md display-inline-block">display-inline-block</div>
-<div class="bg-light p-lg my-md display-flex">display-flex</div>
 <div class="bg-light p-lg my-md display-inline-flex">display-inline-flex</div>
 ```
 

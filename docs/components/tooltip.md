@@ -1,6 +1,30 @@
+---
+{
+    "description": "Kickstand UI's tooltips are used to provide a way for users to find contextual information in your application.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Tooltip Component - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/tooltip.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI's tooltips are used to provide a way for users to find contextual information in your application."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/tooltip.png"
+        }
+    ]
+}
+---
+
 # Tooltip
 
-Tooltips are used to provide contextual information for your user interface.
+Kickstand UI's tooltips are used to provide a way for users to find contextual information in your user interface.
 
 <div class="my-xl p-md bg-light-light">
     <p>This is a basic <ks-tooltip text="TAH-DAH!!!">tooltip</ks-tooltip>.</p>

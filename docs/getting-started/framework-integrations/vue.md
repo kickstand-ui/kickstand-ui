@@ -1,3 +1,19 @@
+---
+{
+    "description": "A quick guide on how to integrate Kickstand UI components into your Vue.js application.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Add to a Vue.js Project - Kickstand UI"
+        },
+        {
+            "property": "og:description",
+            "content": "A quick guide on how to integrate Kickstand UI components into your Vue.js application."
+        }
+    ]
+}
+---
+
 # Vue
 
 ## Adding Components

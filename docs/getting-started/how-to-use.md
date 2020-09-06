@@ -1,4 +1,20 @@
-# Using the Components
+---
+{
+    "description": "Kickstand UI Elements are built using web components, so you can interact with them just like standard HTML.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Using Components - Kickstand UI"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI Elements are built using web components, so you can interact with them just like standard HTML."
+        }
+    ]
+}
+---
+
+# Using Components
 
 Just like a standard HTML element, there are two ways of interacting with Kickstand UI's components.
 

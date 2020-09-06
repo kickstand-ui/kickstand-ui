@@ -1,6 +1,30 @@
+---
+{
+    "description": "Kickstand UI's text utility classes can be used to quickly style text throughout your application without custom styles.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Text Utilities - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/text.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI's text utility classes can be used to quickly style text throughout your application without custom styles."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/text.png"
+        }
+    ]
+}
+---
+
 # Text
 
-Kickstand UI's text utility classes can be used to quickly style text throughout your application.
+Kickstand UI's text utility classes can be used to quickly style text throughout your application without custom styles.
 
 ## Sizes
 

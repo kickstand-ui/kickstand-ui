@@ -1,6 +1,30 @@
+---
+{
+    "description": "Kickstand UI's drop-down menu is a great way to display a list of contextual actions, links, or content.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Drop-Down Component - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/dropdown.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI's drop-down menu is a great way to display a list of contextual actions, links, or content."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/dropdown.png"
+        }
+    ]
+}
+---
+
 # Drop-Down
 
-Use drop-down menus to toggle a list of contextual actions or content.
+Kickstand UI's drop-down menu is a great way to display a list of contextual actions, links, or content.
 
 <div class="my-xl">
     <ks-dropdown text="Account">

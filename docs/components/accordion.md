@@ -1,3 +1,27 @@
+---
+{
+    "description": "Accordions are used to group and toggle (expand/collapse) sections of content.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Accordion Component - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/accordion.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Accordions are used to group and toggle (expand/collapse) sections of content."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/accordion.png"
+        }
+    ]
+}
+---
+
 # Accordion
 
 Accordions are used to group and toggle (expand/collapse) sections of content

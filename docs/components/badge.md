@@ -1,3 +1,27 @@
+---
+{
+    "description": "A badge is a special label used to call out specific information.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Badge Component - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/badge.png"
+        },
+        {
+            "property": "og:description",
+            "content": "A badge is a special label used to call out specific information."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/badge.png"
+        }
+    ]
+}
+---
+
 # Badge
 
 A badge is a special label used to call out specific information.

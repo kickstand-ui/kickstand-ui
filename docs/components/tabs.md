@@ -1,6 +1,30 @@
+---
+{
+    "description": "Kickstand UI's tabs component are a useful way to group related information in a discoverable way.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Tabs Component - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/tabs.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI's tabs component are a useful way to group related information in a discoverable way."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/tabs.png"
+        }
+    ]
+}
+---
+
 # Tabs
 
-Tabs are a useful way to group related information in a discoverable way.
+Kickstand UI's tabs component are a useful way to group related information in a discoverable way.
 
 <div class="my=xl">
     <ks-tabs>

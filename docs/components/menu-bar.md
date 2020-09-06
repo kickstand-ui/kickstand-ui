@@ -1,3 +1,27 @@
+---
+{
+    "description": "Kickstand UI's menu component is designed to provide a responsive navigation header for your applications.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Menu-Bar Component - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/menu-bar.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI's menu component is designed to provide a responsive navigation header for your applications."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/menu-bar.png"
+        }
+    ]
+}
+---
+
 # Menu Bar
 
 Kickstand UI's menu component is designed to provide a responsive navigation header for your applications.

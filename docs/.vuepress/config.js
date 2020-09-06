@@ -1,6 +1,6 @@
 module.exports = {
     title: "Kickstand UI",
-    description: "The Design System You Can Use Everywhere!",
+    description: "Kickstand UI is a Design System built using Web Components so you can use it Everywhere!",
     head: [
         [
             "meta",
@@ -13,7 +13,7 @@ module.exports = {
             "meta",
             {
                 property: "og:image",
-                content: "https://kickstand-ui.com/images/kickstand_logo.png"
+                content: "https://kickstand-ui.com/images/kickstand_card.png"
             }
         ],
         [
@@ -27,14 +27,14 @@ module.exports = {
             "meta",
             {
                 property: "og:description",
-                content: "The Design System You Can Use Everywhere!"
+                content: "Kickstand UI is a Design System built using Web Components so you can use it Everywhere!"
             }
         ],
         [
             "meta",
             {
                 property: "twitter:image:src",
-                content: "https://kickstand-ui.com/images/kickstand_logo.png"
+                content: "https://kickstand-ui.com/images/kickstand_card.png"
             }
         ],
         ["meta", { property: "twitter:card", content: "summary_large_image" }],

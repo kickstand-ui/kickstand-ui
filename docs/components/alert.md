@@ -1,6 +1,30 @@
+---
+{
+    "description": "Kickstand UI's alert component is designed to provide the user with contextual feedback based on a their actions.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Alert Component - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/alert.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI's alert component is designed to provide the user with contextual feedback based on a their actions."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/alert.png"
+        }
+    ]
+}
+---
+
 # Alert
 
-Alerts are designed to provide the user with contextual feedback based on a their actions.
+Kickstand UI's alert component is designed to provide the user with contextual feedback based on a their actions.
 
 <div class="my-lg">
     <ks-alert color="primary" class="mb-md">

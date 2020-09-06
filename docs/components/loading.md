@@ -1,4 +1,30 @@
+---
+{
+    "description": "Kickstand UI's loading component is designed to communicate unseen progress to the user.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Loading Component - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/loading.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI's loading component is designed to communicate unseen progress to the user."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/loading.png"
+        }
+    ]
+}
+---
+
 # Loading
+
+Kickstand UI's loading component is designed to communicate unseen progress to the user.
 
 There are two ways to display loading indicators - inline or in an overlay.
 

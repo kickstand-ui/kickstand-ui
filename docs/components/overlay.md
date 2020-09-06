@@ -1,3 +1,27 @@
+---
+{
+    "description": "Kickstand UI's Overlay component is designed to display content in a layer above your existing content and is a flexible component used to build other components in UI library.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Overlay Component - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/overlay.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI's Overlay component is designed to display content in a layer above your existing content and is a flexible component used to build other components in UI library."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/overlay.png"
+        }
+    ]
+}
+---
+
 # Overlay
 
 Kickstand UI's Overlay component is designed to display content in a layer above your existing content and is a flexible component used to build other components in UI library like the [loading](/components/loading.html), [modal](/components/modal.html), and [side drawer](/components/side-drawer.html) components.

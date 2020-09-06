@@ -1,3 +1,19 @@
+---
+{
+    "description": "A quick guide on how to integrate Kickstand UI components into your Ember application.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Add to an Ember Project - Kickstand UI"
+        },
+        {
+            "property": "og:description",
+            "content": "A quick guide on how to integrate Kickstand UI components into your Ember application."
+        }
+    ]
+}
+---
+
 # Ember
 
 ## Adding Styles
