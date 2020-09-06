@@ -1,3 +1,27 @@
+---
+{
+    "description": "Custom icons for the Kickstand UI design system",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Icon Component - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/icons.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Custom icons for the Kickstand UI design system"
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/icons.png"
+        }
+    ]
+}
+---
+
 # Icons
 
 <div class="my-xl">

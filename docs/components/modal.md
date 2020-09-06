@@ -1,6 +1,30 @@
+---
+{
+    "description": "Kickstand UI modals are designed to display content in a layer above your existing content. Modals can be used send alerts or messages to your users, you can embed interactive components such as forms or wizards in them, or can be used with any other kind of custom content.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Modal Component - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/modal.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI modals are designed to display content in a layer above your existing content. Modals can be used send alerts or messages to your users, you can embed interactive components such as forms or wizards in them, or can be used with any other kind of custom content."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/modal.png"
+        }
+    ]
+}
+---
+
 # Modal
 
-Modals are designed to display content in a layer above your existing content. Modals can be used send alerts or messages to your users, you can embed interactive components such as forms or wizards in them, or can be used with any other kind of custom content.
+Kickstand UI modals are designed to display content in a layer above your existing content. Modals can be used send alerts or messages to your users, you can embed interactive components such as forms or wizards in them, or can be used with any other kind of custom content.
 
 <div class="my-xl">
     <ks-button shows="basic_modal">Show Modal</ks-button>

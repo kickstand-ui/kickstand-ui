@@ -1,3 +1,19 @@
+---
+{
+    "description": "A quick guide on how to integrate Kickstand UI components into your Angular application.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Add to an Angular Project - Kickstand UI"
+        },
+        {
+            "property": "og:description",
+            "content": "A quick guide on how to integrate Kickstand UI components into your Angular application."
+        }
+    ]
+}
+---
+
 # Angular
 
 ## Adding Styles

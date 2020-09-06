@@ -1,6 +1,30 @@
+---
+{
+    "description": "Kickstand UI's spacing utility classes are designed to make positioning and alignment of components and content quick and easy.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Spacing Utilities - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/spacing.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI's spacing utility classes are designed to make positioning and alignment of components and content quick and easy."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/spacing.png"
+        }
+    ]
+}
+---
+
 # Spacing
 
-The spacing utility classes are designed to make positioning quick and easy.
+Kickstand UI's spacing utility classes are designed to make positioning and alignment of components and content quick and easy.
 
 The pattern for the utility classes is fairly intuitive:
 

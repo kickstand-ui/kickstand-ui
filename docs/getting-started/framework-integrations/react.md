@@ -1,3 +1,19 @@
+---
+{
+    "description": "A quick guide on how to integrate Kickstand UI components into your React application.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Add to a React Project - Kickstand UI"
+        },
+        {
+            "property": "og:description",
+            "content": "A quick guide on how to integrate Kickstand UI components into your React application."
+        }
+    ]
+}
+---
+
 # React
 
 ## Adding Components

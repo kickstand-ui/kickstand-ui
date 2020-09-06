@@ -1,6 +1,30 @@
+---
+{
+    "description": "Kickstand UI's layout utility classes consist of width and height utilities to quickly manage responsive layouts.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Layout Utilities - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/layout.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI's layout utility classes consist of width and height utilities to quickly manage responsive layouts."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/layout.png"
+        }
+    ]
+}
+---
+
 # Layout
 
-The layout utility classes consist of width and height utilities to quickly manage layouts.
+Kickstand UI's layout utility classes consist of width and height utilities to quickly manage responsive layouts.
 
 ## Widths
 

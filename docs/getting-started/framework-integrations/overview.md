@@ -1,3 +1,20 @@
+---
+{
+    "description": "A overview on how to integrate Kickstand UI components into your applications.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Add to Your Project - Kickstand UI"
+        },
+        {
+            "property": "og:description",
+            "content": "A overview on how to integrate Kickstand UI components into your applications."
+        }
+    ]
+}
+---
+
+
 # Framework Overview
 
 Integrating Kickstand UI into your framework is not _required_ in order to take advantage of the component library.   However, doing so enables the web components to behave like part of the framework.

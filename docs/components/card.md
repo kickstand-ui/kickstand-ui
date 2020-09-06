@@ -1,4 +1,30 @@
+---
+{
+    "description": "Kickstand UI's card component is a great way to associate media with your content as well as call out supplemental content for your main content.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Card Component - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/card.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI's card component is a great way to associate media with your content as well as call out supplemental content for your main content."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/card.png"
+        }
+    ]
+}
+---
+
 # Card
+
+Kickstand UI's card component is a great way to associate media with your content as well as call out supplemental content for your main content.
 
 <div class="my-xl w-50 sm:w-75">
     <ks-card

@@ -1,4 +1,30 @@
+---
+{
+    "description": "Kickstand UI's carousel component is designed to provide users with a way to cycle through content such as images, text, and links.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Carousel Component - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/carousel.png"
+        },
+        {
+            "property": "og:description",
+            "content": "Kickstand UI's carousel component is designed to provide users with a way to cycle through content such as images, text, and links."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/carousel.png"
+        }
+    ]
+}
+---
+
 # Carousel
+
+Kickstand UI's carousel component is designed to provide users with a way to cycle through content such as images, text, and links.
 
 <div class="my-xl">
     <ks-carousel>

@@ -1,6 +1,30 @@
+---
+{
+    "description": "The Kickstand UI form field component is designed to abstract away complexity and provide a consistent user experience as well as some features to improve usability.",
+    "meta": [
+        {
+            "property": "og:title",
+            "content": "Form Field Component - Kickstand UI"
+        },
+        {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/screen_shots/form-field.png"
+        },
+        {
+            "property": "og:description",
+            "content": "The Kickstand UI form field component is designed to abstract away complexity and provide a consistent user experience as well as some features to improve usability."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/screen_shots/form-field.png"
+        }
+    ]
+}
+---
+
 # Form Field
 
-Forms are some of the most complex user interactions in modern application development. The Kickstand UI form field component is design to abstract away some of that complexity and provide a consistent user experience as well as some features to improve usability.
+Forms are some of the most complex user interactions in modern application development. The Kickstand UI form field component is designed to abstract away some of that complexity and provide a consistent user experience as well as some features to improve usability.
 
 One of the primary goals of Kickstand UI is to take advantage of native browser functionality as often as possible, so the `<ks-form-field>` component leverages HTML5 input elements and validation to reduce code size increase functionality.
 
