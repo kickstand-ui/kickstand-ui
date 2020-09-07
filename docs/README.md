@@ -15,9 +15,13 @@ Installing Kickstand UI is as easy as adding a few tags to your page.
 <script src="https://unpkg.com/kickstand-ui/dist/kickstand-ui.js"></script>
 ```
 
-Check out our documentation for more in-depth instructions on adding it to your project.
+Check out our [documentation](/getting-started/installation.html) for more in-depth instructions on adding it to your project.
 
-<ks-button display="hollow" href="/getting-started/installation.html">Get Started</ks-button>
+## _Extremely_ Performant
+
+Kickstand UI is built using web components, so no additional JavaScript frameworks are necessary to run it. In addition to that, components are lazy-loaded in modern browsers, so the initial payload is only `8kb` of JavaScript and `8kb` of CSS!
+
+As you use components throughout your application, the HTML, JavaScript, and CSS will only be loaded when it is needed, so you only load what you need.
 
 ## User Experience (UX) and Accessibility
 
