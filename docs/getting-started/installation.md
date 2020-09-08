@@ -1,16 +1,17 @@
 ---
 {
     "description": "Installing Kickstand UI is as easy as adding a few tags to your page. You can also install it using your favorite package manager.",
-    "meta": [
-        {
-            "property": "og:title",
-            "content": "Installation - Kickstand UI"
-        },
-        {
-            "property": "og:description",
-            "content": "Installing Kickstand UI is as easy as adding a few tags to your page. You can also install it using your favorite package manager."
-        }
-    ]
+    "meta":
+        [
+            {
+                "property": "og:title",
+                "content": "Installation - Kickstand UI",
+            },
+            {
+                "property": "og:description",
+                "content": "Installing Kickstand UI is as easy as adding a few tags to your page. You can also install it using your favorite package manager.",
+            },
+        ],
 }
 ---
 
@@ -21,7 +22,10 @@
 Installing Kickstand UI is as easy as adding a few tags to your page.
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/kickstand-ui/dist/kickstand-ui/kickstand-ui.css" />
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/kickstand-ui/dist/kickstand-ui/kickstand-ui.css"
+/>
 <script src="https://unpkg.com/kickstand-ui/dist/kickstand-ui.js"></script>
 ```
 
@@ -34,13 +38,13 @@ npm install --save kickstand-ui
 
 # or
 
-yarn install kickstand-ui
+yarn add kickstand-ui
 ```
 
 ### Add To Your Project
 
 ```js
-import { applyPolyfills, defineCustomElements } from 'kickstand-ui/loader';
+import { applyPolyfills, defineCustomElements } from "kickstand-ui/loader";
 
 // Apply the polyfills and bind the custom elements to the window object
 applyPolyfills().then(() => {
