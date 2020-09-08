@@ -19,7 +19,7 @@ npm install --save kickstand-ui
 
 # or
 
-yarn install kickstand-ui
+yarn add kickstand-ui
 ```
 
 ### Add To Your Project
