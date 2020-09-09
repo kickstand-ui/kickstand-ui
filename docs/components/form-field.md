@@ -474,12 +474,12 @@ Kickstand UI's components use one-way data binding so that data flows in a singl
 ### Adding Event Listeners
 
 <div class="my-xl">
-    <ks-form-field label="Name" id="binding-test" class="mb-md" />
-    <b>Bound Value: </b><span id="bound-value"></span>
+    <ks-form-field label="Name" id="binding_test" class="mb-md" />
+    <b>Bound Value: </b><span id="bound_value"></span>
     <script>
         (function(){
-            let formField = document.getElementById('binding-test');
-            let value = document.getElementById('bound-value');
+            let formField = document.getElementById('binding_test');
+            let value = document.getElementById('bound_value');
             formField.addEventListener('updated', function (e) {
                 value.innerText = e.detail.value;
             });
@@ -488,12 +488,12 @@ Kickstand UI's components use one-way data binding so that data flows in a singl
 </div>
 
 ```html
-<ks-form-field label="Name" id="binding-test" class="mb-md" />
-<b>Bound Value: </b><span id="bound-value"></span>
+<ks-form-field label="Name" id="binding_test" class="mb-md" />
+<b>Bound Value: </b><span id="bound_value"></span>
 <script>
     (function(){
-        let formField = document.getElementById('binding-test');
-        let value = document.getElementById('bound-value');
+        let formField = document.getElementById('binding_test');
+        let value = document.getElementById('bound_value');
         formField.addEventListener('updated', function (e) {
             value.innerText = e.detail.value;
         });
@@ -508,13 +508,13 @@ Many JavaScript frameworks come with built-in event handling to help simplify yo
 #### Vue.js
 
 ```html
-<ks-form-field label="Name" id="binding-test" @updated="(e) => myMethod(e)" />
+<ks-form-field label="Name" id="binding_test" @updated="(e) => myMethod(e)" />
 ```
 
 #### React
 
 ```html
-<ks-form-field label="Name" id="binding-test" onUpdated="(e) => onUpdatedHandler(e)" />
+<ks-form-field label="Name" id="binding_test" onUpdated="(e) => onUpdatedHandler(e)" />
 ```
 
 ### Event Detail
@@ -548,13 +548,13 @@ _Debouncing_ is a technique to help improve the performance of your application.
 For example, if you have an input that performs a server-side action when the user types into an input, you may want to wait until the user is finished typing before you perform the action rather than each time they press a key.
 
 <div class="my-xl">
-    <ks-form-field id="with-debounce" debounce="5000" label="With Debounce" />
+    <ks-form-field id="with_debounce" debounce="1000" label="With Debounce" />
     <br>
-    <ks-form-field id="without-debounce" label="Without Debounce" />
+    <ks-form-field id="without_debounce" label="Without Debounce" />
     <script>
         (function(){
-            let withDebounce = document.getElementById('with-debounce');
-            let withoutDebounce = document.getElementById('without-debounce');
+            let withDebounce = document.getElementById('with_debounce');
+            let withoutDebounce = document.getElementById('without_debounce');
             withDebounce.addEventListener('updated', function(e) {
                 alert(`I waited until you finished entering: ${e.detail.value}`);
             });
@@ -566,13 +566,13 @@ For example, if you have an input that performs a server-side action when the us
 </div>
 
 ```html
-<ks-form-field id="with-debounce" debounce="1000" label="With Debounce" />
-<ks-form-field id="without-debounce" label="Without Debounce" />
+<ks-form-field id="with_debounce" debounce="1000" label="With Debounce" />
+<ks-form-field id="without_debounce" label="Without Debounce" />
 
 <script>
     (function(){
-        let withDebounce = document.getElementById('with-debounce');
-        let withoutDebounce = document.getElementById('without-debounce');
+        let withDebounce = document.getElementById('with_debounce');
+        let withoutDebounce = document.getElementById('without_debounce');
 
         withDebounce.addEventListener('updated', function(e) {
             alert(`I waited until you finished entering: ${e.detail.value}`);

@@ -24,9 +24,7 @@
 
 # Loading
 
-Kickstand UI's loading component is designed to communicate unseen progress to the user.
-
-There are two ways to display loading indicators - inline or in an overlay.
+Kickstand UI's loading component is designed to communicate unseen progress to the user. There are two ways to display loading indicators - inline or in an overlay.
 
 ## Types
 
