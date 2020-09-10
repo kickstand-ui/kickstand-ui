@@ -127,6 +127,7 @@ module.exports = {
                     "/utilities/colors.html",
                     "/utilities/display.html",
                     "/utilities/layout.html",
+                    "/utilities/shadows.html",
                     "/utilities/spacing.html",
                     "/utilities/table.html",
                     "/utilities/text.html"
