@@ -1,6 +1,6 @@
 {
     "name": "kickstand-ui",
-    "version": "1.6.0",
+    "version": "1.6.1",
     "description": "The Design System You Can Use Anywhere",
     "main": "dist/index.js",
     "module": "dist/index.mjs",

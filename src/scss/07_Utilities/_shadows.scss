@@ -2,14 +2,14 @@
 
 @each $key, $value in $shadows {
     .shadow-#{$key} {
-        @include shadow($key);
+        @include shadow($key, true);
     }
 
     .hover\:shadow-#{$key}:hover {
-        @include shadow($key);
+        @include shadow($key, true);
     }
 
     .focus\:shadow-#{$key}:focus {
-        @include shadow($key);
+        @include shadow($key, true);
     }
 }
