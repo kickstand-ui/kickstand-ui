@@ -1,0 +1,15 @@
+@import '../00_Abstracts/index';
+
+@each $key, $value in $shadows {
+    .shadow-#{$key} {
+        @include shadow($key);
+    }
+
+    .hover\:shadow-#{$key}:hover {
+        @include shadow($key);
+    }
+
+    .focus\:shadow-#{$key}:focus {
+        @include shadow($key);
+    }
+}
