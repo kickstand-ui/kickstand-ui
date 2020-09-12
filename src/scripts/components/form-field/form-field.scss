@@ -3,6 +3,15 @@
 .ks-form-field {
     display: block;
 
+    &.inline {
+        display: flex;
+        align-items: center;
+        
+        .form-label {
+            @include mr(sm);
+        }
+    }
+
     .form-label {
         display: flex;
         flex-direction: column;
@@ -11,11 +20,11 @@
             font-weight: bold;
             display: flex;
 
-            .tooltip {
+            .ks-tooltip {
                 line-height: 1;
                 display: inline-flex;
                 align-items: center;
-                @include ml(sm);
+                @include ml(xs);
             }
         }
 
@@ -163,6 +172,7 @@
     .select-wrapper {
         display: flex;
         align-items: center;
+        width: 100%;
 
         select {
             cursor: pointer;

@@ -71,6 +71,7 @@ export class FormField implements ComponentInterface {
     @Prop() requiredErrorMessage: string = `This field is required.`;
     @Prop({ mutable: true }) validateOnInput: boolean = false;
     @Prop() debounce: number = 0;
+    @Prop() inline: boolean = false;
     @Prop() datalist: boolean = false;
     @Prop() checked: boolean = false;
 
@@ -219,10 +220,8 @@ export class FormField implements ComponentInterface {
         props = this.setProps(props);
         let classes = {
             'ks-form-field': true,
-            'invalid': this.invalid && !this.disabled
-        };
-        let labelClasses = {
-            'form-label': true
+            'invalid': this.invalid && !this.disabled,
+            'inline': this.inline
         };
         let fieldInput = {
             'textarea': (
@@ -328,7 +327,7 @@ export class FormField implements ComponentInterface {
             )
         }[this.type] || (
                 [
-                    <label id={this.labelId} class={labelClasses} htmlFor={this.fieldId}>
+                    <label id={this.labelId} class="form-label" htmlFor={this.fieldId}>
                         <span class="field-label">
                             {this.label}
                             {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText}>*</abbr>}
