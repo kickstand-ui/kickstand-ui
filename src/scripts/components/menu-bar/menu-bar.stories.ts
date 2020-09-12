@@ -8,18 +8,21 @@ export const menuBarProperties = () => {
     const altText = text('alt-text', '');
     const tagline = text('tagline', 'Menu Bar Props');
     const collapse = select('collapse', ['xxs', 'xs', 'sm', 'md', 'lg', 'xl'], 'sm')
+    const fixed = select('fixed', ['', 'top', 'bottom'], '');
     const color = select('color', colors, 'primary')
     const inverted = boolean('inverted', false);
     return (`
     <div>
-    <ks-menu-bar
-        logo-url="${logoUrl}" 
-        alt-text="${altText}" 
-        tagline="${tagline}"
-        collapse="${collapse}"
-        color="${color}"
-        inverted="${inverted}"
-        >
+        <ks-menu-bar
+            logo-url="${logoUrl}" 
+            alt-text="${altText}" 
+            tagline="${tagline}"
+            collapse="${collapse}"
+            color="${color}"
+            inverted="${inverted}"
+            inverted="${inverted}"
+            fixed="${fixed}"
+            >
             <ks-menu-row>
                 <ks-menu-group>
                     <ks-menu-item>

@@ -8,8 +8,21 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
     flex-direction: row;
     justify-content: flex-start;
     position: relative;
+    width: 100%;
     @include font-size(sm);
     @include shadow(sm);
+
+    &.fixed {
+        &-top {
+            position: fixed;
+            top: 0;
+        }
+
+        &-bottom {
+            position: fixed;
+            bottom: 0;
+        }
+    }
 
     .menu-branding {
         display: flex;

@@ -12,12 +12,35 @@ export class MenuBar implements ComponentInterface {
 
     @Prop() altText: string;
     @Prop() collapse: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'sm';
+    @Prop() fixed: 'top' | 'bottom';
     @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';
     @Prop() inverted: boolean = false;
     @Prop() logoUrl: string;
     @Prop() tagline: string;
 
     @State() expanded = false;
+
+    componentDidRender() {
+        this.adjustForFixedMenu();
+    }
+
+    private adjustForFixedMenu() {
+        if (!this.fixed)
+            return;
+
+        const height = this.$el.offsetHeight;
+
+        switch (this.fixed) {
+            case 'top':
+                document.querySelector('body').style.paddingTop = `${height}px`;
+                break;
+            case 'bottom':
+                document.querySelector('body').style.paddingBottom = `${height}px`;
+                break;
+            default:
+                break;
+        }
+    }
 
     private toggleMenu() {
         this.expanded = !this.expanded;
@@ -35,8 +58,11 @@ export class MenuBar implements ComponentInterface {
             'ks-menu-bar': true,
             [`collapse-${this.collapse}`]: true,
             [this.color]: true,
-            'inverted': this.inverted
-        }
+            'inverted': this.inverted,
+            [`fixed-${this.fixed}`]: !!this.fixed
+        };
+        console.log('fixed', this.fixed);
+        
         return (
             <Host class={classes} role="navigation">
                 {(this.logoUrl || this.tagline) &&
