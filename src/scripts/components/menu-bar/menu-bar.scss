@@ -16,11 +16,13 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         &-top {
             position: fixed;
             top: 0;
+            @include z-index(lg);
         }
 
         &-bottom {
             position: fixed;
             bottom: 0;
+            @include z-index(lg);
         }
     }
 
