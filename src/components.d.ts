@@ -213,6 +213,7 @@ export namespace Components {
         "altText": string;
         "collapse": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+        "fixed": 'top' | 'bottom';
         "inverted": boolean;
         "logoUrl": string;
         "tagline": string;
@@ -778,6 +779,7 @@ declare namespace LocalJSX {
         "altText"?: string;
         "collapse"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+        "fixed"?: 'top' | 'bottom';
         "inverted"?: boolean;
         "logoUrl"?: string;
         "tagline"?: string;
