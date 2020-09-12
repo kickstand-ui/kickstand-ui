@@ -27,6 +27,7 @@ export const playground = () => {
     const validateOnInput = boolean('validate-on-input', false);
     const debounce = number('debounce', 0);
     const datalist = boolean('datalist', false);
+    const inline = boolean('inline', false);
     return (`<div class="m-xxl">
         <ks-form-field 
             type="${type}"
@@ -51,6 +52,7 @@ export const playground = () => {
             validate-on-input="${validateOnInput}",
             debounce="${debounce}"
             datalist="${datalist}"
+            inline="${inline}"
             >
             <option selected>Choose a value</option>
             <option>Value 1</option>

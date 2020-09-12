@@ -142,6 +142,7 @@ export namespace Components {
         "defaultErrorMessage": string;
         "disabled": boolean;
         "helpText": string;
+        "inline": boolean;
         "invalid": boolean;
         "label": string;
         "max"?: number;
@@ -709,6 +710,7 @@ declare namespace LocalJSX {
         "defaultErrorMessage"?: string;
         "disabled"?: boolean;
         "helpText"?: string;
+        "inline"?: boolean;
         "invalid"?: boolean;
         "label"?: string;
         "max"?: number;
