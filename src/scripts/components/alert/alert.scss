@@ -2,37 +2,41 @@
 
 .ks-alert {
     display: block;
-    @include p(lg);
-    @include shadow(sm);
 
-    @each $color, $value in get-colors() {
-        &.#{$color} {
-            @include border(solid, xxs, $color);
-            @include shadow(sm);
-            @include bg-color($color, 0.05);
-            color: color(dark);
+    .alert-content {
+        @include p(lg);
+        @include shadow(sm);
+
+        @each $color,
+        $value in get-colors() {
+            &.#{$color} {
+                @include border(solid, xxs, $color);
+                @include shadow(sm);
+                @include bg-color($color, 0.05);
+                color: color(dark);
+            }
+
+            &.note.#{$color} {
+                @include bg-color(white);
+                @include border();
+                @include border-l(solid, md, $color);
+            }
         }
 
-        &.note.#{$color} {
-            @include bg-color(white);
-            @include border();
-            @include border-l(solid, md, $color);
+        .alert-header {
+            display: flex;
+            justify-content: space-between;
+            @include mb(lg);
+
+            .alert-heading {
+                font-weight: bold;
+                @include mt(none);
+                @include mb(none);
+            }
         }
-    }
 
-    .alert-header {
-        display: flex;
-        justify-content: space-between;
-        @include mb(lg);
-
-        .alert-heading {
-            font-weight: bold;
-            @include mt(none);
-            @include mb(none);
+        .alert-body {
+            @include m(none);
         }
-    }
-
-    .alert-body {
-        @include m(none);
     }
 }

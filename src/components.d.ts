@@ -18,9 +18,14 @@ export namespace Components {
         "toggleSlide": () => Promise<void>;
     }
     interface KsAlert {
+        "closeText": string;
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+        "dismissible": boolean;
+        "display": boolean;
         "header": string;
+        "hide": () => Promise<void>;
         "note": boolean;
+        "show": () => Promise<void>;
     }
     interface KsBadge {
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
@@ -585,9 +590,14 @@ declare namespace LocalJSX {
         "heading"?: string;
     }
     interface KsAlert {
+        "closeText"?: string;
         "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+        "dismissible"?: boolean;
+        "display"?: boolean;
         "header"?: string;
         "note"?: boolean;
+        "onHidden"?: (event: CustomEvent<any>) => void;
+        "onShown"?: (event: CustomEvent<any>) => void;
     }
     interface KsBadge {
         "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';

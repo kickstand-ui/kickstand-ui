@@ -36,6 +36,12 @@
 graph TD;
   ks-form --> ks-alert
   ks-form --> ks-icon
+  ks-alert --> ks-button
+  ks-alert --> ks-icon
+  ks-button --> ks-icon
+  ks-button --> ks-loading-overlay
+  ks-loading-overlay --> ks-overlay
+  ks-loading-overlay --> ks-loading
   style ks-form fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
