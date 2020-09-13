@@ -541,6 +541,22 @@ Event details emit much more that just the value. If you take a look, you will s
 }
 ```
 
+## Inline
+
+You can move labels to be inline with the input.
+
+<div class="my-xl">
+    <ks-form-field label="Username" inline></ks-form-field>
+</div>
+
+```html
+<ks-form-field label="Username" inline></ks-form-field>
+```
+
+:::tip Note
+The labels are positioned above the input field to improve [usability and form completion](https://www.uxmatters.com/mt/archives/2006/07/label-placement-in-forms.php), but there are instances where having the label inline with the input is very useful. If you are using the `inline` property for aesthetic reasons, please reconsider.
+:::
+
 ## Debounce
 
 _Debouncing_ is a technique to help improve the performance of your application. The idea is to delay time-consuming tasks until the user is done doing what they are doing.
@@ -605,7 +621,8 @@ These features include:
 | `autocomplete`          | `autocomplete`            | check out the [documentation](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete#Values) for more information on available values and features            | `string`                                                                                          | `on`                                                                             |
 | `badInputErrorMessage`  | `bad-input-error-message` | the message that displays when the `badInput` validation is `true`            | `string`                                                                                          | `There was a problem processing your value.`                                           |
 | `defaultErrorMessage`   | `default-error-message`   | the message that will display if `invalid` is set to `true`            | `string`                                                                                          | `The value entered is not valid.`                                                     |
-| `disabled`              | `disabled`                | disable form fields            | `boolean`                                                                                                       | `undefined`  |
+| `disabled`              | `disabled`                | disable form fields            | `boolean`                                                                                                       | `false`  |
+| `inline`              | `inline`                | move labels to be inline with input            | `boolean`                                                                                                       | `false`  |
 | `helpText`              | `help-text`               | additional information that displays below the form label            | `string`                                                                                                        | `undefined`  |
 | `invalid`               | `invalid`                 | toggles whether the form is valid or not            | `boolean`                                                                                                       | `false`      |
 | `label`                 | `label`                   | the form field label            | `string`                                                                                                        | `undefined`  |
