@@ -18,6 +18,7 @@
 ### Used by
 
  - [ks-accordion-slide](../accordion)
+ - [ks-alert](../alert)
  - [ks-button](../button)
  - [ks-carousel](../carousel)
  - [ks-checkbox](../form-field)
@@ -33,6 +34,7 @@
 ```mermaid
 graph TD;
   ks-accordion-slide --> ks-icon
+  ks-alert --> ks-icon
   ks-button --> ks-icon
   ks-carousel --> ks-icon
   ks-checkbox --> ks-icon

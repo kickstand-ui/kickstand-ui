@@ -34,6 +34,7 @@
 
 ### Used by
 
+ - [ks-alert](../alert)
  - [ks-carousel](../carousel)
  - [ks-dropdown](../dropdown)
  - [ks-modal](../modal)
@@ -52,6 +53,7 @@ graph TD;
   ks-button --> ks-loading-overlay
   ks-loading-overlay --> ks-overlay
   ks-loading-overlay --> ks-loading
+  ks-alert --> ks-button
   ks-carousel --> ks-button
   ks-dropdown --> ks-button
   ks-modal --> ks-button
