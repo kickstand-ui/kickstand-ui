@@ -71,12 +71,22 @@ module.exports = {
                         title: "Framework Integrations",
                         children: [
                             "/getting-started/framework-integrations/overview.html",
-                            // "/getting-started/framework-integrations/javascript.html",
-                            // "/getting-started/framework-integrations/typescript.html",
-                            "/getting-started/framework-integrations/angular.html",
-                            "/getting-started/framework-integrations/ember.html",
-                            "/getting-started/framework-integrations/react.html",
-                            "/getting-started/framework-integrations/vue.html"
+                            {
+                                title: "Angular",
+                                path: "/getting-started/framework-integrations/angular.html"
+                            },
+                            {
+                                title: "Ember",
+                                path: "/getting-started/framework-integrations/ember.html"
+                            },
+                            {
+                                title: "React",
+                                path: "/getting-started/framework-integrations/react.html"
+                            },
+                            {
+                                title: "Vue",
+                                path: "/getting-started/framework-integrations/vue.html"
+                            }
                         ]
                     }
                 ]

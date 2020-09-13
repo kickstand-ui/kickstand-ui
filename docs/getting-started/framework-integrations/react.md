@@ -14,7 +14,7 @@
 }
 ---
 
-# React
+# Adding Kickstand UI to a React Project
 
 ## Adding Components
 

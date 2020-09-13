@@ -22,7 +22,7 @@
 }
 ---
 
-# Vue
+# Adding Kickstand UI to a Vue.js Project
 
 ## Adding Components
 
