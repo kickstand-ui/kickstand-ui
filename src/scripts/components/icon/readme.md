@@ -26,6 +26,7 @@
  - [ks-dropdown](../dropdown)
  - [ks-form](../form)
  - [ks-form-field](../form-field)
+ - [ks-gallery](../gallery)
  - [ks-menu-bar](../menu-bar)
  - [ks-modal](../modal)
  - [ks-side-drawer](../side-drawer)
@@ -42,6 +43,7 @@ graph TD;
   ks-dropdown --> ks-icon
   ks-form --> ks-icon
   ks-form-field --> ks-icon
+  ks-gallery --> ks-icon
   ks-menu-bar --> ks-icon
   ks-modal --> ks-icon
   ks-side-drawer --> ks-icon

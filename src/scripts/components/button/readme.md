@@ -37,6 +37,7 @@
  - [ks-alert](../alert)
  - [ks-carousel](../carousel)
  - [ks-dropdown](../dropdown)
+ - [ks-gallery](../gallery)
  - [ks-modal](../modal)
  - [ks-side-drawer](../side-drawer)
  - [ks-spin-box](../spin-box)
@@ -56,6 +57,7 @@ graph TD;
   ks-alert --> ks-button
   ks-carousel --> ks-button
   ks-dropdown --> ks-button
+  ks-gallery --> ks-button
   ks-modal --> ks-button
   ks-side-drawer --> ks-button
   ks-spin-box --> ks-button

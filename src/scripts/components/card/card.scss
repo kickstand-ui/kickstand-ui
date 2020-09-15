@@ -2,6 +2,7 @@
 
 .ks-card {
     position: relative;
+    @include border(solid, xxxs, light, dark);
     @include shadow();
 
     &.img-top {
