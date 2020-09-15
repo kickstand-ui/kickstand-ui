@@ -1,4 +1,4 @@
-import { text } from "@storybook/addon-knobs";
+import { select } from "@storybook/addon-knobs";
 
 export default { title: 'Grid' };
 
@@ -78,7 +78,7 @@ export const basicGrid = () => {
 };
 
 export const gutters = () => {
-    const gutter = text('gutter', 'sm');
+    const gutter = select('gutter', ['none', 'xxxs', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'], 'md');
     return (`
     <ks-row gutter="${gutter}">
         <ks-column>

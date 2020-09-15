@@ -1,0 +1,48 @@
+@import "../../../scss/00_Abstracts/index";
+
+.ks-gallery {
+    @each $key,
+    $value in $spacing-sizes {
+        &.gutter-#{$key} {
+            .scrolling-content {
+                >* {
+                    @include mr($key);
+                }
+            }
+        }
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .heading {
+            @include m(none);
+        }
+    }
+
+    .content-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;  /* Firefox */
+        -ms-overflow-style: none; /* IE */
+        &::-webkit-scrollbar { 
+            display: none; /* Chrome Safari */
+        }
+
+        .scrolling-content {
+            display: flex;
+            flex-wrap: nowrap;
+            @include p(xs);
+
+            &:last-child {
+                @include mr(xs);
+            }
+
+            >* {
+                flex: 0 0 auto;
+            }
+        }
+    }
+}

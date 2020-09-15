@@ -191,6 +191,11 @@ export namespace Components {
         "validateOnInput": boolean;
         "value"?: string | number | any[] | null;
     }
+    interface KsGallery {
+        "gutter": 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
+        "heading": string;
+        "itemWidth": string;
+    }
     interface KsIcon {
         "icon": 'bars' | 'chevron' | 'close' | 'danger' | 'info' | string;
         "rotate": '0' | '45' | '90' | '135' | '180' | '225' | '270' | '360' | '-45' | '-90' | '-135' | '-180' | '-225' | '-270' | '-360';
@@ -419,6 +424,12 @@ declare global {
         prototype: HTMLKsFormFieldElement;
         new (): HTMLKsFormFieldElement;
     };
+    interface HTMLKsGalleryElement extends Components.KsGallery, HTMLStencilElement {
+    }
+    var HTMLKsGalleryElement: {
+        prototype: HTMLKsGalleryElement;
+        new (): HTMLKsGalleryElement;
+    };
     interface HTMLKsIconElement extends Components.KsIcon, HTMLStencilElement {
     }
     var HTMLKsIconElement: {
@@ -559,6 +570,7 @@ declare global {
         "ks-dropdown-item": HTMLKsDropdownItemElement;
         "ks-form": HTMLKsFormElement;
         "ks-form-field": HTMLKsFormFieldElement;
+        "ks-gallery": HTMLKsGalleryElement;
         "ks-icon": HTMLKsIconElement;
         "ks-img": HTMLKsImgElement;
         "ks-loading": HTMLKsLoadingElement;
@@ -765,6 +777,11 @@ declare namespace LocalJSX {
         "validateOnInput"?: boolean;
         "value"?: string | number | any[] | null;
     }
+    interface KsGallery {
+        "gutter"?: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
+        "heading"?: string;
+        "itemWidth"?: string;
+    }
     interface KsIcon {
         "icon"?: 'bars' | 'chevron' | 'close' | 'danger' | 'info' | string;
         "rotate"?: '0' | '45' | '90' | '135' | '180' | '225' | '270' | '360' | '-45' | '-90' | '-135' | '-180' | '-225' | '-270' | '-360';
@@ -894,6 +911,7 @@ declare namespace LocalJSX {
         "ks-dropdown-item": KsDropdownItem;
         "ks-form": KsForm;
         "ks-form-field": KsFormField;
+        "ks-gallery": KsGallery;
         "ks-icon": KsIcon;
         "ks-img": KsImg;
         "ks-loading": KsLoading;
@@ -939,6 +957,7 @@ declare module "@stencil/core" {
             "ks-dropdown-item": LocalJSX.KsDropdownItem & JSXBase.HTMLAttributes<HTMLKsDropdownItemElement>;
             "ks-form": LocalJSX.KsForm & JSXBase.HTMLAttributes<HTMLKsFormElement>;
             "ks-form-field": LocalJSX.KsFormField & JSXBase.HTMLAttributes<HTMLKsFormFieldElement>;
+            "ks-gallery": LocalJSX.KsGallery & JSXBase.HTMLAttributes<HTMLKsGalleryElement>;
             "ks-icon": LocalJSX.KsIcon & JSXBase.HTMLAttributes<HTMLKsIconElement>;
             "ks-img": LocalJSX.KsImg & JSXBase.HTMLAttributes<HTMLKsImgElement>;
             "ks-loading": LocalJSX.KsLoading & JSXBase.HTMLAttributes<HTMLKsLoadingElement>;
