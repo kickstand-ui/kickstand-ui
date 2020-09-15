@@ -1,7 +1,7 @@
 {
     "name": "kickstand-ui",
     "version": "1.10.0",
-    "description": "The Design System You Can Use Anywhere",
+    "description": "Kickstand UI is a Design system and pattern library built with Web Components, so you can use them everywhere!",
     "main": "dist/index.js",
     "module": "dist/index.mjs",
     "es2015": "dist/esm/index.mjs",
@@ -60,17 +60,20 @@
     "homepage": "https://kickstand-ui.com",
     "license": "MIT",
     "keywords": [
+        "design system",
+        "components",
+        "web components",
+        "component library",
+        "ui library",
+        "ui framework",
+        "stenciljs",
         "css",
         "sass",
         "mobile-first",
         "responsive",
         "front-end",
         "framework",
-        "web",
         "mobile-first",
-        "web components",
-        "design system",
-        "stenciljs",
         "clarion"
     ]
 }
