@@ -195,6 +195,7 @@ export namespace Components {
         "gutter": 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "heading": string;
         "itemWidth": string;
+        "src": string;
     }
     interface KsIcon {
         "icon": 'bars' | 'chevron' | 'close' | 'danger' | 'info' | string;
@@ -781,6 +782,7 @@ declare namespace LocalJSX {
         "gutter"?: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "heading"?: string;
         "itemWidth"?: string;
+        "src"?: string;
     }
     interface KsIcon {
         "icon"?: 'bars' | 'chevron' | 'close' | 'danger' | 'info' | string;
