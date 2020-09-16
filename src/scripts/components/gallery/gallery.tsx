@@ -13,6 +13,7 @@ export class Gallery implements ComponentInterface {
 
     @Element() $el: HTMLElement;
     @Prop() heading: string;
+    @Prop() src: string;
     @Prop() gutter: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl' = 'md';
     @Prop() itemWidth: string;
 
@@ -26,9 +27,6 @@ export class Gallery implements ComponentInterface {
             let position = scroll.scrollLeft + scroll.offsetWidth
             this.isStart = position === scroll.offsetWidth;
             this.isEnd = position > scroll.scrollWidth;
-            console.log(scroll.scrollLeft + scroll.offsetWidth);
-            console.log(scroll.offsetWidth);
-            console.log(scroll.scrollWidth);
         });
         if (this.itemWidth)
             Array.from(this.$el.querySelector('.scrolling-content').children)
@@ -87,7 +85,7 @@ export class Gallery implements ComponentInterface {
         return (
             <Host class={classes}>
                 <header class="header">
-                    <h2 class="heading">{this.heading}</h2>
+                    <h2 class="heading">{this.src ? <a href={this.src}>{this.heading}</a> : this.heading}</h2>
                     <div class="controls">
                         <ks-button class="scroll-left" size="xs" display="clear" disabled={this.isStart} onClick={() => this.scrollLeft()}>
                             <ks-icon class="text-lg" icon="chevron" rotate="90"></ks-icon>
