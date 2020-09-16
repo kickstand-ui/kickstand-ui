@@ -105,6 +105,7 @@ module.exports = {
                     "/components/dropdown.html",
                     "/components/form.html",
                     "/components/form-field.html",
+                    "/components/gallery.html",
                     "/components/icons.html",
                     "/components/images.html",
                     "/components/loading.html",
