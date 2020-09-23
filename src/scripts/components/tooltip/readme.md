@@ -20,8 +20,8 @@
 
 ### Used by
 
- - [ks-checkbox](../form-field)
- - [ks-checklist](../form-field)
+ - [ks-checkbox](../form-field/checkbox)
+ - [ks-checklist](../form-field/checklist)
  - [ks-form-field](../form-field)
 
 ### Graph
