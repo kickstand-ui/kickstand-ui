@@ -1,0 +1,13 @@
+@import "../../../../scss/00_Abstracts/index";
+
+.ks-checklist {
+    fieldset {
+        display: inline-flex;
+        flex-direction: column;
+
+        legend {
+            font-weight: bold;
+            @include mb(none);
+        }
+    }
+}

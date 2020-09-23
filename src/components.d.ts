@@ -27,6 +27,15 @@ export namespace Components {
         "note": boolean;
         "show": () => Promise<void>;
     }
+    interface KsAutocomplete {
+        "debounce": number;
+        "disabled": boolean;
+        "inputId": string;
+        "name": string;
+        "required": boolean;
+        "validate": () => Promise<IFormFieldData>;
+        "value"?: string | number | boolean| any[] | null;
+    }
     interface KsBadge {
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
         "hollow": boolean;
@@ -168,7 +177,8 @@ export namespace Components {
         "step"?: number;
         "stepErrorMessage": string;
         "tooltipText": string;
-        "type": 'checkbox'
+        "type": 'autocomplete' 
+        | 'checkbox'
         | 'checklist'
         | 'color'
         | 'date'
@@ -189,7 +199,7 @@ export namespace Components {
         "typeErrorMessage": string;
         "validate": () => Promise<IFormFieldData>;
         "validateOnInput": boolean;
-        "value"?: string | number | any[] | null;
+        "value"?: string | number | boolean| any[] | null;
     }
     interface KsGallery {
         "gutter": 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
@@ -198,7 +208,7 @@ export namespace Components {
         "src": string;
     }
     interface KsIcon {
-        "icon": 'bars' | 'chevron' | 'close' | 'danger' | 'info' | string;
+        "icon": 'bars' | 'chevron' | 'close' | 'danger' | 'info' | 'search' | string;
         "rotate": '0' | '45' | '90' | '135' | '180' | '225' | '270' | '360' | '-45' | '-90' | '-135' | '-180' | '-225' | '-270' | '-360';
     }
     interface KsImg {
@@ -328,6 +338,12 @@ declare global {
     var HTMLKsAlertElement: {
         prototype: HTMLKsAlertElement;
         new (): HTMLKsAlertElement;
+    };
+    interface HTMLKsAutocompleteElement extends Components.KsAutocomplete, HTMLStencilElement {
+    }
+    var HTMLKsAutocompleteElement: {
+        prototype: HTMLKsAutocompleteElement;
+        new (): HTMLKsAutocompleteElement;
     };
     interface HTMLKsBadgeElement extends Components.KsBadge, HTMLStencilElement {
     }
@@ -555,6 +571,7 @@ declare global {
         "ks-accordion": HTMLKsAccordionElement;
         "ks-accordion-slide": HTMLKsAccordionSlideElement;
         "ks-alert": HTMLKsAlertElement;
+        "ks-autocomplete": HTMLKsAutocompleteElement;
         "ks-badge": HTMLKsBadgeElement;
         "ks-breadcrumbs": HTMLKsBreadcrumbsElement;
         "ks-button": HTMLKsButtonElement;
@@ -611,6 +628,15 @@ declare namespace LocalJSX {
         "note"?: boolean;
         "onHidden"?: (event: CustomEvent<any>) => void;
         "onShown"?: (event: CustomEvent<any>) => void;
+    }
+    interface KsAutocomplete {
+        "debounce"?: number;
+        "disabled"?: boolean;
+        "inputId"?: string;
+        "name"?: string;
+        "onChanged"?: (event: CustomEvent<IFormFieldData>) => void;
+        "required"?: boolean;
+        "value"?: string | number | boolean| any[] | null;
     }
     interface KsBadge {
         "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
@@ -756,7 +782,8 @@ declare namespace LocalJSX {
         "step"?: number;
         "stepErrorMessage"?: string;
         "tooltipText"?: string;
-        "type"?: 'checkbox'
+        "type"?: 'autocomplete' 
+        | 'checkbox'
         | 'checklist'
         | 'color'
         | 'date'
@@ -776,7 +803,7 @@ declare namespace LocalJSX {
         | 'url';
         "typeErrorMessage"?: string;
         "validateOnInput"?: boolean;
-        "value"?: string | number | any[] | null;
+        "value"?: string | number | boolean| any[] | null;
     }
     interface KsGallery {
         "gutter"?: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
@@ -785,7 +812,7 @@ declare namespace LocalJSX {
         "src"?: string;
     }
     interface KsIcon {
-        "icon"?: 'bars' | 'chevron' | 'close' | 'danger' | 'info' | string;
+        "icon"?: 'bars' | 'chevron' | 'close' | 'danger' | 'info' | 'search' | string;
         "rotate"?: '0' | '45' | '90' | '135' | '180' | '225' | '270' | '360' | '-45' | '-90' | '-135' | '-180' | '-225' | '-270' | '-360';
     }
     interface KsImg {
@@ -897,6 +924,7 @@ declare namespace LocalJSX {
         "ks-accordion": KsAccordion;
         "ks-accordion-slide": KsAccordionSlide;
         "ks-alert": KsAlert;
+        "ks-autocomplete": KsAutocomplete;
         "ks-badge": KsBadge;
         "ks-breadcrumbs": KsBreadcrumbs;
         "ks-button": KsButton;
@@ -943,6 +971,7 @@ declare module "@stencil/core" {
             "ks-accordion": LocalJSX.KsAccordion & JSXBase.HTMLAttributes<HTMLKsAccordionElement>;
             "ks-accordion-slide": LocalJSX.KsAccordionSlide & JSXBase.HTMLAttributes<HTMLKsAccordionSlideElement>;
             "ks-alert": LocalJSX.KsAlert & JSXBase.HTMLAttributes<HTMLKsAlertElement>;
+            "ks-autocomplete": LocalJSX.KsAutocomplete & JSXBase.HTMLAttributes<HTMLKsAutocompleteElement>;
             "ks-badge": LocalJSX.KsBadge & JSXBase.HTMLAttributes<HTMLKsBadgeElement>;
             "ks-breadcrumbs": LocalJSX.KsBreadcrumbs & JSXBase.HTMLAttributes<HTMLKsBreadcrumbsElement>;
             "ks-button": LocalJSX.KsButton & JSXBase.HTMLAttributes<HTMLKsButtonElement>;

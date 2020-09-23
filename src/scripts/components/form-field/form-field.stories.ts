@@ -172,3 +172,18 @@ export const checklist = () => {
         </div>
     `)
 }
+
+export const autocomplete = () => {
+    return (`
+    <div class="m-xxl">
+        <ks-form-field label="Autocomplete" type="autocomplete" required>
+            <option search="Candy">Choose a value</option>
+            <option search="trash">Value 1</option>
+            <option>Something 2</option>
+            <option>Test 3</option>
+            <option>Valid 3</option>
+            <option>Something 1</option>
+        </ks-form-field>
+    </div>
+    `)
+}

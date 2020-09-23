@@ -19,10 +19,11 @@
 
  - [ks-accordion-slide](../accordion)
  - [ks-alert](../alert)
+ - [ks-autocomplete](../form-field/autocomplete)
  - [ks-button](../button)
  - [ks-carousel](../carousel)
- - [ks-checkbox](../form-field)
- - [ks-checklist](../form-field)
+ - [ks-checkbox](../form-field/checkbox)
+ - [ks-checklist](../form-field/checklist)
  - [ks-dropdown](../dropdown)
  - [ks-form](../form)
  - [ks-form-field](../form-field)
@@ -36,6 +37,7 @@
 graph TD;
   ks-accordion-slide --> ks-icon
   ks-alert --> ks-icon
+  ks-autocomplete --> ks-icon
   ks-button --> ks-icon
   ks-carousel --> ks-icon
   ks-checkbox --> ks-icon

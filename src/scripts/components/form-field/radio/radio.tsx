@@ -2,7 +2,7 @@ import { Component, h, Prop, Host, ComponentInterface, Event, EventEmitter } fro
 
 @Component({
     tag: 'ks-radio',
-    styleUrl: 'form-field.scss'
+    styleUrl: 'radio.scss'
 })
 export class Radio implements ComponentInterface {
     radioButtonId = `radio_${radioButtonIds++}`;
