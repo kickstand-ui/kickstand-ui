@@ -6,7 +6,7 @@
     &.inline {
         display: flex;
         align-items: center;
-        
+
         .form-label {
             @include mr(sm);
         }
@@ -296,8 +296,6 @@
         display: inline-block;
 
         &:focus-within {
-            // outline: spacing(xxxs) dashed color(dark);
-            // outline-offset: spacing(xxs);
             @include outline();
         }
 
@@ -351,6 +349,82 @@
                 transform: scale(0);
                 background: color(primary);
             }
+        }
+    }
+}
+
+.ks-autocomplete {
+    .autocomplete {
+        position: relative;
+
+        .search-field {
+            width: 100%;
+            @include border($size: xxs);
+            @include p(md);
+            @include shadow(inner);
+
+            &:not(textarea) {
+                height: 3.25rem;
+            }
+
+            &:disabled {
+                cursor: not-allowed;
+                @include bg-color(light);
+                @include shadow(none);
+            }
+
+            &::placeholder {
+                opacity: 0.7;
+                color: color(dark, lighter);
+                font-style: italic;
+            }
+
+            &[aria-invalid="true"] {
+                @include border($size: xxs, $color: danger);
+            }
+
+        }
+
+        .search-icon {
+            pointer-events: none;
+            color: color(dark, lighter);
+            @include font-size(xxs);
+            @include ml(-xxxl);
+        }
+
+        .dropdown-options {
+            visibility: hidden;
+            max-height: 12em;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+            left: 0;
+            right: 0;
+            position: absolute;
+            list-style: none;
+            width: auto;
+            white-space: nowrap;
+            @include z-index(xs);
+            @include shadow(sm);
+            @include bg-color(white);
+            @include p(none);
+            @include m(none);
+
+            .option {
+                @include p(md);
+
+                &:focus {
+                    @include border();
+                    @include bg-color(light, light);
+                }
+
+                &:hover {
+                    @include bg-color(light, lighter);
+                }
+            }
+        }
+
+        [aria-expanded="true"] ~ .dropdown-options {
+            visibility: visible;
         }
     }
 }

@@ -21,6 +21,7 @@ export class FormField implements ComponentInterface {
     $input: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
     $checkbox: HTMLKsCheckboxElement;
     $checklist: HTMLKsChecklistElement;
+    $autocomplete: HTMLKsAutocompleteElement;
 
     @Element() $el: HTMLElement;
 
@@ -33,7 +34,7 @@ export class FormField implements ComponentInterface {
     @Prop() requiredText: string = 'Required';
     @Prop({ mutable: true }) invalid: boolean = false;
     @Prop() disabled: boolean;
-    @Prop({ mutable: true }) value?: string | number | any[] | null = '';
+    @Prop({ mutable: true }) value?: string | number | boolean| any[] | null = '';
     @Prop() pattern?: string;
     @Prop() min?: number;
     @Prop() max?: number;
@@ -41,7 +42,8 @@ export class FormField implements ComponentInterface {
     @Prop() minlength?: number;
     @Prop() maxlength?: number;
     @Prop() autocomplete?: string;
-    @Prop() type: 'checkbox'
+    @Prop() type: 'autocomplete' 
+        | 'checkbox'
         | 'checklist'
         | 'color'
         | 'date'
@@ -82,7 +84,7 @@ export class FormField implements ComponentInterface {
 
     @Method()
     async validate() {
-        if (!this.$checkbox && !this.$checklist) {
+        if (!this.$checkbox && !this.$checklist && !this.$autocomplete) {
             this.invalid = !this.$input.checkValidity();
             this.validateOnInput = true;
         }
@@ -92,6 +94,9 @@ export class FormField implements ComponentInterface {
 
     @Watch('value')
     protected async valueChanged() {
+        if(this.type === 'autocomplete')
+            return;
+
         if (this.$input && this.$input.value !== this.value)
             this.$input.value = this.value.toString();
 
@@ -104,10 +109,11 @@ export class FormField implements ComponentInterface {
     }
 
     handleComponentChange(e) {
-        let checkboxData: IFormFieldData = e.detail;
-        this.invalid = !checkboxData.isValid;
-        this.validityState = checkboxData.validity
-        this.updated.emit(checkboxData);
+        let inputData: IFormFieldData = e.detail;
+        this.invalid = !inputData.isValid;
+        this.validityState = inputData.validity
+        this.value = inputData.value;
+        this.updated.emit(inputData);
     }
 
     componentDidLoad() {
@@ -129,6 +135,12 @@ export class FormField implements ComponentInterface {
                 this.invalid = !checklistData.isValid;
                 this.validityState = checklistData.validity;
                 return checklistData;
+            case this.$autocomplete !== undefined:
+                const autocomplete = await this.$autocomplete.validate();
+                this.invalid = !autocomplete.isValid;
+                this.value = autocomplete.value;
+                this.validityState = autocomplete.validity
+                return autocomplete;
             default:
                 this.validityState = this.$input.validity;
                 return {
@@ -252,6 +264,19 @@ export class FormField implements ComponentInterface {
                     </select>
                     <ks-icon class="select-icon" icon="chevron" />
                 </div>
+            ),
+            'autocomplete': (
+                <ks-autocomplete 
+                    value={this.value} 
+                    name={this.getInputName()}
+                    input-id={this.fieldId}
+                    required={this.required} 
+                    disabled={this.disabled}
+                    onChanged={e => this.handleComponentChange(e)}
+                    ref={e => this.$autocomplete = e}
+                    >
+                    <slot />
+                </ks-autocomplete>
             )
         }[this.type] || [
                 <input
