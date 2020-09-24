@@ -97,6 +97,7 @@ module.exports = {
                 children: [
                     "/components/accordion.html",
                     "/components/alert.html",
+                    "/components/autocomplete.html",
                     "/components/badge.html",
                     "/components/breadcrumbs.html",
                     "/components/button.html",
