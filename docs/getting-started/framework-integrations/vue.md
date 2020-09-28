@@ -7,14 +7,22 @@
             "content": "Add to a Vue.js Project - Kickstand UI"
         },
         {
+            "property": "og:image",
+            "content": "https://kickstand-ui.com/images/frameworks/vue-and-kickstand.png"
+        },
+        {
             "property": "og:description",
             "content": "A quick guide on how to integrate Kickstand UI components into your Vue.js application."
+        },
+        {
+            "property": "twitter:image:src",
+            "content": "https://kickstand-ui.com/images/frameworks/vue-and-kickstand.png"
         }
     ]
 }
 ---
 
-# Vue
+# Adding Kickstand UI to a Vue.js Project
 
 ## Adding Components
 

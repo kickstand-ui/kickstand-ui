@@ -166,6 +166,39 @@ You can add some more structure to your alerts by adding a heading to your using
 <ks-alert header="Note Heading" note>This is a note with a heading.</ks-alert>
 ```
 
+## Dismissible
+
+You have the ability to show or hide a selected overlay by setting the `dismissible` property to `true`.
+
+<div class="my-lg">
+    <ks-button shows="dismissible_alert">Show Alert</ks-button>
+    <ks-alert id="dismissible_alert" class="mt-xl" color="danger" header="There Was a Problem" dismissible>
+        Something went terribly, terribly wrong!
+    </ks-alert>
+</div>
+
+```html
+<ks-button shows="dismissible_alert">Show Alert</ks-button>
+<ks-alert id="dismissible_alert" color="danger" header="There Was a Problem" dismissible>
+    Something went terribly, terribly wrong!
+</ks-alert>
+```
+
+By default, if the alert is dismissible, it will be hidden initially. If you would like the alert to display initially, you can add the `display` property and it will display by default.
+
+<div class="my-lg">
+    <ks-alert header="Now You See Me" dismissible display>
+        I am dismissible and you can see me initially!!!
+    </ks-alert>
+</div>
+
+```html
+<ks-alert header="Now You See Me" dismissible display>
+    I am dismissible and you can see me initially!!!
+</ks-alert>
+```
+
+
 ## Accessibility
 
 Alerts have `role="alert"` on the container to signal to assistive technology that they require the user’s immediate attention.
@@ -188,3 +221,20 @@ Since notes are static containers for calling out important information, `role="
 | `color`  | `color`   | `"danger"`, `"dark"`, `"info"`, `"light"`, `"link"`, `"primary"`, `"secondary"`, `"success"`, or `"warning"` | `'primary'` | the color of the button based on the theme color palette           |
 | `header` | `header`  | `string`   | `undefined` | the header text for the alert            |
 | `note`   | `note`    | `boolean`  | `undefined` | display alert as a note            |
+| `dismissible`   | `dismissible`    | `boolean`  | `false` | whether or not user can dismiss or hide the alert            |
+| `display`   | `display`    | `boolean`  | `false` | if dismissible this will set the initial visibility           |
+| `closeText`   | `close-text`    | `string`  | `undefined` | the label for the close button            |
+
+## Methods
+
+### Hide
+
+Hides a selected alert.
+
+`hide() => Promise<void>`
+
+### Show
+
+Shows a selected alert.
+
+`show() => Promise<void>`

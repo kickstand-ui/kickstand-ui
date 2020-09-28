@@ -171,6 +171,18 @@ By adding the `inverted` property to your menu bar component, you can set the ba
 Please ensure that the text color has a sufficient contrast ratio before you implement it.
 :::
 
+## Fixed
+
+You can choose to fix the menu to the top or the bottom of the page so that it is always present when the user scrolls. When this feature is used, a padding is automatically added based on the menus height at the top or the bottom of the `body` element to prevent any content from being blocked by the menu.
+
+```html
+<!-- fixed to the top of the page -->
+<ks-menu-bar fixed="top"></ks-menu-bar>
+
+<!-- fixed to the bottom of the page -->
+<ks-menu-bar fixed="bottom"></ks-menu-bar>
+```
+
 ## Collapse
 
 Menus can can contain varying amounts of content which can make displaying on different device sizes difficult. Using the `collapse` property you can control the responsiveness of your menus - when the menu collapses. Options range from `xxs`-`xl` screen sizes.
@@ -433,6 +445,7 @@ The `<ks-menu-item>` also has a built-in feature for identifying if the current 
 | Property | Attribute | Type   | Default | Description |
 | -------- | --------- | ------ | ------- | ----------- |
 | `altText`  | `alt-text`   | `string` | `undefined` | the alt text for the logo           |
+| `fixed` | `fixed`  | `'top'` or `'bottom'` | `undefined` | fixes the menu bar to the top or bottom of the page so it is always present when the user scrolls            |
 | `collapse` | `collapse`  | `'xxs'`, `'xs'`, `'sm'`, `'md'`, `'lg'`, or `'xl'`   | `'sm'` | the breakpoint at which the menu will collapse at for mobile            |
 | `color`  | `color`   | `"danger"`, `"dark"`, `"info"`, `"light"`, `"link"`, `"primary"`, `"secondary"`, `"success"`, or `"warning"` | `'primary'` | the background color of the menu based on the theme color palette           |
 | `inverted`  | `inverted`   | `boolean` | `false` | this inverts the background and link colors           |

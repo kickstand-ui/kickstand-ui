@@ -14,7 +14,7 @@
 }
 ---
 
-# Angular
+# Adding Kickstand UI to an Angular Project
 
 ## Adding Styles
 

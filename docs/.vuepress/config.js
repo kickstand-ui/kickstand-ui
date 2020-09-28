@@ -71,12 +71,22 @@ module.exports = {
                         title: "Framework Integrations",
                         children: [
                             "/getting-started/framework-integrations/overview.html",
-                            // "/getting-started/framework-integrations/javascript.html",
-                            // "/getting-started/framework-integrations/typescript.html",
-                            "/getting-started/framework-integrations/angular.html",
-                            "/getting-started/framework-integrations/ember.html",
-                            "/getting-started/framework-integrations/react.html",
-                            "/getting-started/framework-integrations/vue.html"
+                            {
+                                title: "Angular",
+                                path: "/getting-started/framework-integrations/angular.html"
+                            },
+                            {
+                                title: "Ember",
+                                path: "/getting-started/framework-integrations/ember.html"
+                            },
+                            {
+                                title: "React",
+                                path: "/getting-started/framework-integrations/react.html"
+                            },
+                            {
+                                title: "Vue",
+                                path: "/getting-started/framework-integrations/vue.html"
+                            }
                         ]
                     }
                 ]
@@ -87,6 +97,7 @@ module.exports = {
                 children: [
                     "/components/accordion.html",
                     "/components/alert.html",
+                    "/components/autocomplete.html",
                     "/components/badge.html",
                     "/components/breadcrumbs.html",
                     "/components/button.html",
@@ -95,6 +106,7 @@ module.exports = {
                     "/components/dropdown.html",
                     "/components/form.html",
                     "/components/form-field.html",
+                    "/components/gallery.html",
                     "/components/icons.html",
                     "/components/images.html",
                     "/components/loading.html",
@@ -127,6 +139,7 @@ module.exports = {
                     "/utilities/colors.html",
                     "/utilities/display.html",
                     "/utilities/layout.html",
+                    "/utilities/shadows.html",
                     "/utilities/spacing.html",
                     "/utilities/table.html",
                     "/utilities/text.html"

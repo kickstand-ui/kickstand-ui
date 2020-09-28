@@ -14,7 +14,7 @@
 }
 ---
 
-# Ember
+# Adding Kickstand UI to an Ember Project
 
 ## Adding Styles
 

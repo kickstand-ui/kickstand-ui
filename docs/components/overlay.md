@@ -219,14 +219,14 @@ The overlay component has a number of built-in accessibility features to make ov
 
 ## Methods
 
-### `hide() => Promise<void>`
+### Hide
 
-#### Returns
+Hides a selected overlay.
 
-Type: `Promise<void>`
+`hide() => Promise<void>`
 
-### `show() => Promise<void>`
+### Show
 
-#### Returns
+Shows a selected overlay.
 
-Type: `Promise<void>`
+`show() => Promise<void>`
