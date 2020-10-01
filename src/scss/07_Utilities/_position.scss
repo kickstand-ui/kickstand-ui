@@ -40,36 +40,34 @@
     }
 }
 
-.offset {
-    &-xy {
-        transform: translate(50%, 50%);
-    }
+.offset-x {
+    transform: translateX(50%) !important;
+}
 
-    &-nxny {
-        transform: translate(-50%, -50%);
-    }
+.offset-y {
+    transform: translateY(50%) !important;
+}
 
-    &-nxy {
-        transform: translate(-50%, 50%);
-    }
-    
-    &-xny {
-        transform: translate(50%, -50%);
-    }
-    
-    &-x {
-        transform: translateX(50%);
-    }
-    
-    &-nx {
-        transform: translateX(-50%);
-    }
-    
-    &-y {
-        transform: translateY(50%);
-    }
-    
-    &-ny {
-        transform: translateY(-50%);
-    }
+.-offset-x {
+    transform: translateX(-50%) !important;
+}
+
+.-offset-y {
+    transform: translateY(-50%) !important;
+}
+
+.offset-x.offset-y {
+    transform: translate(50%, 50%) !important;
+}
+
+.offset-x.-offset-y {
+    transform: translate(50%, -50%) !important;
+}
+
+.-offset-x.offset-y {
+    transform: translate(-50%, 50%) !important;
+}
+
+.-offset-x.-offset-y {
+    transform: translate(-50%, -50%) !important;
 }
