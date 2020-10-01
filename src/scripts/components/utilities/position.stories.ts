@@ -35,7 +35,7 @@ export const offset = () => {
 export const badgeTest = () => {
     return (`<div class="m-xxl">
         <ks-button>
-            <ks-badge color="danger" class="position-absolute top-0 right-0 offset-xny">12</ks-badge>
+            <ks-badge color="danger" class="position-absolute top-0 right-0 offset-x -offset-y">12</ks-badge>
             Test Button
         </ks-button>
     </div>`);
