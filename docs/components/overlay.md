@@ -212,7 +212,7 @@ The overlay component has a number of built-in accessibility features to make ov
     let myOverlay = document.getElementById('my_overlay');
 
     myOverlay.addEventListener('hidden', () => {
-        // do something...
+        // do something when the overlay closes...
     });
 </script>
 ```
