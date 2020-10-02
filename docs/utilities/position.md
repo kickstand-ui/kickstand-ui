@@ -4,7 +4,7 @@
     "meta": [
         {
             "property": "og:title",
-            "content": "Text Utilities - Kickstand UI"
+            "content": "Position Utilities - Kickstand UI"
         },
         {
             "property": "og:image",
