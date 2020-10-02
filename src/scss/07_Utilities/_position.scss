@@ -1,0 +1,73 @@
+@import '../00_Abstracts/index';
+
+.position {
+    &-absolute {
+        position: absolute !important;
+    }
+
+    &-relative {
+        position: relative !important;
+    }
+
+    &-fixed {
+        position: fixed !important;
+    }
+
+    &-sticky {
+        position: sticky !important;
+    }
+
+    &-static {
+        position: static !important;
+    }
+}
+
+@each $position in (0, 50, 100) {
+    .top-#{$position} {
+        top: #{$position + "%"} !important;
+    }
+    
+    .bottom-#{$position} {
+        bottom: #{$position + "%"} !important;
+    }
+
+    .left-#{$position} {
+        left: #{$position + "%"} !important;
+    }
+
+    .right-#{$position} {
+        right: #{$position + "%"} !important;
+    }
+}
+
+.offset-x {
+    transform: translateX(50%) !important;
+}
+
+.offset-y {
+    transform: translateY(50%) !important;
+}
+
+.-offset-x {
+    transform: translateX(-50%) !important;
+}
+
+.-offset-y {
+    transform: translateY(-50%) !important;
+}
+
+.offset-x.offset-y {
+    transform: translate(50%, 50%) !important;
+}
+
+.offset-x.-offset-y {
+    transform: translate(50%, -50%) !important;
+}
+
+.-offset-x.offset-y {
+    transform: translate(-50%, 50%) !important;
+}
+
+.-offset-x.-offset-y {
+    transform: translate(-50%, -50%) !important;
+}
