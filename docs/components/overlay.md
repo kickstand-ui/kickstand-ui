@@ -46,10 +46,10 @@ Kickstand UI's Overlay component is designed to display content in a layer above
 By default the overlay will take up the entire viewport. You can isolate the overlay to that specific area by placing the component within the container you are loading and adding the `absolute` attribute to the component.
 
 :::tip Note
-The parent container must have the CSS rule `position: relative;` set.
+The parent container must have the CSS rule `position: relative;` set. Feel free to take advantage of our `position-relative` [utility class](../utilities/position.md) to make it easy.
 :::
 
-<div class="my-xl p-xl" style="position:relative;width:300px;height:150px;">
+<div class="my-xl p-xl position-relative" style="width:300px;height:150px;">
     <ks-button shows="absolute_overlay">Show Absolute Overlay</ks-button>
     <ks-overlay id="absolute_overlay" absolute>
         <ks-button color="light" hides="absolute_overlay">Hide Absolute Overlay</ks-button>
@@ -57,7 +57,7 @@ The parent container must have the CSS rule `position: relative;` set.
 </div>
 
 ```html
-<div style="position:relative; width:300px; height:150px;">
+<div class="position-relative" style="width:300px; height:150px;">
     <ks-button shows="absolute_overlay">Show Absolute Overlay</ks-button>
 
     <ks-overlay id="absolute_overlay" absolute>

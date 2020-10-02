@@ -26,16 +26,16 @@
 
 Kickstand UI's position utility classes can be used to quickly position content without custom styles.
 
-<div class="bg-light border-dark w-50 position-relative" style="height:100px;">
-    <span class="bg-danger p-sm position-absolute offset-nxny top-0 left-0"></span>
-    <span class="bg-danger p-sm position-absolute offset-nxny top-50 left-0"></span>
-    <span class="bg-danger p-sm position-absolute offset-nxy bottom-0 left-0"></span>
-    <span class="bg-danger p-sm position-absolute offset-nxny top-0 left-50"></span>
-    <span class="bg-danger p-sm position-absolute offset-nxny top-50 left-50"></span>
-    <span class="bg-danger p-sm position-absolute offset-nxy bottom-0 left-50"></span>
-    <span class="bg-danger p-sm position-absolute offset-xny top-0 right-0"></span>
-    <span class="bg-danger p-sm position-absolute offset-xny top-50 right-0"></span>
-    <span class="bg-danger p-sm position-absolute offset-xy bottom-0 right-0"></span>
+<div class="bg-light border-dark mx-auto my-xl w-50 position-relative" style="height:100px;">
+    <span class="bg-danger p-sm position-absolute -offset-x -offset-y top-0 left-0"></span>
+    <span class="bg-danger p-sm position-absolute -offset-x -offset-y top-50 left-0"></span>
+    <span class="bg-danger p-sm position-absolute -offset-x offset-y bottom-0 left-0"></span>
+    <span class="bg-danger p-sm position-absolute -offset-x -offset-y top-0 left-50"></span>
+    <span class="bg-danger p-sm position-absolute -offset-x -offset-y top-50 left-50"></span>
+    <span class="bg-danger p-sm position-absolute -offset-x offset-y bottom-0 left-50"></span>
+    <span class="bg-danger p-sm position-absolute offset-x -offset-y top-0 right-0"></span>
+    <span class="bg-danger p-sm position-absolute offset-x -offset-y top-50 right-0"></span>
+    <span class="bg-danger p-sm position-absolute offset-x offset-y bottom-0 right-0"></span>
 </div>
 
 ## Position Utilities
@@ -54,7 +54,7 @@ The position utility class specifies the type of [positioning method](https://de
 
 Elements are then positioned using the `top`, `bottom`, `left`, and `right` utility classes. The available locations are `0`, `50`, and `100` - representing `0%`, `50%`, and `100%` (ex - `top-0`, `bottom-50`, `right-0`, etc.).
 
-<div class="bg-light border-dark w-25 position-relative" style="height:100px;">
+<div class="bg-light border-dark w-50 mx-auto my-xxl position-relative" style="height:100px;">
     <span class="bg-danger p-sm position-absolute top-0 left-0"></span>
     <span class="bg-danger p-sm position-absolute top-50 left-0"></span>
     <span class="bg-danger p-sm position-absolute bottom-0 left-0"></span>
@@ -84,55 +84,67 @@ Elements are then positioned using the `top`, `bottom`, `left`, and `right` util
 
 As you ca see from the example above, things may not always line up exactly the way you want them to or you may want content extend beyond the the container. That's where the `offset` utility classes come in.
 
-<div class="bg-light border-dark w-50 position-relative" style="height:100px;">
-    <span class="bg-danger p-sm position-absolute offset-nxny top-0 left-0"></span>
-    <span class="bg-danger p-sm position-absolute offset-nxny top-50 left-0"></span>
-    <span class="bg-danger p-sm position-absolute offset-nxy bottom-0 left-0"></span>
-    <span class="bg-danger p-sm position-absolute offset-nxny top-0 left-50"></span>
-    <span class="bg-danger p-sm position-absolute offset-nxny top-50 left-50"></span>
-    <span class="bg-danger p-sm position-absolute offset-nxy bottom-0 left-50"></span>
-    <span class="bg-danger p-sm position-absolute offset-xny top-0 right-0"></span>
-    <span class="bg-danger p-sm position-absolute offset-xny top-50 right-0"></span>
-    <span class="bg-danger p-sm position-absolute offset-xy bottom-0 right-0"></span>
+<div class="bg-light border-dark w-50 mx-auto my-xxl position-relative" style="height:100px;">
+    <span class="bg-danger p-sm position-absolute -offset-x -offset-y top-0 left-0"></span>
+    <span class="bg-danger p-sm position-absolute -offset-x -offset-y top-50 left-0"></span>
+    <span class="bg-danger p-sm position-absolute -offset-x offset-y bottom-0 left-0"></span>
+    <span class="bg-danger p-sm position-absolute -offset-x -offset-y top-0 left-50"></span>
+    <span class="bg-danger p-sm position-absolute -offset-x -offset-y top-50 left-50"></span>
+    <span class="bg-danger p-sm position-absolute -offset-x offset-y bottom-0 left-50"></span>
+    <span class="bg-danger p-sm position-absolute offset-x -offset-y top-0 right-0"></span>
+    <span class="bg-danger p-sm position-absolute offset-x -offset-y top-50 right-0"></span>
+    <span class="bg-danger p-sm position-absolute offset-x offset-y bottom-0 right-0"></span>
 </div>
 
 ```html
 <div class="position-relative" style="height:100px;">
-    <span class="position-absolute offset-nxny top-0 left-0"></span>
-    <span class="position-absolute offset-nxny top-50 left-0"></span>
-    <span class="position-absolute offset-nxy bottom-0 left-0"></span>
-    <span class="position-absolute offset-nxny top-0 left-50"></span>
-    <span class="position-absolute offset-nxny top-50 left-50"></span>
-    <span class="position-absolute offset-nxy bottom-0 left-50"></span>
-    <span class="position-absolute offset-xny top-0 right-0"></span>
-    <span class="position-absolute offset-xny top-50 right-0"></span>
-    <span class="position-absolute offset-xy bottom-0 right-0"></span>
+    <span class="position-absolute -offset-x -offset-y top-0 left-0"></span>
+    <span class="position-absolute -offset-x -offset-y top-50 left-0"></span>
+    <span class="position-absolute -offset-x offset-y bottom-0 left-0"></span>
+    <span class="position-absolute -offset-x -offset-y top-0 left-50"></span>
+    <span class="position-absolute -offset-x -offset-y top-50 left-50"></span>
+    <span class="position-absolute -offset-x offset-y bottom-0 left-50"></span>
+    <span class="position-absolute offset-x -offset-y top-0 right-0"></span>
+    <span class="position-absolute offset-x -offset-y top-50 right-0"></span>
+    <span class="position-absolute offset-x offset-y bottom-0 right-0"></span>
 </div>
 ```
 
-The offset utilities allow you to adjust the position by 50% of the elements width.
+The offset utilities allow you to adjust the position by `50%` of the elements width.
 
 | Class | Result |
 | --- | --- |
 | `offset-x` | will shift it 50% of the element's width to the right. |
 | `offset-y` | will shift it 50% of the element's width down. |
 
-Alternately you can shift it the opposite direction by prefixing the it with the letter `n` to indicate `-50%`:
+Alternately you can shift it the opposite direction by prefixing the it with a dash (`-`) to indicate `-50%`:
 
 | Class | Result |
 | --- | --- |
-| `offset-nx` | shift to the left. |
-| `offset-ny` | shift up. |
+| `-offset-x` | shift to the left. |
+| `-offset-y` | shift up. |
 
-If you would like to move it both vertically and horizontally, you can combine the syntax to get the desired result:
+If you would like to move it both vertically and horizontally, you can combine the classes to get the desired result:
 
 | Class | Result |
 | --- | --- |
-| `offset-xy` | shift to the right and up. |
-| `offset-nxy` | shift to the left and up. |
-| `offset-xny` | shift to the right and down. |
-| `offset-nxny` | shift to the left and down. |
+| `offset-x offset-y` | shift to the right and up. |
+| `-offset-x offset-y` | shift to the left and up. |
+| `offset-x -offset-y` | shift to the right and down. |
+| `-offset-x -offset-y` | shift to the left and down. |
 
-:::tip Note
-You cannot combine two utility classes to shift the element both vertically and horizontally: `offset-x offset-y`. The browser will only chose one of them. In order to get the desired result.
-:::
+### Example
+
+<div class="my-xxl">
+    <ks-button>
+        <ks-badge color="danger" class="position-absolute top-0 right-0 offset-x -offset-y">12</ks-badge>
+        Notification Button
+    </ks-button>
+</div>
+
+```html
+<ks-button>
+    <ks-badge color="danger" class="position-absolute top-0 right-0 offset-x -offset-y">12</ks-badge>
+    Notification Button
+</ks-button>
+```

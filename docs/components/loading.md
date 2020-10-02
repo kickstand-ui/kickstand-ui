@@ -104,10 +104,10 @@ Changing the size of the `<ks-loading-overlay />` can be done using the custom `
 By default the overlay will take up the entire viewport. If you are only loading a portion of the page, you can isolate the loading overlay to that specific area by placing the component within the container you are loading and adding the `absolute` attribute to the component.
 
 :::tip Note
-The parent container must have the CSS rule `position: relative;` set.
+The parent container must have the CSS rule `position: relative;` set. Feel free to take advantage of our `position-relative` [utility class](../utilities/position.md) to make it easy.
 :::
 
-<div class="my-xl p-xl" style="position:relative;width:300px;height:150px;">
+<div class="my-xl p-xl position-relative" style="width:300px;height:150px;">
     <ks-button id="absolute_button">Show Absolute Overlay</ks-button>
     <ks-loading-overlay id="absolute_overlay" size="xxl" absolute />
     <script>
@@ -123,7 +123,7 @@ The parent container must have the CSS rule `position: relative;` set.
 </div>
 
 ```html
-<div style="position:relative;width:300px;height:150px;">
+<div class="position-relative" style="width:300px;height:150px;">
     <ks-button id="absolute_button">Show Absolute Overlay</ks-button>
     <ks-loading-overlay id="absolute_overlay" size="xxl" absolute />
     <script>
@@ -183,7 +183,7 @@ Showing and hiding the loading overlay is as simple as using JavaScript to selec
 If you are using the [`<ks-button>` element](/components/button.html) you can take advantage of the `shows` and `hides` properties to open and close any of the components built using the [overlay](/components/overlay.html) component.
 
 <div class="my-xl display-flex">
-    <div class="p-xl" style="position:relative;width:300px;height:150px;">
+    <div class="p-xl position-relative" style="width:300px;height:150px;">
         <ks-button shows="show_overlay">Show Overlay</ks-button>
         <ks-loading-overlay id="show_overlay" size="lg" absolute />
     </div>
@@ -191,7 +191,7 @@ If you are using the [`<ks-button>` element](/components/button.html) you can ta
 </div>
 
 ```html
-<div style="position:relative;width:300px;height:150px;">
+<div class="position-relative" style="width:300px;height:150px;">
     <ks-button shows="show_overlay">Show Overlay</ks-button>
     <ks-loading-overlay id="show_overlay" size="lg" absolute />
 </div>
