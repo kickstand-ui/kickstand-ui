@@ -139,6 +139,7 @@ module.exports = {
                     "/utilities/colors.html",
                     "/utilities/display.html",
                     "/utilities/layout.html",
+                    "/utilities/position.html",
                     "/utilities/shadows.html",
                     "/utilities/spacing.html",
                     "/utilities/table.html",
