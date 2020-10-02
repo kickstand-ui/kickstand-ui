@@ -38,3 +38,13 @@ export const responsive = () => (`
         </span>
     </div>
 `);
+
+export const negativeMargins = () => (`
+    <div class="m-xxl">
+        <span class="p-xxl bg-info-lighter">
+        </span>
+        <span class="p-lg -ml-xl bg-warning">
+            -ml-xl
+        </span>
+    </div>
+`);
