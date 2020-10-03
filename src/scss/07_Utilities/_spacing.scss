@@ -46,9 +46,17 @@ $value in $spacing-sizes {
         @include m($size, $important: true);
     }
 
+    .-m-#{$size} {
+        @include m(#{"-" + $size}, $important: true);
+    }
+
     // Margin X
     .mx-#{$size} {
         @include mx($size, $important: true);
+    }
+
+    .-mx-#{$size} {
+        @include mx(#{"-" + $size}, $important: true);
     }
 
     // Margin Y
@@ -56,9 +64,17 @@ $value in $spacing-sizes {
         @include my($size, $important: true);
     }
 
+    .-my-#{$size} {
+        @include my(#{"-" + $size}, $important: true);
+    }
+
     // Margin Left
     .ml-#{$size} {
         @include ml($size, $important: true);
+    }
+
+    .-ml-#{$size} {
+        @include ml(#{"-" + $size}, $important: true);
     }
 
     // Margin Right
@@ -66,14 +82,26 @@ $value in $spacing-sizes {
         @include mr($size, $important: true);
     }
 
+    .-mr-#{$size} {
+        @include mr(#{"-" + $size}, $important: true);
+    }
+
     // Margin Top
     .mt-#{$size} {
         @include mt($size, $important: true);
     }
 
+    .-mt-#{$size} {
+        @include mt(#{"-" + $size}, $important: true);
+    }
+
     // Margin Bottom
     .mb-#{$size} {
         @include mb($size, $important: true);
+    }
+
+    .-mb-#{$size} {
+        @include mb(#{"-" + $size}, $important: true);
     }
 }
 
@@ -124,9 +152,17 @@ $value in $spacing-sizes {
                 @include m($size, $important: true);
             }
 
+            .-#{$mq}\:m-#{$size} {
+                @include m(#{"-" + $size}, $important: true);
+            }
+
             // Margin X
             .#{$mq}\:mx-#{$size} {
                 @include mx($size, $important: true);
+            }
+
+            .-#{$mq}\:mx-#{$size} {
+                @include mx(#{"-" + $size}, $important: true);
             }
 
             // Margin Y
@@ -134,9 +170,17 @@ $value in $spacing-sizes {
                 @include my($size, $important: true);
             }
 
+            .-#{$mq}\:my-#{$size} {
+                @include my(#{"-" + $size}, $important: true);
+            }
+
             // Margin Left
             .#{$mq}\:ml-#{$size} {
                 @include ml($size, $important: true);
+            }
+
+            .-#{$mq}\:ml-#{$size} {
+                @include ml(#{"-" + $size}, $important: true);
             }
 
             // Margin Right
@@ -144,14 +188,18 @@ $value in $spacing-sizes {
                 @include mr($size, $important: true);
             }
 
+            .-#{$mq}\:mr-#{$size} {
+                @include mr(#{"-" + $size}, $important: true);
+            }
+
             // Margin Top
-            .#{$mq}\:mt-#{$size} {
-                @include mt($size, $important: true);
+            .-#{$mq}\:mt-#{$size} {
+                @include mt(#{"-" + $size}, $important: true);
             }
 
             // Margin Bottom
-            .#{$mq}\:mb-#{$size} {
-                @include mb($size, $important: true);
+            .-#{$mq}\:mb-#{$size} {
+                @include mb(#{"-" + $size}, $important: true);
             }
         }
     }
