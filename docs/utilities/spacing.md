@@ -37,230 +37,229 @@ The pattern for the utility classes is fairly intuitive:
 <div class="my-xxl">
     <h3>xxxs</h3>
     <div class="display-flex align-start w-100 my-md">
-        <div class="w-100 mr-md bg-info-lighter p-xxxs">
+        <div class="w-100 mr-md bg-light-light p-xxxs">
             <div class="bg-light">p-xxxs</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pt-xxxs">
+        <div class="w-100 mr-md bg-light-light pt-xxxs">
             <div class="bg-light">pt-xxxs</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pr-xxxs">
+        <div class="w-100 mr-md bg-light-light pr-xxxs">
             <div class="bg-light">pr-xxxs</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pb-xxxs">
+        <div class="w-100 mr-md bg-light-light pb-xxxs">
             <div class="bg-light">pb-xxxs</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pl-xxxs">
+        <div class="w-100 mr-md bg-light-light pl-xxxs">
             <div class="bg-light">pl-xxxs</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter px-xxxs">
+        <div class="w-100 mr-md bg-light-light px-xxxs">
             <div class="bg-light">px-xxxs</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter py-xxxs">
+        <div class="w-100 mr-md bg-light-light py-xxxs">
             <div class="bg-light">py-xxxs</div>
         </div>
     </div>
     <br>
     <h3>xxs</h3>
     <div class="display-flex align-start w-100 my-md">
-        <div class="w-100 mr-md bg-info-lighter p-xxs">
+        <div class="w-100 mr-md bg-light-light p-xxs">
             <div class="bg-light">p-xxs</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pt-xxs">
+        <div class="w-100 mr-md bg-light-light pt-xxs">
             <div class="bg-light">pt-xxs</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pr-xxs">
+        <div class="w-100 mr-md bg-light-light pr-xxs">
             <div class="bg-light">pr-xxs</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pb-xxs">
+        <div class="w-100 mr-md bg-light-light pb-xxs">
             <div class="bg-light">pb-xxs</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pl-xxs">
+        <div class="w-100 mr-md bg-light-light pl-xxs">
             <div class="bg-light">pl-xxs</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter px-xxs">
+        <div class="w-100 mr-md bg-light-light px-xxs">
             <div class="bg-light">px-xxs</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter py-xxs">
+        <div class="w-100 mr-md bg-light-light py-xxs">
             <div class="bg-light">py-xxs</div>
         </div>
     </div>
     <br>
     <h3>xs</h3>
     <div class="display-flex align-start w-100 my-md">
-        <div class="w-100 mr-md bg-info-lighter p-xs">
+        <div class="w-100 mr-md bg-light-light p-xs">
             <div class="bg-light">p-xs</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pt-xs">
+        <div class="w-100 mr-md bg-light-light pt-xs">
             <div class="bg-light">pt-xs</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pr-xs">
+        <div class="w-100 mr-md bg-light-light pr-xs">
             <div class="bg-light">pr-xs</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pb-xs">
+        <div class="w-100 mr-md bg-light-light pb-xs">
             <div class="bg-light">pb-xs</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pl-xs">
+        <div class="w-100 mr-md bg-light-light pl-xs">
             <div class="bg-light">pl-xs</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter px-xs">
+        <div class="w-100 mr-md bg-light-light px-xs">
             <div class="bg-light">px-xs</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter py-xs">
+        <div class="w-100 mr-md bg-light-light py-xs">
             <div class="bg-light">py-xs</div>
         </div>
     </div>
     <br>
     <h3>sm</h3>
     <div class="display-flex align-start w-100 my-md">
-        <div class="w-100 mr-md bg-info-lighter p-sm">
+        <div class="w-100 mr-md bg-light-light p-sm">
             <div class="bg-light">p-sm</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pt-sm">
+        <div class="w-100 mr-md bg-light-light pt-sm">
             <div class="bg-light">pt-sm</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pr-sm">
+        <div class="w-100 mr-md bg-light-light pr-sm">
             <div class="bg-light">pr-sm</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pb-sm">
+        <div class="w-100 mr-md bg-light-light pb-sm">
             <div class="bg-light">pb-sm</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pl-sm">
+        <div class="w-100 mr-md bg-light-light pl-sm">
             <div class="bg-light">pl-sm</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter px-sm">
+        <div class="w-100 mr-md bg-light-light px-sm">
             <div class="bg-light">px-sm</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter py-sm">
+        <div class="w-100 mr-md bg-light-light py-sm">
             <div class="bg-light">py-sm</div>
         </div>
     </div>
     <br>
     <h3>md</h3>
     <div class="display-flex align-start w-100 my-md">
-        <div class="w-100 mr-md bg-info-lighter p-md">
+        <div class="w-100 mr-md bg-light-light p-md">
             <div class="bg-light">p-md</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pt-md">
+        <div class="w-100 mr-md bg-light-light pt-md">
             <div class="bg-light">pt-md</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pr-md">
+        <div class="w-100 mr-md bg-light-light pr-md">
             <div class="bg-light">pr-md</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pb-md">
+        <div class="w-100 mr-md bg-light-light pb-md">
             <div class="bg-light">pb-md</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pl-md">
+        <div class="w-100 mr-md bg-light-light pl-md">
             <div class="bg-light">pl-md</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter px-md">
+        <div class="w-100 mr-md bg-light-light px-md">
             <div class="bg-light">px-md</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter py-md">
+        <div class="w-100 mr-md bg-light-light py-md">
             <div class="bg-light">py-md</div>
         </div>
     </div>
     <br>
     <h3>lg</h3>
     <div class="display-flex align-start w-100 my-md">
-        <div class="w-100 mr-md bg-info-lighter p-lg">
+        <div class="w-100 mr-md bg-light-light p-lg">
             <div class="bg-light">p-lg</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pt-lg">
+        <div class="w-100 mr-md bg-light-light pt-lg">
             <div class="bg-light">pt-lg</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pr-lg">
+        <div class="w-100 mr-md bg-light-light pr-lg">
             <div class="bg-light">pr-lg</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pb-lg">
+        <div class="w-100 mr-md bg-light-light pb-lg">
             <div class="bg-light">pb-lg</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pl-lg">
+        <div class="w-100 mr-md bg-light-light pl-lg">
             <div class="bg-light">pl-lg</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter px-lg">
+        <div class="w-100 mr-md bg-light-light px-lg">
             <div class="bg-light">px-lg</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter py-lg">
+        <div class="w-100 mr-md bg-light-light py-lg">
             <div class="bg-light">py-lg</div>
         </div>
     </div>
     <br>
     <h3>xl</h3>
     <div class="display-flex align-start w-100 my-md">
-        <div class="w-100 mr-md bg-info-lighter p-xl">
+        <div class="w-100 mr-md bg-light-light p-xl">
             <div class="bg-light">p-xl</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pt-xl">
+        <div class="w-100 mr-md bg-light-light pt-xl">
             <div class="bg-light">pt-xl</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pr-xl">
+        <div class="w-100 mr-md bg-light-light pr-xl">
             <div class="bg-light">pr-xl</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pb-xl">
+        <div class="w-100 mr-md bg-light-light pb-xl">
             <div class="bg-light">pb-xl</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pl-xl">
+        <div class="w-100 mr-md bg-light-light pl-xl">
             <div class="bg-light">pl-xl</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter px-xl">
+        <div class="w-100 mr-md bg-light-light px-xl">
             <div class="bg-light">px-xl</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter py-xl">
+        <div class="w-100 mr-md bg-light-light py-xl">
             <div class="bg-light">py-xl</div>
         </div>
     </div>
     <br>
     <h3>xxl</h3>
     <div class="display-flex align-start w-100 my-md">
-        <div class="w-100 mr-md bg-info-lighter p-xxl">
+        <div class="w-100 mr-md bg-light-light p-xxl">
             <div class="bg-light">p-xxl</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pt-xxl">
+        <div class="w-100 mr-md bg-light-light pt-xxl">
             <div class="bg-light">pt-xxl</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pr-xxl">
+        <div class="w-100 mr-md bg-light-light pr-xxl">
             <div class="bg-light">pr-xxl</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pb-xxl">
+        <div class="w-100 mr-md bg-light-light pb-xxl">
             <div class="bg-light">pb-xxl</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pl-xxl">
+        <div class="w-100 mr-md bg-light-light pl-xxl">
             <div class="bg-light">pl-xxl</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter px-xxl">
+        <div class="w-100 mr-md bg-light-light px-xxl">
             <div class="bg-light">px-xxl</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter py-xxl">
+        <div class="w-100 mr-md bg-light-light py-xxl">
             <div class="bg-light">py-xxl</div>
         </div>
     </div>
     <br>
     <h3>xxxl</h3>
     <div class="display-flex align-start w-100 my-md">
-        <div class="w-100 mr-md bg-info-lighter p-xxxl">
+        <div class="w-100 mr-md bg-light-light p-xxxl">
             <div class="bg-light">p-xxxl</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pt-xxxl">
+        <div class="w-100 mr-md bg-light-light pt-xxxl">
             <div class="bg-light">pt-xxxl</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pr-xxxl">
+        <div class="w-100 mr-md bg-light-light pr-xxxl">
             <div class="bg-light">pr-xxxl</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pb-xxxl">
+        <div class="w-100 mr-md bg-light-light pb-xxxl">
             <div class="bg-light">pb-xxxl</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter pl-xxxl">
+        <div class="w-100 mr-md bg-light-light pl-xxxl">
             <div class="bg-light">pl-xxxl</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter px-xxxl">
+        <div class="w-100 mr-md bg-light-light px-xxxl">
             <div class="bg-light">px-xxxl</div>
         </div>
-        <div class="w-100 mr-md bg-info-lighter py-xxxl">
+        <div class="w-100 mr-md bg-light-light py-xxxl">
             <div class="bg-light">py-xxxl</div>
         </div>
     </div>
 </div>
-
 
 ## Margin
 
@@ -492,18 +491,32 @@ The pattern for the utility classes is fairly intuitive:
     <br>
 </div>
 
+## Negative Margins
+
+You can also create negative margins by prefacing the class with a dash (`-`).
+
+<div class="my-xxl">
+    <span class="p-xxl bg-info"></span>
+    <span class="-ml-xxl p-lg bg-light-light">-ml-xxl</span>
+</div>
+
+```html
+<span class="p-xxl bg-info"></span>
+<span class="p-lg -ml-xxl bg-light-light">-ml-xxl</span>
+```
+
 ## Responsive Classes
 
 You can also change the layout based on the user's screen size using the responsive variations of each class. By prefixing the class with the desired screen size (`xxs`-`xl`), you can adjust the behavior.
 
 <div class="my-xl">
-    <span class="p-md md:p-xl bg-info-lighter">
-        <span class="bg-light">I have a "md" padding normally, but an "xl" padding on small screens</span>
-    </span>
+    <div class="p-md md:p-xl bg-info-lighter">
+        <div class="bg-light">I have a "md" padding normally, but an "xl" padding on medium screens</div>
+    </div>
 </div>
 
 ```html
-<span class="p-md md:p-xl bg-info-lighter">
-    <span class="bg-light">I have a "md" padding normally, but an "xl" padding on small screens</span>
-</span>
+<div class="p-md md:p-xl bg-info-lighter">
+    <div class="bg-light">I have a "md" padding normally, but an "xl" padding on medium screens</div>
+</div>
 ```
