@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-print_solid">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="print_solid" clip-path="url(#clip-print_solid)">
+    <g id="Group_71" data-name="Group 71">
+      <g id="Rectangle_22" data-name="Rectangle 22" transform="translate(7 4)" fill="none" stroke="#707070" stroke-width="1.5">
+        <rect width="10" height="4.5" stroke="none"/>
+        <rect x="0.75" y="0.75" width="8.5" height="3" fill="none"/>
+      </g>
+      <g id="Rectangle_71" data-name="Rectangle 71" transform="translate(7 11.5)" fill="none" stroke="#707070" stroke-width="1.5">
+        <rect width="10" height="7.5" stroke="none"/>
+        <rect x="0.75" y="0.75" width="8.5" height="6" fill="none"/>
+      </g>
+      <path id="Exclusion_1" data-name="Exclusion 1" d="M-737-99h-3v-9h16v9h-3v-4.5h-10V-99Z" transform="translate(744 115)" fill="#707070"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-hierarchy">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="hierarchy" clip-path="url(#clip-hierarchy)">
+    <g id="Group_83" data-name="Group 83">
+      <g id="Rectangle_25" data-name="Rectangle 25" transform="translate(10 4)" fill="none" stroke="#707070" stroke-width="1.5">
+        <rect width="4" height="4" stroke="none"/>
+        <rect x="0.75" y="0.75" width="2.5" height="2.5" fill="none"/>
+      </g>
+      <g id="Rectangle_26" data-name="Rectangle 26" transform="translate(4 16)" fill="none" stroke="#707070" stroke-width="1.5">
+        <rect width="4" height="4" stroke="none"/>
+        <rect x="0.75" y="0.75" width="2.5" height="2.5" fill="none"/>
+      </g>
+      <g id="Rectangle_27" data-name="Rectangle 27" transform="translate(10 16)" fill="none" stroke="#707070" stroke-width="1.5">
+        <rect width="4" height="4" stroke="none"/>
+        <rect x="0.75" y="0.75" width="2.5" height="2.5" fill="none"/>
+      </g>
+      <g id="Rectangle_28" data-name="Rectangle 28" transform="translate(16 16)" fill="none" stroke="#707070" stroke-width="1.5">
+        <rect width="4" height="4" stroke="none"/>
+        <rect x="0.75" y="0.75" width="2.5" height="2.5" fill="none"/>
+      </g>
+      <path id="Path_68" data-name="Path 68" d="M152,296v5.729" transform="translate(-140 -287.024)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <path id="Path_69" data-name="Path 69" d="M146,302.7V300h12.4v2.7" transform="translate(-140 -288)" fill="none" stroke="#707070" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

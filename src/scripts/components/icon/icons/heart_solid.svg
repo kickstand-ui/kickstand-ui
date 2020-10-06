@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-heart_solid">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="heart_solid" clip-path="url(#clip-heart_solid)">
+    <path id="Path_16" data-name="Path 16" d="M7.5,5.511C9.736,1.466,15,3.361,15,7.687s-3.68,5.831-7.5,9.593C3.6,13.44,0,12.013,0,7.687S5.394,1.7,7.5,5.511Z" transform="translate(4.5 1.72)" fill="#707070" stroke="#707070" stroke-linecap="round" stroke-width="1.5"/>
+  </g>
+</svg>

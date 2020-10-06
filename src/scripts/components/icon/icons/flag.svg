@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-flag">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="flag" clip-path="url(#clip-flag)">
+    <g id="Group_37" data-name="Group 37">
+      <line id="Line_25" data-name="Line 25" y2="16" transform="translate(8 4)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <g id="Rectangle_14" data-name="Rectangle 14" transform="translate(7.25 5)" fill="none" stroke="#707070" stroke-width="1.5">
+        <rect width="13" height="8" stroke="none"/>
+        <rect x="0.75" y="0.75" width="11.5" height="6.5" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

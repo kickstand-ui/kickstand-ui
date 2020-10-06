@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-save">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="save" clip-path="url(#clip-save)">
+    <g id="Group_91" data-name="Group 91" transform="translate(-1.206 -1.206)">
+      <path id="border" d="M212.006,327.956h-12.05L200,342.408h14.408V330.4Z" transform="translate(-194 -322)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <path id="slide" d="M204,328v4.8h7.036V328" transform="translate(-194.044 -322)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <g id="hole" transform="translate(10.202 12.604)" fill="none" stroke="#707070" stroke-width="1.5">
+        <circle cx="3.002" cy="3.002" r="3.002" stroke="none"/>
+        <circle cx="3.002" cy="3.002" r="2.252" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

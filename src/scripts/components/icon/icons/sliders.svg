@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-sliders">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="sliders" clip-path="url(#clip-sliders)">
+    <g id="Group_73" data-name="Group 73">
+      <g id="Ellipse_24" data-name="Ellipse 24" transform="translate(14 5)" fill="none" stroke="#707070" stroke-width="1.5">
+        <circle cx="2" cy="2" r="2" stroke="none"/>
+        <circle cx="2" cy="2" r="1.25" fill="none"/>
+      </g>
+      <g id="Ellipse_25" data-name="Ellipse 25" transform="translate(7 10)" fill="none" stroke="#707070" stroke-width="1.5">
+        <circle cx="2" cy="2" r="2" stroke="none"/>
+        <circle cx="2" cy="2" r="1.25" fill="none"/>
+      </g>
+      <g id="Ellipse_26" data-name="Ellipse 26" transform="translate(14 15)" fill="none" stroke="#707070" stroke-width="1.5">
+        <circle cx="2" cy="2" r="2" stroke="none"/>
+        <circle cx="2" cy="2" r="1.25" fill="none"/>
+      </g>
+      <line id="Line_29" data-name="Line 29" x1="3" transform="translate(17 7)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <line id="Line_32" data-name="Line 32" x1="10" transform="translate(10 12)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <line id="Line_34" data-name="Line 34" x1="3" transform="translate(17 17)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <line id="Line_30" data-name="Line 30" x1="11" transform="translate(4 7)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <line id="Line_31" data-name="Line 31" x1="4" transform="translate(4 12)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <line id="Line_33" data-name="Line 33" x1="11" transform="translate(4 17)" fill="none" stroke="#707070" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

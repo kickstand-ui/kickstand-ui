@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-home_solid">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="home_solid" clip-path="url(#clip-home_solid)">
+    <g id="Group_86" data-name="Group 86">
+      <path id="roof" d="M228,296l8-4,8,4" transform="translate(-224 -286.25)" fill="#707070" stroke="#707070" stroke-width="1.5"/>
+      <path id="Exclusion_4" data-name="Exclusion 4" d="M-958.75-97.249H-964V-108h13.5v10.749h-5.25V-101h-3v3.749Z" transform="translate(969.25 116.75)" fill="#707070"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-map_solid">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="map_solid" clip-path="url(#clip-map_solid)">
+    <path id="Subtraction_21" data-name="Subtraction 21" d="M-824-91v-12l4.251-3.4v12L-824-91Zm10.25-.5h0l-4.5-3v-12l4.5,3v12Zm1.5-.1v-12L-808-107v12l-4.248,3.4Z" transform="translate(828 111)" fill="#707070"/>
+  </g>
+</svg>

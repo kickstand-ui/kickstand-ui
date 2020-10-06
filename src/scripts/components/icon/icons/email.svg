@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-email">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="email" clip-path="url(#clip-email)">
+    <g id="Group_30" data-name="Group 30">
+      <g id="Rectangle_12" data-name="Rectangle 12" transform="translate(4 6)" fill="none" stroke="#707070" stroke-width="1.5">
+        <rect width="16" height="12" stroke="none"/>
+        <rect x="0.75" y="0.75" width="14.5" height="10.5" fill="none"/>
+      </g>
+      <path id="Path_32" data-name="Path 32" d="M144.793,151.418,152,157.5l7.039-6.083" transform="translate(-140 -144)" fill="none" stroke="#707070" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

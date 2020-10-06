@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-linkedin">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="linkedin" clip-path="url(#clip-linkedin)">
+    <g id="Group_102" data-name="Group 102" transform="translate(4.085 4.632)">
+      <path id="Path_23" data-name="Path 23" d="M3676.924,3390a1.913,1.913,0,1,1-1.924,1.9A1.929,1.929,0,0,1,3676.924,3390Z" transform="translate(-3675.085 -3390.588)" fill="#707070" fill-rule="evenodd"/>
+      <path id="Path_24" data-name="Path 24" d="M3689.789,3645.659h-2.249a.531.531,0,0,1-.541-.519v-9.6a.535.535,0,0,1,.541-.54h2.249a.53.53,0,0,1,.519.54v9.6A.526.526,0,0,1,3689.789,3645.659Z" transform="translate(-3686.825 -3630.291)" fill="#707070" fill-rule="evenodd"/>
+      <path id="Path_25" data-name="Path 25" d="M3947.335,3626.632a3.631,3.631,0,0,0-3.655-3.632h-.562a3.217,3.217,0,0,0-2.66,1.384,1.214,1.214,0,0,0-.173.281h-.043v-1.189a.216.216,0,0,0-.216-.216h-2.811a.232.232,0,0,0-.216.216V3633.7a.232.232,0,0,0,.216.216h2.876a.216.216,0,0,0,.216-.216v-5.9a1.865,1.865,0,0,1,3.179-1.341,1.923,1.923,0,0,1,.54,1.319v5.924a.217.217,0,0,0,.216.216h2.875a.217.217,0,0,0,.217-.216v-7.07Z" transform="translate(-3931.42 -3618.55)" fill="#707070" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

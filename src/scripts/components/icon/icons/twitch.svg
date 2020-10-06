@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-twitch">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="twitch" clip-path="url(#clip-twitch)">
+    <g id="Group_123" data-name="Group 123" transform="translate(4.35 68)">
+      <path id="Path_297" data-name="Path 297" d="M11.125-50.1H8L5.9-48H3.8v-2.1H0V-61.225L1.05-64H15.3v9.75ZM13.9-54.95V-62.6H2.425v10.075H5.55v2.075l2.075-2.075H11.45Z" fill="#707070" fill-rule="evenodd"/>
+      <path id="Path_298" data-name="Path 298" d="M28.825-43.125h1.4V-47.3h-1.4Zm-3.825,0h1.4V-47.3H25Z" transform="translate(-18.75 -12.525)" fill="#707070"/>
+    </g>
+  </g>
+</svg>

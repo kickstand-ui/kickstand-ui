@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-clipboard_solid">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="clipboard_solid" clip-path="url(#clip-clipboard_solid)">
+    <path id="Exclusion_2" data-name="Exclusion 2" d="M-839.321-94H-852v-14h2.339v2h8v-2h2.339v14Z" transform="translate(857.66 114)" fill="#707070"/>
+    <rect id="Rectangle_74" data-name="Rectangle 74" width="6.25" height="3" transform="translate(8.875 4)" fill="#707070"/>
+  </g>
+</svg>

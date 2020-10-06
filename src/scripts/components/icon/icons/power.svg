@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-power">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="power" clip-path="url(#clip-power)">
+    <g id="Group_98" data-name="Group 98">
+      <path id="Subtraction_1" data-name="Subtraction 1" d="M8,16A8,8,0,0,1,4.42.844l.671,1.342a6.5,6.5,0,1,0,5.814,0L11.576.842A8,8,0,0,1,8,16Z" transform="translate(4.002 4.001)" fill="#707070"/>
+      <line id="Line_55" data-name="Line 55" y2="8" transform="translate(12 4)" fill="none" stroke="#707070" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

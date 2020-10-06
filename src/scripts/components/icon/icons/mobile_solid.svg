@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-mobile_solid">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="mobile_solid" clip-path="url(#clip-mobile_solid)">
+    <path id="Exclusion_6" data-name="Exclusion 6" d="M-786-129h-10v-15h10v15Zm-5-4.5a1,1,0,0,0-1,1,1,1,0,0,0,1,1,1,1,0,0,0,1-1A1,1,0,0,0-791-133.5Z" transform="translate(803 148.5)" fill="#707070"/>
+  </g>
+</svg>

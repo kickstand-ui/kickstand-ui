@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-map">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="map" clip-path="url(#clip-map)">
+    <g id="Group_79" data-name="Group 79">
+      <path id="Path_63" data-name="Path 63" d="M32,308V296l5-4,6,4,5-4v12l-5,4-6-4Z" transform="translate(-28 -288)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <line id="Line_38" data-name="Line 38" y2="12" transform="translate(9 4)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <line id="Line_39" data-name="Line 39" y2="12" transform="translate(15 8)" fill="none" stroke="#707070" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

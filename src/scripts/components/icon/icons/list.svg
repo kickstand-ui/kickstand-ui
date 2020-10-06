@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-list">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="list" clip-path="url(#clip-list)">
+    <g id="Group_97" data-name="Group 97">
+      <g id="Group_49" data-name="Group 49" transform="translate(4)">
+        <line id="Line_49" data-name="Line 49" x2="12" transform="translate(4 6)" fill="none" stroke="#707070" stroke-width="1.5"/>
+        <line id="Line_50" data-name="Line 50" x2="12" transform="translate(4 10)" fill="none" stroke="#707070" stroke-width="1.5"/>
+        <line id="Line_51" data-name="Line 51" x2="12" transform="translate(4 18)" fill="none" stroke="#707070" stroke-width="1.5"/>
+        <line id="Line_52" data-name="Line 52" x2="12" transform="translate(4 14)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      </g>
+      <g id="Group_50" data-name="Group 50">
+        <line id="Line_49-2" data-name="Line 49" x2="1.5" transform="translate(4 6)" fill="none" stroke="#707070" stroke-width="1.5"/>
+        <line id="Line_50-2" data-name="Line 50" x2="1.5" transform="translate(4 10)" fill="none" stroke="#707070" stroke-width="1.5"/>
+        <line id="Line_51-2" data-name="Line 51" x2="1.5" transform="translate(4 18)" fill="none" stroke="#707070" stroke-width="1.5"/>
+        <line id="Line_52-2" data-name="Line 52" x2="1.5" transform="translate(4 14)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

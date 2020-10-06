@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-folder_solid">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="folder_solid" clip-path="url(#clip-folder_solid)">
+    <g id="Group_82" data-name="Group 82">
+      <path id="Path_67" data-name="Path 67" d="M116,292v12h16V293.959h-8L122.041,292Z" transform="translate(-112 -286)" fill="#707070" stroke="#707070" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

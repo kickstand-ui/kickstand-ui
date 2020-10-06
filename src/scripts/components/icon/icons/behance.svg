@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-behance">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="behance" clip-path="url(#clip-behance)">
+    <g id="Group_108" data-name="Group 108" transform="translate(4 46.741)">
+      <path id="Path_271" data-name="Path 271" d="M6.621-35.078a2.1,2.1,0,0,0,1.224-2.074C7.845-39,6.471-39.7,4.6-39.7H0v9.919H4.622c1.774,0,3.523-.874,3.523-2.873A2.286,2.286,0,0,0,6.621-35.078ZM2.3-38H4.322c.775,0,1.524.2,1.524,1.149,0,.775-.575,1.074-1.324,1.074H2.3ZM4.5-31.48H2.3v-2.648H4.547c.924,0,1.524.35,1.524,1.374C6.071-31.805,5.347-31.48,4.5-31.48Z" transform="translate(0 0)" fill="#707070"/>
+      <path id="Path_272" data-name="Path 272" d="M39.348-30.4c-2.473,0-3.648,1.649-3.648,3.8a3.422,3.422,0,0,0,3.648,3.773A3.157,3.157,0,0,0,42.7-25.153H40.772a1.431,1.431,0,0,1-1.349.824,1.673,1.673,0,0,1-1.824-1.8h5.172C42.9-28.351,41.871-30.4,39.348-30.4Zm-1.724,3.048a1.5,1.5,0,0,1,1.6-1.5c.949,0,1.424.5,1.624,1.5Z" transform="translate(-26.781 -6.976)" fill="#707070"/>
+      <path id="Path_273" data-name="Path 273" d="M41.7-37.1h4.022v-1H41.7Z" transform="translate(-31.282 -1.2)" fill="#707070" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

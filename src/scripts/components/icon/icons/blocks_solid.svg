@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-blocks_solid">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="blocks_solid" clip-path="url(#clip-blocks_solid)">
+    <g id="Group_101" data-name="Group 101">
+      <g id="Rectangle_45" data-name="Rectangle 45" transform="translate(4 4)" fill="#707070" stroke="#707070" stroke-width="1.5">
+        <rect width="7.25" height="7.25" stroke="none"/>
+        <rect x="0.75" y="0.75" width="5.75" height="5.75" fill="none"/>
+      </g>
+      <g id="Rectangle_46" data-name="Rectangle 46" transform="translate(12.75 4)" fill="#707070" stroke="#707070" stroke-width="1.5">
+        <rect width="7.25" height="7.25" stroke="none"/>
+        <rect x="0.75" y="0.75" width="5.75" height="5.75" fill="none"/>
+      </g>
+      <g id="Rectangle_47" data-name="Rectangle 47" transform="translate(12.75 12.75)" fill="#707070" stroke="#707070" stroke-width="1.5">
+        <rect width="7.25" height="7.25" stroke="none"/>
+        <rect x="0.75" y="0.75" width="5.75" height="5.75" fill="none"/>
+      </g>
+      <g id="Rectangle_48" data-name="Rectangle 48" transform="translate(4 12.75)" fill="#707070" stroke="#707070" stroke-width="1.5">
+        <rect width="7.25" height="7.25" stroke="none"/>
+        <rect x="0.75" y="0.75" width="5.75" height="5.75" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-kebab">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="kebab" clip-path="url(#clip-kebab)">
+    <g id="Group_25" data-name="Group 25" transform="translate(24) rotate(90)">
+      <g id="Ellipse_7" data-name="Ellipse 7" transform="translate(4 10)" fill="#707070" stroke="#707070" stroke-width="1.5">
+        <circle cx="2" cy="2" r="2" stroke="none"/>
+        <circle cx="2" cy="2" r="1.25" fill="none"/>
+      </g>
+      <g id="Ellipse_8" data-name="Ellipse 8" transform="translate(10 10)" fill="#707070" stroke="#707070" stroke-width="1.5">
+        <circle cx="2" cy="2" r="2" stroke="none"/>
+        <circle cx="2" cy="2" r="1.25" fill="none"/>
+      </g>
+      <g id="Ellipse_9" data-name="Ellipse 9" transform="translate(16 10)" fill="#707070" stroke="#707070" stroke-width="1.5">
+        <circle cx="2" cy="2" r="2" stroke="none"/>
+        <circle cx="2" cy="2" r="1.25" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

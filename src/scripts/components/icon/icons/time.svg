@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-time">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="time" clip-path="url(#clip-time)">
+    <g id="Group_27" data-name="Group 27">
+      <circle id="Ellipse_2" data-name="Ellipse 2" cx="7.5" cy="7.5" r="7.5" transform="translate(4.5 4.5)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <path id="Path_30" data-name="Path 30" d="M12,6.8V12l3.6,1.952" transform="translate(-0.75 0.449)" fill="none" stroke="#707070" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

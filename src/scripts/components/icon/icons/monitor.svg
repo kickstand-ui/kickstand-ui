@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-monitor">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="monitor" clip-path="url(#clip-monitor)">
+    <g id="Group_87" data-name="Group 87">
+      <line id="base" x2="8" transform="translate(8 19)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <line id="stand" y2="2" transform="translate(12 17)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <g id="screen" transform="translate(4 5)" fill="none" stroke="#707070" stroke-width="1.5">
+        <rect width="16" height="12" stroke="none"/>
+        <rect x="0.75" y="0.75" width="14.5" height="10.5" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

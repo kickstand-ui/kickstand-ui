@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-tag_solid">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="tag_solid" clip-path="url(#clip-tag_solid)">
+    <g id="Group_35" data-name="Group 35" transform="translate(1.525 2.002)">
+      <path id="Subtraction_15" data-name="Subtraction 15" d="M8.767,16h0L0,7.233V0H7.232L16,8.768,8.768,16ZM3.125,1.774A1.226,1.226,0,1,0,4.352,3,1.227,1.227,0,0,0,3.125,1.774Z" transform="translate(2.475 1.998)" fill="#707070"/>
+    </g>
+  </g>
+</svg>

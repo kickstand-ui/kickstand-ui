@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-upload">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="upload" clip-path="url(#clip-upload)">
+    <g id="Group_78" data-name="Group 78">
+      <path id="Path_1" data-name="Path 1" d="M0,4,4,0,8,4" transform="translate(8 6)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <path id="Path_4" data-name="Path 4" d="M0,0H8.723" transform="translate(12 6.277) rotate(90)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <path id="Path_62" data-name="Path 62" d="M6,87v3.5H18V87" transform="translate(0 -72)" fill="none" stroke="#707070" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-facebook_like">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="facebook_like" clip-path="url(#clip-facebook_like)">
+    <g id="Group_117" data-name="Group 117" transform="translate(4 58.671)">
+      <path id="Path_282" data-name="Path 282" d="M31.975-47.053c0-.65-.725-.95-.95-.95h-4.9a25.3,25.3,0,0,0,.5-2.8,5.855,5.855,0,0,0-.85-2.4,1.162,1.162,0,0,0-1.275.125c.025.55.1,2.25.1,2.25s-1.15,2.05-1.8,3.075a5.34,5.34,0,0,1-1.5,1.525v5.175h.45c.15,0,.725.525,1.15.525H29c.525,0,1.4-.05,1.4-.9a.822.822,0,0,0-.35-.7v-.1s.85-.275.85-1.025a.751.751,0,0,0-.35-.625l.05-.2a1.237,1.237,0,0,0,.8-1.05c0-.475-.325-.55-.325-.55l.05-.225C31.175-45.953,31.975-46.278,31.975-47.053Z" transform="translate(-15.975 0)" fill="#707070"/>
+      <path id="Path_283" data-name="Path 283" d="M3.725-27.7H.8a.79.79,0,0,0-.8.8l.525,5.325a.79.79,0,0,0,.8.8h2.4a.79.79,0,0,0,.8-.8V-26.9A.806.806,0,0,0,3.725-27.7Z" transform="translate(0 -19.228)" fill="#707070"/>
+    </g>
+  </g>
+</svg>

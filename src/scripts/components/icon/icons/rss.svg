@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-rss">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="rss" clip-path="url(#clip-rss)">
+    <g id="Group_119" data-name="Group 119" transform="translate(4 67.775)">
+      <path id="Path_286" data-name="Path 286" d="M2.15-52.15A2.15,2.15,0,0,0,0-50a2.166,2.166,0,0,0,2.15,2.15A2.134,2.134,0,0,0,4.3-50,2.166,2.166,0,0,0,2.15-52.15ZM.175-58.425H.05v2.975H.175a7.447,7.447,0,0,1,7.45,7.425v.175H10.6v-.175A10.413,10.413,0,0,0,.175-58.425Zm0-5.375H.05v2.975H.175A12.83,12.83,0,0,1,13-48.025v.175h3v-.175A15.818,15.818,0,0,0,.175-63.8Z" fill="#707070"/>
+    </g>
+  </g>
+</svg>

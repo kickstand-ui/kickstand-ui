@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-pencil_solid">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="pencil_solid" clip-path="url(#clip-pencil_solid)">
+    <g id="Group_94" data-name="Group 94">
+      <path id="Path_18" data-name="Path 18" d="M273.578,76l2.721,2.726L264.844,90.25h-2.795V87.514Z" transform="translate(-257.299 -71)" fill="#707070" stroke="#707070" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

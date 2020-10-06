@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-unlock">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="unlock" clip-path="url(#clip-unlock)">
+    <g id="Group_12" data-name="Group 12" transform="translate(0 -0.438)">
+      <path id="Path_11" data-name="Path 11" d="M174,46.022h11.931V56H174Z" transform="translate(-168 -36)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <circle id="Ellipse_4" data-name="Ellipse 4" cx="1" cy="1" r="1" transform="translate(11 13.5)" fill="#707070" stroke="#707070" stroke-width="1.5"/>
+      <rect id="Rectangle_6" data-name="Rectangle 6" width="1" height="1" transform="translate(11.5 15.5)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <path id="Path_14" data-name="Path 14" d="M15.509,10.022V7.041s-.277-2.6-3.6-2.6S8.4,7.041,8.4,7.041" fill="none" stroke="#707070" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

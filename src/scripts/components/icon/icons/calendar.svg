@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-calendar">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="calendar" clip-path="url(#clip-calendar)">
+    <g id="Group_23" data-name="Group 23">
+      <g id="Rectangle_10" data-name="Rectangle 10" transform="translate(4 7)" fill="none" stroke="#707070" stroke-width="1.5">
+        <rect width="16" height="13" stroke="none"/>
+        <rect x="0.75" y="0.75" width="14.5" height="11.5" fill="none"/>
+      </g>
+      <g id="Rectangle_11" data-name="Rectangle 11" transform="translate(4 8)" fill="#707070" stroke="#707070" stroke-width="1.5">
+        <rect width="16" height="2" stroke="none"/>
+        <rect x="0.75" y="0.75" width="14.5" height="0.5" fill="none"/>
+      </g>
+      <line id="Line_12" data-name="Line 12" x2="8" transform="translate(8 13)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <line id="Line_13" data-name="Line 13" x2="6" transform="translate(8 16)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <line id="Line_14" data-name="Line 14" y1="4" transform="translate(8 4)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <line id="Line_15" data-name="Line 15" y1="4" transform="translate(16 4)" fill="none" stroke="#707070" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

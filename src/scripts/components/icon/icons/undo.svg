@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-undo">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="undo" clip-path="url(#clip-undo)">
+    <g id="Group_69" data-name="Group 69">
+      <path id="Subtraction_1" data-name="Subtraction 1" d="M8,0a8,8,0,1,0,4.8,14.4l-.9-1.2A6.442,6.442,0,0,1,8,14.5,6.5,6.5,0,1,1,14.5,8H16A8.009,8.009,0,0,0,8,0Z" transform="translate(20 20) rotate(180)" fill="#707070"/>
+      <path id="Path_58" data-name="Path 58" d="M0,0H4V4" transform="translate(11.013 7.208) rotate(-173)" fill="none" stroke="#707070" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

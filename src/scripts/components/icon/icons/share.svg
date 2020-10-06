@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-share">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="share" clip-path="url(#clip-share)">
+    <g id="Group_76" data-name="Group 76">
+      <g id="Ellipse_24" data-name="Ellipse 24" transform="translate(14 5)" fill="none" stroke="#707070" stroke-width="1.5">
+        <circle cx="2.5" cy="2.5" r="2.5" stroke="none"/>
+        <circle cx="2.5" cy="2.5" r="1.75" fill="none"/>
+      </g>
+      <g id="Ellipse_25" data-name="Ellipse 25" transform="translate(5 9.5)" fill="none" stroke="#707070" stroke-width="1.5">
+        <circle cx="2.5" cy="2.5" r="2.5" stroke="none"/>
+        <circle cx="2.5" cy="2.5" r="1.75" fill="none"/>
+      </g>
+      <g id="Ellipse_26" data-name="Ellipse 26" transform="translate(14 14)" fill="none" stroke="#707070" stroke-width="1.5">
+        <circle cx="2.5" cy="2.5" r="2.5" stroke="none"/>
+        <circle cx="2.5" cy="2.5" r="1.75" fill="none"/>
+      </g>
+      <line id="Line_35" data-name="Line 35" x2="8" transform="translate(8.375 11.381) rotate(-25)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <line id="Line_36" data-name="Line 36" x2="6.75" y2="3.5" transform="translate(8.5 12.5)" fill="none" stroke="#707070" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

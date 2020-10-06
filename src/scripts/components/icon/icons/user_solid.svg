@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-user_solid">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="user_solid" clip-path="url(#clip-user_solid)">
+    <g id="Group_53" data-name="Group 53">
+      <g id="Ellipse_13" data-name="Ellipse 13" transform="translate(8 4)" fill="#707070" stroke="#707070" stroke-width="1.5">
+        <circle cx="4" cy="4" r="4" stroke="none"/>
+        <circle cx="4" cy="4" r="3.25" fill="none"/>
+      </g>
+      <g id="Path_36" data-name="Path 36" transform="translate(4 13)" fill="#707070">
+        <path d="M 15.19809436798096 6.25 L 0.8019056916236877 6.25 C 1.232877492904663 3.155888795852661 4.296601295471191 0.75 8 0.75 C 11.70339870452881 0.75 14.76712226867676 3.155888795852661 15.19809436798096 6.25 Z" stroke="none"/>
+        <path d="M 8 1.5 C 5.030158996582031 1.5 2.51915168762207 3.19394063949585 1.745667457580566 5.5 L 14.25433254241943 5.5 C 13.48084831237793 3.19394063949585 10.96984100341797 1.5 8 1.5 M 8 0 C 12.41827964782715 0 16 3.134010076522827 16 7 C 12.74800968170166 7 5.274330139160156 7 0 7 C 0 3.134010076522827 3.581720352172852 0 8 0 Z" stroke="none" fill="#707070"/>
+      </g>
+    </g>
+  </g>
+</svg>

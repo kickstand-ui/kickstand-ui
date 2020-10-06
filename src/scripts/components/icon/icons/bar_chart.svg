@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-bar_chart">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="bar_chart" clip-path="url(#clip-bar_chart)">
+    <g id="Group_63" data-name="Group 63">
+      <path id="Path_52" data-name="Path 52" d="M144,220v16h16" transform="translate(-140 -216)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <g id="Rectangle_16" data-name="Rectangle 16" transform="translate(6 12)" fill="#fff" stroke="#707070" stroke-width="1.5">
+        <rect width="2" height="6" stroke="none"/>
+        <rect x="0.75" y="0.75" width="0.5" height="4.5" fill="none"/>
+      </g>
+      <g id="Rectangle_17" data-name="Rectangle 17" transform="translate(11 9)" fill="#fff" stroke="#707070" stroke-width="1.5">
+        <rect width="2" height="9" stroke="none"/>
+        <rect x="0.75" y="0.75" width="0.5" height="7.5" fill="none"/>
+      </g>
+      <g id="Rectangle_18" data-name="Rectangle 18" transform="translate(16 6)" fill="#fff" stroke="#707070" stroke-width="1.5">
+        <rect width="2" height="12" stroke="none"/>
+        <rect x="0.75" y="0.75" width="0.5" height="10.5" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

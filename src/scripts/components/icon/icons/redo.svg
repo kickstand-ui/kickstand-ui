@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-redo">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="redo" clip-path="url(#clip-redo)">
+    <g id="Group_68" data-name="Group 68">
+      <path id="Subtraction_1" data-name="Subtraction 1" d="M8-236a8.009,8.009,0,0,1-8-8,8.009,8.009,0,0,1,8-8,7.932,7.932,0,0,1,4.8,1.6l-.9,1.2A6.442,6.442,0,0,0,8-250.5,6.507,6.507,0,0,0,1.5-244,6.507,6.507,0,0,0,8-237.5a6.507,6.507,0,0,0,6.5-6.5H16A8.009,8.009,0,0,1,8-236Z" transform="translate(4 256)" fill="#707070"/>
+      <path id="Path_58" data-name="Path 58" d="M16,260h4v-4" transform="translate(-34.579 -248.904) rotate(-7)" fill="none" stroke="#707070" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-flag_triangle_solid">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="flag_triangle_solid" clip-path="url(#clip-flag_triangle_solid)">
+    <g id="Group_36" data-name="Group 36">
+      <line id="Line_25" data-name="Line 25" y2="16" transform="translate(8 4)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <g id="Path_41" data-name="Path 41" transform="translate(7.25 5)" fill="#707070">
+        <path d="M 0.75 9.859663009643555 L 0.75 1.140337228775024 L 10.85649108886719 5.5 L 0.75 9.859663009643555 Z" stroke="none"/>
+        <path d="M 1.5 2.280674934387207 L 1.5 8.719326019287109 L 8.962982177734375 5.5 L 1.5 2.280674934387207 M 0 0 L 12.75 5.5 L 0 11 L 0 0 Z" stroke="none" fill="#707070"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-lock_solid">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="lock_solid" clip-path="url(#clip-lock_solid)">
+    <g id="Group_11" data-name="Group 11" transform="translate(0 -0.438)">
+      <path id="Subtraction_9" data-name="Subtraction 9" d="M-754.243,11.943H-768V.438h13.756v11.5Zm-7.006-7.236a1.252,1.252,0,0,0-1.25,1.25,1.254,1.254,0,0,0,.625,1.083V8.457h1.25V7.04A1.254,1.254,0,0,0-760,5.957,1.252,1.252,0,0,0-761.25,4.707Z" transform="translate(773.25 8.793)" fill="#707070"/>
+      <path id="Path_13" data-name="Path 13" d="M183.5,46.022V43.351s-.062-2.912-3.5-2.912-3.6,2.912-3.6,2.912v2.671Z" transform="translate(-168 -36)" fill="none" stroke="#707070" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-warning_solid">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="warning_solid" clip-path="url(#clip-warning_solid)">
+    <g id="Group_29" data-name="Group 29">
+      <path id="Subtraction_12" data-name="Subtraction 12" d="M-749-19h-19l9.5-17,9.5,17Zm-10.25-4v1.5h1.5V-23Zm0-7v6h1.5v-6Z" transform="translate(770.5 39)" fill="#707070"/>
+    </g>
+  </g>
+</svg>

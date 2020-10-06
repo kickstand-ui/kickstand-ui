@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-warning">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="warning" clip-path="url(#clip-warning)">
+    <g id="Group_29" data-name="Group 29">
+      <line id="Line_17" data-name="Line 17" y2="1.5" transform="translate(12 16)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <line id="Line_21" data-name="Line 21" y2="6" transform="translate(12 9)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <g id="Polygon_1" data-name="Polygon 1" transform="translate(2.5 3)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9.5,0,19,17H0Z" stroke="none"/>
+        <path d="M 9.5 3.074902534484863 L 2.556562423706055 15.5 L 16.44343757629395 15.5 L 9.5 3.074902534484863 M 9.5 0 L 19 17 L 0 17 L 9.5 0 Z" stroke="none" fill="#707070"/>
+      </g>
+    </g>
+  </g>
+</svg>

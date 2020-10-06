@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-music">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="music" clip-path="url(#clip-music)">
+    <g id="Group_93" data-name="Group 93">
+      <g id="Ellipse_31" data-name="Ellipse 31" transform="translate(4 15)" fill="none" stroke="#707070" stroke-width="1.5">
+        <circle cx="2.5" cy="2.5" r="2.5" stroke="none"/>
+        <circle cx="2.5" cy="2.5" r="1.75" fill="none"/>
+      </g>
+      <g id="Ellipse_32" data-name="Ellipse 32" transform="translate(13 13)" fill="none" stroke="#707070" stroke-width="1.5">
+        <circle cx="2.5" cy="2.5" r="2.5" stroke="none"/>
+        <circle cx="2.5" cy="2.5" r="1.75" fill="none"/>
+      </g>
+      <line id="Line_46" data-name="Line 46" y1="10" transform="translate(8.25 7.25)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <line id="Line_47" data-name="Line 47" y1="10" transform="translate(17.25 5.25)" fill="none" stroke="#707070" stroke-width="1.5"/>
+      <g id="Path_86" data-name="Path 86" transform="translate(8.057 6)" fill="none">
+        <path d="M-.557.61,9.943-2V2.677L-.557,5.015Z" stroke="none"/>
+        <path d="M 8.4432373046875 -0.0814208984375 L 0.9432373046875 1.783164739608765 L 0.9432373046875 3.144451379776001 L 8.4432373046875 1.474151372909546 L 8.4432373046875 -0.0814208984375 M 9.9432373046875 -2.000000476837158 L 9.9432373046875 2.676839351654053 L -0.5567626953125 5.015259742736816 L -0.5567626953125 0.6104195117950439 L 9.9432373046875 -2.000000476837158 Z" stroke="none" fill="#707070"/>
+      </g>
+    </g>
+  </g>
+</svg>

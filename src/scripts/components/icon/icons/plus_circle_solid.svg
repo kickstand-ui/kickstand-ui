@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-plus_circle_solid">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="plus_circle_solid" clip-path="url(#clip-plus_circle_solid)">
+    <path id="Exclusion_9" data-name="Exclusion 9" d="M-872-164a8.009,8.009,0,0,1-8-8,8.009,8.009,0,0,1,8-8,8.009,8.009,0,0,1,8,8A8.009,8.009,0,0,1-872-164Zm-3.5-8.75v1.5h2.75v2.75h1.5v-2.75h2.75v-1.5h-2.75v-2.75h-1.5v2.75h-2.75Z" transform="translate(884 184)" fill="#707070"/>
+  </g>
+</svg>

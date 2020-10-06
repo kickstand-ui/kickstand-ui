@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-youtube">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="youtube" clip-path="url(#clip-youtube)">
+    <path id="Path_31" data-name="Path 31" d="M504.662,3466.754a2,2,0,0,0-1.417-1.417,58.038,58.038,0,0,0-12.507,0,2.028,2.028,0,0,0-1.416,1.417,23.146,23.146,0,0,0,0,7.694,2.028,2.028,0,0,0,1.416,1.416,47.486,47.486,0,0,0,6.262.338,49.518,49.518,0,0,0,6.246-.322,2,2,0,0,0,1.417-1.417,22.154,22.154,0,0,0,0-7.71ZM495.406,3473l4.153-2.4-4.153-2.4Z" transform="translate(-485 -3458.602)" fill="#707070" fill-rule="evenodd"/>
+  </g>
+</svg>

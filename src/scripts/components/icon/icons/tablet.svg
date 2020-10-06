@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-tablet">
+      <rect width="24" height="24"/>
+    </clipPath>
+  </defs>
+  <g id="tablet" clip-path="url(#clip-tablet)">
+    <g id="Group_88" data-name="Group 88">
+      <g id="button" transform="translate(11 15)" fill="#fff" stroke="#707070" stroke-width="1.5">
+        <circle cx="1" cy="1" r="1" stroke="none"/>
+        <circle cx="1" cy="1" r="0.25" fill="none"/>
+      </g>
+      <g id="screen" transform="translate(5.5 4.5)" fill="none" stroke="#707070" stroke-width="1.5">
+        <rect width="13" height="15" stroke="none"/>
+        <rect x="0.75" y="0.75" width="11.5" height="13.5" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>
