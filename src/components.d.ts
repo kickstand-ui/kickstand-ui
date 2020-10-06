@@ -208,7 +208,9 @@ export namespace Components {
         "src": string;
     }
     interface KsIcon {
-        "icon": 'bars' | 'chevron' | 'close' | 'danger' | 'info' | 'search' | string;
+        "icon": string;
+        "label": string;
+        "labelledBy": string;
         "rotate": '0' | '45' | '90' | '135' | '180' | '225' | '270' | '360' | '-45' | '-90' | '-135' | '-180' | '-225' | '-270' | '-360';
     }
     interface KsImg {
@@ -812,7 +814,9 @@ declare namespace LocalJSX {
         "src"?: string;
     }
     interface KsIcon {
-        "icon"?: 'bars' | 'chevron' | 'close' | 'danger' | 'info' | 'search' | string;
+        "icon"?: string;
+        "label"?: string;
+        "labelledBy"?: string;
         "rotate"?: '0' | '45' | '90' | '135' | '180' | '225' | '270' | '360' | '-45' | '-90' | '-135' | '-180' | '-225' | '-270' | '-360';
     }
     interface KsImg {

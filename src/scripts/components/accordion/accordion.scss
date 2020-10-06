@@ -27,11 +27,11 @@
 
             .accordion-icon {
                 color: color(primary);
+                @include font-size(md);
                 @include transition-ease-in-out(med);
             }
 
             &:focus {
-                // outline: 1px dashed color(dark);
                 @include outline();
             }
 

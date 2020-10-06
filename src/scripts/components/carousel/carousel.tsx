@@ -113,12 +113,12 @@ export class Carousel implements ComponentInterface {
         );
         let controls = [
             !this.hideControls && <ks-button display="link" color="light" class="control prev" onClick={this.prevSlide.bind(this)}>
-                <ks-icon class="control-icon text-xl" icon="chevron" rotate="90" />
+                <ks-icon class="control-icon text-xl" icon="chevron_left"></ks-icon>
                 <span class="sr-only">previous slide</span>
             </ks-button>,
             !this.thumbnails && indicators,
             !this.hideControls && <ks-button display="link" color="light" class="control next" onClick={this.nextSlide.bind(this)}>
-                <ks-icon class="control-icon text-xl" icon="chevron" rotate="-90" />
+                <ks-icon class="control-icon text-xl" icon="chevron_right"></ks-icon>
                 <span class="sr-only">next slide</span>
             </ks-button>,
         ];

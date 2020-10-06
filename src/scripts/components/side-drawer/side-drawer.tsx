@@ -49,7 +49,7 @@ export class SideDrawer implements ComponentInterface {
                         <h3 class="drawer-title">{this.headerText}</h3>
                         <ks-button onClick={() => this.hide()} class="drawer-close" display="clear">
                             <span class="sr-only">Close Drawer</span>
-                            <ks-icon icon="close" />
+                            <ks-icon icon="times" />
                         </ks-button>
                     </header>
                     <div class="drawer-body">

@@ -104,12 +104,12 @@ export class Checklist implements ComponentInterface {
                         <span class="field-label">
                             {this.label}
                             {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText}>*</abbr>}
-                            {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size="md" text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info text-xs" /></ks-tooltip>}
+                            {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size="md" text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info" /></ks-tooltip>}
                         </span>
                         <span class="help-text">{this.helpText}</span>
                         <span class="error-message text-danger" role="alert" aria-live="assertive">
                             {(this.invalid && !this.disabled) && <span class="error-text">
-                                <ks-icon icon="danger" class="mr-xs" />
+                                <ks-icon icon="warning_2" class="mr-xs" />
                                 <span>{this.requiredErrorMessage}</span>
                             </span>}
                         </span>

@@ -62,7 +62,7 @@ export class Alert {
                         <header class="alert-header">
                             <h3 class="alert-heading">{this.header}</h3>
                             {(this.dismissible && !this.note) && <ks-button class="alert-close" onClick={() => this.hide()} display="clear" size="xs" aria-controls={this.alertId}>
-                                <ks-icon icon="close" aria-label={this.closeText}></ks-icon>
+                                <ks-icon icon="times" aria-label={this.closeText}></ks-icon>
                             </ks-button>}
                         </header>
                     }

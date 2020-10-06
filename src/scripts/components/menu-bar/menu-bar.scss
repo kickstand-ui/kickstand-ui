@@ -55,11 +55,12 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
     }
 
     .menu-toggler {
+        line-height: 1;
         display: none;
         background-color: transparent;
         @include ml(auto);
         @include mr(sm);
-        @include p(sm);
+        @include p(xs);
         @include shadow(none);
     }
 
