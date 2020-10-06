@@ -1,14 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-external_link">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="external_link" clip-path="url(#clip-external_link)">
-    <g id="Group_22" data-name="Group 22">
-      <path id="Path_22" data-name="Path 22" d="M42,114H34v12H46v-8" transform="translate(-29 -107)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <path id="Path_23" data-name="Path 23" d="M44,112h4v4" transform="translate(-29 -107)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <path id="Path_24" data-name="Path 24" d="M48,112l-8,8" transform="translate(-29 -107)" fill="none" stroke="#707070" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 22" fill="none" stroke="#707070" stroke-width="1.5" clip-path="url(#a)"><path data-name="Path 22" d="M13 7H5v12h12v-8"/><path data-name="Path 23" d="M15 5h4v4"/><path data-name="Path 24" d="M19 5l-8 8"/></g></svg>

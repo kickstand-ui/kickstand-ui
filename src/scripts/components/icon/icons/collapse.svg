@@ -1,17 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-collapse">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="collapse" clip-path="url(#clip-collapse)">
-    <g id="bottom_arrow" transform="translate(4.75 13.25)">
-      <path id="head" d="M16,328h4v4" transform="translate(-13.955 -328)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <path id="shaft" d="M20,328l-6.045,6.045" transform="translate(-13.955 -328)" fill="none" stroke="#707070" stroke-width="1.5"/>
-    </g>
-    <g id="top_arrow" transform="translate(13.25 4.75)">
-      <path id="head-2" data-name="head" d="M20,332H16v-4" transform="translate(-16 -325.955)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <path id="shaft-2" data-name="shaft" d="M13.955,334.045,20,328" transform="translate(-13.955 -328)" fill="none" stroke="#707070" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g clip-path="url(#a)" fill="none" stroke="#707070" stroke-width="1.5"><path d="M6.795 13.25h4v4M10.795 13.25L4.75 19.295"/><g><path data-name="head" d="M17.25 10.795h-4v-4"/><path data-name="shaft" d="M13.25 10.795l6.045-6.045"/></g></g></svg>

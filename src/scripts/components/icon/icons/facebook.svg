@@ -1,12 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-facebook">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="facebook" clip-path="url(#clip-facebook)">
-    <g id="Group_114" data-name="Group 114" transform="translate(8 68)">
-      <path id="Path_279" data-name="Path 279" d="M5.95-60.95H8V-64H5.575C2.65-63.875,2.05-62.225,2-60.5v1.525H0V-56H2v8H5v-8H7.475l.475-2.975H5V-59.9A.99.99,0,0,1,5.95-60.95Z" fill="#707070"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 114" clip-path="url(#a)"><path data-name="Path 279" d="M13.95 7.05H16V4h-2.425C10.65 4.125 10.05 5.775 10 7.5v1.525H8V12h2v8h3v-8h2.475l.475-2.975H13V8.1a.99.99 0 01.95-1.05z" fill="#707070"/></g></svg>

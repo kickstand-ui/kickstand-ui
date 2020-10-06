@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-chat_box_solid">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="chat_box_solid" clip-path="url(#clip-chat_box_solid)">
-    <path id="Union_2" data-name="Union 2" d="M-51.031-97H-56v-11h15v11h-6.005l-4.025,2.761Z" transform="translate(60.5 113.5)" fill="#707070" stroke="#707070" stroke-linecap="round" stroke-width="1.5"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g clip-path="url(#a)"><path data-name="Union 2" d="M9.469 16.5H4.5v-11h15v11h-6.005L9.47 19.261z" fill="#707070" stroke="#707070" stroke-linecap="round" stroke-width="1.5"/></g></svg>

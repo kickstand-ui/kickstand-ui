@@ -1,13 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-double_chevron_left">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="double_chevron_left" clip-path="url(#clip-double_chevron_left)">
-    <g id="Group_5" data-name="Group 5">
-      <path id="Path_1" data-name="Path 1" d="M4,8l6,6,6-6" transform="translate(27 2) rotate(90)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <path id="Path_2" data-name="Path 2" d="M4,8l6,6,6-6" transform="translate(19 2) rotate(90)" fill="none" stroke="#707070" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 5" fill="none" stroke="#707070" stroke-width="1.5" clip-path="url(#a)"><path data-name="Path 1" d="M19 6l-6 6 6 6"/><path data-name="Path 2" d="M11 6l-6 6 6 6"/></g></svg>

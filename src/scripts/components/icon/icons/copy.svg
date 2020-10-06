@@ -1,13 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-copy">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="copy" clip-path="url(#clip-copy)">
-    <g id="Group_3" data-name="Group 3">
-      <rect id="Rectangle_1" data-name="Rectangle 1" width="9" height="11.25" transform="translate(7.901 4.75)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <path id="Path_8" data-name="Path 8" d="M6.2,44V55h9" transform="translate(-1.448 -35.75)" fill="none" stroke="#707070" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 3" fill="none" stroke="#707070" stroke-width="1.5" clip-path="url(#a)"><path data-name="Rectangle 1" d="M7.901 4.75h9V16h-9z"/><path data-name="Path 8" d="M4.752 8.25v11h9"/></g></svg>

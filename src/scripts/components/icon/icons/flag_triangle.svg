@@ -1,16 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-flag_triangle">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="flag_triangle" clip-path="url(#clip-flag_triangle)">
-    <g id="Group_36" data-name="Group 36">
-      <line id="Line_25" data-name="Line 25" y2="16" transform="translate(8 4)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <g id="Path_41" data-name="Path 41" transform="translate(7.25 5)" fill="none">
-        <path d="M0,0,12.75,5.5,0,11Z" stroke="none"/>
-        <path d="M 1.5 2.280674934387207 L 1.5 8.719326019287109 L 8.962982177734375 5.5 L 1.5 2.280674934387207 M 0 0 L 12.75 5.5 L 0 11 L 0 0 Z" stroke="none" fill="#707070"/>
-      </g>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 36" fill="none" clip-path="url(#a)"><path data-name="Line 25" stroke="#707070" stroke-width="1.5" d="M8 4v16"/><g data-name="Path 41"><path d="M7.25 5L20 10.5 7.25 16z"/><path d="M8.75 7.28v6.44l7.463-3.22L8.75 7.28M7.25 5L20 10.5 7.25 16V5z" fill="#707070"/></g></g></svg>

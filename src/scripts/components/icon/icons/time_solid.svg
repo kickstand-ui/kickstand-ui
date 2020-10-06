@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-time_solid">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="time_solid" clip-path="url(#clip-time_solid)">
-    <path id="Subtraction_13" data-name="Subtraction 13" d="M-788-20a8.009,8.009,0,0,1-8-8,8.009,8.009,0,0,1,8-8,8.009,8.009,0,0,1,8,8A8.009,8.009,0,0,1-788-20Zm-1.249-13v6h.011l-.011.019,3.464,2,.75-1.3-2.714-1.568V-33Z" transform="translate(800 40)" fill="#707070"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g clip-path="url(#a)"><path data-name="Subtraction 13" d="M12 20a8.009 8.009 0 01-8-8 8.009 8.009 0 018-8 8.009 8.009 0 018 8 8.009 8.009 0 01-8 8zM10.751 7v6h.011l-.011.019 3.464 2 .75-1.3-2.714-1.568V7z" fill="#707070"/></g></svg>

@@ -1,13 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-search">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="search" clip-path="url(#clip-search)">
-    <g id="Group_2" data-name="Group 2">
-      <circle id="Ellipse_1" data-name="Ellipse 1" cx="5.25" cy="5.25" r="5.25" transform="translate(5.75 5.75)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <line id="Line_2" data-name="Line 2" x2="4" y2="4" transform="translate(15 15)" fill="none" stroke="#707070" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 2" fill="none" stroke="#707070" stroke-width="1.5" clip-path="url(#a)"><circle data-name="Ellipse 1" cx="5.25" cy="5.25" r="5.25" transform="translate(5.75 5.75)"/><path data-name="Line 2" d="M15 15l4 4"/></g></svg>

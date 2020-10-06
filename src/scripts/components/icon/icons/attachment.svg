@@ -1,12 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-attachment">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="attachment" clip-path="url(#clip-attachment)">
-    <g id="Group_55" data-name="Group 55">
-      <path id="Path_31" data-name="Path 31" d="M128.25,157.562V152s-.247-4-4.25-4-4,4-4,4v8s-.267,4.007,3,4,3-4,3-4v-7.68a1.88,1.88,0,1,0-3.75,0V159.3" transform="translate(34.663 -185.501) rotate(45)" fill="none" stroke="#707070" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 55" clip-path="url(#a)"><path data-name="Path 31" d="M13.936 16.599l3.933-3.933s2.654-3.003-.177-5.834-5.656 0-5.656 0l-5.657 5.657s-3.022 2.644-.707 4.95 4.95-.707 4.95-.707l5.43-5.431A1.88 1.88 0 1013.4 8.649l-4.935 4.936" fill="none" stroke="#707070" stroke-width="1.5"/></g></svg>

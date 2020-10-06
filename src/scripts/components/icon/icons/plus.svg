@@ -1,13 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-plus">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="plus" clip-path="url(#clip-plus)">
-    <g id="Group_4" data-name="Group 4">
-      <line id="Line_3" data-name="Line 3" y2="12" transform="translate(12 6)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <line id="Line_4" data-name="Line 4" x2="12" transform="translate(6 12)" fill="none" stroke="#707070" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 4" fill="none" stroke="#707070" stroke-width="1.5" clip-path="url(#a)"><path data-name="Line 3" d="M12 6v12"/><path data-name="Line 4" d="M6 12h12"/></g></svg>

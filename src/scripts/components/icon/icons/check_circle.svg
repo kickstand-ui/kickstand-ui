@@ -1,13 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-check_circle">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="check_circle" clip-path="url(#clip-check_circle)">
-    <g id="Group_52" data-name="Group 52">
-      <circle id="Ellipse_2" data-name="Ellipse 2" cx="7.5" cy="7.5" r="7.5" transform="translate(4.5 4.5)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <path id="Path_10" data-name="Path 10" d="M14,8l-4,4L8,10" transform="translate(1 2)" fill="none" stroke="#707070" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 52" fill="none" stroke="#707070" stroke-width="1.5" clip-path="url(#a)"><circle data-name="Ellipse 2" cx="7.5" cy="7.5" r="7.5" transform="translate(4.5 4.5)"/><path data-name="Path 10" d="M15 10l-4 4-2-2"/></g></svg>

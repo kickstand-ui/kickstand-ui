@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-compass_solid">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="compass_solid" clip-path="url(#clip-compass_solid)">
-    <path id="Subtraction_20" data-name="Subtraction 20" d="M-760-92a8.009,8.009,0,0,1-8-8,8.009,8.009,0,0,1,8-8,8.009,8.009,0,0,1,8,8A8.009,8.009,0,0,1-760-92Zm3.5-11.5L-762-102l-1.5,5.5L-758-98l1.5-5.5Z" transform="translate(772 112)" fill="#707070"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g clip-path="url(#a)"><path data-name="Subtraction 20" d="M12 20a8.009 8.009 0 01-8-8 8.009 8.009 0 018-8 8.009 8.009 0 018 8 8.009 8.009 0 01-8 8zm3.5-11.5L10 10l-1.5 5.5L14 14l1.5-5.5z" fill="#707070"/></g></svg>

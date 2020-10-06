@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-camera_solid">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="camera_solid" clip-path="url(#clip-camera_solid)">
-    <path id="Subtraction_18" data-name="Subtraction 18" d="M-922-60.634h-14v-9.093h3.5L-931.188-72l2.188.037,2.187-.037,1.313,2.273h3.5v9.092Zm-7-8.866a3.5,3.5,0,0,0-3.5,3.5,3.5,3.5,0,0,0,3.5,3.5,3.5,3.5,0,0,0,3.5-3.5A3.5,3.5,0,0,0-929-69.5Z" transform="translate(941 78.5)" fill="#707070" stroke="#707070" stroke-width="1.5"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g clip-path="url(#a)"><path data-name="Subtraction 18" d="M19 17.866H5V8.773h3.5L9.812 6.5 12 6.537l2.187-.037L15.5 8.773H19v9.092zM12 9a3.5 3.5 0 00-3.5 3.5A3.5 3.5 0 0012 16a3.5 3.5 0 003.5-3.5A3.5 3.5 0 0012 9z" fill="#707070" stroke="#707070" stroke-width="1.5"/></g></svg>

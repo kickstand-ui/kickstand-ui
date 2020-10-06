@@ -1,17 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-home">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="home" clip-path="url(#clip-home)">
-    <g id="Group_86" data-name="Group 86">
-      <g id="door" transform="translate(10 14.5)" fill="none" stroke="#707070" stroke-width="1.5">
-        <rect width="4" height="5" stroke="none"/>
-        <rect x="0.75" y="0.75" width="2.5" height="3.5" fill="none"/>
-      </g>
-      <path id="roof" d="M228,296l8-4,8,4" transform="translate(-224 -286.25)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <path id="walls" d="M230.284,295.063v9.95h12v-9.95" transform="translate(-224.284 -286.227)" fill="none" stroke="#707070" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 86" fill="none" stroke="#707070" stroke-width="1.5" clip-path="url(#a)"><path stroke="none" d="M10 14.5h4v5h-4z"/><path d="M10.75 15.25h2.5v3.5h-2.5zM4 9.75l8-4 8 4"/><path d="M6 8.836v9.95h12v-9.95"/></g></svg>

@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-chat_bubble_solid">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="chat_bubble_solid" clip-path="url(#clip-chat_bubble_solid)">
-    <path id="Union_3" data-name="Union 3" d="M-79.552-96.7c-2.229-1.029-3.7-2.793-3.7-4.8,0-3.175,3.694-5.75,8.25-5.75s8.249,2.575,8.249,5.75S-70.443-95.75-75-95.75a11.867,11.867,0,0,1-1.264-.067l-3.288,1.762Z" transform="translate(87 113)" fill="#707070" stroke="#707070" stroke-width="1.5"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g clip-path="url(#a)"><path data-name="Union 3" d="M7.448 16.3c-2.229-1.029-3.7-2.793-3.7-4.8 0-3.175 3.694-5.75 8.25-5.75s8.249 2.575 8.249 5.75-3.69 5.75-8.247 5.75a11.867 11.867 0 01-1.264-.067l-3.288 1.762z" fill="#707070" stroke="#707070" stroke-width="1.5"/></g></svg>

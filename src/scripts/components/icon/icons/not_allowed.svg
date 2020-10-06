@@ -1,16 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-not_allowed">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="not_allowed" clip-path="url(#clip-not_allowed)">
-    <g id="Group_26" data-name="Group 26">
-      <g id="Ellipse_10" data-name="Ellipse 10" transform="translate(4 4)" fill="none" stroke="#707070" stroke-width="1.5">
-        <circle cx="8" cy="8" r="8" stroke="none"/>
-        <circle cx="8" cy="8" r="7.25" fill="none"/>
-      </g>
-      <line id="Line_16" data-name="Line 16" x2="10" y2="10" transform="translate(7 7)" fill="none" stroke="#707070" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 26" fill="none" stroke="#707070" stroke-width="1.5" clip-path="url(#a)"><g data-name="Ellipse 10" transform="translate(4 4)"><circle cx="8" cy="8" r="8" stroke="none"/><circle cx="8" cy="8" r="7.25"/></g><path data-name="Line 16" d="M7 7l10 10"/></g></svg>

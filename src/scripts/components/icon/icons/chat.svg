@@ -1,13 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-chat">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="chat" clip-path="url(#clip-chat)">
-    <g id="Group_40" data-name="Group 40" transform="translate(0 0.85)">
-      <path id="Union_5" data-name="Union 5" d="M3.111,11.521H0V4.943H4.227V0H15.5V8.081H11.765v2.028L9.393,8.518v3H5.632L3.111,13.172Z" transform="translate(4.5 5.239)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <path id="Path_49" data-name="Path 49" d="M36.948,226.421v3.023h4.465" transform="translate(-28.219 -216.314)" fill="none" stroke="#707070" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 40" fill="none" stroke="#707070" stroke-width="1.5" clip-path="url(#a)"><path data-name="Union 5" d="M7.611 17.61H4.5v-6.578h4.227V6.089H20v8.081h-3.735v2.028l-2.372-1.591v3h-3.761l-2.521 1.654z"/><path data-name="Path 49" d="M8.729 10.957v3.023h4.465"/></g></svg>

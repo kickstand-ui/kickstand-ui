@@ -1,15 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-align_center">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="align_center" clip-path="url(#clip-align_center)">
-    <g id="Group_46" data-name="Group 46">
-      <line id="Line_49" data-name="Line 49" x2="12" transform="translate(6 6)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <line id="Line_50" data-name="Line 50" x2="16" transform="translate(4 10)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <line id="Line_51" data-name="Line 51" x2="16" transform="translate(4 18)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <line id="Line_52" data-name="Line 52" x2="12" transform="translate(6 14)" fill="none" stroke="#707070" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 46" fill="none" stroke="#707070" stroke-width="1.5" clip-path="url(#a)"><path data-name="Line 49" d="M6 6h12"/><path data-name="Line 50" d="M4 10h16"/><path data-name="Line 51" d="M4 18h16"/><path data-name="Line 52" d="M6 14h12"/></g></svg>

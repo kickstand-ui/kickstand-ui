@@ -1,16 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-camera">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="camera" clip-path="url(#clip-camera)">
-    <g id="Group_65" data-name="Group 65">
-      <path id="Path_53" data-name="Path 53" d="M207,222.037,204.813,222l-1.312,2.273H200v9.093h14v-9.093h-3.5L209.188,222Z" transform="translate(-195 -215.5)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <g id="Ellipse_19" data-name="Ellipse 19" transform="translate(8.5 9)" fill="none" stroke="#707070" stroke-width="1.5">
-        <circle cx="3.5" cy="3.5" r="3.5" stroke="none"/>
-        <circle cx="3.5" cy="3.5" r="2.75" fill="none"/>
-      </g>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 65" fill="none" stroke="#707070" stroke-width="1.5" clip-path="url(#a)"><path data-name="Path 53" d="M12 6.537L9.813 6.5 8.501 8.773H5v9.093h14V8.773h-3.5L14.188 6.5z"/><g data-name="Ellipse 19" transform="translate(8.5 9)"><circle cx="3.5" cy="3.5" r="3.5" stroke="none"/><circle cx="3.5" cy="3.5" r="2.75"/></g></g></svg>

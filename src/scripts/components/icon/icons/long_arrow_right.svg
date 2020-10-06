@@ -1,13 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-long_arrow_right">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="long_arrow_right" clip-path="url(#clip-long_arrow_right)">
-    <g id="Group_8" data-name="Group 8">
-      <path id="Path_1" data-name="Path 1" d="M8,12l4,4,4-4" transform="translate(3 24) rotate(-90)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <path id="Path_4" data-name="Path 4" d="M172,12h14.723" transform="translate(-168)" fill="none" stroke="#707070" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 8" fill="none" stroke="#707070" stroke-width="1.5" clip-path="url(#a)"><path data-name="Path 1" d="M15 16l4-4-4-4"/><path data-name="Path 4" d="M4 12h14.723"/></g></svg>

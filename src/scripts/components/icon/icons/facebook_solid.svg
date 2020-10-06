@@ -1,12 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-facebook_solid">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="facebook_solid" clip-path="url(#clip-facebook_solid)">
-    <g id="Group_128" data-name="Group 128" transform="translate(4 20.625)">
-      <path id="Path_303" data-name="Path 303" d="M16-15.732a.932.932,0,0,0-.893-.893H.857A.9.9,0,0,0,0-15.732v14.25a.869.869,0,0,0,.857.857H8.536V-6.8H6.429V-9.232H8.536v-1.786A2.909,2.909,0,0,1,11.643-14.2a14.828,14.828,0,0,1,1.857.107v2.143H12.214c-1,0-1.179.5-1.179,1.179v1.536h2.393L13.107-6.8H11.036V-.625h4.071A.9.9,0,0,0,16-1.482Z" transform="translate(0)" fill="#707070"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 128" clip-path="url(#a)"><path data-name="Path 303" d="M20 4.893A.932.932 0 0019.107 4H4.857A.9.9 0 004 4.893v14.25a.869.869 0 00.857.857h7.679v-6.175h-2.107v-2.432h2.107V9.607a2.909 2.909 0 013.107-3.182 14.828 14.828 0 011.857.107v2.143h-1.286c-1 0-1.179.5-1.179 1.179v1.536h2.393l-.321 2.435h-2.071V20h4.071a.9.9 0 00.893-.857z" fill="#707070"/></g></svg>

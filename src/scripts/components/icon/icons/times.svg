@@ -1,13 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-times">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="times" clip-path="url(#clip-times)">
-    <g id="Group_21" data-name="Group 21">
-      <path id="Path_21" data-name="Path 21" d="M0,0,12,12" transform="translate(6 6)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <path id="Path_20" data-name="Path 20" d="M12.5.5l-12,12" transform="translate(5.5 5.5)" fill="none" stroke="#707070" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 21" fill="none" stroke="#707070" stroke-width="1.5" clip-path="url(#a)"><path data-name="Path 21" d="M6 6l12 12"/><path data-name="Path 20" d="M18 6L6 18"/></g></svg>

@@ -1,14 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-menu">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="menu" clip-path="url(#clip-menu)">
-    <g id="Group_34" data-name="Group 34">
-      <line id="Line_22" data-name="Line 22" x2="16" transform="translate(4 6)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <line id="Line_23" data-name="Line 23" x2="16" transform="translate(4 12)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <line id="Line_24" data-name="Line 24" x2="16" transform="translate(4 18)" fill="none" stroke="#707070" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 34" fill="none" stroke="#707070" stroke-width="1.5" clip-path="url(#a)"><path data-name="Line 22" d="M4 6h16"/><path data-name="Line 23" d="M4 12h16"/><path data-name="Line 24" d="M4 18h16"/></g></svg>

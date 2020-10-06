@@ -1,17 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-line_chart">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="line_chart" clip-path="url(#clip-line_chart)">
-    <g id="Group_67" data-name="Group 67">
-      <path id="Path_56" data-name="Path 56" d="M256,220v16h16" transform="translate(-252 -216)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <path id="Path_57" data-name="Path 57" d="M260,232l4-4,4,2.109,4-4.131" transform="translate(-254 -216)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <g id="Polygon_5" data-name="Polygon 5" transform="translate(17.914 7.25) rotate(45)" fill="#fff">
-        <path d="M2,0,4,2H0Z" stroke="none"/>
-        <path d="M 1.99999988079071 0 L 4 2 L -2.384185791015625e-07 2 L 1.99999988079071 0 Z" stroke="none" fill="#707070"/>
-      </g>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 67" clip-path="url(#a)"><path data-name="Path 56" d="M4 4v16h16" fill="none" stroke="#707070" stroke-width="1.5"/><path data-name="Path 57" d="M6 16l4-4 4 2.109 4-4.131" fill="none" stroke="#707070" stroke-width="1.5"/><g data-name="Polygon 5" fill="#fff"><path d="M19.328 8.664v2.829L16.5 8.664z"/><path d="M19.328 8.664v2.829L16.5 8.664h2.828z" fill="#707070"/></g></g></svg>

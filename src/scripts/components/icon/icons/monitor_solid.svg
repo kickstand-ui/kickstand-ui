@@ -1,17 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-monitor_solid">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="monitor_solid" clip-path="url(#clip-monitor_solid)">
-    <g id="Group_87" data-name="Group 87">
-      <line id="base" x2="8" transform="translate(8 19)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <line id="stand" y2="2" transform="translate(12 17)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <g id="screen" transform="translate(4 5)" fill="#707070" stroke="#707070" stroke-width="1.5">
-        <rect width="16" height="12" stroke="none"/>
-        <rect x="0.75" y="0.75" width="14.5" height="10.5" fill="none"/>
-      </g>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 87" stroke="#707070" stroke-width="1.5" clip-path="url(#a)"><path fill="none" d="M8 19h8M12 17v2"/><g fill="#707070"><path stroke="none" d="M4 5h16v12H4z"/><path fill="none" d="M4.75 5.75h14.5v10.5H4.75z"/></g></g></svg>

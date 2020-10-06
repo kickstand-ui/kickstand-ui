@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-times_circle_solid">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="times_circle_solid" clip-path="url(#clip-times_circle_solid)">
-    <path id="Exclusion_10" data-name="Exclusion 10" d="M-872-164a8.009,8.009,0,0,1-8-8,8.009,8.009,0,0,1,8-8,8.009,8.009,0,0,1,8,8A8.009,8.009,0,0,1-872-164Zm0-6.789h0l2.222,2.222,1.211-1.211L-870.789-172l2.223-2.223-1.211-1.211L-872-173.211l-2.223-2.223-1.211,1.211,2.223,2.223-2.223,2.223,1.211,1.211,2.222-2.222Z" transform="translate(884 184)" fill="#707070"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g clip-path="url(#a)"><path data-name="Exclusion 10" d="M12 20a8.009 8.009 0 01-8-8 8.009 8.009 0 018-8 8.009 8.009 0 018 8 8.009 8.009 0 01-8 8zm0-6.789l2.222 2.222 1.211-1.211L13.211 12l2.223-2.223-1.211-1.211L12 10.789 9.777 8.566 8.566 9.777 10.789 12l-2.223 2.223 1.211 1.211 2.222-2.222z" fill="#707070"/></g></svg>

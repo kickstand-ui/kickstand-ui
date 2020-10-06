@@ -1,14 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-code">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="code" clip-path="url(#clip-code)">
-    <g id="Group_6" data-name="Group 6" transform="translate(1 -2)">
-      <path id="Path_1" data-name="Path 1" d="M4,8l4,4,4-4" transform="translate(6 22) rotate(-90)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <path id="Path_3" data-name="Path 3" d="M4,8l4,4,4-4" transform="translate(16 6) rotate(90)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <line id="Line_56" data-name="Line 56" x1="2" y2="10" transform="translate(10 9)" fill="none" stroke="#707070" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 6" fill="none" stroke="#707070" stroke-width="1.5" clip-path="url(#a)"><path data-name="Path 1" d="M15 16l4-4-4-4"/><path data-name="Path 3" d="M9 8l-4 4 4 4"/><path data-name="Line 56" d="M13 7l-2 10"/></g></svg>

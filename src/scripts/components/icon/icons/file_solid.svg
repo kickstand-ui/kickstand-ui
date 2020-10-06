@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-file_solid">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="file_solid" clip-path="url(#clip-file_solid)">
-    <path id="Exclusion_3" data-name="Exclusion 3" d="M-867.642-92H-880v-16h6.9v5.5h5.459V-92Zm0-12H-871.6v-3.957l3.957,3.955Z" transform="translate(885.852 112)" fill="#707070"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g clip-path="url(#a)"><path data-name="Exclusion 3" d="M18.21 20H5.852V4h6.9v5.5h5.459V20zm0-12h-3.958V4.043l3.957 3.955z" fill="#707070"/></g></svg>

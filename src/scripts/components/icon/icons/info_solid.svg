@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-info_solid">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="info_solid" clip-path="url(#clip-info_solid)">
-    <path id="Subtraction_11" data-name="Subtraction 11" d="M-732-20a8.009,8.009,0,0,1-8-8,8.009,8.009,0,0,1,8-8,8.009,8.009,0,0,1,8,8A8.009,8.009,0,0,1-732-20Zm-1.5-5.5V-24h3v-1.5h-.75v-4.25h-2.25v1.5h.75v2.75Zm.75-6.5v1.5h1.5V-32Z" transform="translate(744 40)" fill="#707070"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g clip-path="url(#a)"><path data-name="Subtraction 11" d="M12 20a8.009 8.009 0 01-8-8 8.009 8.009 0 018-8 8.009 8.009 0 018 8 8.009 8.009 0 01-8 8zm-1.5-5.5V16h3v-1.5h-.75v-4.25H10.5v1.5h.75v2.75zm.75-6.5v1.5h1.5V8z" fill="#707070"/></g></svg>

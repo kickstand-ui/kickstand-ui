@@ -1,17 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-  <defs>
-    <clipPath id="clip-cube">
-      <rect width="24" height="24"/>
-    </clipPath>
-  </defs>
-  <g id="cube" clip-path="url(#clip-cube)">
-    <g id="Group_59" data-name="Group 59">
-      <g id="Polygon_2" data-name="Polygon 2" transform="translate(3.5 20.5) rotate(-90)" fill="none">
-        <path d="M12.75,0,17,8.5,12.75,17H4.25L0,8.5,4.25,0Z" stroke="none"/>
-        <path d="M 5.17704963684082 1.5 L 1.67704963684082 8.5 L 5.17704963684082 15.5 L 11.82295036315918 15.5 L 15.32295036315918 8.5 L 11.82295036315918 1.5 L 5.17704963684082 1.5 M 4.25 0 L 12.75 0 L 17 8.5 L 12.75 17 L 4.25 17 L 0 8.5 L 4.25 0 Z" stroke="none" fill="#707070"/>
-      </g>
-      <path id="Path_38" data-name="Path 38" d="M88.295,188.288,96,192l7.613-3.712" transform="translate(-84 -180)" fill="none" stroke="#707070" stroke-width="1.5"/>
-      <path id="Path_39" data-name="Path 39" d="M96,192v7.15" transform="translate(-84 -180)" fill="none" stroke="#707070" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><defs><clipPath id="a"><path d="M0 0h24v24H0z"/></clipPath></defs><g data-name="Group 59" fill="none" clip-path="url(#a)"><g data-name="Polygon 2"><path d="M3.5 7.75L12 3.5l8.5 4.25v8.5L12 20.5l-8.5-4.25z"/><path d="M5 15.323l7 3.5 7-3.5V8.677l-7-3.5-7 3.5v6.646m-1.5.927v-8.5L12 3.5l8.5 4.25v8.5L12 20.5l-8.5-4.25z" fill="#707070"/></g><path data-name="Path 38" d="M4.295 8.288L12 12l7.613-3.712" stroke="#707070" stroke-width="1.5"/><path data-name="Path 39" d="M12 12v7.15" stroke="#707070" stroke-width="1.5"/></g></svg>
