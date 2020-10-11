@@ -45,11 +45,17 @@ $drawer-sizes: (
         @include font-size(lg);
 
         .drawer-close {
+            @include mt(sm);
+            
             .ks-button {
                 @include p(none);
 
                 .button-text {
                     display: inline-flex;    
+                }
+
+                .icon {
+                    @include font-size(md);
                 }
             }
         }

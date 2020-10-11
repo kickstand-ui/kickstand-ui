@@ -1,6 +1,6 @@
 {
     "name": "kickstand-ui",
-    "version": "1.12.2",
+    "version": "1.13.0",
     "description": "Kickstand UI is a Design system and pattern library built with Web Components, so you can use them everywhere!",
     "main": "dist/index.js",
     "module": "dist/index.mjs",
@@ -16,7 +16,8 @@
         "src/scss/"
     ],
     "scripts": {
-        "build": "stencil build --docs",
+        "build:icons": "svgo src/scripts/components/icon/icons/*.svg && node icon_loader.js",
+        "build": "npm run build:icons && stencil build --docs",
         "deploy": "stencil build && publish",
         "serve": "stencil build --dev --watch --serve",
         "dev": "run-p start storybook",
@@ -42,11 +43,14 @@
         "babel-loader": "^8.1.0",
         "css-loader": "^3.6.0",
         "cssnano": "^4.1.10",
+        "fs-extra": "^9.0.1",
+        "glob-promise": "^3.4.0",
         "node-sass": "^4.14.1",
         "npm-run-all": "^4.1.5",
         "react-docgen-typescript-loader": "^3.7.2",
         "sass-loader": "^8.0.2",
         "style-loader": "^1.2.1",
+        "svgson": "^4.1.0",
         "ts-loader": "^7.0.5"
     },
     "author": "Burton Smith <burton@breakstuff.io>",

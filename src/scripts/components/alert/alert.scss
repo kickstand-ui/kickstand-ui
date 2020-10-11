@@ -33,6 +33,12 @@
                 @include mt(none);
                 @include mb(none);
             }
+
+            .alert-close {
+                .icon {
+                    @include font-size(md);
+                }
+            }
         }
 
         .alert-body {

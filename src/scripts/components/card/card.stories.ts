@@ -23,7 +23,7 @@ export const card = () => {
                         alt="${alt}"
                         url="${url}"
                         clickable="${clickable}"
-                        class="w-25"
+                        class="w-30"
                         lazy="${lazy}"
                         threshold="${threshold}"
                         collapse="${collapse}"

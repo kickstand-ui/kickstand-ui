@@ -18,13 +18,17 @@
         }
 
         .modal-close {
-            @include font-size(lg);
+            @include mt(xxs);
 
             .ks-button {
                 @include p(none);
 
                 .button-text {
                     display: inline-flex;
+                }
+
+                .icon {
+                    @include font-size(lg);
                 }
             }
         }

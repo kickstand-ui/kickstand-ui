@@ -1,10 +1,10 @@
-import { Component, Element, Prop, State, h } from '@stencil/core';
+import { Component, Element, Prop, State, h, ComponentInterface } from '@stencil/core';
 
 
 @Component({
     tag: 'ks-img'
 })
-export class Img {
+export class Img implements ComponentInterface {
     $image: HTMLImageElement;
     io: IntersectionObserver;
 

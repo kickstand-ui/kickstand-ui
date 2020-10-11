@@ -79,7 +79,7 @@ export class MenuBar implements ComponentInterface {
                     aria-controls={`menu-content-${this.menuId}`}
                 >
                     <span class="sr-only">toggle menu</span>
-                    <ks-icon icon="bars" />
+                    <ks-icon icon="menu" />
                 </button>
                 <div class="menu-content" id={`menu-content-${this.menuId}`} ref={el => this.$menuContent = el}>
                     <slot />

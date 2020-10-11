@@ -62,7 +62,7 @@ export class Checkbox implements ComponentInterface {
                     <span class="checkbox-description">
                         {this.label}
                         {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText}>*</abbr>}
-                        {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size="md" text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info text-xs" /></ks-tooltip>}    
+                        {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size="md" text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info" /></ks-tooltip>}    
                     </span>
                 </label>
             </Host>

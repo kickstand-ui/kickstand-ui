@@ -1,22 +1,16 @@
 @import "../../../scss/00_Abstracts/index";
 
 ks-icon {
-    display: inline-flex;
-    align-items: center;
-    height: 1.5em;
     line-height: inherit;
-    margin-top: -0.25em;
-    margin-bottom: -0.25em;
     position: relative;
-    vertical-align: -0.25em;
 
     .icon {
+        margin: -0.25em;
         display: inline-block;
         font-size: inherit;
         height: 1.5em;
-        overflow: visible;
         width: 1.5em;
-        margin-top: -0.25em;
-        margin-bottom: -0.25em;
+        overflow: visible;
+        vertical-align: -0.125em;
     }
 }

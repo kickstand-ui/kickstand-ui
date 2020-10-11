@@ -62,7 +62,7 @@ export class Form implements ComponentInterface {
                     <slot />
                     <ks-alert class={{ 'form-error': true, 'hide': !this.invalid }} color="danger">
                         {this.invalid && [
-                            <ks-icon icon="danger" class="text-danger mr-sm" />,
+                            <ks-icon icon="warning_2" class="text-danger mr-sm" />,
                             <span class="error-message">{this.errorMessage}</span>
                         ]}
                     </ks-alert>
