@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="display-flex align-center space-between w-80 mx-auto">
+        <div class="display-flex align-center space-between w-80 mx-auto position-relative">
             <ks-form-field
                 class="w-100 mb-lg"
                 label="Search Icons"
@@ -8,7 +8,7 @@
             ></ks-form-field>
             <ks-icon
                 icon="search"
-                class="-ml-xxxl mt-sm text-lg text-dark-lighter"
+                class="mt-sm text-lg text-dark-lighter position-absolute right-0 -offset-x"
             ></ks-icon>
         </div>
         <div class="display-flex flex-wrap">
