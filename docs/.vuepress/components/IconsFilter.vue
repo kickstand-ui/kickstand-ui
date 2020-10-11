@@ -20,7 +20,7 @@
                 class="text-center my-md"
                 style="width: 90px; background: transparent; border: 0"
             >
-                <ks-icon class="text-xl" :icon="icon"></ks-icon>
+                <ks-icon class="text-xl" :icon="icon" :label="icon"></ks-icon>
                 <div class="icon-name text-xxs text-bold">{{ icon }}</div>
             </button>
         </div>

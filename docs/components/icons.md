@@ -1,6 +1,6 @@
 ---
 {
-    "description": "The Kickstand UI icon library is a compilation of commonly used icons used in applications and websites.",
+    "description": "The Kickstand UI icon library is a compilation of commonly used icons for applications and websites.",
     "meta": [
         {
             "property": "og:title",
@@ -12,7 +12,7 @@
         },
         {
             "property": "og:description",
-            "content": "The Kickstand UI icon library is a compilation of commonly used icons used in applications and websites."
+            "content": "The Kickstand UI icon library is a compilation of commonly used icons for applications and websites."
         },
         {
             "property": "twitter:image:src",
@@ -28,7 +28,7 @@
 
 ## About
 
-The Kickstand UI icon library is a compilation of commonly used icons used in applications and websites.
+The Kickstand UI icon library is a compilation of commonly used icons for applications and websites. All icons are SVGs to improve performance, accessibility, and provide flexible implementation.
 
 The icons were developed using the following guidelines:
 
@@ -36,6 +36,8 @@ The icons were developed using the following guidelines:
 - 1.5 stroke width
 - 1.5 minimum negative space between elements
 - fills and strokes inherit from the current color
+
+The icons were developed in [Adobe XD](https://www.adobe.com/products/xd.html) and the file is available for [download here](https://github.com/break-stuff/kickstand-ui/blob/master/kickstand-ui_icons.xd).
 
 :::tip Note
 The brand-specific icons (facebook, twitter, etc.) did not follow all of these guidelines. Every effort was made to make sure they were consistent with their existing brand guidelines.
