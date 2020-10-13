@@ -35,8 +35,11 @@
         .search-icon {
             pointer-events: none;
             color: color(dark, lighter);
-            @include font-size(xxs);
-            @include ml(-xxxl);
+            position: absolute;
+            right: 0;
+            transform: translateX(-50%);
+            @include font-size(lg);
+            @include mt(sm);
         }
 
         .dropdown-options {
