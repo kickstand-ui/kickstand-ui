@@ -109,7 +109,7 @@ export class Checklist implements ComponentInterface {
                         <span class="help-text">{this.helpText}</span>
                         <span class="error-message text-danger" role="alert" aria-live="assertive">
                             {(this.invalid && !this.disabled) && <span class="error-text">
-                                <ks-icon icon="warning_2" class="mr-xs" />
+                                <ks-icon icon="warning" class="mr-xs" />
                                 <span>{this.requiredErrorMessage}</span>
                             </span>}
                         </span>

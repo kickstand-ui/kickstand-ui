@@ -299,7 +299,7 @@ export class FormField implements ComponentInterface {
             'checkbox': [
                 <div class="error-message text-danger" role="alert" aria-live="assertive">
                     {(this.invalid && !this.disabled) && <div class="error-text">
-                        <ks-icon icon="warning_2" class="mr-xs" />
+                        <ks-icon icon="warning" class="mr-xs" />
                         <span>{this.getErrorMessage()}</span>
                     </div>}
                 </div>,
@@ -361,7 +361,7 @@ export class FormField implements ComponentInterface {
                         <span class="help-text">{this.helpText}</span>
                         <span class="error-message text-danger" role="alert" aria-live="assertive">
                             {(this.invalid && !this.disabled) && <span class="error-text">
-                                <ks-icon icon="warning_2" class="mr-xs" />
+                                <ks-icon icon="warning" class="mr-xs" />
                                 <span>{this.getErrorMessage()}</span>
                             </span>}
                         </span>
