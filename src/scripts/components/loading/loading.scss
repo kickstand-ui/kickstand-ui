@@ -103,8 +103,6 @@
             align-items: center;
 
             .message {
-                // font-size: 0.75em;
-                // margin-top: 0.25em;
                 @include ml(none);
             }
         }
