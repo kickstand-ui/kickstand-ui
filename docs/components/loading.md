@@ -29,26 +29,30 @@ Kickstand UI's loading component is designed to communicate unseen progress to t
 ## Types
 
 <div class="my-xl">
-    <ks-loading type="spinner" />
-    <ks-loading type="ellipsis" />
+    <ks-loading icon="ring_spinner"></ks-loading>
+    <ks-loading icon="circle_spinner"></ks-loading>
+    <ks-loading icon="ellipsis_pulse"></ks-loading>
+    <ks-loading icon="ellipsis_typing"></ks-loading>
 </div>
 
 ```html
-<ks-loading type="spinner" />
-<ks-loading type="ellipsis" />
+<ks-loading icon="ring_spinner"></ks-loading>
+<ks-loading icon="circle_spinner"></ks-loading>
+<ks-loading icon="ellipsis_pulse"></ks-loading>
+<ks-loading icon="ellipsis_typing"></ks-loading>
 ```
 
 ## Messaging
 
 <div class="my-xl">
-    <ks-loading type="spinner" message="Spinner Loading..." show-message />
+    <ks-loading icon="ring_spinner" message="Spinner Loading..." show-message />
     <br />
-    <ks-loading type="ellipsis" message="Ellipsis Loading..." show-message />
+    <ks-loading icon="ellipsis_typing" message="Ellipsis Loading..." show-message />
 </div>
 
 ```html
-<ks-loading type="spinner" message="Spinner Loading..." show-message />
-<ks-loading type="ellipsis" message="Ellipsis Loading..." show-message />
+<ks-loading icon="ring_spinner" message="Spinner Loading..." show-message />
+<ks-loading icon="ellipsis_typing" message="Ellipsis Loading..." show-message />
 ```
 
 ## Loading Overlay
@@ -57,21 +61,23 @@ The loading overlay combine the `<ks-loading>` element and the [`<ks-overlay>`](
 
 <div class="my-xl">
     <ks-button id="basic_test_button">Show Loading</ks-button>
-    <ks-loading-overlay id="basic_test_overlay" />
+    <ks-loading-overlay id="basic_test_overlay" icon="circle_spinner" />
     <script>
-        let basicTestOverlay = document.getElementById('basic_test_overlay');
-        let basicTestButton = document.getElementById('basic_test_button');
-        basicTestButton.addEventListener('click', () => {
-            basicTestOverlay.show();
-            setTimeout(function() {
-                basicTestOverlay.hide();
-            }, 3000);
-        });
+        (function(){
+            let basicTestOverlay = document.getElementById('basic_test_overlay');
+            let basicTestButton = document.getElementById('basic_test_button');
+            basicTestButton.addEventListener('click', () => {
+                basicTestOverlay.show();
+                setTimeout(function() {
+                    basicTestOverlay.hide();
+                }, 3000);
+            });
+        })();
     </script>
 </div>
 
 ```html
-<ks-loading-overlay />
+<ks-loading-overlay icon="circle_spinner" />
 ```
 
 ## Sizes
@@ -82,16 +88,18 @@ Changing the size of the `<ks-loading-overlay />` can be done using the custom `
 
 <div class="my-xl">
     <ks-button id="size_test_button">Show XL Loading</ks-button>
-    <ks-loading-overlay id="size_test_overlay" size="xxl" />
+    <ks-loading-overlay id="size_test_overlay" size="xxl" icon="ellipsis_typing" />
     <script>
-        let sizeTestOverlay = document.getElementById('size_test_overlay');
-        let sizeTestButton = document.getElementById('size_test_button');
-        sizeTestButton.addEventListener('click', () => {
-            sizeTestOverlay.show();
-            setTimeout(function() {
-                sizeTestOverlay.hide();
-            }, 3000);
-        });
+        (function(){
+            let sizeTestOverlay = document.getElementById('size_test_overlay');
+            let sizeTestButton = document.getElementById('size_test_button');
+            sizeTestButton.addEventListener('click', () => {
+                sizeTestOverlay.show();
+                setTimeout(function() {
+                    sizeTestOverlay.hide();
+                }, 3000);
+            });
+        })();
     </script>
 </div>
 
@@ -109,16 +117,18 @@ The parent container must have the CSS rule `position: relative;` set. Feel free
 
 <div class="my-xl p-xl position-relative" style="width:300px;height:150px;">
     <ks-button id="absolute_button">Show Absolute Overlay</ks-button>
-    <ks-loading-overlay id="absolute_overlay" size="xxl" absolute />
+    <ks-loading-overlay id="absolute_overlay" size="xxl" icon="ellipsis_pulse" absolute />
     <script>
-        let absoluteButton = document.getElementById('absolute_button');
-        let absoluteOverlay = document.getElementById('absolute_overlay');
-        absoluteButton.addEventListener('click', () => {
-            absoluteOverlay.show();
-            setTimeout(function() {
-                absoluteOverlay.hide();
-            }, 3000);
-        });
+        (function(){
+            let absoluteButton = document.getElementById('absolute_button');
+            let absoluteOverlay = document.getElementById('absolute_overlay');
+            absoluteButton.addEventListener('click', () => {
+                absoluteOverlay.show();
+                setTimeout(function() {
+                    absoluteOverlay.hide();
+                }, 3000);
+            });
+        })();
     </script>
 </div>
 
@@ -145,16 +155,18 @@ Showing and hiding the loading overlay is as simple as using JavaScript to selec
 
 <div class="my-xl">
     <ks-button id="test_button">Show Overlay</ks-button>
-    <ks-loading-overlay id="test_overlay" size="xxl" />
+    <ks-loading-overlay id="test_overlay" size="xxl" icon="circle_spinner" />
     <script>
-        let testOverlay = document.getElementById('test_overlay');
-        let testButton = document.getElementById('test_button');
-        testButton.addEventListener('click', () => {
-            testOverlay.show();
-            setTimeout(function() {
-                testOverlay.hide();
-            }, 3000);
-        });
+        (function(){
+            let testOverlay = document.getElementById('test_overlay');
+            let testButton = document.getElementById('test_button');
+            testButton.addEventListener('click', () => {
+                testOverlay.show();
+                setTimeout(function() {
+                    testOverlay.hide();
+                }, 3000);
+            });
+        })();
     </script>
 </div>
 

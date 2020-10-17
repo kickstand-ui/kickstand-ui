@@ -1,6 +1,8 @@
 <template>
     <div>
-        <div class="display-flex align-center space-between w-80 mx-auto position-relative">
+        <div
+            class="display-flex align-center space-between w-80 mx-auto position-relative"
+        >
             <ks-form-field
                 class="w-100 mb-lg"
                 label="Search Icons"
@@ -14,6 +16,7 @@
         <div class="display-flex flex-wrap">
             <button
                 :id="`icon_${icon}`"
+                :title="icon"
                 @click="copy(icon)"
                 display="clear"
                 v-for="icon in filteredIcons"
@@ -309,8 +312,13 @@ export default {
             label.innerHTML = "Copied!";
 
             setTimeout(() => (label.innerHTML = icon), 2000);
-            // alert("Copied!");
         },
     },
 };
 </script>
+<style scoped>
+.icon-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+</style>
