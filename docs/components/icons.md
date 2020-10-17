@@ -43,55 +43,23 @@ The icons were developed in [Adobe XD](https://www.adobe.com/products/xd.html) a
 The brand-specific icons (facebook, twitter, etc.) did not follow all of these guidelines. Every effort was made to make sure they were consistent with their existing brand guidelines.
 :::
 
-<!-- ## Rotate
+## Animated Icons
 
-You have the ability to rotate the direction of the component.
+There are a few animated icons that have been created to help convey loading states to your users. These icons are also available in the [loading component](./loading.md) with some additional features.
 
 <div class="my-xl text-lg">
-    <ks-icon icon="chevron_down" rotate="0" />
-    <ks-icon icon="chevron_down" rotate="45" />
-    <ks-icon icon="chevron_down" rotate="90" />
-    <ks-icon icon="chevron_down" rotate="135" />
-    <ks-icon icon="chevron_down" rotate="180" />
-    <ks-icon icon="chevron_down" rotate="225" />
-    <ks-icon icon="chevron_down" rotate="270" />
-    <ks-icon icon="chevron_down" rotate="360" />
+    <ks-icon icon="ring_spinner" />
+    <ks-icon icon="circle_spinner" />
+    <ks-icon icon="ellipsis_pulse" />
+    <ks-icon icon="ellipsis_typing" />
 </div>
 
 ```html
-<ks-icon icon="chevron_down" rotate="0" />
-<ks-icon icon="chevron_down" rotate="45" />
-<ks-icon icon="chevron_down" rotate="90" />
-<ks-icon icon="chevron_down" rotate="135" />
-<ks-icon icon="chevron_down" rotate="180" />
-<ks-icon icon="chevron_down" rotate="225" />
-<ks-icon icon="chevron_down" rotate="270" />
-<ks-icon icon="chevron_down" rotate="360" />
+<ks-icon icon="ring_spinner" />
+<ks-icon icon="circle_spinner" />
+<ks-icon icon="ellipsis_pulse" />
+<ks-icon icon="ellipsis_typing" />
 ```
-
-The component can also accommodate negative values to rotate counter-clockwise.
-
-<div class="my-xl text-lg">
-    <ks-icon icon="chevron_down" rotate="0" />
-    <ks-icon icon="chevron_down" rotate="-45" />
-    <ks-icon icon="chevron_down" rotate="-90" />
-    <ks-icon icon="chevron_down" rotate="-135" />
-    <ks-icon icon="chevron_down" rotate="-180" />
-    <ks-icon icon="chevron_down" rotate="-225" />
-    <ks-icon icon="chevron_down" rotate="-270" />
-    <ks-icon icon="chevron_down" rotate="-360" />
-</div>
-
-```html
-<ks-icon icon="chevron_down" rotate="0" />
-<ks-icon icon="chevron_down" rotate="-45" />
-<ks-icon icon="chevron_down" rotate="-90" />
-<ks-icon icon="chevron_down" rotate="-135" />
-<ks-icon icon="chevron_down" rotate="-180" />
-<ks-icon icon="chevron_down" rotate="-225" />
-<ks-icon icon="chevron_down" rotate="-270" />
-<ks-icon icon="chevron_down" rotate="-360" />
-``` -->
 
 ## Properties
 
