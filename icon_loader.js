@@ -21,7 +21,7 @@ glob("src/scripts/components/icon/icons/*.svg")
         const iconList = files.map((svg) => {
             let file = path.basename(svg.file).replace(".svg", "");
             let iconGroup = svg.content.children.find(
-                (child) => child.name === "g"
+                (child) => child.name === "g" || child.name === "path"
             );
             updateSvgAttributes(iconGroup);
             return {
@@ -38,6 +38,9 @@ glob("src/scripts/components/icon/icons/*.svg")
     });
 
 function updateSvgAttributes(element) {
+    if(!element)
+        return;
+
     delete element.attributes.id;
     delete element.attributes["clip-path"];
     delete element.attributes["data-name"];

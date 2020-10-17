@@ -224,6 +224,10 @@ export const iconList = [
         "icon": "<g><g transform=\"translate(4 4)\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"><circle cx=\"8\" cy=\"8\" r=\"8\" stroke=\"none\"/><circle cx=\"8\" cy=\"8\" r=\"7.25\" fill=\"none\"/></g></g>"
     },
     {
+        "name": "circle_spinner",
+        "icon": "<path d=\"M12 2.398a9.673 9.673 0 019.602 8.582 1.198 1.198 0 001.195 1.086A1.208 1.208 0 0024 10.72C23.348 4.582 18.172-.078 12-.078S.652 4.582 0 10.719a1.212 1.212 0 001.2 1.348c.62 0 1.14-.47 1.198-1.087A9.673 9.673 0 0112 2.398zm0 0\" fill=\"currentColor\"><animateTransform attributeName=\"transform\" type=\"rotate\" from=\"0 12 12\" to=\"360 12 12\" dur=\"1s\" repeatCount=\"indefinite\"/></path>"
+    },
+    {
         "name": "circle",
         "icon": "<g><g transform=\"translate(4 4)\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><circle cx=\"8\" cy=\"8\" r=\"8\" stroke=\"none\"/><circle cx=\"8\" cy=\"8\" r=\"7.25\"/></g></g>"
     },
@@ -302,6 +306,14 @@ export const iconList = [
     {
         "name": "edit",
         "icon": "<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M17.174 4.9l1.976 1.98-8.32 8.37H8.8v-1.987z\"/><path d=\"M13.191 5.707h-7.21v12.587H18.02v-7.531\"/></g>"
+    },
+    {
+        "name": "ellipsis_pulse",
+        "icon": "<g fill=\"currentColor\"><circle cx=\"5\" cy=\"12\" r=\"3\"><animate attributeName=\"r\" from=\"3\" to=\"3\" begin=\"0s\" dur=\"1s\" values=\"2;4;2;2;2\" calcMode=\"linear\" repeatCount=\"indefinite\"/></circle><circle cx=\"12\" cy=\"12\" r=\"3\"><animate attributeName=\"r\" from=\"3\" to=\"3\" begin=\"0.25s\" dur=\"1s\" values=\"2;4;2;2;2\" calcMode=\"linear\" repeatCount=\"indefinite\"/></circle><circle cx=\"19\" cy=\"12\" r=\"3\"><animate attributeName=\"r\" from=\"3\" to=\"3\" begin=\"0.5s\" dur=\"1s\" values=\"2;4;2;2;2\" calcMode=\"linear\" repeatCount=\"indefinite\"/></circle></g>"
+    },
+    {
+        "name": "ellipsis_typing",
+        "icon": "<g fill=\"currentColor\"><circle cx=\"3\" cy=\"12\" r=\"3\"><animateTransform attributeName=\"transform\" dur=\"1s\" type=\"translate\" values=\"0 7; 0; 0 7; 0 7\" repeatCount=\"indefinite\" begin=\"0\"/></circle><circle cx=\"12\" cy=\"12\" r=\"3\"><animateTransform attributeName=\"transform\" dur=\"1s\" type=\"translate\" values=\"0 7 ; 0; 0 7; 0 7\" repeatCount=\"indefinite\" begin=\".2\"/></circle><circle cx=\"21\" cy=\"12\" r=\"3\"><animateTransform attributeName=\"transform\" dur=\"1s\" type=\"translate\" values=\"0 7 ; 0; 0 7; 0 7\" repeatCount=\"indefinite\" begin=\".4\"/></circle></g>"
     },
     {
         "name": "ellipsis",
@@ -770,6 +782,10 @@ export const iconList = [
     {
         "name": "refresh",
         "icon": "<g><path d=\"M12 4a8 8 0 00-6.925 3.992l1.295.759a6.5 6.5 0 0111.261 0l1.295-.759A8 8 0 0012 4zM6.451 15.386l-1.286.774a8 8 0 0010.81 2.784 8.054 8.054 0 002.86-2.784l-1.286-.772a6.5 6.5 0 01-11.1 0z\" fill=\"currentColor\"/><path d=\"M15 8.979h4v-4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M9 15.2H5v4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/></g>"
+    },
+    {
+        "name": "ring_spinner",
+        "icon": "<g transform=\"translate(1 1)\" stroke=\"currentColor\" stroke-width=\"2\" fill=\"none\" fill-rule=\"evenodd\"><circle stroke-opacity=\".25\" cx=\"11\" cy=\"11\" r=\"11\"/><path d=\"M22 12c0-9.94-8.06-12-12-12\"><animateTransform attributeName=\"transform\" type=\"rotate\" from=\"0 11 11\" to=\"360 11 11\" dur=\"1s\" repeatCount=\"indefinite\"/></path></g>"
     },
     {
         "name": "rss",

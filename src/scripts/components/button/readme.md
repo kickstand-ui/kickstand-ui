@@ -54,6 +54,7 @@ graph TD;
   ks-button --> ks-loading-overlay
   ks-loading-overlay --> ks-overlay
   ks-loading-overlay --> ks-loading
+  ks-loading --> ks-icon
   ks-alert --> ks-button
   ks-carousel --> ks-button
   ks-dropdown --> ks-button

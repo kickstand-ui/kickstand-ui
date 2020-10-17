@@ -27,7 +27,7 @@ export class Icons implements ComponentInterface {
 
         return (
             <Host class={`rotate-${this.rotate}`}>
-                <svg class="icon" width="24" height="24" role="presentation" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props} ref={e => this.svgBase = e}></svg>
+                <svg class="icon" role="presentation" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props} ref={e => this.svgBase = e}></svg>
             </Host>
         );
     }

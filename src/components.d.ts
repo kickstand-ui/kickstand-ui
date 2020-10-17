@@ -220,18 +220,18 @@ export namespace Components {
         "threshold": number;
     }
     interface KsLoading {
+        "icon": string;
         "message": string;
         "showMessage": boolean;
-        "type": 'spinner' | 'ellipsis';
     }
     interface KsLoadingOverlay {
         "absolute": boolean;
         "hide": () => Promise<void>;
+        "icon": string;
         "message": string;
         "show": () => Promise<void>;
         "showMessage": boolean;
         "size": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
-        "type": 'spinner' | 'ellipsis';
     }
     interface KsMenuBar {
         "altText": string;
@@ -826,16 +826,16 @@ declare namespace LocalJSX {
         "threshold"?: number;
     }
     interface KsLoading {
+        "icon"?: string;
         "message"?: string;
         "showMessage"?: boolean;
-        "type"?: 'spinner' | 'ellipsis';
     }
     interface KsLoadingOverlay {
         "absolute"?: boolean;
+        "icon"?: string;
         "message"?: string;
         "showMessage"?: boolean;
         "size"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
-        "type"?: 'spinner' | 'ellipsis';
     }
     interface KsMenuBar {
         "altText"?: string;

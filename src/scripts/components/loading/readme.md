@@ -10,10 +10,10 @@
 | Property      | Attribute      | Description | Type                                                     | Default        |
 | ------------- | -------------- | ----------- | -------------------------------------------------------- | -------------- |
 | `absolute`    | `absolute`     |             | `boolean`                                                | `false`        |
+| `icon`        | `icon`         |             | `string`                                                 | `undefined`    |
 | `message`     | `message`      |             | `string`                                                 | `'Loading...'` |
 | `showMessage` | `show-message` |             | `boolean`                                                | `false`        |
 | `size`        | `size`         |             | `"lg" \| "md" \| "sm" \| "xl" \| "xs" \| "xxl" \| "xxs"` | `'sm'`         |
-| `type`        | `type`         |             | `"ellipsis" \| "spinner"`                                | `'spinner'`    |
 
 
 ## Methods
@@ -55,6 +55,7 @@ Type: `Promise<void>`
 graph TD;
   ks-loading-overlay --> ks-overlay
   ks-loading-overlay --> ks-loading
+  ks-loading --> ks-icon
   ks-button --> ks-loading-overlay
   style ks-loading-overlay fill:#f9f,stroke:#333,stroke-width:4px
 ```
