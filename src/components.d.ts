@@ -281,6 +281,9 @@ export namespace Components {
         "label": string;
         "name": string;
     }
+    interface KsResponsiveEmbed {
+        "aspectRatio": string;
+    }
     interface KsRow {
         "gutter": 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "position": 'start' | 'center' | 'end';
@@ -527,6 +530,12 @@ declare global {
         prototype: HTMLKsRadioElement;
         new (): HTMLKsRadioElement;
     };
+    interface HTMLKsResponsiveEmbedElement extends Components.KsResponsiveEmbed, HTMLStencilElement {
+    }
+    var HTMLKsResponsiveEmbedElement: {
+        prototype: HTMLKsResponsiveEmbedElement;
+        new (): HTMLKsResponsiveEmbedElement;
+    };
     interface HTMLKsRowElement extends Components.KsRow, HTMLStencilElement {
     }
     var HTMLKsRowElement: {
@@ -604,6 +613,7 @@ declare global {
         "ks-overlay": HTMLKsOverlayElement;
         "ks-progress-bar": HTMLKsProgressBarElement;
         "ks-radio": HTMLKsRadioElement;
+        "ks-responsive-embed": HTMLKsResponsiveEmbedElement;
         "ks-row": HTMLKsRowElement;
         "ks-side-drawer": HTMLKsSideDrawerElement;
         "ks-spin-box": HTMLKsSpinBoxElement;
@@ -884,6 +894,9 @@ declare namespace LocalJSX {
         "name"?: string;
         "onSelected"?: (event: CustomEvent<any>) => void;
     }
+    interface KsResponsiveEmbed {
+        "aspectRatio"?: string;
+    }
     interface KsRow {
         "gutter"?: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "position"?: 'start' | 'center' | 'end';
@@ -959,6 +972,7 @@ declare namespace LocalJSX {
         "ks-overlay": KsOverlay;
         "ks-progress-bar": KsProgressBar;
         "ks-radio": KsRadio;
+        "ks-responsive-embed": KsResponsiveEmbed;
         "ks-row": KsRow;
         "ks-side-drawer": KsSideDrawer;
         "ks-spin-box": KsSpinBox;
@@ -1006,6 +1020,7 @@ declare module "@stencil/core" {
             "ks-overlay": LocalJSX.KsOverlay & JSXBase.HTMLAttributes<HTMLKsOverlayElement>;
             "ks-progress-bar": LocalJSX.KsProgressBar & JSXBase.HTMLAttributes<HTMLKsProgressBarElement>;
             "ks-radio": LocalJSX.KsRadio & JSXBase.HTMLAttributes<HTMLKsRadioElement>;
+            "ks-responsive-embed": LocalJSX.KsResponsiveEmbed & JSXBase.HTMLAttributes<HTMLKsResponsiveEmbedElement>;
             "ks-row": LocalJSX.KsRow & JSXBase.HTMLAttributes<HTMLKsRowElement>;
             "ks-side-drawer": LocalJSX.KsSideDrawer & JSXBase.HTMLAttributes<HTMLKsSideDrawerElement>;
             "ks-spin-box": LocalJSX.KsSpinBox & JSXBase.HTMLAttributes<HTMLKsSpinBoxElement>;

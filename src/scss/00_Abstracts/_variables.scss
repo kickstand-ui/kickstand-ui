@@ -70,6 +70,14 @@ $media-queries: (
     print: print
 ) !default;
 
+// RESPONSIVE EMBED ASPECT RATIOS
+
+$responsive-embed-aspect-ratios: (
+  (21, 9),
+  (16, 9),
+  (4, 3),
+  (1, 1)
+) !default;
 
 // Z-INDEX
 
