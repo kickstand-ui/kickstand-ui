@@ -114,6 +114,7 @@ module.exports = {
                     "/components/modal.html",
                     "/components/overlay.html",
                     "/components/progress-bar.html",
+                    "/components/responsive-embed.html",
                     "/components/side-drawer.html",
                     "/components/switch.html",
                     // "/components/spin-box.html",

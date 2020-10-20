@@ -211,6 +211,19 @@ In your markup:
 <div class="my-component w-25 md:w-50 xs:w-100 print:hide">...</div>
 ```
 
+## Responsive Embed Aspect Ratios
+
+These are the default aspect ratios for the [Responsive Embed component](../components/responsive-embed.md). You can add or remove aspect ratios to suit your custom video or embed aspect ratios.
+
+```scss
+$responsive-embed-aspect-ratios: (
+  (21, 9),
+  (16, 9),
+  (4, 3),
+  (1, 1)
+) !default;
+```
+
 ## Z-Index
 
 This is usually on of the most obvious and yet most comical implementations to talk about. When asking developers how they handle z-indexes in their application, the most common answer is to set the value to `9999`. If that doesn't work, continue adding a `9` on the end until it does. Having a repeatable pattern and process for this should help remove this behavior as well as some of the unpredictability of your application.
