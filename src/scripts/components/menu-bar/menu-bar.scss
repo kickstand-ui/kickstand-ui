@@ -178,7 +178,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
                             &:focus {
                                 @include outline();
-                                outline-color: text-color($key);            
+                                outline-color: text-color($key);
                             }
                         }
 
@@ -189,7 +189,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
                                     &:focus {
                                         @include outline();
-                                        outline-color: text-color($key);                    
+                                        outline-color: text-color($key);
                                     }
                                 }
                             }
@@ -207,7 +207,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
                     &:focus {
                         @include outline();
-                        outline-color: text-color($key);    
+                        outline-color: text-color($key);
                     }
                 }
 
@@ -224,7 +224,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
                                 &:focus {
                                     @include outline();
-                                    outline-color: text-color($key);                
+                                    outline-color: text-color($key);
                                 }
                             }
                         }
@@ -235,9 +235,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
     }
 
     &.collapse {
-
-        @each $key,
-        $value in $breakpoints {
+        @each $key, $value in $breakpoints {
             &-#{$key} {
                 @include mq($key) {
                     flex-wrap: wrap;
@@ -249,11 +247,15 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                     }
 
                     .menu-content {
-                        display: none;
+                        display: block;
+                        visibility: hidden;
+                        max-height: 0;
                         flex-basis: 100%;
                         flex-grow: 1;
                         align-items: center;
                         flex-direction: column;
+                        transform: translateY(-0.5rem);
+                        @include transition-ease-in-out(fast);
 
                         .menu-row {
                             flex-direction: column;
@@ -286,9 +288,16 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
                                     .dropdown-contents {
                                         position: relative;
+                                        display: none;
                                         width: 100vw;
                                         max-width: 100vw;
                                         @include mx(-sm);
+                                    }
+
+                                    &.show {
+                                        .dropdown-contents {
+                                            display: flex;
+                                        }
                                     }
                                 }
                             }
@@ -296,7 +305,9 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                     }
 
                     [aria-expanded="true"]+.menu-content {
-                        display: block;
+                        height: auto;
+                        visibility: visible;
+                        @include mt(sm);
                         @include border-t();
                         @include transition-ease-in-out(fast);
                     }

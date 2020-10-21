@@ -44,6 +44,7 @@ export class MenuBar implements ComponentInterface {
 
     private toggleMenu() {
         this.expanded = !this.expanded;
+        this.$menuContent.style.maxHeight = this.expanded ? this.$menuContent.scrollHeight + 'px' : '0px';
 
         if (this.expanded)
             this.setDropdownFocus();
