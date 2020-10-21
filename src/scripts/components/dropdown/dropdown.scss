@@ -22,6 +22,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
             align-items: center;
 
             .dropdown-icon {
+                line-height: 1;
                 @include ml(xs);
                 @include transition-ease-in-out(med);
             }    
