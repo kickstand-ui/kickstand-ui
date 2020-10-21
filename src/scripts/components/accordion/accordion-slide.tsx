@@ -5,6 +5,7 @@ import { Component, h, Prop, Method, Host } from '@stencil/core';
 })
 export class AccordionSlide {
     slideId: string = `accordion_slide_${slideIds++}`;
+    $slideContent: HTMLElement;
 
     @Prop() heading: string;
     @Prop() expanded: boolean = false;
@@ -12,16 +13,17 @@ export class AccordionSlide {
     @Method()
     async toggleSlide() {
         this.expanded = !this.expanded;
+        this.$slideContent.style.maxHeight = this.expanded ? this.$slideContent.scrollHeight + 32 + 'px' : '0px';
     }
 
     render() {
         return (
             <Host class="accordion-slide">
-                <button class="accordion-heading" role="tab" aria-controls={this.slideId} aria-expanded={`${this.expanded}`} onClick={this.toggleSlide.bind(this)}>
+                <button class="accordion-heading" role="tab" aria-controls={this.slideId} aria-expanded={`${this.expanded}`} onClick={() => this.toggleSlide()}>
                     <span>{this.heading}</span>
                     <ks-icon class="accordion-icon" icon="chevron_down" />
                 </button>
-                <div class="accordion-content" role="tabpanel" aria-hidden={`${!this.expanded}`} id={this.slideId}>
+                <div class="accordion-content" role="tabpanel" aria-hidden={`${!this.expanded}`} id={this.slideId} ref={el => this.$slideContent = el}>
                     <slot />
                 </div>
             </Host>
