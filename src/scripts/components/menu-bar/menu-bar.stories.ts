@@ -44,6 +44,9 @@ export const menuBarProperties = () => {
                             <ks-dropdown-item><a href="#">Test 5</a></ks-dropdown-item>
                         </ks-dropdown>
                     </ks-menu-item>
+                    <ks-menu-item>
+                        <a href="#">Test 1</a>
+                    </ks-menu-item>
                 </ks-menu-group>
             </ks-menu-row>
         </ks-menu-bar>

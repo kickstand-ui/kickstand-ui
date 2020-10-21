@@ -16,6 +16,7 @@ ks-button {
     position: relative;
     font-weight: bold;
     cursor: pointer;
+    overflow: hidden;
     @include p(md);
     @include shadow(xs);
     @include transition-ease-in-out(fast);
