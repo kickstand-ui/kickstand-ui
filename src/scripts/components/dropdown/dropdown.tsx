@@ -145,7 +145,7 @@ export class Dropdown {
                 <div
                     id={this.dropdownId}
                     class={contentClasses}
-                    role={this.megaMenu ? '' : 'list'}
+                    role={this.megaMenu ? undefined : 'list'}
                     aria-labelledby={`${this.dropdownId}-button`}
                     ref={el => this.$contents = el}
                 >
