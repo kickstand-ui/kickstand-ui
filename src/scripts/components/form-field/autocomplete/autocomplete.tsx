@@ -14,6 +14,7 @@ export class Autocomplete implements ComponentInterface {
     $selectedOption: HTMLOptionElement;
     $dropdownOptions: HTMLUListElement[];
     focusIndex: number = 0;
+    $dropdown: HTMLElement;
 
     @Element() $el: HTMLElement;
 
@@ -66,7 +67,7 @@ export class Autocomplete implements ComponentInterface {
         return fieldData;
     }
 
-    private onKeyupHandler(e: KeyboardEvent) {
+    private onKeyDownHandler(e: KeyboardEvent) {
         switch (e.keyCode) {
             case keyCodes.LEFT_ARROW:
             case keyCodes.RIGHT_ARROW:
@@ -165,10 +166,12 @@ export class Autocomplete implements ComponentInterface {
 
     private showMenu() {
         this.isExpanded = true;
+        this.$dropdown.style.maxHeight = '12rem';
     }
 
     private hideMenu() {
         this.isExpanded = false;
+        this.$dropdown.style.maxHeight = '0px';
     }
 
     private selectValue(option: HTMLOptionElement, index: number) {
@@ -176,9 +179,9 @@ export class Autocomplete implements ComponentInterface {
         this.$select.value = option.value || option.innerText;
         this.value = option.value || option.innerText;
         this.focusIndex = index;
-        this.isExpanded = false;
-        this.$input.value = option.innerText;
         this.$input.focus();
+        this.$input.value = option.innerText;
+        this.hideMenu();
         debounce(() => this.changed.emit(this.validateField()), this.debounce);
     }
 
@@ -212,12 +215,12 @@ export class Autocomplete implements ComponentInterface {
                         role="combobox"
                         id={this.inputId}
                         aria-expanded={`${this.isExpanded}`}
-                        onKeyUp={(e) => this.onKeyupHandler(e)}
+                        onKeyDown={(e) => this.onKeyDownHandler(e)}
                         ref={e => this.$input = e}
                         {...props}
                     />
                     <ks-icon icon="search" class="search-icon"></ks-icon>
-                    <ul id={`autocomplete-options-${this.autocompleteId}`} class="dropdown-options" role="listbox">
+                    <ul id={`autocomplete-options-${this.autocompleteId}`} class="dropdown-options" role="listbox" ref={el => this.$dropdown = el}>
                         {this.$filteredOptions.map((x, i) => (
                             <li
                                 role="option"

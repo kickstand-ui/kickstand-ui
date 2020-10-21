@@ -44,7 +44,6 @@
 
         .dropdown-options {
             visibility: hidden;
-            max-height: 12em;
             overflow-y: scroll;
             -webkit-overflow-scrolling: touch;
             left: 0;
@@ -53,11 +52,14 @@
             list-style: none;
             width: auto;
             white-space: nowrap;
+            max-height: 0;
+            overflow: hidden;
             @include z-index(xs);
             @include shadow(sm);
             @include bg-color(white);
             @include p(none);
             @include m(none);
+            @include transition-ease-in-out(fast);
 
             .option {
                 @include p(md);
@@ -75,6 +77,8 @@
 
         [aria-expanded="true"] ~ .dropdown-options {
             visibility: visible;
+            overflow-y: auto;
+            @include transition-ease-in-out(fast);
         }
     }
 }
