@@ -36,11 +36,11 @@ export class FormField implements ComponentInterface {
     @Prop() disabled: boolean;
     @Prop({ mutable: true }) value?: string | number | boolean| any[] | null = '';
     @Prop() pattern?: string;
-    @Prop() min?: number;
-    @Prop() max?: number;
-    @Prop() step?: number;
-    @Prop() minlength?: number;
-    @Prop() maxlength?: number;
+    @Prop() min?: number = 0;
+    @Prop() max?: number = Number();
+    @Prop() step?: number = 1;
+    @Prop() minlength?: number = 0;
+    @Prop() maxlength?: number = Number();
     @Prop() autocomplete?: string;
     @Prop() type: 'autocomplete' 
         | 'checkbox'
