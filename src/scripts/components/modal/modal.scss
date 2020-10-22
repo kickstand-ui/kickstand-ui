@@ -1,58 +1,68 @@
 @import "../../../scss/00_Abstracts/index";
 
-.ks-modal {
-    max-width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    @include bg-color(white);
-    @include p(lg);
+.ks-overlay {
+    .ks-modal {
+        max-width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        transform: translateY(-1.5rem);
+        @include bg-color(white);
+        @include p(lg);
+        @include transition-ease-in-out(fast);
 
-    .modal-header {
-        display: flex;
-        justify-content: space-between;
-        align-content: flex-start;
-        @include border-b();
-        @include mb(md);
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-content: flex-start;
+            @include border-b();
+            @include mb(md);
 
-        .modal-title {
+            .modal-title {}
+
+            .modal-close {
+                @include mt(xxs);
+
+                .ks-button {
+                    @include p(none);
+
+                    .button-text {
+                        display: inline-flex;
+                    }
+
+                    .icon {
+                        @include font-size(lg);
+                    }
+                }
+            }
         }
 
-        .modal-close {
-            @include mt(xxs);
+        &.size {
+            &-sm {
+                width: 300px;
+            }
 
-            .ks-button {
-                @include p(none);
+            &-md {
+                width: 500px;
+            }
 
-                .button-text {
-                    display: inline-flex;
-                }
+            &-lg {
+                width: 800px;
+            }
+        }
 
-                .icon {
-                    @include font-size(lg);
-                }
+        .modal-content {
+            .modal-footer {
+                display: flex;
+                justify-content: flex-end;
+                @include mt(md);
             }
         }
     }
 
-    &.size {
-        &-sm {
-            width: 300px;
-        }
-
-        &-md {
-            width: 500px;
-        }
-
-        &-lg {
-            width: 800px;
-        }
-    }
-
-    .modal-content {
-        .modal-footer {
-            display: flex;
-            justify-content: flex-end;
-            @include mt(md);
+    &.opened {
+        .ks-modal {
+            transform: translateY(0);
+            @include transition-ease-in-out(fast);
         }
     }
 }
