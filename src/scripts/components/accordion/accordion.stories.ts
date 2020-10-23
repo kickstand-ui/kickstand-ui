@@ -1,6 +1,6 @@
 import { select } from "@storybook/addon-knobs";
 
-export default { title: 'Accordion' };
+export default { title: 'Components/Accordion' };
 
 const accordionData = [
     {

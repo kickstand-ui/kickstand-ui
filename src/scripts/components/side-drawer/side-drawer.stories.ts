@@ -1,6 +1,6 @@
 import { select } from '@storybook/addon-knobs';
 
-export default { title: 'Side Drawer' };
+export default { title: 'Components/Side Drawer' };
 
 export const playground = () => {
     const size = select('size', ['sm', 'md', 'lg', 'xl'], 'sm');

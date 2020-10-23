@@ -1,6 +1,6 @@
 import { select } from "@storybook/addon-knobs";
 
-export default { title: 'Grid' };
+export default { title: 'Components/Grid' };
 
 export const basicGrid = () => {
     return (`
