@@ -1,6 +1,6 @@
 import { text, select } from "@storybook/addon-knobs";
 
-export default { title: 'Gallery' };
+export default { title: 'Components/Gallery' };
 
 export const playground = () => {
     const heading = text('heading', 'Test Gallery');

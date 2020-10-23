@@ -1,6 +1,6 @@
 import { select, boolean } from "@storybook/addon-knobs";
 
-export default { title: 'Overlay' };
+export default { title: 'Components/Overlay' };
 
 export const playground = () => {
     const theme = select('theme', ['dark', 'light'], 'dark');

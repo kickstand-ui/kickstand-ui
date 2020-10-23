@@ -1,4 +1,4 @@
-export default { title: "Breadcrumbs" };
+export default { title: "Components/Breadcrumbs" };
 
 const breadcrumbs = [
     { url: '#', text: 'Home' },

@@ -1,7 +1,7 @@
 import { text, select } from "@storybook/addon-knobs";
 import { iconList } from './icon-list';
 
-export default { title: 'Icons' };
+export default { title: 'Components/Icons' };
 
 export const icons = () => {
     const icon = text('icon', 'activity');

@@ -1,6 +1,6 @@
 import { number } from '@storybook/addon-knobs';
 
-export default { title: 'Spin Box' };
+export default { title: 'Components/Spin Box' };
 
 export const playground = () => {
     const value = number('value', 0);

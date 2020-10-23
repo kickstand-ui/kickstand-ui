@@ -1,6 +1,6 @@
 import { text, select, boolean } from "@storybook/addon-knobs";
 
-export default { title: 'Menu Bar' };
+export default { title: 'Components/Menu Bar' };
 
 const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
 export const menuBarProperties = () => {
