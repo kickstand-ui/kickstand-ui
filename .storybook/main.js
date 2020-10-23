@@ -1,5 +1,4 @@
 const path = require("path");
-const merge = require('webpack-merge');
 
 // Export a function. Accept the base config as the only param.
 module.exports = {
@@ -35,27 +34,3 @@ module.exports = {
         return config;
     },
 };
-
-
-// webpack: (config) => {
-//     return merge(config, {
-//         module: {
-//             rules: [
-//                 {
-//                     test: /\.scss$/,
-//                     use: ["style-loader", "css-loader", "sass-loader"],
-//                     include: path.resolve(
-//                         __dirname,
-//                         "../src/scss/styles.scss"
-//                     ),
-//                 },
-//                 {
-//                     test: /\.js$/,
-//                     loader: require.resolve(
-//                         "@open-wc/webpack-import-meta-loader"
-//                     ),
-//                 },
-//             ],
-//         },
-//     });
-// },
