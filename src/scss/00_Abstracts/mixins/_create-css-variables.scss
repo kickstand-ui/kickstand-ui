@@ -21,10 +21,6 @@
             --ks-spacing-size-#{$key}: #{$value};
         }
 
-        @each $key in (xl, lg, md, sm, xs, xxs) {
-            --ks-media-query-#{$key}: #{map-get($media-queries, $key)};
-        }
-
         @each $key, $value in $z-indexes {
             --ks-z-index-#{$key}: #{$value};
         }
