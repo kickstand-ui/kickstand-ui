@@ -5,7 +5,7 @@
     align-items: center;
 
     .icon {
-        margin: 0.25em;
+        margin: 0;
     }
 
     .message {
@@ -26,13 +26,14 @@
 
     .content {
         line-height: 1;
-        @include shadow(none);
+        @include shadow(none, true);
 
         .show-message {
             flex-direction: column;
             align-items: center;
 
             .message {
+                margin-top: 0.25em;
                 @include ml(none);
             }
         }

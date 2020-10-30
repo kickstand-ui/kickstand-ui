@@ -27,11 +27,11 @@
     }
 
     &.light {
-        @include bg-color(light, 0.60);
+        background-color: color-value(light, 0.6);
     }
 
     &.dark {
-        @include bg-color(dark, 0.60);
+        background-color: color-value(dark, 0.6);
     }
 
     &.absolute {
