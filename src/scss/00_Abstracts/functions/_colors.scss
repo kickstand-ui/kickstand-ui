@@ -125,11 +125,11 @@ $color-pallette: build-pallet();
             $g-opacity: nth($color, 3);
         }
 
-        @return color($g-color, $g-variant, $g-opacity);
+        @return rgba(var(--ks-color-#{$g-color}-#{$g-variant}), $g-opacity);
     }
 
     @else {
-        @return color($color, $variant, $opacity);
+        @return rgba(var(--ks-color-#{$color}-#{$variant}), $opacity);
     }
 }
 
