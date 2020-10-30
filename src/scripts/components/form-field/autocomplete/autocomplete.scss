@@ -22,8 +22,8 @@
 
             &::placeholder {
                 opacity: 0.7;
-                color: color(dark, lighter);
                 font-style: italic;
+                @include color(dark, lighter);
             }
 
             &[aria-invalid="true"] {
@@ -34,10 +34,10 @@
 
         .search-icon {
             pointer-events: none;
-            color: color(dark, lighter);
             position: absolute;
             right: 0;
             transform: translateX(-50%);
+            @include color(dark, lighter);
             @include font-size(lg);
             @include mt(sm);
         }
@@ -59,7 +59,7 @@
             @include bg-color(white);
             @include p(none);
             @include m(none);
-            @include transition-ease-in-out(fast);
+            @include transition();
 
             .option {
                 @include p(md);
@@ -78,7 +78,7 @@
         [aria-expanded="true"] ~ .dropdown-options {
             visibility: visible;
             overflow-y: auto;
-            @include transition-ease-in-out(fast);
+            @include transition();
         }
     }
 }

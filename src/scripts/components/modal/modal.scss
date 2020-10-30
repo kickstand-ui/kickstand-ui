@@ -1,68 +1,76 @@
 @import "../../../scss/00_Abstracts/index";
 
 .ks-overlay {
-    .ks-modal {
-        max-width: 100%;
-        max-height: 90vh;
-        overflow-y: auto;
-        transform: translateY(-1.5rem);
-        @include bg-color(white);
-        @include p(lg);
-        @include transition-ease-in-out(fast);
+    .content {
+        transform: scale(0.95);
 
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-content: flex-start;
-            @include border-b();
-            @include mb(md);
+        .ks-modal {
+            max-width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            background-color: white;
+            @include p(lg);
+            @include transition();
 
-            .modal-title {}
+            .modal-header {
+                display: flex;
+                justify-content: space-between;
+                align-content: flex-start;
+                @include border-b();
+                @include mb(md);
 
-            .modal-close {
-                @include mt(xxs);
+                .modal-title {
+                    @include color(dark);
+                }
 
-                .ks-button {
-                    @include p(none);
+                .modal-close {
+                    @include mt(xxs);
 
-                    .button-text {
-                        display: inline-flex;
-                    }
+                    .ks-button {
+                        @include p(none);
 
-                    .icon {
-                        @include font-size(lg);
+                        .button-text {
+                            display: inline-flex;
+                        }
+
+                        .icon {
+                            @include font-size(lg);
+                        }
                     }
                 }
             }
-        }
 
-        &.size {
-            &-sm {
-                width: 300px;
+            &.size {
+                &-sm {
+                    width: 300px;
+                }
+
+                &-md {
+                    width: 500px;
+                }
+
+                &-lg {
+                    width: 800px;
+                }
             }
 
-            &-md {
-                width: 500px;
-            }
-
-            &-lg {
-                width: 800px;
-            }
-        }
-
-        .modal-content {
-            .modal-footer {
-                display: flex;
-                justify-content: flex-end;
-                @include mt(md);
+            .modal-content {
+                .modal-footer {
+                    display: flex;
+                    justify-content: flex-end;
+                    @include mt(md);
+                }
             }
         }
     }
 
     &.opened {
-        .ks-modal {
-            transform: translateY(0);
-            @include transition-ease-in-out(fast);
+        .content {
+            transform: scale(1);
+
+            .ks-modal {
+                @include transition();
+            }
         }
     }
 }

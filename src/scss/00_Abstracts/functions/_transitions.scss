@@ -3,7 +3,8 @@
 @function transition($name) {
     @if map-has-key($trasitions, $name) {
         @return map-get($trasitions, $name);
-    } 
+    }
+
     @else {
         @error "Invalid 'transition' value: '#{$name}'.";
     }

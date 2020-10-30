@@ -13,9 +13,9 @@
         &[aria-checked="true"] {
             .toggle {
                 transform: translateX(spacing(lg));
-                border-color: color(primary);
+                border-color: color-value(primary);
                 @include bg-color(primary);
-                @include transition-ease-in-out();
+                @include transition();
             }
         }
 
@@ -45,7 +45,7 @@
             @include bg-color(light, lighter);
             @include border(solid, xxxs, light);
             @include shadow();
-            @include transition-ease-in-out();
+            @include transition();
         }
     }
 

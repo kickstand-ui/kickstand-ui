@@ -2,4 +2,186 @@
 
 label {
     cursor: pointer;
+    display: inline-block; // Allow labels to use `margin` for spacing.
+}
+
+// Remove the default `border-radius` that macOS Chrome adds.
+//
+// Details at https://github.com/twbs/bootstrap/issues/24093
+
+button {
+    border-radius: 0;
+}
+
+// Work around a Firefox/IE bug where the transparent `button` background
+// results in a loss of the default `button` focus styles.
+//
+// Credit: https://github.com/suitcss/base/
+
+// 1. Remove the margin in Firefox and Safari
+
+input,
+button,
+select,
+optgroup,
+textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+// Show the overflow in Edge
+
+button,
+input {
+    overflow: visible;
+}
+
+// Remove the inheritance of text transform in Firefox
+
+button,
+select {
+    text-transform: none;
+}
+
+// Remove the inheritance of word-wrap in Safari.
+//
+// Details at https://github.com/twbs/bootstrap/issues/24990
+
+select {
+    word-wrap: normal;
+}
+
+// Remove the dropdown arrow in Chrome from inputs built with datalists.
+//
+// Source: https://stackoverflow.com/a/54997118
+
+[list]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+// 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+//    controls in Android 4.
+// 2. Opinionated: add "hand" cursor to non-disabled button elements.
+
+button,
+[type="button"], // 1
+[type="reset"],
+[type="submit"] {
+    &:not(:disabled) {
+        cursor: pointer; // 2
+    }
+}
+
+// Remove inner border and padding from Firefox, but don't restore the outline like Normalize.
+
+::-moz-focus-inner {
+    padding: 0;
+    border-style: none;
+}
+
+
+// Remove the default appearance of temporal inputs to avoid a Mobile Safari
+// bug where setting a custom line-height prevents text from being vertically
+// centered within the input.
+// See https://bugs.webkit.org/show_bug.cgi?id=139848
+// and https://github.com/twbs/bootstrap/issues/11266
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+    -webkit-appearance: textfield;
+}
+
+// 1. Remove the default vertical scrollbar in IE.
+// 2. Textareas should really only resize vertically so they don't break their (horizontal) containers.
+// 3. Use the same borders as textfields
+
+textarea {
+    overflow: auto; // 1
+    resize: vertical; // 2
+    -webkit-appearance: textfield; // 3
+}
+
+// 1. Browsers set a default `min-width: min-content;` on fieldsets,
+//    unlike e.g. `<div>`s, which have `min-width: 0;` by default.
+//    So we reset that to ensure fieldsets behave more like a standard block element.
+//    See https://github.com/twbs/bootstrap/issues/12359
+//    and https://html.spec.whatwg.org/multipage/#the-fieldset-and-legend-elements
+// 2. Reset the default outline behavior of fieldsets so they don't affect page layout.
+
+fieldset {
+    min-width: 0; // 1
+    border: 0; // 2
+    @include p(none); // 2
+    @include m(none); // 2
+}
+
+
+// 1. By using `float: left`, the legend will behave like a block element
+// 2. Correct the color inheritance from `fieldset` elements in IE.
+// 3. Correct the text wrapping in Edge and IE.
+
+legend {
+    float: left; // 1
+    width: 100%;
+    padding: 0;
+    @include mb(sm);
+    @include font-size(sm);
+    line-height: inherit;
+    color: inherit; // 2
+    white-space: normal; // 3
+}
+
+// Add the correct vertical alignment in Chrome, Firefox, and Opera.
+
+progress {
+    vertical-align: baseline;
+}
+
+
+// Fix height of inputs with a type of datetime-local, date, month, week, or time
+// See https://github.com/twbs/bootstrap/issues/18842
+
+::-webkit-datetime-edit {
+    overflow: visible;
+    line-height: 0;
+}
+
+
+// This overrides the extra rounded corners on search inputs in iOS so that our
+// `.form-control` class can properly style them. Note that this cannot simply
+// be added to `.form-control` as it's not specific enough. For details, see
+// https://github.com/twbs/bootstrap/issues/11586.
+
+[type="search"] {
+    -webkit-appearance: textfield;
+}
+
+// Remove the inner padding in Chrome and Safari on macOS.
+
+::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+// Remove padding around color pickers in webkit browsers
+
+::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+// 1. Change font properties to `inherit` in Safari.
+// 2. Correct the inability to style clickable types in iOS and Safari.
+
+::-webkit-file-upload-button {
+    font: inherit; // 1
+    -webkit-appearance: button; // 2
+}
+
+// Correct element displays
+
+output {
+    display: inline-block;
 }

@@ -7,7 +7,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs, print);
 // WIDTH
 
 .w-content {
-    max-width: $content-width !important;
+    max-width: var(--ks-content-width) !important;
 }
 
 @each $width in $widths {

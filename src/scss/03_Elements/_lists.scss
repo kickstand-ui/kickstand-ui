@@ -1,0 +1,28 @@
+@import '../00_Abstracts/index';
+
+ol,
+ul {
+    @include pl(xxl);
+}
+
+ol,
+ul,
+dl {
+    @include mt(none);
+    @include mb(lg);
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+    @include mb(none);
+}
+
+dt {
+}
+
+dd {
+    @include mb(sm);
+    @include ml(none);
+}

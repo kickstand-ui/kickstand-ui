@@ -13,7 +13,7 @@
                 @include border(solid, xxs, $color);
                 @include shadow(sm);
                 @include bg-color($color, 0.05);
-                color: color(dark);
+                @include color(dark);
             }
 
             &.note.#{$color} {
@@ -27,6 +27,7 @@
             display: flex;
             justify-content: space-between;
             @include mb(lg);
+            @include color(dark);
 
             .alert-heading {
                 font-weight: bold;

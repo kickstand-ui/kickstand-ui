@@ -2,15 +2,15 @@
 @import 'color-contrast';
 
 @function get-colors() {
-    $result: $theme-colors;
+    $result: $colors;
 
-    @if not map-has-key($map: $theme-colors, $key: 'light') {
-        $light: lighten(mix(map-get($theme-colors, 'primary'), grayscale(map-get($theme-colors, 'primary')), $light-saturation), $light-lightness);
+    @if not map-has-key($map: $colors, $key: 'light') {
+        $light: lighten(mix(map-get($colors, 'primary'), grayscale(map-get($colors, 'primary')), $light-saturation), $light-lightness);
         $result: map-merge($result, ('light': $light));
     }
 
-    @if not map-has-key($map: $theme-colors, $key: 'dark') {
-        $dark: darken(mix(map-get($theme-colors, 'primary'), grayscale(map-get($theme-colors, 'primary')), $dark-saturation), $dark-darkness);
+    @if not map-has-key($map: $colors, $key: 'dark') {
+        $dark: darken(mix(map-get($colors, 'primary'), grayscale(map-get($colors, 'primary')), $dark-saturation), $dark-darkness);
         $result: map-merge($result, ('dark': $dark));
     }
 
@@ -27,10 +27,8 @@
         $group: ($key: ('base': $value,
                     'light': lighten($value, $color-variation),
                     'lighter': lighten($value, $color-variation * 2),
-                    'lightest': lighten($value, $color-variation * 3),
                     'dark': darken($value, $color-variation),
-                    'darker': darken($value, $color-variation * 2),
-                    'darkest': darken($value, $color-variation * 3)));
+                    'darker': darken($value, $color-variation * 2)));
 
         $result: map-merge($result, $group);
     }
@@ -132,5 +130,41 @@ $color-pallette: build-pallet();
 
     @else {
         @return color($color, $variant, $opacity);
+    }
+}
+
+@function getRGB($color) {
+    @return red($color),
+    green($color),
+    blue($color);
+}
+
+@function color-value($name: 'primary', $variant: 'base', $opacity: 1, $important: false) {
+    @if(type-of($variant)=='number') {
+        $opacity: $variant;
+        $variant: 'base';
+    }
+
+    @if($important) {
+        @return rgba(var(--ks-color-#{$name}-#{$variant}), $opacity) !important;
+    }
+
+    @else {
+        @return rgba(var(--ks-color-#{$name}-#{$variant}), $opacity);
+    }
+}
+
+@function text-color-value($name: 'primary', $variant: 'base', $opacity: 1, $important: false) {
+    @if(type-of($variant)=='number') {
+        $opacity: $variant;
+        $variant: 'base';
+    }
+
+    @if($important) {
+        @return rgba(var(--ks-color-#{$name}-#{$variant}-text), $opacity) !important;
+    }
+
+    @else {
+        @return rgba(var(--ks-color-#{$name}-#{$variant}-text), $opacity);
     }
 }

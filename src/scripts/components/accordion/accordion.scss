@@ -18,28 +18,28 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            color: color(primary);
             font-weight: bold;
             background-color: white;
+            @include color(primary);
             @include font-size(sm);
             @include border($size: xxs, $color: primary);
             @include px(lg);
 
             .accordion-icon {
-                color: color(primary);
                 line-height: 1;
+                @include color(primary);
                 @include font-size(md);
-                @include transition-ease-in-out(med);
+                @include transition($speed: med);
             }
 
             &:focus {
-                @include outline();
+                @include default-outline();
             }
 
             &[aria-expanded="true"] {
                 .accordion-icon {
                     transform: rotate(-180deg);
-                    @include transition-ease-in-out(med);
+                    @include transition($speed: med);
                 }
             }
         }
@@ -47,7 +47,7 @@
         .accordion-content {
             max-height: 0;
             overflow: hidden;
-            @include transition-ease-in-out(med);
+            @include transition($speed: med);
             @include px(lg);
             @include border-x($size: xxs, $color: primary);
 

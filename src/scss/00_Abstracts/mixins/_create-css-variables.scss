@@ -1,0 +1,51 @@
+@import '../variables';
+
+@mixin create-css-variables() {
+    :root {
+        --ks-content-width: #{$content-width};
+        --ks-font-size-base: #{$font-size-base};
+        --ks-line-height-base: #{$line-height-base};
+        --ks-default-outline: #{default-outline(style) var(--ks-spacing-size-#{default-outline(size)}) rgba(var(--ks-color-#{default-outline(color)}-base), 1)};
+        --ks-default-outline-offset: var(--ks-spacing-size-#{default-outline(offset)});
+        --ks-default-border: #{default-border(style) spacing(default-border(size)) default-border(color)};
+
+        @each $key, $value in $fonts {
+            --ks-font-#{$key}: #{$value};
+        }
+
+        @each $key, $value in $font-sizes {
+            --ks-font-size-#{$key}: #{$value};
+        }
+
+        @each $key, $value in $spacing-sizes {
+            --ks-spacing-size-#{$key}: #{$value};
+        }
+
+        @each $key in (xl, lg, md, sm, xs, xxs) {
+            --ks-media-query-#{$key}: #{map-get($media-queries, $key)};
+        }
+
+        @each $key, $value in $z-indexes {
+            --ks-z-index-#{$key}: #{$value};
+        }
+
+        @each $key, $variations in build-pallet() {
+            @each $variant, $color in $variations {
+                --ks-color-#{$key}-#{$variant}: #{getRGB($color)};
+                --ks-color-#{$key}-#{$variant}-text: #{getRGB(text-color($key, $variant))};
+            }
+        }
+
+        @each $key, $value in $border-radiuses {
+            --ks-border-radius-#{$key}: #{$value};
+        }
+
+        @each $key, $value in $shadows {
+            --ks-shadow-#{$key}: #{$value};
+        }
+
+        @each $key, $value in $transitions {
+            --ks-transition-#{$key}: #{$value};
+        }
+    }
+}

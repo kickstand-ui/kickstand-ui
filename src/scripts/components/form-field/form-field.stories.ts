@@ -137,9 +137,9 @@ export const checkbox = () => {
 export const radio = () => {
     return (`
     <div class="m-xxl">
-        <ks-radio />
-        <ks-radio />
-        <ks-radio />
+        <ks-radio label="Radio 1"></ks-radio>
+        <ks-radio label="Radio 2"></ks-radio>
+        <ks-radio label="Radio 3"></ks-radio>
     </div>
     `)
 }

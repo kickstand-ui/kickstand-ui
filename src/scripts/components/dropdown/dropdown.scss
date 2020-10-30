@@ -24,13 +24,13 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
             .dropdown-icon {
                 line-height: 1;
                 @include ml(xs);
-                @include transition-ease-in-out(med);
+                @include transition($speed: med);
             }    
         }
         
         &[aria-expanded="true"] .dropdown-icon {
             transform: rotate(-180deg);
-            @include transition-ease-in-out(med);
+            @include transition($speed: med);
         }
     }
 
@@ -44,12 +44,12 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         white-space: nowrap;
         width: auto;
         overflow-x: scroll;
-        transform: translateY(-0.5rem);
+        transform: translateY(-0.25rem);
         @include border();
         @include z-index(xs);
         @include bg-color(white);
         @include p(sm);
-        @include transition-ease-in-out(fast);
+        @include transition($speed: fast);
 
         &.collapse {
             @each $key, $value in $breakpoints {
@@ -69,9 +69,9 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                 text-align: left;
                 text-decoration: none;
                 display: block;
-                color: color(primary);
                 width: 100%;
                 font-weight: normal;
+                @include color(primary);
                 @include font-size(sm);
                 @include px(lg);
                 @include py(md);
@@ -80,7 +80,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
             a,
             button {
                 @include hover-focus {
-                    background-color: color(light, lighter);
+                    background-color: color-value(light, lighter);
                 }
             }
         }
@@ -113,7 +113,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         @include px(sm);
         @include py(none);
         @include m(none);
-        @include transition-ease-in-out(fast);
+        @include transition();
     }
 
     &.show {
@@ -122,7 +122,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
             opacity: 1;
             transform: translateY(0rem);
             @include shadow(sm);
-            @include transition-ease-in-out(fast);
+            @include transition();
         }
 
         .dropdown-contents {
