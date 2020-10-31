@@ -54,9 +54,9 @@
             white-space: nowrap;
             max-height: 0;
             overflow: hidden;
+            background-color: white;
             @include z-index(xs);
             @include shadow(sm);
-            @include bg-color(white);
             @include p(none);
             @include m(none);
             @include transition();

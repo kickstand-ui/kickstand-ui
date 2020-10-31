@@ -15,7 +15,7 @@ body {
     scroll-behavior: smooth;
     font-size: var(--ks-font-size-base);
     line-height: var(--ks-line-height-base);
-    background-color: color(white);
+    background-color: white;
     -webkit-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // Change the default tap highlight to be completely transparent in iOS.
     @include color(dark);

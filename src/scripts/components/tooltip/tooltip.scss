@@ -28,11 +28,11 @@
             font-weight: normal;
             position: absolute;
             opacity: 0;
+            background-color: white;
             @include p(md);
             @include z-index(sm);
             @include transition();
             @include shadow(sm);
-            @include bg-color(white);
             @include border();
 
             &::before {
