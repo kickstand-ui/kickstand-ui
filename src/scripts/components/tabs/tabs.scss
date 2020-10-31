@@ -35,8 +35,8 @@
             }
 
             &[aria-selected="true"] {
+                background-color: white;
                 @include border();
-                @include bg-color(white);
                 @include color(primary);
                 @include shadow(sm);
                 @include m(-xxxs);
@@ -47,8 +47,8 @@
     .tab-panel {
         width: 100%;
         white-space: normal;
+        background-color: white;
         @include border();
-        @include bg-color(white);
         @include p(lg);
     }
 
