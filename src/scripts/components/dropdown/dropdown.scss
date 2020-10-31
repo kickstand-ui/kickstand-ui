@@ -106,7 +106,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         max-width: 100%;
         min-width: 200px;
         overflow-y: auto;
-        transform: translateY(-0.5rem);
+        transform: translateY(-0.25rem);
         @include border();
         @include z-index(xs);
         @include bg-color(white);
