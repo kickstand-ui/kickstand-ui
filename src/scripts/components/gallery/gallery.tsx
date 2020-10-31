@@ -88,10 +88,10 @@ export class Gallery implements ComponentInterface {
                     <h2 class="heading">{this.src ? <a href={this.src}>{this.heading}</a> : this.heading}</h2>
                     <div class="controls">
                         <ks-button class="scroll-left" size="xs" display="clear" disabled={this.isStart} onClick={() => this.scrollLeft()}>
-                            <ks-icon class="text-lg" icon="chevron_left" rotate="90"></ks-icon>
+                            <ks-icon class="text-lg" icon="chevron_left"></ks-icon>
                         </ks-button>
                         <ks-button class="scroll-right" size="xs" display="clear" disabled={this.isEnd} onClick={() => this.scrollRight()}>
-                            <ks-icon class="text-lg" icon="chevron_right" rotate="-90"></ks-icon>
+                            <ks-icon class="text-lg" icon="chevron_right"></ks-icon>
                         </ks-button>
                     </div>
                 </header>
