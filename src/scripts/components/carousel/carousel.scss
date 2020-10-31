@@ -20,13 +20,13 @@
                 backface-visibility: hidden;
                 visibility: hidden;
                 opacity: 0;
-                @include transition($speed: slow);
+                @include transition($speed: slow, $timing-function: ease);
 
                 &[aria-hidden="false"] {
                     visibility: visible;
                     display: block;
                     opacity: 1;
-                    @include transition($speed: slow);
+                    @include transition($speed: slow, $timing-function: ease);
                 }
 
                 &.pointer {
