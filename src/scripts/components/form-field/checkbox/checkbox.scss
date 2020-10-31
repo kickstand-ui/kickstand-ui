@@ -3,9 +3,12 @@
 .ks-checkbox {
     user-select: none;
     cursor: pointer;
+    height: 2rem;
 
     &:focus-within {
-        @include default-outline();
+        .checkbox-label {
+            @include default-outline();
+        }
     }
 
     .checkbox-input {
