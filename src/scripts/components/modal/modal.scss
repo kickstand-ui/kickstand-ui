@@ -1,75 +1,77 @@
 @import "../../../scss/00_Abstracts/index";
 
-.ks-overlay {
-    .content {
-        transform: scale(0.95);
+.ks-modal {
+    .ks-overlay {
+        .content {
+            transform: scale(0.95);
 
-        .ks-modal {
-            max-width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            background-color: white;
-            @include p(lg);
-            @include transition();
+            .modal-wrapper {
+                max-width: 100%;
+                max-height: 90vh;
+                overflow-y: auto;
+                background-color: white;
+                @include p(lg);
+                @include transition();
 
-            .modal-header {
-                display: flex;
-                justify-content: space-between;
-                align-content: flex-start;
-                @include border-b();
-                @include mb(md);
+                .modal-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-content: flex-start;
+                    @include border-b();
+                    @include mb(md);
 
-                .modal-title {
-                    @include color(dark);
-                }
+                    .modal-title {
+                        @include color(dark);
+                    }
 
-                .modal-close {
-                    @include mt(xxs);
+                    .modal-close {
+                        @include mt(xxs);
 
-                    .ks-button {
-                        @include p(none);
+                        .ks-button {
+                            @include p(none);
 
-                        .button-text {
-                            display: inline-flex;
-                        }
+                            .button-text {
+                                display: inline-flex;
+                            }
 
-                        .icon {
-                            @include font-size(lg);
+                            .icon {
+                                @include font-size(lg);
+                            }
                         }
                     }
                 }
-            }
 
-            &.size {
-                &-sm {
-                    width: 300px;
+                &.size {
+                    &-sm {
+                        width: 300px;
+                    }
+
+                    &-md {
+                        width: 500px;
+                    }
+
+                    &-lg {
+                        width: 800px;
+                    }
                 }
 
-                &-md {
-                    width: 500px;
-                }
-
-                &-lg {
-                    width: 800px;
-                }
-            }
-
-            .modal-content {
-                .modal-footer {
-                    display: flex;
-                    justify-content: flex-end;
-                    @include mt(md);
+                .modal-content {
+                    .modal-footer {
+                        display: flex;
+                        justify-content: flex-end;
+                        @include mt(md);
+                    }
                 }
             }
         }
-    }
 
-    &.opened {
-        .content {
-            transform: scale(1);
+        &.opened {
+            .content {
+                transform: scale(1);
 
-            .ks-modal {
-                @include transition();
+                .modal-wrapper {
+                    @include transition();
+                }
             }
         }
     }
