@@ -6,10 +6,11 @@ ks-icon {
     display: inline-block;
 
     .icon {
+        margin: -0.25em;
         display: inline-block;
         font-size: inherit;
-        height: 1em;
-        width: 1em;
+        height: 1.5em;
+        width: 1.5em;
         overflow: visible;
         vertical-align: -0.125em;
     }
