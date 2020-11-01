@@ -36,6 +36,37 @@ export const playground = () => {
         </ks-button>`);
 };
 
+export const iconButton = () => {
+    const color = select('color', colors, 'primary');
+    const display = select('display', displays, 'solid');
+    const loading = boolean('loading', false);
+    const disabled = boolean('disabled', false);
+    const size = select('size', sizes, 'md');
+    const icon = text('icon', 'info');
+    const iconDirection = select('icon-direction', iconDirections, 'left');
+    const linkUrl = text('href', '');
+    const target = text('target', '');
+    const cssClass = text('css-class', '');
+    const css2class = text('class', '');
+    return (`<ks-button
+            class="${css2class}"
+            css-class="${cssClass}" 
+            class="m-md"
+            color="${color}" 
+            display="${display}" 
+            size="${size}" 
+            icon="${icon}"
+            icon-direction="${iconDirection}"
+            href="${linkUrl}"
+            loading="${loading}"
+            disabled="${disabled}"
+            target="${target}"
+            hide-text
+            >
+            ${color} button
+        </ks-button>`);
+};
+
 export const buttonColors = () => {
     const display = select('display', displays, 'solid');
     const size = select('size', sizes, 'md');
