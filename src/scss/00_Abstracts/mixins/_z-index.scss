@@ -2,9 +2,9 @@
 
 @mixin z-index($size, $important: false) {
     @if ($important == true) {
-        z-index: --ks-z-index-#{$size} !important;
+        z-index: var(--ks-z-index-#{$size}) !important;
     }
     @else {
-        z-index: --ks-z-index-#{$size};
+        z-index: var(--ks-z-index-#{$size});
     }
 }
