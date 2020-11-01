@@ -2,9 +2,10 @@
 @import 'colors';
 
 @function default-outline($setting) {
-    @if map-has-key($outline, $setting) {
-        @return map-get($outline, $setting);
-    } 
+    @if map-has-key($default-outline, $setting) {
+        @return map-get($default-outline, $setting);
+    }
+
     @else {
         @error "Invalid default outline value: '#{$setting}'.";
     }

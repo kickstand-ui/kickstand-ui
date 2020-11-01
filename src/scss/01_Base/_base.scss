@@ -1,23 +1,24 @@
 @import "../00_Abstracts/index";
 
+@include create-css-variables();
+
 * {
     box-sizing: border-box;
 
     &:focus {
-        @include outline();
+        @include default-outline();
     }
 }
 
 html,
 body {
     scroll-behavior: smooth;
-    font-size: $font-size-base;
-    line-height: $line-height-base;
-    color: color(dark);
+    font-size: var(--ks-font-size-base);
+    line-height: var(--ks-line-height-base);
+    background-color: white;
+    -webkit-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // Change the default tap highlight to be completely transparent in iOS.
+    @include color(dark);
     @include font(base);
-
-    code,
-    pre {
-        @include font(monospace);
-    }
+    @include m(none);
 }

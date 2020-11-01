@@ -1,0 +1,40 @@
+@import '../00_Abstracts/index';
+
+main {
+    max-width: var(--ks-content-width);
+}
+
+// Reset to align with border style
+hr {
+    color: default-border(color);
+    background-color: currentColor;
+    border: 0;
+}
+
+p {
+    @include mt(none);
+    @include mb(md);
+}    
+
+summary {
+    display: list-item; // Add the correct display in all browsers
+    cursor: pointer;
+}
+
+template {
+    display: none; // IE 11 Fix
+}
+
+main {
+    display: block; // IE 11 Fix
+}
+
+address {
+    font-style: normal;
+    line-height: inherit;
+    @include mb(md);
+}
+
+blockquote {
+    margin: 0 0 1rem;
+}

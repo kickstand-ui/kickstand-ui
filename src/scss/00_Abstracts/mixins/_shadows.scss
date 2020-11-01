@@ -1,15 +1,11 @@
 @import '../variables';
-    
-    @mixin shadow($size: sm, $important: false) {
-        @if map-has-key($shadows, $size) {
-            @if($important == true) {
-                box-shadow: unquote(map-get($shadows, $size)) !important;
-            } @else {
-                box-shadow: unquote(map-get($shadows, $size));
-            }
-        } 
-        @else {
-            @error "Invalid shadow size: '#{$size}'.";
-        }
-    }    
-    
+
+@mixin shadow($size: sm, $important: false) {
+    @if($important==true) {
+        box-shadow: var(--ks-shadow-#{$size}) !important;
+    }
+
+    @else {
+        box-shadow: var(--ks-shadow-#{$size});
+    }
+}

@@ -1,79 +1,90 @@
 @import '../variables';
-    
-    @mixin radius($size, $important: false) {
-        @include radius-t($size, $important);
-        @include radius-b($size, $important);
-    }
-    
-    @mixin radius-t($size, $important: false) {
-        @include radius-tl($size, $important);
-        @include radius-tr($size, $important);
-    }
-    
-    @mixin radius-b($size, $important: false) {
-        @include radius-bl($size, $important);
-        @include radius-br($size, $important);
-    }
-    
-    @mixin radius-l($size, $important: false) {
-        @include radius-tl($size, $important);
-        @include radius-bl($size, $important);
-    }
-    
-    @mixin radius-r($size, $important: false) {
-        @include radius-tr($size, $important);
-        @include radius-br($size, $important);
-    }
-    
-    @mixin radius-tl($size, $important: false) {
-        @if map-has-key($border-radiuses, $size) {
-            @if($important == true) {
-                border-top-left-radius: map-get($border-radiuses, $size) !important;
-            } @else {
-                border-top-left-radius: map-get($border-radiuses, $size);
-            }
-        } 
+
+@mixin radius($size, $important: false) {
+    @include radius-t($size, $important);
+    @include radius-b($size, $important);
+}
+
+@mixin radius-t($size, $important: false) {
+    @include radius-tl($size, $important);
+    @include radius-tr($size, $important);
+}
+
+@mixin radius-b($size, $important: false) {
+    @include radius-bl($size, $important);
+    @include radius-br($size, $important);
+}
+
+@mixin radius-l($size, $important: false) {
+    @include radius-tl($size, $important);
+    @include radius-bl($size, $important);
+}
+
+@mixin radius-r($size, $important: false) {
+    @include radius-tr($size, $important);
+    @include radius-br($size, $important);
+}
+
+@mixin radius-tl($size, $important: false) {
+    @if map-has-key($border-radiuses, $size) {
+        @if($important==true) {
+            border-top-left-radius: var(--ks-border-radius-#{$size}) !important;
+        }
+
         @else {
-            @error "Invalid border-radius size: '#{$size}'.";
+            border-top-left-radius: var(--ks-border-radius-#{$size});
         }
     }
-    
-    @mixin radius-tr($size, $important: false) {
-        @if map-has-key($border-radiuses, $size) {
-            @if($important == true) {
-                border-top-right-radius: map-get($border-radiuses, $size) !important;
-            } @else {
-                border-top-right-radius: map-get($border-radiuses, $size);
-            }
-        } 
+
+    @else {
+        @error "Invalid border-radius size: '#{$size}'.";
+    }
+}
+
+@mixin radius-tr($size, $important: false) {
+    @if map-has-key($border-radiuses, $size) {
+        @if($important==true) {
+            border-top-right-radius: var(--ks-border-radius-#{$size}) !important;
+        }
+
         @else {
-            @error "Invalid border-radius size: '#{$size}'.";
+            border-top-right-radius: var(--ks-border-radius-#{$size});
         }
     }
-    
-    @mixin radius-bl($size, $important: false) {
-        @if map-has-key($border-radiuses, $size) {
-            @if($important == true) {
-                border-bottom-left-radius: map-get($border-radiuses, $size) !important;
-            } @else {
-                border-bottom-left-radius: map-get($border-radiuses, $size);
-            }
-        } 
+
+    @else {
+        @error "Invalid border-radius size: '#{$size}'.";
+    }
+}
+
+@mixin radius-bl($size, $important: false) {
+    @if map-has-key($border-radiuses, $size) {
+        @if($important==true) {
+            border-bottom-left-radius: var(--ks-border-radius-#{$size}) !important;
+        }
+
         @else {
-            @error "Invalid border-radius size: '#{$size}'.";
+            border-bottom-left-radius: var(--ks-border-radius-#{$size});
         }
     }
-    
-    @mixin radius-br($size, $important: false) {
-        @if map-has-key($border-radiuses, $size) {
-            @if($important == true) {
-                border-bottom-right-radius: map-get($border-radiuses, $size) !important;
-            } @else {
-                border-bottom-right-radius: map-get($border-radiuses, $size);
-            }
-        } 
-        @else {
-            @error "Invalid border-radius size: '#{$size}'.";
+
+    @else {
+        @error "Invalid border-radius size: '#{$size}'.";
+    }
+}
+
+@mixin radius-br($size, $important: false) {
+    @if map-has-key($border-radiuses, $size) {
+        @if($important==true) {
+            border-bottom-right-radius: var(--ks-border-radius-#{$size}) !important;
         }
-    }    
-    
+
+        @else {
+            border-bottom-right-radius: var(--ks-border-radius-#{$size});
+        }
+    }
+
+    @else {
+        @error "Invalid border-radius size: '#{$size}'.";
+    }
+}

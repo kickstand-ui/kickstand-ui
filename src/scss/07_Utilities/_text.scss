@@ -20,7 +20,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs, print);
                 xl:text-xl
             */
                 .#{$mq}\:text-#{$key} {
-                    @include screen-reader-only;
+                    @include font-size($key, true);
                 }
             }
         }

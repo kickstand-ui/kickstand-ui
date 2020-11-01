@@ -7,7 +7,7 @@ import { Component, h, Prop, Element, ComponentInterface, Host } from '@stencil/
 export class Loading implements ComponentInterface {
     @Element() $el: HTMLElement;
 
-    @Prop() icon: string = 'ring_spinner';
+    @Prop() icon: string = 'circle_spinner';
     @Prop() message: string = 'Loading...';
     @Prop() showMessage: boolean = false;
 

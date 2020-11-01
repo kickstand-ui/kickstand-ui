@@ -1,5 +1,15 @@
 @import '../functions/borders';
 
+@mixin default-outline($important: false) {
+    @if($important == true) {
+        outline: var(--ks-default-outline) !important;
+        outline-offset: var(--ks-default-outline-offset) !important;
+    } @else {
+        outline: var(--ks-default-outline);
+        outline-offset: var(--ks-default-outline-offset);
+    }
+}
+
 @mixin outline($style: default-outline(style), $size: default-outline(size), $offset: default-outline(offset), $color: default-outline(color), $variant: base, $opacity: 1, $important: false) {
     @if($important == true) {
         outline: $style spacing($size) split-color-list($color, $variant, $opacity) !important;

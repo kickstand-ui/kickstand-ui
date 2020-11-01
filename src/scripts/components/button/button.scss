@@ -19,7 +19,7 @@ ks-button {
     overflow: hidden;
     @include p(md);
     @include shadow(xs);
-    @include transition-ease-in-out(fast);
+    @include transition($property: box-shadow);
 
     &:before {
         content: "";
@@ -47,7 +47,7 @@ ks-button {
     &:focus,
     &:hover:not(:disabled) {
         @include shadow(md);
-        @include transition-ease-in-out(fast);
+        @include transition($property: box-shadow);
     }
 
     &:active:not(:disabled) {
@@ -64,31 +64,31 @@ ks-button {
     @each $color, $value in get-colors() {
         &.#{$color} {
             &.solid {
-                background-color: color($color);
+                background-color: color-value($color);
                 background-image: linear-gradient(
                     0deg,
-                    color($color) 0%,
-                    color($color, lighter) 100%
+                    color-value($color) 0%,
+                    color-value($color, lighter) 100%
                 );
-                color: text-color($color, dark);
-                text-shadow: 2px 2px 4px color($color, dark);
+                color: text-color-value($color, dark);
+                text-shadow: 2px 2px 4px color-value($color, dark);
                 @include border(solid, xxs, $color, light);
                 @include border-b(solid, xxs, $color);
                 border-image-slice: 2;
                 border-image-source: linear-gradient(
                     0deg,
-                    color($color) 0%,
-                    color($color, lighter) 100%
+                    color-value($color) 0%,
+                    color-value($color, lighter) 100%
                 );
 
                 .icon {
-                    filter: drop-shadow(0 0 0.15rem color($color, darker));
+                    filter: drop-shadow(0 0 0.15rem color-value($color, darker));
                 }            
             }
 
             &.hollow {
                 background-color: transparent;
-                color: color($color);
+                @include color($color);
                 @include border(solid, xxs, $color);
 
                 &:focus,
@@ -100,32 +100,33 @@ ks-button {
             &.clear {
                 border-color: transparent;
                 background-color: transparent;
-                color: color($color);
+                color: color-value($color);
                 @include shadow(none);
-                @include transition-ease-in-out(fast);
+                @include transition(text-shadow);
 
                 &:focus,
                 &:hover:not(:disabled) {
                     border-color: transparent;
                     background-color: transparent;
-                    text-shadow: 2px 2px 4px color(dark, 0.25);
+                    text-shadow: 2px 2px 4px color-value(dark, 0.25);
+                    @include transition(text-shadow);
                 }
             }
 
             &.link {
                 background-color: transparent;
                 display: inline-block;
-                color: color($color);
                 text-decoration: none;
                 border: 0;
+                @include color($color);
                 @include p(none);
                 @include shadow(none);
 
                 &:focus,
                 &:hover:not(:disabled) {
                     background-color: transparent;
-                    color: color($color, light);
                     text-decoration: underline;
+                    @include color($color, light);
                     @include shadow(none);
                 }
             }

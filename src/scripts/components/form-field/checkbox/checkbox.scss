@@ -3,9 +3,12 @@
 .ks-checkbox {
     user-select: none;
     cursor: pointer;
+    height: 2rem;
 
     &:focus-within {
-        @include outline();
+        .checkbox-label {
+            @include default-outline();
+        }
     }
 
     .checkbox-input {
@@ -13,8 +16,8 @@
 
         &:checked+.checkbox-label {
             .checkbox-icon {
-                background: color(primary);
-                border-color: color(primary);
+                background: color-value(primary);
+                border-color: color-value(primary);
 
                 svg {
                     stroke-dashoffset: 0;
@@ -22,7 +25,7 @@
 
                 &:before {
                     opacity: 0;
-                    @include transition-ease-in-out();
+                    @include transition();
                 }
             }
         }
@@ -30,7 +33,7 @@
 
     .checkbox-label {
         &:hover {
-            border-color: color(primary);
+            border-color: color-value(primary);
             cursor: pointer;
         }
 
@@ -43,22 +46,22 @@
             height: 1.125em;
             transform: scale(1);
             vertical-align: middle;
-            border: 0.125em solid color(dark);
+            border: 0.125em solid color-value(dark);
             background-color: white;
-            @include transition-ease-in-out();
+            @include transition();
 
             svg {
                 position: absolute;
                 top: 0.09375em;
                 left: 0.0625em;
                 fill: none;
-                stroke: #FFFFFF;
+                stroke: white;
                 stroke-width: 2;
                 stroke-dasharray: 1em;
                 stroke-dashoffset: 1em;
                 transition-delay: .1s;
                 transform: translate3d(0, 0, 0);
-                @include transition-ease-in-out();
+                @include transition();
             }
 
             &:before {

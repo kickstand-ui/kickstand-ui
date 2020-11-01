@@ -3,7 +3,7 @@
 .animate {
     @each $key, $value in $transitions {
         &-#{$key} {
-            @include transition-ease-in-out($key);
+            @include transition($key);
         }
     }
 }

@@ -19,10 +19,10 @@
         .tab-item {
             text-decoration: none;
             white-space: nowrap;
-            color: color(primary);
             background-color: transparent;
             vertical-align: inherit;
             border: 0;
+            @include color(primary);
             @include px(lg);
             @include py(md);
 
@@ -31,15 +31,13 @@
             }
 
             :focus {
-                // outline: spacing(xxxs) dashed color(dark);
-                // outline-offset: spacing(xxs);
-                @include outline();
+                @include default-outline();
             }
 
             &[aria-selected="true"] {
+                background-color: white;
                 @include border();
-                @include bg-color(white);
-                color: color(primary);
+                @include color(primary);
                 @include shadow(sm);
                 @include m(-xxxs);
             }
@@ -49,8 +47,8 @@
     .tab-panel {
         width: 100%;
         white-space: normal;
+        background-color: white;
         @include border();
-        @include bg-color(white);
         @include p(lg);
     }
 

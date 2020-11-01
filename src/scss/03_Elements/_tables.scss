@@ -1,5 +1,21 @@
 @import "../00_Abstracts/index";
 
+// Prevent double borders
+table {
+    border-collapse: collapse;
+}
+
+caption {
+    text-align: left;
+    caption-side: bottom;
+}
+
+// Matches default `<td>` alignment by inheriting from the `<body>`, or the
+// closest parent with a set `text-align`.
+th {
+    text-align: inherit;
+}
+
 .table {
     width: 100%;
     border-collapse: collapse;

@@ -29,8 +29,8 @@
         }
 
         .help-text {
-            color: color(dark, light);
             font-weight: normal;
+            @include color(dark, light);
             @include font-size(xs);
         }
 
@@ -66,8 +66,8 @@
                 cursor: pointer;
                 width: 100%;
                 height: 0.75rem;
-                background: color(primary);
-                border-radius: 0;
+                background: color-value(primary);
+                @include radius(none);
                 @include shadow(xs);
                 @include border($color: dark);
             }
@@ -76,9 +76,9 @@
                 cursor: pointer;
                 height: 1.5rem;
                 width: 1.5rem;
-                border-radius: 1rem;
                 background: white;
                 -webkit-appearance: none;
+                @include radius(xl);
                 @include mt(-sm);
                 @include shadow(sm);
                 @include border($color: dark);
@@ -88,8 +88,8 @@
                 cursor: pointer;
                 width: 100%;
                 height: 0.75rem;
-                background: color(primary);
-                border-radius: 0;
+                background: color-value(primary);
+                @include radius(none);
                 @include shadow(xs);
                 @include border($color: dark);
             }
@@ -98,8 +98,8 @@
                 cursor: pointer;
                 height: 1.5rem;
                 width: 1.5rem;
-                border-radius: 1rem;
                 background: white;
+                @include radius(xl);
                 @include shadow(sm);
                 @include border($color: dark);
             }
@@ -114,14 +114,14 @@
 
             &::-ms-fill-lower {
                 background: color(primary);
-                border-radius: 1rem;
+                @include radius(xl);
                 @include border($color: dark);
                 @include shadow(xs);
             }
 
             &::-ms-fill-upper {
                 background: color(primary);
-                border-radius: 1rem;
+                @include radius(xl);
                 @include border($color: dark);
                 @include shadow(xs);
             }
@@ -130,8 +130,8 @@
                 cursor: pointer;
                 height: 1.5rem;
                 width: 1.5rem;
-                border-radius: 1rem;
                 background: white;
+                @include radius(xl);
                 @include mt(xxxs);
                 @include shadow(sm);
                 @include border($color: dark);
@@ -139,15 +139,15 @@
 
             &:focus {
                 &::-webkit-slider-runnable-track {
-                    background: color(primary);
+                    background: color-value(primary);
                 }
 
                 &::-ms-fill-lower {
-                    background: color(primary);
+                    background: color-value(primary);
                 }
 
                 &::-ms-fill-upper {
-                    background: color(primary);
+                    background: color-value(primary);
                 }
             }
         }
@@ -160,8 +160,8 @@
 
         &::placeholder {
             opacity: 0.7;
-            color: color(dark, lighter);
             font-style: italic;
+            @include color(dark, lighter);
         }
 
         &[aria-invalid="true"] {
@@ -179,7 +179,7 @@
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
-            border-radius: 0;
+            @include radius(none);
         }
 
         .select-icon {

@@ -15,9 +15,9 @@ $drawer-sizes: (
     bottom: 0;
     overflow-x: hidden;
     overflow-y: auto;
+    background-color: white;
     @include p(lg);
-    @include bg-color(white);
-    @include transition-ease-in-out(med);
+    @include transition($speed: med);
 
     @each $direction in (left, right) {
         &.#{$direction} {
@@ -43,6 +43,7 @@ $drawer-sizes: (
         align-content: center;
         @include border-b();
         @include font-size(lg);
+        @include color(dark);
 
         .drawer-close {
             @include mt(sm);

@@ -36,9 +36,11 @@ export class Autocomplete implements ComponentInterface {
         return this.validateField();
     }
 
-    connectedCallback() {
+    componentWillLoad() {
         this.$options = Array.from(this.$el.querySelectorAll('option')) as HTMLOptionElement[];
         this.$filteredOptions = this.$options;
+        console.log(this.$options);
+        
     }
 
     componentDidRender() {
@@ -67,7 +69,7 @@ export class Autocomplete implements ComponentInterface {
         return fieldData;
     }
 
-    private onKeyDownHandler(e: KeyboardEvent) {
+    private onKeyUpHandler(e: KeyboardEvent) {
         switch (e.keyCode) {
             case keyCodes.LEFT_ARROW:
             case keyCodes.RIGHT_ARROW:
@@ -215,7 +217,7 @@ export class Autocomplete implements ComponentInterface {
                         role="combobox"
                         id={this.inputId}
                         aria-expanded={`${this.isExpanded}`}
-                        onKeyDown={(e) => this.onKeyDownHandler(e)}
+                        onKeyUp={(e) => this.onKeyUpHandler(e)}
                         ref={e => this.$input = e}
                         {...props}
                     />

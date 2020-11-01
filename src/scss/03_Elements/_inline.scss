@@ -1,0 +1,61 @@
+@import '../00_Abstracts/index';
+
+// Add the correct font weight in Chrome, Edge, and Safari
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+
+// Add the correct font size in all browsers
+
+small {
+    @include font-size(xxs);
+}
+
+// Prevent `sub` and `sup` elements from affecting the line height in
+// all browsers.
+
+sub,
+sup {
+    position: relative;
+    line-height: 0;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -.25em;
+}
+
+sup {
+    top: -.5em;
+}
+
+
+// Links
+
+a {
+    color: color(primary);
+    text-decoration: underline;
+}
+
+// And undo these styles for placeholder links/named anchors (without href).
+// It would be more straightforward to just use a[href] in previous block, but that
+// causes specificity issues in many other styles that are too complex to fix.
+// See https://github.com/twbs/bootstrap/issues/19402
+
+a:not([href]) {
+    &,
+    &:hover {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+abbr[title] {
+    text-decoration: underline; // 2
+    text-decoration: underline dotted; // 2
+    cursor: help; // 3
+    text-decoration-skip-ink: none; // 4
+}

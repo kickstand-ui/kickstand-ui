@@ -25,7 +25,7 @@
             .alert-body {
                 display: flex;
                 align-items: center;
-                color: color(dark);
+                @include color(dark);
             }
         }
     }

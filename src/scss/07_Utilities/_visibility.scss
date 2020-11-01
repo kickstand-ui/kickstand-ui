@@ -1,5 +1,9 @@
 @import "../00_Abstracts/index";
 
+[hidden] {
+    display: none !important;
+}
+
 .sr-only {
     @include screen-reader-only();
 }

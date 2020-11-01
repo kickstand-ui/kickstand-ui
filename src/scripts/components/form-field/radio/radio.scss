@@ -2,6 +2,7 @@
 
 .ks-radio {
     display: block;
+    height: 2rem;
 
     &.inline {
         display: inline-block;
@@ -11,7 +12,7 @@
         display: inline-block;
 
         &:focus-within {
-            @include outline();
+            @include default-outline();
         }
 
         .radio-button {
@@ -20,7 +21,7 @@
             &:checked {
                 &+.radio-label {
                     &:before {
-                        border-color: color(primary);
+                        border-color: color-value(primary);
                     }
 
                     &:after {
@@ -45,15 +46,15 @@
                 content: '';
                 border-radius: 50%;
                 transition-property: transform, border-color;
-                @include transition-ease-in-out();
+                @include transition();
             }
 
             &:before {
                 left: 0;
-                top: 0.125em;
-                width: 1.25em;
-                height: 1.25em;
-                border: 2px solid color(dark);
+                top: 0.1em;
+                width: 1em;
+                height: 1em;
+                @include border($size: xxs, $color: dark);
             }
 
             &:after {
@@ -62,7 +63,7 @@
                 width: 0.625em;
                 height: 0.625em;
                 transform: scale(0);
-                background: color(primary);
+                background: color-value(primary);
             }
         }
     }

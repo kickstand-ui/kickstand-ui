@@ -20,20 +20,18 @@
                 backface-visibility: hidden;
                 visibility: hidden;
                 opacity: 0;
-                @include transition-ease-in-out(slow);
+                @include transition($speed: slow, $timing-function: ease);
 
                 &[aria-hidden="false"] {
                     visibility: visible;
                     display: block;
                     opacity: 1;
-                    @include transition-ease-in-out(slow);
+                    @include transition($speed: slow, $timing-function: ease);
                 }
 
                 &.pointer {
                     &:focus-within {
-                        // outline: spacing(xxxs) dashed color(dark);
-                        // outline-offset: spacing(xxs);
-                        @include outline();
+                        @include default-outline();
                     }
                 }
 
@@ -70,7 +68,7 @@
             top: 0;
             bottom: 0;
             width: 10%;
-            color: color(white);
+            color: white;
             background-color: transparent;
             border: none;
             display: flex;
@@ -96,7 +94,7 @@
             }
 
             svg {
-                filter: drop-shadow(0 0 0.25rem color(dark));
+                filter: drop-shadow(0 0 0.25rem color-value(dark));
             }
         }
 
@@ -128,11 +126,11 @@
                 height: spacing(lg);
                 width: 1.25rem;
                 background-color: transparent;
-                filter: drop-shadow(0 0 0.25rem color(dark));
+                filter: drop-shadow(0 0 0.25rem color-value(dark));
                 @include border(none);
                 @include border-b($size: xxs, $color: light, $variant: lighter, $opacity: 0.7);
                 @include mx(sm);
-                @include transition-ease-in-out(fast);
+                @include transition();
 
                 @include hover-focus {
                     outline: 0;
@@ -141,7 +139,7 @@
 
                 &[aria-selected="true"] {
                     @include border-b($size: xxs, $color: light, $variant: light);
-                    @include transition-ease-in-out(fast);
+                    @include transition();
                 }
             }
         }
@@ -157,13 +155,13 @@
             @include border(none);
             @include p(none);
             @include m(none);
-            @include transition-ease-in-out(fast);
+            @include transition();
 
             &:hover {
                 outline: 0;
                 opacity: 0.80;
                 @include shadow(xs);
-                @include transition-ease-in-out(fast);
+                @include transition();
             }
 
             &:focus {
@@ -173,7 +171,7 @@
             &[aria-selected="true"] {
                 opacity: 0.95;
                 @include shadow(xs);
-                @include transition-ease-in-out(fast);
+                @include transition();
             }
         }
 

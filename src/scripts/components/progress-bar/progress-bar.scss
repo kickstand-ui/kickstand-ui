@@ -30,7 +30,7 @@ $sizes: (xs, sm, md, lg);
         .value {
             display: block;
             height: 100%;
-            @include transition-ease-in-out();
+            @include transition(width);
 
             @each $key, $value in get-colors() {
                 &.#{$key} {

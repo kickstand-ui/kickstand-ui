@@ -152,21 +152,21 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
             @include bg-color($key);
 
             .menu-branding {
-                color: text-color($key);
+                color: text-color-value($key);
 
                 &:focus {
-                    @include outline();
-                    outline-color: text-color($key);
+                    @include default-outline();
+                    outline-color: text-color-value($key);
                 }
             }
 
             .menu-toggler {
                 color: text-color($key);
-                @include border($color: text-color($key));
+                @include border($color: $key);
 
                 &:focus {
-                    @include outline();
-                    outline-color: text-color($key);
+                    @include default-outline();
+                    outline-color: text-color-value($key);
                 }
             }
 
@@ -174,22 +174,22 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                 .menu-row {
                     .menu-item {
                         >* {
-                            color: text-color($key);
+                            color: text-color-value($key);
 
                             &:focus {
-                                @include outline();
-                                outline-color: text-color($key);
+                                @include default-outline();
+                                outline-color: text-color-value($key);
                             }
                         }
 
                         .ks-dropdown {
                             .dropdown-button {
                                 &.link {
-                                    color: text-color($key);
+                                    color: text-color-value($key);
 
                                     &:focus {
-                                        @include outline();
-                                        outline-color: text-color($key);
+                                        @include default-outline();
+                                        outline-color: text-color-value($key);
                                     }
                                 }
                             }
@@ -206,25 +206,25 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                     color: color($key);
 
                     &:focus {
-                        @include outline();
-                        outline-color: text-color($key);
+                        @include default-outline();
+                        outline-color: text-color-value($key);
                     }
                 }
 
                 .menu-toggler {
-                    color: color($key);
-                    border-color: color($key);
+                    border-color: color-value($key);
+                    @include color($key);
                 }
 
                 .menu-content {
                     .menu-row {
                         .menu-item {
                             >* {
-                                color: color($key);
+                                @include color($key);
 
                                 &:focus {
-                                    @include outline();
-                                    outline-color: text-color($key);
+                                    @include default-outline();
+                                    outline-color: text-color-value($key);
                                 }
                             }
                         }
@@ -255,7 +255,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                         align-items: center;
                         flex-direction: column;
                         transform: translateY(-0.5rem);
-                        @include transition-ease-in-out(fast);
+                        @include transition($speed: med);
 
                         .menu-row {
                             flex-direction: column;
@@ -309,7 +309,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                         visibility: visible;
                         @include mt(sm);
                         @include border-t();
-                        @include transition-ease-in-out(fast);
+                        @include transition($speed: med);
                     }
                 }
             }
