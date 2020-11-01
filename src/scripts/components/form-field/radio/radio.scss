@@ -54,7 +54,8 @@
                 top: 0.1em;
                 width: 1em;
                 height: 1em;
-                @include border($size: xxs, $color: dark);
+                @include border();
+                border-width: spacing(xxs);
             }
 
             &:after {

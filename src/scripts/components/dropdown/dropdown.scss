@@ -46,6 +46,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         overflow-x: scroll;
         transform: translateY(-0.25rem);
         background-color: white;
+        @include radius(sm);
         @include border();
         @include z-index(xs);
         @include p(sm);
@@ -65,7 +66,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         }
 
         .dropdown-item {
-            > * {
+            > a {
                 text-align: left;
                 text-decoration: none;
                 display: block;
@@ -73,7 +74,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                 font-weight: normal;
                 @include color(primary);
                 @include font-size(sm);
-                @include px(lg);
+                @include px(xs);
                 @include py(md);
             }
 
@@ -108,6 +109,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         overflow-y: auto;
         transform: translateY(-0.25rem);
         background-color: white;
+        @include radius(sm);
         @include border();
         @include z-index(xs);
         @include px(sm);
