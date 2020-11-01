@@ -10,5 +10,9 @@
         $value: calc(-1 * var(--ks-spacing-size-#{$name}));
     }
 
+    @if($important == true) {
+        @return $value !important;
+    }
+    
     @return $value;
 }
