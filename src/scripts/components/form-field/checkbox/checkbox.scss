@@ -46,9 +46,12 @@
             height: 1.125em;
             transform: scale(1);
             vertical-align: middle;
-            border: 0.125em solid color-value(dark);
+            // border: 0.125em solid var(split-color-list(default-border(color));
+            @include border();
+            border-width: 0.125em;
             background-color: white;
             @include transition();
+            @include radius(sm);
 
             svg {
                 position: absolute;

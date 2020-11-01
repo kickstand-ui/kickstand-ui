@@ -2,8 +2,9 @@
 
 .ks-alert {
     display: block;
-
+    
     .alert-content {
+        @include radius(sm);
         @include p(lg);
         @include shadow(sm);
 
@@ -18,6 +19,7 @@
 
             &.note.#{$color} {
                 background-color: white;
+                @include radius(none);
                 @include border();
                 @include border-l(solid, md, $color);
             }

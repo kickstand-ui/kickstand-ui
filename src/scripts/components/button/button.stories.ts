@@ -18,7 +18,9 @@ export const playground = () => {
     const linkUrl = text('href', '');
     const target = text('target', '');
     const cssClass = text('css-class', '');
+    const css2class = text('class', '');
     return (`<ks-button
+            class="${css2class}"
             css-class="${cssClass}" 
             class="m-md"
             color="${color}" 
@@ -40,7 +42,7 @@ export const buttonColors = () => {
     const icon = text('icon', '');
     const iconDirection = select('icon-direction', iconDirections, 'left');
     const linkUrl = text('url', '');
-    const cssClass = text('css-class', 'm-md');
+    const cssClass = text('css-class', '');
     return (colors.map(color =>
         `<ks-button
             css-class="${cssClass}" 
@@ -69,9 +71,10 @@ export const sizeVariations = () => {
     const icon = text('icon', '');
     const iconDirection = select('icon-direction', iconDirections, 'left');
     const linkUrl = text('url', '');
-    const cssClass = text('css-class', 'm-md');
+    const cssClass = text('css-class', '');
     return (sizes.map(size =>
         `<ks-button
+            class="m-md"
             css-class="${cssClass}" 
             color="${color}" 
             display="${display}" 

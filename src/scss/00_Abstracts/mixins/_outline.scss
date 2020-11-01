@@ -4,9 +4,11 @@
     @if($important == true) {
         outline: var(--ks-default-outline) !important;
         outline-offset: var(--ks-default-outline-offset) !important;
+        @include transition(outline-offset, xfast);
     } @else {
         outline: var(--ks-default-outline);
         outline-offset: var(--ks-default-outline-offset);
+        @include transition(outline-offset, xfast);
     }
 }
 

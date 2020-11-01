@@ -11,6 +11,29 @@
 
         &:first-child {
             @include mt(none);
+
+            .accordion-heading {
+                @include radius-t(sm);
+            }
+        }
+
+        &:last-child {
+            .accordion-heading {
+                @include radius-b(sm);
+
+                &[aria-expanded="false"] {
+                    transition-delay: 0.5s;
+                    transition-property: border-radius;
+                }
+
+                &[aria-expanded="true"] {
+                    @include radius-b(none);
+
+                    &+.accordion-content {
+                        @include radius-b(sm);
+                    }
+                }
+            }
         }
 
         .accordion-heading {
@@ -24,6 +47,7 @@
             @include font-size(sm);
             @include border($size: xxs, $color: primary);
             @include px(lg);
+            @include mb(-xxs);
 
             .accordion-icon {
                 line-height: 1;
@@ -47,13 +71,15 @@
         .accordion-content {
             max-height: 0;
             overflow: hidden;
+            visibility: hidden;
             @include transition($speed: med);
             @include px(lg);
             @include border-x($size: xxs, $color: primary);
+            @include border-b($size: xxs, $color: primary);
 
             &[aria-hidden="false"] {
+                visibility: visible;
                 @include py(lg);
-                @include border-b($size: xxs, $color: primary);
             }
         }
     }

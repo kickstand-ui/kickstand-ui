@@ -3,7 +3,8 @@
 .ks-tabs {
     display: flex;
     @include shadow(sm);
-
+    @include radius(sm);
+    
     .tab-list {
         display: flex;
         @include bg-color(light, lighter);
@@ -58,6 +59,7 @@
 
             .tab-list {
                 @include border();
+                @include radius-t(sm);
 
                 .justify-justified & {
                     height: 100%;
@@ -66,12 +68,14 @@
                 .tab-item {
                     &[aria-selected="true"] {
                         @include border-b(none);
+                        @include radius-t(sm);
                     }
                 }
             }
 
             .tab-panel {
                 @include border-t(none);
+                @include radius-b(sm);
             }
         }
 
@@ -80,17 +84,20 @@
 
             .tab-list {
                 @include border();
+                @include radius-b(sm);
                 
                 .tab-item {
                     &[aria-selected="true"] {
                         position: relative;
                         @include border-t(none);
+                        @include radius-b(sm);
                     }
                 }
             }
 
             .tab-panel {
                 @include border-b(none);
+                @include radius-t(sm);
             }
         }
 
@@ -100,6 +107,7 @@
             .tab-list {
                 flex-direction: column;
                 @include border();
+                @include radius-l(sm);
 
                 &.justify-justified {
                     .tab-item {
@@ -117,12 +125,14 @@
                     &[aria-selected="true"] {
                         @include shadow();
                         @include border-r(none);
+                        @include radius-l(sm);
                     }
                 }
             }
 
             .tab-panel {
                 @include border-l(none);
+                @include radius-r(sm);
             }
         }
 
@@ -132,6 +142,7 @@
             .tab-list {
                 flex-direction: column;
                 @include border();
+                @include radius-r(sm);
 
                 &.justify-justified {
                     .tab-item {
@@ -148,12 +159,14 @@
                     &[aria-selected="true"] {
                         @include shadow();
                         @include border-l(none);
+                        @include radius-r(sm);
                     }
                 }
             }
 
             .tab-panel {
                 @include border-r(none);
+                @include radius-l(sm);
             }
         }
     }

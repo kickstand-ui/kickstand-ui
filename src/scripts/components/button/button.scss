@@ -17,32 +17,13 @@ ks-button {
     font-weight: bold;
     cursor: pointer;
     overflow: hidden;
+    width: 100%;
+    text-align: center;
+    @include radius(sm);
     @include p(md);
     @include shadow(xs);
     @include transition($property: box-shadow);
 
-    &:before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        background-color: white;
-        visibility: hidden;
-        @include z-index(xxs);
-    }
-
-    &:not(:active):not(:disabled):before {
-        animation: ripple 0.4s cubic-bezier(0, 0, 0.2, 1);
-        transition: visibility 0.4s step-end;
-    }
-
-    &:active:before {
-        visibility: visible;
-    }
 
     &:focus,
     &:hover:not(:disabled) {
@@ -59,6 +40,11 @@ ks-button {
         opacity: 0.6;
         cursor: not-allowed;
         @include shadow(inner);
+    }
+
+    .button-text {
+        width: 100%;
+        text-align: center;    
     }
 
     @each $color, $value in get-colors() {
@@ -149,11 +135,13 @@ ks-button {
     }
 
     &.lg {
+        @include radius(md);
         @include p(lg);
         @include font-size(md);
     }
 
     &.xl {
+        @include radius(md);
         @include p(xl);
         @include font-size(lg);
     }
@@ -174,18 +162,5 @@ ks-button {
                 @include ml(sm);
             }
         }
-    }
-}
-
-@keyframes ripple {
-    0% {
-        width: 0;
-        height: 0;
-        opacity: 0.5;
-    }
-    100% {
-        width: 150px;
-        height: 150px;
-        opacity: 0;
     }
 }

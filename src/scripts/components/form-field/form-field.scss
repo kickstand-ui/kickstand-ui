@@ -50,6 +50,7 @@
         @include border($size: xxs);
         @include p(md);
         @include shadow(inner);
+        @include radius(sm);
 
         &:not(textarea) {
             height: 3.25rem;
@@ -67,7 +68,7 @@
                 width: 100%;
                 height: 0.75rem;
                 background: color-value(primary);
-                @include radius(none);
+                @include radius(sm);
                 @include shadow(xs);
                 @include border($color: dark);
             }
@@ -89,7 +90,7 @@
                 width: 100%;
                 height: 0.75rem;
                 background: color-value(primary);
-                @include radius(none);
+                @include radius(sm);
                 @include shadow(xs);
                 @include border($color: dark);
             }
@@ -179,7 +180,7 @@
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
-            @include radius(none);
+            @include radius(sm);
         }
 
         .select-icon {
