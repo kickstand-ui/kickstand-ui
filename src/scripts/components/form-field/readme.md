@@ -83,7 +83,13 @@ graph TD;
   ks-form-field --> ks-checkbox
   ks-form-field --> ks-checklist
   ks-form-field --> ks-tooltip
+  ks-autocomplete --> ks-button
   ks-autocomplete --> ks-icon
+  ks-button --> ks-icon
+  ks-button --> ks-loading-overlay
+  ks-loading-overlay --> ks-overlay
+  ks-loading-overlay --> ks-loading
+  ks-loading --> ks-icon
   ks-checkbox --> ks-tooltip
   ks-checkbox --> ks-icon
   ks-checklist --> ks-tooltip

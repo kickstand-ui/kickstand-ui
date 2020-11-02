@@ -6,14 +6,11 @@
 
         .search-field {
             width: 100%;
+            height: 3.25rem;
             @include radius(sm);
             @include border($size: xxs);
             @include p(md);
             @include shadow(inner);
-
-            &:not(textarea) {
-                height: 3.25rem;
-            }
 
             &:disabled {
                 cursor: not-allowed;
@@ -33,14 +30,23 @@
 
         }
 
-        .search-icon {
-            pointer-events: none;
+        .input-icons {
             position: absolute;
             right: 0;
-            transform: translateX(-50%);
             @include color(dark, lighter);
-            @include font-size(lg);
-            @include mt(sm);
+            @include font-size(md);
+            @include mt(md);
+            @include mr(lg);
+
+            .ks-button {
+                .icon {
+                    @include color(dark, lighter);
+                }
+            }
+
+            .search-icon {
+                pointer-events: none;
+            }
         }
 
         .dropdown-options {
