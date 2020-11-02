@@ -32,7 +32,7 @@ export class Checklist implements ComponentInterface {
         return this.getFieldData();
     }
 
-    connectedCallback() {
+    componentWillLoad() {
         this.$options = Array.from(this.$el.querySelectorAll('option'));
 
         this.$options.forEach(option => {
