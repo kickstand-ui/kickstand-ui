@@ -163,3 +163,75 @@ export const menuWithMultipleGroups = () => {
     </ks-menu-bar>
     `);
 };
+
+export const multipleMenus = () => {
+    return (`
+        <div class="my-xl">
+            <ks-menu-bar tagline="Collapse at XL" collapse="xl">
+                <ks-menu-row>
+                    <ks-menu-item>
+                        <a href="#">Home</a>
+                    </ks-menu-item>
+                    <ks-menu-item>
+                        <ks-button color="secondary" size="sm" href="#">Shop Now</ks-button>
+                    </ks-menu-item>
+                </ks-menu-row>
+            </ks-menu-bar>
+            <br>
+            <ks-menu-bar tagline="Collapse at LG" collapse="lg">
+                <ks-menu-row>
+                    <ks-menu-item>
+                        <a href="#">Home</a>
+                    </ks-menu-item>
+                    <ks-menu-item>
+                        <ks-button color="secondary" size="sm" href="#">Shop Now</ks-button>
+                    </ks-menu-item>
+                </ks-menu-row>
+            </ks-menu-bar>
+            <br>
+            <ks-menu-bar tagline="Collapse at MD" collapse="md">
+                <ks-menu-row>
+                    <ks-menu-item>
+                        <a href="#">Home</a>
+                    </ks-menu-item>
+                    <ks-menu-item>
+                        <ks-button color="secondary" size="sm" href="#">Shop Now</ks-button>
+                    </ks-menu-item>
+                </ks-menu-row>
+            </ks-menu-bar>
+            <br>
+            <ks-menu-bar tagline="Collapse at SM" collapse="sm">
+                <ks-menu-row>
+                    <ks-menu-item>
+                        <a href="#">Home</a>
+                    </ks-menu-item>
+                    <ks-menu-item>
+                        <ks-button color="secondary" size="sm" href="#">Shop Now</ks-button>
+                    </ks-menu-item>
+                </ks-menu-row>
+            </ks-menu-bar>
+            <br>
+            <ks-menu-bar tagline="Collapse at XS" collapse="xs">
+                <ks-menu-row>
+                    <ks-menu-item>
+                        <a href="#">Home</a>
+                    </ks-menu-item>
+                    <ks-menu-item>
+                        <ks-button color="secondary" size="sm" href="#">Shop Now</ks-button>
+                    </ks-menu-item>
+                </ks-menu-row>
+            </ks-menu-bar>
+            <br>
+            <ks-menu-bar tagline="Collapse at XXS" collapse="xxs">
+                <ks-menu-row>
+                    <ks-menu-item>
+                        <a href="#">Home</a>
+                    </ks-menu-item>
+                    <ks-menu-item>
+                        <ks-button color="secondary" size="sm" href="#">Shop Now</ks-button>
+                    </ks-menu-item>
+                </ks-menu-row>
+            </ks-menu-bar>
+        </div>    
+    `);
+}

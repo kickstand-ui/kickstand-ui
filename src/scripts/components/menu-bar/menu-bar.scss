@@ -255,6 +255,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                         align-items: center;
                         flex-direction: column;
                         transform: translateY(-0.5rem);
+                        overflow-y: hidden;
                         @include transition($speed: med);
 
                         .menu-row {
