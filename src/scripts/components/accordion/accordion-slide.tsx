@@ -1,9 +1,9 @@
-import { Component, h, Prop, Method, Host } from '@stencil/core';
+import { Component, h, Prop, Method, Host, ComponentInterface } from '@stencil/core';
 
 @Component({
     tag: 'ks-accordion-slide'
 })
-export class AccordionSlide {
+export class AccordionSlide implements ComponentInterface {
     slideId: string = `accordion_slide_${slideIds++}`;
     $slideContent: HTMLElement;
 
@@ -14,6 +14,11 @@ export class AccordionSlide {
     async toggleSlide() {
         this.expanded = !this.expanded;
         this.$slideContent.style.maxHeight = this.expanded ? this.$slideContent.scrollHeight + 32 + 'px' : '0px';
+    }
+
+    componentDidRender() {
+        if(this.expanded)
+            this.$slideContent.style.maxHeight = this.expanded ? this.$slideContent.scrollHeight + 32 + 'px' : '0px';
     }
 
     render() {

@@ -25,6 +25,6 @@ export const defaultAccordion = () => {
     const size = select('size', ['sm', 'md', 'lg'], 'md');
 
     return (`<ks-accordion class="m-xxl" size="${size}" style="max-width:800px;">
-                ${accordionData.map(x => `<ks-accordion-slide heading="${x.heading}">${x.bodyText}</ks-accordion-slide>`).join('')}
+                ${accordionData.map((x, i) => `<ks-accordion-slide heading="${x.heading}" expanded=${i === 0}>${x.bodyText}</ks-accordion-slide>`).join('')}
             </ks-accordion>`);
 };
