@@ -34,7 +34,7 @@ export namespace Components {
         "name": string;
         "required": boolean;
         "validate": () => Promise<IFormFieldData>;
-        "value"?: string | number | boolean| any[] | null;
+        "value"?: string | number | boolean | any[] | null;
     }
     interface KsBadge {
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
@@ -648,7 +648,7 @@ declare namespace LocalJSX {
         "name"?: string;
         "onChanged"?: (event: CustomEvent<IFormFieldData>) => void;
         "required"?: boolean;
-        "value"?: string | number | boolean| any[] | null;
+        "value"?: string | number | boolean | any[] | null;
     }
     interface KsBadge {
         "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';

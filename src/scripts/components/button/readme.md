@@ -35,6 +35,7 @@
 ### Used by
 
  - [ks-alert](../alert)
+ - [ks-autocomplete](../form-field/autocomplete)
  - [ks-carousel](../carousel)
  - [ks-dropdown](../dropdown)
  - [ks-gallery](../gallery)
@@ -56,6 +57,7 @@ graph TD;
   ks-loading-overlay --> ks-loading
   ks-loading --> ks-icon
   ks-alert --> ks-button
+  ks-autocomplete --> ks-button
   ks-carousel --> ks-button
   ks-dropdown --> ks-button
   ks-gallery --> ks-button

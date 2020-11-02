@@ -18,7 +18,7 @@ export class Autocomplete implements ComponentInterface {
 
     @Element() $el: HTMLElement;
 
-    @Prop({ mutable: true }) value?: string | number | boolean| any[] | null = '';
+    @Prop({ mutable: true }) value?: string | number | boolean | any[] | null = '';
     @Prop() required: boolean;
     @Prop() disabled: boolean;
     @Prop() name: string;
@@ -28,6 +28,7 @@ export class Autocomplete implements ComponentInterface {
     @State() isExpanded: boolean = false;
     @State() isValid: boolean = true;
     @State() $filteredOptions: HTMLOptionElement[];
+    @State() searchTerm: string;
 
     @Event() changed!: EventEmitter<IFormFieldData>;
 
@@ -40,7 +41,7 @@ export class Autocomplete implements ComponentInterface {
         this.$options = Array.from(this.$el.querySelectorAll('option')) as HTMLOptionElement[];
         this.$filteredOptions = this.$options;
         console.log(this.$options);
-        
+
     }
 
     componentDidRender() {
@@ -154,12 +155,17 @@ export class Autocomplete implements ComponentInterface {
     }
 
     private filterOptions() {
-        let searchTerm = this.$input.value.trim().toLowerCase();
-        
-        this.$filteredOptions = searchTerm 
-            && this.$options.filter(o => o.getAttribute('search')?.toLowerCase().includes(searchTerm)
-                || o.innerText.toLowerCase().includes(searchTerm)) 
+        this.searchTerm = this.$input.value.trim().toLowerCase();
+
+        this.$filteredOptions = this.searchTerm
+            && this.$options.filter(o => o.getAttribute('search')?.toLowerCase().includes(this.searchTerm)
+                || o.innerText.toLowerCase().includes(this.searchTerm))
             || this.$options;
+    }
+    private clearSearchTerm() {
+        this.$input.value = '';
+        this.$select.value = '';
+        this.filterOptions();
     }
 
     private optionClickHandler(option: HTMLOptionElement, index: number) {
@@ -221,7 +227,10 @@ export class Autocomplete implements ComponentInterface {
                         ref={e => this.$input = e}
                         {...props}
                     />
-                    <ks-icon icon="search" class="search-icon"></ks-icon>
+                    <span class="input-icons">
+                        {this.searchTerm ? <ks-button class="clear-button" size="xs" display="clear" icon="times" css-class="text-md" color="dark" hide-text onClick={() => this.clearSearchTerm()}>clear</ks-button> : ''}
+                        <ks-icon icon="search" class="search-icon"></ks-icon>
+                    </span>
                     <ul id={`autocomplete-options-${this.autocompleteId}`} class="dropdown-options" role="listbox" ref={el => this.$dropdown = el}>
                         {this.$filteredOptions.map((x, i) => (
                             <li
