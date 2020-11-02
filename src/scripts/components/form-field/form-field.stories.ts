@@ -173,6 +173,20 @@ export const checklist = () => {
     `)
 }
 
+export const checklistFormField = () => {
+    return (`
+        <div class="m-xxl">
+            <ks-form-field type="radiolist" label="Choose your next office mates">
+                <option selected>michael.scott@dundermifflin.com</option>
+                <option>dwight.schrutte@dundermifflin.com</option>
+                <option selected>pam.beasley@dundermifflin.com</option>
+                <option>jim.halpert@dundermifflin.com</option>
+                <option>Meredith.palmer@dundermifflin.com</option>
+            </ks-form-field>
+        </div>
+    `)
+}
+
 export const autocomplete = () => {
     return (`
     <div class="m-xxl">
