@@ -58,6 +58,7 @@
             flex-direction: column;
 
             .tab-list {
+                flex-wrap: wrap;
                 @include border();
                 @include radius-t(sm);
 
@@ -83,6 +84,7 @@
             flex-direction: column-reverse;
 
             .tab-list {
+                flex-wrap: wrap;
                 @include border();
                 @include radius-b(sm);
                 

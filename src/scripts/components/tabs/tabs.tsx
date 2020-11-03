@@ -121,7 +121,7 @@ export class Tabs implements ComponentInterface {
                             class="tab-item"
                             aria-selected={`${index === 0}`}
                             aria-controls={tab.id || `${this.tabId}_tab_${index}`}
-                            id={`${tab.id || `${this.tabId}_${index}`}_tab_button`}
+                            id={`${tab.id || `${this.tabId}_${index}`}_button`}
                             tabIndex={index === 0 ? 0 : -1}
                             onClick={e => this.clickHandler(e, index)}
                         >
