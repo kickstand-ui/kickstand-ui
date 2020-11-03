@@ -81,6 +81,7 @@ export class FormField implements ComponentInterface {
     @Event() blurred!: EventEmitter;
 
     @State() validityState: ValidityState;
+    @State() showPassword: boolean = false;
 
     @Method()
     async validate() {
@@ -221,6 +222,12 @@ export class FormField implements ComponentInterface {
         return props;
     }
 
+    private handleTogglePasswordClick() {
+        this.showPassword = !this.showPassword;
+
+        this.$input.setAttribute('type', this.showPassword ? 'text' : 'password');
+    }
+
     render() {
         let value = this.getValue();
         let props = {
@@ -290,6 +297,7 @@ export class FormField implements ComponentInterface {
                     onBlur={() => this.onBlur()}
                     ref={el => this.$input = el}
                 />,
+                this.type === 'password' && <ks-button class="password-toggle" icon={this.showPassword ? 'hide' : 'view'} display="clear" size="xs" css-class="text-md" color="dark" hide-text onClick={() =>this.handleTogglePasswordClick()}>{this.showPassword ? 'hide' : 'hide'}</ks-button>,
                 this.datalist && <datalist id={this.listId}>
                     <slot />
                 </datalist>

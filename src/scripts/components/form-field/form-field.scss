@@ -170,6 +170,18 @@
         }
     }
 
+    .password-toggle {
+        position: absolute;
+        right: 0;
+        transform: translateX(-2rem);
+        @include mt(md);
+        @include mr(lg);
+
+        .icon {
+            @include color(dark, lighter)
+        }
+    }
+
     .select-wrapper {
         display: flex;
         align-items: center;
