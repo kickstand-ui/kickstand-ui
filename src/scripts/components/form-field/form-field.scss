@@ -2,6 +2,7 @@
 
 .ks-form-field {
     display: block;
+    position: relative;
 
     &.inline {
         display: flex;
@@ -173,7 +174,6 @@
     .password-toggle {
         position: absolute;
         right: 0;
-        transform: translateX(-2rem);
         @include mt(md);
         @include mr(lg);
 
