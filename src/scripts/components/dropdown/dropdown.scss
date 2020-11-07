@@ -24,13 +24,13 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
             .dropdown-icon {
                 line-height: 1;
                 @include ml(xs);
-                @include transition($speed: med);
+                @include transition();
             }    
         }
         
         &[aria-expanded="true"] .dropdown-icon {
             transform: rotate(-180deg);
-            @include transition($speed: med);
+            @include transition();
         }
     }
 
@@ -50,7 +50,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         @include border();
         @include z-index(xs);
         @include p(sm);
-        @include transition($speed: fast);
+        @include transition();
 
         &.collapse {
             @each $key, $value in $breakpoints {
