@@ -4,7 +4,7 @@
     display: block;
     
     .alert-content {
-        @include radius(sm);
+        @include br(sm);
         @include p(lg);
         @include shadow(sm);
 
@@ -19,7 +19,7 @@
 
             &.note.#{$color} {
                 background-color: white;
-                @include radius(none);
+                @include br(none);
                 @include border();
                 @include border-l(solid, md, $color);
             }

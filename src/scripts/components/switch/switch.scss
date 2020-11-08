@@ -31,7 +31,7 @@
             height: spacing(lg);
             left: spacing(xxs);
             top: spacing(xs);
-            @include radius(pill);
+            @include br(pill);
             @include shadow(inner);
             @include bg-color(light);
         }
@@ -41,7 +41,7 @@
             display: block;
             height: spacing(xl);
             width: spacing(xl);
-            @include radius(circle);
+            @include br(circle);
             @include bg-color(light, lighter);
             @include border(solid, xxxs, light);
             @include shadow();

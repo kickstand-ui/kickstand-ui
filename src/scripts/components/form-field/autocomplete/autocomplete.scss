@@ -7,7 +7,7 @@
         .search-field {
             width: 100%;
             height: 3.25rem;
-            @include radius(sm);
+            @include br(sm);
             @include border($size: xxs);
             @include p(md);
             @include shadow(inner);
@@ -62,7 +62,7 @@
             max-height: 0;
             overflow: hidden;
             background-color: white;
-            @include radius-b(sm);
+            @include br-b(sm);
             @include z-index(xs);
             @include shadow(sm);
             @include p(none);

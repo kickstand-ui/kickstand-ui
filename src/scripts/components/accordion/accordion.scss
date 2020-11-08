@@ -13,13 +13,13 @@
             @include mt(none);
 
             .accordion-heading {
-                @include radius-t(sm);
+                @include br-t(sm);
             }
         }
 
         &:last-child {
             .accordion-heading {
-                @include radius-b(sm);
+                @include br-b(sm);
 
                 &[aria-expanded="false"] {
                     transition-delay: 0.5s;
@@ -27,10 +27,10 @@
                 }
 
                 &[aria-expanded="true"] {
-                    @include radius-b(none);
+                    @include br-b(none);
 
                     &+.accordion-content {
-                        @include radius-b(sm);
+                        @include br-b(sm);
                     }
                 }
             }

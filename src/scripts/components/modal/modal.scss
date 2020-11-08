@@ -12,7 +12,7 @@
                 background-color: white;
                 @include p(lg);
                 @include transition();
-                @include radius(sm);
+                @include br(sm);
 
                 .modal-header {
                     display: flex;

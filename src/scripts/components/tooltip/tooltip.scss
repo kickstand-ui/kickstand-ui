@@ -34,7 +34,7 @@
             @include transition();
             @include shadow(sm);
             @include border();
-            @include radius(sm);
+            @include br(sm);
 
             &::before {
                 content: "";

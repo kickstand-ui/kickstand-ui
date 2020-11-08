@@ -51,7 +51,7 @@
         @include border($size: xxs);
         @include p(md);
         @include shadow(inner);
-        @include radius(sm);
+        @include br(sm);
 
         &:not(textarea) {
             height: 3.25rem;
@@ -69,7 +69,7 @@
                 width: 100%;
                 height: 0.75rem;
                 background: color-value(primary);
-                @include radius(sm);
+                @include br(sm);
                 @include shadow(xs);
                 @include border($color: dark);
             }
@@ -80,7 +80,7 @@
                 width: 1.5rem;
                 background: white;
                 -webkit-appearance: none;
-                @include radius(xl);
+                @include br(xl);
                 @include mt(-sm);
                 @include shadow(sm);
                 @include border($color: dark);
@@ -91,7 +91,7 @@
                 width: 100%;
                 height: 0.75rem;
                 background: color-value(primary);
-                @include radius(sm);
+                @include br(sm);
                 @include shadow(xs);
                 @include border($color: dark);
             }
@@ -101,7 +101,7 @@
                 height: 1.5rem;
                 width: 1.5rem;
                 background: white;
-                @include radius(xl);
+                @include br(xl);
                 @include shadow(sm);
                 @include border($color: dark);
             }
@@ -116,14 +116,14 @@
 
             &::-ms-fill-lower {
                 background: color(primary);
-                @include radius(xl);
+                @include br(xl);
                 @include border($color: dark);
                 @include shadow(xs);
             }
 
             &::-ms-fill-upper {
                 background: color(primary);
-                @include radius(xl);
+                @include br(xl);
                 @include border($color: dark);
                 @include shadow(xs);
             }
@@ -133,7 +133,7 @@
                 height: 1.5rem;
                 width: 1.5rem;
                 background: white;
-                @include radius(xl);
+                @include br(xl);
                 @include mt(xxxs);
                 @include shadow(sm);
                 @include border($color: dark);
@@ -192,7 +192,7 @@
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
-            @include radius(sm);
+            @include br(sm);
         }
 
         .select-icon {

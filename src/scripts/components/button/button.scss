@@ -19,7 +19,7 @@ ks-button {
     overflow: hidden;
     width: 100%;
     text-align: center;
-    @include radius(sm);
+    @include br(sm);
     @include p(md);
     @include shadow(xs);
     @include transition($property: box-shadow);
@@ -135,13 +135,13 @@ ks-button {
     }
 
     &.lg {
-        @include radius(md);
+        @include br(md);
         @include p(lg);
         @include font-size(md);
     }
 
     &.xl {
-        @include radius(md);
+        @include br(md);
         @include p(xl);
         @include font-size(lg);
     }

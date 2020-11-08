@@ -51,7 +51,7 @@
             border-width: 0.125em;
             background-color: white;
             @include transition();
-            @include radius(sm);
+            @include br(sm);
 
             svg {
                 position: absolute;
