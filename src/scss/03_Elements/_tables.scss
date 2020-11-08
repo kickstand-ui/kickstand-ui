@@ -19,7 +19,7 @@ th {
 .table {
     width: 100%;
     border-collapse: collapse;
-    @include border();
+    @include b();
 
     &.striped {
         tbody {
@@ -41,14 +41,14 @@ th {
 
     thead {
         font-weight: bold;
-        @include border-b($size: xxs);
+        @include b-b($size: xxs);
     }
 
     th,
     td {
         vertical-align: bottom;
         @include p(sm);
-        @include border();
+        @include b();
     }
 }
 

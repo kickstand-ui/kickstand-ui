@@ -15,7 +15,7 @@
         }
 
         .text {
-            @include border-b(dotted, xxxs, dark);
+            @include b-b(dotted, xxxs, dark);
             @include transition();
         }
 
@@ -33,7 +33,7 @@
             @include z-index(sm);
             @include transition();
             @include shadow(sm);
-            @include border();
+            @include b();
             @include br(sm);
 
             &::before {

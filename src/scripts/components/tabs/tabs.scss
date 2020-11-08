@@ -37,7 +37,7 @@
 
             &[aria-selected="true"] {
                 background-color: white;
-                @include border();
+                @include b();
                 @include color(primary);
                 @include shadow(sm);
                 @include m(-xxxs);
@@ -49,7 +49,7 @@
         width: 100%;
         white-space: normal;
         background-color: white;
-        @include border();
+        @include b();
         @include p(lg);
     }
 
@@ -59,7 +59,7 @@
 
             .tab-list {
                 flex-wrap: wrap;
-                @include border();
+                @include b();
                 @include br-t(sm);
 
                 .justify-justified & {
@@ -68,14 +68,14 @@
 
                 .tab-item {
                     &[aria-selected="true"] {
-                        @include border-b(none);
+                        @include b-b(none);
                         @include br-t(sm);
                     }
                 }
             }
 
             .tab-panel {
-                @include border-t(none);
+                @include b-t(none);
                 @include br-b(sm);
             }
         }
@@ -85,20 +85,20 @@
 
             .tab-list {
                 flex-wrap: wrap;
-                @include border();
+                @include b();
                 @include br-b(sm);
                 
                 .tab-item {
                     &[aria-selected="true"] {
                         position: relative;
-                        @include border-t(none);
+                        @include b-t(none);
                         @include br-b(sm);
                     }
                 }
             }
 
             .tab-panel {
-                @include border-b(none);
+                @include b-b(none);
                 @include br-t(sm);
             }
         }
@@ -108,7 +108,7 @@
 
             .tab-list {
                 flex-direction: column;
-                @include border();
+                @include b();
                 @include br-l(sm);
 
                 &.justify-justified {
@@ -126,14 +126,14 @@
 
                     &[aria-selected="true"] {
                         @include shadow();
-                        @include border-r(none);
+                        @include b-r(none);
                         @include br-l(sm);
                     }
                 }
             }
 
             .tab-panel {
-                @include border-l(none);
+                @include b-l(none);
                 @include br-r(sm);
             }
         }
@@ -143,7 +143,7 @@
 
             .tab-list {
                 flex-direction: column;
-                @include border();
+                @include b();
                 @include br-r(sm);
 
                 &.justify-justified {
@@ -160,14 +160,14 @@
 
                     &[aria-selected="true"] {
                         @include shadow();
-                        @include border-l(none);
+                        @include b-l(none);
                         @include br-r(sm);
                     }
                 }
             }
 
             .tab-panel {
-                @include border-r(none);
+                @include b-r(none);
                 @include br-l(sm);
             }
         }

@@ -3,7 +3,7 @@
 .ks-card {
     position: relative;
     @include br(sm);
-    @include border(solid, xxxs, light, dark);
+    @include b(solid, xxxs, light, dark);
     @include shadow();
 
     &.img-top {

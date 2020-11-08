@@ -48,7 +48,7 @@
 
     .form-input {
         width: 100%;
-        @include border($size: xxs);
+        @include b($size: xxs);
         @include p(md);
         @include shadow(inner);
         @include br(sm);
@@ -71,7 +71,7 @@
                 background: color-value(primary);
                 @include br(sm);
                 @include shadow(xs);
-                @include border($color: dark);
+                @include b($color: dark);
             }
 
             &::-webkit-slider-thumb {
@@ -83,7 +83,7 @@
                 @include br(xl);
                 @include mt(-sm);
                 @include shadow(sm);
-                @include border($color: dark);
+                @include b($color: dark);
             }
 
             &::-moz-range-track {
@@ -93,7 +93,7 @@
                 background: color-value(primary);
                 @include br(sm);
                 @include shadow(xs);
-                @include border($color: dark);
+                @include b($color: dark);
             }
 
             &::-moz-range-thumb {
@@ -103,7 +103,7 @@
                 background: white;
                 @include br(xl);
                 @include shadow(sm);
-                @include border($color: dark);
+                @include b($color: dark);
             }
 
             &::-ms-track {
@@ -117,14 +117,14 @@
             &::-ms-fill-lower {
                 background: color(primary);
                 @include br(xl);
-                @include border($color: dark);
+                @include b($color: dark);
                 @include shadow(xs);
             }
 
             &::-ms-fill-upper {
                 background: color(primary);
                 @include br(xl);
-                @include border($color: dark);
+                @include b($color: dark);
                 @include shadow(xs);
             }
 
@@ -136,7 +136,7 @@
                 @include br(xl);
                 @include mt(xxxs);
                 @include shadow(sm);
-                @include border($color: dark);
+                @include b($color: dark);
             }
 
             &:focus {
@@ -167,7 +167,7 @@
         }
 
         &[aria-invalid="true"] {
-            @include border($size: xxs, $color: danger);
+            @include b($size: xxs, $color: danger);
         }
     }
 

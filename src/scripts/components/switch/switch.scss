@@ -43,7 +43,7 @@
             width: spacing(xl);
             @include br(circle);
             @include bg-color(light, lighter);
-            @include border(solid, xxxs, light);
+            @include b(solid, xxxs, light);
             @include shadow();
             @include transition();
         }

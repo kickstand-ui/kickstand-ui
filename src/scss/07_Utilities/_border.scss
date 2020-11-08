@@ -1,30 +1,30 @@
 @import '../00_Abstracts/index';
 
 .border {
-    @include border();
+    @include b();
     
     &-t {
-        @include border-t();
+        @include b-t();
     }
 
     &-b {
-        @include border-b();
+        @include b-b();
     }
 
     &-l {
-        @include border-l();
+        @include b-l();
     }
 
     &-r {
-        @include border-r();
+        @include b-r();
     }
 
     &-x {
-        @include border-x();
+        @include b-x();
     }
 
     &-y {
-        @include border-y();
+        @include b-y();
     }
 
     @each $key, $value in $spacing-sizes {

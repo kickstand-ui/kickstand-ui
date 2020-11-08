@@ -21,7 +21,7 @@ $drawer-sizes: (
 
     @each $direction in (left, right) {
         &.#{$direction} {
-            @include border-r($color: dark, $variant: lighter);
+            @include b-r($color: dark, $variant: lighter);
 
             @each $key, $value in $drawer-sizes {
                 &.size-#{$key} {
@@ -41,7 +41,7 @@ $drawer-sizes: (
         display: flex;
         justify-content: space-between;
         align-content: center;
-        @include border-b();
+        @include b-b();
         @include font-size(lg);
         @include color(dark);
 
