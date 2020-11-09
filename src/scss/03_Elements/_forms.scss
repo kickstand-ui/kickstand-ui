@@ -74,7 +74,7 @@ button,
     }
 }
 
-// Remove inner border and padding from Firefox, but don't restore the outline like Normalize.
+// Remove inner b-xs and padding from Firefox, but don't restore the outline like Normalize.
 
 ::-moz-focus-inner {
     padding: 0;
