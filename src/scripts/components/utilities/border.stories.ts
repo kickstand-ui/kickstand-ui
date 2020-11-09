@@ -25,7 +25,7 @@ export const borderColors = () => {
 };
 
 export const borderRadiuses = () => {
-    return (`${ ['none', 'sm', 'md', 'lg', 'xl', 'pill', 'circle'].map(x => `<ks-row class="m-xxl">
-        ${['', '-t', '-tl', '-tr', '-b', '-bl', '-br', '-l', '-r'].map(p => `<ks-column class="mx-md bg-light-light p-md b-xs br${p}-${x}">br${p}-${x}</ks-column>`).join('')}
+    return (`${ ['none', 'sm', 'md', 'lg', 'xl', 'pill', 'circle'].map(x => `<ks-row class="m-xxl text-center">
+        ${['', '-t', '-tl', '-tr', '-b', '-bl', '-br', '-l', '-r'].map(p => `<ks-column class="mr-sm bg-light-lighter px-sm py-md b-xxs br${p}-${x}">br${p}-${x}</ks-column>`).join('')}
     </ks-row>`).join('')}`);
 };

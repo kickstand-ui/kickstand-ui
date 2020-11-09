@@ -126,11 +126,11 @@
         }
 
         &-tl-#{$key} {
-            @include br-t($key);
+            @include br-tl($key);
         }
 
         &-tr-#{$key} {
-            @include br-t($key);
+            @include br-tr($key);
         }
 
         &-b-#{$key} {
