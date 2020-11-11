@@ -115,7 +115,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                 }
 
                 &:last-child {
-                    @include border(none);
+                    @include b(none);
                 }
 
                 @include hover-focus {
@@ -162,7 +162,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
             .menu-toggler {
                 color: text-color($key);
-                @include border($color: $key);
+                @include b($color: $key);
 
                 &:focus {
                     @include default-outline();
@@ -200,7 +200,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
             &.inverted {
                 background-color: white;
-                @include border-b();
+                @include b-b();
 
                 .menu-branding {
                     color: color($key);
@@ -274,7 +274,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                             .menu-item {
                                 width: 100%;
                                 text-align: left;
-                                @include border(none);
+                                @include b(none);
 
                                 >* {
                                     display: block;
@@ -309,7 +309,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                         height: auto;
                         visibility: visible;
                         @include mt(sm);
-                        @include border-t();
+                        @include b-t();
                         @include transition($speed: med);
                     }
                 }

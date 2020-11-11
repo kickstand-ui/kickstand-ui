@@ -1,31 +1,31 @@
 @import '../variables';
 
-@mixin radius($size, $important: false) {
-    @include radius-t($size, $important);
-    @include radius-b($size, $important);
+@mixin br($size, $important: false) {
+    @include br-t($size, $important);
+    @include br-b($size, $important);
 }
 
-@mixin radius-t($size, $important: false) {
-    @include radius-tl($size, $important);
-    @include radius-tr($size, $important);
+@mixin br-t($size, $important: false) {
+    @include br-tl($size, $important);
+    @include br-tr($size, $important);
 }
 
-@mixin radius-b($size, $important: false) {
-    @include radius-bl($size, $important);
-    @include radius-br($size, $important);
+@mixin br-b($size, $important: false) {
+    @include br-bl($size, $important);
+    @include br-br($size, $important);
 }
 
-@mixin radius-l($size, $important: false) {
-    @include radius-tl($size, $important);
-    @include radius-bl($size, $important);
+@mixin br-l($size, $important: false) {
+    @include br-tl($size, $important);
+    @include br-bl($size, $important);
 }
 
-@mixin radius-r($size, $important: false) {
-    @include radius-tr($size, $important);
-    @include radius-br($size, $important);
+@mixin br-r($size, $important: false) {
+    @include br-tr($size, $important);
+    @include br-br($size, $important);
 }
 
-@mixin radius-tl($size, $important: false) {
+@mixin br-tl($size, $important: false) {
     @if map-has-key($border-radiuses, $size) {
         @if($important==true) {
             border-top-left-radius: var(--ks-border-radius-#{$size}) !important;
@@ -41,7 +41,7 @@
     }
 }
 
-@mixin radius-tr($size, $important: false) {
+@mixin br-tr($size, $important: false) {
     @if map-has-key($border-radiuses, $size) {
         @if($important==true) {
             border-top-right-radius: var(--ks-border-radius-#{$size}) !important;
@@ -57,7 +57,7 @@
     }
 }
 
-@mixin radius-bl($size, $important: false) {
+@mixin br-bl($size, $important: false) {
     @if map-has-key($border-radiuses, $size) {
         @if($important==true) {
             border-bottom-left-radius: var(--ks-border-radius-#{$size}) !important;
@@ -73,7 +73,7 @@
     }
 }
 
-@mixin radius-br($size, $important: false) {
+@mixin br-br($size, $important: false) {
     @if map-has-key($border-radiuses, $size) {
         @if($important==true) {
             border-bottom-right-radius: var(--ks-border-radius-#{$size}) !important;

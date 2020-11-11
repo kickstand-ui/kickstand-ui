@@ -2,8 +2,8 @@
 
 .ks-form-wrapper {
     display: block;
-    @include radius(sm);
-    @include border(solid, xxs, light);
+    @include br(sm);
+    @include b(solid, xxs, light);
     @include p(lg);
     @include bg-color(light, lighter);
 

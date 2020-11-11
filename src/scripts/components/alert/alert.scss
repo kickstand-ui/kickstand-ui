@@ -4,14 +4,14 @@
     display: block;
     
     .alert-content {
-        @include radius(sm);
+        @include br(sm);
         @include p(lg);
         @include shadow(sm);
 
         @each $color,
         $value in get-colors() {
             &.#{$color} {
-                @include border(solid, xxs, $color);
+                @include b(solid, xxs, $color);
                 @include shadow(sm);
                 @include bg-color($color, 0.05);
                 @include color(dark);
@@ -19,9 +19,9 @@
 
             &.note.#{$color} {
                 background-color: white;
-                @include radius(none);
-                @include border();
-                @include border-l(solid, md, $color);
+                @include br(none);
+                @include b();
+                @include b-l(solid, md, $color);
             }
         }
 

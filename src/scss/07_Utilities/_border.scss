@@ -1,41 +1,156 @@
 @import '../00_Abstracts/index';
 
-.border {
-    @include border();
-    
-    &-t {
-        @include border-t();
-    }
-
-    &-b {
-        @include border-b();
-    }
-
-    &-l {
-        @include border-l();
-    }
-
-    &-r {
-        @include border-r();
-    }
-
-    &-x {
-        @include border-x();
-    }
-
-    &-y {
-        @include border-y();
-    }
-
-    @each $key, $value in $spacing-sizes {
+.b {
+    @each $key,
+    $value in $spacing-sizes {
         &-#{$key} {
-            border-width: spacing($key);
+            @include b($size: $key, $important: true);
         }
     }
 
-    @each $key, $value in get-colors() {
+    @each $key,
+    $value in get-colors() {
         &-#{$key} {
-            border-color: color($key);
+            border-color: color($key) !important;
+        }
+    }
+
+    &-t {
+        @each $key,
+        $value in $spacing-sizes {
+            &-#{$key} {
+                @include b-t($size: $key, $important: true);
+            }
+        }
+
+        @each $key,
+        $value in get-colors() {
+            &-#{$key} {
+                border-top-color: color-value($key) !important;
+            }
+        }
+    }
+
+    &-b {
+        @each $key,
+        $value in $spacing-sizes {
+            &-#{$key} {
+                @include b-b($size: $key, $important: true);
+            }
+        }
+
+        @each $key,
+        $value in get-colors() {
+            &-#{$key} {
+                border-bottom-color: color-value($key) !important;
+            }
+        }
+    }
+
+    &-l {
+        @each $key,
+        $value in $spacing-sizes {
+            &-#{$key} {
+                @include b-l($size: $key, $important: true);
+            }
+        }
+
+        @each $key,
+        $value in get-colors() {
+            &-#{$key} {
+                border-left-color: color-value($key) !important;
+            }
+        }
+    }
+
+    &-r {
+        @each $key,
+        $value in $spacing-sizes {
+            &-#{$key} {
+                @include b-r($size: $key, $important: true);
+            }
+        }
+
+        @each $key,
+        $value in get-colors() {
+            &-#{$key} {
+                border-right-color: color-value($key) !important;
+            }
+        }
+    }
+
+    &-x {
+        @each $key,
+        $value in $spacing-sizes {
+            &-#{$key} {
+                @include b-x($size: $key, $important: true);
+            }
+        }
+
+        @each $key,
+        $value in get-colors() {
+            &-#{$key} {
+                border-left-color: color-value($key) !important;
+                border-right-color: color-value($key) !important;
+            }
+        }
+    }
+
+    &-y {
+        @each $key,
+        $value in $spacing-sizes {
+            &-#{$key} {
+                @include b-y($size: $key, $important: true);
+            }
+        }
+
+        @each $key,
+        $value in get-colors() {
+            &-#{$key} {
+                border-top-color: color-value($key) !important;
+                border-bottom-color: color-value($key) !important;
+            }
+        }
+    }
+}
+
+.br {
+    @each $key,
+    $value in $border-radiuses {
+        &-#{$key} {
+            @include br($key);
+        }
+
+        &-t-#{$key} {
+            @include br-t($key);
+        }
+
+        &-tl-#{$key} {
+            @include br-tl($key);
+        }
+
+        &-tr-#{$key} {
+            @include br-tr($key);
+        }
+
+        &-b-#{$key} {
+            @include br-b($key);
+        }
+
+        &-bl-#{$key} {
+            @include br-bl($key);
+        }
+
+        &-br-#{$key} {
+            @include br-br($key);
+        }
+
+        &-l-#{$key} {
+            @include br-l($key);
+        }
+
+        &-r-#{$key} {
+            @include br-r($key);
         }
     }
 }

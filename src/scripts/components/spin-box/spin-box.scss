@@ -5,7 +5,7 @@
         display: inline-flex;
         align-items: center;
         @include shadow(xs);
-        @include border($size: xxxs);
+        @include b($size: xxxs);
 
         .ks-button {
             @include px(xs);

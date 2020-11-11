@@ -18,9 +18,9 @@ export const heights = () => {
 export const flex = () => {
     return (`
     <div class="my-xl display-flex space-between align-start md:flex-column md:justify-start p-sm bg-primary" style="height: 250px;">
-        <div class="p-sm bg-light border border-dark">Item 1</div>
-        <div class="p-sm bg-light border border-dark">Item 2</div>
-        <div class="p-sm bg-light border border-dark">Item 3</div>
+        <div class="p-sm bg-light b-xs b-dark">Item 1</div>
+        <div class="p-sm bg-light b-xs b-dark">Item 2</div>
+        <div class="p-sm bg-light b-xs b-dark">Item 3</div>
     </div>
     `);
 };

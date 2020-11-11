@@ -19,7 +19,7 @@ ks-button {
     overflow: hidden;
     width: 100%;
     text-align: center;
-    @include radius(sm);
+    @include br(sm);
     @include p(md);
     @include shadow(xs);
     @include transition($property: box-shadow);
@@ -58,8 +58,8 @@ ks-button {
                 );
                 color: text-color-value($color, dark);
                 text-shadow: 2px 2px 4px color-value($color, dark);
-                @include border(solid, xxs, $color, light);
-                @include border-b(solid, xxs, $color);
+                @include b(solid, xxs, $color, light);
+                @include b-b(solid, xxs, $color);
                 border-image-slice: 2;
                 border-image-source: linear-gradient(
                     0deg,
@@ -75,7 +75,7 @@ ks-button {
             &.hollow {
                 background-color: transparent;
                 @include color($color);
-                @include border(solid, xxs, $color);
+                @include b(solid, xxs, $color);
 
                 &:focus,
                 &:hover:not(:disabled) {
@@ -135,13 +135,13 @@ ks-button {
     }
 
     &.lg {
-        @include radius(md);
+        @include br(md);
         @include p(lg);
         @include font-size(md);
     }
 
     &.xl {
-        @include radius(md);
+        @include br(md);
         @include p(xl);
         @include font-size(lg);
     }

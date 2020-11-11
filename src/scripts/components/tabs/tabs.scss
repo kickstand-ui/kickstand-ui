@@ -3,7 +3,7 @@
 .ks-tabs {
     display: flex;
     @include shadow(sm);
-    @include radius(sm);
+    @include br(sm);
     
     .tab-list {
         display: flex;
@@ -37,7 +37,7 @@
 
             &[aria-selected="true"] {
                 background-color: white;
-                @include border();
+                @include b();
                 @include color(primary);
                 @include shadow(sm);
                 @include m(-xxxs);
@@ -49,7 +49,7 @@
         width: 100%;
         white-space: normal;
         background-color: white;
-        @include border();
+        @include b();
         @include p(lg);
     }
 
@@ -59,8 +59,8 @@
 
             .tab-list {
                 flex-wrap: wrap;
-                @include border();
-                @include radius-t(sm);
+                @include b();
+                @include br-t(sm);
 
                 .justify-justified & {
                     height: 100%;
@@ -68,15 +68,15 @@
 
                 .tab-item {
                     &[aria-selected="true"] {
-                        @include border-b(none);
-                        @include radius-t(sm);
+                        @include b-b(none);
+                        @include br-t(sm);
                     }
                 }
             }
 
             .tab-panel {
-                @include border-t(none);
-                @include radius-b(sm);
+                @include b-t(none);
+                @include br-b(sm);
             }
         }
 
@@ -85,21 +85,21 @@
 
             .tab-list {
                 flex-wrap: wrap;
-                @include border();
-                @include radius-b(sm);
+                @include b();
+                @include br-b(sm);
                 
                 .tab-item {
                     &[aria-selected="true"] {
                         position: relative;
-                        @include border-t(none);
-                        @include radius-b(sm);
+                        @include b-t(none);
+                        @include br-b(sm);
                     }
                 }
             }
 
             .tab-panel {
-                @include border-b(none);
-                @include radius-t(sm);
+                @include b-b(none);
+                @include br-t(sm);
             }
         }
 
@@ -108,8 +108,8 @@
 
             .tab-list {
                 flex-direction: column;
-                @include border();
-                @include radius-l(sm);
+                @include b();
+                @include br-l(sm);
 
                 &.justify-justified {
                     .tab-item {
@@ -126,15 +126,15 @@
 
                     &[aria-selected="true"] {
                         @include shadow();
-                        @include border-r(none);
-                        @include radius-l(sm);
+                        @include b-r(none);
+                        @include br-l(sm);
                     }
                 }
             }
 
             .tab-panel {
-                @include border-l(none);
-                @include radius-r(sm);
+                @include b-l(none);
+                @include br-r(sm);
             }
         }
 
@@ -143,8 +143,8 @@
 
             .tab-list {
                 flex-direction: column;
-                @include border();
-                @include radius-r(sm);
+                @include b();
+                @include br-r(sm);
 
                 &.justify-justified {
                     .tab-item {
@@ -160,15 +160,15 @@
 
                     &[aria-selected="true"] {
                         @include shadow();
-                        @include border-l(none);
-                        @include radius-r(sm);
+                        @include b-l(none);
+                        @include br-r(sm);
                     }
                 }
             }
 
             .tab-panel {
-                @include border-r(none);
-                @include radius-l(sm);
+                @include b-r(none);
+                @include br-l(sm);
             }
         }
     }

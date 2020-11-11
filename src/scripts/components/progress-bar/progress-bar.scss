@@ -26,13 +26,13 @@ $sizes: (xs, sm, md, lg);
         border: 0;
         position: relative;
         @include bg-color(light, light);
-        @include radius(sm);
+        @include br(sm);
 
         .value {
             display: block;
             height: 100%;
             @include transition(width);
-            @include radius-l(sm);
+            @include br-l(sm);
 
             @each $key, $value in get-colors() {
                 &.#{$key} {

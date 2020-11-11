@@ -12,13 +12,13 @@
                 background-color: white;
                 @include p(lg);
                 @include transition();
-                @include radius(sm);
+                @include br(sm);
 
                 .modal-header {
                     display: flex;
                     justify-content: space-between;
                     align-content: flex-start;
-                    @include border-b();
+                    @include b-b();
                     @include mb(md);
 
                     .modal-title {

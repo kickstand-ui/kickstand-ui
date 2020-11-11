@@ -9,7 +9,7 @@
     vertical-align: baseline;
     padding: 0.25em 0.4em;
     font-size: 0.75em;
-    @include radius(pill);
+    @include br(pill);
     @include shadow(xs);
 
     @each $color, $value in get-colors() {
@@ -20,7 +20,7 @@
             &.hollow {
                 background-color: transparent;
                 @include color($color);
-                @include border(solid, xxxs, $color);
+                @include b(solid, xxxs, $color);
             }
         }
     }

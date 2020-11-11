@@ -45,29 +45,29 @@ export const basicGrid = () => {
 
         <div class="my-xl">
             <ks-row position="end" style="height:200px;">
-                <ks-column class="bg-primary-lighter border border-primary">
+                <ks-column class="bg-primary-lighter b-xs b-primary">
                     <span class="bg-light p-sm">I do what the row says</span>
                 </ks-column>
-                <ks-column class="bg-primary-lighter border border-primary">
+                <ks-column class="bg-primary-lighter b-xs b-primary">
                     <span class="bg-light p-sm">I do what the row says</span>
                 </ks-column>
-                <ks-column class="bg-primary-lighter border border-primary" position="start">
+                <ks-column class="bg-primary-lighter b-xs b-primary" position="start">
                     <span class="bg-light p-sm">I do what I want!</span>
                 </ks-column>
             </ks-row>
         </div>
         <div class="my-xl">
             <ks-row style="height:200px;">
-                <ks-column position="start" class="bg-primary-lighter border border-primary">
+                <ks-column position="start" class="bg-primary-lighter b-xs b-primary">
                     <span class="bg-light p-sm w-100">Start</span>
                 </ks-column>
-                <ks-column position="center" class="bg-primary-lighter border border-primary">
+                <ks-column position="center" class="bg-primary-lighter b-xs b-primary">
                     <span class="bg-light p-sm w-100">Center</span>
                 </ks-column>
-                <ks-column position="end" class="bg-primary-lighter border border-primary">
+                <ks-column position="end" class="bg-primary-lighter b-xs b-primary">
                     <span class="bg-light p-sm w-100">End</span>
                 </ks-column>
-                <ks-column position="stretch" class="bg-primary-lighter border border-primary">
+                <ks-column position="stretch" class="bg-primary-lighter b-xs b-primary">
                     <span class="bg-light p-sm w-100">Stretch</span>
                 </ks-column>
             </ks-row>

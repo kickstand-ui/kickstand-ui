@@ -7,7 +7,7 @@
     }
 
     @else {
-        @error "Invalid default border value: '#{$setting}'.";
+        @error "Invalid default b-xs value: '#{$setting}'.";
     }
 }
 

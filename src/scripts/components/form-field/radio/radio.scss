@@ -54,7 +54,7 @@
                 top: 0.1em;
                 width: 1em;
                 height: 1em;
-                @include border();
+                @include b();
                 border-width: spacing(xxs);
             }
 
