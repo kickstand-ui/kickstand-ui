@@ -35,6 +35,8 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
     }
 
     .dropdown-contents {
+        display: flex;
+        flex-direction: column;
         visibility: hidden;
         opacity: 0;
         left: 0;
@@ -93,11 +95,13 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         &.align-left {
             left: 0;
             right: auto;
+            @include br-tl(none);
         }
 
         &.align-right {
             right: 0;
             left: auto;
+            @include br-tr(none);
         }
     }
 
@@ -123,6 +127,10 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
     }
 
     &.show {
+        .ks-button {
+            @include br-b(none);
+        }
+        
         .contents {
             visibility: visible;
             opacity: 1;

@@ -52,3 +52,16 @@ export const megaMenu = () => {
         </ks-dropdown>
     `);
 }
+
+export const collapseTest = () => {
+    return (`
+        <ks-dropdown text="Prevent Close">
+            <ks-dropdown-item>
+                <ks-button color="secondary">I will close when you click me!</ks-button>
+            </ks-dropdown-item>
+            <ks-dropdown-item prevent-close>
+                <ks-button>I will not close when you click me!</ks-button>
+            </ks-dropdown-item>
+        </ks-dropdown>
+    `);
+}
