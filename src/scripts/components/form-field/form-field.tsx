@@ -160,10 +160,8 @@ export class FormField implements ComponentInterface {
 
     private getErrorMessage(): string {
         switch (true) {
-            case this.validityState?.badInput:
-                return this.badInputErrorMessage;
-            case this.validityState?.patternMismatch:
-                return this.patternErrorMessage;
+            case this.validityState?.valueMissing:
+                return this.requiredErrorMessage;
             case this.validityState?.rangeOverflow:
                 return this.maxErrorMessage;
             case this.validityState?.rangeUnderflow:
@@ -176,8 +174,10 @@ export class FormField implements ComponentInterface {
                 return this.minlengthErrorMessage;
             case this.validityState?.typeMismatch:
                 return this.typeErrorMessage;
-            case this.validityState?.valueMissing:
-                return this.requiredErrorMessage;
+            case this.validityState?.patternMismatch:
+                return this.patternErrorMessage;
+            case this.validityState?.badInput:
+                return this.badInputErrorMessage;
             default:
                 return this.defaultErrorMessage;
         }
