@@ -17,6 +17,7 @@ export class FormField implements ComponentInterface {
     fieldId = `form_input_${this.formFieldId}`;
     labelId = `form_label_${this.formFieldId}`;
     listId = `form_list_${this.formFieldId}`;
+    inputHandler: Function;
 
     $input: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
     $checkbox: HTMLKsCheckboxElement;
@@ -122,6 +123,13 @@ export class FormField implements ComponentInterface {
             const $options = Array.from(this.$el.querySelectorAll('option')) as HTMLElement[];
             $options.forEach(x => x.hidden = true);
         }
+
+        this.inputHandler = debounce(() => {
+            if (this.$input)
+                this.value = this.$input.value || '';
+
+        }, this.debounce);
+
     }
 
     private async validateField(): Promise<IFormFieldData> {
@@ -187,16 +195,6 @@ export class FormField implements ComponentInterface {
         return this.name || this.label ? this.label.toLowerCase().replace(/ /g, '-') : '';
     }
 
-    private onInput(ev: Event) {
-        debounce(() => {
-            const input = ev.target as HTMLInputElement | null;
-
-            if (input)
-                this.value = input.value || '';
-
-        }, this.debounce);
-    }
-
     private async onBlur() {
         if (!this.validateOnInput) {
             await this.validate();
@@ -249,7 +247,7 @@ export class FormField implements ComponentInterface {
                     class="form-input"
                     name={this.getInputName()}
                     {...props}
-                    onInput={(e) => this.onInput(e)}
+                    onInput={() => this.inputHandler()}
                     onBlur={() => this.onBlur()}
                     ref={el => this.$input = el}
                 >
@@ -263,7 +261,7 @@ export class FormField implements ComponentInterface {
                         class="form-input"
                         name={this.getInputName()}
                         {...props}
-                        onInput={(e) => this.onInput(e)}
+                        onInput={() => this.inputHandler()}
                         onBlur={() => this.onBlur()}
                         ref={el => this.$input = el}
                     >
@@ -293,7 +291,7 @@ export class FormField implements ComponentInterface {
                     name={this.getInputName()}
                     {...props}
                     value={value}
-                    onInput={(e) => this.onInput(e)}
+                    onInput={() => this.inputHandler()}
                     onBlur={() => this.onBlur()}
                     ref={el => this.$input = el}
                 />,

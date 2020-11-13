@@ -37,8 +37,8 @@ export function uniqueId() {
  * @param {Function} fn The callback method to execute after the debounce
  * @param {number} delay The time to wait after the action to call the callback method
  */
-export function debounce(fn: Function, delay: number) {
-    let timeOutId: NodeJS.Timeout;
+export function debounce2(fn: Function, delay: number) {
+    var timeOutId: NodeJS.Timeout;
     let debounced = function (...args: any[]) {
         if (timeOutId)
             clearTimeout(timeOutId);
@@ -49,4 +49,22 @@ export function debounce(fn: Function, delay: number) {
     }
 
     debounced();
+}
+
+/**
+ * Documentation
+ * @param {Function} fn The callback method to execute after the debounce
+ * @param {number} delay The time to wait after the action to call the callback method
+ */
+
+export const debounce = (fn: Function, delay: number) => {
+    let timeOutId: NodeJS.Timeout;
+    return function (...args) {
+        if (timeOutId)
+            clearTimeout(timeOutId);
+
+        timeOutId = setTimeout(() => {
+            fn(...args);
+        }, delay);
+    }
 }
