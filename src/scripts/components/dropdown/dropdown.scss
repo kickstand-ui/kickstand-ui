@@ -12,7 +12,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         width: 100%;
     }
 
-    .ks-button {
+    .dropdown-button {
         white-space: nowrap;
         display: flex;
         align-items: center;
@@ -127,7 +127,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
     }
 
     &.show {
-        .ks-button {
+        .dropdown-button {
             @include br-b(none);
         }
         
