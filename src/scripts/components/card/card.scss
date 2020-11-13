@@ -2,6 +2,7 @@
 
 .ks-card {
     position: relative;
+    overflow: hidden;
     @include br(sm);
     @include b(solid, xxxs, light, dark);
     @include shadow();
@@ -65,8 +66,7 @@
         width: 100%;
         @include p(md);
 
-        .card-header {
-        }
+        .card-header {}
 
         .card-body {
             .heading {
