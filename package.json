@@ -1,6 +1,6 @@
 {
     "name": "kickstand-ui",
-    "version": "2.0.0-beta.18",
+    "version": "2.0.0-beta.19",
     "description": "Kickstand UI is a Design system and pattern library built with Web Components, so you can use them everywhere!",
     "main": "dist/index.cjs.js",
     "module": "dist/index.js",
@@ -18,7 +18,8 @@
     "scripts": {
         "build:icons": "svgo src/scripts/components/icon/icons/*.svg && node icon_loader.js",
         "build": "npm run build:icons && stencil build --docs",
-        "deploy": "stencil build && publish",
+        "deploy": "stencil build && npm publish",
+        "deploy:beta": "stencil build && npm publish --tag beta",
         "serve": "stencil build --dev --watch --serve",
         "dev": "run-p start storybook",
         "generate": "stencil generate",
