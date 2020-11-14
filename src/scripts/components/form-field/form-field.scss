@@ -156,7 +156,8 @@
 
         &:disabled {
             cursor: not-allowed;
-            @include bg-color(light);
+            @include bg-color(light, lighter);
+            @include color(dark, 0.5);
             @include shadow(none);
         }
 
