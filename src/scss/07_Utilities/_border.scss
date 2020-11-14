@@ -118,39 +118,39 @@
     @each $key,
     $value in $border-radiuses {
         &-#{$key} {
-            @include br($key);
+            @include br($key, true);
         }
 
         &-t-#{$key} {
-            @include br-t($key);
+            @include br-t($key, true);
         }
 
         &-tl-#{$key} {
-            @include br-tl($key);
+            @include br-tl($key, true);
         }
 
         &-tr-#{$key} {
-            @include br-tr($key);
+            @include br-tr($key, true);
         }
 
         &-b-#{$key} {
-            @include br-b($key);
+            @include br-b($key, true);
         }
 
         &-bl-#{$key} {
-            @include br-bl($key);
+            @include br-bl($key, true);
         }
 
         &-br-#{$key} {
-            @include br-br($key);
+            @include br-br($key, true);
         }
 
         &-l-#{$key} {
-            @include br-l($key);
+            @include br-l($key, true);
         }
 
         &-r-#{$key} {
-            @include br-r($key);
+            @include br-r($key, true);
         }
     }
 }
