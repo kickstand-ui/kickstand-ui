@@ -102,6 +102,7 @@ export namespace Components {
         "name": string;
         "required": boolean;
         "requiredText": string;
+        "tooltipSize": 'sm' | 'md' | 'lg' | 'xl';
         "tooltipText": string;
         "validate": () => Promise<IFormFieldData>;
     }
@@ -114,6 +115,7 @@ export namespace Components {
         "required": boolean;
         "requiredErrorMessage": string;
         "requiredText": string;
+        "tooltipSize": 'sm' | 'md' | 'lg' | 'xl';
         "tooltipText": string;
         "type": 'checkbox' | 'radio';
         "validate": () => Promise<IFormFieldData>;
@@ -176,6 +178,7 @@ export namespace Components {
         "requiredText": string;
         "step"?: number;
         "stepErrorMessage": string;
+        "tooltipSize": 'sm' | 'md' | 'lg' | 'xl';
         "tooltipText": string;
         "type": 'autocomplete' 
         | 'checkbox'
@@ -717,6 +720,7 @@ declare namespace LocalJSX {
         "onChanged"?: (event: CustomEvent<IFormFieldData>) => void;
         "required"?: boolean;
         "requiredText"?: string;
+        "tooltipSize"?: 'sm' | 'md' | 'lg' | 'xl';
         "tooltipText"?: string;
     }
     interface KsChecklist {
@@ -729,6 +733,7 @@ declare namespace LocalJSX {
         "required"?: boolean;
         "requiredErrorMessage"?: string;
         "requiredText"?: string;
+        "tooltipSize"?: 'sm' | 'md' | 'lg' | 'xl';
         "tooltipText"?: string;
         "type"?: 'checkbox' | 'radio';
     }
@@ -793,6 +798,7 @@ declare namespace LocalJSX {
         "requiredText"?: string;
         "step"?: number;
         "stepErrorMessage"?: string;
+        "tooltipSize"?: 'sm' | 'md' | 'lg' | 'xl';
         "tooltipText"?: string;
         "type"?: 'autocomplete' 
         | 'checkbox'
