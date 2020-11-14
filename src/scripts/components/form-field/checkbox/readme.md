@@ -7,14 +7,15 @@
 
 ## Properties
 
-| Property       | Attribute       | Description | Type      | Default      |
-| -------------- | --------------- | ----------- | --------- | ------------ |
-| `checked`      | `checked`       |             | `boolean` | `false`      |
-| `label`        | `label`         |             | `string`  | `undefined`  |
-| `name`         | `name`          |             | `string`  | `undefined`  |
-| `required`     | `required`      |             | `boolean` | `undefined`  |
-| `requiredText` | `required-text` |             | `string`  | `'Required'` |
-| `tooltipText`  | `tooltip-text`  |             | `string`  | `undefined`  |
+| Property       | Attribute       | Description | Type                           | Default      |
+| -------------- | --------------- | ----------- | ------------------------------ | ------------ |
+| `checked`      | `checked`       |             | `boolean`                      | `false`      |
+| `label`        | `label`         |             | `string`                       | `undefined`  |
+| `name`         | `name`          |             | `string`                       | `undefined`  |
+| `required`     | `required`      |             | `boolean`                      | `undefined`  |
+| `requiredText` | `required-text` |             | `string`                       | `'Required'` |
+| `tooltipSize`  | `tooltip-size`  |             | `"lg" \| "md" \| "sm" \| "xl"` | `'sm'`       |
+| `tooltipText`  | `tooltip-text`  |             | `string`                       | `undefined`  |
 
 
 ## Events

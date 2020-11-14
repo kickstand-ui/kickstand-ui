@@ -15,6 +15,7 @@ export class Checklist implements ComponentInterface {
     @Prop() label: string;
     @Prop() required: boolean;
     @Prop() tooltipText: string;
+    @Prop() tooltipSize: 'sm' | 'md' | 'lg' | 'xl' = 'sm';;
     @Prop() requiredText: string = 'Required';
     @Prop() requiredErrorMessage: string = `This field is required.`;
     @Prop() name: string;
@@ -104,7 +105,7 @@ export class Checklist implements ComponentInterface {
                         <span class="field-label">
                             {this.label}
                             {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText}>*</abbr>}
-                            {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size="md" text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info" /></ks-tooltip>}
+                            {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size={this.tooltipSize} text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info" /></ks-tooltip>}
                         </span>
                         <span class="help-text">{this.helpText}</span>
                         <span class="error-message text-danger" role="alert" aria-live="assertive">
