@@ -73,7 +73,7 @@ export class Gallery implements ComponentInterface {
         let position = delta * (Math.sin(progress));
         setTimeout(() => {
             element.scrollLeft = from + position;
-            this.scrollTo(element, from, to, duration, currentTime + 10);
+            this.scrollTo(element, from, to, duration, currentTime + 5);
         });
     }
 
@@ -107,8 +107,8 @@ export class Gallery implements ComponentInterface {
 
         let wrapperClasses = {
             'content-wrapper': true,
-            'border-l': !this.isStart,
-            'border-r': !this.isEnd
+            'b-l-xxxs': !this.isStart,
+            'b-r-xxxs': !this.isEnd
         }
 
         return (

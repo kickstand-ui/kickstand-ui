@@ -31,7 +31,7 @@ export class Modal implements ComponentInterface {
                     <div class={`modal-wrapper size-${this.size}`}>
                         <header class="modal-header">
                             <h3 class="modal-title" id={this.titleId}>{this.modalTitle}</h3>
-                            {!this.preventClose && <ks-button onClick={() => this.hide()} display="clear" class="modal-close">
+                            {!this.preventClose && <ks-button onClick={() => this.hide()} display="clear" class="modal-close" css-class="p-xs">
                                 <span class="sr-only">Close Modal</span>
                                 <ks-icon icon="times" />
                             </ks-button>}
