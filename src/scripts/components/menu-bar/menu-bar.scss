@@ -141,6 +141,12 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                             }
                         }
                     }
+
+                    .dropdown-contents {
+                        .dropdown-item {
+                            @include color(dark);
+                        }
+                    }
                 }
             }
         }
