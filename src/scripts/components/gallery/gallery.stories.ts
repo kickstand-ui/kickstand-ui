@@ -11,7 +11,7 @@ export const playground = () => {
             <ks-card img-src="https://media.boingboing.net/wp-content/uploads/2018/07/screenshot-22.jpg"
                 alt="Michael Scott"
                 >
-                <ks-card-body card-title="Meditation Moment"
+                <ks-card-body card-title="Meditation Moment 1"
                         card-subtitle="Comfort Food">
                         "It's never too early for ice cream, Jim. But we didn't have any ice cream, so this is mayonnaise and black olives. It's comfort food, alright?"
                 </ks-card-body>
@@ -22,7 +22,7 @@ export const playground = () => {
             <ks-card img-src="https://media.boingboing.net/wp-content/uploads/2018/07/screenshot-22.jpg"
                 alt="Michael Scott"
                 >
-                <ks-card-body card-title="Meditation Moment"
+                <ks-card-body card-title="Meditation Moment 2"
                         card-subtitle="Comfort Food">
                         "It's never too early for ice cream, Jim. But we didn't have any ice cream, so this is mayonnaise and black olives. It's comfort food, alright?"
                 </ks-card-body>
@@ -33,7 +33,7 @@ export const playground = () => {
             <ks-card img-src="https://media.boingboing.net/wp-content/uploads/2018/07/screenshot-22.jpg"
                 alt="Michael Scott"
                 >
-                <ks-card-body card-title="Meditation Moment"
+                <ks-card-body card-title="Meditation Moment 3"
                         card-subtitle="Comfort Food">
                         "It's never too early for ice cream, Jim. But we didn't have any ice cream, so this is mayonnaise and black olives. It's comfort food, alright?"
                 </ks-card-body>
@@ -44,7 +44,7 @@ export const playground = () => {
             <ks-card img-src="https://media.boingboing.net/wp-content/uploads/2018/07/screenshot-22.jpg"
                 alt="Michael Scott"
                 >
-                <ks-card-body card-title="Meditation Moment"
+                <ks-card-body card-title="Meditation Moment 4"
                         card-subtitle="Comfort Food">
                         "It's never too early for ice cream, Jim. But we didn't have any ice cream, so this is mayonnaise and black olives. It's comfort food, alright?"
                 </ks-card-body>
@@ -55,7 +55,7 @@ export const playground = () => {
             <ks-card img-src="https://media.boingboing.net/wp-content/uploads/2018/07/screenshot-22.jpg"
                 alt="Michael Scott"
                 >
-                <ks-card-body card-title="Meditation Moment"
+                <ks-card-body card-title="Meditation Moment 5"
                         card-subtitle="Comfort Food">
                         "It's never too early for ice cream, Jim. But we didn't have any ice cream, so this is mayonnaise and black olives. It's comfort food, alright?"
                 </ks-card-body>
@@ -66,7 +66,7 @@ export const playground = () => {
             <ks-card img-src="https://media.boingboing.net/wp-content/uploads/2018/07/screenshot-22.jpg"
                 alt="Michael Scott"
                 >
-                <ks-card-body card-title="Meditation Moment"
+                <ks-card-body card-title="Meditation Moment 6"
                         card-subtitle="Comfort Food">
                         "It's never too early for ice cream, Jim. But we didn't have any ice cream, so this is mayonnaise and black olives. It's comfort food, alright?"
                 </ks-card-body>
@@ -77,7 +77,7 @@ export const playground = () => {
             <ks-card img-src="https://media.boingboing.net/wp-content/uploads/2018/07/screenshot-22.jpg"
                 alt="Michael Scott"
                 >
-                <ks-card-body card-title="Meditation Moment"
+                <ks-card-body card-title="Meditation Moment 7"
                         card-subtitle="Comfort Food">
                         "It's never too early for ice cream, Jim. But we didn't have any ice cream, so this is mayonnaise and black olives. It's comfort food, alright?"
                 </ks-card-body>
@@ -88,7 +88,7 @@ export const playground = () => {
             <ks-card img-src="https://media.boingboing.net/wp-content/uploads/2018/07/screenshot-22.jpg"
                 alt="Michael Scott"
                 >
-                <ks-card-body card-title="Meditation Moment"
+                <ks-card-body card-title="Meditation Moment 8"
                         card-subtitle="Comfort Food">
                         "It's never too early for ice cream, Jim. But we didn't have any ice cream, so this is mayonnaise and black olives. It's comfort food, alright?"
                 </ks-card-body>
@@ -99,7 +99,7 @@ export const playground = () => {
             <ks-card img-src="https://media.boingboing.net/wp-content/uploads/2018/07/screenshot-22.jpg"
                 alt="Michael Scott"
                 >
-                <ks-card-body card-title="Meditation Moment"
+                <ks-card-body card-title="Meditation Moment 9"
                         card-subtitle="Comfort Food">
                         "It's never too early for ice cream, Jim. But we didn't have any ice cream, so this is mayonnaise and black olives. It's comfort food, alright?"
                 </ks-card-body>
@@ -110,7 +110,7 @@ export const playground = () => {
             <ks-card img-src="https://media.boingboing.net/wp-content/uploads/2018/07/screenshot-22.jpg"
                 alt="Michael Scott"
                 >
-                <ks-card-body card-title="Meditation Moment"
+                <ks-card-body card-title="Meditation Moment 10"
                         card-subtitle="Comfort Food">
                         "It's never too early for ice cream, Jim. But we didn't have any ice cream, so this is mayonnaise and black olives. It's comfort food, alright?"
                 </ks-card-body>

@@ -24,6 +24,7 @@
 
     .content-wrapper {
         overflow-x: auto;
+        scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;  /* Firefox */
         -ms-overflow-style: none; /* IE */
