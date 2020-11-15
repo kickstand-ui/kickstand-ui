@@ -91,7 +91,7 @@ export class LinkButton implements ComponentInterface {
         ];
 
         let classes = {
-            'ks-button': true,
+            'button': true,
             [this.color]: true,
             [this.display]: true,
             [`icon-${this.iconDirection}`]: true,
@@ -110,7 +110,7 @@ export class LinkButton implements ComponentInterface {
         }
 
         return (
-            <Host class="pointer">
+            <Host class="ks-button pointer">
                 <ks-loading-overlay absolute ref={el => this.$loading = el}></ks-loading-overlay>
                 {this.href
                     ? <a class={classes} {...this.getAnchorProps()} href={this.href}>{content}</a>

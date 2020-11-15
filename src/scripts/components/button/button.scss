@@ -1,165 +1,161 @@
 @import "../../../scss/00_Abstracts/index";
 
-ks-button {
+.ks-button {
     display: inline-block;
     position: relative;
-}
 
-.ks-button {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    line-height: 1;
-    white-space: nowrap;
-    text-align: center;
-    vertical-align: middle;
-    position: relative;
-    font-weight: bold;
-    cursor: pointer;
-    overflow: hidden;
-    width: 100%;
-    text-align: center;
-    @include br(sm);
-    @include p(md);
-    @include shadow(xs);
-    @include transition($property: box-shadow);
-
-
-    &:focus,
-    &:hover:not(:disabled) {
-        @include shadow(md);
-        @include transition($property: box-shadow);
-    }
-
-    &:active:not(:disabled) {
-        top: 1px;
-        @include shadow(inner);
-    }
-
-    &:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-        @include shadow(inner);
-    }
-
-    .button-text {
+    .button {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        line-height: 1;
+        white-space: nowrap;
+        text-align: center;
+        vertical-align: middle;
+        position: relative;
+        font-weight: bold;
+        cursor: pointer;
+        overflow: hidden;
         width: 100%;
-        text-align: center;    
-    }
+        text-align: center;
+        @include br(sm);
+        @include p(md);
+        @include shadow(xs);
+        @include transition($property: box-shadow);
 
-    @each $color, $value in get-colors() {
-        &.#{$color} {
-            &.solid {
-                background-color: color-value($color);
-                background-image: linear-gradient(
-                    0deg,
-                    color-value($color) 0%,
-                    color-value($color, lighter) 100%
-                );
-                color: text-color-value($color, dark);
-                text-shadow: 2px 2px 4px color-value($color, dark);
-                @include b(solid, xxs, $color, light);
-                @include b-b(solid, xxs, $color);
-                border-image-slice: 2;
-                border-image-source: linear-gradient(
-                    0deg,
-                    color-value($color) 0%,
-                    color-value($color, lighter) 100%
-                );
 
-                .icon {
-                    filter: drop-shadow(0 0 0.15rem color-value($color, darker));
-                }            
-            }
+        &:focus,
+        &:hover:not(:disabled) {
+            @include shadow(md);
+            @include transition($property: box-shadow);
+        }
 
-            &.hollow {
-                background-color: transparent;
-                @include color($color);
-                @include b(solid, xxs, $color);
+        &:active:not(:disabled) {
+            top: 1px;
+            @include shadow(inner);
+        }
 
-                &:focus,
-                &:hover:not(:disabled) {
-                    background-color: transparent;
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            @include shadow(inner);
+        }
+
+        .button-text {
+            width: 100%;
+            text-align: center;
+        }
+
+        @each $color,
+        $value in get-colors() {
+            &.#{$color} {
+                &.solid {
+                    background-color: color-value($color);
+                    background-image: linear-gradient(0deg,
+                            color-value($color) 0%,
+                            color-value($color, lighter) 100%);
+                    color: text-color-value($color, dark);
+                    text-shadow: 2px 2px 4px color-value($color, dark);
+                    @include b(none);
+
+                    .icon {
+                        filter: drop-shadow(0 0 0.15rem color-value($color, darker));
+                    }
                 }
-            }
 
-            &.clear {
-                border-color: transparent;
-                background-color: transparent;
-                color: color-value($color);
-                @include shadow(none);
-                @include transition(text-shadow);
+                &.hollow {
+                    background-color: transparent;
+                    @include color($color);
+                    @include b(solid, xxs, $color);
 
-                &:focus,
-                &:hover:not(:disabled) {
+                    &:focus,
+                    &:hover:not(:disabled) {
+                        background-color: transparent;
+                    }
+                }
+
+                &.clear {
                     border-color: transparent;
                     background-color: transparent;
-                    text-shadow: 2px 2px 4px color-value(dark, 0.25);
-                    @include transition(text-shadow);
-                }
-            }
-
-            &.link {
-                background-color: transparent;
-                display: inline-block;
-                text-decoration: none;
-                border: 0;
-                @include color($color);
-                @include p(none);
-                @include shadow(none);
-
-                &:focus,
-                &:hover:not(:disabled) {
-                    background-color: transparent;
-                    text-decoration: underline;
-                    @include color($color, light);
+                    color: color-value($color);
                     @include shadow(none);
+                    @include transition(text-shadow);
+
+                    &:focus,
+                    &:hover:not(:disabled) {
+                        border-color: transparent;
+                        background-color: transparent;
+                        text-shadow: 2px 2px 4px color-value(dark, 0.25);
+                        @include transition(text-shadow);
+                    }
+                }
+
+                &.link {
+                    background-color: transparent;
+                    display: inline-block;
+                    text-decoration: none;
+                    border: 0;
+                    @include color($color);
+                    @include p(none);
+                    @include shadow(none);
+
+                    &:focus,
+                    &:hover:not(:disabled) {
+                        background-color: transparent;
+                        text-decoration: underline;
+                        @include color($color, light);
+                        @include shadow(none);
+                    }
+
+                    &:focus {
+                        @include default-outline();
+                    }
                 }
             }
         }
-    }
 
-    &.xs {
-        @include p(xs);
-        @include font-size(xs);
-    }
-
-    &.sm {
-        @include p(sm);
-        @include font-size(sm);
-    }
-
-    &.md {
-        @include p(md);
-        @include font-size(sm);
-    }
-
-    &.lg {
-        @include br(md);
-        @include p(lg);
-        @include font-size(md);
-    }
-
-    &.xl {
-        @include br(md);
-        @include p(xl);
-        @include font-size(lg);
-    }
-
-    &.icon {
-        &-left {
-            flex-direction: row;
-
-            .button-icon {
-                @include mr(sm);
-            }
+        &.xs {
+            @include p(xs);
+            @include font-size(xs);
         }
 
-        &-right {
-            flex-direction: row-reverse;
+        &.sm {
+            @include p(sm);
+            @include font-size(sm);
+        }
 
-            .button-icon {
-                @include ml(sm);
+        &.md {
+            @include p(md);
+            @include font-size(sm);
+        }
+
+        &.lg {
+            @include br(md);
+            @include p(lg);
+            @include font-size(md);
+        }
+
+        &.xl {
+            @include br(md);
+            @include p(xl);
+            @include font-size(lg);
+        }
+
+        &.icon {
+            &-left {
+                flex-direction: row;
+
+                .button-icon {
+                    @include mr(sm);
+                }
+            }
+
+            &-right {
+                flex-direction: row-reverse;
+
+                .button-icon {
+                    @include ml(sm);
+                }
             }
         }
     }
