@@ -22,21 +22,22 @@
                     @include mb(md);
 
                     .modal-title {
+                        line-height: 1;
                         @include color(dark);
                     }
 
                     .modal-close {
-                        @include mt(xxs);
-
                         .ks-button {
-                            @include p(none);
+                            .button {
+                                @include p(none);
 
-                            .button-text {
-                                display: inline-flex;
-                            }
+                                .button-text {
+                                    display: inline-flex;
+                                }
 
-                            .icon {
-                                @include font-size(lg);
+                                .icon {
+                                    @include font-size(lg);
+                                }
                             }
                         }
                     }
