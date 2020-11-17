@@ -53,7 +53,7 @@
                 line-height: 1;
                 @include color(primary);
                 @include font-size(md);
-                @include transition($speed: med);
+                @include transition();
             }
 
             &:focus {
@@ -63,7 +63,7 @@
             &[aria-expanded="true"] {
                 .accordion-icon {
                     transform: rotate(-180deg);
-                    @include transition($speed: med);
+                    @include transition();
                 }
             }
         }
@@ -72,7 +72,7 @@
             max-height: 0;
             overflow: hidden;
             visibility: hidden;
-            @include transition($speed: med);
+            @include transition();
             @include px(lg);
             @include b-x($size: xxs, $color: primary);
             @include b-b($size: xxs, $color: primary);
