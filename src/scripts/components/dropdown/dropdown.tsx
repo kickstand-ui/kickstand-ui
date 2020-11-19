@@ -82,7 +82,6 @@ export class Dropdown {
         this.$focusableEls[this.focusIndex].focus();
     }
 
-
     componentDidRender() {
         this.$focusableEls = Array.from(this.$contents.querySelectorAll(FOCUSABLE_ELEMENTS));
 

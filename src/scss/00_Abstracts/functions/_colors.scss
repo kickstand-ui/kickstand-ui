@@ -33,25 +33,24 @@
         $result: map-merge($result, $group);
     }
 
-    // @debug $result;
     @return $result;
 }
 
 $color-pallette: build-pallet();
 
 /*
-        GET COLOR
-    
-        usage:
-            // for the base color
-            color(primary);
-    
-            // for variations of a color
-            color(primary, lighter);
-            color(primary, light);
-            color(primary, dark);
-            color(primary, darker);
-    */
+    GET COLOR
+
+    usage:
+    // for the base color
+    color(primary);
+
+    // for variations of a color
+    color(primary, lighter);
+    color(primary, light);
+    color(primary, dark);
+    color(primary, darker);
+*/
 @function color($name: 'primary', $variant: 'base', $opacity: 1) {
     $color: null;
 
@@ -96,18 +95,18 @@ $color-pallette: build-pallet();
 }
 
 /*
-        GET CONTRASTING COLOR FOR TEXT ACCESSIBILITY (WCAG 2.0 AA+)
-    
-        usage:
-            // text for the base color
-            text-color(primary);
-    
-            // for variations of a color
-            text-color(primary, lighter);
-            text-color(primary, light);
-            text-color(primary, dark);
-            text-color(primary, darker);
-    */
+    GET CONTRASTING COLOR FOR TEXT ACCESSIBILITY (WCAG 2.0 AA+)
+
+    usage:
+    // text for the base color
+    text-color(primary);
+
+    // for variations of a color
+    text-color(primary, lighter);
+    text-color(primary, light);
+    text-color(primary, dark);
+    text-color(primary, darker);
+*/
 @function text-color($name: 'primary', $variant: 'base', $opacity: 1) {
     $color: color($name, $variant, $opacity);
 

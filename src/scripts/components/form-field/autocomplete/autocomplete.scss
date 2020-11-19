@@ -62,25 +62,32 @@
             max-height: 0;
             overflow: hidden;
             background-color: white;
+            @include b($size: xxs);
+            @include b-t(none);
             @include br-b(sm);
             @include z-index(xs);
             @include shadow(sm);
             @include p(none);
             @include m(none);
+            @include mt(-xxxs);
             @include transition();
 
             .option {
                 @include p(md);
 
                 &:focus {
-                    @include b();
-                    @include bg-color(light, light);
+                    @include b-y();
+                    @include bg-color(light, lighter);
                 }
 
                 &:hover {
                     @include bg-color(light, lighter);
                 }
             }
+        }
+
+        [aria-expanded="true"] {
+            @include br-b(none);
         }
 
         [aria-expanded="true"] ~ .dropdown-options {

@@ -40,8 +40,6 @@ export class Autocomplete implements ComponentInterface {
     componentWillLoad() {
         this.$options = Array.from(this.$el.querySelectorAll('option')) as HTMLOptionElement[];
         this.$filteredOptions = this.$options;
-        console.log(this.$options);
-
     }
 
     componentDidRender() {
@@ -80,17 +78,29 @@ export class Autocomplete implements ComponentInterface {
                 // ignore otherwise the menu will show
                 break;
             case keyCodes.ESC:
-                this.hideMenu();
+                this.hideOptions();
                 break;
             case keyCodes.DOWN_ARROW:
                 this.onTextBoxDownPressed();
                 break;
             case keyCodes.TAB:
-                this.hideMenu();
+                this.hideOptions();
                 break;
             default:
                 this.onTextBoxType();
         }
+    }
+
+    private onBlurHandler() {
+        const timeout = setTimeout(() => {
+            this.hideOptions();
+            this.changed.emit(this.validateField());
+        }, 200);
+        
+        setTimeout(() => {
+            if (this.$dropdown.contains(document.activeElement))
+                clearTimeout(timeout);
+        });
     }
 
     private onOptionKeyupHandler(e: KeyboardEvent, option: HTMLOptionElement, index: number) {
@@ -100,7 +110,7 @@ export class Autocomplete implements ComponentInterface {
                 this.selectValue(option, index);
                 break;
             case keyCodes.ESC:
-                this.hideMenu();
+                this.hideOptions();
                 break;
             case keyCodes.UP_ARROW:
                 this.selectPrevOption();
@@ -109,7 +119,7 @@ export class Autocomplete implements ComponentInterface {
                 this.selectNextOption();
                 break;
             case keyCodes.TAB:
-                this.hideMenu();
+                this.hideOptions();
                 break;
             default:
                 break;
@@ -139,14 +149,14 @@ export class Autocomplete implements ComponentInterface {
 
     private onTextBoxDownPressed() {
         this.filterOptions();
-        this.showMenu();
+        this.showOptions();
         this.focusIndex = 0;
-        setTimeout(() => this.$dropdownOptions[this.focusIndex].focus());
+        setTimeout(() => this.$dropdownOptions[this.focusIndex].focus(), 100);
     }
 
     private onTextBoxType() {
         this.filterOptions();
-        this.showMenu();
+        this.showOptions();
         this.resetSelectInput();
     }
 
@@ -165,6 +175,7 @@ export class Autocomplete implements ComponentInterface {
     private clearSearchTerm() {
         this.$input.value = '';
         this.$select.value = '';
+        this.changed.emit(this.validateField());
         this.filterOptions();
     }
 
@@ -172,12 +183,12 @@ export class Autocomplete implements ComponentInterface {
         this.selectValue(option, index);
     }
 
-    private showMenu() {
+    private showOptions() {
         this.isExpanded = true;
         this.$dropdown.style.maxHeight = '12rem';
     }
 
-    private hideMenu() {
+    private hideOptions() {
         this.isExpanded = false;
         this.$dropdown.style.maxHeight = '0px';
     }
@@ -189,7 +200,7 @@ export class Autocomplete implements ComponentInterface {
         this.focusIndex = index;
         this.$input.focus();
         this.$input.value = option.innerText;
-        this.hideMenu();
+        this.hideOptions();
         debounce(() => this.changed.emit(this.validateField()), this.debounce);
     }
 
@@ -224,6 +235,7 @@ export class Autocomplete implements ComponentInterface {
                         id={this.inputId}
                         aria-expanded={`${this.isExpanded}`}
                         onKeyUp={(e) => this.onKeyUpHandler(e)}
+                        onBlur={() => this.onBlurHandler()}
                         ref={e => this.$input = e}
                         {...props}
                     />

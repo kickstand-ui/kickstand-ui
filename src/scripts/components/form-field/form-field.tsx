@@ -17,7 +17,7 @@ export class FormField implements ComponentInterface {
     fieldId = `form_input_${this.formFieldId}`;
     labelId = `form_label_${this.formFieldId}`;
     listId = `form_list_${this.formFieldId}`;
-    inputHandler: Function;
+    inputHandler: any;
 
     $input: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
     $checkbox: HTMLKsCheckboxElement;
@@ -125,12 +125,7 @@ export class FormField implements ComponentInterface {
             $options.forEach(x => x.hidden = true);
         }
 
-        this.inputHandler = debounce(() => {
-            if (this.$input)
-                this.value = this.$input.value || '';
-
-        }, this.debounce);
-
+        this.inputHandler = debounce(() => this.value = this.$input.value || '', this.debounce);
     }
 
     private async validateField(): Promise<IFormFieldData> {
