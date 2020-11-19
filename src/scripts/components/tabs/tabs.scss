@@ -62,8 +62,8 @@
                 @include b();
                 @include br-t(sm);
 
-                .justify-justified & {
-                    height: 100%;
+                &.justify-justified {
+                    flex-wrap: nowrap;
                 }
 
                 .tab-item {
@@ -87,6 +87,10 @@
                 flex-wrap: wrap;
                 @include b();
                 @include br-b(sm);
+
+                &.justify-justified {
+                    flex-wrap: nowrap;
+                }
                 
                 .tab-item {
                     &[aria-selected="true"] {
