@@ -4,33 +4,33 @@ $breakpoints: (xl, lg, md, sm, xs, xxs, print);
 
 .text {
 
-    // Font Size
-    @each $key, $value in $font-sizes {
+    // Sizes
+    @each $key,
+    $value in $font-sizes {
         &-#{$key} {
             @include font-size($key, true);
         }
     }
 
-    @each $mq, $value in $breakpoints {
-        @each $key, $value in $font-sizes {
-            @include mq($mq) {
+    // Decoration
 
-                /*
-                sm:text-md
-                xl:text-xl
-            */
-                .#{$mq}\:text-#{$key} {
-                    @include font-size($key, true);
-                }
-            }
-        }
-    }
-
-    &-normal {
+    &-weight-normal {
         font-weight: normal !important;
     }
 
-    &-bold {
+    &-weight-lighter {
+        font-weight: lighter !important;
+    }
+
+    &-weight-light {
+        font-weight: 300 !important;
+    }
+
+    &-weight-bold {
+        font-weight: bold !important;
+    }
+
+    &-weight-bolder {
         font-weight: bold !important;
     }
 
@@ -46,6 +46,8 @@ $breakpoints: (xl, lg, md, sm, xs, xxs, print);
         text-decoration: none !important;
     }
 
+    // Alignment
+
     &-left {
         text-align: left !important;
     }
@@ -56,5 +58,60 @@ $breakpoints: (xl, lg, md, sm, xs, xxs, print);
 
     &-center {
         text-align: center !important;
+    }
+}
+
+// Responsive sizes
+
+@each $mq,
+$value in $breakpoints {
+    @each $key,
+    $value in $font-sizes {
+
+        /*
+         *  sm:text-md
+         *  xl:text-xl
+         */
+        .#{$mq}\:text-#{$key} {
+            @include mq($mq) {
+                @include font-size($key, true);
+            }
+        }
+    }
+}
+
+// Hover styles 
+
+.hover\:text {
+    &-weight-normal:hover {
+        font-weight: normal !important;
+    }
+
+    &-weight-lighter:hover {
+        font-weight: lighter !important;
+    }
+
+    &-weight-light:hover {
+        font-weight: 300 !important;
+    }
+
+    &-weight-bold:hover {
+        font-weight: bold !important;
+    }
+
+    &-weight-bolder:hover {
+        font-weight: bold !important;
+    }
+
+    &-italic:hover {
+        font-style: italic !important;
+    }
+
+    &-underline:hover {
+        text-decoration: underline !important;
+    }
+
+    &-decoration-none:hover {
+        text-decoration: none !important;
     }
 }
