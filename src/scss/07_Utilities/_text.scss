@@ -14,23 +14,23 @@ $breakpoints: (xl, lg, md, sm, xs, xxs, print);
 
     // Decoration
 
-    &-weight-normal {
+    &-normal {
         font-weight: normal !important;
     }
 
-    &-weight-lighter {
+    &-lighter {
         font-weight: lighter !important;
     }
 
-    &-weight-light {
+    &-light {
         font-weight: 300 !important;
     }
 
-    &-weight-bold {
+    &-bold {
         font-weight: bold !important;
     }
 
-    &-weight-bolder {
+    &-bolder {
         font-weight: bold !important;
     }
 
@@ -83,23 +83,23 @@ $value in $breakpoints {
 // Hover styles 
 
 .hover\:text {
-    &-weight-normal:hover {
+    &-normal:hover {
         font-weight: normal !important;
     }
 
-    &-weight-lighter:hover {
+    &-lighter:hover {
         font-weight: lighter !important;
     }
 
-    &-weight-light:hover {
+    &-light:hover {
         font-weight: 300 !important;
     }
 
-    &-weight-bold:hover {
+    &-bold:hover {
         font-weight: bold !important;
     }
 
-    &-weight-bolder:hover {
+    &-bolder:hover {
         font-weight: bold !important;
     }
 
