@@ -73,7 +73,7 @@ export class LinkButton implements ComponentInterface {
         let props = {};
 
         (this.href && this.target) && (props['target'] = this.target);
-        (this.target && this.href) && (props['rel'] = 'noreferrer noopener');
+        (this.target && this.href) && (props['rel'] = 'noopener');
         (this.href && this.download) && (props['download'] = true);
 
         return props;
