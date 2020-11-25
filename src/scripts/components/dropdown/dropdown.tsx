@@ -87,7 +87,7 @@ export class Dropdown {
 
         window.addEventListener('click', (e: MouseEvent) => {
             let $preventCloseElements = Array.from(document.querySelectorAll('.prevent-dropdown-close'));
-            let isPreventClose = this.$el.contains(e.target as HTMLElement) 
+            let isPreventClose = this.$el.contains(e.target as HTMLElement)
                 || $preventCloseElements.some(x => x.contains(e.target as HTMLElement));
 
             if (isPreventClose)
@@ -131,14 +131,16 @@ export class Dropdown {
                     onClick={() => this.toggleDropdown()}
                     color={this.color}
                     display={this.display}
-                    icon={this.icon}
                     cssClass="dropdown-button"
                     haspopup={true}
                     expanded={this.isExpanded}
                     controls={this.dropdownId}
                     ref={el => this.$control = el.querySelector('button')}
                 >
-                    <span class={buttonClasses}>{this.text}</span>
+                    <span class={buttonClasses}>
+                        {this.icon && <ks-icon icon={this.icon} />}
+                        {this.text}
+                    </span>
                     {!this.hideIndicator && <ks-icon icon="chevron_down" class="dropdown-icon" />}
                 </ks-button>
                 <div

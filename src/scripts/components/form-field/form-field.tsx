@@ -291,7 +291,9 @@ export class FormField implements ComponentInterface {
                     onBlur={() => this.onBlur()}
                     ref={el => this.$input = el}
                 />,
-                this.type === 'password' && <ks-button class="password-toggle" icon={this.showPassword ? 'hide' : 'view'} display="clear" size="xs" css-class="text-md" color="dark" hide-text onClick={() =>this.handleTogglePasswordClick()}>{this.showPassword ? 'hide' : 'hide'}</ks-button>,
+                this.type === 'password' && <ks-button class="password-toggle" display="clear" size="xs" css-class="text-md" color="dark" hide-text onClick={() =>this.handleTogglePasswordClick()}>
+                    <ks-icon icon={this.showPassword ? 'hide' : 'view'} label={this.showPassword ? 'hide' : 'hide'}></ks-icon>
+                </ks-button>,
                 this.datalist && <datalist id={this.listId}>
                     <slot />
                 </datalist>

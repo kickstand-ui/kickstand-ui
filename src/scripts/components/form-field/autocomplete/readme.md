@@ -53,7 +53,6 @@ Type: `Promise<IFormFieldData>`
 graph TD;
   ks-autocomplete --> ks-button
   ks-autocomplete --> ks-icon
-  ks-button --> ks-icon
   ks-button --> ks-loading-overlay
   ks-loading-overlay --> ks-overlay
   ks-loading-overlay --> ks-loading

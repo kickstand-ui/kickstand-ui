@@ -2,7 +2,7 @@
 
 .ks-alert {
     display: block;
-    
+
     .alert-content {
         @include br(sm);
         @include p(lg);
@@ -17,11 +17,15 @@
                 @include color(dark);
 
                 .alert-header {
-                    @if(text-color($color, dark) == black) {
-                        @include color(dark);
-                    }
-                    @else {
-                        @include color($color, dark);
+                    .alert-heading,
+                    .alert-close .icon {
+                        @if(text-color($color, dark)==black) {
+                            @include color(dark);
+                        }
+
+                        @else {
+                            @include color($color, dark);
+                        }
                     }
                 }
             }
@@ -33,9 +37,10 @@
                 @include b-l(solid, md, $color);
 
                 .alert-header {
-                    @if(text-color($color, dark) == black) {
+                    @if(text-color($color, dark)==black) {
                         @include color(dark);
                     }
+
                     @else {
                         @include color($color, dark);
                     }

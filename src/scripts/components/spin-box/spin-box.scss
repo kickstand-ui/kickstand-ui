@@ -1,31 +1,31 @@
 @import "../../../scss/00_Abstracts/index";
 
-.ks-form-field {
-    .spin-box {
-        display: inline-flex;
-        align-items: center;
-        @include shadow(xs);
-        @include b($size: xxxs);
+.ks-spin-box {
+    @include b();
+    @include br();
 
-        .ks-button {
-            @include px(xs);
-        }
-        .form-input {
+    display: inline-flex;
+    align-items: center;
+    @include shadow(xs);
+    @include b($size: xxxs);
+
+    .form-input {
+        margin: 0;
+        width: 4rem;
+        height: 2.75rem;
+        text-align: center;
+        border: none;
+        -moz-appearance: textfield; // Firefox
+        @include shadow(none);
+        @include b-x();
+        @include font-size(sm);
+        @include p(sm);
+
+        // Hide browser input spinners for numbers
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
             margin: 0;
-            width: 4rem;
-            text-align: center;
-            border: none;
-            -moz-appearance: textfield; /* Firefox */
-            @include shadow(none);
-            @include font-size(sm);
-            @include p(sm);
-
-            // Hide browser input spinners for numbers
-            &::-webkit-outer-spin-button,
-            &::-webkit-inner-spin-button {
-                margin: 0;
-                -webkit-appearance: none;
-            }
+            -webkit-appearance: none;
         }
     }
 }

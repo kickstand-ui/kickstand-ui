@@ -7,27 +7,26 @@
 
 ## Properties
 
-| Property        | Attribute        | Description | Type                                                                                            | Default     |
-| --------------- | ---------------- | ----------- | ----------------------------------------------------------------------------------------------- | ----------- |
-| `color`         | `color`          |             | `"danger" \| "dark" \| "info" \| "light" \| "primary" \| "secondary" \| "success" \| "warning"` | `'primary'` |
-| `controls`      | `controls`       |             | `string`                                                                                        | `undefined` |
-| `cssClass`      | `css-class`      |             | `string`                                                                                        | `''`        |
-| `describedBy`   | `described-by`   |             | `string`                                                                                        | `undefined` |
-| `disabled`      | `disabled`       |             | `boolean`                                                                                       | `undefined` |
-| `display`       | `display`        |             | `"clear" \| "hollow" \| "link" \| "solid"`                                                      | `'solid'`   |
-| `expanded`      | `expanded`       |             | `boolean`                                                                                       | `false`     |
-| `haspopup`      | `haspopup`       |             | `boolean`                                                                                       | `false`     |
-| `hideText`      | `hide-text`      |             | `boolean`                                                                                       | `false`     |
-| `hides`         | `hides`          |             | `string`                                                                                        | `undefined` |
-| `href`          | `href`           |             | `string`                                                                                        | `undefined` |
-| `icon`          | `icon`           |             | `string`                                                                                        | `''`        |
-| `iconDirection` | `icon-direction` |             | `"left" \| "right"`                                                                             | `'left'`    |
-| `loading`       | `loading`        |             | `boolean`                                                                                       | `undefined` |
-| `shows`         | `shows`          |             | `string`                                                                                        | `undefined` |
-| `size`          | `size`           |             | `"lg" \| "md" \| "sm" \| "xl" \| "xs"`                                                          | `'md'`      |
-| `tabIndex`      | `tab-index`      |             | `number`                                                                                        | `undefined` |
-| `target`        | `target`         |             | `string`                                                                                        | `undefined` |
-| `type`          | `type`           |             | `"button" \| "reset" \| "submit"`                                                               | `'button'`  |
+| Property      | Attribute      | Description | Type                                                                                            | Default     |
+| ------------- | -------------- | ----------- | ----------------------------------------------------------------------------------------------- | ----------- |
+| `color`       | `color`        |             | `"danger" \| "dark" \| "info" \| "light" \| "primary" \| "secondary" \| "success" \| "warning"` | `'primary'` |
+| `controls`    | `controls`     |             | `string`                                                                                        | `undefined` |
+| `cssClass`    | `css-class`    |             | `string`                                                                                        | `''`        |
+| `describedBy` | `described-by` |             | `string`                                                                                        | `undefined` |
+| `disabled`    | `disabled`     |             | `boolean`                                                                                       | `undefined` |
+| `display`     | `display`      |             | `"clear" \| "hollow" \| "link" \| "solid"`                                                      | `'solid'`   |
+| `download`    | `download`     |             | `boolean`                                                                                       | `undefined` |
+| `expanded`    | `expanded`     |             | `boolean`                                                                                       | `false`     |
+| `haspopup`    | `haspopup`     |             | `boolean`                                                                                       | `false`     |
+| `hideText`    | `hide-text`    |             | `boolean`                                                                                       | `false`     |
+| `hides`       | `hides`        |             | `string`                                                                                        | `undefined` |
+| `href`        | `href`         |             | `string`                                                                                        | `undefined` |
+| `loading`     | `loading`      |             | `boolean`                                                                                       | `undefined` |
+| `shows`       | `shows`        |             | `string`                                                                                        | `undefined` |
+| `size`        | `size`         |             | `"lg" \| "md" \| "sm" \| "xl" \| "xs"`                                                          | `'md'`      |
+| `tabIndex`    | `tab-index`    |             | `number`                                                                                        | `undefined` |
+| `target`      | `target`       |             | `string`                                                                                        | `undefined` |
+| `type`        | `type`         |             | `"button" \| "reset" \| "submit"`                                                               | `'button'`  |
 
 
 ## Dependencies
@@ -46,13 +45,11 @@
 
 ### Depends on
 
-- [ks-icon](../icon)
 - [ks-loading-overlay](../loading)
 
 ### Graph
 ```mermaid
 graph TD;
-  ks-button --> ks-icon
   ks-button --> ks-loading-overlay
   ks-loading-overlay --> ks-overlay
   ks-loading-overlay --> ks-loading

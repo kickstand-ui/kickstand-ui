@@ -21,13 +21,17 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
             display: flex;
             align-items: center;
 
-            .dropdown-icon {
-                line-height: 1;
-                @include ml(xs);
-                @include transition();
-            }    
+            .icon {
+                @include mr(xs);
+            }
         }
-        
+
+        .dropdown-icon {
+            line-height: 1;
+            @include ml(xs);
+            @include transition();
+        }
+
         &[aria-expanded="true"] .dropdown-icon {
             transform: rotate(-180deg);
             @include transition();
@@ -55,7 +59,9 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         @include transition();
 
         &.collapse {
-            @each $key, $value in $breakpoints {
+
+            @each $key,
+            $value in $breakpoints {
                 &-#{$key} {
                     @include mq($key) {
                         position: fixed;
@@ -68,7 +74,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         }
 
         .dropdown-item {
-            > * {
+            >* {
                 display: inline-block;
                 @include px(xs);
                 @include py(md);
@@ -130,7 +136,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         .dropdown-button {
             @include br-b(none);
         }
-        
+
         .contents {
             visibility: visible;
             opacity: 1;

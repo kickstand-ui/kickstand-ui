@@ -29,12 +29,13 @@
 ### Depends on
 
 - [ks-button](../button)
+- [ks-icon](../icon)
 
 ### Graph
 ```mermaid
 graph TD;
   ks-spin-box --> ks-button
-  ks-button --> ks-icon
+  ks-spin-box --> ks-icon
   ks-button --> ks-loading-overlay
   ks-loading-overlay --> ks-overlay
   ks-loading-overlay --> ks-loading

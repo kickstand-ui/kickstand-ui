@@ -13,8 +13,6 @@ export class LinkButton implements ComponentInterface {
     @Prop() type: 'button' | 'submit' | 'reset' = 'button';
     @Prop() display: 'solid' | 'hollow' | 'clear' | 'link' = 'solid';
     @Prop() size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
-    @Prop() icon: string = '';
-    @Prop() iconDirection: 'left' | 'right' = 'left';
     @Prop() href: string;
     @Prop() hideText: boolean = false;
     @Prop() cssClass: string = '';
@@ -28,6 +26,7 @@ export class LinkButton implements ComponentInterface {
     @Prop() shows: string;
     @Prop() hides: string;
     @Prop() target: string;
+    @Prop() download: boolean;
 
     componentDidRender() {
         this.loading
@@ -43,12 +42,12 @@ export class LinkButton implements ComponentInterface {
     }
 
     private setOpensListener() {
-        if(!this.shows)
+        if (!this.shows)
             return;
 
         let $showsComponent = document.getElementById(this.shows) as HTMLKsOverlayElement;
 
-        if(!$showsComponent)
+        if (!$showsComponent)
             return;
 
         this.haspopup = true;
@@ -57,12 +56,12 @@ export class LinkButton implements ComponentInterface {
     }
 
     private setHidesListener() {
-        if(!this.hides)
+        if (!this.hides)
             return;
 
         let $hidesComponent = document.getElementById(this.hides) as HTMLKsOverlayElement;
 
-        if(!$hidesComponent)
+        if (!$hidesComponent)
             return;
 
         this.haspopup = true;
@@ -73,28 +72,18 @@ export class LinkButton implements ComponentInterface {
     private getAnchorProps() {
         let props = {};
 
-        (this.href && this.target) && (props['target'] = this.target); 
+        (this.href && this.target) && (props['target'] = this.target);
         (this.target && this.href) && (props['rel'] = 'noreferrer noopener');
+        (this.href && this.download) && (props['download'] = true);
 
         return props;
     }
 
     render() {
-        let content = [
-            this.icon && <ks-icon icon={this.icon} class={{'button-icon': true, 'mx-none': this.hideText}} />,
-            <span class={{
-                'button-text': true,
-                'sr-only': this.hideText
-            }}>
-                <slot />
-            </span>
-        ];
-
         let classes = {
             'button': true,
             [this.color]: true,
             [this.display]: true,
-            [`icon-${this.iconDirection}`]: true,
             [this.cssClass]: true,
             [this.size]: true,
         };
@@ -111,10 +100,16 @@ export class LinkButton implements ComponentInterface {
 
         return (
             <Host class="ks-button pointer">
-                <ks-loading-overlay absolute ref={el => this.$loading = el}></ks-loading-overlay>
                 {this.href
-                    ? <a class={classes} {...this.getAnchorProps()} href={this.href}>{content}</a>
-                    : <button {...props} class={classes}>{content}</button >}
+                    ? <a class={classes} {...this.getAnchorProps()} href={this.href}>
+                        <slot />
+                    </a>
+                    : [
+                        <ks-loading-overlay absolute ref={el => this.$loading = el}></ks-loading-overlay>,
+                        <button {...props} class={classes}>
+                            <slot />
+                        </button >
+                    ]}
             </Host>
         );
     }

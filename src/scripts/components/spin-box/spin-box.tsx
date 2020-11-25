@@ -81,15 +81,12 @@ export class SpinBox implements ComponentInterface {
 
         return (<Host class="ks-spin-box">
             <ks-button
-                color="light"
-                icon="fas fa-chevron-left"
+                display="clear"
                 onClick={() => this.handleDecrease()}
                 described-by={this.labelId}
-                hide-text
-                tab-index="-1"
             >
-                add
-                </ks-button>
+                <ks-icon icon="minus" label="remove" />
+            </ks-button>
             <input
                 type="number"
                 class="form-input"
@@ -103,15 +100,12 @@ export class SpinBox implements ComponentInterface {
                 onBlur={(e) => this.validateInput(e)}
             />
             <ks-button
-                color="light"
-                icon="fas fa-chevron-right"
+                display="clear"
                 onClick={() => this.handleIncrease()}
                 described-by={this.labelId}
-                hide-text
-                tab-index="-1"
             >
-                remove
-                </ks-button>
+                <ks-icon icon="plus" label="add" />
+            </ks-button>
             <div class="sr-only" role="status" aria-live="polite">{this.value}</div>
         </Host>);
     }

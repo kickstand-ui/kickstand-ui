@@ -240,7 +240,7 @@ export class Autocomplete implements ComponentInterface {
                         {...props}
                     />
                     <span class="input-icons">
-                        {this.searchTerm ? <ks-button class="clear-button" size="xs" display="clear" icon="times" css-class="text-md" color="dark" hide-text onClick={() => this.clearSearchTerm()}>clear</ks-button> : ''}
+                        {this.searchTerm ? <ks-button class="clear-button" size="xs" display="clear" css-class="text-md" color="dark" onClick={() => this.clearSearchTerm()}><ks-icon icon="times" label="clear"></ks-icon></ks-button> : ''}
                         <ks-icon icon="search" class="search-icon"></ks-icon>
                     </span>
                     <ul id={`autocomplete-options-${this.autocompleteId}`} class="dropdown-options" role="listbox" ref={el => this.$dropdown = el}>

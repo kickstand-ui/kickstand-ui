@@ -5,7 +5,6 @@ export default { title: 'Components/Button' };
 const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
 const displays = ['solid', 'hollow', 'clear', 'link'];
 const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
-const iconDirections = ['left', 'right'];
 
 export const playground = () => {
     const color = select('color', colors, 'primary');
@@ -13,8 +12,6 @@ export const playground = () => {
     const loading = boolean('loading', false);
     const disabled = boolean('disabled', false);
     const size = select('size', sizes, 'md');
-    const icon = text('icon', '');
-    const iconDirection = select('icon-direction', iconDirections, 'left');
     const linkUrl = text('href', '');
     const target = text('target', '');
     const cssClass = text('css-class', '');
@@ -26,8 +23,6 @@ export const playground = () => {
             color="${color}" 
             display="${display}" 
             size="${size}" 
-            icon="${icon}"
-            icon-direction="${iconDirection}"
             href="${linkUrl}"
             loading="${loading}"
             disabled="${disabled}"
@@ -42,8 +37,6 @@ export const iconButton = () => {
     const loading = boolean('loading', false);
     const disabled = boolean('disabled', false);
     const size = select('size', sizes, 'md');
-    const icon = text('icon', 'info');
-    const iconDirection = select('icon-direction', iconDirections, 'left');
     const linkUrl = text('href', '');
     const target = text('target', '');
     const cssClass = text('css-class', '');
@@ -55,8 +48,6 @@ export const iconButton = () => {
             color="${color}" 
             display="${display}" 
             size="${size}" 
-            icon="${icon}"
-            icon-direction="${iconDirection}"
             href="${linkUrl}"
             loading="${loading}"
             disabled="${disabled}"
@@ -70,8 +61,6 @@ export const iconButton = () => {
 export const buttonColors = () => {
     const display = select('display', displays, 'solid');
     const size = select('size', sizes, 'md');
-    const icon = text('icon', '');
-    const iconDirection = select('icon-direction', iconDirections, 'left');
     const linkUrl = text('url', '');
     const cssClass = text('css-class', '');
     return (colors.map(color =>
@@ -80,8 +69,6 @@ export const buttonColors = () => {
             color="${color}" 
             display="${display}" 
             size="${size}" 
-            icon="${icon}"
-            icon-direction="${iconDirection}"
             url="${linkUrl}">
             ${color} button
         </ks-button>`).join(""));
@@ -99,8 +86,6 @@ export const buttonDisplay = () => {
 export const sizeVariations = () => {
     const color = select('color', colors, 'primary');
     const display = select('display', displays, 'solid');
-    const icon = text('icon', '');
-    const iconDirection = select('icon-direction', iconDirections, 'left');
     const linkUrl = text('url', '');
     const cssClass = text('css-class', '');
     return (sizes.map(size =>
@@ -110,8 +95,6 @@ export const sizeVariations = () => {
             color="${color}" 
             display="${display}" 
             size="${size}" 
-            icon="${icon}"
-            icon-direction="${iconDirection}"
             url="${linkUrl}">
             ${size} button
         </ks-button>`).join(''));
