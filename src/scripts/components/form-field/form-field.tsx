@@ -85,7 +85,7 @@ export class FormField implements ComponentInterface {
     @Prop() inline: boolean = false;
     @Prop() datalist: boolean = false;
     @Prop() checked: boolean = false;
-    @Prop() icon: string;
+    @Prop() icon?: string;
     @Prop() iconDirection: 'left' | 'right' = 'right';
 
     @Event() updated!: EventEmitter<IFormFieldData>;

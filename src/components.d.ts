@@ -157,7 +157,7 @@ export namespace Components {
         "defaultErrorMessage": string;
         "disabled": boolean;
         "helpText": string;
-        "icon": string;
+        "icon"?: string;
         "iconDirection": 'left' | 'right';
         "inline": boolean;
         "invalid": boolean;
