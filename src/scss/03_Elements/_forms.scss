@@ -109,6 +109,26 @@ input[type=password]::-ms-reveal {
     display: none;
 }
 
+// Remove clear button
+input[type=text]::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type=text]::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
 // 1. Remove the default vertical scrollbar in IE.
 // 2. Textareas should really only resize vertically so they don't break their (horizontal) containers.
 // 3. Use the same borders as textfields

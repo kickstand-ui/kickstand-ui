@@ -170,17 +170,41 @@
         &[aria-invalid="true"] {
             @include b($size: xxs, $color: danger);
         }
+
+        &.display-icon-left {
+            padding-left: 2.25rem;
+        }
+    
+        &.display-icon-right {
+            padding-right: 2.25rem;
+        }    
     }
 
-    .password-toggle {
+    .input-icon {
+        @include p(xxs);
+        @include color(light, darker);
+    }
+
+    .icon-left {
+        position: absolute;
+        left: 0;
+        transform: translateY(25%);
+        @include ml(sm);
+        @include font-size(md);
+    }
+
+    .icon-right {
         position: absolute;
         right: 0;
-        @include mt(md);
-        @include mr(lg);
+        transform: translateY(25%);
+        @include font-size(md);
+        @include mr(sm);
 
-        .icon {
-            @include color(dark, lighter)
-        }
+        .input-button {
+            .icon {
+                @include color(dark, lighter)
+            }
+        }    
     }
 
     .select-wrapper {

@@ -1,11 +1,11 @@
 import { Component, h, Prop, Host, Event, EventEmitter, Method, Element, State, ComponentInterface } from '@stencil/core';
-import { IFormFieldData } from '../form-field';
+import { IFormFieldData, ICustomInput } from '../form-field';
 
 @Component({
     tag: 'ks-checklist',
     styleUrl: 'checklist.scss'
 })
-export class Checklist implements ComponentInterface {
+export class Checklist implements ComponentInterface, ICustomInput {
     $checkbox: HTMLInputElement;
     $options: HTMLOptionElement[];
 

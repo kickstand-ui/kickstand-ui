@@ -29,6 +29,8 @@ export const playground = () => {
     const debounce = number('debounce', 0);
     const datalist = boolean('datalist', false);
     const inline = boolean('inline', false);
+    const icon = text('icon', '');
+    const iconDirection = select('icon-direction', ['left', 'right'], 'right');
     return (`<div class="m-xxl">
         <ks-form-field 
             type="${type}"
@@ -55,6 +57,8 @@ export const playground = () => {
             debounce="${debounce}"
             datalist="${datalist}"
             inline="${inline}"
+            icon="${icon}"
+            icon-direction="${iconDirection}"
             >
             <option selected>Choose a value</option>
             <option>Value 1</option>
@@ -149,8 +153,8 @@ export const radio = () => {
 export const checklist = () => {
     const type = select('type', ['checkbox', 'radio'], 'checkbox');
     const label = text('label', 'Select One');
-    const checked = boolean('checked', false);
     const tooltipText = text('tooltip-text', '');
+    const helpText = text('help-text', '');
     const required = boolean('required', false);
     const requiredText = text('required-text', 'Required');
     const name = text('name', 'test');
@@ -159,12 +163,12 @@ export const checklist = () => {
         <div class="m-xxl">
             <ks-checklist
                 label="${label}" 
-                checked="${checked}" 
                 tooltip-text="${tooltipText}" 
                 required="${required}" 
                 required-text="${requiredText}"
                 type="${type}"
                 name="${name}"
+                help-text="${helpText}"
                 >
                 <option>Choose a value</option>
                 <option>Value 1</option>

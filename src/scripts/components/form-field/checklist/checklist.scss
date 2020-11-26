@@ -1,13 +1,27 @@
 @import "../../../../scss/00_Abstracts/index";
 
 .ks-checklist {
+    display: inline-block;
+
     fieldset {
         display: inline-flex;
         flex-direction: column;
 
         legend {
+            display: inline-flex;
+            flex-direction: column;    
             font-weight: bold;
             @include mb(none);
+
+            .ks-tooltip {
+                @include ml(xs);
+            }
+
+            .help-text {
+                font-weight: normal;
+                @include color(dark, light);
+                @include font-size(xs);
+            }    
         }
     }
 }

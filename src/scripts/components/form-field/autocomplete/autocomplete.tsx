@@ -1,12 +1,12 @@
 import { Component, h, Prop, Host, Event, EventEmitter, ComponentInterface, State, Element, Method } from '@stencil/core';
-import { IFormFieldData } from '../form-field';
+import { IFormFieldData, ICustomInput } from '../form-field';
 import { keyCodes, debounce } from '../../../utils/componentUtils';
 
 @Component({
     tag: 'ks-autocomplete',
     styleUrl: 'autocomplete.scss'
 })
-export class Autocomplete implements ComponentInterface {
+export class Autocomplete implements ComponentInterface, ICustomInput {
     autocompleteId = `autocomplete_${autocompleteIds++}`;
     $select: HTMLSelectElement;
     $input: HTMLInputElement;

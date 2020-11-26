@@ -157,6 +157,8 @@ export namespace Components {
         "defaultErrorMessage": string;
         "disabled": boolean;
         "helpText": string;
+        "icon": string;
+        "iconDirection": 'left' | 'right';
         "inline": boolean;
         "invalid": boolean;
         "label": string;
@@ -179,7 +181,7 @@ export namespace Components {
         "stepErrorMessage": string;
         "tooltipSize": 'sm' | 'md' | 'lg' | 'xl';
         "tooltipText": string;
-        "type": 'autocomplete' 
+        "type": 'autocomplete'
         | 'checkbox'
         | 'checklist'
         | 'color'
@@ -201,7 +203,7 @@ export namespace Components {
         "typeErrorMessage": string;
         "validate": () => Promise<IFormFieldData>;
         "validateOnInput": boolean;
-        "value"?: string | number | boolean| any[] | null;
+        "value"?: string | number | boolean | any[] | null;
     }
     interface KsGallery {
         "gutter": 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
@@ -774,6 +776,8 @@ declare namespace LocalJSX {
         "defaultErrorMessage"?: string;
         "disabled"?: boolean;
         "helpText"?: string;
+        "icon"?: string;
+        "iconDirection"?: 'left' | 'right';
         "inline"?: boolean;
         "invalid"?: boolean;
         "label"?: string;
@@ -798,7 +802,7 @@ declare namespace LocalJSX {
         "stepErrorMessage"?: string;
         "tooltipSize"?: 'sm' | 'md' | 'lg' | 'xl';
         "tooltipText"?: string;
-        "type"?: 'autocomplete' 
+        "type"?: 'autocomplete'
         | 'checkbox'
         | 'checklist'
         | 'color'
@@ -819,7 +823,7 @@ declare namespace LocalJSX {
         | 'url';
         "typeErrorMessage"?: string;
         "validateOnInput"?: boolean;
-        "value"?: string | number | boolean| any[] | null;
+        "value"?: string | number | boolean | any[] | null;
     }
     interface KsGallery {
         "gutter"?: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
