@@ -12,7 +12,7 @@ export class SpinBox implements ComponentInterface, ICustomInput {
     @Element() $el: HTMLElement;
 
     @Prop({ mutable: true }) value?: string | number | boolean | any[] | null = 0;
-    @Prop() min: number = 0;
+    @Prop() min: number;
     @Prop() max: number;
     @Prop() step: number = 1;
     @Prop() name: string;

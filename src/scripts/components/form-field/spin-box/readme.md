@@ -13,7 +13,7 @@
 | `inputId`  | `input-id` |             | `string`                               | `undefined` |
 | `invalid`  | `invalid`  |             | `boolean`                              | `false`     |
 | `max`      | `max`      |             | `number`                               | `undefined` |
-| `min`      | `min`      |             | `number`                               | `0`         |
+| `min`      | `min`      |             | `number`                               | `undefined` |
 | `name`     | `name`     |             | `string`                               | `undefined` |
 | `required` | `required` |             | `boolean`                              | `false`     |
 | `step`     | `step`     |             | `number`                               | `1`         |
