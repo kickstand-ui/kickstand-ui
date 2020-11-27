@@ -74,6 +74,7 @@ Type: `Promise<IFormFieldData>`
 
 - [ks-icon](../icon)
 - [ks-autocomplete](autocomplete)
+- [ks-spin-box](spin-box)
 - [ks-button](../button)
 - [ks-checkbox](checkbox)
 - [ks-checklist](checklist)
@@ -84,6 +85,7 @@ Type: `Promise<IFormFieldData>`
 graph TD;
   ks-form-field --> ks-icon
   ks-form-field --> ks-autocomplete
+  ks-form-field --> ks-spin-box
   ks-form-field --> ks-button
   ks-form-field --> ks-checkbox
   ks-form-field --> ks-checklist
@@ -94,6 +96,8 @@ graph TD;
   ks-loading-overlay --> ks-overlay
   ks-loading-overlay --> ks-loading
   ks-loading --> ks-icon
+  ks-spin-box --> ks-button
+  ks-spin-box --> ks-icon
   ks-checkbox --> ks-tooltip
   ks-checkbox --> ks-icon
   ks-checklist --> ks-tooltip

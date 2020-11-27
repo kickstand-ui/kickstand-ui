@@ -41,7 +41,7 @@
  - [ks-gallery](../gallery)
  - [ks-modal](../modal)
  - [ks-side-drawer](../side-drawer)
- - [ks-spin-box](../spin-box)
+ - [ks-spin-box](../form-field/spin-box)
 
 ### Depends on
 

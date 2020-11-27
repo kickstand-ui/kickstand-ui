@@ -1,6 +1,6 @@
 import { Component, h, Prop, Host, Event, EventEmitter, ComponentInterface, State, Element, Method } from '@stencil/core';
 import { IFormFieldData, ICustomInput } from '../form-field';
-import { keyCodes, debounce } from '../../../utils/componentUtils';
+import { keyCodes } from '../../../utils/componentUtils';
 
 @Component({
     tag: 'ks-autocomplete',
@@ -201,7 +201,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
         this.$input.focus();
         this.$input.value = option.innerText;
         this.hideOptions();
-        debounce(() => this.changed.emit(this.validateField()), this.debounce);
+        this.changed.emit(this.validateField());
     }
 
     render() {

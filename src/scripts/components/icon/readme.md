@@ -33,7 +33,7 @@
  - [ks-menu-bar](../menu-bar)
  - [ks-modal](../modal)
  - [ks-side-drawer](../side-drawer)
- - [ks-spin-box](../spin-box)
+ - [ks-spin-box](../form-field/spin-box)
 
 ### Graph
 ```mermaid

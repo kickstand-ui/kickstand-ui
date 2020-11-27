@@ -1,0 +1,38 @@
+@import "../../../../scss/00_Abstracts/index";
+
+.ks-form-field {
+    .ks-spin-box {
+        @include b();
+        @include br();
+
+        display: inline-flex;
+        align-items: center;
+        @include shadow(xs);
+        @include b($size: xxxs);
+
+        .form-input {
+            margin: 0;
+            width: 4rem;
+            height: 2.75rem;
+            text-align: center;
+            border: none;
+            -moz-appearance: textfield; // Firefox
+            @include shadow(none);
+            @include b-x();
+            @include br(none);
+            @include font-size(sm);
+            @include p(sm);
+
+            // Hide browser input spinners for numbers
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                margin: 0;
+                -webkit-appearance: none;
+            }
+
+            &[aria-invalid="true"] {
+                @include b($size: xxs, $color: danger);
+            }    
+        }
+    }
+}

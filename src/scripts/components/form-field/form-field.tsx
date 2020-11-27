@@ -26,9 +26,6 @@ export class FormField implements ComponentInterface {
     inputHandler: any;
 
     $input: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
-    // $checkbox: HTMLKsCheckboxElement;
-    // $checklist: HTMLKsChecklistElement;
-    // $autocomplete: HTMLKsAutocompleteElement;
     $customInput: ICustomInputElement;
 
     @Element() $el: any;
@@ -227,6 +224,10 @@ export class FormField implements ComponentInterface {
     render() {
         let value = this.getValue();
         let props = {
+            'id': this.fieldId,
+            'class':`form-input ${this.icon ? `display-icon-${this.iconDirection}` : ''}`,
+            'name': this.getInputName(),
+            'value': value,
             'disabled': this.disabled,
             'required': this.required,
             'aria-invalid': !this.disabled && this.invalid.toString(),
@@ -241,9 +242,6 @@ export class FormField implements ComponentInterface {
         let fieldInput = {
             'textarea': (
                 <textarea
-                    id={this.fieldId}
-                    class="form-input"
-                    name={this.getInputName()}
                     {...props}
                     onInput={() => this.inputHandler()}
                     onBlur={() => this.onBlur()}
@@ -255,9 +253,6 @@ export class FormField implements ComponentInterface {
             'select': (
                 <div class="select-wrapper">
                     <select
-                        id={this.fieldId}
-                        class={`form-input ${this.icon ? `display-icon-${this.iconDirection}` : ''}`}
-                        name={this.getInputName()}
                         {...props}
                         onInput={() => this.inputHandler()}
                         onBlur={() => this.onBlur()}
@@ -280,6 +275,22 @@ export class FormField implements ComponentInterface {
                 >
                     <slot />
                 </ks-autocomplete>
+            ),
+            'spin-box': (
+                <ks-spin-box 
+                    value={this.value}
+                    min={this.min} 
+                    max={this.max}
+                    step={this.step}
+                    name={this.name}
+                    input-id={this.fieldId}
+                    required={this.required}
+                    disabled={this.disabled}
+                    invalid={this.invalid}
+                    onUpdated={e => this.handleComponentChange(e)}
+                    ref={el => this.$customInput = el}
+                    >
+                </ks-spin-box>
             )
         }[this.type] || [
                 <div class="input-wrapper">
@@ -287,12 +298,8 @@ export class FormField implements ComponentInterface {
                         <ks-icon class="input-icon" icon={this.icon}></ks-icon>
                     </span>}
                     <input
-                        id={this.fieldId}
-                        class={`form-input ${this.icon ? `display-icon-${this.iconDirection}` : ''}`}
-                        type={this.type}
-                        name={this.getInputName()}
                         {...props}
-                        value={value}
+                        type={this.type}
                         onInput={() => this.inputHandler()}
                         onBlur={() => this.onBlur()}
                         ref={el => this.$input = el}

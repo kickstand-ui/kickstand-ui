@@ -300,12 +300,16 @@ export namespace Components {
         "size": 'sm' | 'md' | 'lg' | 'xl';
     }
     interface KsSpinBox {
-        "labelId": string;
+        "disabled": boolean;
+        "inputId": string;
+        "invalid": boolean;
         "max": number;
         "min": number;
-        "spinBoxId": string;
+        "name": string;
+        "required": boolean;
         "step": number;
-        "value": number;
+        "validate": () => Promise<IFormFieldData>;
+        "value"?: string | number | boolean | any[] | null;
     }
     interface KsSwitch {
         "checked": boolean;
@@ -915,13 +919,16 @@ declare namespace LocalJSX {
         "size"?: 'sm' | 'md' | 'lg' | 'xl';
     }
     interface KsSpinBox {
-        "labelId"?: string;
+        "disabled"?: boolean;
+        "inputId"?: string;
+        "invalid"?: boolean;
         "max"?: number;
         "min"?: number;
+        "name"?: string;
         "onUpdated"?: (event: CustomEvent<any>) => void;
-        "spinBoxId"?: string;
+        "required"?: boolean;
         "step"?: number;
-        "value"?: number;
+        "value"?: string | number | boolean | any[] | null;
     }
     interface KsSwitch {
         "checked"?: boolean;
