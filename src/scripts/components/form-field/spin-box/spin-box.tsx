@@ -11,7 +11,7 @@ export class SpinBox implements ComponentInterface, ICustomInput {
 
     @Element() $el: HTMLElement;
 
-    @Prop({ mutable: true }) value?: string | number | boolean | any[] | null = '';
+    @Prop({ mutable: true }) value?: string | number | boolean | any[] | null = 0;
     @Prop() min: number = 0;
     @Prop() max: number;
     @Prop() step: number = 1;
@@ -19,7 +19,7 @@ export class SpinBox implements ComponentInterface, ICustomInput {
     @Prop() inputId: string;
     @Prop() required: boolean = false;
     @Prop() disabled: boolean = false;
-    @Prop() invalid: boolean = false;
+    @Prop({ mutable: true }) invalid: boolean = false;
 
     @State() isUpdating: boolean;
     @State() isValid: boolean = true;

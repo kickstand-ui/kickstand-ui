@@ -40,13 +40,13 @@ export class FormField implements ComponentInterface {
     @Prop() requiredText: string = 'Required';
     @Prop({ mutable: true }) invalid: boolean = false;
     @Prop() disabled: boolean;
-    @Prop({ mutable: true }) value?: string | number | boolean | any[] | null = '';
+    @Prop({ mutable: true }) value?: string | number | boolean | any[] | null;
     @Prop() pattern?: string;
-    @Prop() min?: number = 0;
-    @Prop() max?: number = Number();
+    @Prop() min?: number = undefined;
+    @Prop() max?: number = undefined;
     @Prop() step?: number = 1;
-    @Prop() minlength?: number = 0;
-    @Prop() maxlength?: number = Number();
+    @Prop() minlength?: number = undefined;
+    @Prop() maxlength?: number = undefined;
     @Prop() autocomplete?: string;
     @Prop() type: 'autocomplete'
         | 'checkbox'
@@ -63,6 +63,7 @@ export class FormField implements ComponentInterface {
         | 'range'
         | 'search'
         | 'select'
+        | 'spin-box'
         | 'tel'
         | 'text'
         | 'textarea'

@@ -207,3 +207,11 @@ export const autocomplete = () => {
     </div>
     `)
 }
+
+export const spinbox = () => {
+    return (`
+    <div class="m-xxl">
+        <ks-form-field label="Spin-Box" type="spin-box"></ks-form-field>
+    </div>
+    `)
+}

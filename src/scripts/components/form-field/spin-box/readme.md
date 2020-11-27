@@ -17,7 +17,7 @@
 | `name`     | `name`     |             | `string`                               | `undefined` |
 | `required` | `required` |             | `boolean`                              | `false`     |
 | `step`     | `step`     |             | `number`                               | `1`         |
-| `value`    | `value`    |             | `any[] \| boolean \| number \| string` | `''`        |
+| `value`    | `value`    |             | `any[] \| boolean \| number \| string` | `0`         |
 
 
 ## Events
