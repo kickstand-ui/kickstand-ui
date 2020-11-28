@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property    | Attribute   | Description | Type                    | Default    |
-| ----------- | ----------- | ----------- | ----------------------- | ---------- |
-| `direction` | `direction` |             | `"inline" \| "stacked"` | `'inline'` |
+| Property  | Attribute | Description | Type      | Default |
+| --------- | --------- | ----------- | --------- | ------- |
+| `stacked` | `stacked` |             | `boolean` | `false` |
 
 
 ----------------------------------------------

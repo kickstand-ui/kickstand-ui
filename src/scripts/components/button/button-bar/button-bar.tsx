@@ -5,11 +5,11 @@ import { Component, h, ComponentInterface, Host, Prop } from '@stencil/core';
     styleUrl: 'button-bar.scss'
 })
 export class ButtonBar implements ComponentInterface {
-    @Prop() direction: 'inline' | 'stacked' = 'inline';
+    @Prop() stacked: boolean = false;
 
     render() {
         return (
-            <Host class={`ks-button-bar ${this.direction}`}>
+            <Host class={`ks-button-bar ${this.stacked ? 'stacked' : 'inline'}`}>
                 <slot />
             </Host>
         );

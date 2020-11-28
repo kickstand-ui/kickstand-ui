@@ -63,7 +63,7 @@ export namespace Components {
         "type": 'button' | 'submit' | 'reset';
     }
     interface KsButtonBar {
-        "direction": 'inline' | 'stacked';
+        "stacked": boolean;
     }
     interface KsCard {
         "alt": string;
@@ -696,7 +696,7 @@ declare namespace LocalJSX {
         "type"?: 'button' | 'submit' | 'reset';
     }
     interface KsButtonBar {
-        "direction"?: 'inline' | 'stacked';
+        "stacked"?: boolean;
     }
     interface KsCard {
         "alt"?: string;
