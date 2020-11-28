@@ -24,13 +24,13 @@ export class Icon implements ComponentInterface {
         let iconContents: string = iconList.find(x => x.name === this.icon)?.icon 
             || iconList.find(x => x.name === 'question').icon;
             
-        let icon = `<svg class="icon" role="presentation" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" ${this.labelledBy ? `aria-labelledby="${this.labelledBy}"`: ''} ${this.label ? `aria-label="${this.label}"`: ''} ${!this.label && !this.labelledBy ? 'aria-hidden="true"': ''}>${iconContents}</svg>`
+        let icon = `<svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" ${this.labelledBy ? `aria-labelledby="${this.labelledBy}"`: ''} ${this.label ? `aria-label="${this.label}"`: ''} ${!this.label && !this.labelledBy ? 'aria-hidden="true"': ''}>${iconContents}</svg>`
         this.$el.innerHTML = icon;
     }
 
     render() {
         return (
-            <Host class={`rotate-${this.rotate}`}></Host>
+            <Host class={`ks-icon rotate-${this.rotate}`}></Host>
         );
     }
 }
