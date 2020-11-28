@@ -62,6 +62,9 @@ export namespace Components {
         "target": string;
         "type": 'button' | 'submit' | 'reset';
     }
+    interface KsButtonBar {
+        "direction": 'inline' | 'stacked';
+    }
     interface KsCard {
         "alt": string;
         "clickable": boolean;
@@ -377,6 +380,12 @@ declare global {
         prototype: HTMLKsButtonElement;
         new (): HTMLKsButtonElement;
     };
+    interface HTMLKsButtonBarElement extends Components.KsButtonBar, HTMLStencilElement {
+    }
+    var HTMLKsButtonBarElement: {
+        prototype: HTMLKsButtonBarElement;
+        new (): HTMLKsButtonBarElement;
+    };
     interface HTMLKsCardElement extends Components.KsCard, HTMLStencilElement {
     }
     var HTMLKsCardElement: {
@@ -595,6 +604,7 @@ declare global {
         "ks-badge": HTMLKsBadgeElement;
         "ks-breadcrumbs": HTMLKsBreadcrumbsElement;
         "ks-button": HTMLKsButtonElement;
+        "ks-button-bar": HTMLKsButtonBarElement;
         "ks-card": HTMLKsCardElement;
         "ks-card-body": HTMLKsCardBodyElement;
         "ks-card-footer": HTMLKsCardFooterElement;
@@ -684,6 +694,9 @@ declare namespace LocalJSX {
         "tabIndex"?: number;
         "target"?: string;
         "type"?: 'button' | 'submit' | 'reset';
+    }
+    interface KsButtonBar {
+        "direction"?: 'inline' | 'stacked';
     }
     interface KsCard {
         "alt"?: string;
@@ -962,6 +975,7 @@ declare namespace LocalJSX {
         "ks-badge": KsBadge;
         "ks-breadcrumbs": KsBreadcrumbs;
         "ks-button": KsButton;
+        "ks-button-bar": KsButtonBar;
         "ks-card": KsCard;
         "ks-card-body": KsCardBody;
         "ks-card-footer": KsCardFooter;
@@ -1010,6 +1024,7 @@ declare module "@stencil/core" {
             "ks-badge": LocalJSX.KsBadge & JSXBase.HTMLAttributes<HTMLKsBadgeElement>;
             "ks-breadcrumbs": LocalJSX.KsBreadcrumbs & JSXBase.HTMLAttributes<HTMLKsBreadcrumbsElement>;
             "ks-button": LocalJSX.KsButton & JSXBase.HTMLAttributes<HTMLKsButtonElement>;
+            "ks-button-bar": LocalJSX.KsButtonBar & JSXBase.HTMLAttributes<HTMLKsButtonBarElement>;
             "ks-card": LocalJSX.KsCard & JSXBase.HTMLAttributes<HTMLKsCardElement>;
             "ks-card-body": LocalJSX.KsCardBody & JSXBase.HTMLAttributes<HTMLKsCardBodyElement>;
             "ks-card-footer": LocalJSX.KsCardFooter & JSXBase.HTMLAttributes<HTMLKsCardFooterElement>;

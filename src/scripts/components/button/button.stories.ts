@@ -99,3 +99,19 @@ export const sizeVariations = () => {
             ${size} button
         </ks-button>`).join(''));
 };
+
+
+export const buttonBar = () => {
+    const direction = select('direction', ['inline', 'stacked'], 'inline');
+    const buttonDisplay = text('button display', 'hollow');
+    const cssClass = text('class', '');
+
+    return (`<div class="m-xl">
+        <ks-button-bar direction="${direction}" class="${cssClass}">
+            <ks-button display="${buttonDisplay}">Button 1</ks-button>
+            <ks-button display="${buttonDisplay}">Button 2</ks-button>
+            <ks-button display="${buttonDisplay}">Button 3</ks-button>
+            <ks-button display="${buttonDisplay}">Button 4</ks-button>
+        </ks-button-bar>
+    </div>`)
+}
