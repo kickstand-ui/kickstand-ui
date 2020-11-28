@@ -1,0 +1,52 @@
+@import "../../../../scss/00_Abstracts/index";
+
+.ks-button-bar {
+    display: inline-flex;
+    @include shadow(xs);
+    @include br(sm);
+
+    .ks-button {
+        .button {
+            @include shadow(none);
+            @include br(none);
+        }
+    }
+
+    &.inline {
+        .ks-button {
+            @include ml(-xxxs);
+
+            &:first-of-type {
+                .button {
+                    @include br-l(sm);
+                }
+            }
+
+            &:last-of-type {
+                .button {
+                    @include br-r(sm);
+                }
+            }
+        }
+    }
+
+    &.stacked {
+        flex-direction: column;
+
+        .ks-button {
+            @include mt(-xxxs);
+
+            &:first-of-type {
+                .button {
+                    @include br-t(sm);
+                }
+            }
+
+            &:last-of-type {
+                .button {
+                    @include br-b(sm);
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,8 @@
 import { Component, h, ComponentInterface, Host, Prop } from '@stencil/core';
 
 @Component({
-    tag: 'ks-button-bar'
+    tag: 'ks-button-bar',
+    styleUrl: 'button-bar.scss'
 })
 export class ButtonBar implements ComponentInterface {
     @Prop() direction: 'inline' | 'stacked' = 'inline';
