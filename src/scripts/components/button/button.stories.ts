@@ -112,6 +112,22 @@ export const buttonBar = () => {
             <ks-button display="${buttonDisplay}">Button 2</ks-button>
             <ks-button display="${buttonDisplay}">Button 3</ks-button>
             <ks-button display="${buttonDisplay}">Button 4</ks-button>
+            <ks-dropdown text="Account" display="${buttonDisplay}" position="right">
+                <ks-dropdown-item prevent-close><span>Welcome, Agent Michael Scarn!</span></ks-dropdown-item>
+                <ks-dropdown-item>
+                    <a href="#">Order History</a>
+                </ks-dropdown-item>
+                <ks-dropdown-item>
+                    <a href="#">Account Settings</a>
+                </ks-dropdown-item>
+                <ks-dropdown-item>
+                    <a href="#">Wish Lists</a>
+                </ks-dropdown-item>
+                <ks-dropdown-item>
+                    <ks-button>Sign Out</ks-button>
+                </ks-dropdown-item>
+            </ks-dropdown>
+    
         </ks-button-bar>
     </div>`)
 }

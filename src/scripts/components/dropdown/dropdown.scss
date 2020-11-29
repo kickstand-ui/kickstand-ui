@@ -17,19 +17,21 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         display: flex;
         align-items: center;
 
-        .button-text {
-            display: flex;
-            align-items: center;
+        .icon {
+            @include mr(xxs);
+        }
 
-            .icon {
-                @include mr(xs);
-            }
+        .dropdown-text {
+            @include mr(xs);
         }
 
         .dropdown-icon {
             line-height: 1;
-            @include ml(xs);
             @include transition();
+
+            .icon {
+                @include mx(-xs);
+            }
         }
 
         &[aria-expanded="true"] .dropdown-icon {

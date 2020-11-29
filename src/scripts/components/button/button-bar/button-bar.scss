@@ -16,17 +16,35 @@
         .ks-button {
             @include ml(-xxxs);
 
-            &:first-of-type {
+            &:first-child {
                 .button {
                     @include br-l(sm);
                 }
             }
 
-            &:last-of-type {
+            &:last-child {
                 .button {
                     @include br-r(sm);
                 }
             }
+
+            & ~ .ks-dropdown {    
+                .ks-button {
+                    .button {
+                        @include br-l(none);
+                        @include br-r(sm);
+                    }
+                }
+            }
+
+            .ks-dropdown ~ & {    
+                .ks-button {
+                    .button {
+                        @include br-r(none);
+                        @include br-l(sm);
+                    }
+                }
+            }    
         }
     }
 
@@ -36,13 +54,13 @@
         .ks-button {
             @include mt(-xxxs);
 
-            &:first-of-type {
+            &:first-child {
                 .button {
                     @include br-t(sm);
                 }
             }
 
-            &:last-of-type {
+            &:last-child {
                 .button {
                     @include br-b(sm);
                 }

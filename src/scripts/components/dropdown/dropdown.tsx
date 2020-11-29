@@ -111,11 +111,6 @@ export class Dropdown {
             'mega-menu': this.megaMenu
         };
 
-        let buttonClasses = {
-            'dropdown-text': true,
-            'sr-only': this.hideText
-        };
-
         let contentClasses = {
             'contents': true,
             'mega-menu-contents': this.megaMenu,
@@ -137,10 +132,8 @@ export class Dropdown {
                     controls={this.dropdownId}
                     ref={el => this.$control = el.querySelector('button')}
                 >
-                    <span class={buttonClasses}>
-                        {this.icon && <ks-icon icon={this.icon} />}
-                        {this.text}
-                    </span>
+                    {this.icon && <ks-icon icon={this.icon} />}
+                    <span class={`dropdown-text ${this.hideText ? 'sr-only' : ''}`}>{this.text}</span>
                     {!this.hideIndicator && <ks-icon icon="chevron_down" class="dropdown-icon" />}
                 </ks-button>
                 <div
