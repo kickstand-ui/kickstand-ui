@@ -6,11 +6,11 @@
             display: block;
             transform: scale(0.95);
             @include m(auto);
-            margin-top: 5vh;
+            margin-top: 10vh;
 
             .modal-wrapper {
                 max-width: 100%;
-                max-height: 90vh;
+                max-height: 80vh;
                 overflow-y: auto;
                 background-color: white;
                 @include p(lg);
