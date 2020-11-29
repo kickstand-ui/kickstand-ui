@@ -50,6 +50,6 @@
     }
 
     .label {
-        @include ml(sm);
+        @include mr(sm);
     }
 }
