@@ -54,7 +54,7 @@
                     padding-left: 3.75rem;
                     padding-right: 3.75rem;
                     text-shadow: 2px 2px 4px color(dark);
-                    margin-bottom: 2.5rem;
+                    margin-bottom: 2.75rem;
                     @include mt(xxl);
 
                     >* {
@@ -155,6 +155,7 @@
             flex-grow: 1;
             flex-basis: 0;
             opacity: 0.5;
+            max-width: 9rem;
             @include b(none);
             @include p(none);
             @include m(none);
@@ -176,6 +177,10 @@
                 @include shadow(xs);
                 @include transition();
             }
+        }
+
+        .thumbnail+.thumbnail {
+            @include ml(sm);
         }
 
         .indicator+.indicator {
