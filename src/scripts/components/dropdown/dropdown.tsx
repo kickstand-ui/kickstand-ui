@@ -107,7 +107,7 @@ export class Dropdown {
     render() {
         let dropDownClasses = {
             'ks-dropdown': true,
-            'show': this.isExpanded,
+            'show-contents': this.isExpanded,
             'mega-menu': this.megaMenu
         };
 
