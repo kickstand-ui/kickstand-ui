@@ -769,6 +769,8 @@ declare namespace LocalJSX {
         "hideText"?: boolean;
         "icon"?: string;
         "megaMenu"?: boolean;
+        "onDropdownClosed"?: (event: CustomEvent<any>) => void;
+        "onDropdownOpened"?: (event: CustomEvent<any>) => void;
         "position"?: 'left' | 'right';
         "text"?: string;
     }

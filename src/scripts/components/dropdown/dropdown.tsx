@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host, Element, State, Listen, Method } from '@stencil/core';
+import { Component, h, Prop, Host, Element, State, Listen, Method, Event, EventEmitter } from '@stencil/core';
 import { FOCUSABLE_ELEMENTS } from '../../utils/componentUtils';
 
 @Component({
@@ -23,6 +23,9 @@ export class Dropdown {
     @Prop() megaMenu: boolean = false;
     @Prop() collapse: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'xs';
 
+    @Event() dropdownOpened: EventEmitter;
+    @Event() dropdownClosed: EventEmitter;
+
     @State() isExpanded: boolean = false;
     @State() focusIndex: number = 0;
 
@@ -30,6 +33,7 @@ export class Dropdown {
     async close() {
         this.isExpanded = false;
         this.focusIndex = 0;
+        this.dropdownClosed.emit();
         setTimeout(() => this.$control.focus());
     }
 
@@ -94,14 +98,21 @@ export class Dropdown {
                 return;
 
             this.isExpanded = false;
+            this.dropdownClosed.emit();
         });
     }
 
     toggleDropdown() {
         this.isExpanded = !this.isExpanded;
 
-        if (this.isExpanded && this.$focusableEls.length > 0)
-            setTimeout(() => this.$focusableEls[0].focus(), 100);
+        if (this.isExpanded) {
+            this.dropdownOpened.emit();
+
+            if(this.$focusableEls.length > 0)
+                setTimeout(() => this.$focusableEls[0].focus(), 100);
+        } else {
+            this.dropdownClosed.emit();
+        }
     }
 
     render() {
