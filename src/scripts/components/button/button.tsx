@@ -29,11 +29,13 @@ export class LinkButton implements ComponentInterface {
     @Prop() download: boolean;
 
     componentDidRender() {
-        this.loading
-            ? this.$loading.show()
-            : this.$loading.hide();
+        setTimeout(() => {
+            this.loading
+                ? this.$loading.show()
+                : this.$loading.hide();
 
-        this.setEventListeners();
+            this.setEventListeners();
+        });
     }
 
     private setEventListeners() {
