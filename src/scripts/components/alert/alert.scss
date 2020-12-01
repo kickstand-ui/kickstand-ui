@@ -31,10 +31,10 @@
             }
 
             &.note.#{$color} {
-                background-color: white;
                 @include br(none);
                 @include b();
                 @include b-l(solid, md, $color);
+                @include bg-color(light, lighter);
 
                 .alert-header {
                     @if(text-color($color, dark)==black) {
