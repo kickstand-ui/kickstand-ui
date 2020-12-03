@@ -53,7 +53,7 @@ export const iconList = [
     },
     {
         "name": "attachment",
-        "icon": "<g><path d=\"M13.936 16.599l3.933-3.933s2.654-3.003-.177-5.834-5.656 0-5.656 0l-5.657 5.657s-3.022 2.644-.707 4.95 4.95-.707 4.95-.707l5.43-5.431A1.88 1.88 0 1013.4 8.649l-4.935 4.936\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-width=\"1.5\"/></g>"
+        "icon": "<g><path d=\"M13.937 16.599l3.933-3.933s2.654-3.003-.177-5.834-5.657 0-5.657 0L6.38 12.489s-3.022 2.644-.707 4.95 4.95-.708 4.95-.708l5.43-5.43a1.88 1.88 0 10-2.651-2.652l-4.936 4.936\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-width=\"1.5\"/></g>"
     },
     {
         "name": "bar_chart",
@@ -469,7 +469,7 @@ export const iconList = [
     },
     {
         "name": "home_fill",
-        "icon": "<g fill=\"currentColor\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"><path d=\"M4 9.75l8-4 8 4M10.5 19.501H5.25V9.75h13.5v9.749H13.5v-3.4h-3v3.4z\"/></g>"
+        "icon": "<g fill=\"currentColor\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"><path d=\"M4 9.175l8-4 8 4\"/><path d=\"M18 18.825H6v-9.65h12v9.649zM10.5 15v3.75h3V15z\"/></g>"
     },
     {
         "name": "home",
@@ -557,7 +557,7 @@ export const iconList = [
     },
     {
         "name": "lock_fill",
-        "icon": "<g><path d=\"M19.007 20.298H5.25V8.793h13.756v11.5zm-7.006-7.236a1.252 1.252 0 00-1.25 1.25 1.254 1.254 0 00.625 1.083v1.417h1.25v-1.417a1.254 1.254 0 00.624-1.083 1.252 1.252 0 00-1.25-1.25z\" fill=\"currentColor\"/><path d=\"M15.5 9.584V6.913s-.062-2.912-3.5-2.912-3.6 2.912-3.6 2.912v2.671z\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/></g>"
+        "icon": "<g stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"><path d=\"M18.125 19.793H5.875v-10h12.25v10zm-6.112-7.966A2.1 2.1 0 009.9 13.913a2.069 2.069 0 00.544 1.4v.863a1 1 0 001 1h1.113a1 1 0 001-1v-.837a2.062 2.062 0 00.57-1.426 2.1 2.1 0 00-2.114-2.086z\" fill=\"currentColor\"/><path d=\"M15.5 9.584V6.913s-.062-2.912-3.5-2.912-3.6 2.912-3.6 2.912v2.671z\" fill=\"none\"/></g>"
     },
     {
         "name": "lock",
@@ -601,7 +601,7 @@ export const iconList = [
     },
     {
         "name": "minus_circle_fill",
-        "icon": "<g><path d=\"M12 20a8.009 8.009 0 01-8-8 8.009 8.009 0 018-8 8.009 8.009 0 018 8 8.009 8.009 0 01-8 8zm-2.75-8.75a.751.751 0 00-.751.75.751.751 0 00.751.75h5.5a.751.751 0 00.75-.75.751.751 0 00-.75-.75z\" fill=\"currentColor\"/></g>"
+        "icon": "<g><path d=\"M12 20a8.009 8.009 0 01-8-8 8.009 8.009 0 018-8 8.009 8.009 0 018 8 8.009 8.009 0 01-8 8zm-3.5-8.75a.751.751 0 00-.75.75.751.751 0 00.75.75h7a.751.751 0 00.75-.75.751.751 0 00-.75-.75z\" fill=\"currentColor\"/></g>"
     },
     {
         "name": "minus_circle",
@@ -725,7 +725,7 @@ export const iconList = [
     },
     {
         "name": "plus_circle_fill",
-        "icon": "<g><path d=\"M12 20a8.009 8.009 0 01-8-8 8.009 8.009 0 018-8 8.009 8.009 0 018 8 8.009 8.009 0 01-8 8zm-2.75-8.75a.751.751 0 00-.751.75.751.751 0 00.751.75h2v2a.751.751 0 00.75.751.751.751 0 00.75-.751v-2h2a.751.751 0 00.75-.75.751.751 0 00-.75-.75h-2v-2A.751.751 0 0012 8.5a.751.751 0 00-.75.75v2z\" fill=\"currentColor\"/></g>"
+        "icon": "<g><path d=\"M12 20a8.009 8.009 0 01-8-8 8.009 8.009 0 018-8 8.009 8.009 0 018 8 8.009 8.009 0 01-8 8zm-3.339-8.911A.912.912 0 007.75 12a.912.912 0 00.911.911h2.429v2.428a.911.911 0 00.91.911.912.912 0 00.911-.911v-2.428h2.429a.911.911 0 00.91-.911.911.911 0 00-.91-.911h-2.429V8.661A.912.912 0 0012 7.75a.911.911 0 00-.91.911v2.428z\" fill=\"currentColor\"/></g>"
     },
     {
         "name": "plus_circle",
@@ -901,11 +901,11 @@ export const iconList = [
     },
     {
         "name": "times_circle_fill",
-        "icon": "<g><path d=\"M12 20a8.009 8.009 0 01-8-8 8.009 8.009 0 018-8 8.009 8.009 0 018 8 8.009 8.009 0 01-8 8zm0-6.788l1.616 1.616a.851.851 0 00.605.251.853.853 0 00.607-.252.851.851 0 00.251-.606.851.851 0 00-.251-.606L13.212 12l1.616-1.616a.851.851 0 00.251-.606.851.851 0 00-.251-.606.853.853 0 00-.607-.252.85.85 0 00-.605.251L12 10.788l-1.615-1.615a.853.853 0 00-.607-.252.85.85 0 00-.605.251.859.859 0 000 1.213L10.789 12l-1.616 1.616a.859.859 0 000 1.213.85.85 0 00.605.251.853.853 0 00.607-.252L12 13.213z\" fill=\"currentColor\"/></g>"
+        "icon": "<g><path d=\"M12 20a8.009 8.009 0 01-8-8 8.009 8.009 0 018-8 8.009 8.009 0 018 8 8.009 8.009 0 01-8 8zM9.425 8.567a.851.851 0 00-.607.252.858.858 0 000 1.211L10.787 12l-1.969 1.969a.859.859 0 000 1.213.848.848 0 00.6.251.851.851 0 00.607-.252l1.97-1.969 1.97 1.969a.85.85 0 00.606.251.852.852 0 00.606-.25.853.853 0 00.252-.607.851.851 0 00-.251-.607l-1.97-1.969 1.969-1.97a.858.858 0 000-1.211.853.853 0 00-.607-.252.849.849 0 00-.6.251L12 10.787l-1.969-1.97a.851.851 0 00-.606-.25z\" fill=\"currentColor\"/></g>"
     },
     {
         "name": "times_circle",
-        "icon": "<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><circle cx=\"7.5\" cy=\"7.5\" r=\"7.5\" transform=\"translate(4.5 4.5)\"/><g stroke-linecap=\"round\"><path d=\"M9 9l6 6M15 9l-6 6\"/></g></g>"
+        "icon": "<g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><circle cx=\"7.5\" cy=\"7.5\" r=\"7.5\" transform=\"translate(4.5 4.5)\"/><path d=\"M9 9l6 6M15 9l-6 6\" stroke-linecap=\"round\"/></g>"
     },
     {
         "name": "times_octagon",
@@ -925,7 +925,7 @@ export const iconList = [
     },
     {
         "name": "trash_fill",
-        "icon": "<g stroke=\"currentColor\" stroke-linecap=\"round\" stroke-width=\"1.5\"><path d=\"M17.25 19.25H6.75V6.75h10.5v12.5zM15 8a1 1 0 00-1 1v8.883a1 1 0 001 1h.5a1 1 0 001-1V9a1 1 0 00-1-1zm-3.25 0a1 1 0 00-1 1v8.883a1 1 0 001 1h.5a1 1 0 001-1V9a1 1 0 00-1-1zm-3 0a1 1 0 00-1 1v8.883a1 1 0 001 1h.5a1 1 0 001-1V9a1 1 0 00-1-1z\" fill=\"currentColor\" stroke-linejoin=\"round\"/><path fill=\"none\" d=\"M5.5 6.75h13\"/><path fill=\"none\" stroke-linejoin=\"round\" d=\"M9.5 4.75h5v2h-5z\"/></g>"
+        "icon": "<g stroke=\"currentColor\" stroke-linecap=\"round\" stroke-width=\"1.5\"><path d=\"M16.5 17.75h-9v-11h9v11zm-1.786-9.9a1 1 0 00-1 1v7.577a1 1 0 001 1h.143a1 1 0 001-1V8.85a1 1 0 00-1-1zm-2.786 0a1 1 0 00-1 1v7.577a1 1 0 001 1h.143a1 1 0 001-1V8.85a1 1 0 00-1-1zm-2.571 0a1 1 0 00-1 1v7.577a1 1 0 001 1H9.5a1 1 0 001-1V8.85a1 1 0 00-1-1z\" fill=\"currentColor\" stroke-linejoin=\"round\"/><path fill=\"none\" d=\"M6.5 6.75h11\"/><path fill=\"none\" stroke-linejoin=\"round\" d=\"M9.5 4.75h5v2h-5z\"/></g>"
     },
     {
         "name": "trash",
@@ -961,7 +961,7 @@ export const iconList = [
     },
     {
         "name": "unlock_fill",
-        "icon": "<g><path d=\"M19.007 20.298H5.25V8.793h13.756v11.5zm-7.006-7.236a1.252 1.252 0 00-1.25 1.25 1.254 1.254 0 00.625 1.083v1.417h1.25v-1.417a1.254 1.254 0 00.624-1.083 1.252 1.252 0 00-1.25-1.25z\" fill=\"currentColor\"/><path d=\"M15.509 9.584V6.603s-.277-2.6-3.6-2.6-3.509 2.6-3.509 2.6\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/></g>"
+        "icon": "<g stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"><path d=\"M15.509 9.584V6.603s-.277-2.6-3.6-2.6-3.509 2.6-3.509 2.6\" fill=\"none\"/><path d=\"M18.125 19.793H5.875v-10h12.25v10zm-6.112-7.966A2.1 2.1 0 009.9 13.913a2.069 2.069 0 00.544 1.4v.863a1 1 0 001 1h1.113a1 1 0 001-1v-.837a2.062 2.062 0 00.57-1.426 2.1 2.1 0 00-2.114-2.086z\" fill=\"currentColor\"/></g>"
     },
     {
         "name": "unlock",
