@@ -396,7 +396,7 @@ export class FormField implements ComponentInterface {
                     <label id={this.labelId} class="form-label" htmlFor={this.fieldId}>
                         <span class="field-label">
                             {this.label}
-                            {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText}>*</abbr>}
+                            {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText} aria-hidden="true">*</abbr>}
                             {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size={this.tooltipSize} text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info" /></ks-tooltip>}
                         </span>
                         <span class="help-text">{this.helpText}</span>
