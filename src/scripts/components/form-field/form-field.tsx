@@ -2,10 +2,10 @@ import { Component, h, Prop, ComponentInterface, Host, Watch, Event, EventEmitte
 import { debounce } from '../../utils/componentUtils';
 
 export interface IFormFieldData {
-    isValid: boolean;
     name: string;
-    validity: ValidityState;
     value: string | number | boolean | any[];
+    isValid: boolean;
+    validity: ValidityState;
 }
 
 export interface ICustomInput {
@@ -146,10 +146,10 @@ export class FormField implements ComponentInterface {
 
         this.validityState = this.$input.validity;
         return {
-            isValid: this.$input.checkValidity(),
             name: this.$input.name,
-            validity: this.validityState,
-            value: this.value == null ? this.value : this.value.toString()
+            value: this.value == null ? this.value : this.value.toString(),
+            isValid: this.$input.checkValidity(),
+            validity: this.validityState
         };
     }
 

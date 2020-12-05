@@ -41,10 +41,10 @@ export class SpinBox implements ComponentInterface, ICustomInput {
         this.invalid = !this.isValid;
 
         let fieldData: IFormFieldData = {
-            isValid: this.isValid,
+            name: this.name,
             value: this.value,
-            validity: this.$input.validity,
-            name: this.name
+            isValid: this.isValid,
+            validity: this.$input.validity
         };
 
         return fieldData;

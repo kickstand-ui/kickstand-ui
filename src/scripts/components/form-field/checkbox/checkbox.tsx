@@ -35,10 +35,10 @@ export class Checkbox implements ComponentInterface, ICustomInput {
         this.checked = this.$checkbox.checked;
 
         let fieldData: IFormFieldData = {
-            isValid: this.$checkbox.checkValidity(),
+            name: this.name,
             value: this.checked,
-            validity: this.$checkbox.validity,
-            name: this.name
+            isValid: this.$checkbox.checkValidity(),
+            validity: this.$checkbox.validity
         };
 
         return fieldData;

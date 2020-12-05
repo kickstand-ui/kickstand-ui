@@ -59,10 +59,10 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
         this.isValid = this.$select.checkValidity();
 
         let fieldData: IFormFieldData = {
-            isValid: this.isValid,
+            name: this.name,
             value: this.value,
-            validity: this.$select.validity,
-            name: this.name
+            isValid: this.isValid,
+            validity: this.$select.validity
         };
 
         return fieldData;

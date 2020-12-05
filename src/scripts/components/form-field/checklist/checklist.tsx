@@ -88,10 +88,10 @@ export class Checklist implements ComponentInterface, ICustomInput {
         let validity = this.getValidity();
         this.invalid = !validity.valid;
         let fieldData: IFormFieldData = {
-            isValid: validity.valid,
+            name: this.name,
             value: this.type === 'checkbox' ? this.values : this.value,
-            validity: validity,
-            name: this.name
+            isValid: validity.valid,
+            validity: validity
         };
 
         return fieldData;
