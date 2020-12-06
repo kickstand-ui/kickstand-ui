@@ -95,6 +95,7 @@
                     display: inline-block;
                     text-decoration: none;
                     border: 0;
+                    overflow: visible;
                     @include color($color);
                     @include p(none);
                     @include shadow(none);
