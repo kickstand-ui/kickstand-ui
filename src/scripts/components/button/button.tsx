@@ -14,7 +14,6 @@ export class LinkButton implements ComponentInterface {
     @Prop() display: 'solid' | 'hollow' | 'clear' | 'link' = 'solid';
     @Prop() size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
     @Prop() href: string;
-    @Prop() hideText: boolean = false;
     @Prop() cssClass: string = '';
     @Prop() haspopup: boolean = false;
     @Prop() expanded: boolean = false;
