@@ -77,7 +77,7 @@ export class FormField implements ComponentInterface {
     @Prop() maxlengthErrorMessage: string = `Your value must be no more than ${this.maxlength} characters.`;
     @Prop() minlengthErrorMessage: string = `Your value must be at least ${this.minlength} characters.`;
     @Prop() typeErrorMessage: string = `Your value must be a valid ${this.type === 'tel' ? 'telephone number' : this.type}.`;
-    @Prop() requiredErrorMessage: string = `This field is required.`;
+    @Prop() requiredErrorMessage: string = this.type === 'autocomplete' ? 'The value entered is not one of the available options.' : 'This field is required.';
     @Prop({ mutable: true }) validateOnInput: boolean = false;
     @Prop() debounce: number = 0;
     @Prop() inline: boolean = false;
@@ -154,8 +154,9 @@ export class FormField implements ComponentInterface {
     }
 
     private getValue(): string {
-        return typeof this.value === 'number' ? this.value.toString() :
-            (this.value || '').toString();
+        return typeof this.value === 'number' 
+            ? this.value.toString() 
+            : (this.value || '').toString();
     }
 
     private getErrorMessage(): string {

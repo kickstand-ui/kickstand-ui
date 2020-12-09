@@ -55,6 +55,12 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
         });
     }
 
+    private getValue(): string {
+        return typeof this.value === 'number' 
+            ? this.value.toString() 
+            : (this.value || '').toString();
+    }
+
     private validateField() {
         this.isValid = this.$select.checkValidity();
 
@@ -205,21 +211,24 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
     }
 
     render() {
-        let props = {
+        let selectProps = {
+            'disabled': this.disabled,
+            'required': this.required,
+            'name': this.name,
+            ['aria-hidden']: 'true',
+            'tabindex': '-1',
+            'class': 'sr-only',
+            'value': this.getValue()
+        }
+
+        let inputProps = {
             'disabled': this.disabled,
             'required': this.required
         }
 
         return (
             <Host class="ks-autocomplete">
-                <select
-                    name={this.name}
-                    aria-hidden="true"
-                    tabindex="-1"
-                    class="sr-only"
-                    ref={e => this.$select = e}
-                    {...props}
-                >
+                <select ref={e => this.$select = e} {...selectProps}>
                     <slot />
                 </select>
                 <div class="autocomplete">
@@ -236,8 +245,9 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
                         aria-expanded={`${this.isExpanded}`}
                         onKeyUp={(e) => this.onKeyUpHandler(e)}
                         onBlur={() => this.onBlurHandler()}
+                        value={this.getValue()}
                         ref={e => this.$input = e}
-                        {...props}
+                        {...inputProps}
                     />
                     <span class="input-icons">
                         {this.searchTerm ? <ks-button class="clear-button" size="xs" display="clear" css-class="text-md" color="dark" onClick={() => this.clearSearchTerm()}><ks-icon icon="times" label="clear"></ks-icon></ks-button> : ''}

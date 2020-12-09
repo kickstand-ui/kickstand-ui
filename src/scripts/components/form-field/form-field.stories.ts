@@ -2,7 +2,7 @@ import { text, select, boolean, number } from '@storybook/addon-knobs';
 
 export default { title: 'Components/Form Field' };
 
-const types = ['text', 'tel', 'url', 'password', 'date', 'email', 'search', 'number', 'hidden', 'color', 'file', 'month', 'range', 'spin-box', 'textarea', 'select', 'datalist', 'checkbox', 'checklist', 'radiolist', 'spin-box'].sort();
+const types = ['autocomplete', 'text', 'tel', 'url', 'password', 'date', 'email', 'search', 'number', 'hidden', 'color', 'file', 'month', 'range', 'spin-box', 'textarea', 'select', 'datalist', 'checkbox', 'checklist', 'radiolist', 'spin-box'].sort();
 
 export const playground = () => {
     const type = select('type', types, 'text');
@@ -147,6 +147,17 @@ export const radio = () => {
         <ks-radio label="Radio 2"></ks-radio>
         <ks-radio label="Radio 3"></ks-radio>
     </div>
+    `)
+}
+
+export const radmo = () => {
+    return (`
+    <select>
+        <option>Choose a value</option>
+        <option>Value 1</option>
+        <option>Value 2</option>
+        <option>Value 3</option>
+    </select>
     `)
 }
 
