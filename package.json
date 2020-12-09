@@ -18,7 +18,7 @@
     "scripts": {
         "build:icons": "svgo src/scripts/components/icon/icons/*.svg && node icon_loader.js",
         "build": "npm run build:icons && stencil build --docs",
-        "deploy": "stencil build && publish",
+        "deploy": "stencil build && npm publish",
         "serve": "stencil build --dev --watch --serve",
         "dev": "run-p start storybook",
         "generate": "stencil generate",
