@@ -18,7 +18,6 @@
 | `download`    | `download`     |             | `boolean`                                                                                       | `undefined` |
 | `expanded`    | `expanded`     |             | `boolean`                                                                                       | `false`     |
 | `haspopup`    | `haspopup`     |             | `boolean`                                                                                       | `false`     |
-| `hideText`    | `hide-text`    |             | `boolean`                                                                                       | `false`     |
 | `hides`       | `hides`        |             | `string`                                                                                        | `undefined` |
 | `href`        | `href`         |             | `string`                                                                                        | `undefined` |
 | `loading`     | `loading`      |             | `boolean`                                                                                       | `undefined` |

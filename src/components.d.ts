@@ -52,7 +52,6 @@ export namespace Components {
         "download": boolean;
         "expanded": boolean;
         "haspopup": boolean;
-        "hideText": boolean;
         "hides": string;
         "href": string;
         "loading": boolean;
@@ -685,7 +684,6 @@ declare namespace LocalJSX {
         "download"?: boolean;
         "expanded"?: boolean;
         "haspopup"?: boolean;
-        "hideText"?: boolean;
         "hides"?: string;
         "href"?: string;
         "loading"?: boolean;
