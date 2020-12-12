@@ -124,9 +124,6 @@ export namespace Components {
     interface KsColumn {
         "position": 'start' | 'center' | 'end' | 'stretch';
     }
-    interface KsCrumb {
-        "href": string;
-    }
     interface KsDropdown {
         "close": () => Promise<void>;
         "collapse": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -433,12 +430,6 @@ declare global {
         prototype: HTMLKsColumnElement;
         new (): HTMLKsColumnElement;
     };
-    interface HTMLKsCrumbElement extends Components.KsCrumb, HTMLStencilElement {
-    }
-    var HTMLKsCrumbElement: {
-        prototype: HTMLKsCrumbElement;
-        new (): HTMLKsCrumbElement;
-    };
     interface HTMLKsDropdownElement extends Components.KsDropdown, HTMLStencilElement {
     }
     var HTMLKsDropdownElement: {
@@ -612,7 +603,6 @@ declare global {
         "ks-checkbox": HTMLKsCheckboxElement;
         "ks-checklist": HTMLKsChecklistElement;
         "ks-column": HTMLKsColumnElement;
-        "ks-crumb": HTMLKsCrumbElement;
         "ks-dropdown": HTMLKsDropdownElement;
         "ks-dropdown-item": HTMLKsDropdownItemElement;
         "ks-form": HTMLKsFormElement;
@@ -755,9 +745,6 @@ declare namespace LocalJSX {
     }
     interface KsColumn {
         "position"?: 'start' | 'center' | 'end' | 'stretch';
-    }
-    interface KsCrumb {
-        "href"?: string;
     }
     interface KsDropdown {
         "collapse"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -984,7 +971,6 @@ declare namespace LocalJSX {
         "ks-checkbox": KsCheckbox;
         "ks-checklist": KsChecklist;
         "ks-column": KsColumn;
-        "ks-crumb": KsCrumb;
         "ks-dropdown": KsDropdown;
         "ks-dropdown-item": KsDropdownItem;
         "ks-form": KsForm;
@@ -1033,7 +1019,6 @@ declare module "@stencil/core" {
             "ks-checkbox": LocalJSX.KsCheckbox & JSXBase.HTMLAttributes<HTMLKsCheckboxElement>;
             "ks-checklist": LocalJSX.KsChecklist & JSXBase.HTMLAttributes<HTMLKsChecklistElement>;
             "ks-column": LocalJSX.KsColumn & JSXBase.HTMLAttributes<HTMLKsColumnElement>;
-            "ks-crumb": LocalJSX.KsCrumb & JSXBase.HTMLAttributes<HTMLKsCrumbElement>;
             "ks-dropdown": LocalJSX.KsDropdown & JSXBase.HTMLAttributes<HTMLKsDropdownElement>;
             "ks-dropdown-item": LocalJSX.KsDropdownItem & JSXBase.HTMLAttributes<HTMLKsDropdownItemElement>;
             "ks-form": LocalJSX.KsForm & JSXBase.HTMLAttributes<HTMLKsFormElement>;

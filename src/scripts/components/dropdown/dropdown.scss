@@ -59,20 +59,6 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         @include p(sm);
         @include transition();
 
-        // &.collapse {
-        //     @each $key,
-        //     $value in $breakpoints {
-        //         &-#{$key} {
-        //             @include mq($key) {
-        //                 position: fixed;
-        //                 left: 0;
-        //                 right: 0;
-        //                 @include mx(lg);
-        //             }
-        //         }
-        //     }
-        // }
-
         .dropdown-item {
             >* {
                 display: inline-block;
