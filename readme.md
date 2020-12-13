@@ -17,9 +17,15 @@ Kickstand UI is a Design system and pattern library built with Web Components, s
 ### CDN
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/kickstand-ui/dist/kickstand-ui/kickstand-ui.css" />
-<script src="https://unpkg.com/kickstand-ui/dist/kickstand-ui.js"></script>
+<!-- global styles and utility classes -->
+<link rel="stylesheet" href="https://unpkg.com/kickstand-ui@beta/dist/kickstand-ui/kickstand-ui.css" />
+
+<!-- scripts for browsers that support ES modules -->
+<script type="module" src="https://unpkg.com/kickstand-ui@beta/dist/kickstand-ui/kickstand-ui.esm.js"></script>
+<!-- scripts for browsers that do not support ES modules (legacy browsers) -->
+<script nomodule src="https://unpkg.com/kickstand-ui@beta/dist/kickstand-ui/kickstand-ui.js"></script>
 ```
+(_For the best user experience, be sure to include both `script` tags._)
 
 ### Package Manager
 
@@ -44,11 +50,21 @@ applyPolyfills().then(() => {
 
 ### Styles
 
-Kickstand UI was written using [SASS](https://sass-lang.com/) and to take advantage of all of the built-in tooling and customization capabilities you should plan on using it in your project. You can import them into your project from `kickstand-ui/src/scss/styles.scss`. If not you can always use the compiled CSS located in `kickstand-ui/dist/kickstand-ui/kickstand-ui.css`.
+Kickstand UI was written using [SASS](https://sass-lang.com/). Using SASS is not required to use and customize Kickstand UI for your needs, but we have created some great [SASS tools](../../design-tokens/design-tokens.md) to really accelerate the development process. You can import them into your project from `kickstand-ui/src/scss/styles.scss`.
+
+If you are planning on using the compiled CSS, you can find it at `kickstand-ui/dist/kickstand-ui/kickstand-ui.css`.
+
+## Browser Support
+
+All of Kickstand UI's components are built using standards-based [web components](https://www.webcomponents.org/introduction). Browser support has greatly improved over the years. For features that are not fully supported, polyfills have been added (which will be included as-needed) to provide a great experience no matter what browser you are using.
+
+Supported browsers include **Chrome**, **Chromium-based browsers** (this includes browsers like _Brave_, the new _Microsoft Edge_, and _Vivaldi_), **Firefox**, **Safari**, **Opera**, **Microsoft Edge** (legacy), and **Internet Explorer 11**.
 
 ## Framework Integrations
 
-Once you have installed Kickstand UI, check out the documentation on how to implement it into your favorite framework:
+Kickstand UI is built with native web components which makes it framework agnostic! You can implement it in any of your projects regardless of the framework you are using ([add to your project](https://kickstand-ui.com/getting-started/framework-integrations/overview.html)).
+
+Once you have installed Kickstand UI, check out the documentation on how to implement it into your favorite framework (or none at all!):
 
 - [JavaScript](https://kickstand-ui.com/getting-started/installation.html)
 - [Angular](https://kickstand-ui.com/getting-started/framework-integrations/angular.html)
