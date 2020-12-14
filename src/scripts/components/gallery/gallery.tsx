@@ -26,7 +26,7 @@ export class Gallery implements ComponentInterface {
             let scroll = e.target as HTMLElement;
             let position = scroll.scrollLeft + scroll.offsetWidth
             this.isStart = position === scroll.offsetWidth;
-            this.isEnd = position > scroll.scrollWidth;
+            this.isEnd = position >= scroll.scrollWidth;
         });
         if (this.itemWidth)
             Array.from(this.$el.querySelector('.scrolling-content').children)
@@ -51,11 +51,40 @@ export class Gallery implements ComponentInterface {
     }
 
     private scroll() {
-        this.container.scroll({
-            left: this.position,
-            behavior: 'smooth'
+        if (this.supportsSmoothScrolling()) {
+            this.container.scroll({
+                left: this.position,
+                behavior: 'smooth'
+            });
+        } else {
+            this.scrollTo(this.container, this.container.scrollLeft, this.position)
+        }
+    }
+
+    private scrollTo(element: HTMLElement, from: number, to: number, duration = 1000, currentTime = 0) {
+        from = from <= 0 ? 0 : from;
+        to = to <= 0 ? 0 : to;
+
+        if (currentTime >= duration)
+            return;
+
+        let delta = to - from;
+        let progress = currentTime / duration * Math.PI / 2;
+        let position = delta * (Math.sin(progress));
+        setTimeout(() => {
+            element.scrollLeft = from + position;
+            this.scrollTo(element, from, to, duration, currentTime + 5);
         });
     }
+
+    private supportsSmoothScrolling() {
+        const body = document.body;
+        const scrollSave = body.style.scrollBehavior;
+        body.style.scrollBehavior = 'smooth';
+        const hasSmooth = getComputedStyle(body).scrollBehavior === 'smooth';
+        body.style.scrollBehavior = scrollSave;
+        return hasSmooth;
+    };
 
     private setScrollValues() {
         this.container = this.$el.querySelector('.content-wrapper') as HTMLElement;
@@ -78,8 +107,8 @@ export class Gallery implements ComponentInterface {
 
         let wrapperClasses = {
             'content-wrapper': true,
-            'border-l': !this.isStart,
-            'border-r': !this.isEnd
+            'b-l-xxxs': !this.isStart,
+            'b-r-xxxs': !this.isEnd
         }
 
         return (

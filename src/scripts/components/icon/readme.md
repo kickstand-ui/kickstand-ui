@@ -22,7 +22,6 @@
  - [ks-accordion-slide](../accordion)
  - [ks-alert](../alert)
  - [ks-autocomplete](../form-field/autocomplete)
- - [ks-button](../button)
  - [ks-carousel](../carousel)
  - [ks-checkbox](../form-field/checkbox)
  - [ks-checklist](../form-field/checklist)
@@ -34,6 +33,7 @@
  - [ks-menu-bar](../menu-bar)
  - [ks-modal](../modal)
  - [ks-side-drawer](../side-drawer)
+ - [ks-spin-box](../form-field/spin-box)
 
 ### Graph
 ```mermaid
@@ -41,7 +41,6 @@ graph TD;
   ks-accordion-slide --> ks-icon
   ks-alert --> ks-icon
   ks-autocomplete --> ks-icon
-  ks-button --> ks-icon
   ks-carousel --> ks-icon
   ks-checkbox --> ks-icon
   ks-checklist --> ks-icon
@@ -53,6 +52,7 @@ graph TD;
   ks-menu-bar --> ks-icon
   ks-modal --> ks-icon
   ks-side-drawer --> ks-icon
+  ks-spin-box --> ks-icon
   style ks-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

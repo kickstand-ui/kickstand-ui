@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host, Element, State, Listen, Method } from '@stencil/core';
+import { Component, h, Prop, Host, Element, State, Listen, Method, Event, EventEmitter } from '@stencil/core';
 import { FOCUSABLE_ELEMENTS } from '../../utils/componentUtils';
 
 @Component({
@@ -23,6 +23,9 @@ export class Dropdown {
     @Prop() megaMenu: boolean = false;
     @Prop() collapse: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'xs';
 
+    @Event() dropdownOpened: EventEmitter;
+    @Event() dropdownClosed: EventEmitter;
+
     @State() isExpanded: boolean = false;
     @State() focusIndex: number = 0;
 
@@ -30,6 +33,7 @@ export class Dropdown {
     async close() {
         this.isExpanded = false;
         this.focusIndex = 0;
+        this.dropdownClosed.emit();
         setTimeout(() => this.$control.focus());
     }
 
@@ -82,39 +86,40 @@ export class Dropdown {
         this.$focusableEls[this.focusIndex].focus();
     }
 
-
     componentDidRender() {
         this.$focusableEls = Array.from(this.$contents.querySelectorAll(FOCUSABLE_ELEMENTS));
 
         window.addEventListener('click', (e: MouseEvent) => {
             let $preventCloseElements = Array.from(document.querySelectorAll('.prevent-dropdown-close'));
-            let isPreventClose = this.$el.contains(e.target as HTMLElement) 
+            let isPreventClose = this.$el.contains(e.target as HTMLElement)
                 || $preventCloseElements.some(x => x.contains(e.target as HTMLElement));
 
             if (isPreventClose)
                 return;
 
             this.isExpanded = false;
+            this.dropdownClosed.emit();
         });
     }
 
     toggleDropdown() {
         this.isExpanded = !this.isExpanded;
 
-        if (this.isExpanded && this.$focusableEls.length > 0)
-            setTimeout(() => this.$focusableEls[0].focus(), 100);
+        if (this.isExpanded) {
+            this.dropdownOpened.emit();
+
+            if(this.$focusableEls.length > 0)
+                setTimeout(() => this.$focusableEls[0].focus(), 100);
+        } else {
+            this.dropdownClosed.emit();
+        }
     }
 
     render() {
         let dropDownClasses = {
             'ks-dropdown': true,
-            'show': this.isExpanded,
+            'show-contents': this.isExpanded,
             'mega-menu': this.megaMenu
-        };
-
-        let buttonClasses = {
-            'dropdown-text': true,
-            'sr-only': this.hideText
         };
 
         let contentClasses = {
@@ -132,20 +137,20 @@ export class Dropdown {
                     onClick={() => this.toggleDropdown()}
                     color={this.color}
                     display={this.display}
-                    icon={this.icon}
                     cssClass="dropdown-button"
                     haspopup={true}
                     expanded={this.isExpanded}
                     controls={this.dropdownId}
                     ref={el => this.$control = el.querySelector('button')}
                 >
-                    <span class={buttonClasses}>{this.text}</span>
+                    {this.icon && <ks-icon icon={this.icon} />}
+                    <span class={`dropdown-text ${this.hideText ? 'sr-only' : ''}`}>{this.text}</span>
                     {!this.hideIndicator && <ks-icon icon="chevron_down" class="dropdown-icon" />}
                 </ks-button>
                 <div
                     id={this.dropdownId}
                     class={contentClasses}
-                    role={this.megaMenu ? '' : 'list'}
+                    role={this.megaMenu ? undefined : 'list'}
                     aria-labelledby={`${this.dropdownId}-button`}
                     ref={el => this.$contents = el}
                 >

@@ -1,12 +1,12 @@
 @import "../../../scss/00_Abstracts/index";
 
-ks-icon {
+.ks-icon {
     line-height: inherit;
     position: relative;
     display: inline-block;
 
     .icon {
-        // margin: -0.25em;
+        margin: -0.25em;
         display: inline-block;
         font-size: inherit;
         height: 1.5em;

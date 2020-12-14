@@ -2,11 +2,17 @@ import { Component, h, Prop, ComponentInterface, Host, Watch, Event, EventEmitte
 import { debounce } from '../../utils/componentUtils';
 
 export interface IFormFieldData {
-    isValid: boolean;
     name: string;
-    validity: ValidityState;
     value: string | number | boolean | any[];
+    isValid: boolean;
+    validity: ValidityState;
 }
+
+export interface ICustomInput {
+    validate(): Promise<IFormFieldData>
+}
+
+export interface ICustomInputElement extends HTMLElement, ICustomInput {}
 
 @Component({
     tag: 'ks-form-field',
@@ -17,32 +23,32 @@ export class FormField implements ComponentInterface {
     fieldId = `form_input_${this.formFieldId}`;
     labelId = `form_label_${this.formFieldId}`;
     listId = `form_list_${this.formFieldId}`;
+    inputHandler: any;
 
     $input: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
-    $checkbox: HTMLKsCheckboxElement;
-    $checklist: HTMLKsChecklistElement;
-    $autocomplete: HTMLKsAutocompleteElement;
+    $customInput: ICustomInputElement;
 
-    @Element() $el: HTMLElement;
+    @Element() $el: any;
 
     @Prop() label: string;
     @Prop() helpText: string;
     @Prop() tooltipText: string;
+    @Prop() tooltipSize: 'sm' | 'md' | 'lg' | 'xl' = 'sm';;
     @Prop() placeholder: string;
     @Prop() name: string;
     @Prop() required: boolean;
     @Prop() requiredText: string = 'Required';
     @Prop({ mutable: true }) invalid: boolean = false;
     @Prop() disabled: boolean;
-    @Prop({ mutable: true }) value?: string | number | boolean| any[] | null = '';
+    @Prop({ mutable: true }) value?: string | number | boolean | any[] | null;
     @Prop() pattern?: string;
-    @Prop() min?: number;
-    @Prop() max?: number;
-    @Prop() step?: number;
-    @Prop() minlength?: number;
-    @Prop() maxlength?: number;
+    @Prop() min?: number = undefined;
+    @Prop() max?: number = undefined;
+    @Prop() step?: number = 1;
+    @Prop() minlength?: number = undefined;
+    @Prop() maxlength?: number = undefined;
     @Prop() autocomplete?: string;
-    @Prop() type: 'autocomplete' 
+    @Prop() type: 'autocomplete'
         | 'checkbox'
         | 'checklist'
         | 'color'
@@ -57,6 +63,7 @@ export class FormField implements ComponentInterface {
         | 'range'
         | 'search'
         | 'select'
+        | 'spin-box'
         | 'tel'
         | 'text'
         | 'textarea'
@@ -70,21 +77,24 @@ export class FormField implements ComponentInterface {
     @Prop() maxlengthErrorMessage: string = `Your value must be no more than ${this.maxlength} characters.`;
     @Prop() minlengthErrorMessage: string = `Your value must be at least ${this.minlength} characters.`;
     @Prop() typeErrorMessage: string = `Your value must be a valid ${this.type === 'tel' ? 'telephone number' : this.type}.`;
-    @Prop() requiredErrorMessage: string = `This field is required.`;
+    @Prop() requiredErrorMessage: string = this.type === 'autocomplete' ? 'The value entered is not one of the available options.' : 'This field is required.';
     @Prop({ mutable: true }) validateOnInput: boolean = false;
     @Prop() debounce: number = 0;
     @Prop() inline: boolean = false;
     @Prop() datalist: boolean = false;
     @Prop() checked: boolean = false;
+    @Prop() icon?: string;
+    @Prop() iconDirection: 'left' | 'right' = 'right';
 
     @Event() updated!: EventEmitter<IFormFieldData>;
     @Event() blurred!: EventEmitter;
 
     @State() validityState: ValidityState;
+    @State() showPassword: boolean = false;
 
     @Method()
     async validate() {
-        if (!this.$checkbox && !this.$checklist && !this.$autocomplete) {
+        if (!this.$customInput) {
             this.invalid = !this.$input.checkValidity();
             this.validateOnInput = true;
         }
@@ -94,7 +104,7 @@ export class FormField implements ComponentInterface {
 
     @Watch('value')
     protected async valueChanged() {
-        if(this.type === 'autocomplete')
+        if (this.type === 'autocomplete')
             return;
 
         if (this.$input && this.$input.value !== this.value)
@@ -121,48 +131,38 @@ export class FormField implements ComponentInterface {
             const $options = Array.from(this.$el.querySelectorAll('option')) as HTMLElement[];
             $options.forEach(x => x.hidden = true);
         }
+
+        this.inputHandler = debounce(() => this.value = this.$input.value || '', this.debounce);
     }
 
     private async validateField(): Promise<IFormFieldData> {
-        switch (true) {
-            case this.$checkbox !== undefined:
-                let checkboxFieldData = await this.$checkbox.validate();
-                this.invalid = !checkboxFieldData.isValid;
-                this.validityState = checkboxFieldData.validity;
-                return checkboxFieldData;
-            case this.$checklist !== undefined:
-                let checklistData = await this.$checklist.validate();
-                this.invalid = !checklistData.isValid;
-                this.validityState = checklistData.validity;
-                return checklistData;
-            case this.$autocomplete !== undefined:
-                const autocomplete = await this.$autocomplete.validate();
-                this.invalid = !autocomplete.isValid;
-                this.value = autocomplete.value;
-                this.validityState = autocomplete.validity
-                return autocomplete;
-            default:
-                this.validityState = this.$input.validity;
-                return {
-                    isValid: this.$input.checkValidity(),
-                    name: this.$input.name,
-                    validity: this.validityState,
-                    value: this.value == null ? this.value : this.value.toString()
-                };
+        if (this.$customInput) {
+            const input = await this.$customInput.validate();
+            this.invalid = !input.isValid;
+            this.value = input.value;
+            this.validityState = input.validity
+            return input;
         }
+
+        this.validityState = this.$input.validity;
+        return {
+            name: this.$input.name,
+            value: this.value == null ? this.value : this.value.toString(),
+            isValid: this.$input.checkValidity(),
+            validity: this.validityState
+        };
     }
 
     private getValue(): string {
-        return typeof this.value === 'number' ? this.value.toString() :
-            (this.value || '').toString();
+        return typeof this.value === 'number' 
+            ? this.value.toString() 
+            : (this.value || '').toString();
     }
 
     private getErrorMessage(): string {
         switch (true) {
-            case this.validityState?.badInput:
-                return this.badInputErrorMessage;
-            case this.validityState?.patternMismatch:
-                return this.patternErrorMessage;
+            case this.validityState?.valueMissing:
+                return this.requiredErrorMessage;
             case this.validityState?.rangeOverflow:
                 return this.maxErrorMessage;
             case this.validityState?.rangeUnderflow:
@@ -175,8 +175,10 @@ export class FormField implements ComponentInterface {
                 return this.minlengthErrorMessage;
             case this.validityState?.typeMismatch:
                 return this.typeErrorMessage;
-            case this.validityState?.valueMissing:
-                return this.requiredErrorMessage;
+            case this.validityState?.patternMismatch:
+                return this.patternErrorMessage;
+            case this.validityState?.badInput:
+                return this.badInputErrorMessage;
             default:
                 return this.defaultErrorMessage;
         }
@@ -184,16 +186,6 @@ export class FormField implements ComponentInterface {
 
     private getInputName() {
         return this.name || this.label ? this.label.toLowerCase().replace(/ /g, '-') : '';
-    }
-
-    private onInput(ev: Event) {
-        debounce(() => {
-            const input = ev.target as HTMLInputElement | null;
-
-            if (input)
-                this.value = input.value || '';
-
-        }, this.debounce);
     }
 
     private async onBlur() {
@@ -221,9 +213,23 @@ export class FormField implements ComponentInterface {
         return props;
     }
 
+    private handleTogglePasswordClick() {
+        this.showPassword = !this.showPassword;
+
+        this.$input.setAttribute('type', this.showPassword ? 'text' : 'password');
+    }
+
+    private handleClearContentsClick() {
+        this.value = '';
+    }
+
     render() {
         let value = this.getValue();
         let props = {
+            'id': this.fieldId,
+            'class':`form-input ${this.icon ? `display-icon-${this.iconDirection}` : ''}`,
+            'name': this.getInputName(),
+            'value': value,
             'disabled': this.disabled,
             'required': this.required,
             'aria-invalid': !this.disabled && this.invalid.toString(),
@@ -238,11 +244,8 @@ export class FormField implements ComponentInterface {
         let fieldInput = {
             'textarea': (
                 <textarea
-                    id={this.fieldId}
-                    class="form-input"
-                    name={this.getInputName()}
                     {...props}
-                    onInput={(e) => this.onInput(e)}
+                    onInput={() => this.inputHandler()}
                     onBlur={() => this.onBlur()}
                     ref={el => this.$input = el}
                 >
@@ -252,11 +255,8 @@ export class FormField implements ComponentInterface {
             'select': (
                 <div class="select-wrapper">
                     <select
-                        id={this.fieldId}
-                        class="form-input"
-                        name={this.getInputName()}
                         {...props}
-                        onInput={(e) => this.onInput(e)}
+                        onInput={() => this.inputHandler()}
                         onBlur={() => this.onBlur()}
                         ref={el => this.$input = el}
                     >
@@ -266,30 +266,72 @@ export class FormField implements ComponentInterface {
                 </div>
             ),
             'autocomplete': (
-                <ks-autocomplete 
-                    value={this.value} 
+                <ks-autocomplete
+                    value={this.value}
                     name={this.getInputName()}
                     input-id={this.fieldId}
-                    required={this.required} 
+                    required={this.required}
                     disabled={this.disabled}
                     onChanged={e => this.handleComponentChange(e)}
-                    ref={e => this.$autocomplete = e}
-                    >
+                    ref={e => this.$customInput = e}
+                >
                     <slot />
                 </ks-autocomplete>
+            ),
+            'spin-box': (
+                <ks-spin-box 
+                    value={this.value}
+                    min={this.min} 
+                    max={this.max}
+                    step={this.step}
+                    name={this.name}
+                    input-id={this.fieldId}
+                    required={this.required}
+                    disabled={this.disabled}
+                    invalid={this.invalid}
+                    onUpdated={e => this.handleComponentChange(e)}
+                    ref={el => this.$customInput = el}
+                    >
+                </ks-spin-box>
             )
         }[this.type] || [
-                <input
-                    id={this.fieldId}
-                    class="form-input"
-                    type={this.type}
-                    name={this.getInputName()}
-                    {...props}
-                    value={value}
-                    onInput={(e) => this.onInput(e)}
-                    onBlur={() => this.onBlur()}
-                    ref={el => this.$input = el}
-                />,
+                <div class="input-wrapper">
+                    {this.icon && this.iconDirection === 'left' && <span class="icon-left">
+                        <ks-icon class="input-icon" icon={this.icon}></ks-icon>
+                    </span>}
+                    <input
+                        {...props}
+                        type={this.type}
+                        onInput={() => this.inputHandler()}
+                        onBlur={() => this.onBlur()}
+                        ref={el => this.$input = el}
+                    />
+                    <span class="icon-right">
+                        {this.type === 'password' && <ks-button
+                            class="input-button"
+                            display="clear"
+                            size="xs"
+                            css-class="text-md"
+                            color="dark"
+                            hide-text
+                            onClick={() => this.handleTogglePasswordClick()}
+                        >
+                            <ks-icon icon={this.showPassword ? 'hide' : 'view'} label={this.showPassword ? 'hide' : 'hide'}></ks-icon>
+                        </ks-button>}
+                        {this.type === 'search' && this.value && <ks-button
+                            class="input-button"
+                            display="clear"
+                            size="xs"
+                            css-class="text-md"
+                            color="dark"
+                            hide-text
+                            onClick={() => this.handleClearContentsClick()}
+                        >
+                            <ks-icon icon="times" label="clear"></ks-icon>
+                        </ks-button>}
+                        {this.icon && this.iconDirection === 'right' && <ks-icon class="input-icon" icon={this.icon}></ks-icon>}
+                    </span>
+                </div>,
                 this.datalist && <datalist id={this.listId}>
                     <slot />
                 </datalist>
@@ -311,7 +353,7 @@ export class FormField implements ComponentInterface {
                     required-text={this.requiredText}
                     name={this.getInputName()}
                     onChanged={e => this.handleComponentChange(e)}
-                    ref={el => this.$checkbox = el}
+                    ref={el => this.$customInput = el}
                 />
             ],
             'checklist': (
@@ -326,7 +368,7 @@ export class FormField implements ComponentInterface {
                     help-text={this.helpText}
                     invalid={this.invalid}
                     disabled={this.disabled}
-                    ref={el => this.$checklist = el}
+                    ref={el => this.$customInput = el}
                     onChecked={e => this.handleComponentChange(e)}
                 >
                     <slot />
@@ -344,7 +386,7 @@ export class FormField implements ComponentInterface {
                     help-text={this.helpText}
                     invalid={this.invalid}
                     disabled={this.disabled}
-                    ref={el => this.$checklist = el}
+                    ref={el => this.$customInput = el}
                     onChecked={e => this.handleComponentChange(e)}
                 >
                     <slot />
@@ -355,8 +397,8 @@ export class FormField implements ComponentInterface {
                     <label id={this.labelId} class="form-label" htmlFor={this.fieldId}>
                         <span class="field-label">
                             {this.label}
-                            {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText}>*</abbr>}
-                            {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size="md" text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info" /></ks-tooltip>}
+                            {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText} aria-hidden="true">*</abbr>}
+                            {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size={this.tooltipSize} text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info" /></ks-tooltip>}
                         </span>
                         <span class="help-text">{this.helpText}</span>
                         <span class="error-message text-danger" role="alert" aria-live="assertive">

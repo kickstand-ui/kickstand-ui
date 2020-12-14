@@ -1,11 +1,11 @@
 import { Component, h, Prop, Host, Event, EventEmitter, Method, Element, State, ComponentInterface } from '@stencil/core';
-import { IFormFieldData } from '../form-field';
+import { IFormFieldData, ICustomInput } from '../form-field';
 
 @Component({
     tag: 'ks-checklist',
     styleUrl: 'checklist.scss'
 })
-export class Checklist implements ComponentInterface {
+export class Checklist implements ComponentInterface, ICustomInput {
     $checkbox: HTMLInputElement;
     $options: HTMLOptionElement[];
 
@@ -15,6 +15,7 @@ export class Checklist implements ComponentInterface {
     @Prop() label: string;
     @Prop() required: boolean;
     @Prop() tooltipText: string;
+    @Prop() tooltipSize: 'sm' | 'md' | 'lg' | 'xl' = 'sm';;
     @Prop() requiredText: string = 'Required';
     @Prop() requiredErrorMessage: string = `This field is required.`;
     @Prop() name: string;
@@ -32,7 +33,7 @@ export class Checklist implements ComponentInterface {
         return this.getFieldData();
     }
 
-    connectedCallback() {
+    componentWillLoad() {
         this.$options = Array.from(this.$el.querySelectorAll('option'));
 
         this.$options.forEach(option => {
@@ -87,10 +88,10 @@ export class Checklist implements ComponentInterface {
         let validity = this.getValidity();
         this.invalid = !validity.valid;
         let fieldData: IFormFieldData = {
-            isValid: validity.valid,
+            name: this.name,
             value: this.type === 'checkbox' ? this.values : this.value,
-            validity: validity,
-            name: this.name
+            isValid: validity.valid,
+            validity: validity
         };
 
         return fieldData;
@@ -103,8 +104,8 @@ export class Checklist implements ComponentInterface {
                     <legend class="form-label">
                         <span class="field-label">
                             {this.label}
-                            {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText}>*</abbr>}
-                            {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size="md" text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info" /></ks-tooltip>}
+                            {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-hidden="true">*</abbr>}
+                            {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size={this.tooltipSize} text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info" /></ks-tooltip>}
                         </span>
                         <span class="help-text">{this.helpText}</span>
                         <span class="error-message text-danger" role="alert" aria-live="assertive">

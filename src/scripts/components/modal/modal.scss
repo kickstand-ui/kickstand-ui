@@ -1,58 +1,85 @@
 @import "../../../scss/00_Abstracts/index";
 
 .ks-modal {
-    max-width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    @include bg-color(white);
-    @include p(lg);
+    .ks-overlay {
+        @include p(lg);
 
-    .modal-header {
-        display: flex;
-        justify-content: space-between;
-        align-content: flex-start;
-        @include border-b();
-        @include mb(md);
+        .content {
+            display: block;
+            transform: scale(0.95);
+            @include m(auto);
+            margin-top: 10vh;
 
-        .modal-title {
-        }
+            .modal-wrapper {
+                width: 100%;
+                max-height: 80vh;
+                overflow-y: auto;
+                background-color: white;
+                @include p(lg);
+                @include transition();
+                @include br(sm);
 
-        .modal-close {
-            @include mt(xxs);
+                .modal-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-content: flex-start;
+                    @include b-b();
+                    @include mb(md);
 
-            .ks-button {
-                @include p(none);
+                    .modal-title {
+                        line-height: 1;
+                        @include color(dark);
+                    }
 
-                .button-text {
-                    display: inline-flex;
+                    .modal-close {
+                        .ks-button {
+                            .button {
+                                @include p(none);
+
+                                .button-text {
+                                    display: inline-flex;
+                                }
+
+                                .icon {
+                                    @include font-size(lg);
+                                }
+                            }
+                        }
+                    }
                 }
 
-                .icon {
-                    @include font-size(lg);
+                &.size {
+                    &-sm {
+                        max-width: 300px;
+                    }
+
+                    &-md {
+                        max-width: 500px;
+                    }
+
+                    &-lg {
+                        max-width: 800px;
+                    }
+                }
+
+                .modal-content {
+                    .modal-footer {
+                        display: flex;
+                        justify-content: flex-end;
+                        @include mt(md);
+                    }
                 }
             }
         }
-    }
 
-    &.size {
-        &-sm {
-            width: 300px;
-        }
+        &.opened {
+            .content {
+                transform: scale(1);
 
-        &-md {
-            width: 500px;
-        }
-
-        &-lg {
-            width: 800px;
-        }
-    }
-
-    .modal-content {
-        .modal-footer {
-            display: flex;
-            justify-content: flex-end;
-            @include mt(md);
+                .modal-wrapper {
+                    @include transition();
+                }
+            }
         }
     }
 }

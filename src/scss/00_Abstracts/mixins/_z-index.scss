@@ -1,15 +1,10 @@
 @import '../variables';
 
 @mixin z-index($size, $important: false) {
-    @if map-has-key($z-indexes, $size) {
-        @if ($important == true) {
-            z-index: map-get($z-indexes, $size) !important;
-        }
-        @else {
-            z-index: map-get($z-indexes, $size);
-        }
+    @if ($important == true) {
+        z-index: var(--ks-z-index-#{$size}) !important;
     }
     @else {
-        @error "Invalid z-index: '#{$size}'.";
+        z-index: var(--ks-z-index-#{$size});
     }
 }

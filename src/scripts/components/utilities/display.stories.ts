@@ -22,8 +22,8 @@ export const displayFlex = () => {
     const align = select('align', alignments, '');
 
     return (`<div style="min-height:10rem;" class="display-flex bg-info-lighter ${direction} ${justify} ${align}">
-        <div class="bg-light border p-sm">Column 1</div>
-        <div class="bg-light border p-sm">Column 2</div>
-        <div class="bg-light border p-sm">Column 3<br>Intentionally Weird</div>
+        <div class="bg-light b-xs p-sm">Column 1</div>
+        <div class="bg-light b-xs p-sm">Column 2</div>
+        <div class="bg-light b-xs p-sm">Column 3<br>Intentionally Weird</div>
     </div>`);
 };

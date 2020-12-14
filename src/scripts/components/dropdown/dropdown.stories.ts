@@ -1,6 +1,6 @@
 import { text, select, boolean } from "@storybook/addon-knobs";
 
-export default { title: 'Dropdown' };
+export default { title: 'Components/Dropdown' };
 
 const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
 const displays = ['solid', 'hollow', 'clear', 'link'];
@@ -49,6 +49,19 @@ export const megaMenu = () => {
             >
             <h3>Mega Menu meets Mega Desk</h3>
             <img src="https://media1.tenor.com/images/812ea59ea0ddcfbc1e2793092538dfde/tenor.gif">
+        </ks-dropdown>
+    `);
+}
+
+export const collapseTest = () => {
+    return (`
+        <ks-dropdown text="Prevent Close">
+            <ks-dropdown-item>
+                <ks-button color="secondary">I will close when you click me!</ks-button>
+            </ks-dropdown-item>
+            <ks-dropdown-item prevent-close>
+                <ks-button>I will not close when you click me!</ks-button>
+            </ks-dropdown-item>
         </ks-dropdown>
     `);
 }

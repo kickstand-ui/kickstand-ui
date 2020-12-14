@@ -1,41 +1,39 @@
 @import "../../../scss/00_Abstracts/index";
 
-ks-breadcrumbs {
-    display: block;
-}
-
 .ks-breadcrumbs {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    @include px(lg);
-    @include py(md);
-    @include mb(lg);
+    display: block;
 
-    .breadcrumb {
-        .link {
-            font-weight: bold;
-            text-decoration: none;
-            @include font-size(sm);
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        @include p(none);
 
-            &:hover {
-                text-decoration: underline;
-            }
-
-            &[aria-current="page"] {
-                color: color(dark);
+        .breadcrumb {
+            .link {
+                font-weight: bold;
+                text-decoration: none;
                 @include font-size(sm);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                &[aria-current="page"] {
+                    @include color(dark);
+                    @include font-size(sm);
+                }
             }
         }
-    }
 
-    .breadcrumb+.breadcrumb {
-        @include pl(sm);
+        .breadcrumb+.breadcrumb {
+            @include pl(sm);
 
-        &::before {
-            display: inline-block;
-            content: "/";
-            @include pr(sm);
+            &::before {
+                display: inline-block;
+                content: "/";
+                @include pr(sm);
+            }
         }
     }
 }

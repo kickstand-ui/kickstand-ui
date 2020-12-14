@@ -9,7 +9,7 @@ $variations: ('lighter', 'light', 'base', 'dark', 'darker');
         ...
     */
     .text-#{$color} {
-        color: color($color) !important;
+        @include color($color, $important: true);
     }
 
     /*
@@ -28,7 +28,7 @@ $variations: ('lighter', 'light', 'base', 'dark', 'darker');
             ...
         */
         .text-#{$color}-#{$variation} {
-            color: color($color, $variation) !important;
+            @include color($color, $variation, $important: true);
         }
 
         /*

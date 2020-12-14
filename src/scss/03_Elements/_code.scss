@@ -40,7 +40,7 @@ kbd {
     @include font-size(xs);
     color: text-color(dark);
     background-color: color(dark);
-    @include radius(sm);
+    @include br(sm);
 
     kbd {
         padding: 0;

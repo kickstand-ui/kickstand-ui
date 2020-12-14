@@ -9,10 +9,10 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
     flex-basis: 0;
     flex-grow: 1;
 
-    @each $key, $value in $spacing-sizes {
+    @each $bp, $value in $spacing-sizes {
         $gutter-size: $value / 2;
 
-        &.gutter-#{$key} {
+        &.gutter-#{$bp} {
             margin-left: -$gutter-size;
             margin-right: -$gutter-size;
 
@@ -65,10 +65,9 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
         @for $i from 1 through $columns {
 
-            @each $key,
-            $value in $breakpoints {
-                @include mq($key) {
-                    &.#{$key}\:col-#{$i} {
+            @each $bp in $breakpoints {
+                @include mq($bp) {
+                    &.#{$bp}\:col-#{$i} {
                         max-width: (100% / $columns) * $i;
                         flex: 0 0 (100% / $columns) * $i;
                     }

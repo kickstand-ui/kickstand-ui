@@ -1,10 +1,10 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Host, Prop, ComponentInterface } from '@stencil/core';
 
 @Component({
     tag: 'ks-accordion',
     styleUrl: 'accordion.scss'
 })
-export class Accordion {
+export class Accordion implements ComponentInterface {
     @Prop() size: 'sm' | 'md' | 'lg' = 'md';
 
     render() {

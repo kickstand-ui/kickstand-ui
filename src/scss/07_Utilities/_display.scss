@@ -2,6 +2,10 @@
 
 $breakpoints: (xl, lg, md, sm, xs, xxs, print);
 
+.full-width {
+    @include full-width();
+}
+
 .display-block {
     display: block;
 }
@@ -87,6 +91,10 @@ $breakpoints: (xl, lg, md, sm, xs, xxs, print);
 }
 
 @each $key, $value in $breakpoints {
+    .#{$key}\:full-width {
+        @include full-width();
+    }
+    
     .#{$key}\:display-block {
         @include mq($key) {
             display: block;

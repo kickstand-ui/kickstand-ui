@@ -2,7 +2,8 @@
 
 .ks-form-wrapper {
     display: block;
-    @include border(solid, xxs, light);
+    @include br(sm);
+    @include b(solid, xxs, light);
     @include p(lg);
     @include bg-color(light, lighter);
 
@@ -25,7 +26,7 @@
             .alert-body {
                 display: flex;
                 align-items: center;
-                color: color(dark);
+                @include color(dark);
             }
         }
     }

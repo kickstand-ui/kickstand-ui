@@ -4,22 +4,47 @@
     display: block;
 
     .alert-content {
+        @include br(sm);
         @include p(lg);
         @include shadow(sm);
 
         @each $color,
         $value in get-colors() {
             &.#{$color} {
-                @include border(solid, xxs, $color);
+                @include b(solid, xxs, $color);
                 @include shadow(sm);
                 @include bg-color($color, 0.05);
-                color: color(dark);
+                @include color(dark);
+
+                .alert-header {
+                    .alert-heading,
+                    .alert-close .icon {
+                        @if(text-color($color, dark)==black) {
+                            @include color(dark);
+                        }
+
+                        @else {
+                            @include color($color, dark);
+                        }
+                    }
+                }
             }
 
             &.note.#{$color} {
-                @include bg-color(white);
-                @include border();
-                @include border-l(solid, md, $color);
+                @include br(none);
+                @include b();
+                @include b-l(solid, md, $color);
+                @include bg-color(light, lighter);
+
+                .alert-header {
+                    @if(text-color($color, dark)==black) {
+                        @include color(dark);
+                    }
+
+                    @else {
+                        @include color($color, dark);
+                    }
+                }
             }
         }
 
@@ -27,6 +52,7 @@
             display: flex;
             justify-content: space-between;
             @include mb(lg);
+            @include color(dark);
 
             .alert-heading {
                 font-weight: bold;

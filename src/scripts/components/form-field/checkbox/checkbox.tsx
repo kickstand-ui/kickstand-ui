@@ -1,11 +1,11 @@
 import { Component, h, Prop, Host, Event, EventEmitter, Method, ComponentInterface } from '@stencil/core';
-import { IFormFieldData } from '../form-field';
+import { IFormFieldData, ICustomInput } from '../form-field';
 
 @Component({
     tag: 'ks-checkbox',
     styleUrl: 'checkbox.scss'
 })
-export class Checkbox implements ComponentInterface {
+export class Checkbox implements ComponentInterface, ICustomInput {
     checkboxId = `checkbox_${checkboxIds++}`;
     $checkbox: HTMLInputElement;
 
@@ -13,6 +13,7 @@ export class Checkbox implements ComponentInterface {
     @Prop({ mutable: true, reflect: true }) checked: boolean = false;
     @Prop() required: boolean;
     @Prop() tooltipText: string;
+    @Prop() tooltipSize: 'sm' | 'md' | 'lg' | 'xl' = 'sm';;
     @Prop() requiredText: string = 'Required';
     @Prop() name: string;
 
@@ -34,10 +35,10 @@ export class Checkbox implements ComponentInterface {
         this.checked = this.$checkbox.checked;
 
         let fieldData: IFormFieldData = {
-            isValid: this.$checkbox.checkValidity(),
+            name: this.name,
             value: this.checked,
-            validity: this.$checkbox.validity,
-            name: this.name
+            isValid: this.$checkbox.checkValidity(),
+            validity: this.$checkbox.validity
         };
 
         return fieldData;
@@ -61,8 +62,8 @@ export class Checkbox implements ComponentInterface {
                     </span>
                     <span class="checkbox-description">
                         {this.label}
-                        {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText}>*</abbr>}
-                        {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size="md" text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info" /></ks-tooltip>}    
+                        {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-hidden="true">*</abbr>}
+                        {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size={this.tooltipSize} text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info" /></ks-tooltip>}    
                     </span>
                 </label>
             </Host>

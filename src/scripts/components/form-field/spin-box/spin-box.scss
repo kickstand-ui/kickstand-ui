@@ -1,22 +1,25 @@
-@import "../../../scss/00_Abstracts/index";
+@import "../../../../scss/00_Abstracts/index";
 
 .ks-form-field {
-    .spin-box {
+    .ks-spin-box {
+        @include b();
+        @include br();
+
         display: inline-flex;
         align-items: center;
         @include shadow(xs);
-        @include border($size: xxxs);
+        @include b($size: xxxs);
 
-        .ks-button {
-            @include px(xs);
-        }
         .form-input {
             margin: 0;
             width: 4rem;
+            height: 2.75rem;
             text-align: center;
             border: none;
-            -moz-appearance: textfield; /* Firefox */
+            -moz-appearance: textfield; // Firefox
             @include shadow(none);
+            @include b-x();
+            @include br(none);
             @include font-size(sm);
             @include p(sm);
 
@@ -26,6 +29,10 @@
                 margin: 0;
                 -webkit-appearance: none;
             }
+
+            &[aria-invalid="true"] {
+                @include b($size: xxs, $color: danger);
+            }    
         }
     }
 }

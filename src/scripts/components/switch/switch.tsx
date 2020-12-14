@@ -30,11 +30,11 @@ export class Switch implements ComponentInterface {
     render() {
         return (
             <Host class="ks-switch">
+                <label id={`${this.switchId}_label`} htmlFor={this.switchId} class="label">{this.label}</label>
                 <button type="button" id={this.switchId} class="control" role="switch" aria-checked={`${this.checked}`} aria-labelledby={`${this.switchId}_label`} onClick={() => this.clickHandler()} disabled={this.disable}>
                     <span class="track"></span>
                     <span class="toggle"></span>
                 </button>
-                <label id={`${this.switchId}_label`} htmlFor={this.switchId} class="label">{this.label}</label>
             </Host>
         );
     }

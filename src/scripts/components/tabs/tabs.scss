@@ -3,7 +3,8 @@
 .ks-tabs {
     display: flex;
     @include shadow(sm);
-
+    @include br(sm);
+    
     .tab-list {
         display: flex;
         @include bg-color(light, lighter);
@@ -19,10 +20,10 @@
         .tab-item {
             text-decoration: none;
             white-space: nowrap;
-            color: color(primary);
             background-color: transparent;
             vertical-align: inherit;
             border: 0;
+            @include color(primary);
             @include px(lg);
             @include py(md);
 
@@ -31,15 +32,13 @@
             }
 
             :focus {
-                // outline: spacing(xxxs) dashed color(dark);
-                // outline-offset: spacing(xxs);
-                @include outline();
+                @include default-outline();
             }
 
             &[aria-selected="true"] {
-                @include border();
-                @include bg-color(white);
-                color: color(primary);
+                background-color: white;
+                @include b();
+                @include color(primary);
                 @include shadow(sm);
                 @include m(-xxxs);
             }
@@ -49,8 +48,8 @@
     .tab-panel {
         width: 100%;
         white-space: normal;
-        @include border();
-        @include bg-color(white);
+        background-color: white;
+        @include b();
         @include p(lg);
     }
 
@@ -59,21 +58,25 @@
             flex-direction: column;
 
             .tab-list {
-                @include border();
+                flex-wrap: wrap;
+                @include b();
+                @include br-t(sm);
 
-                .justify-justified & {
-                    height: 100%;
+                &.justify-justified {
+                    flex-wrap: nowrap;
                 }
 
                 .tab-item {
                     &[aria-selected="true"] {
-                        @include border-b(none);
+                        @include b-b(none);
+                        @include br-t(sm);
                     }
                 }
             }
 
             .tab-panel {
-                @include border-t(none);
+                @include b-t(none);
+                @include br-b(sm);
             }
         }
 
@@ -81,18 +84,26 @@
             flex-direction: column-reverse;
 
             .tab-list {
-                @include border();
+                flex-wrap: wrap;
+                @include b();
+                @include br-b(sm);
+
+                &.justify-justified {
+                    flex-wrap: nowrap;
+                }
                 
                 .tab-item {
                     &[aria-selected="true"] {
                         position: relative;
-                        @include border-t(none);
+                        @include b-t(none);
+                        @include br-b(sm);
                     }
                 }
             }
 
             .tab-panel {
-                @include border-b(none);
+                @include b-b(none);
+                @include br-t(sm);
             }
         }
 
@@ -101,7 +112,8 @@
 
             .tab-list {
                 flex-direction: column;
-                @include border();
+                @include b();
+                @include br-l(sm);
 
                 &.justify-justified {
                     .tab-item {
@@ -118,13 +130,15 @@
 
                     &[aria-selected="true"] {
                         @include shadow();
-                        @include border-r(none);
+                        @include b-r(none);
+                        @include br-l(sm);
                     }
                 }
             }
 
             .tab-panel {
-                @include border-l(none);
+                @include b-l(none);
+                @include br-r(sm);
             }
         }
 
@@ -133,7 +147,8 @@
 
             .tab-list {
                 flex-direction: column;
-                @include border();
+                @include b();
+                @include br-r(sm);
 
                 &.justify-justified {
                     .tab-item {
@@ -149,13 +164,15 @@
 
                     &[aria-selected="true"] {
                         @include shadow();
-                        @include border-l(none);
+                        @include b-l(none);
+                        @include br-r(sm);
                     }
                 }
             }
 
             .tab-panel {
-                @include border-r(none);
+                @include b-r(none);
+                @include br-l(sm);
             }
         }
     }

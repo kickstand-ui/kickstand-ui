@@ -14,20 +14,24 @@
     touch-action: none;
     opacity: 0;
     @include z-index(xl);
-    @include transition-ease-in-out(fast);
+    @include transition();
 
     &.opened {
         visibility: visible;
         opacity: 1;
-        @include transition-ease-in-out(fast);
+        @include transition();
+
+        .content {
+            @include transition();
+        }
     }
 
     &.light {
-        @include bg-color(light, 0.60);
+        background-color: color-value(light, 0.6);
     }
 
     &.dark {
-        @include bg-color(dark, 0.60);
+        background-color: color-value(dark, 0.6);
     }
 
     &.absolute {
@@ -36,12 +40,12 @@
 
     .scrim {
         border-radius: inherit;
-        bottom: 0;
         height: 100%;
-        left: 0;
         position: absolute;
-        right: 0;
         top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
         transition: inherit;
         width: 100%;
         will-change: opacity;
@@ -51,5 +55,6 @@
         position: relative;
         outline: none;
         @include shadow(xl);
+        @include transition();
     }
 }

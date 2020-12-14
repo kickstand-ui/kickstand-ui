@@ -1,11 +1,9 @@
 @import "../../../scss/00_Abstracts/index";
 
-$drawer-sizes: (
-    sm: 16rem,
+$drawer-sizes: (sm: 16rem,
     md: 22.5rem,
     lg: 30rem,
-    xl: 45rem
-);
+    xl: 45rem);
 
 .ks-side-drawer {
     height: 100%;
@@ -15,15 +13,16 @@ $drawer-sizes: (
     bottom: 0;
     overflow-x: hidden;
     overflow-y: auto;
+    background-color: white;
     @include p(lg);
-    @include bg-color(white);
-    @include transition-ease-in-out(med);
+    @include transition($speed: med);
 
     @each $direction in (left, right) {
         &.#{$direction} {
-            @include border-r($color: dark, $variant: lighter);
+            @include b-r($color: dark, $variant: lighter);
 
-            @each $key, $value in $drawer-sizes {
+            @each $key,
+            $value in $drawer-sizes {
                 &.size-#{$key} {
                     width: $value;
                     #{$direction}: -$value;
@@ -41,21 +40,26 @@ $drawer-sizes: (
         display: flex;
         justify-content: space-between;
         align-content: center;
-        @include border-b();
+        @include b-b();
         @include font-size(lg);
+        @include color(dark);
+
+        .drawer-title {
+            line-height: 1;
+        }
 
         .drawer-close {
-            @include mt(sm);
-            
             .ks-button {
-                @include p(none);
+                .button {
+                    @include p(none);
 
-                .button-text {
-                    display: inline-flex;    
-                }
+                    .button-text {
+                        display: inline-flex;
+                    }
 
-                .icon {
-                    @include font-size(md);
+                    .icon {
+                        @include font-size(md);
+                    }
                 }
             }
         }

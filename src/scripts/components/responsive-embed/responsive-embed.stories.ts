@@ -1,6 +1,6 @@
 import { text } from "@storybook/addon-knobs";
 
-export default { title: 'Responsive Embed' };
+export default { title: 'Components/Responsive Embed' };
 
 export const defaultHeading = () => {
     const aspectRatio = text('aspect-ratio', '16x9');

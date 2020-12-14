@@ -1,8 +1,8 @@
 import { text, select, boolean, number } from '@storybook/addon-knobs';
 
-export default { title: 'Form Field' };
+export default { title: 'Components/Form Field' };
 
-const types = ['text', 'tel', 'url', 'password', 'date', 'email', 'search', 'number', 'hidden', 'color', 'file', 'month', 'range', 'spin-box', 'textarea', 'select', 'datalist', 'checkbox', 'checklist', 'radiolist'].sort();
+const types = ['autocomplete', 'text', 'tel', 'url', 'password', 'date', 'email', 'search', 'number', 'hidden', 'color', 'file', 'month', 'range', 'spin-box', 'textarea', 'select', 'datalist', 'checkbox', 'checklist', 'radiolist', 'spin-box'].sort();
 
 export const playground = () => {
     const type = select('type', types, 'text');
@@ -10,6 +10,7 @@ export const playground = () => {
     const value = text('value', '');
     const helpText = text('help-text', '');
     const tooltipText = text('tooltip-text', '');
+    const tooltipSize = text('tooltip-size', 'md');
     const name = text('name', '');
     const errorMessage = text('default-error-message', 'The value entered is not valid.');
     const placeholder = text('placeholder', '');
@@ -28,12 +29,15 @@ export const playground = () => {
     const debounce = number('debounce', 0);
     const datalist = boolean('datalist', false);
     const inline = boolean('inline', false);
+    const icon = text('icon', '');
+    const iconDirection = select('icon-direction', ['left', 'right'], 'right');
     return (`<div class="m-xxl">
         <ks-form-field 
             type="${type}"
             label="${label}" 
             help-text="${helpText}"
             tooltip-text="${tooltipText}"
+            tooltip-size="${tooltipSize}"
             name="${name}"
             default-error-message="${errorMessage}"
             placeholder="${placeholder}"
@@ -53,6 +57,8 @@ export const playground = () => {
             debounce="${debounce}"
             datalist="${datalist}"
             inline="${inline}"
+            icon="${icon}"
+            icon-direction="${iconDirection}"
             >
             <option selected>Choose a value</option>
             <option>Value 1</option>
@@ -137,18 +143,29 @@ export const checkbox = () => {
 export const radio = () => {
     return (`
     <div class="m-xxl">
-        <ks-radio />
-        <ks-radio />
-        <ks-radio />
+        <ks-radio label="Radio 1"></ks-radio>
+        <ks-radio label="Radio 2"></ks-radio>
+        <ks-radio label="Radio 3"></ks-radio>
     </div>
+    `)
+}
+
+export const radmo = () => {
+    return (`
+    <select>
+        <option>Choose a value</option>
+        <option>Value 1</option>
+        <option>Value 2</option>
+        <option>Value 3</option>
+    </select>
     `)
 }
 
 export const checklist = () => {
     const type = select('type', ['checkbox', 'radio'], 'checkbox');
     const label = text('label', 'Select One');
-    const checked = boolean('checked', false);
     const tooltipText = text('tooltip-text', '');
+    const helpText = text('help-text', '');
     const required = boolean('required', false);
     const requiredText = text('required-text', 'Required');
     const name = text('name', 'test');
@@ -157,18 +174,32 @@ export const checklist = () => {
         <div class="m-xxl">
             <ks-checklist
                 label="${label}" 
-                checked="${checked}" 
                 tooltip-text="${tooltipText}" 
                 required="${required}" 
                 required-text="${requiredText}"
                 type="${type}"
                 name="${name}"
+                help-text="${helpText}"
                 >
                 <option>Choose a value</option>
                 <option>Value 1</option>
                 <option>Value 2</option>
                 <option>Value 3</option>
             </ks-checklist>
+        </div>
+    `)
+}
+
+export const checklistFormField = () => {
+    return (`
+        <div class="m-xxl">
+            <ks-form-field type="radiolist" label="Choose your next office mates">
+                <option selected>michael.scott@dundermifflin.com</option>
+                <option>dwight.schrutte@dundermifflin.com</option>
+                <option selected>pam.beasley@dundermifflin.com</option>
+                <option>jim.halpert@dundermifflin.com</option>
+                <option>Meredith.palmer@dundermifflin.com</option>
+            </ks-form-field>
         </div>
     `)
 }
@@ -184,6 +215,14 @@ export const autocomplete = () => {
             <option>Valid 3</option>
             <option>Something 1</option>
         </ks-form-field>
+    </div>
+    `)
+}
+
+export const spinbox = () => {
+    return (`
+    <div class="m-xxl">
+        <ks-form-field label="Spin-Box" type="spin-box"></ks-form-field>
     </div>
     `)
 }

@@ -1,6 +1,6 @@
 import { text, boolean } from "@storybook/addon-knobs";
 
-export default { title: 'Switch' };
+export default { title: 'Components/Switch' };
 
 export const playground = () => {
     const label = text('label', 'Show Pricing');

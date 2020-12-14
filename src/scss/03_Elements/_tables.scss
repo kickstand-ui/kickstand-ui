@@ -1,9 +1,25 @@
 @import "../00_Abstracts/index";
 
+// Prevent double borders
+table {
+    border-collapse: collapse;
+}
+
+caption {
+    text-align: left;
+    caption-side: bottom;
+}
+
+// Matches default `<td>` alignment by inheriting from the `<body>`, or the
+// closest parent with a set `text-align`.
+th {
+    text-align: inherit;
+}
+
 .table {
     width: 100%;
     border-collapse: collapse;
-    @include border();
+    @include b();
 
     &.striped {
         tbody {
@@ -25,14 +41,14 @@
 
     thead {
         font-weight: bold;
-        @include border-b($size: xxs);
+        @include b-b($size: xxs);
     }
 
     th,
     td {
         vertical-align: bottom;
         @include p(sm);
-        @include border();
+        @include b();
     }
 }
 

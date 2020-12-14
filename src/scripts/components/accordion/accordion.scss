@@ -11,6 +11,29 @@
 
         &:first-child {
             @include mt(none);
+
+            .accordion-heading {
+                @include br-t(sm);
+            }
+        }
+
+        &:last-child {
+            .accordion-heading {
+                @include br-b(sm);
+
+                &[aria-expanded="false"] {
+                    transition-delay: 0.5s;
+                    transition-property: border-radius;
+                }
+
+                &[aria-expanded="true"] {
+                    @include br-b(none);
+
+                    &+.accordion-content {
+                        @include br-b(sm);
+                    }
+                }
+            }
         }
 
         .accordion-heading {
@@ -18,45 +41,45 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            color: color(primary);
             font-weight: bold;
             background-color: white;
+            @include color(primary);
             @include font-size(sm);
-            @include border($size: xxs, $color: primary);
+            @include b($size: xxs, $color: primary);
             @include px(lg);
+            @include mb(-xxs);
 
             .accordion-icon {
-                color: color(primary);
+                line-height: 1;
+                @include color(primary);
                 @include font-size(md);
-                @include transition-ease-in-out(med);
+                @include transition();
             }
 
             &:focus {
-                @include outline();
+                @include default-outline();
             }
 
             &[aria-expanded="true"] {
                 .accordion-icon {
                     transform: rotate(-180deg);
-                    @include transition-ease-in-out(med);
+                    @include transition();
                 }
             }
         }
 
         .accordion-content {
-            height: 0;
-            display: block;
-            visibility: hidden;
+            max-height: 0;
             overflow: hidden;
+            visibility: hidden;
+            @include transition();
             @include px(lg);
-            @include border-x($size: xxs, $color: primary);
-            @include transition-ease-in-out(fast);
+            @include b-x($size: xxs, $color: primary);
+            @include b-b($size: xxs, $color: primary);
 
             &[aria-hidden="false"] {
-                height: auto;
                 visibility: visible;
                 @include py(lg);
-                @include border-b($size: xxs);
             }
         }
     }
@@ -64,7 +87,7 @@
     &.sm {
         .accordion-slide {
             .accordion-heading {
-                @include py(md);
+                @include py(sm);
             }
         }
     }
@@ -72,7 +95,7 @@
     &.md {
         .accordion-slide {
             .accordion-heading {
-                @include py(lg);
+                @include py(md);
             }
         }
     }
@@ -80,7 +103,7 @@
     &.lg {
         .accordion-slide {
             .accordion-heading {
-                @include py(xl);
+                @include py(lg);
             }
         }
     }

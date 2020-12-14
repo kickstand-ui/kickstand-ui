@@ -44,9 +44,27 @@ export class MenuBar implements ComponentInterface {
 
     private toggleMenu() {
         this.expanded = !this.expanded;
+        this.$menuContent.style.maxHeight = this.expanded ? this.$menuContent.scrollHeight + 'px' : '0px';
 
-        if (this.expanded)
+        if (this.expanded) {
             this.setDropdownFocus();
+
+            Array.from(this.$el.querySelectorAll('ks-dropdown')).forEach(d => {
+                const $button = d.querySelector('ks-button') as HTMLElement;
+                const $contents = d.querySelector('.dropdown-contents') as HTMLElement;
+
+                d.style.maxHeight = $button.scrollHeight + 'px';
+
+                d.addEventListener('dropdownOpened', () => {
+                    d.style.maxHeight = $contents.scrollHeight + $button.scrollHeight + 'px';
+                    this.$menuContent.style.maxHeight = this.$menuContent.scrollHeight + $contents.scrollHeight + 'px';
+                });
+
+                d.addEventListener('dropdownClosed', () => {
+                    d.style.maxHeight = $button.scrollHeight + 'px';
+                });
+            })
+        }
     }
 
     private setDropdownFocus() {
@@ -61,7 +79,6 @@ export class MenuBar implements ComponentInterface {
             'inverted': this.inverted,
             [`fixed-${this.fixed}`]: !!this.fixed
         };
-        console.log('fixed', this.fixed);
         
         return (
             <Host class={classes} role="navigation">

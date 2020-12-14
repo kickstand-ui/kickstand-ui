@@ -14,7 +14,7 @@ $font-sizes: (
     xxs: 0.75rem, // 12px
     xs: 0.875rem, // 14px
     sm: 1rem,     // 16px
-    md: 1.25rem,  // 30px
+    md: 1.25rem,  // 20px
     lg: 1.5rem,   // 24px
     xl: 2rem,     // 32px
     xxl: 3rem     // 48px
@@ -40,7 +40,7 @@ $spacing-sizes: (
 
 // COLORS
 
-$theme-colors: (
+$colors: (
     'primary': #2c5374,
     'secondary': #ac3f00,
     'success': #4f821a,
@@ -96,7 +96,7 @@ $z-indexes: (
 
 // OUTLINE
 
-$outline: (	
+$default-outline: (	
     style: dashed,
     size: xxxs,    // from $spacing-sizes
     color: dark,
@@ -105,7 +105,7 @@ $outline: (
 
 // BORDERS
 
-$border: (	
+$default-border: (	
     style: solid,
     size: xxxs,    // from $spacing-sizes
     color: light
@@ -116,6 +116,7 @@ $border-radiuses: (
     sm: 0.25rem,  // 4px
     md: 0.5rem,   // 8px
     lg: 0.75rem,  // 12px
+    xl: 1rem,     // 16px
     pill: 10rem,  // 160px
     circle: 50%
 ) !default;

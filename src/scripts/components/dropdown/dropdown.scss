@@ -7,79 +7,79 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
     display: inline-block;
 
     &.mega-menu {
-        display: block;
+        display: inline-block;
         position: static;
-        width: 100%;
     }
 
-    .ks-button {
+    .dropdown-button {
         white-space: nowrap;
         display: flex;
         align-items: center;
 
-        .button-text {
-            display: flex;
-            align-items: center;
-
-            .dropdown-icon {
-                @include ml(xs);
-                @include transition-ease-in-out(med);
-            }    
+        .icon {
+            @include mr(xxs);
         }
-        
+
+        .dropdown-text {
+            @include mr(xs);
+        }
+
+        .dropdown-icon {
+            line-height: 1;
+            @include transition();
+
+            .icon {
+                @include mx(-xs);
+            }
+        }
+
         &[aria-expanded="true"] .dropdown-icon {
             transform: rotate(-180deg);
-            @include transition-ease-in-out(med);
+            @include transition();
         }
     }
 
     .dropdown-contents {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        visibility: hidden;
+        opacity: 0;
         left: 0;
         position: absolute;
         list-style: none;
         overflow: hidden;
         white-space: nowrap;
-        width: 100%;
+        width: auto;
         overflow-x: scroll;
+        transform: translateY(-0.25rem);
+        background-color: white;
+        @include br(sm);
+        @include b();
         @include z-index(xs);
-        @include shadow(sm);
-        @include bg-color(white);
-        @include px(sm);
-        @include py(none);
-        @include m(none);
-        @include transition-ease-in-out(fast);
-
-        &.collapse {
-            @each $key, $value in $breakpoints {
-                &-#{$key} {
-                    @include mq($key) {
-                        position: fixed;
-                        left: 0;
-                        right: 0;
-                        @include mx(lg);
-                    }
-                }
-            }
-        }
+        @include p(sm);
+        @include transition();
 
         .dropdown-item {
-            > * {
+            >* {
+                display: inline-block;
+                @include px(xs);
+                @include py(md);
+            }
+
+            a {
                 text-align: left;
                 text-decoration: none;
                 display: block;
-                color: color(primary);
                 width: 100%;
                 font-weight: normal;
+                @include color(primary);
                 @include font-size(sm);
-                @include px(lg);
-                @include py(md);
             }
 
             a,
             button {
                 @include hover-focus {
-                    background-color: color(light, lighter);
+                    background-color: color-value(light, lighter);
                 }
             }
         }
@@ -87,16 +87,19 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         &.align-left {
             left: 0;
             right: auto;
+            @include br-tl(none);
         }
 
         &.align-right {
             right: 0;
             left: auto;
+            @include br-tr(none);
         }
     }
 
     .mega-menu-contents {
-        display: none;
+        visibility: hidden;
+        opacity: 0;
         position: absolute;
         float: none;
         left: 0;
@@ -104,22 +107,28 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         max-width: 100%;
         min-width: 200px;
         overflow-y: auto;
+        transform: translateY(-0.25rem);
+        background-color: white;
+        @include br(sm);
+        @include b();
         @include z-index(xs);
-        @include shadow(xs);
-        @include bg-color(white);
         @include px(sm);
         @include py(none);
         @include m(none);
-        @include transition-ease-in-out(fast);
+        @include transition();
     }
 
-    &.show {
+    &.show-contents {
+        .dropdown-button {
+            @include br-b(none);
+        }
+
         .contents {
-            display: block;
-            width: auto;
-            @include border();
-            @include py(sm);
-            @include transition-ease-in-out(fast);
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0rem);
+            @include shadow(sm);
+            @include transition();
         }
 
         .dropdown-contents {

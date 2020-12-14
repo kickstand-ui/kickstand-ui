@@ -152,7 +152,7 @@ $value in $spacing-sizes {
                 @include m($size, $important: true);
             }
 
-            .-#{$mq}\:m-#{$size} {
+            .#{$mq}\:-m-#{$size} {
                 @include m(#{"-" + $size}, $important: true);
             }
 
@@ -161,7 +161,7 @@ $value in $spacing-sizes {
                 @include mx($size, $important: true);
             }
 
-            .-#{$mq}\:mx-#{$size} {
+            .#{$mq}\:-mx-#{$size} {
                 @include mx(#{"-" + $size}, $important: true);
             }
 
@@ -170,7 +170,7 @@ $value in $spacing-sizes {
                 @include my($size, $important: true);
             }
 
-            .-#{$mq}\:my-#{$size} {
+            .#{$mq}\:-my-#{$size} {
                 @include my(#{"-" + $size}, $important: true);
             }
 
@@ -179,7 +179,7 @@ $value in $spacing-sizes {
                 @include ml($size, $important: true);
             }
 
-            .-#{$mq}\:ml-#{$size} {
+            .#{$mq}\:-ml-#{$size} {
                 @include ml(#{"-" + $size}, $important: true);
             }
 
@@ -188,17 +188,25 @@ $value in $spacing-sizes {
                 @include mr($size, $important: true);
             }
 
-            .-#{$mq}\:mr-#{$size} {
+            .#{$mq}\:-mr-#{$size} {
                 @include mr(#{"-" + $size}, $important: true);
             }
 
             // Margin Top
-            .-#{$mq}\:mt-#{$size} {
+            .#{$mq}\:mt-#{$size} {
+                @include mt(#{"-" + $size}, $important: true);
+            }
+
+            .#{$mq}\:-mt-#{$size} {
                 @include mt(#{"-" + $size}, $important: true);
             }
 
             // Margin Bottom
-            .-#{$mq}\:mb-#{$size} {
+            .#{$mq}\:mb-#{$size} {
+                @include mb(#{"-" + $size}, $important: true);
+            }
+
+            .#{$mq}\:-mb-#{$size} {
                 @include mb(#{"-" + $size}, $important: true);
             }
         }

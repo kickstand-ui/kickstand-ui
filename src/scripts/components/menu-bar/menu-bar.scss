@@ -115,7 +115,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                 }
 
                 &:last-child {
-                    @include border(none);
+                    @include b(none);
                 }
 
                 @include hover-focus {
@@ -141,6 +141,12 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                             }
                         }
                     }
+
+                    .dropdown-contents {
+                        .dropdown-item {
+                            @include color(dark);
+                        }
+                    }
                 }
             }
         }
@@ -152,21 +158,21 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
             @include bg-color($key);
 
             .menu-branding {
-                color: text-color($key);
+                color: text-color-value($key);
 
                 &:focus {
-                    @include outline();
-                    outline-color: text-color($key);
+                    @include default-outline();
+                    outline-color: text-color-value($key);
                 }
             }
 
             .menu-toggler {
                 color: text-color($key);
-                @include border($color: text-color($key));
+                @include b($color: $key);
 
                 &:focus {
-                    @include outline();
-                    outline-color: text-color($key);
+                    @include default-outline();
+                    outline-color: text-color-value($key);
                 }
             }
 
@@ -174,22 +180,22 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                 .menu-row {
                     .menu-item {
                         >* {
-                            color: text-color($key);
+                            color: text-color-value($key);
 
                             &:focus {
-                                @include outline();
-                                outline-color: text-color($key);            
+                                @include default-outline();
+                                outline-color: text-color-value($key);
                             }
                         }
 
                         .ks-dropdown {
                             .dropdown-button {
                                 &.link {
-                                    color: text-color($key);
+                                    color: text-color-value($key);
 
                                     &:focus {
-                                        @include outline();
-                                        outline-color: text-color($key);                    
+                                        @include default-outline();
+                                        outline-color: text-color-value($key);
                                     }
                                 }
                             }
@@ -200,31 +206,31 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
             &.inverted {
                 background-color: white;
-                @include border-b();
+                @include b-b();
 
                 .menu-branding {
                     color: color($key);
 
                     &:focus {
-                        @include outline();
-                        outline-color: text-color($key);    
+                        @include default-outline();
+                        outline-color: text-color-value($key);
                     }
                 }
 
                 .menu-toggler {
-                    color: color($key);
-                    border-color: color($key);
+                    border-color: color-value($key);
+                    @include color($key);
                 }
 
                 .menu-content {
                     .menu-row {
                         .menu-item {
                             >* {
-                                color: color($key);
+                                @include color($key);
 
                                 &:focus {
-                                    @include outline();
-                                    outline-color: text-color($key);                
+                                    @include default-outline();
+                                    outline-color: text-color-value($key);
                                 }
                             }
                         }
@@ -235,9 +241,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
     }
 
     &.collapse {
-
-        @each $key,
-        $value in $breakpoints {
+        @each $key, $value in $breakpoints {
             &-#{$key} {
                 @include mq($key) {
                     flex-wrap: wrap;
@@ -249,11 +253,16 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                     }
 
                     .menu-content {
-                        display: none;
+                        display: block;
+                        visibility: hidden;
+                        max-height: 0;
                         flex-basis: 100%;
                         flex-grow: 1;
                         align-items: center;
                         flex-direction: column;
+                        transform: translateY(-0.5rem);
+                        overflow-y: hidden;
+                        @include transition($speed: med);
 
                         .menu-row {
                             flex-direction: column;
@@ -271,7 +280,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                             .menu-item {
                                 width: 100%;
                                 text-align: left;
-                                @include border(none);
+                                @include b(none);
 
                                 >* {
                                     display: block;
@@ -279,6 +288,12 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                                 }
 
                                 .ks-dropdown {
+                                    &.show-contents {
+                                        .dropdown-contents {
+                                            display: flex;
+                                        }
+                                    }
+
                                     .dropdown-button {
                                         width: 100%;
                                         text-align: left;
@@ -286,9 +301,11 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
                                     .dropdown-contents {
                                         position: relative;
+                                        display: flex;
                                         width: 100vw;
                                         max-width: 100vw;
                                         @include mx(-sm);
+                                        @include br(none);
                                     }
                                 }
                             }
@@ -296,9 +313,11 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                     }
 
                     [aria-expanded="true"]+.menu-content {
-                        display: block;
-                        @include border-t();
-                        @include transition-ease-in-out(fast);
+                        height: auto;
+                        visibility: visible;
+                        @include mt(sm);
+                        @include b-t();
+                        @include transition($speed: med);
                     }
                 }
             }

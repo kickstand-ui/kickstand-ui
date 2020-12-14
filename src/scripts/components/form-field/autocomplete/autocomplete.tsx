@@ -1,12 +1,12 @@
 import { Component, h, Prop, Host, Event, EventEmitter, ComponentInterface, State, Element, Method } from '@stencil/core';
-import { IFormFieldData } from '../form-field';
-import { keyCodes, debounce } from '../../../utils/componentUtils';
+import { IFormFieldData, ICustomInput } from '../form-field';
+import { keyCodes } from '../../../utils/componentUtils';
 
 @Component({
     tag: 'ks-autocomplete',
     styleUrl: 'autocomplete.scss'
 })
-export class Autocomplete implements ComponentInterface {
+export class Autocomplete implements ComponentInterface, ICustomInput {
     autocompleteId = `autocomplete_${autocompleteIds++}`;
     $select: HTMLSelectElement;
     $input: HTMLInputElement;
@@ -14,10 +14,11 @@ export class Autocomplete implements ComponentInterface {
     $selectedOption: HTMLOptionElement;
     $dropdownOptions: HTMLUListElement[];
     focusIndex: number = 0;
+    $dropdown: HTMLElement;
 
     @Element() $el: HTMLElement;
 
-    @Prop({ mutable: true }) value?: string | number | boolean| any[] | null = '';
+    @Prop({ mutable: true }) value?: string | number | boolean | any[] | null = '';
     @Prop() required: boolean;
     @Prop() disabled: boolean;
     @Prop() name: string;
@@ -27,6 +28,7 @@ export class Autocomplete implements ComponentInterface {
     @State() isExpanded: boolean = false;
     @State() isValid: boolean = true;
     @State() $filteredOptions: HTMLOptionElement[];
+    @State() searchTerm: string;
 
     @Event() changed!: EventEmitter<IFormFieldData>;
 
@@ -35,7 +37,7 @@ export class Autocomplete implements ComponentInterface {
         return this.validateField();
     }
 
-    connectedCallback() {
+    componentWillLoad() {
         this.$options = Array.from(this.$el.querySelectorAll('option')) as HTMLOptionElement[];
         this.$filteredOptions = this.$options;
     }
@@ -53,20 +55,26 @@ export class Autocomplete implements ComponentInterface {
         });
     }
 
+    private getValue(): string {
+        return typeof this.value === 'number' 
+            ? this.value.toString() 
+            : (this.value || '').toString();
+    }
+
     private validateField() {
         this.isValid = this.$select.checkValidity();
 
         let fieldData: IFormFieldData = {
-            isValid: this.isValid,
+            name: this.name,
             value: this.value,
-            validity: this.$select.validity,
-            name: this.name
+            isValid: this.isValid,
+            validity: this.$select.validity
         };
 
         return fieldData;
     }
 
-    private onKeyupHandler(e: KeyboardEvent) {
+    private onKeyUpHandler(e: KeyboardEvent) {
         switch (e.keyCode) {
             case keyCodes.LEFT_ARROW:
             case keyCodes.RIGHT_ARROW:
@@ -76,17 +84,29 @@ export class Autocomplete implements ComponentInterface {
                 // ignore otherwise the menu will show
                 break;
             case keyCodes.ESC:
-                this.hideMenu();
+                this.hideOptions();
                 break;
             case keyCodes.DOWN_ARROW:
                 this.onTextBoxDownPressed();
                 break;
             case keyCodes.TAB:
-                this.hideMenu();
+                this.hideOptions();
                 break;
             default:
                 this.onTextBoxType();
         }
+    }
+
+    private onBlurHandler() {
+        const timeout = setTimeout(() => {
+            this.hideOptions();
+            this.changed.emit(this.validateField());
+        }, 200);
+        
+        setTimeout(() => {
+            if (this.$dropdown.contains(document.activeElement))
+                clearTimeout(timeout);
+        });
     }
 
     private onOptionKeyupHandler(e: KeyboardEvent, option: HTMLOptionElement, index: number) {
@@ -96,7 +116,7 @@ export class Autocomplete implements ComponentInterface {
                 this.selectValue(option, index);
                 break;
             case keyCodes.ESC:
-                this.hideMenu();
+                this.hideOptions();
                 break;
             case keyCodes.UP_ARROW:
                 this.selectPrevOption();
@@ -105,7 +125,7 @@ export class Autocomplete implements ComponentInterface {
                 this.selectNextOption();
                 break;
             case keyCodes.TAB:
-                this.hideMenu();
+                this.hideOptions();
                 break;
             default:
                 break;
@@ -135,14 +155,14 @@ export class Autocomplete implements ComponentInterface {
 
     private onTextBoxDownPressed() {
         this.filterOptions();
-        this.showMenu();
+        this.showOptions();
         this.focusIndex = 0;
-        setTimeout(() => this.$dropdownOptions[this.focusIndex].focus());
+        setTimeout(() => this.$dropdownOptions[this.focusIndex].focus(), 100);
     }
 
     private onTextBoxType() {
         this.filterOptions();
-        this.showMenu();
+        this.showOptions();
         this.resetSelectInput();
     }
 
@@ -151,24 +171,32 @@ export class Autocomplete implements ComponentInterface {
     }
 
     private filterOptions() {
-        let searchTerm = this.$input.value.trim().toLowerCase();
-        
-        this.$filteredOptions = searchTerm 
-            && this.$options.filter(o => o.getAttribute('search')?.toLowerCase().includes(searchTerm)
-                || o.innerText.toLowerCase().includes(searchTerm)) 
+        this.searchTerm = this.$input.value.trim().toLowerCase();
+
+        this.$filteredOptions = this.searchTerm
+            && this.$options.filter(o => o.getAttribute('search')?.toLowerCase().includes(this.searchTerm)
+                || o.innerText.toLowerCase().includes(this.searchTerm))
             || this.$options;
+    }
+    private clearSearchTerm() {
+        this.$input.value = '';
+        this.$select.value = '';
+        this.changed.emit(this.validateField());
+        this.filterOptions();
     }
 
     private optionClickHandler(option: HTMLOptionElement, index: number) {
         this.selectValue(option, index);
     }
 
-    private showMenu() {
+    private showOptions() {
         this.isExpanded = true;
+        this.$dropdown.style.maxHeight = '12rem';
     }
 
-    private hideMenu() {
+    private hideOptions() {
         this.isExpanded = false;
+        this.$dropdown.style.maxHeight = '0px';
     }
 
     private selectValue(option: HTMLOptionElement, index: number) {
@@ -176,28 +204,31 @@ export class Autocomplete implements ComponentInterface {
         this.$select.value = option.value || option.innerText;
         this.value = option.value || option.innerText;
         this.focusIndex = index;
-        this.isExpanded = false;
-        this.$input.value = option.innerText;
         this.$input.focus();
-        debounce(() => this.changed.emit(this.validateField()), this.debounce);
+        this.$input.value = option.innerText;
+        this.hideOptions();
+        this.changed.emit(this.validateField());
     }
 
     render() {
-        let props = {
+        let selectProps = {
+            'disabled': this.disabled,
+            'required': this.required,
+            'name': this.name,
+            ['aria-hidden']: 'true',
+            'tabindex': '-1',
+            'class': 'sr-only',
+            'value': this.getValue()
+        }
+
+        let inputProps = {
             'disabled': this.disabled,
             'required': this.required
         }
 
         return (
             <Host class="ks-autocomplete">
-                <select
-                    name={this.name}
-                    aria-hidden="true"
-                    tabindex="-1"
-                    class="sr-only"
-                    ref={e => this.$select = e}
-                    {...props}
-                >
+                <select ref={e => this.$select = e} {...selectProps}>
                     <slot />
                 </select>
                 <div class="autocomplete">
@@ -212,12 +243,17 @@ export class Autocomplete implements ComponentInterface {
                         role="combobox"
                         id={this.inputId}
                         aria-expanded={`${this.isExpanded}`}
-                        onKeyUp={(e) => this.onKeyupHandler(e)}
+                        onKeyUp={(e) => this.onKeyUpHandler(e)}
+                        onBlur={() => this.onBlurHandler()}
+                        value={this.getValue()}
                         ref={e => this.$input = e}
-                        {...props}
+                        {...inputProps}
                     />
-                    <ks-icon icon="search" class="search-icon"></ks-icon>
-                    <ul id={`autocomplete-options-${this.autocompleteId}`} class="dropdown-options" role="listbox">
+                    <span class="input-icons">
+                        {this.searchTerm ? <ks-button class="clear-button" size="xs" display="clear" css-class="text-md" color="dark" onClick={() => this.clearSearchTerm()}><ks-icon icon="times" label="clear"></ks-icon></ks-button> : ''}
+                        <ks-icon icon="search" class="search-icon"></ks-icon>
+                    </span>
+                    <ul id={`autocomplete-options-${this.autocompleteId}`} class="dropdown-options" role="listbox" ref={el => this.$dropdown = el}>
                         {this.$filteredOptions.map((x, i) => (
                             <li
                                 role="option"

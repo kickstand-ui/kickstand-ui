@@ -2,21 +2,17 @@
 @import 'strings';
 
 @function spacing($name, $important: false) {
-    $prefix: "";
+    $value: var(--ks-spacing-size-#{$name});
 
     // This enables negative values to be used.
     @if(str-contains($name, "-")) {
-        $prefix: "-";
         $name: str-replace($name, "-", "");
+        $value: calc(-1 * var(--ks-spacing-size-#{$name}));
     }
 
-    @if map-has-key($spacing-sizes, $name) {
-        @if($important==true) {
-            @return unquote($prefix + map-get($spacing-sizes, $name)) !important;
-        } @else {
-            @return unquote($prefix + map-get($spacing-sizes, $name));
-        }
-    } @else {
-        @error "Invalid spacing size: '#{$name}'.";
+    @if($important == true) {
+        @return $value !important;
     }
+    
+    @return $value;
 }

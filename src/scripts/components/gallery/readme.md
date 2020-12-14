@@ -27,7 +27,6 @@
 graph TD;
   ks-gallery --> ks-button
   ks-gallery --> ks-icon
-  ks-button --> ks-icon
   ks-button --> ks-loading-overlay
   ks-loading-overlay --> ks-overlay
   ks-loading-overlay --> ks-loading
