@@ -188,7 +188,7 @@
     .icon-left {
         position: absolute;
         left: 0;
-        transform: translateY(25%);
+        transform: translateY(30%);
         @include ml(sm);
         @include font-size(md);
     }
@@ -196,7 +196,7 @@
     .icon-right {
         position: absolute;
         right: 0;
-        transform: translateY(25%);
+        transform: translateY(30%);
         @include font-size(md);
         @include mr(sm);
 
