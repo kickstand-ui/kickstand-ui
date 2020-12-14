@@ -7,9 +7,7 @@
         display: flex;
         flex-wrap: wrap;
         list-style: none;
-        @include px(lg);
-        @include py(md);
-        @include mb(lg);
+        @include p(none);
 
         .breadcrumb {
             .link {
