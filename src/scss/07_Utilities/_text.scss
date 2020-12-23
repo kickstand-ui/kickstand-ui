@@ -59,6 +59,20 @@ $breakpoints: (xl, lg, md, sm, xs, xxs, print);
     &-center {
         text-align: center !important;
     }
+
+    // Transforms
+
+    &-uppercase {
+        text-transform: uppercase !important;
+    }
+
+    &-lowercase {
+        text-transform: lowercase !important;
+    }
+
+    &-capitalize {
+        text-transform: capitalize !important;
+    }
 }
 
 // Responsive sizes

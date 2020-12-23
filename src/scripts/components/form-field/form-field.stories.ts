@@ -7,6 +7,7 @@ const types = ['autocomplete', 'text', 'tel', 'url', 'password', 'date', 'email'
 export const playground = () => {
     const type = select('type', types, 'text');
     const label = text('label', 'Username');
+    const hideLabel = boolean('hide-label', false);
     const value = text('value', '');
     const helpText = text('help-text', '');
     const tooltipText = text('tooltip-text', '');
@@ -35,6 +36,7 @@ export const playground = () => {
         <ks-form-field 
             type="${type}"
             label="${label}" 
+            hide-label="${hideLabel}"
             help-text="${helpText}"
             tooltip-text="${tooltipText}"
             tooltip-size="${tooltipSize}"
@@ -71,6 +73,7 @@ export const playground = () => {
 export const selectTest = () => {
     const type = select('type', ['select', 'datalist'], 'select');
     const label = text('label', 'Username');
+    const hideLabel = boolean('hide-label', false);
     const value = text('value', '');
     const helpText = text('help-text', '');
     const tooltipText = text('tooltip-text', '');
@@ -93,6 +96,7 @@ export const selectTest = () => {
         <ks-form-field 
             type="${type}"
             label="${label}" 
+            hide-label="${hideLabel}" 
             help-text="${helpText}"
             tooltip-text="${tooltipText}"
             default-error-message="${errorMessage}"

@@ -7,217 +7,226 @@ $breakpoints: (xl, lg, md, sm, xs, xxs, print);
 }
 
 .display-block {
-    display: block;
+    display: block !important;
 }
 
 .display-inline {
-    display: inline;
+    display: inline !important;
 }
 
 .display-inline-block {
-    display: inline-block;
+    display: inline-block !important;
 }
 
 .display-inline-flex {
-    display: inline-flex;
+    display: inline-flex !important;
 }
 
 .display-flex {
-    display: flex;
+    display: flex !important;
 }
 
 .flex-wrap {
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
 }
 
 .flex-nowrap {
-    flex-wrap: nowrap;
+    flex-wrap: nowrap !important;
 }
 
 .flex-row {
-    flex-direction: row;
+    flex-direction: row !important;
 }
 
 .flex-row-reverse {
-    flex-direction: row-reverse;
+    flex-direction: row-reverse !important;
 }
 
 .flex-column {
-    flex-direction: column;
+    flex-direction: column !important;
 }
 
 .flex-column-reverse {
-    flex-direction: column-reverse;
+    flex-direction: column-reverse !important;
 }
 
 .space-between {
-    justify-content: space-between;
+    justify-content: space-between !important;
 }
 
 .space-around {
-    justify-content: space-around;
+    justify-content: space-around !important;
 }
 
 .space-evenly {
-    justify-content: space-evenly;
+    justify-content: space-evenly !important;
 }
 
 .justify-center {
-    justify-content: center;
+    justify-content: center !important;
 }
 
 .justify-start {
-    justify-content: flex-start;
+    justify-content: flex-start !important;
 }
 
 .justify-end {
-    justify-content: flex-end;
+    justify-content: flex-end !important;
 }
 
 .align-start {
-    align-items: flex-start;
+    align-items: flex-start !important;
 }
 
 .align-end {
-    align-items: flex-end;
+    align-items: flex-end !important;
 }
 
 .align-center {
-    align-items: center;
+    align-items: center !important;
 }
 
 .align-stretch {
-    align-items: stretch;
+    align-items: stretch !important;
 }
 
-@each $key, $value in $breakpoints {
-    .#{$key}\:full-width {
-        @include full-width();
-    }
-    
-    .#{$key}\:display-block {
-        @include mq($key) {
-            display: block;
+[hidden] {
+    display: none !important;
+}
+
+.sr-only {
+    @include screen-reader-only();
+}
+
+.visible {
+    visibility: visible !important;
+}
+
+.invisible {
+    visibility: hidden !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+@each $key,
+$value in $breakpoints {
+    @include mq($key) {
+        .#{$key}\:full-width {
+            @include full-width(true);
         }
-    }
-    
-    .#{$key}\:display-inline {
-        @include mq($key) {
-            display: inline;
+
+        .#{$key}\:display-block {
+            display: block !important;
         }
-    }
-    
-    .#{$key}\:display-inline-block {
-        @include mq($key) {
-            display: inline-block;
+
+        .#{$key}\:display-inline {
+            display: inline !important;
         }
-    }
-    
-    .#{$key}\:display-inline-flex {
-        @include mq($key) {
-            display: inline-flex;
+
+        .#{$key}\:display-inline-block {
+            display: inline-block !important;
         }
-    }
-    
-    .#{$key}\:display-flex {
-        @include mq($key) {
-            display: flex;
+
+        .#{$key}\:display-inline-flex {
+            display: inline-flex !important;
         }
-    }
-    
-    .#{$key}\:flex-wrap {
-        @include mq($key) {
-            flex-wrap: wrap;
+
+        .#{$key}\:display-flex {
+            display: flex !important;
         }
-    }
-    
-    .#{$key}\:flex-nowrap {
-        @include mq($key) {
-            flex-wrap: nowrap;
+
+        .#{$key}\:flex-wrap {
+            flex-wrap: wrap !important;
         }
-    }
-    
-    .#{$key}\:flex-row {
-        @include mq($key) {
+
+        .#{$key}\:flex-nowrap {
+            flex-wrap: nowrap !important;
+        }
+
+        .#{$key}\:flex-row {
             flex-direction: row;
         }
-    }
-    
-    .#{$key}\:flex-row-reverse {
-        @include mq($key) {
-            flex-direction: row-reverse;
+
+        .#{$key}\:flex-row-reverse {
+            flex-direction: row-reverse !important;
+        }
+
+        .#{$key}\:flex-column {
+            flex-direction: column !important;
+        }
+
+        .#{$key}\:flex-column-reverse {
+            flex-direction: column-reverse !important;
+        }
+
+        .#{$key}\:space-between {
+            justify-content: space-between !important;
+        }
+
+        .#{$key}\:space-around {
+            justify-content: space-around !important;
+        }
+
+        .#{$key}\:space-evenly {
+            justify-content: space-evenly !important;
+        }
+
+        .#{$key}\:justify-center {
+            justify-content: center !important;
+        }
+
+        .#{$key}\:justify-start {
+            justify-content: flex-start !important;
+        }
+
+        .#{$key}\:justify-end {
+            justify-content: flex-end !important;
+        }
+
+        .#{$key}\:align-start {
+                align-items: flex-start !important;
+        }
+
+        .#{$key}\:align-end {
+                align-items: flex-end !important;
+        }
+
+        .#{$key}\:align-center {
+                align-items: center !important;
+        }
+
+        .#{$key}\:align-stretch {
+                align-items: stretch !important;
+        }
+
+        .#{$key}\:sr-only {
+            @include screen-reader-only();
+        }
+
+        .#{$key}\:visible {
+            visibility: hidden !important;
+        }
+
+        .#{$key}\:invisible {
+            visibility: hidden !important;
+        }
+
+        .#{$key}\:show {
+            display: none !important;
+        }
+
+        .#{$key}\:show {
+            display: initial !important;
+        }
+
+        .#{$key}\:hide {
+            display: none !important;
         }
     }
-    
-    .#{$key}\:flex-column {
-        @include mq($key) {
-            flex-direction: column;
-        }
-    }
-    
-    .#{$key}\:flex-column-reverse {
-        @include mq($key) {
-            flex-direction: column-reverse;
-        }
-    }
-    
-    .#{$key}\:space-between {
-        @include mq($key) {
-            justify-content: space-between;
-        }
-    }
-    
-    .#{$key}\:space-around {
-        @include mq($key) {
-            justify-content: space-around;
-        }
-    }
-    
-    .#{$key}\:space-evenly {
-        @include mq($key) {
-            justify-content: space-evenly;
-        }
-    }
-    
-    .#{$key}\:justify-center {
-        @include mq($key) {
-            justify-content: center;
-        }
-    }
-    
-    .#{$key}\:justify-start {
-        @include mq($key) {
-            justify-content: flex-start;
-        }
-    }
-    
-    .#{$key}\:justify-end {
-        @include mq($key) {
-            justify-content: flex-end;
-        }
-    }
-    
-    .#{$key}\:align-start {
-        @include mq($key) {
-            align-items: flex-start;
-        }
-    }
-    
-    .#{$key}\:align-end {
-        @include mq($key) {
-            align-items: flex-end;
-        }
-    }
-    
-    .#{$key}\:align-center {
-        @include mq($key) {
-            align-items: center;
-        }
-    }
-    
-    .#{$key}\:align-stretch {
-        @include mq($key) {
-            align-items: stretch;
-        }
-    }    
 }

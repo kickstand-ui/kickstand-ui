@@ -10,9 +10,9 @@ export class CardBody implements ComponentInterface {
     render() {
         return (
             <Host class="card-body">
-                {(this.cardTitle || this.cardTitle) && <header>
+                {(this.cardTitle || this.cardSubtitle) && <header>
                     {this.cardTitle ? <h3 class="heading">{this.cardTitle}</h3> : null}
-                    {this.cardTitle ? <h4 class="subheading">{this.cardSubtitle}</h4> : null}
+                    {this.cardSubtitle ? <h4 class="subheading">{this.cardSubtitle}</h4> : null}
                 </header>}
                 <div class="text">
                     <slot />
