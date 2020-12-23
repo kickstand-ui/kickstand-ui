@@ -14,13 +14,12 @@
 
     @each $color, $value in get-colors() {
         &.#{$color} {
-            background-color: color($color);
-            color: text-color($color);
+            @include bg-color($color);
+            @include b(solid, xxxs, $color);
 
             &.hollow {
                 background-color: transparent;
                 @include color($color);
-                @include b(solid, xxxs, $color);
             }
         }
     }
