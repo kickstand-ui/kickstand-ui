@@ -1,0 +1,43 @@
+@import '../00_Abstracts/index';
+
+.list {
+    &-inside {
+        list-style-position: inside !important;
+    }
+
+    &-outside {
+        list-style-position: outside !important;
+    }
+
+    &-decimal {
+        list-style: decimal !important;
+    }
+
+    &-disc {
+        list-style: disc !important;
+    }
+
+    &-lower-alpha {
+        list-style: lower-alpha !important;
+    }
+
+    &-upper-alpha {
+        list-style: upper-alpha !important;
+    }
+
+    &-lower-roman {
+        list-style: lower-roman !important;
+    }
+
+    &-upper-roman {
+        list-style: upper-roman !important;
+    }
+
+    &-initial {
+        list-style: initial !important;
+    }
+
+    &-none {
+        list-style: none !important;
+    }
+}
