@@ -12,6 +12,16 @@ $variations: ('lighter', 'light', 'base', 'dark', 'darker');
         @include color($color, $important: true);
     }
 
+    .text {
+        &-white {
+            color: white !important;
+        }
+    
+        &-black {
+            color: black !important;
+        }    
+    }
+
     /*
         .bg-primary
         .bg-secondary
@@ -19,6 +29,16 @@ $variations: ('lighter', 'light', 'base', 'dark', 'darker');
     */
     .bg-#{$color} {
         @include bg-color($color, $important: true);
+    }
+
+    .bg {
+        &-white {
+            @include bg-color(white, true);
+        }
+    
+        &-black {
+            @include bg-color(black, true);
+        }
     }
 
     @each $variation in $variations {
