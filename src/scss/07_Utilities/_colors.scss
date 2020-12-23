@@ -4,6 +4,31 @@ $variations: ('lighter', 'light', 'base', 'dark', 'darker');
 
 @each $color, $value in get-colors() {
     /*
+        .bg-primary
+        .bg-secondary
+        ...
+    */
+    .bg-#{$color} {
+        @include bg-color($color, $important: true);
+    }
+
+    .bg {
+        &-white {
+            color: black !important;
+            background-color: white;
+        }
+    
+        &-black {
+            color: white !important;
+            background-color: black;
+        }
+
+        &-transparent {
+            background-color: transparent !important;
+        }
+    }
+
+    /*
         .text-primary
         .text-secondary
         ...
@@ -22,39 +47,7 @@ $variations: ('lighter', 'light', 'base', 'dark', 'darker');
         }    
     }
 
-    /*
-        .bg-primary
-        .bg-secondary
-        ...
-    */
-    .bg-#{$color} {
-        @include bg-color($color, $important: true);
-    }
-
-    .bg {
-        &-white {
-            @include bg-color(white, true);
-        }
-    
-        &-black {
-            @include bg-color(black, true);
-        }
-
-        &-transparent {
-            background-color: transparent !important;
-        }
-    }
-
     @each $variation in $variations {
-        /*
-            .text-primary-lighter
-            .text-secondary-dark
-            ...
-        */
-        .text-#{$color}-#{$variation} {
-            @include color($color, $variation, $important: true);
-        }
-
         /*
             .bg-primary-light
             .bg-secondary-darker
@@ -62,6 +55,15 @@ $variations: ('lighter', 'light', 'base', 'dark', 'darker');
         */
         .bg-#{$color}-#{$variation} {
             @include bg-color($color, $variation, 1, true);
+        }
+
+        /*
+            .text-primary-lighter
+            .text-secondary-dark
+            ...
+        */
+        .text-#{$color}-#{$variation} {
+            @include color($color, $variation, $important: true);
         }
     }
 }
