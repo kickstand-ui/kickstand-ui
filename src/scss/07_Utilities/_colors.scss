@@ -39,6 +39,10 @@ $variations: ('lighter', 'light', 'base', 'dark', 'darker');
         &-black {
             @include bg-color(black, true);
         }
+
+        &-transparent {
+            background-color: transparent !important;
+        }
     }
 
     @each $variation in $variations {
