@@ -156,6 +156,7 @@ export namespace Components {
         "defaultErrorMessage": string;
         "disabled": boolean;
         "helpText": string;
+        "hideLabel": boolean;
         "icon"?: string;
         "iconDirection": 'left' | 'right';
         "inline": boolean;
@@ -781,6 +782,7 @@ declare namespace LocalJSX {
         "defaultErrorMessage"?: string;
         "disabled"?: boolean;
         "helpText"?: string;
+        "hideLabel"?: boolean;
         "icon"?: string;
         "iconDirection"?: 'left' | 'right';
         "inline"?: boolean;

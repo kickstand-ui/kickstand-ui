@@ -31,6 +31,7 @@ export class FormField implements ComponentInterface {
     @Element() $el: any;
 
     @Prop() label: string;
+    @Prop() hideLabel: boolean = false;
     @Prop() helpText: string;
     @Prop() tooltipText: string;
     @Prop() tooltipSize: 'sm' | 'md' | 'lg' | 'xl' = 'sm';;
@@ -395,7 +396,7 @@ export class FormField implements ComponentInterface {
         }[this.type] || (
                 [
                     <label id={this.labelId} class="form-label" htmlFor={this.fieldId}>
-                        <span class="field-label">
+                        <span class={`field-label ${this.hideLabel && 'sr-only'}`}>
                             {this.label}
                             {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText} aria-hidden="true">*</abbr>}
                             {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size={this.tooltipSize} text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info" /></ks-tooltip>}
