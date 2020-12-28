@@ -10,6 +10,7 @@ export class LoadingOverlay implements ComponentInterface {
     @Element() $el: HTMLElement;
 
     @Prop() absolute: boolean = false;
+    @Prop() theme: 'dark' | 'light' = 'light';
     @Prop() message: string = 'Loading...';
     @Prop() size: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' = 'sm';
     @Prop() showMessage: boolean = false;
@@ -28,7 +29,7 @@ export class LoadingOverlay implements ComponentInterface {
     render() {
         return (
             <Host class="ks-loading-overlay">
-                <ks-overlay theme="light" prevent-close absolute={this.absolute} ref={el => this.$overlay = el}>
+                <ks-overlay theme={this.theme} prevent-close absolute={this.absolute} ref={el => this.$overlay = el}>
                     <ks-loading icon={this.icon} message={this.message} show-message={this.showMessage} class={`text-${this.size}`} />
                 </ks-overlay>
             </Host>);

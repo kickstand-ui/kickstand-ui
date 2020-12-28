@@ -240,6 +240,7 @@ export namespace Components {
         "show": () => Promise<void>;
         "showMessage": boolean;
         "size": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+        "theme": 'dark' | 'light';
     }
     interface KsMenuBar {
         "altText": string;
@@ -868,6 +869,7 @@ declare namespace LocalJSX {
         "message"?: string;
         "showMessage"?: boolean;
         "size"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+        "theme"?: 'dark' | 'light';
     }
     interface KsMenuBar {
         "altText"?: string;
