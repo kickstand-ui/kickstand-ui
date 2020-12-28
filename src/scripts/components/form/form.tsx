@@ -22,6 +22,7 @@ export class Form implements ComponentInterface {
     @Prop() enctype: 'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain';
     @Prop({ mutable: true }) invalid: boolean = false;
     @Prop() errorMessage: string = 'One or more of the from fields are not valid. Please, review the form and try again.';
+    @Prop() inline: boolean = false;
 
     @Event() submitted!: EventEmitter<IFormData>;
 
@@ -29,7 +30,7 @@ export class Form implements ComponentInterface {
         this.$formFields = Array.from(this.$el.querySelectorAll('ks-form-field')) as HTMLKsFormFieldElement[];
     }
 
-    private submitHandler(e) {
+    private submitHandler(e: Event) {
         this.invalid = !this.$form.checkValidity();
 
         if (!this.action || this.invalid)
@@ -55,10 +56,14 @@ export class Form implements ComponentInterface {
     }
 
     render() {
+        let classes = {
+            'form': true,
+            'inline-form': this.inline
+        };
 
         return (
-            <Host class="ks-form-wrapper">
-                <form class="form" ref={el => this.$form = el} onSubmit={(e) => this.submitHandler(e)} novalidate>
+            <Host class="ks-form">
+                <form class={classes} ref={el => this.$form = el} onSubmit={(e) => this.submitHandler(e)} novalidate>
                     <slot />
                     <ks-alert class={{ 'form-error': true, 'hide': !this.invalid }} color="danger">
                         {this.invalid && [

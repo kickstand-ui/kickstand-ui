@@ -28,15 +28,43 @@
                 @include b($size: xxs, $color: danger);
             }
 
+            &.size {
+                &-sm {
+                    height: 2.5rem;
+                    @include py(sm);
+                    @include font-size(sm);
+                }
+    
+                &-md {
+                    height: 3rem;
+                    @include py(md);
+                    @include font-size(sm);
+                }
+    
+                &-lg {
+                    height: 3.75rem;
+                    @include py(lg);
+                    @include font-size(md);
+                }
+            }
         }
 
         .input-icons {
+            // position: absolute;
+            // right: 0;
+            // @include color(dark, lighter);
+            // @include font-size(md);
+            // @include mt(md);
+            // @include mr(lg);
             position: absolute;
             right: 0;
-            @include color(dark, lighter);
+            top: 50%;
+            transform: translateY(-50%);
             @include font-size(md);
-            @include mt(md);
-            @include mr(lg);
+            @include mr(sm);    
+            @include p(xxs);
+            @include color(light, darker);
+    
 
             .ks-button {
                 .icon {

@@ -3,6 +3,7 @@ import { text, select, boolean, number } from '@storybook/addon-knobs';
 export default { title: 'Components/Form Field' };
 
 const types = ['autocomplete', 'text', 'tel', 'url', 'password', 'date', 'email', 'search', 'number', 'hidden', 'color', 'file', 'month', 'range', 'spin-box', 'textarea', 'select', 'datalist', 'checkbox', 'checklist', 'radiolist', 'spin-box'].sort();
+const sizes = ['sm', 'md', 'lg'];
 
 export const playground = () => {
     const type = select('type', types, 'text');
@@ -32,6 +33,8 @@ export const playground = () => {
     const inline = boolean('inline', false);
     const icon = text('icon', '');
     const iconDirection = select('icon-direction', ['left', 'right'], 'right');
+    const size = select('size', sizes, 'md');
+
     return (`<div class="m-xxl">
         <ks-form-field 
             type="${type}"
@@ -61,6 +64,7 @@ export const playground = () => {
             inline="${inline}"
             icon="${icon}"
             icon-direction="${iconDirection}"
+            size="${size}"
             >
             <option selected>Choose a value</option>
             <option>Value 1</option>

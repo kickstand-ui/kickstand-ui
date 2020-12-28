@@ -19,7 +19,7 @@ export class SideDrawer implements ComponentInterface {
     @Method()
     async hide() {
         this.isShowing = false;
-        await this.$overlay.hide()
+        await this.$overlay.hide();
     }
 
     @Method()
@@ -30,9 +30,11 @@ export class SideDrawer implements ComponentInterface {
 
     componentDidRender() {
         const $scrim = this.$overlay.querySelector('.scrim');
-        $scrim.addEventListener('click', () => {
-            this.hide();
-        });
+        $scrim.addEventListener('click', () => this.hide());
+    }
+
+    overlayHiddenHandler() {
+        this.isShowing = false;
     }
 
     render() {
@@ -43,7 +45,7 @@ export class SideDrawer implements ComponentInterface {
             'show': this.isShowing
         }
         return (
-            <ks-overlay ref={el => this.$overlay = el}>
+            <ks-overlay onHidden={() => this.overlayHiddenHandler()} ref={el => this.$overlay = el}>
                 <aside class={classes} ref={el => this.$drawer = el}>
                     <header class="drawer-header">
                         <h3 class="drawer-title">{this.headerText}</h3>

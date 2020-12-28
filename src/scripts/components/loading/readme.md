@@ -14,6 +14,7 @@
 | `message`     | `message`      |             | `string`                                                 | `'Loading...'` |
 | `showMessage` | `show-message` |             | `boolean`                                                | `false`        |
 | `size`        | `size`         |             | `"lg" \| "md" \| "sm" \| "xl" \| "xs" \| "xxl" \| "xxs"` | `'sm'`         |
+| `theme`       | `theme`        |             | `"dark" \| "light"`                                      | `'light'`      |
 
 
 ## Methods

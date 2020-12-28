@@ -71,10 +71,33 @@
                     &:hover:not(:disabled) {
                         background-color: transparent;
                     }
+
+                    &.size {
+                        &-xs {
+                            padding: calc(#{spacing(sm) - spacing(xxxs)});
+                        }
+            
+                        &-sm {
+                            padding: calc(#{spacing(md) - spacing(xxxs)});
+                        }
+            
+                        &-md {
+                            padding: calc(#{spacing(lg) - spacing(xxxs)});
+                        }
+            
+                        &-lg {
+                            padding: calc(#{spacing(xl) - spacing(xxxs)});
+                        }
+            
+                        &-xl {
+                            padding: calc(#{spacing(xxl) - spacing(xxxs)});
+                        }
+                    }
+                        
                 }
 
                 &.clear {
-                    border-color: transparent;
+                    border: 0;
                     background-color: transparent;
                     color: color-value($color);
                     @include shadow(none);
@@ -114,31 +137,31 @@
             }
         }
 
-        &.xs {
-            @include p(xs);
-            @include font-size(xs);
-        }
+        &.size {
+            &-xs {
+                @include p(sm);
+                @include font-size(xs);
+            }
 
-        &.sm {
-            @include p(sm);
-            @include font-size(sm);
-        }
+            &-sm {
+                @include p(md);
+                @include font-size(sm);
+            }
 
-        &.md {
-            @include p(md);
-            @include font-size(sm);
-        }
+            &-md {
+                @include p(lg);
+                @include font-size(sm);
+            }
 
-        &.lg {
-            @include br(md);
-            @include p(lg);
-            @include font-size(md);
-        }
+            &-lg {
+                @include p(xl);
+                @include font-size(md);
+            }
 
-        &.xl {
-            @include br(md);
-            @include p(xl);
-            @include font-size(lg);
+            &-xl {
+                @include p(xxl);
+                @include font-size(lg);
+            }
         }
 
         &.icon {

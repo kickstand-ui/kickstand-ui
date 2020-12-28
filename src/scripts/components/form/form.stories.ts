@@ -29,3 +29,12 @@ export const form = () => {
         <ks-button type="submit">Submit</ks-button>
     </ks-form>`);
 };
+
+export const inlineForm = () => {
+    return (`
+        <ks-form inline>
+            <ks-form-field label="Search" type="search" hide-label required></ks-form-field>
+            <ks-button type="submit">Search</ks-button>
+        </ks-form>
+    `);
+}
