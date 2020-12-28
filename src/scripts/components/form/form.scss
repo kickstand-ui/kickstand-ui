@@ -1,6 +1,6 @@
 @import "../../../scss/00_Abstracts/index";
 
-.ks-form-wrapper {
+.ks-form {
     display: block;
     @include br(sm);
     @include b(solid, xxs, light);
@@ -8,6 +8,31 @@
     @include bg-color(light, lighter);
 
     .form {
+        &.inline-form {
+            display: flex;
+            align-items: flex-end;
+
+            .ks-form-field {
+                width: 100%;
+                @include m(none);
+
+                .form-input {
+                    @include br-r(none);
+                    @include b-r(none);
+                }
+            }
+            
+            .ks-button {
+                .button {
+                    @include br-l(none);
+                }
+            }
+
+            .form-error {
+                display: none;
+            }
+        }
+        
         > {
             *:not(:last-child) {
                 @include mb(lg);
