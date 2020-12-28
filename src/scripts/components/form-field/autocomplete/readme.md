@@ -14,6 +14,7 @@
 | `inputId`  | `input-id` |             | `string`                               | `undefined` |
 | `name`     | `name`     |             | `string`                               | `undefined` |
 | `required` | `required` |             | `boolean`                              | `undefined` |
+| `size`     | `size`     |             | `"lg" \| "md" \| "sm"`                 | `'md'`      |
 | `value`    | `value`    |             | `any[] \| boolean \| number \| string` | `''`        |
 
 

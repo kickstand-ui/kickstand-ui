@@ -24,6 +24,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
     @Prop() name: string;
     @Prop() inputId: string;
     @Prop() debounce: number = 0;
+    @Prop() size: 'sm' | 'md' | 'lg' = 'md';
 
     @State() isExpanded: boolean = false;
     @State() isValid: boolean = true;
@@ -234,7 +235,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
                 <div class="autocomplete">
                     <input
                         aria-owns={`autocomplete-options-${this.autocompleteId}`}
-                        class="search-field"
+                        class={`search-field size-${this.size}`}
                         autocapitalize="none"
                         type="text"
                         autocomplete="off"

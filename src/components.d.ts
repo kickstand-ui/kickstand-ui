@@ -33,6 +33,7 @@ export namespace Components {
         "inputId": string;
         "name": string;
         "required": boolean;
+        "size": 'sm' | 'md' | 'lg';
         "validate": () => Promise<IFormFieldData>;
         "value"?: string | number | boolean | any[] | null;
     }
@@ -143,6 +144,7 @@ export namespace Components {
         "action": string;
         "enctype": 'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain';
         "errorMessage": string;
+        "inline": boolean;
         "invalid": boolean;
         "method": 'get' | 'post';
         "target": '_self' | '_blank' | '_parent' | '_top';
@@ -177,6 +179,7 @@ export namespace Components {
         "required": boolean;
         "requiredErrorMessage": string;
         "requiredText": string;
+        "size": 'sm' | 'md' | 'lg';
         "step"?: number;
         "stepErrorMessage": string;
         "tooltipSize": 'sm' | 'md' | 'lg' | 'xl';
@@ -657,6 +660,7 @@ declare namespace LocalJSX {
         "name"?: string;
         "onChanged"?: (event: CustomEvent<IFormFieldData>) => void;
         "required"?: boolean;
+        "size"?: 'sm' | 'md' | 'lg';
         "value"?: string | number | boolean | any[] | null;
     }
     interface KsBadge {
@@ -768,6 +772,7 @@ declare namespace LocalJSX {
         "action"?: string;
         "enctype"?: 'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain';
         "errorMessage"?: string;
+        "inline"?: boolean;
         "invalid"?: boolean;
         "method"?: 'get' | 'post';
         "onSubmitted"?: (event: CustomEvent<IFormData>) => void;
@@ -805,6 +810,7 @@ declare namespace LocalJSX {
         "required"?: boolean;
         "requiredErrorMessage"?: string;
         "requiredText"?: string;
+        "size"?: 'sm' | 'md' | 'lg';
         "step"?: number;
         "stepErrorMessage"?: string;
         "tooltipSize"?: 'sm' | 'md' | 'lg' | 'xl';
