@@ -48,13 +48,34 @@
 
     .form-input {
         width: 100%;
+        @include font-size(sm);
         @include b($size: xxs);
         @include p(md);
         @include shadow(inner);
         @include br(sm);
 
         &:not(textarea) {
-            height: 3.25rem;
+            line-height: 1;
+
+            &.size {
+                &-sm {
+                    height: 2.5rem;
+                    @include py(sm);
+                    @include font-size(sm);
+                }
+    
+                &-md {
+                    height: 3rem;
+                    @include py(md);
+                    @include font-size(sm);
+                }
+    
+                &-lg {
+                    height: 3.75rem;
+                    @include py(lg);
+                    @include font-size(md);
+                }
+            }
         }
 
         &[type="range"] {
@@ -188,7 +209,8 @@
     .icon-left {
         position: absolute;
         left: 0;
-        transform: translateY(30%);
+        top: 50%;
+        transform: translateY(-15%);
         @include ml(sm);
         @include font-size(md);
     }
@@ -196,9 +218,10 @@
     .icon-right {
         position: absolute;
         right: 0;
-        transform: translateY(30%);
-        @include font-size(md);
+        top: 50%;
+        transform: translateY(-15%);
         @include mr(sm);
+        @include font-size(md);
 
         .input-button {
             .icon {

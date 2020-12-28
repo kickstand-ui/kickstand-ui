@@ -86,7 +86,7 @@ export class LinkButton implements ComponentInterface {
             [this.color]: true,
             [this.display]: true,
             [this.cssClass]: true,
-            [this.size]: true,
+            [`size-${this.size}`]: true,
         };
 
         let props = {
