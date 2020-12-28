@@ -86,6 +86,7 @@ export class FormField implements ComponentInterface {
     @Prop() checked: boolean = false;
     @Prop() icon?: string;
     @Prop() iconDirection: 'left' | 'right' = 'right';
+    @Prop() size: 'sm' | 'md' | 'lg' = 'md';
 
     @Event() updated!: EventEmitter<IFormFieldData>;
     @Event() blurred!: EventEmitter;
@@ -228,7 +229,7 @@ export class FormField implements ComponentInterface {
         let value = this.getValue();
         let props = {
             'id': this.fieldId,
-            'class':`form-input ${this.icon ? `display-icon-${this.iconDirection}` : ''}`,
+            'class':`form-input  size-${this.size} ${this.icon ? `display-icon-${this.iconDirection}` : ''}`,
             'name': this.getInputName(),
             'value': value,
             'disabled': this.disabled,
@@ -273,6 +274,7 @@ export class FormField implements ComponentInterface {
                     input-id={this.fieldId}
                     required={this.required}
                     disabled={this.disabled}
+                    size={this.size}
                     onChanged={e => this.handleComponentChange(e)}
                     ref={e => this.$customInput = e}
                 >
