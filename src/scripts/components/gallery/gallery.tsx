@@ -5,7 +5,7 @@ import { Component, h, Prop, Host, ComponentInterface, Element, State } from '@s
     styleUrl: 'gallery.scss'
 })
 export class Gallery implements ComponentInterface {
-    container: HTMLElement;
+    $container: HTMLElement;
     position: number = 0;
     containerWidth: number = 0;
     childWidth: number = 0;
@@ -22,42 +22,51 @@ export class Gallery implements ComponentInterface {
 
     componentDidRender() {
         this.setScrollValues();
-        this.container.addEventListener('scroll', (e) => {
+        this.setScrollListener();
+        this.setItemWidth();
+    }
+
+    private setItemWidth() {
+        if (this.itemWidth) {
+            Array.from(this.$el.querySelector('.scrolling-content').children)
+                .forEach((x: HTMLElement) => x.style.width = this.itemWidth);
+        }
+    }
+
+    private setScrollListener() {
+        this.$container.addEventListener('scroll', (e) => {
             let scroll = e.target as HTMLElement;
             let position = scroll.scrollLeft + scroll.offsetWidth
             this.isStart = position === scroll.offsetWidth;
             this.isEnd = position >= scroll.scrollWidth;
         });
-        if (this.itemWidth)
-            Array.from(this.$el.querySelector('.scrolling-content').children)
-                .forEach((x: HTMLElement) => x.style.width = this.itemWidth);
     }
 
     private scrollRight() {
         this.setScrollValues();
-        let maxScrollPosition = this.container.scrollWidth - this.containerWidth;
+        let maxScrollPosition = this.$container.scrollWidth - this.containerWidth;
 
-        this.position = this.container.scrollLeft + this.getScrollWidth();
+        this.position = this.$container.scrollLeft + this.getScrollWidth();
         this.position = this.position >= maxScrollPosition ? maxScrollPosition + 1 : this.position;
         this.scroll();
     }
 
     private scrollLeft() {
         this.setScrollValues();
-
-        this.position = this.container.scrollLeft - this.getScrollWidth();
+        
+        this.position = this.$container.scrollLeft - this.getScrollWidth();
         this.position = this.position <= 0 ? 0 : this.position;
         this.scroll();
     }
 
     private scroll() {
         if (this.supportsSmoothScrolling()) {
-            this.container.scroll({
+            this.$container.scroll({
                 left: this.position,
                 behavior: 'smooth'
             });
         } else {
-            this.scrollTo(this.container, this.container.scrollLeft, this.position)
+            this.scrollTo(this.$container, this.$container.scrollLeft, this.position)
         }
     }
 
@@ -87,16 +96,16 @@ export class Gallery implements ComponentInterface {
     };
 
     private setScrollValues() {
-        this.container = this.$el.querySelector('.content-wrapper') as HTMLElement;
-        this.containerWidth = this.container.offsetWidth;
-        let child = this.$el.querySelector('.scrolling-content > *') as HTMLElement;
-        this.childWidth = child.offsetWidth;
-        let styles = window.getComputedStyle(child);
+        this.$container = this.$el.querySelector('.content-wrapper') as HTMLElement;
+        this.containerWidth = this.$container.offsetWidth;
+        let $child = this.$el.querySelector('.scrolling-content > *') as HTMLElement;
+        this.childWidth = $child.offsetWidth;
+        let styles = window.getComputedStyle($child);
         this.margin = parseFloat(styles.marginRight);
     }
 
-    getScrollWidth() {
-        return Math.floor(this.containerWidth / (this.childWidth + this.margin)) * (this.childWidth + this.margin);
+    private getScrollWidth() {
+        return this.containerWidth < (this.childWidth + this.margin) ? this.containerWidth : Math.floor(this.containerWidth / (this.childWidth + this.margin)) * (this.childWidth + this.margin);
     }
 
     render() {
@@ -120,7 +129,7 @@ export class Gallery implements ComponentInterface {
                             <ks-icon class="text-lg" icon="chevron_left"></ks-icon>
                         </ks-button>
                         <ks-button class="scroll-right" size="xs" display="clear" disabled={this.isEnd} onClick={() => this.scrollRight()}>
-                            <ks-icon class="text-lg" icon="chevron_right"></ks-icon>
+                            <ks-icon class="text-lg" icon="chevron_right" label="scroll left"></ks-icon>
                         </ks-button>
                     </div>
                 </header>
