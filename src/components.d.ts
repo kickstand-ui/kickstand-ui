@@ -323,6 +323,7 @@ export namespace Components {
         "min": number;
         "name": string;
         "required": boolean;
+        "size": 'sm' | 'md' | 'lg';
         "step": number;
         "validate": () => Promise<IFormFieldData>;
         "value"?: string | number | boolean | any[] | null;
@@ -961,6 +962,7 @@ declare namespace LocalJSX {
         "name"?: string;
         "onUpdated"?: (event: CustomEvent<any>) => void;
         "required"?: boolean;
+        "size"?: 'sm' | 'md' | 'lg';
         "step"?: number;
         "value"?: string | number | boolean | any[] | null;
     }

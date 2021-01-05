@@ -290,6 +290,7 @@ export class FormField implements ComponentInterface {
                     max={this.max}
                     step={this.step}
                     name={this.name}
+                    size={this.size}
                     input-id={this.fieldId}
                     required={this.required}
                     disabled={this.disabled}

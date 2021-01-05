@@ -17,6 +17,7 @@
 | `min`        | `min`         |             | `number`                               | `undefined` |
 | `name`       | `name`        |             | `string`                               | `undefined` |
 | `required`   | `required`    |             | `boolean`                              | `false`     |
+| `size`       | `size`        |             | `"lg" \| "md" \| "sm"`                 | `'md'`      |
 | `step`       | `step`        |             | `number`                               | `1`         |
 | `value`      | `value`       |             | `any[] \| boolean \| number \| string` | `0`         |
 

@@ -11,9 +11,6 @@
         @include b($size: xxxs);
 
         .form-input {
-            margin: 0;
-            width: 4rem;
-            height: 2.75rem;
             text-align: center;
             border: none;
             -moz-appearance: textfield; // Firefox
@@ -22,6 +19,7 @@
             @include br(none);
             @include font-size(sm);
             @include p(sm);
+            @include m(none);
 
             // Hide browser input spinners for numbers
             &::-webkit-outer-spin-button,
@@ -32,7 +30,30 @@
 
             &[aria-invalid="true"] {
                 @include b($size: xxs, $color: danger);
-            }    
+            }
+
+            &.size {
+                &-sm {
+                    height: 2.5rem;
+                    width: 3.5rem;
+                    @include py(sm);
+                    @include font-size(sm);
+                }
+
+                &-md {
+                    height: 3rem;
+                    width: 4rem;
+                    @include py(md);
+                    @include font-size(sm);
+                }
+
+                &-lg {
+                    height: 3.75rem;
+                    width: 5rem;
+                    @include py(lg);
+                    @include font-size(md);
+                }
+            }
         }
     }
 }
