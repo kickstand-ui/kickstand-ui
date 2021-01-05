@@ -8,13 +8,14 @@ export class Carousel implements ComponentInterface {
     @Element() $el: HTMLElement;
 
     @Prop() timer: number = 6000;
-    @Prop() autoplay: boolean = false;
+    @Prop({ mutable: false }) autoplay: boolean = false;
     @Prop() hideIndicators: boolean = false;
     @Prop() hideControls: boolean = false;
     @Prop() thumbnails: boolean = false;
 
     @State() slideIndex: number = 0;
     @State() slideTimer: any;
+    @State() isPaused: boolean = false;
 
     $slides: HTMLKsCarouselSlideElement[];
     $indicators: Element[] = [];
@@ -66,8 +67,17 @@ export class Carousel implements ComponentInterface {
     goToSlide() {
         this.updateSlide();
         this.updateIndicator();
+        this.initAutoplay();
+    }
 
-        if (this.autoplay) {
+    toggleAutoplay() {
+        this.isPaused = !this.isPaused;
+        clearTimeout(this.slideTimer);
+        this.initAutoplay();
+    }
+
+    initAutoplay() {
+        if (this.autoplay && !this.isPaused) {
             this.slideTimer = setTimeout(() => this.nextSlide(), this.timer);
         }
     }
@@ -100,15 +110,24 @@ export class Carousel implements ComponentInterface {
                     <button
                         id={`${slide.id}_indicator`}
                         class="indicator"
+                        type="button"
                         role="tab"
                         aria-selected="false"
                         aria-controls={slide.id}
                         ref={el => this.$indicators.push(el)}
                         onClick={() => this.selectSlide(index)}
-                        >
+                    >
                         <span class="sr-only">Got to slide {slide ? index + 1 : ''}</span>
                     </button>
                 )}
+                {this.autoplay
+                    ? <button type="button" class="autoplay-toggle" onClick={() => this.toggleAutoplay()}>
+                        {!this.isPaused
+                            ? <ks-icon icon="pause_fill" label="pause autoplay"></ks-icon>
+                            : <ks-icon icon="play_fill" label="play autoplay"></ks-icon>}
+                    </button>
+                    : ''
+                }
             </div>
         );
         let controls = [

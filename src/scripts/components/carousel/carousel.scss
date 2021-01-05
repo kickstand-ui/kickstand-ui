@@ -114,6 +114,7 @@
         .indicators {
             display: flex;
             justify-content: center;
+            align-items: center;
             position: absolute;
             bottom: 0;
             right: 0;
@@ -145,6 +146,17 @@
                     @include transition();
                 }
             }
+
+            .autoplay-toggle {
+                background-color: transparent;
+                border: 0;
+                // color: white;
+                filter: drop-shadow(0 0 0.25rem color-value(dark));
+                @include color(light, light);
+                @include p(none);
+                @include m(none);
+                @include mx(sm);
+            }    
         }
     }
 
