@@ -18,6 +18,10 @@ export class Dropdown {
     @Prop() icon: string;
     @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';
     @Prop() display: 'solid' | 'hollow' | 'clear' | 'link' = 'solid';
+    @Prop() type: 'button' | 'submit' | 'reset' = 'button';
+    @Prop() size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
+    @Prop() loading: boolean;
+    @Prop() disabled: boolean;
     @Prop() hideText: boolean = false;
     @Prop() hideIndicator: boolean = false;
     @Prop() megaMenu: boolean = false;
@@ -137,7 +141,11 @@ export class Dropdown {
                     onClick={() => this.toggleDropdown()}
                     color={this.color}
                     display={this.display}
-                    cssClass="dropdown-button"
+                    type={this.type}
+                    size={this.size}
+                    loading={this.loading}
+                    disabled={this.disabled}
+                    button-class="dropdown-button"
                     haspopup={true}
                     expanded={this.isExpanded}
                     controls={this.dropdownId}
