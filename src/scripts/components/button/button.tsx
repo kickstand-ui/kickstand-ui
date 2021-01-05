@@ -15,6 +15,7 @@ export class LinkButton implements ComponentInterface {
     @Prop() size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
     @Prop() href: string;
     @Prop() cssClass: string = '';
+    @Prop() buttonClass: string = '';
     @Prop() haspopup: boolean = false;
     @Prop() expanded: boolean = false;
     @Prop() loading: boolean;
@@ -86,6 +87,7 @@ export class LinkButton implements ComponentInterface {
             [this.color]: true,
             [this.display]: true,
             [this.cssClass]: true,
+            [this.buttonClass]: true,
             [`size-${this.size}`]: true,
         };
 

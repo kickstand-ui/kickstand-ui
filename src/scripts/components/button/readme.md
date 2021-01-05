@@ -9,6 +9,7 @@
 
 | Property      | Attribute      | Description | Type                                                                                            | Default     |
 | ------------- | -------------- | ----------- | ----------------------------------------------------------------------------------------------- | ----------- |
+| `buttonClass` | `button-class` |             | `string`                                                                                        | `''`        |
 | `color`       | `color`        |             | `"danger" \| "dark" \| "info" \| "light" \| "primary" \| "secondary" \| "success" \| "warning"` | `'primary'` |
 | `controls`    | `controls`     |             | `string`                                                                                        | `undefined` |
 | `cssClass`    | `css-class`    |             | `string`                                                                                        | `''`        |

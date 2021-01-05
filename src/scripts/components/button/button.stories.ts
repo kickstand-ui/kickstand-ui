@@ -14,11 +14,11 @@ export const playground = () => {
     const size = select('size', sizes, 'md');
     const linkUrl = text('href', '');
     const target = text('target', '');
-    const cssClass = text('css-class', '');
+    const buttonClass = text('button-class', '');
     const css2class = text('class', '');
     return (`<ks-button
             class="${css2class}"
-            css-class="${cssClass}" 
+            button-class="${buttonClass}" 
             class="m-md"
             color="${color}" 
             display="${display}" 
@@ -39,11 +39,11 @@ export const iconButton = () => {
     const size = select('size', sizes, 'md');
     const linkUrl = text('href', '');
     const target = text('target', '');
-    const cssClass = text('css-class', '');
-    const css2class = text('class', '');
+    const buttonClass = text('button-class', '');
+    const cssClass = text('class', '');
     return (`<ks-button
-            class="${css2class}"
-            css-class="${cssClass}" 
+            class="${cssClass}"
+            button-class="${buttonClass}" 
             class="m-md"
             color="${color}" 
             display="${display}" 
@@ -62,10 +62,10 @@ export const buttonColors = () => {
     const display = select('display', displays, 'solid');
     const size = select('size', sizes, 'md');
     const linkUrl = text('url', '');
-    const cssClass = text('css-class', '');
+    const buttonClass = text('button-class', '');
     return (colors.map(color =>
         `<ks-button
-            css-class="${cssClass}" 
+            button-class="${buttonClass}" 
             color="${color}" 
             display="${display}" 
             size="${size}" 
@@ -87,11 +87,11 @@ export const sizeVariations = () => {
     const color = select('color', colors, 'primary');
     const display = select('display', displays, 'solid');
     const linkUrl = text('url', '');
-    const cssClass = text('css-class', '');
+    const buttonClass = text('button-class', '');
     return (sizes.map(size =>
         `<ks-button
             class="m-md"
-            css-class="${cssClass}" 
+            button-class="${buttonClass}" 
             color="${color}" 
             display="${display}" 
             size="${size}" 
@@ -104,10 +104,10 @@ export const sizeVariations = () => {
 export const buttonBar = () => {
     const stacked = boolean('stacked', false);
     const buttonDisplay = text('button display', 'hollow');
-    const cssClass = text('class', '');
+    const buttonClass = text('class', '');
 
     return (`<div class="m-xl">
-        <ks-button-bar stacked="${stacked}" class="${cssClass}">
+        <ks-button-bar stacked="${stacked}" class="${buttonClass}">
             <ks-button display="${buttonDisplay}">Button 1</ks-button>
             <ks-button display="${buttonDisplay}">Button 2</ks-button>
             <ks-button display="${buttonDisplay}">Button 3</ks-button>
