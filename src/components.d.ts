@@ -30,6 +30,7 @@ export namespace Components {
     interface KsAutocomplete {
         "debounce": number;
         "disabled": boolean;
+        "inputClass": string;
         "inputId": string;
         "name": string;
         "required": boolean;
@@ -167,6 +168,7 @@ export namespace Components {
         "icon"?: string;
         "iconDirection": 'left' | 'right';
         "inline": boolean;
+        "inputClass": string;
         "invalid": boolean;
         "label": string;
         "max"?: number;
@@ -314,6 +316,7 @@ export namespace Components {
     }
     interface KsSpinBox {
         "disabled": boolean;
+        "inputClass": string;
         "inputId": string;
         "invalid": boolean;
         "max": number;
@@ -665,6 +668,7 @@ declare namespace LocalJSX {
     interface KsAutocomplete {
         "debounce"?: number;
         "disabled"?: boolean;
+        "inputClass"?: string;
         "inputId"?: string;
         "name"?: string;
         "onChanged"?: (event: CustomEvent<IFormFieldData>) => void;
@@ -805,6 +809,7 @@ declare namespace LocalJSX {
         "icon"?: string;
         "iconDirection"?: 'left' | 'right';
         "inline"?: boolean;
+        "inputClass"?: string;
         "invalid"?: boolean;
         "label"?: string;
         "max"?: number;
@@ -948,6 +953,7 @@ declare namespace LocalJSX {
     }
     interface KsSpinBox {
         "disabled"?: boolean;
+        "inputClass"?: string;
         "inputId"?: string;
         "invalid"?: boolean;
         "max"?: number;

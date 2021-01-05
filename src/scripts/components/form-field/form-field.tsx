@@ -87,6 +87,7 @@ export class FormField implements ComponentInterface {
     @Prop() icon?: string;
     @Prop() iconDirection: 'left' | 'right' = 'right';
     @Prop() size: 'sm' | 'md' | 'lg' = 'md';
+    @Prop() inputClass: string;
 
     @Event() updated!: EventEmitter<IFormFieldData>;
     @Event() blurred!: EventEmitter;
@@ -229,7 +230,7 @@ export class FormField implements ComponentInterface {
         let value = this.getValue();
         let props = {
             'id': this.fieldId,
-            'class':`form-input  size-${this.size} ${this.icon ? `display-icon-${this.iconDirection}` : ''}`,
+            'class':`form-input size-${this.size} ${this.icon ? `display-icon-${this.iconDirection}` : ''} ${this.inputClass ? this.inputClass : ''}`,
             'name': this.getInputName(),
             'value': value,
             'disabled': this.disabled,
@@ -275,6 +276,7 @@ export class FormField implements ComponentInterface {
                     required={this.required}
                     disabled={this.disabled}
                     size={this.size}
+                    input-class={this.inputClass}
                     onChanged={e => this.handleComponentChange(e)}
                     ref={e => this.$customInput = e}
                 >
@@ -292,6 +294,7 @@ export class FormField implements ComponentInterface {
                     required={this.required}
                     disabled={this.disabled}
                     invalid={this.invalid}
+                    input-class={this.inputClass}
                     onUpdated={e => this.handleComponentChange(e)}
                     ref={el => this.$customInput = el}
                     >
@@ -314,7 +317,7 @@ export class FormField implements ComponentInterface {
                             class="input-button"
                             display="clear"
                             size="xs"
-                            css-class="text-md"
+                            button-class="text-md"
                             color="dark"
                             hide-text
                             onClick={() => this.handleTogglePasswordClick()}
@@ -325,7 +328,7 @@ export class FormField implements ComponentInterface {
                             class="input-button"
                             display="clear"
                             size="xs"
-                            css-class="text-md"
+                            button-class="text-md"
                             color="dark"
                             hide-text
                             onClick={() => this.handleClearContentsClick()}

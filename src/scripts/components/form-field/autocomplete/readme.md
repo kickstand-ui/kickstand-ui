@@ -7,15 +7,16 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type                                   | Default     |
-| ---------- | ---------- | ----------- | -------------------------------------- | ----------- |
-| `debounce` | `debounce` |             | `number`                               | `0`         |
-| `disabled` | `disabled` |             | `boolean`                              | `undefined` |
-| `inputId`  | `input-id` |             | `string`                               | `undefined` |
-| `name`     | `name`     |             | `string`                               | `undefined` |
-| `required` | `required` |             | `boolean`                              | `undefined` |
-| `size`     | `size`     |             | `"lg" \| "md" \| "sm"`                 | `'md'`      |
-| `value`    | `value`    |             | `any[] \| boolean \| number \| string` | `''`        |
+| Property     | Attribute     | Description | Type                                   | Default     |
+| ------------ | ------------- | ----------- | -------------------------------------- | ----------- |
+| `debounce`   | `debounce`    |             | `number`                               | `0`         |
+| `disabled`   | `disabled`    |             | `boolean`                              | `undefined` |
+| `inputClass` | `input-class` |             | `string`                               | `undefined` |
+| `inputId`    | `input-id`    |             | `string`                               | `undefined` |
+| `name`       | `name`        |             | `string`                               | `undefined` |
+| `required`   | `required`    |             | `boolean`                              | `undefined` |
+| `size`       | `size`        |             | `"lg" \| "md" \| "sm"`                 | `'md'`      |
+| `value`      | `value`       |             | `any[] \| boolean \| number \| string` | `''`        |
 
 
 ## Events
