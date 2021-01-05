@@ -1,8 +1,9 @@
-import { Component, Element, Prop, State, h, ComponentInterface } from '@stencil/core';
+import { Component, Element, Prop, State, h, ComponentInterface, Host } from '@stencil/core';
 
 
 @Component({
-    tag: 'ks-img'
+    tag: 'ks-img',
+    styleUrl: 'image.scss'
 })
 export class Img implements ComponentInterface {
     $image: HTMLImageElement;
@@ -12,7 +13,10 @@ export class Img implements ComponentInterface {
 
     @Prop() src: string;
     @Prop() alt: string;
+    @Prop({mutable: true}) width: number;
+    @Prop({mutable: true}) height: any;
     @Prop() lazy: boolean;
+    @Prop() aspectRatio: string;
     @Prop() threshold: number = 300;
 
     @State() oldSrc: string;
@@ -21,11 +25,29 @@ export class Img implements ComponentInterface {
         this.addIntersectionObserver();
     }
 
+    componentWillRender() {
+        if(!this.width)
+            this.width = this.$el.scrollWidth;
+        
+        if(!this.height && !this.lazy)
+            this.height = this.$el.scrollHeight;
+                
+        if(this.aspectRatio)
+            this.setAspectRatio();
+    }
+
     componentWillUpdate() {
         if (this.src !== this.oldSrc)
             this.addIntersectionObserver();
 
         this.oldSrc = this.src;
+    }
+
+    private setAspectRatio() {
+        let ratios = this.aspectRatio.split(':');
+
+        if(ratios.length > 1)
+            this.height = this.width * parseFloat(ratios[1]) / parseFloat(ratios[0]);
     }
 
     setImgSrc() {
@@ -76,8 +98,17 @@ export class Img implements ComponentInterface {
     }
 
     render() {
+        let props ={
+            ['data-src']: this.src,
+            'alt': this.alt,
+            'width': this.width !== undefined && this.width.toString(),
+            'height': this.height !== undefined && this.height.toString()
+        };
+
         return (
-            <img data-src={this.src} alt={this.alt} ref={el => this.$image = el} />
+            <Host class="ks-img">
+                <img {...props} ref={el => this.$image = el} />
+            </Host>
         );
     }
 }

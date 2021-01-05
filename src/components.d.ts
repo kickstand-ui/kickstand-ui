@@ -44,6 +44,7 @@ export namespace Components {
     interface KsBreadcrumbs {
     }
     interface KsButton {
+        "buttonClass": string;
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
         "controls": string;
         "cssClass": string;
@@ -129,13 +130,17 @@ export namespace Components {
         "close": () => Promise<void>;
         "collapse": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+        "disabled": boolean;
         "display": 'solid' | 'hollow' | 'clear' | 'link';
         "hideIndicator": boolean;
         "hideText": boolean;
         "icon": string;
+        "loading": boolean;
         "megaMenu": boolean;
         "position": 'left' | 'right';
+        "size": 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "text": string;
+        "type": 'button' | 'submit' | 'reset';
     }
     interface KsDropdownItem {
         "preventClose": boolean;
@@ -223,9 +228,12 @@ export namespace Components {
     }
     interface KsImg {
         "alt": string;
+        "aspectRatio": string;
+        "height": any;
         "lazy": boolean;
         "src": string;
         "threshold": number;
+        "width": number;
     }
     interface KsLoading {
         "icon": string;
@@ -671,6 +679,7 @@ declare namespace LocalJSX {
     interface KsBreadcrumbs {
     }
     interface KsButton {
+        "buttonClass"?: string;
         "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
         "controls"?: string;
         "cssClass"?: string;
@@ -755,15 +764,19 @@ declare namespace LocalJSX {
     interface KsDropdown {
         "collapse"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+        "disabled"?: boolean;
         "display"?: 'solid' | 'hollow' | 'clear' | 'link';
         "hideIndicator"?: boolean;
         "hideText"?: boolean;
         "icon"?: string;
+        "loading"?: boolean;
         "megaMenu"?: boolean;
         "onDropdownClosed"?: (event: CustomEvent<any>) => void;
         "onDropdownOpened"?: (event: CustomEvent<any>) => void;
         "position"?: 'left' | 'right';
+        "size"?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "text"?: string;
+        "type"?: 'button' | 'submit' | 'reset';
     }
     interface KsDropdownItem {
         "onCloseDropdown"?: (event: CustomEvent<any>) => void;
@@ -854,9 +867,12 @@ declare namespace LocalJSX {
     }
     interface KsImg {
         "alt"?: string;
+        "aspectRatio"?: string;
+        "height"?: any;
         "lazy"?: boolean;
         "src"?: string;
         "threshold"?: number;
+        "width"?: number;
     }
     interface KsLoading {
         "icon"?: string;
