@@ -12,6 +12,8 @@ export class Carousel implements ComponentInterface {
     @Prop() hideIndicators: boolean = false;
     @Prop() hideControls: boolean = false;
     @Prop() thumbnails: boolean = false;
+    @Prop() playText: string = 'play slides';
+    @Prop() pauseText: string = 'pause slides';
 
     @State() slideIndex: number = 0;
     @State() slideTimer: any;
@@ -123,8 +125,8 @@ export class Carousel implements ComponentInterface {
                 {this.autoplay
                     ? <button type="button" class="autoplay-toggle" onClick={() => this.toggleAutoplay()}>
                         {!this.isPaused
-                            ? <ks-icon icon="pause_fill" label="pause autoplay"></ks-icon>
-                            : <ks-icon icon="play_fill" label="play autoplay"></ks-icon>}
+                            ? <ks-icon icon="pause_fill" label={this.pauseText}></ks-icon>
+                            : <ks-icon icon="play_fill" label={this.playText}></ks-icon>}
                     </button>
                     : ''
                 }

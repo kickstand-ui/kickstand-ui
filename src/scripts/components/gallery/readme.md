@@ -7,12 +7,14 @@
 
 ## Properties
 
-| Property    | Attribute    | Description | Type                                                                                   | Default     |
-| ----------- | ------------ | ----------- | -------------------------------------------------------------------------------------- | ----------- |
-| `gutter`    | `gutter`     |             | `"lg" \| "md" \| "none" \| "sm" \| "xl" \| "xs" \| "xxl" \| "xxs" \| "xxxl" \| "xxxs"` | `'md'`      |
-| `heading`   | `heading`    |             | `string`                                                                               | `undefined` |
-| `itemWidth` | `item-width` |             | `string`                                                                               | `undefined` |
-| `src`       | `src`        |             | `string`                                                                               | `undefined` |
+| Property         | Attribute          | Description | Type                                                                                   | Default          |
+| ---------------- | ------------------ | ----------- | -------------------------------------------------------------------------------------- | ---------------- |
+| `gutter`         | `gutter`           |             | `"lg" \| "md" \| "none" \| "sm" \| "xl" \| "xs" \| "xxl" \| "xxs" \| "xxxl" \| "xxxs"` | `'md'`           |
+| `heading`        | `heading`          |             | `string`                                                                               | `undefined`      |
+| `itemWidth`      | `item-width`       |             | `string`                                                                               | `undefined`      |
+| `nextButtonText` | `next-button-text` |             | `string`                                                                               | `'scroll right'` |
+| `prevButtonText` | `prev-button-text` |             | `string`                                                                               | `'scroll left'`  |
+| `src`            | `src`              |             | `string`                                                                               | `undefined`      |
 
 
 ## Dependencies

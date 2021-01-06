@@ -87,6 +87,8 @@ export namespace Components {
         "autoplay": boolean;
         "hideControls": boolean;
         "hideIndicators": boolean;
+        "pauseText": string;
+        "playText": string;
         "thumbnails": boolean;
         "timer": number;
     }
@@ -220,6 +222,8 @@ export namespace Components {
         "gutter": 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "heading": string;
         "itemWidth": string;
+        "nextButtonText": string;
+        "prevButtonText": string;
         "src": string;
     }
     interface KsIcon {
@@ -726,6 +730,8 @@ declare namespace LocalJSX {
         "autoplay"?: boolean;
         "hideControls"?: boolean;
         "hideIndicators"?: boolean;
+        "pauseText"?: string;
+        "playText"?: string;
         "thumbnails"?: boolean;
         "timer"?: number;
     }
@@ -863,6 +869,8 @@ declare namespace LocalJSX {
         "gutter"?: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "heading"?: string;
         "itemWidth"?: string;
+        "nextButtonText"?: string;
+        "prevButtonText"?: string;
         "src"?: string;
     }
     interface KsIcon {

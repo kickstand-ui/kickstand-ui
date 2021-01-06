@@ -16,6 +16,8 @@ export class Gallery implements ComponentInterface {
     @Prop() src: string;
     @Prop() gutter: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl' = 'md';
     @Prop() itemWidth: string;
+    @Prop() prevButtonText: string = 'scroll left';
+    @Prop() nextButtonText: string = 'scroll right';
 
     @State() isStart = true;
     @State() isEnd = false;
@@ -126,10 +128,10 @@ export class Gallery implements ComponentInterface {
                     <h2 class="heading">{this.src ? <a href={this.src}>{this.heading}</a> : this.heading}</h2>
                     <div class="controls">
                         <ks-button class="scroll-left" size="xs" display="clear" disabled={this.isStart} onClick={() => this.scrollLeft()}>
-                            <ks-icon class="text-lg" icon="chevron_left"></ks-icon>
+                            <ks-icon class="text-lg" icon="chevron_left" label={this.prevButtonText}></ks-icon>
                         </ks-button>
                         <ks-button class="scroll-right" size="xs" display="clear" disabled={this.isEnd} onClick={() => this.scrollRight()}>
-                            <ks-icon class="text-lg" icon="chevron_right" label="scroll left"></ks-icon>
+                            <ks-icon class="text-lg" icon="chevron_right" label={this.nextButtonText}></ks-icon>
                         </ks-button>
                     </div>
                 </header>
