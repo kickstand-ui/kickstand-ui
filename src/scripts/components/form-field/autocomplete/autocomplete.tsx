@@ -25,6 +25,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
     @Prop() inputId: string;
     @Prop() debounce: number = 0;
     @Prop() size: 'sm' | 'md' | 'lg' = 'md';
+    @Prop() inputClass: string;
 
     @State() isExpanded: boolean = false;
     @State() isValid: boolean = true;
@@ -235,7 +236,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
                 <div class="autocomplete">
                     <input
                         aria-owns={`autocomplete-options-${this.autocompleteId}`}
-                        class={`search-field size-${this.size}`}
+                        class={`search-field size-${this.size} ${this.inputClass ? this.inputClass : ''}`}
                         autocapitalize="none"
                         type="text"
                         autocomplete="off"
@@ -251,7 +252,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
                         {...inputProps}
                     />
                     <span class="input-icons">
-                        {this.searchTerm ? <ks-button class="clear-button" size="xs" display="clear" css-class="text-md" color="dark" onClick={() => this.clearSearchTerm()}><ks-icon icon="times" label="clear"></ks-icon></ks-button> : ''}
+                        {this.searchTerm ? <ks-button class="clear-button" size="xs" display="clear" button-class="text-md" color="dark" onClick={() => this.clearSearchTerm()}><ks-icon icon="times" label="clear"></ks-icon></ks-button> : ''}
                         <ks-icon icon="search" class="search-icon"></ks-icon>
                     </span>
                     <ul id={`autocomplete-options-${this.autocompleteId}`} class="dropdown-options" role="listbox" ref={el => this.$dropdown = el}>

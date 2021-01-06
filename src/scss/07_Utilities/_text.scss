@@ -73,6 +73,14 @@ $breakpoints: (xl, lg, md, sm, xs, xxs, print);
     &-capitalize {
         text-transform: capitalize !important;
     }
+
+    // Font-Family
+
+    @each $key, $value in $fonts {
+        &-#{$key} {
+            @include font($key, true);
+        }
+    }
 }
 
 // Responsive sizes

@@ -20,6 +20,8 @@ export class SpinBox implements ComponentInterface, ICustomInput {
     @Prop() required: boolean = false;
     @Prop() disabled: boolean = false;
     @Prop({ mutable: true }) invalid: boolean = false;
+    @Prop() size: 'sm' | 'md' | 'lg' = 'md';
+    @Prop() inputClass: string;
 
     @State() isUpdating: boolean;
     @State() isValid: boolean = true;
@@ -80,6 +82,7 @@ export class SpinBox implements ComponentInterface, ICustomInput {
         return (<Host class="ks-spin-box">
             <ks-button
                 display="clear"
+                size={this.size}
                 onClick={() => this.decreaseClickHandler()}
                 disabled={this.disabled}
             >
@@ -87,7 +90,7 @@ export class SpinBox implements ComponentInterface, ICustomInput {
             </ks-button>
             <input
                 type="number"
-                class="form-input"
+                class={`form-input ${this.inputClass ? this.inputClass : ''} size-${this.size}`}
                 id={this.inputId}
                 min={this.min}
                 max={this.max}
@@ -101,6 +104,7 @@ export class SpinBox implements ComponentInterface, ICustomInput {
             />
             <ks-button
                 display="clear"
+                size={this.size}
                 onClick={() => this.increaseClickHandler()}
                 disabled={this.disabled}
             >

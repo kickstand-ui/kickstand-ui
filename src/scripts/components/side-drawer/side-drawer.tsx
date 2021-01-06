@@ -49,7 +49,7 @@ export class SideDrawer implements ComponentInterface {
                 <aside class={classes} ref={el => this.$drawer = el}>
                     <header class="drawer-header">
                         <h3 class="drawer-title">{this.headerText}</h3>
-                        <ks-button onClick={() => this.hide()} class="drawer-close" display="clear" css-class="p-xs">
+                        <ks-button onClick={() => this.hide()} class="drawer-close" color="dark" display="clear" button-class="p-xs">
                             <ks-icon icon="times" label="Close Modal" />
                         </ks-button>
                     </header>

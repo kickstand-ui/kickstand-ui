@@ -30,6 +30,7 @@ export namespace Components {
     interface KsAutocomplete {
         "debounce": number;
         "disabled": boolean;
+        "inputClass": string;
         "inputId": string;
         "name": string;
         "required": boolean;
@@ -44,6 +45,7 @@ export namespace Components {
     interface KsBreadcrumbs {
     }
     interface KsButton {
+        "buttonClass": string;
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
         "controls": string;
         "cssClass": string;
@@ -85,6 +87,8 @@ export namespace Components {
         "autoplay": boolean;
         "hideControls": boolean;
         "hideIndicators": boolean;
+        "pauseText": string;
+        "playText": string;
         "thumbnails": boolean;
         "timer": number;
     }
@@ -129,13 +133,17 @@ export namespace Components {
         "close": () => Promise<void>;
         "collapse": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+        "disabled": boolean;
         "display": 'solid' | 'hollow' | 'clear' | 'link';
         "hideIndicator": boolean;
         "hideText": boolean;
         "icon": string;
+        "loading": boolean;
         "megaMenu": boolean;
         "position": 'left' | 'right';
+        "size": 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "text": string;
+        "type": 'button' | 'submit' | 'reset';
     }
     interface KsDropdownItem {
         "preventClose": boolean;
@@ -162,6 +170,7 @@ export namespace Components {
         "icon"?: string;
         "iconDirection": 'left' | 'right';
         "inline": boolean;
+        "inputClass": string;
         "invalid": boolean;
         "label": string;
         "max"?: number;
@@ -213,6 +222,8 @@ export namespace Components {
         "gutter": 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "heading": string;
         "itemWidth": string;
+        "nextButtonText": string;
+        "prevButtonText": string;
         "src": string;
     }
     interface KsIcon {
@@ -223,9 +234,12 @@ export namespace Components {
     }
     interface KsImg {
         "alt": string;
+        "aspectRatio": string;
+        "height": any;
         "lazy": boolean;
         "src": string;
         "threshold": number;
+        "width": number;
     }
     interface KsLoading {
         "icon": string;
@@ -306,12 +320,14 @@ export namespace Components {
     }
     interface KsSpinBox {
         "disabled": boolean;
+        "inputClass": string;
         "inputId": string;
         "invalid": boolean;
         "max": number;
         "min": number;
         "name": string;
         "required": boolean;
+        "size": 'sm' | 'md' | 'lg';
         "step": number;
         "validate": () => Promise<IFormFieldData>;
         "value"?: string | number | boolean | any[] | null;
@@ -657,6 +673,7 @@ declare namespace LocalJSX {
     interface KsAutocomplete {
         "debounce"?: number;
         "disabled"?: boolean;
+        "inputClass"?: string;
         "inputId"?: string;
         "name"?: string;
         "onChanged"?: (event: CustomEvent<IFormFieldData>) => void;
@@ -671,6 +688,7 @@ declare namespace LocalJSX {
     interface KsBreadcrumbs {
     }
     interface KsButton {
+        "buttonClass"?: string;
         "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
         "controls"?: string;
         "cssClass"?: string;
@@ -712,6 +730,8 @@ declare namespace LocalJSX {
         "autoplay"?: boolean;
         "hideControls"?: boolean;
         "hideIndicators"?: boolean;
+        "pauseText"?: string;
+        "playText"?: string;
         "thumbnails"?: boolean;
         "timer"?: number;
     }
@@ -755,15 +775,19 @@ declare namespace LocalJSX {
     interface KsDropdown {
         "collapse"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+        "disabled"?: boolean;
         "display"?: 'solid' | 'hollow' | 'clear' | 'link';
         "hideIndicator"?: boolean;
         "hideText"?: boolean;
         "icon"?: string;
+        "loading"?: boolean;
         "megaMenu"?: boolean;
         "onDropdownClosed"?: (event: CustomEvent<any>) => void;
         "onDropdownOpened"?: (event: CustomEvent<any>) => void;
         "position"?: 'left' | 'right';
+        "size"?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "text"?: string;
+        "type"?: 'button' | 'submit' | 'reset';
     }
     interface KsDropdownItem {
         "onCloseDropdown"?: (event: CustomEvent<any>) => void;
@@ -792,6 +816,7 @@ declare namespace LocalJSX {
         "icon"?: string;
         "iconDirection"?: 'left' | 'right';
         "inline"?: boolean;
+        "inputClass"?: string;
         "invalid"?: boolean;
         "label"?: string;
         "max"?: number;
@@ -844,6 +869,8 @@ declare namespace LocalJSX {
         "gutter"?: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "heading"?: string;
         "itemWidth"?: string;
+        "nextButtonText"?: string;
+        "prevButtonText"?: string;
         "src"?: string;
     }
     interface KsIcon {
@@ -854,9 +881,12 @@ declare namespace LocalJSX {
     }
     interface KsImg {
         "alt"?: string;
+        "aspectRatio"?: string;
+        "height"?: any;
         "lazy"?: boolean;
         "src"?: string;
         "threshold"?: number;
+        "width"?: number;
     }
     interface KsLoading {
         "icon"?: string;
@@ -932,6 +962,7 @@ declare namespace LocalJSX {
     }
     interface KsSpinBox {
         "disabled"?: boolean;
+        "inputClass"?: string;
         "inputId"?: string;
         "invalid"?: boolean;
         "max"?: number;
@@ -939,6 +970,7 @@ declare namespace LocalJSX {
         "name"?: string;
         "onUpdated"?: (event: CustomEvent<any>) => void;
         "required"?: boolean;
+        "size"?: 'sm' | 'md' | 'lg';
         "step"?: number;
         "value"?: string | number | boolean | any[] | null;
     }

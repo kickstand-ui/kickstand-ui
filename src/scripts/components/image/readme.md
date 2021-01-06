@@ -7,12 +7,15 @@
 
 ## Properties
 
-| Property    | Attribute   | Description | Type      | Default     |
-| ----------- | ----------- | ----------- | --------- | ----------- |
-| `alt`       | `alt`       |             | `string`  | `undefined` |
-| `lazy`      | `lazy`      |             | `boolean` | `undefined` |
-| `src`       | `src`       |             | `string`  | `undefined` |
-| `threshold` | `threshold` |             | `number`  | `300`       |
+| Property      | Attribute      | Description | Type      | Default     |
+| ------------- | -------------- | ----------- | --------- | ----------- |
+| `alt`         | `alt`          |             | `string`  | `undefined` |
+| `aspectRatio` | `aspect-ratio` |             | `string`  | `undefined` |
+| `height`      | `height`       |             | `any`     | `undefined` |
+| `lazy`        | `lazy`         |             | `boolean` | `undefined` |
+| `src`         | `src`          |             | `string`  | `undefined` |
+| `threshold`   | `threshold`    |             | `number`  | `300`       |
+| `width`       | `width`        |             | `number`  | `undefined` |
 
 
 ## Dependencies

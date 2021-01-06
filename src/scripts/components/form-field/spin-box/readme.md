@@ -7,17 +7,19 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type                                   | Default     |
-| ---------- | ---------- | ----------- | -------------------------------------- | ----------- |
-| `disabled` | `disabled` |             | `boolean`                              | `false`     |
-| `inputId`  | `input-id` |             | `string`                               | `undefined` |
-| `invalid`  | `invalid`  |             | `boolean`                              | `false`     |
-| `max`      | `max`      |             | `number`                               | `undefined` |
-| `min`      | `min`      |             | `number`                               | `undefined` |
-| `name`     | `name`     |             | `string`                               | `undefined` |
-| `required` | `required` |             | `boolean`                              | `false`     |
-| `step`     | `step`     |             | `number`                               | `1`         |
-| `value`    | `value`    |             | `any[] \| boolean \| number \| string` | `0`         |
+| Property     | Attribute     | Description | Type                                   | Default     |
+| ------------ | ------------- | ----------- | -------------------------------------- | ----------- |
+| `disabled`   | `disabled`    |             | `boolean`                              | `false`     |
+| `inputClass` | `input-class` |             | `string`                               | `undefined` |
+| `inputId`    | `input-id`    |             | `string`                               | `undefined` |
+| `invalid`    | `invalid`     |             | `boolean`                              | `false`     |
+| `max`        | `max`         |             | `number`                               | `undefined` |
+| `min`        | `min`         |             | `number`                               | `undefined` |
+| `name`       | `name`        |             | `string`                               | `undefined` |
+| `required`   | `required`    |             | `boolean`                              | `false`     |
+| `size`       | `size`        |             | `"lg" \| "md" \| "sm"`                 | `'md'`      |
+| `step`       | `step`        |             | `number`                               | `1`         |
+| `value`      | `value`       |             | `any[] \| boolean \| number \| string` | `0`         |
 
 
 ## Events
