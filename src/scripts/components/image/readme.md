@@ -11,7 +11,7 @@
 | ------------- | -------------- | ----------- | --------- | ----------- |
 | `alt`         | `alt`          |             | `string`  | `undefined` |
 | `aspectRatio` | `aspect-ratio` |             | `string`  | `undefined` |
-| `height`      | `height`       |             | `any`     | `undefined` |
+| `height`      | `height`       |             | `number`  | `undefined` |
 | `lazy`        | `lazy`         |             | `boolean` | `undefined` |
 | `src`         | `src`          |             | `string`  | `undefined` |
 | `threshold`   | `threshold`    |             | `number`  | `300`       |

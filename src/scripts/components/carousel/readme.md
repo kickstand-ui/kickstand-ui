@@ -14,7 +14,7 @@
 | `clickable`      | `clickable`        |             | `boolean`                       | `false`     |
 | `href`           | `href`             |             | `string`                        | `undefined` |
 | `imgAspectRatio` | `img-aspect-ratio` |             | `string`                        | `undefined` |
-| `imgHeight`      | `img-height`       |             | `any`                           | `undefined` |
+| `imgHeight`      | `img-height`       |             | `number`                        | `undefined` |
 | `imgWidth`       | `img-width`        |             | `number`                        | `undefined` |
 | `lazy`           | `lazy`             |             | `boolean`                       | `false`     |
 | `position`       | `position`         |             | `"bottom" \| "center" \| "top"` | `'center'`  |

@@ -13,8 +13,8 @@ export class Img implements ComponentInterface {
 
     @Prop() src: string;
     @Prop() alt: string;
-    @Prop({mutable: true}) width: number;
-    @Prop({mutable: true}) height: number;
+    @Prop({ mutable: true }) width: number;
+    @Prop({ mutable: true }) height: number;
     @Prop() lazy: boolean;
     @Prop() aspectRatio: string;
     @Prop() threshold: number = 300;
@@ -25,14 +25,11 @@ export class Img implements ComponentInterface {
         this.addIntersectionObserver();
     }
 
-    componentWillRender() {
-        if(!this.width)
-            this.width = this.$el.scrollWidth;
-        
-        if(!this.height && !this.lazy)
-            this.height = this.$el.scrollHeight;
-                
-        if(this.aspectRatio)
+    componentDidRender() {
+        this.width = this.width || this.$el.scrollWidth;
+        this.height = this.height || this.$el.scrollHeight;
+
+        if (this.aspectRatio)
             this.setAspectRatio();
     }
 
@@ -46,13 +43,12 @@ export class Img implements ComponentInterface {
     private setAspectRatio() {
         let ratios = this.aspectRatio.split(':');
 
-        if(ratios.length > 1)
+        if (ratios.length > 1)
             this.height = this.width * parseFloat(ratios[1]) / parseFloat(ratios[0]);
     }
 
     setImgSrc() {
-        this.$image.setAttribute('src', this.$image.getAttribute('data-src'));
-        this.$image.onload = () => this.$image.removeAttribute('data-src');
+        this.$image.setAttribute('src', this.src);
     }
 
     addIntersectionObserver() {
@@ -98,11 +94,10 @@ export class Img implements ComponentInterface {
     }
 
     render() {
-        let props ={
-            ['data-src']: this.src,
+        let props = {
             'alt': this.alt,
-            'width': this.width !== undefined && this.width.toString(),
-            'height': this.height !== undefined && this.height.toString()
+            'width': this.width,
+            'height': this.height
         };
 
         return (

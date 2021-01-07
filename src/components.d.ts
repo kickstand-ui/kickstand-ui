@@ -74,7 +74,7 @@ export namespace Components {
         "href": string;
         "imgAspectRatio": string;
         "imgDirection": 'top' | 'bottom' | 'left' | 'right' | 'behind';
-        "imgHeight": any;
+        "imgHeight": number;
         "imgSrc": string;
         "imgWidth": number;
         "lazy": boolean;
@@ -101,7 +101,7 @@ export namespace Components {
         "clickable": boolean;
         "href": string;
         "imgAspectRatio": string;
-        "imgHeight": any;
+        "imgHeight": number;
         "imgWidth": number;
         "lazy": boolean;
         "position": 'top' | 'center' | 'bottom';
@@ -240,7 +240,7 @@ export namespace Components {
     interface KsImg {
         "alt": string;
         "aspectRatio": string;
-        "height": any;
+        "height": number;
         "lazy": boolean;
         "src": string;
         "threshold": number;
@@ -722,7 +722,7 @@ declare namespace LocalJSX {
         "href"?: string;
         "imgAspectRatio"?: string;
         "imgDirection"?: 'top' | 'bottom' | 'left' | 'right' | 'behind';
-        "imgHeight"?: any;
+        "imgHeight"?: number;
         "imgSrc"?: string;
         "imgWidth"?: number;
         "lazy"?: boolean;
@@ -749,7 +749,7 @@ declare namespace LocalJSX {
         "clickable"?: boolean;
         "href"?: string;
         "imgAspectRatio"?: string;
-        "imgHeight"?: any;
+        "imgHeight"?: number;
         "imgWidth"?: number;
         "lazy"?: boolean;
         "position"?: 'top' | 'center' | 'bottom';
@@ -892,7 +892,7 @@ declare namespace LocalJSX {
     interface KsImg {
         "alt"?: string;
         "aspectRatio"?: string;
-        "height"?: any;
+        "height"?: number;
         "lazy"?: boolean;
         "src"?: string;
         "threshold"?: number;

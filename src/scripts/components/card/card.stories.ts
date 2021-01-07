@@ -27,6 +27,7 @@ export const card = () => {
                         lazy="${lazy}"
                         threshold="${threshold}"
                         collapse="${collapse}"
+                        img-aspect-ratio="3:2"
                         >
                     <ks-card-body card-title="${cardTitle}"
                             card-subtitle="${cardSubtitle}">
