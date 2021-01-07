@@ -18,6 +18,9 @@ export class CarouselSlide implements ComponentInterface {
     @Prop() clickable: boolean = false;
     @Prop() lazy: boolean = false;
     @Prop() threshold: number = 300;
+    @Prop() imgWidth: number;
+    @Prop() imgHeight: any;
+    @Prop() imgAspectRatio: string;
 
     componentDidLoad() {
         if (this.clickable)
@@ -63,7 +66,7 @@ export class CarouselSlide implements ComponentInterface {
 
         return (
             <Host class={classes} role="tabpanel" aria-hidden="true">
-                {this.src && <ks-img class="slide-image" alt={this.alt} lazy={this.lazy} src={this.src} threshold={this.threshold} />}
+                {this.src && <ks-img class="slide-image" alt={this.alt} lazy={this.lazy} src={this.src} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} aspect-ratio={this.imgAspectRatio} />}
                 <div class={contentClasses} ref={el => this.$content = el}>
                     <slot />
                 </div>

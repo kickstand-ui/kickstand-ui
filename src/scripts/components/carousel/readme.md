@@ -7,16 +7,19 @@
 
 ## Properties
 
-| Property    | Attribute   | Description | Type                            | Default     |
-| ----------- | ----------- | ----------- | ------------------------------- | ----------- |
-| `align`     | `align`     |             | `"center" \| "left" \| "right"` | `'center'`  |
-| `alt`       | `alt`       |             | `string`                        | `undefined` |
-| `clickable` | `clickable` |             | `boolean`                       | `false`     |
-| `href`      | `href`      |             | `string`                        | `undefined` |
-| `lazy`      | `lazy`      |             | `boolean`                       | `false`     |
-| `position`  | `position`  |             | `"bottom" \| "center" \| "top"` | `'center'`  |
-| `src`       | `src`       |             | `string`                        | `undefined` |
-| `threshold` | `threshold` |             | `number`                        | `300`       |
+| Property         | Attribute          | Description | Type                            | Default     |
+| ---------------- | ------------------ | ----------- | ------------------------------- | ----------- |
+| `align`          | `align`            |             | `"center" \| "left" \| "right"` | `'center'`  |
+| `alt`            | `alt`              |             | `string`                        | `undefined` |
+| `clickable`      | `clickable`        |             | `boolean`                       | `false`     |
+| `href`           | `href`             |             | `string`                        | `undefined` |
+| `imgAspectRatio` | `img-aspect-ratio` |             | `string`                        | `undefined` |
+| `imgHeight`      | `img-height`       |             | `any`                           | `undefined` |
+| `imgWidth`       | `img-width`        |             | `number`                        | `undefined` |
+| `lazy`           | `lazy`             |             | `boolean`                       | `false`     |
+| `position`       | `position`         |             | `"bottom" \| "center" \| "top"` | `'center'`  |
+| `src`            | `src`              |             | `string`                        | `undefined` |
+| `threshold`      | `threshold`        |             | `number`                        | `300`       |
 
 
 ## Dependencies

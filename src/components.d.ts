@@ -72,8 +72,11 @@ export namespace Components {
         "clickable": boolean;
         "collapse": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "href": string;
+        "imgAspectRatio": string;
         "imgDirection": 'top' | 'bottom' | 'left' | 'right' | 'behind';
+        "imgHeight": any;
         "imgSrc": string;
+        "imgWidth": number;
         "lazy": boolean;
         "threshold": number;
     }
@@ -97,6 +100,9 @@ export namespace Components {
         "alt": string;
         "clickable": boolean;
         "href": string;
+        "imgAspectRatio": string;
+        "imgHeight": any;
+        "imgWidth": number;
         "lazy": boolean;
         "position": 'top' | 'center' | 'bottom';
         "src": string;
@@ -143,7 +149,6 @@ export namespace Components {
         "position": 'left' | 'right';
         "size": 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "text": string;
-        "type": 'button' | 'submit' | 'reset';
     }
     interface KsDropdownItem {
         "preventClose": boolean;
@@ -309,7 +314,7 @@ export namespace Components {
     }
     interface KsRow {
         "gutter": 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
-        "position": 'start' | 'center' | 'end';
+        "position": 'start' | 'center' | 'end' | 'stretch';
     }
     interface KsSideDrawer {
         "headerText": string;
@@ -715,8 +720,11 @@ declare namespace LocalJSX {
         "clickable"?: boolean;
         "collapse"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "href"?: string;
+        "imgAspectRatio"?: string;
         "imgDirection"?: 'top' | 'bottom' | 'left' | 'right' | 'behind';
+        "imgHeight"?: any;
         "imgSrc"?: string;
+        "imgWidth"?: number;
         "lazy"?: boolean;
         "threshold"?: number;
     }
@@ -740,6 +748,9 @@ declare namespace LocalJSX {
         "alt"?: string;
         "clickable"?: boolean;
         "href"?: string;
+        "imgAspectRatio"?: string;
+        "imgHeight"?: any;
+        "imgWidth"?: number;
         "lazy"?: boolean;
         "position"?: 'top' | 'center' | 'bottom';
         "src"?: string;
@@ -787,7 +798,6 @@ declare namespace LocalJSX {
         "position"?: 'left' | 'right';
         "size"?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "text"?: string;
-        "type"?: 'button' | 'submit' | 'reset';
     }
     interface KsDropdownItem {
         "onCloseDropdown"?: (event: CustomEvent<any>) => void;
@@ -953,7 +963,7 @@ declare namespace LocalJSX {
     }
     interface KsRow {
         "gutter"?: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
-        "position"?: 'start' | 'center' | 'end';
+        "position"?: 'start' | 'center' | 'end' | 'stretch';
     }
     interface KsSideDrawer {
         "headerText"?: string;

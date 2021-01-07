@@ -18,6 +18,9 @@ export class Card implements ComponentInterface {
     @Prop() href: string;
     @Prop() clickable: boolean = false;
     @Prop() collapse: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'xs';
+    @Prop() imgWidth: number;
+    @Prop() imgHeight: any;
+    @Prop() imgAspectRatio: string;
 
 
     componentDidLoad() {
@@ -39,8 +42,8 @@ export class Card implements ComponentInterface {
             <Host class={classes} role="article">
                 {this.imgSrc && <div class="card-img">
                     {this.href
-                        ? <a href={this.href} ref={el => this.$link = el}><ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} /></a>
-                        : <ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} />}
+                        ? <a href={this.href} ref={el => this.$link = el}><ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} aspect-ratio={this.imgAspectRatio} /></a>
+                        : <ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} aspect-ratio={this.imgAspectRatio} />}
                 </div>}
                 <div class="card-content">
                     <slot />
