@@ -19,7 +19,7 @@ export class CarouselSlide implements ComponentInterface {
     @Prop() lazy: boolean = false;
     @Prop() threshold: number = 300;
     @Prop() imgWidth: number;
-    @Prop() imgHeight: any;
+    @Prop() imgHeight: number;
     @Prop() imgAspectRatio: string;
 
     componentDidLoad() {

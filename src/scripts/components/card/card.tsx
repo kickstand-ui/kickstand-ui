@@ -19,7 +19,7 @@ export class Card implements ComponentInterface {
     @Prop() clickable: boolean = false;
     @Prop() collapse: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'xs';
     @Prop() imgWidth: number;
-    @Prop() imgHeight: any;
+    @Prop() imgHeight: number;
     @Prop() imgAspectRatio: string;
 
 

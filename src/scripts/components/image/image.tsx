@@ -14,7 +14,7 @@ export class Img implements ComponentInterface {
     @Prop() src: string;
     @Prop() alt: string;
     @Prop({mutable: true}) width: number;
-    @Prop({mutable: true}) height: any;
+    @Prop({mutable: true}) height: number;
     @Prop() lazy: boolean;
     @Prop() aspectRatio: string;
     @Prop() threshold: number = 300;
