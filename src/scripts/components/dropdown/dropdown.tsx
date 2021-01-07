@@ -18,7 +18,6 @@ export class Dropdown {
     @Prop() icon: string;
     @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';
     @Prop() display: 'solid' | 'hollow' | 'clear' | 'link' = 'solid';
-    @Prop() type: 'button' | 'submit' | 'reset' = 'button';
     @Prop() size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
     @Prop() loading: boolean;
     @Prop() disabled: boolean;
@@ -107,6 +106,9 @@ export class Dropdown {
     }
 
     toggleDropdown() {
+        if(this.loading || this.disabled)
+            return;
+
         this.isExpanded = !this.isExpanded;
 
         if (this.isExpanded) {
@@ -138,10 +140,8 @@ export class Dropdown {
             <Host class={dropDownClasses}>
                 <ks-button
                     id={`${this.dropdownId}-button`}
-                    onClick={() => this.toggleDropdown()}
                     color={this.color}
                     display={this.display}
-                    type={this.type}
                     size={this.size}
                     loading={this.loading}
                     disabled={this.disabled}
@@ -149,6 +149,7 @@ export class Dropdown {
                     haspopup={true}
                     expanded={this.isExpanded}
                     controls={this.dropdownId}
+                    onClick={() => this.toggleDropdown()}
                     ref={el => this.$control = el.querySelector('button')}
                 >
                     {this.icon && <ks-icon icon={this.icon} />}

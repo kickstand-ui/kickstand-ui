@@ -4,6 +4,7 @@ export default { title: 'Components/Dropdown' };
 
 const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
 const displays = ['solid', 'hollow', 'clear', 'link'];
+const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
 
 export const playground = () => {
     const dropdownText = text('text', 'Dropdown Test');
@@ -11,10 +12,14 @@ export const playground = () => {
     const buttonColors = select('color', colors, 'primary');
     const buttonIcon = text('icon', '');
     const display = select('display', displays, 'solid');
+    const size = select('size', sizes, 'md');
     const hideButtonText = boolean('hide-text', false);
     const hideIndicator = boolean('hide-indicator', false);
     const megaMenu = boolean('mega-menu', false);
+    const loading = boolean('loading', false);
+    const disabled = boolean('disabled', false);
     const collapse = select('collapse', ['xxs', 'xs', 'sm', 'md', 'lg', 'xl'], 'xs');
+
     return (`
         <div class="display-flex pl-xxl ${dropdownAlignment === 'right' ? 'justify-end' : ''}">
             <ks-dropdown
@@ -28,6 +33,9 @@ export const playground = () => {
                 hide-indicator="${hideIndicator}"
                 mega-menu="${megaMenu}"
                 collapse="${collapse}"
+                loading="${loading}"
+                disabled="${disabled}"
+                size="${size}"
                 >
                 <ks-dropdown-item prevent-close><span>Non-clickable drop-down item with very long text</span></ks-dropdown-item>
                 <ks-dropdown-item><a href="#">Test 2</a></ks-dropdown-item>
