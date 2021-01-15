@@ -28,6 +28,7 @@ export namespace Components {
         "show": () => Promise<void>;
     }
     interface KsAutocomplete {
+        "autoExpand": boolean;
         "debounce": number;
         "disabled": boolean;
         "inputClass": string;
@@ -136,17 +137,18 @@ export namespace Components {
         "position": 'start' | 'center' | 'end' | 'stretch';
     }
     interface KsDropdown {
-        "close": () => Promise<void>;
         "collapse": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
         "disabled": boolean;
         "display": 'solid' | 'hollow' | 'clear' | 'link';
+        "hide": () => Promise<void>;
         "hideIndicator": boolean;
         "hideText": boolean;
         "icon": string;
         "loading": boolean;
         "megaMenu": boolean;
         "position": 'left' | 'right';
+        "show": () => Promise<void>;
         "size": 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "text": string;
     }
@@ -157,12 +159,14 @@ export namespace Components {
         "action": string;
         "enctype": 'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain';
         "errorMessage": string;
+        "formClass": string;
         "inline": boolean;
         "invalid": boolean;
         "method": 'get' | 'post';
         "target": '_self' | '_blank' | '_parent' | '_top';
     }
     interface KsFormField {
+        "autoExpand": boolean;
         "autocomplete"?: string;
         "badInputErrorMessage": string;
         "checked": boolean;
@@ -676,6 +680,7 @@ declare namespace LocalJSX {
         "onShown"?: (event: CustomEvent<any>) => void;
     }
     interface KsAutocomplete {
+        "autoExpand"?: boolean;
         "debounce"?: number;
         "disabled"?: boolean;
         "inputClass"?: string;
@@ -793,8 +798,8 @@ declare namespace LocalJSX {
         "icon"?: string;
         "loading"?: boolean;
         "megaMenu"?: boolean;
-        "onDropdownClosed"?: (event: CustomEvent<any>) => void;
-        "onDropdownOpened"?: (event: CustomEvent<any>) => void;
+        "onHidden"?: (event: CustomEvent<any>) => void;
+        "onShown"?: (event: CustomEvent<any>) => void;
         "position"?: 'left' | 'right';
         "size"?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "text"?: string;
@@ -807,6 +812,7 @@ declare namespace LocalJSX {
         "action"?: string;
         "enctype"?: 'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain';
         "errorMessage"?: string;
+        "formClass"?: string;
         "inline"?: boolean;
         "invalid"?: boolean;
         "method"?: 'get' | 'post';
@@ -814,6 +820,7 @@ declare namespace LocalJSX {
         "target"?: '_self' | '_blank' | '_parent' | '_top';
     }
     interface KsFormField {
+        "autoExpand"?: boolean;
         "autocomplete"?: string;
         "badInputErrorMessage"?: string;
         "checked"?: boolean;

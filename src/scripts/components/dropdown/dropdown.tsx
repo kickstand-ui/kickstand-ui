@@ -114,9 +114,6 @@ export class Dropdown {
     }
 
     toggleDropdown() {
-        if (this.loading || this.disabled)
-            return;
-
         if (this.isExpanded) {
             this.hide();
         } else {
