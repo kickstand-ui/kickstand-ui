@@ -1,8 +1,10 @@
 @import '../00_Abstracts/index';
 
 %heading {
-    @include mt(none); // 1
-    @include mb(md);
+    line-height: 1.2;
+    font-weight: bold;
+    @include mt(none);
+    @include mb(sm);
     @include font(accent);
 }
 
