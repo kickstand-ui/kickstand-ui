@@ -29,13 +29,16 @@ export class LinkButton implements ComponentInterface {
     @Prop() download: boolean;
 
     componentDidRender() {
-        if(this.$loading) {
+        this.showLoading();
+        this.setEventListeners();
+    }
+
+    private showLoading() {
+        if (this.$loading) {
             this.loading
                 ? this.$loading.show()
                 : this.$loading.hide();
         }
-
-        this.setEventListeners();
     }
 
     private setEventListeners() {
@@ -81,6 +84,12 @@ export class LinkButton implements ComponentInterface {
         return props;
     }
 
+    private clickHandler(e: MouseEvent) {
+        if (this.loading || this.disabled) {
+            e.stopPropagation();
+        }
+    }
+
     render() {
         let classes = {
             'button': true,
@@ -104,12 +113,12 @@ export class LinkButton implements ComponentInterface {
         return (
             <Host class="ks-button pointer">
                 {this.href
-                    ? <a class={classes} {...this.getAnchorProps()} href={this.href}>
+                    ? <a class={classes} {...this.getAnchorProps()} href={this.href} onClick={e => this.clickHandler(e)}>
                         <slot />
                     </a>
                     : [
-                        <ks-loading-overlay absolute ref={el => this.$loading = el}></ks-loading-overlay>,
-                        <button {...props} class={classes}>
+                        <ks-loading-overlay absolute ref={el => this.$loading = el} onClick={e => this.clickHandler(e)}></ks-loading-overlay>,
+                        <button {...props} class={classes} onClick={e => this.clickHandler(e)}>
                             <slot />
                         </button >
                     ]}
