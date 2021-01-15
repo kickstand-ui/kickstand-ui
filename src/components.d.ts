@@ -44,6 +44,8 @@ export namespace Components {
         "hollow": boolean;
     }
     interface KsBreadcrumbs {
+        "hrefProp": string;
+        "linkTag": string;
     }
     interface KsButton {
         "buttonClass": string;
@@ -75,12 +77,14 @@ export namespace Components {
         "clickable": boolean;
         "collapse": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "href": string;
+        "hrefProp": string;
         "imgAspectRatio": string;
         "imgDirection": 'top' | 'bottom' | 'left' | 'right' | 'behind';
         "imgHeight": number;
         "imgSrc": string;
         "imgWidth": number;
         "lazy": boolean;
+        "linkTag": string;
         "threshold": number;
     }
     interface KsCardBody {
@@ -103,10 +107,12 @@ export namespace Components {
         "alt": string;
         "clickable": boolean;
         "href": string;
+        "hrefProp": string;
         "imgAspectRatio": string;
         "imgHeight": number;
         "imgWidth": number;
         "lazy": boolean;
+        "linkTag": string;
         "position": 'top' | 'center' | 'bottom';
         "src": string;
         "threshold": number;
@@ -232,10 +238,12 @@ export namespace Components {
     interface KsGallery {
         "gutter": 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "heading": string;
+        "href": string;
+        "hrefProp": string;
         "itemWidth": string;
+        "linkTag": string;
         "nextButtonText": string;
         "prevButtonText": string;
-        "src": string;
     }
     interface KsIcon {
         "icon": string;
@@ -272,7 +280,9 @@ export namespace Components {
         "collapse": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
         "fixed": 'top' | 'bottom';
+        "hrefProp": string;
         "inverted": boolean;
+        "linkTag": string;
         "logoUrl": string;
         "tagline": string;
     }
@@ -698,6 +708,8 @@ declare namespace LocalJSX {
         "hollow"?: boolean;
     }
     interface KsBreadcrumbs {
+        "hrefProp"?: string;
+        "linkTag"?: string;
     }
     interface KsButton {
         "buttonClass"?: string;
@@ -729,12 +741,14 @@ declare namespace LocalJSX {
         "clickable"?: boolean;
         "collapse"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "href"?: string;
+        "hrefProp"?: string;
         "imgAspectRatio"?: string;
         "imgDirection"?: 'top' | 'bottom' | 'left' | 'right' | 'behind';
         "imgHeight"?: number;
         "imgSrc"?: string;
         "imgWidth"?: number;
         "lazy"?: boolean;
+        "linkTag"?: string;
         "threshold"?: number;
     }
     interface KsCardBody {
@@ -757,10 +771,12 @@ declare namespace LocalJSX {
         "alt"?: string;
         "clickable"?: boolean;
         "href"?: string;
+        "hrefProp"?: string;
         "imgAspectRatio"?: string;
         "imgHeight"?: number;
         "imgWidth"?: number;
         "lazy"?: boolean;
+        "linkTag"?: string;
         "position"?: 'top' | 'center' | 'bottom';
         "src"?: string;
         "threshold"?: number;
@@ -889,10 +905,12 @@ declare namespace LocalJSX {
     interface KsGallery {
         "gutter"?: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "heading"?: string;
+        "href"?: string;
+        "hrefProp"?: string;
         "itemWidth"?: string;
+        "linkTag"?: string;
         "nextButtonText"?: string;
         "prevButtonText"?: string;
-        "src"?: string;
     }
     interface KsIcon {
         "icon"?: string;
@@ -927,7 +945,9 @@ declare namespace LocalJSX {
         "collapse"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
         "fixed"?: 'top' | 'bottom';
+        "hrefProp"?: string;
         "inverted"?: boolean;
+        "linkTag"?: string;
         "logoUrl"?: string;
         "tagline"?: string;
     }

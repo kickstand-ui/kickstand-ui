@@ -11,6 +11,9 @@ export const menuBarProperties = () => {
     const fixed = select('fixed', ['', 'top', 'bottom'], '');
     const color = select('color', colors, 'primary')
     const inverted = boolean('inverted', false);
+    const linkTag = text('link-tag', 'a');
+    const hrefProp = text('href-prop', 'href');
+
     return (`
     <div>
         <ks-menu-bar
@@ -22,6 +25,8 @@ export const menuBarProperties = () => {
             inverted="${inverted}"
             inverted="${inverted}"
             fixed="${fixed}"
+            link-tag="${linkTag}"
+            href-prop="${hrefProp}"
             >
             <ks-menu-row>
                 <ks-menu-group>

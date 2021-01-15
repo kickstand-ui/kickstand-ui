@@ -17,6 +17,8 @@ export class MenuBar implements ComponentInterface {
     @Prop() inverted: boolean = false;
     @Prop() logoUrl: string;
     @Prop() tagline: string;
+    @Prop() linkTag: string = 'a';
+    @Prop() hrefProp: string = 'href';
 
     @State() expanded = false;
 
@@ -79,14 +81,16 @@ export class MenuBar implements ComponentInterface {
             'inverted': this.inverted,
             [`fixed-${this.fixed}`]: !!this.fixed
         };
+
+        const CustomTag = this.linkTag;
         
         return (
             <Host class={classes} role="navigation">
                 {(this.logoUrl || this.tagline) &&
-                    <a href="/" class="menu-branding">
+                    <CustomTag class="menu-branding" ref={el => el.setAttribute(this.hrefProp, this.logoUrl)}>
                         {this.logoUrl && <img class="logo" src={this.logoUrl} alt={this.altText} />}
                         {this.tagline && <span class="tagline">{this.tagline}</span>}
-                    </a>
+                    </CustomTag>
                 }
                 <button
                     class="button menu-toggler"

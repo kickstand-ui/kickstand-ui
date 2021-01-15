@@ -21,7 +21,8 @@ export class Card implements ComponentInterface {
     @Prop() imgWidth: number;
     @Prop() imgHeight: number;
     @Prop() imgAspectRatio: string;
-
+    @Prop() linkTag: string = 'a';
+    @Prop() hrefProp: string = 'href';
 
     componentDidLoad() {
         if (this.clickable && this.href)
@@ -38,11 +39,20 @@ export class Card implements ComponentInterface {
             'pointer': this.clickable && this.href !== '' && this.href !== undefined,
             [`collapse-${this.collapse}`]: this.imgDirection !== 'behind'
         };
+
+        let linkProps = {
+            [this.hrefProp]: this.href
+        }
+        
+        const CustomTag = this.linkTag;
+
         return (
             <Host class={classes} role="article">
                 {this.imgSrc && <div class="card-img">
                     {this.href
-                        ? <a href={this.href} ref={el => this.$link = el}><ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} aspect-ratio={this.imgAspectRatio} /></a>
+                        ? <CustomTag {...linkProps} ref={el => this.$link = el}>
+                            <ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} aspect-ratio={this.imgAspectRatio} />
+                        </CustomTag>
                         : <ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} aspect-ratio={this.imgAspectRatio} />}
                 </div>}
                 <div class="card-content">

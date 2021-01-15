@@ -76,21 +76,6 @@ export class LinkButton implements ComponentInterface {
         this.$el.addEventListener('click', () => $hidesComponent.hide());
     }
 
-    // private getAnchorProps() {
-    //     let props = {
-    //         'target': this.target || false,
-    //         'rel': this.target ? 'noopener' : false,
-    //         'download': this.download,
-    //         [this.hrefProp]: this.href
-    //     };
-
-    //     // (this.href && this.target) && (props['target'] = this.target);
-    //     // (this.target && this.href) && (props['rel'] = 'noopener');
-    //     // (this.href && this.download) && (props['download'] = true);
-
-    //     return props;
-    // }
-
     private clickHandler(e: MouseEvent) {
         if (this.loading || this.disabled) {
             e.stopPropagation();
@@ -124,11 +109,8 @@ export class LinkButton implements ComponentInterface {
             [this.hrefProp]: this.href
         };
 
-
         const CustomTag = this.linkTag;
-        console.log(this.linkTag);
         
-
         return (
             <Host class="ks-button pointer">
                 {this.href

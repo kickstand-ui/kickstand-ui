@@ -11,10 +11,12 @@
 | ---------------- | ------------------ | ----------- | -------------------------------------------------------------------------------------- | ---------------- |
 | `gutter`         | `gutter`           |             | `"lg" \| "md" \| "none" \| "sm" \| "xl" \| "xs" \| "xxl" \| "xxs" \| "xxxl" \| "xxxs"` | `'md'`           |
 | `heading`        | `heading`          |             | `string`                                                                               | `undefined`      |
+| `href`           | `href`             |             | `string`                                                                               | `undefined`      |
+| `hrefProp`       | `href-prop`        |             | `string`                                                                               | `'href'`         |
 | `itemWidth`      | `item-width`       |             | `string`                                                                               | `undefined`      |
+| `linkTag`        | `link-tag`         |             | `string`                                                                               | `'a'`            |
 | `nextButtonText` | `next-button-text` |             | `string`                                                                               | `'scroll right'` |
 | `prevButtonText` | `prev-button-text` |             | `string`                                                                               | `'scroll left'`  |
-| `src`            | `src`              |             | `string`                                                                               | `undefined`      |
 
 
 ## Dependencies
