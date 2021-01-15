@@ -23,6 +23,7 @@ export class Form implements ComponentInterface {
     @Prop({ mutable: true }) invalid: boolean = false;
     @Prop() errorMessage: string = 'One or more of the from fields are not valid. Please, review the form and try again.';
     @Prop() inline: boolean = false;
+    @Prop() formClass: string;
 
     @Event() submitted!: EventEmitter<IFormData>;
 
@@ -58,7 +59,8 @@ export class Form implements ComponentInterface {
     render() {
         let classes = {
             'form': true,
-            'inline-form': this.inline
+            'inline-form': this.inline,
+            [`${this.formClass}`]: this.formClass !== undefined
         };
 
         return (
