@@ -88,6 +88,7 @@ export class FormField implements ComponentInterface {
     @Prop() iconDirection: 'left' | 'right' = 'right';
     @Prop() size: 'sm' | 'md' | 'lg' = 'md';
     @Prop() inputClass: string;
+    @Prop() autoExpand: boolean = false;
 
     @Event() updated!: EventEmitter<IFormFieldData>;
     @Event() blurred!: EventEmitter;
@@ -277,6 +278,7 @@ export class FormField implements ComponentInterface {
                     disabled={this.disabled}
                     size={this.size}
                     input-class={this.inputClass}
+                    auto-expand={this.autoExpand}
                     onChanged={e => this.handleComponentChange(e)}
                     ref={e => this.$customInput = e}
                 >
