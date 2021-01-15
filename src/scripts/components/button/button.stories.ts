@@ -16,6 +16,8 @@ export const playground = () => {
     const target = text('target', '');
     const buttonClass = text('button-class', '');
     const css2class = text('class', '');
+    const linkTag = text('link-tag', 'a');
+    const hrefProp = text('href-prop', 'href');
     return (`<ks-button
             class="${css2class}"
             button-class="${buttonClass}" 
@@ -26,7 +28,9 @@ export const playground = () => {
             href="${linkUrl}"
             loading="${loading}"
             disabled="${disabled}"
-            target="${target}">
+            target="${target}"
+            link-tag="${linkTag}"
+            href-prop="${hrefProp}">
             ${color} button
         </ks-button>`);
 };

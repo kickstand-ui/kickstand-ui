@@ -58,6 +58,8 @@ export namespace Components {
         "haspopup": boolean;
         "hides": string;
         "href": string;
+        "hrefProp": string;
+        "linkTag": string;
         "loading": boolean;
         "shows": string;
         "size": 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -710,6 +712,8 @@ declare namespace LocalJSX {
         "haspopup"?: boolean;
         "hides"?: string;
         "href"?: string;
+        "hrefProp"?: string;
+        "linkTag"?: string;
         "loading"?: boolean;
         "shows"?: string;
         "size"?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
