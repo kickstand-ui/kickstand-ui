@@ -102,6 +102,9 @@ export class Dropdown {
         this.$focusableEls = Array.from(this.$contents.querySelectorAll(FOCUSABLE_ELEMENTS));
 
         window.addEventListener('click', (e: MouseEvent) => {
+            if(!this.isExpanded)
+                return;
+                
             let $preventCloseElements = Array.from(document.querySelectorAll('.prevent-dropdown-close'));
             let isPreventClose = this.$el.contains(e.target as HTMLElement)
                 || $preventCloseElements.some(x => x.contains(e.target as HTMLElement));
