@@ -135,3 +135,7 @@ export const buttonBar = () => {
         </ks-button-bar>
     </div>`)
 }
+
+export const inlineButton = () => {
+    return (`This is <a href="#">some</a> text with a <ks-button display="link">inline button</ks-button> in a sentence.`);
+};
