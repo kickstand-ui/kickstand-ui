@@ -16,6 +16,8 @@ $breakpoints: (xl, lg, md, sm, xs, xxs, print);
 
     &-normal {
         font-weight: normal !important;
+        text-decoration: none !important;
+        font-style: normal !important;
     }
 
     &-lighter {
