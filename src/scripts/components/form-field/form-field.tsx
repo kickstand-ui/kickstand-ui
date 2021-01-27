@@ -92,6 +92,7 @@ export class FormField implements ComponentInterface {
 
     @Event() updated!: EventEmitter<IFormFieldData>;
     @Event() blurred!: EventEmitter;
+    @Event() cleared!: EventEmitter;
 
     @State() validityState: ValidityState;
     @State() showPassword: boolean = false;
@@ -112,7 +113,7 @@ export class FormField implements ComponentInterface {
             return;
 
         if (this.$input && this.$input.value !== this.value)
-            this.$input.value = this.value.toString();
+            this.$input.value = this.value?.toString();
 
         if (this.validateOnInput)
             this.invalid = !this.$input.checkValidity();
@@ -122,14 +123,6 @@ export class FormField implements ComponentInterface {
         this.updated.emit(detail);
     }
 
-    handleComponentChange(e) {
-        let inputData: IFormFieldData = e.detail;
-        this.invalid = !inputData.isValid;
-        this.validityState = inputData.validity
-        this.value = inputData.value;
-        this.updated.emit(inputData);
-    }
-
     componentDidLoad() {
         if (this.type !== 'select' || this.datalist) {
             const $options = Array.from(this.$el.querySelectorAll('option')) as HTMLElement[];
@@ -137,6 +130,14 @@ export class FormField implements ComponentInterface {
         }
 
         this.inputHandler = debounce(() => this.value = this.$input.value || '', this.debounce);
+    }
+
+    private handleComponentChange(e) {
+        let inputData: IFormFieldData = e.detail;
+        this.invalid = !inputData.isValid;
+        this.validityState = inputData.validity
+        this.value = inputData.value;
+        this.updated.emit(inputData);
     }
 
     private async validateField(): Promise<IFormFieldData> {
@@ -219,12 +220,12 @@ export class FormField implements ComponentInterface {
 
     private handleTogglePasswordClick() {
         this.showPassword = !this.showPassword;
-
         this.$input.setAttribute('type', this.showPassword ? 'text' : 'password');
     }
 
     private handleClearContentsClick() {
         this.value = '';
+        this.cleared.emit();
     }
 
     render() {

@@ -56,6 +56,7 @@
 | Event     | Description | Type                          |
 | --------- | ----------- | ----------------------------- |
 | `blurred` |             | `CustomEvent<any>`            |
+| `cleared` |             | `CustomEvent<any>`            |
 | `updated` |             | `CustomEvent<IFormFieldData>` |
 
 

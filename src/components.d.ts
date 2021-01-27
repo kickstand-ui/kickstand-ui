@@ -65,7 +65,6 @@ export namespace Components {
         "loading": boolean;
         "shows": string;
         "size": 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-        "tabIndex": number;
         "target": string;
         "type": 'button' | 'submit' | 'reset';
     }
@@ -729,7 +728,6 @@ declare namespace LocalJSX {
         "loading"?: boolean;
         "shows"?: string;
         "size"?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-        "tabIndex"?: number;
         "target"?: string;
         "type"?: 'button' | 'submit' | 'reset';
     }
@@ -866,6 +864,7 @@ declare namespace LocalJSX {
         "minlengthErrorMessage"?: string;
         "name"?: string;
         "onBlurred"?: (event: CustomEvent<any>) => void;
+        "onCleared"?: (event: CustomEvent<any>) => void;
         "onUpdated"?: (event: CustomEvent<IFormFieldData>) => void;
         "pattern"?: string;
         "patternErrorMessage"?: string;
