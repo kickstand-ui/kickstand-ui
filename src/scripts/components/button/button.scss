@@ -14,6 +14,7 @@
         cursor: pointer;
         width: 100%;
         text-align: center;
+        display: block;
         @include br(sm);
         @include p(md);
         @include shadow(xs);
