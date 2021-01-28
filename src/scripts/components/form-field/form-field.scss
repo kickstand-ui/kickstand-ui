@@ -239,14 +239,15 @@
         align-items: center;
         width: 100%;
 
-        select {
+        select.form-input {
             cursor: pointer;
             appearance: none;
-            line-height: 1.1;
+            line-height: 1.5;
             -webkit-appearance: none;
             -moz-appearance: none;
             -o-appearance: none;
             @include br(sm);
+            @include py(none);
 
             &::-ms-expand {
                 display: none;
