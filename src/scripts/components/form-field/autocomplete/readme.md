@@ -25,6 +25,7 @@
 | Event     | Description | Type                          |
 | --------- | ----------- | ----------------------------- |
 | `changed` |             | `CustomEvent<IFormFieldData>` |
+| `cleared` |             | `CustomEvent<any>`            |
 
 
 ## Methods

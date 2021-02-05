@@ -34,6 +34,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
     @State() searchTerm: string;
 
     @Event() changed!: EventEmitter<IFormFieldData>;
+    @Event() cleared!: EventEmitter;
 
     @Method()
     async validate() {
@@ -185,6 +186,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
         this.$input.value = '';
         this.$select.value = '';
         this.changed.emit(this.validateField());
+        this.cleared.emit();
         this.filterOptions();
     }
 

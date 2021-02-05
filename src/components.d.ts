@@ -698,6 +698,7 @@ declare namespace LocalJSX {
         "inputId"?: string;
         "name"?: string;
         "onChanged"?: (event: CustomEvent<IFormFieldData>) => void;
+        "onCleared"?: (event: CustomEvent<any>) => void;
         "required"?: boolean;
         "size"?: 'sm' | 'md' | 'lg';
         "value"?: string | number | boolean | any[] | null;
