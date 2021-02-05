@@ -34,6 +34,7 @@ export const playground = () => {
     const icon = text('icon', '');
     const iconDirection = select('icon-direction', ['left', 'right'], 'right');
     const size = select('size', sizes, 'md');
+    const autoExpand = boolean('auto-expand', false);
 
     return (`<div class="m-xxl">
         <ks-form-field 
@@ -65,11 +66,13 @@ export const playground = () => {
             icon="${icon}"
             icon-direction="${iconDirection}"
             size="${size}"
+            auto-expand="${autoExpand}"
             >
             <option selected>Choose a value</option>
             <option>Value 1</option>
             <option>Value 2</option>
             <option>Value 3</option>
+            <option>Popper green 3</option>
         </ks-form-field>
     </div>`);
 };

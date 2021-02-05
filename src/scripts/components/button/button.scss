@@ -5,18 +5,16 @@
     position: relative;
 
     .button {
-        display: flex;
-        align-items: center;
         text-decoration: none;
         line-height: 1;
         white-space: nowrap;
         text-align: center;
-        vertical-align: middle;
         position: relative;
         font-weight: bold;
         cursor: pointer;
         width: 100%;
         text-align: center;
+        display: block;
         @include br(sm);
         @include p(md);
         @include shadow(xs);
@@ -38,6 +36,10 @@
             opacity: 0.6;
             cursor: not-allowed;
             @include shadow(inner);
+
+            * {
+                pointer-events: none;
+            }
         }
 
         .button-text {

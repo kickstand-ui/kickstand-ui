@@ -63,13 +63,13 @@
                     @include py(sm);
                     @include font-size(sm);
                 }
-    
+
                 &-md {
                     height: 3rem;
                     @include py(md);
                     @include font-size(sm);
                 }
-    
+
                 &-lg {
                     height: 3.75rem;
                     @include py(lg);
@@ -195,39 +195,43 @@
         &.display-icon-left {
             padding-left: 2.25rem;
         }
-    
+
         &.display-icon-right {
             padding-right: 2.25rem;
-        }    
+        }
     }
 
-    .input-icon {
-        @include p(xxs);
-        @include color(light, darker);
-    }
+    .input-wrapper {
+        position: relative;
 
-    .icon-left {
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-15%);
-        @include ml(sm);
-        @include font-size(md);
-    }
+        .input-icon {
+            @include p(xxs);
+            @include color(light, darker);
+        }
 
-    .icon-right {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-15%);
-        @include mr(sm);
-        @include font-size(md);
+        .icon-left {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            @include ml(md);
+            @include font-size(md);
+        }
 
-        .input-button {
-            .icon {
-                @include color(dark, lighter)
+        .icon-right {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            @include mr(md);
+            @include font-size(md);
+
+            .input-button {
+                .icon {
+                    @include color(dark, lighter)
+                }
             }
-        }    
+        }
     }
 
     .select-wrapper {
@@ -235,12 +239,19 @@
         align-items: center;
         width: 100%;
 
-        select {
+        select.form-input {
             cursor: pointer;
             appearance: none;
+            line-height: 1.5;
             -webkit-appearance: none;
             -moz-appearance: none;
+            -o-appearance: none;
             @include br(sm);
+            @include py(none);
+
+            &::-ms-expand {
+                display: none;
+            }
         }
 
         .select-icon {

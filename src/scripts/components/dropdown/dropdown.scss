@@ -5,6 +5,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 .ks-dropdown {
     position: relative;
     display: inline-block;
+    line-height: 1;
 
     &.mega-menu {
         display: inline-block;
@@ -50,7 +51,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         overflow: hidden;
         white-space: nowrap;
         width: auto;
-        overflow-x: scroll;
+        overflow-x: auto;
         transform: translateY(-0.25rem);
         background-color: white;
         @include br(sm);
@@ -78,7 +79,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
             a,
             button {
-                @include hover-focus {
+                @include hover {
                     background-color: color-value(light, lighter);
                 }
             }

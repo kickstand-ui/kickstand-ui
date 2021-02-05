@@ -21,10 +21,11 @@
 | `haspopup`    | `haspopup`     |             | `boolean`                                                                                       | `false`     |
 | `hides`       | `hides`        |             | `string`                                                                                        | `undefined` |
 | `href`        | `href`         |             | `string`                                                                                        | `undefined` |
+| `hrefProp`    | `href-prop`    |             | `string`                                                                                        | `'href'`    |
+| `linkTag`     | `link-tag`     |             | `string`                                                                                        | `'a'`       |
 | `loading`     | `loading`      |             | `boolean`                                                                                       | `undefined` |
 | `shows`       | `shows`        |             | `string`                                                                                        | `undefined` |
 | `size`        | `size`         |             | `"lg" \| "md" \| "sm" \| "xl" \| "xs"`                                                          | `'md'`      |
-| `tabIndex`    | `tab-index`    |             | `number`                                                                                        | `undefined` |
 | `target`      | `target`       |             | `string`                                                                                        | `undefined` |
 | `type`        | `type`         |             | `"button" \| "reset" \| "submit"`                                                               | `'button'`  |
 

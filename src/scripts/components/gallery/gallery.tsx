@@ -13,11 +13,13 @@ export class Gallery implements ComponentInterface {
 
     @Element() $el: HTMLElement;
     @Prop() heading: string;
-    @Prop() src: string;
+    @Prop() href: string;
     @Prop() gutter: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl' = 'md';
     @Prop() itemWidth: string;
     @Prop() prevButtonText: string = 'scroll left';
     @Prop() nextButtonText: string = 'scroll right';
+    @Prop() linkTag: string = 'a';
+    @Prop() hrefProp: string = 'href';
 
     @State() isStart = true;
     @State() isEnd = false;
@@ -122,10 +124,12 @@ export class Gallery implements ComponentInterface {
             'b-r-xxxs': !this.isEnd
         }
 
+        const CustomTag = this.linkTag;
+
         return (
             <Host class={classes}>
                 <header class="header">
-                    <h2 class="heading">{this.src ? <a href={this.src}>{this.heading}</a> : this.heading}</h2>
+                    <h2 class="heading">{this.href ? <CustomTag ref={el => el.setAttribute(this.hrefProp, this.href)}>{this.heading}</CustomTag> : this.heading}</h2>
                     <div class="controls">
                         <ks-button class="scroll-left" size="xs" display="clear" disabled={this.isStart} onClick={() => this.scrollLeft()}>
                             <ks-icon class="text-lg" icon="chevron_left" label={this.prevButtonText}></ks-icon>

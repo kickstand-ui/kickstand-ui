@@ -26,18 +26,27 @@ export class Dropdown {
     @Prop() megaMenu: boolean = false;
     @Prop() collapse: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'xs';
 
-    @Event() dropdownOpened: EventEmitter;
-    @Event() dropdownClosed: EventEmitter;
+    @Event() shown: EventEmitter;
+    @Event() hidden: EventEmitter;
 
     @State() isExpanded: boolean = false;
     @State() focusIndex: number = 0;
 
     @Method()
-    async close() {
+    async hide() {
         this.isExpanded = false;
         this.focusIndex = 0;
-        this.dropdownClosed.emit();
+        this.hidden.emit();
         setTimeout(() => this.$control.focus());
+    }
+
+    @Method()
+    async show() {
+        this.isExpanded = true;
+        this.shown.emit();
+
+        if (this.$focusableEls.length > 0)
+            setTimeout(() => this.$focusableEls[0].focus(), 100);
     }
 
     @Listen('keydown')
@@ -59,11 +68,11 @@ export class Dropdown {
 
     @Listen('closeDropdown')
     handleCloseDropdown() {
-        this.close();
+        this.hide();
     }
 
     handleEsc() {
-        this.close();
+        this.hide();
     }
 
     handleTab(e: KeyboardEvent) {
@@ -93,6 +102,9 @@ export class Dropdown {
         this.$focusableEls = Array.from(this.$contents.querySelectorAll(FOCUSABLE_ELEMENTS));
 
         window.addEventListener('click', (e: MouseEvent) => {
+            if(!this.isExpanded)
+                return;
+                
             let $preventCloseElements = Array.from(document.querySelectorAll('.prevent-dropdown-close'));
             let isPreventClose = this.$el.contains(e.target as HTMLElement)
                 || $preventCloseElements.some(x => x.contains(e.target as HTMLElement));
@@ -100,24 +112,15 @@ export class Dropdown {
             if (isPreventClose)
                 return;
 
-            this.isExpanded = false;
-            this.dropdownClosed.emit();
+            this.hide();
         });
     }
 
     toggleDropdown() {
-        if(this.loading || this.disabled)
-            return;
-
-        this.isExpanded = !this.isExpanded;
-
         if (this.isExpanded) {
-            this.dropdownOpened.emit();
-
-            if(this.$focusableEls.length > 0)
-                setTimeout(() => this.$focusableEls[0].focus(), 100);
+            this.hide();
         } else {
-            this.dropdownClosed.emit();
+            this.show();
         }
     }
 

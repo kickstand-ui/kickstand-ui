@@ -21,6 +21,8 @@ export class CarouselSlide implements ComponentInterface {
     @Prop() imgWidth: number;
     @Prop() imgHeight: number;
     @Prop() imgAspectRatio: string;
+    @Prop() linkTag: string = 'a';
+    @Prop() hrefProp: string = 'href';
 
     componentDidLoad() {
         if (this.clickable)
@@ -64,13 +66,20 @@ export class CarouselSlide implements ComponentInterface {
             [`text-${this.align}`]: true
         };
 
+        let linkProps = {
+            [this.hrefProp]: this.href,
+            'class': 'sr-only'
+        }
+
+        const CustomTag = this.linkTag;
+
         return (
             <Host class={classes} role="tabpanel" aria-hidden="true">
                 {this.src && <ks-img class="slide-image" alt={this.alt} lazy={this.lazy} src={this.src} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} aspect-ratio={this.imgAspectRatio} />}
                 <div class={contentClasses} ref={el => this.$content = el}>
                     <slot />
                 </div>
-                {(this.clickable && this.href) && <a href={this.href} class="sr-only" ref={el => this.$link = el}>link to {this.href}</a>}
+                {(this.clickable && this.href) && <CustomTag {...linkProps} ref={el => this.$link = el}>link to {this.href}</CustomTag>}
             </Host>
         );
     }

@@ -9,6 +9,7 @@
 
 | Property                | Attribute                 | Description | Type                                                                                                                                                                                                                                               | Default                                                                                                               |
 | ----------------------- | ------------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `autoExpand`            | `auto-expand`             |             | `boolean`                                                                                                                                                                                                                                          | `false`                                                                                                               |
 | `autocomplete`          | `autocomplete`            |             | `string`                                                                                                                                                                                                                                           | `undefined`                                                                                                           |
 | `badInputErrorMessage`  | `bad-input-error-message` |             | `string`                                                                                                                                                                                                                                           | `'There was a problem processing the value.'`                                                                         |
 | `checked`               | `checked`                 |             | `boolean`                                                                                                                                                                                                                                          | `false`                                                                                                               |
@@ -55,6 +56,7 @@
 | Event     | Description | Type                          |
 | --------- | ----------- | ----------------------------- |
 | `blurred` |             | `CustomEvent<any>`            |
+| `cleared` |             | `CustomEvent<any>`            |
 | `updated` |             | `CustomEvent<IFormFieldData>` |
 
 

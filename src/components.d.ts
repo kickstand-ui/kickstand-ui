@@ -28,6 +28,7 @@ export namespace Components {
         "show": () => Promise<void>;
     }
     interface KsAutocomplete {
+        "autoExpand": boolean;
         "debounce": number;
         "disabled": boolean;
         "inputClass": string;
@@ -43,6 +44,8 @@ export namespace Components {
         "hollow": boolean;
     }
     interface KsBreadcrumbs {
+        "hrefProp": string;
+        "linkTag": string;
     }
     interface KsButton {
         "buttonClass": string;
@@ -57,10 +60,11 @@ export namespace Components {
         "haspopup": boolean;
         "hides": string;
         "href": string;
+        "hrefProp": string;
+        "linkTag": string;
         "loading": boolean;
         "shows": string;
         "size": 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-        "tabIndex": number;
         "target": string;
         "type": 'button' | 'submit' | 'reset';
     }
@@ -72,12 +76,14 @@ export namespace Components {
         "clickable": boolean;
         "collapse": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "href": string;
+        "hrefProp": string;
         "imgAspectRatio": string;
         "imgDirection": 'top' | 'bottom' | 'left' | 'right' | 'behind';
         "imgHeight": number;
         "imgSrc": string;
         "imgWidth": number;
         "lazy": boolean;
+        "linkTag": string;
         "threshold": number;
     }
     interface KsCardBody {
@@ -100,10 +106,12 @@ export namespace Components {
         "alt": string;
         "clickable": boolean;
         "href": string;
+        "hrefProp": string;
         "imgAspectRatio": string;
         "imgHeight": number;
         "imgWidth": number;
         "lazy": boolean;
+        "linkTag": string;
         "position": 'top' | 'center' | 'bottom';
         "src": string;
         "threshold": number;
@@ -136,17 +144,18 @@ export namespace Components {
         "position": 'start' | 'center' | 'end' | 'stretch';
     }
     interface KsDropdown {
-        "close": () => Promise<void>;
         "collapse": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
         "disabled": boolean;
         "display": 'solid' | 'hollow' | 'clear' | 'link';
+        "hide": () => Promise<void>;
         "hideIndicator": boolean;
         "hideText": boolean;
         "icon": string;
         "loading": boolean;
         "megaMenu": boolean;
         "position": 'left' | 'right';
+        "show": () => Promise<void>;
         "size": 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "text": string;
     }
@@ -157,12 +166,14 @@ export namespace Components {
         "action": string;
         "enctype": 'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain';
         "errorMessage": string;
+        "formClass": string;
         "inline": boolean;
         "invalid": boolean;
         "method": 'get' | 'post';
         "target": '_self' | '_blank' | '_parent' | '_top';
     }
     interface KsFormField {
+        "autoExpand": boolean;
         "autocomplete"?: string;
         "badInputErrorMessage": string;
         "checked": boolean;
@@ -226,10 +237,12 @@ export namespace Components {
     interface KsGallery {
         "gutter": 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "heading": string;
+        "href": string;
+        "hrefProp": string;
         "itemWidth": string;
+        "linkTag": string;
         "nextButtonText": string;
         "prevButtonText": string;
-        "src": string;
     }
     interface KsIcon {
         "icon": string;
@@ -266,7 +279,9 @@ export namespace Components {
         "collapse": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
         "fixed": 'top' | 'bottom';
+        "hrefProp": string;
         "inverted": boolean;
+        "linkTag": string;
         "logoUrl": string;
         "tagline": string;
     }
@@ -676,6 +691,7 @@ declare namespace LocalJSX {
         "onShown"?: (event: CustomEvent<any>) => void;
     }
     interface KsAutocomplete {
+        "autoExpand"?: boolean;
         "debounce"?: number;
         "disabled"?: boolean;
         "inputClass"?: string;
@@ -691,6 +707,8 @@ declare namespace LocalJSX {
         "hollow"?: boolean;
     }
     interface KsBreadcrumbs {
+        "hrefProp"?: string;
+        "linkTag"?: string;
     }
     interface KsButton {
         "buttonClass"?: string;
@@ -705,10 +723,11 @@ declare namespace LocalJSX {
         "haspopup"?: boolean;
         "hides"?: string;
         "href"?: string;
+        "hrefProp"?: string;
+        "linkTag"?: string;
         "loading"?: boolean;
         "shows"?: string;
         "size"?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-        "tabIndex"?: number;
         "target"?: string;
         "type"?: 'button' | 'submit' | 'reset';
     }
@@ -720,12 +739,14 @@ declare namespace LocalJSX {
         "clickable"?: boolean;
         "collapse"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "href"?: string;
+        "hrefProp"?: string;
         "imgAspectRatio"?: string;
         "imgDirection"?: 'top' | 'bottom' | 'left' | 'right' | 'behind';
         "imgHeight"?: number;
         "imgSrc"?: string;
         "imgWidth"?: number;
         "lazy"?: boolean;
+        "linkTag"?: string;
         "threshold"?: number;
     }
     interface KsCardBody {
@@ -748,10 +769,12 @@ declare namespace LocalJSX {
         "alt"?: string;
         "clickable"?: boolean;
         "href"?: string;
+        "hrefProp"?: string;
         "imgAspectRatio"?: string;
         "imgHeight"?: number;
         "imgWidth"?: number;
         "lazy"?: boolean;
+        "linkTag"?: string;
         "position"?: 'top' | 'center' | 'bottom';
         "src"?: string;
         "threshold"?: number;
@@ -793,8 +816,8 @@ declare namespace LocalJSX {
         "icon"?: string;
         "loading"?: boolean;
         "megaMenu"?: boolean;
-        "onDropdownClosed"?: (event: CustomEvent<any>) => void;
-        "onDropdownOpened"?: (event: CustomEvent<any>) => void;
+        "onHidden"?: (event: CustomEvent<any>) => void;
+        "onShown"?: (event: CustomEvent<any>) => void;
         "position"?: 'left' | 'right';
         "size"?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "text"?: string;
@@ -807,6 +830,7 @@ declare namespace LocalJSX {
         "action"?: string;
         "enctype"?: 'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain';
         "errorMessage"?: string;
+        "formClass"?: string;
         "inline"?: boolean;
         "invalid"?: boolean;
         "method"?: 'get' | 'post';
@@ -814,6 +838,7 @@ declare namespace LocalJSX {
         "target"?: '_self' | '_blank' | '_parent' | '_top';
     }
     interface KsFormField {
+        "autoExpand"?: boolean;
         "autocomplete"?: string;
         "badInputErrorMessage"?: string;
         "checked"?: boolean;
@@ -839,6 +864,7 @@ declare namespace LocalJSX {
         "minlengthErrorMessage"?: string;
         "name"?: string;
         "onBlurred"?: (event: CustomEvent<any>) => void;
+        "onCleared"?: (event: CustomEvent<any>) => void;
         "onUpdated"?: (event: CustomEvent<IFormFieldData>) => void;
         "pattern"?: string;
         "patternErrorMessage"?: string;
@@ -878,10 +904,12 @@ declare namespace LocalJSX {
     interface KsGallery {
         "gutter"?: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "heading"?: string;
+        "href"?: string;
+        "hrefProp"?: string;
         "itemWidth"?: string;
+        "linkTag"?: string;
         "nextButtonText"?: string;
         "prevButtonText"?: string;
-        "src"?: string;
     }
     interface KsIcon {
         "icon"?: string;
@@ -916,7 +944,9 @@ declare namespace LocalJSX {
         "collapse"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
         "fixed"?: 'top' | 'bottom';
+        "hrefProp"?: string;
         "inverted"?: boolean;
+        "linkTag"?: string;
         "logoUrl"?: string;
         "tagline"?: string;
     }

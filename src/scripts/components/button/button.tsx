@@ -14,6 +14,8 @@ export class LinkButton implements ComponentInterface {
     @Prop() display: 'solid' | 'hollow' | 'clear' | 'link' = 'solid';
     @Prop() size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
     @Prop() href: string;
+    @Prop() linkTag: string = 'a';
+    @Prop() hrefProp: string = 'href';
     @Prop() cssClass: string = '';
     @Prop() buttonClass: string = '';
     @Prop() haspopup: boolean = false;
@@ -22,20 +24,22 @@ export class LinkButton implements ComponentInterface {
     @Prop() disabled: boolean;
     @Prop() controls: string;
     @Prop() describedBy: string;
-    @Prop() tabIndex: number;
     @Prop() shows: string;
     @Prop() hides: string;
     @Prop() target: string;
     @Prop() download: boolean;
 
     componentDidRender() {
-        if(this.$loading) {
+        this.showLoading();
+        this.setEventListeners();
+    }
+
+    private showLoading() {
+        if (this.$loading) {
             this.loading
                 ? this.$loading.show()
                 : this.$loading.hide();
         }
-
-        this.setEventListeners();
     }
 
     private setEventListeners() {
@@ -71,14 +75,10 @@ export class LinkButton implements ComponentInterface {
         this.$el.addEventListener('click', () => $hidesComponent.hide());
     }
 
-    private getAnchorProps() {
-        let props = {};
-
-        (this.href && this.target) && (props['target'] = this.target);
-        (this.target && this.href) && (props['rel'] = 'noopener');
-        (this.href && this.download) && (props['download'] = true);
-
-        return props;
+    private clickHandler(e: MouseEvent) {
+        if (this.loading || this.disabled) {
+            e.stopPropagation();
+        }
     }
 
     render() {
@@ -97,19 +97,27 @@ export class LinkButton implements ComponentInterface {
             'aria-controls': this.controls,
             'aria-described-by': this.describedBy,
             'disabled': this.disabled || this.loading,
-            'type': this.type,
-            'tabindex': this.tabIndex
-        }
+            'type': this.type
+        };
 
+        let linkProps = {
+            'target': this.target || undefined,
+            'rel': this.target ? 'noopener' : undefined,
+            'download': this.download,
+            [this.hrefProp]: this.href
+        };
+
+        const CustomTag = this.linkTag;
+        
         return (
             <Host class="ks-button pointer">
                 {this.href
-                    ? <a class={classes} {...this.getAnchorProps()} href={this.href}>
+                    ? <CustomTag class={classes} {...linkProps} onClick={e => this.clickHandler(e)}>
                         <slot />
-                    </a>
+                    </CustomTag>
                     : [
-                        <ks-loading-overlay absolute ref={el => this.$loading = el}></ks-loading-overlay>,
-                        <button {...props} class={classes}>
+                        <ks-loading-overlay absolute ref={el => this.$loading = el} onClick={e => this.clickHandler(e)}></ks-loading-overlay>,
+                        <button {...props} class={classes} onClick={e => this.clickHandler(e)}>
                             <slot />
                         </button >
                     ]}

@@ -6,8 +6,19 @@ export const playground = () => {
     const heading = text('heading', 'Test Gallery');
     const gutter = select('gutter', ['none', 'xxxs', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'], 'md');
     const width = text('item-width', '300px');
+    const href = text('href', '');
+    const linkTag = text('link-tag', 'a');
+    const hrefProp = text('href-prop', 'href');
+
     return (`<div class="m-xxl">
-        <ks-gallery heading="${heading}" gutter="${gutter}" item-width="${width}">
+        <ks-gallery 
+            heading="${heading}" 
+            gutter="${gutter}" 
+            item-width="${width}"
+            href="${href}"
+            link-tag="${linkTag}"
+            href-prop="${hrefProp}"
+            >
             <ks-card img-src="https://media.boingboing.net/wp-content/uploads/2018/07/screenshot-22.jpg"
                 alt="Michael Scott"
                 >

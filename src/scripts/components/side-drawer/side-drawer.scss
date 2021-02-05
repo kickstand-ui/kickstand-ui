@@ -26,12 +26,14 @@ $drawer-sizes: (sm: 16rem,
                 &.size-#{$key} {
                     width: $value;
                     #{$direction}: -$value;
+                    @include transition($speed: med);
                 }
             }
 
             &.show {
                 visibility: visible;
                 #{$direction}: 0;
+                @include transition($speed: med);
             }
         }
     }
@@ -49,17 +51,13 @@ $drawer-sizes: (sm: 16rem,
         }
 
         .drawer-close {
-            .ks-button {
+            &.ks-button {
+                line-height: 1;
+                @include mb(sm);
+
                 .button {
                     @include p(none);
-
-                    .button-text {
-                        display: inline-flex;
-                    }
-
-                    .icon {
-                        @include font-size(md);
-                    }
+                    @include font-size(md);
                 }
             }
         }

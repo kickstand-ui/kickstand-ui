@@ -26,6 +26,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
     @Prop() debounce: number = 0;
     @Prop() size: 'sm' | 'md' | 'lg' = 'md';
     @Prop() inputClass: string;
+    @Prop() autoExpand: boolean = false;
 
     @State() isExpanded: boolean = false;
     @State() isValid: boolean = true;
@@ -76,7 +77,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
         return fieldData;
     }
 
-    private onKeyUpHandler(e: KeyboardEvent) {
+    private keyUpHandler(e: KeyboardEvent) {
         switch (e.keyCode) {
             case keyCodes.LEFT_ARROW:
             case keyCodes.RIGHT_ARROW:
@@ -99,7 +100,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
         }
     }
 
-    private onBlurHandler() {
+    private blurHandler() {
         const timeout = setTimeout(() => {
             this.hideOptions();
             this.changed.emit(this.validateField());
@@ -212,6 +213,11 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
         this.changed.emit(this.validateField());
     }
 
+    private focusHandler() {
+        if(this.autoExpand)
+            this.showOptions();
+    }
+
     render() {
         let selectProps = {
             'disabled': this.disabled,
@@ -245,8 +251,9 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
                         role="combobox"
                         id={this.inputId}
                         aria-expanded={`${this.isExpanded}`}
-                        onKeyUp={(e) => this.onKeyUpHandler(e)}
-                        onBlur={() => this.onBlurHandler()}
+                        onKeyUp={(e) => this.keyUpHandler(e)}
+                        onBlur={() => this.blurHandler()}
+                        onFocus={() => this.focusHandler()}
                         value={this.getValue()}
                         ref={e => this.$input = e}
                         {...inputProps}

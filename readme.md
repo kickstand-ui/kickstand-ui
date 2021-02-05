@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://kickstand-ui.com/">
-    <img src="https://kickstand-ui.com/images/kickstand_card.png" alt="kickstand logo" style="max-width: 700px; width:100%;" />
+        <img src="https://kickstand-ui.com/images/kickstand_card.png" alt="kickstand logo" style="max-width: 700px; width:100%;" />
     </a>
 </p>
 
@@ -50,7 +50,7 @@ applyPolyfills().then(() => {
 
 ### Styles
 
-Kickstand UI was written using [SASS](https://sass-lang.com/). Using SASS is not required to use and customize Kickstand UI for your needs, but we have created some great [SASS tools](../../design-tokens/design-tokens.md) to really accelerate the development process. You can import them into your project from `kickstand-ui/src/scss/styles.scss`.
+Kickstand UI was written using [SASS](https://sass-lang.com/). Using SASS is not required to use and customize Kickstand UI for your needs, but we have created some great [SASS tools](https://kickstand-ui.com/design-tokens/overview.html) to really accelerate the development process. You can import them into your project from `kickstand-ui/src/scss/styles.scss`.
 
 If you are planning on using the compiled CSS, you can find it at `kickstand-ui/dist/kickstand-ui/kickstand-ui.css`.
 

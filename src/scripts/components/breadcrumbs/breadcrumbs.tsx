@@ -1,4 +1,4 @@
-import { Component, h, ComponentInterface, Host, Element } from '@stencil/core';
+import { Component, h, ComponentInterface, Host, Element, Prop } from '@stencil/core';
 
 @Component({
     tag: 'ks-breadcrumbs',
@@ -9,6 +9,9 @@ export class Breadcrumbs implements ComponentInterface {
 
     @Element() $el: HTMLElement;
 
+    @Prop() linkTag: string = 'a';
+    @Prop() hrefProp: string = 'href';
+
     connectedCallback() {
         this.$links = Array.from(this.$el.children) as HTMLAnchorElement[];
         this.$links.forEach(x => x.hidden = true);
@@ -18,16 +21,8 @@ export class Breadcrumbs implements ComponentInterface {
         return index === this.$links.length - 1;
     }
 
-    // private getProps(index: number, $link: HTMLAnchorElement) {
-    //     return { 
-    //         'class': 'link', 
-    //         ['aria-current']: this.isLastCrumb(index) && 'page', 
-    //         'href': $link.href 
-    //     }
-    // }
-
     private setProps($el: HTMLAnchorElement, $link: HTMLAnchorElement, index: number) {
-        $el.href = $link.href;
+        $el.setAttribute(this.hrefProp, $link.getAttribute('href'));
         $el.innerHTML = $link.innerHTML;
         $el.classList.add('link');
         if(this.isLastCrumb(index))
@@ -35,13 +30,15 @@ export class Breadcrumbs implements ComponentInterface {
     }
 
     render() {
+        const CustomTag = this.linkTag;
+
         return (
             <Host role="navigation" aria-label="breadcrumbs" class="ks-breadcrumbs">
                 <slot />
                 <ol class="links">
                     {this.$links.map(($link, index) =>
                         <li class={{ 'breadcrumb': true, 'current': this.isLastCrumb(index) }}>
-                            <a ref={$el => this.setProps($el, $link, index)}></a>
+                            <CustomTag ref={$el => this.setProps($el, $link, index)}></CustomTag>
                         </li>
                     )}
                 </ol>

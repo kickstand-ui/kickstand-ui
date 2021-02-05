@@ -38,9 +38,15 @@
             left: 0;
 
             .card-body {
-                .heading,
-                .subheading,
-                .text {
+                .body-header {
+                    .heading,
+                    .subheading {
+                        color: white;
+                        text-shadow: 2px 2px 4px color-value(dark);
+                    }
+                }
+
+                .body-text {
                     color: white;
                     text-shadow: 2px 2px 4px color-value(dark);
                 }
@@ -49,7 +55,9 @@
     }
 
     &.collapse {
-        @each $key, $value in $media-queries {
+
+        @each $key,
+        $value in $media-queries {
             &-#{$key} {
                 @include mq($key) {
                     flex-direction: column;
@@ -66,20 +74,20 @@
         width: 100%;
         @include p(md);
 
-        .card-header {}
-
         .card-body {
-            .heading {
-                @include font-size(lg);
-                @include mb(none);
+            .body-header {
+                .heading {
+                    @include font-size(lg);
+                    @include mb(none);
+                }
+
+                .subheading {
+                    color: color(dark, lighter);
+                    @include mb(xs);
+                }
             }
 
-            .subheading {
-                color: color(dark, lighter);
-                @include mb(xs);
-            }
-
-            .text {
+            .body-text {
                 color: color(dark);
             }
         }

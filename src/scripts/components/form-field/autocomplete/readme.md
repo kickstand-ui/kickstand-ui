@@ -9,6 +9,7 @@
 
 | Property     | Attribute     | Description | Type                                   | Default     |
 | ------------ | ------------- | ----------- | -------------------------------------- | ----------- |
+| `autoExpand` | `auto-expand` |             | `boolean`                              | `false`     |
 | `debounce`   | `debounce`    |             | `number`                               | `0`         |
 | `disabled`   | `disabled`    |             | `boolean`                              | `undefined` |
 | `inputClass` | `input-class` |             | `string`                               | `undefined` |

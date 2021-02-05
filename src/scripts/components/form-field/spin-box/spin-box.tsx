@@ -72,6 +72,13 @@ export class SpinBox implements ComponentInterface, ICustomInput {
         this.value = Number(this.$input.value);
     }
 
+    private inputHandler() {
+        if (this.disabled)
+            return;
+
+        this.value = Number(this.$input.value);
+    }
+
     private onBlurHandler() {
         this.updated.emit(this.validateField());
     }
@@ -100,6 +107,7 @@ export class SpinBox implements ComponentInterface, ICustomInput {
                 disabled={this.disabled}
                 aria-invalid={!this.disabled && this.invalid.toString()}
                 onBlur={() => this.onBlurHandler()}
+                onInput={() => this.inputHandler()}
                 ref={(e) => this.$input = e}
             />
             <ks-button
