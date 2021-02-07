@@ -5,9 +5,9 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { IFormFieldData } from "./scripts/components/form-field/form-field";
+import { FormFieldValue, IFormFieldData } from "./scripts/components/form-field/form-field";
 import { IFormData } from "./scripts/components/form/form";
-import { IFormFieldData as IFormFieldData1 } from "./scripts/components/form-field/form-field";
+import { FormFieldValue as FormFieldValue1, IFormFieldData as IFormFieldData1 } from "./scripts/components/form-field/form-field";
 export namespace Components {
     interface KsAccordion {
         "size": 'sm' | 'md' | 'lg';
@@ -37,7 +37,7 @@ export namespace Components {
         "required": boolean;
         "size": 'sm' | 'md' | 'lg';
         "validate": () => Promise<IFormFieldData>;
-        "value"?: string | number | boolean | any[] | null;
+        "value"?: FormFieldValue;
     }
     interface KsBadge {
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
@@ -173,9 +173,11 @@ export namespace Components {
         "target": '_self' | '_blank' | '_parent' | '_top';
     }
     interface KsFormField {
+        "accept"?: string;
         "autoExpand": boolean;
         "autocomplete"?: string;
         "badInputErrorMessage": string;
+        "capture": 'user' | 'environment';
         "checked": boolean;
         "datalist": boolean;
         "debounce": number;
@@ -186,7 +188,7 @@ export namespace Components {
         "icon"?: string;
         "iconDirection": 'left' | 'right';
         "inline": boolean;
-        "inputClass": string;
+        "inputClass"?: string;
         "invalid": boolean;
         "label": string;
         "max"?: number;
@@ -197,6 +199,7 @@ export namespace Components {
         "minErrorMessage": string;
         "minlength"?: number;
         "minlengthErrorMessage": string;
+        "multiple"?: boolean;
         "name": string;
         "pattern"?: string;
         "patternErrorMessage": string;
@@ -232,7 +235,8 @@ export namespace Components {
         "typeErrorMessage": string;
         "validate": () => Promise<IFormFieldData>;
         "validateOnInput": boolean;
-        "value"?: string | number | boolean | any[] | null;
+        "value"?: FormFieldValue;
+        "webkitdirectory"?: boolean;
     }
     interface KsGallery {
         "gutter": 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
@@ -350,7 +354,7 @@ export namespace Components {
         "size": 'sm' | 'md' | 'lg';
         "step": number;
         "validate": () => Promise<IFormFieldData>;
-        "value"?: string | number | boolean | any[] | null;
+        "value"?: FormFieldValue;
     }
     interface KsSwitch {
         "checked": boolean;
@@ -701,7 +705,7 @@ declare namespace LocalJSX {
         "onCleared"?: (event: CustomEvent<any>) => void;
         "required"?: boolean;
         "size"?: 'sm' | 'md' | 'lg';
-        "value"?: string | number | boolean | any[] | null;
+        "value"?: FormFieldValue;
     }
     interface KsBadge {
         "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
@@ -839,9 +843,11 @@ declare namespace LocalJSX {
         "target"?: '_self' | '_blank' | '_parent' | '_top';
     }
     interface KsFormField {
+        "accept"?: string;
         "autoExpand"?: boolean;
         "autocomplete"?: string;
         "badInputErrorMessage"?: string;
+        "capture"?: 'user' | 'environment';
         "checked"?: boolean;
         "datalist"?: boolean;
         "debounce"?: number;
@@ -863,6 +869,7 @@ declare namespace LocalJSX {
         "minErrorMessage"?: string;
         "minlength"?: number;
         "minlengthErrorMessage"?: string;
+        "multiple"?: boolean;
         "name"?: string;
         "onBlurred"?: (event: CustomEvent<any>) => void;
         "onCleared"?: (event: CustomEvent<any>) => void;
@@ -900,7 +907,8 @@ declare namespace LocalJSX {
         | 'url';
         "typeErrorMessage"?: string;
         "validateOnInput"?: boolean;
-        "value"?: string | number | boolean | any[] | null;
+        "value"?: FormFieldValue;
+        "webkitdirectory"?: boolean;
     }
     interface KsGallery {
         "gutter"?: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
@@ -1013,7 +1021,7 @@ declare namespace LocalJSX {
         "required"?: boolean;
         "size"?: 'sm' | 'md' | 'lg';
         "step"?: number;
-        "value"?: string | number | boolean | any[] | null;
+        "value"?: FormFieldValue;
     }
     interface KsSwitch {
         "checked"?: boolean;

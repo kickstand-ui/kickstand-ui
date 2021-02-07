@@ -7,17 +7,17 @@
 
 ## Properties
 
-| Property     | Attribute     | Description | Type                                   | Default     |
-| ------------ | ------------- | ----------- | -------------------------------------- | ----------- |
-| `autoExpand` | `auto-expand` |             | `boolean`                              | `false`     |
-| `debounce`   | `debounce`    |             | `number`                               | `0`         |
-| `disabled`   | `disabled`    |             | `boolean`                              | `undefined` |
-| `inputClass` | `input-class` |             | `string`                               | `undefined` |
-| `inputId`    | `input-id`    |             | `string`                               | `undefined` |
-| `name`       | `name`        |             | `string`                               | `undefined` |
-| `required`   | `required`    |             | `boolean`                              | `undefined` |
-| `size`       | `size`        |             | `"lg" \| "md" \| "sm"`                 | `'md'`      |
-| `value`      | `value`       |             | `any[] \| boolean \| number \| string` | `''`        |
+| Property     | Attribute     | Description | Type                                               | Default     |
+| ------------ | ------------- | ----------- | -------------------------------------------------- | ----------- |
+| `autoExpand` | `auto-expand` |             | `boolean`                                          | `false`     |
+| `debounce`   | `debounce`    |             | `number`                                           | `0`         |
+| `disabled`   | `disabled`    |             | `boolean`                                          | `undefined` |
+| `inputClass` | `input-class` |             | `string`                                           | `undefined` |
+| `inputId`    | `input-id`    |             | `string`                                           | `undefined` |
+| `name`       | `name`        |             | `string`                                           | `undefined` |
+| `required`   | `required`    |             | `boolean`                                          | `undefined` |
+| `size`       | `size`        |             | `"lg" \| "md" \| "sm"`                             | `'md'`      |
+| `value`      | `value`       |             | `FileList \| any[] \| boolean \| number \| string` | `''`        |
 
 
 ## Events

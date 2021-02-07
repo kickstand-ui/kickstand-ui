@@ -3,10 +3,12 @@ import { debounce } from '../../utils/componentUtils';
 
 export interface IFormFieldData {
     name: string;
-    value: string | number | boolean | any[];
+    value: FormFieldValue;
     isValid: boolean;
     validity: ValidityState;
 }
+
+export type FormFieldValue = string | number | boolean | FileList | Array<any> | null;
 
 export interface ICustomInput {
     validate(): Promise<IFormFieldData>
@@ -41,7 +43,7 @@ export class FormField implements ComponentInterface {
     @Prop() requiredText: string = 'Required';
     @Prop({ mutable: true }) invalid: boolean = false;
     @Prop() disabled: boolean;
-    @Prop({ mutable: true }) value?: string | number | boolean | any[] | null;
+    @Prop({ mutable: true }) value?: FormFieldValue;
     @Prop() pattern?: string;
     @Prop() min?: number = undefined;
     @Prop() max?: number = undefined;
@@ -69,6 +71,24 @@ export class FormField implements ComponentInterface {
         | 'text'
         | 'textarea'
         | 'url' = 'text';
+    @Prop({ mutable: true }) validateOnInput: boolean = false;
+    @Prop() debounce: number = 0;
+    @Prop() inline: boolean = false;
+    @Prop() datalist: boolean = false;
+    @Prop() checked: boolean = false;
+    @Prop() icon?: string;
+    @Prop() iconDirection: 'left' | 'right' = 'right';
+    @Prop() size: 'sm' | 'md' | 'lg' = 'md';
+    @Prop() inputClass?: string;
+    @Prop() autoExpand: boolean = false;
+
+    // File Input
+    @Prop() accept?: string;
+    @Prop() multiple?: boolean;
+    @Prop() webkitdirectory?: boolean;
+    @Prop() capture: 'user' | 'environment';
+
+    // Error Messages
     @Prop() defaultErrorMessage: string = 'The value entered is not valid.';
     @Prop() badInputErrorMessage: string = 'There was a problem processing the value.';
     @Prop() patternErrorMessage: string = 'The value was not in the right format.';
@@ -79,16 +99,6 @@ export class FormField implements ComponentInterface {
     @Prop() minlengthErrorMessage: string = `Your value must be at least ${this.minlength} characters.`;
     @Prop() typeErrorMessage: string = `Your value must be a valid ${this.type === 'tel' ? 'telephone number' : this.type}.`;
     @Prop() requiredErrorMessage: string = this.type === 'autocomplete' ? 'The value entered is not one of the available options.' : 'This field is required.';
-    @Prop({ mutable: true }) validateOnInput: boolean = false;
-    @Prop() debounce: number = 0;
-    @Prop() inline: boolean = false;
-    @Prop() datalist: boolean = false;
-    @Prop() checked: boolean = false;
-    @Prop() icon?: string;
-    @Prop() iconDirection: 'left' | 'right' = 'right';
-    @Prop() size: 'sm' | 'md' | 'lg' = 'md';
-    @Prop() inputClass: string;
-    @Prop() autoExpand: boolean = false;
 
     @Event() updated!: EventEmitter<IFormFieldData>;
     @Event() blurred!: EventEmitter;
@@ -112,7 +122,7 @@ export class FormField implements ComponentInterface {
         if (this.type === 'autocomplete')
             return;
 
-        if (this.$input && this.$input.value !== this.value)
+        if (this.type !== 'file' && this.$input && this.$input.value !== this.value)
             this.$input.value = this.value?.toString();
 
         if (this.validateOnInput)
@@ -129,7 +139,11 @@ export class FormField implements ComponentInterface {
             $options.forEach(x => x.hidden = true);
         }
 
-        this.inputHandler = debounce(() => this.value = this.$input.value || '', this.debounce);
+        this.inputHandler = debounce(() => {
+            this.value = this.type === 'file' 
+                ? this.$input['files'] 
+                : this.$input.value || '';
+        }, this.debounce);
     }
 
     private handleComponentChange(e) {
@@ -152,7 +166,7 @@ export class FormField implements ComponentInterface {
         this.validityState = this.$input.validity;
         return {
             name: this.$input.name,
-            value: this.value == null ? this.value : this.value.toString(),
+            value: typeof this.value === 'number' ? this.value.toString() : this.value,
             isValid: this.$input.checkValidity(),
             validity: this.validityState
         };

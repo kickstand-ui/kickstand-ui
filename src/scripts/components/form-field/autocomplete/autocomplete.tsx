@@ -1,5 +1,5 @@
 import { Component, h, Prop, Host, Event, EventEmitter, ComponentInterface, State, Element, Method } from '@stencil/core';
-import { IFormFieldData, ICustomInput } from '../form-field';
+import { IFormFieldData, ICustomInput, FormFieldValue } from '../form-field';
 import { keyCodes } from '../../../utils/componentUtils';
 
 @Component({
@@ -18,7 +18,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
 
     @Element() $el: HTMLElement;
 
-    @Prop({ mutable: true }) value?: string | number | boolean | any[] | null = '';
+    @Prop({ mutable: true }) value?: FormFieldValue = '';
     @Prop() required: boolean;
     @Prop() disabled: boolean;
     @Prop() name: string;

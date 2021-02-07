@@ -1,5 +1,5 @@
 import { Component, h, Prop, Host, State, Element, ComponentInterface, Watch, Event, EventEmitter, Method } from '@stencil/core';
-import { ICustomInput, IFormFieldData } from '../form-field';
+import { FormFieldValue, ICustomInput, IFormFieldData } from '../form-field';
 
 @Component({
     tag: 'ks-spin-box',
@@ -11,7 +11,7 @@ export class SpinBox implements ComponentInterface, ICustomInput {
 
     @Element() $el: HTMLElement;
 
-    @Prop({ mutable: true }) value?: string | number | boolean | any[] | null = 0;
+    @Prop({ mutable: true }) value?: FormFieldValue = 0;
     @Prop() min: number;
     @Prop() max: number;
     @Prop() step: number = 1;
