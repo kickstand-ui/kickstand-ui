@@ -7,16 +7,17 @@
 
 ## Properties
 
-| Property       | Attribute       | Description | Type                           | Default      |
-| -------------- | --------------- | ----------- | ------------------------------ | ------------ |
-| `checked`      | `checked`       |             | `boolean`                      | `false`      |
-| `disabled`     | `disabled`      |             | `boolean`                      | `false`      |
-| `label`        | `label`         |             | `string`                       | `undefined`  |
-| `name`         | `name`          |             | `string`                       | `undefined`  |
-| `required`     | `required`      |             | `boolean`                      | `undefined`  |
-| `requiredText` | `required-text` |             | `string`                       | `'Required'` |
-| `tooltipSize`  | `tooltip-size`  |             | `"lg" \| "md" \| "sm" \| "xl"` | `'sm'`       |
-| `tooltipText`  | `tooltip-text`  |             | `string`                       | `undefined`  |
+| Property        | Attribute       | Description | Type                           | Default      |
+| --------------- | --------------- | ----------- | ------------------------------ | ------------ |
+| `checked`       | `checked`       |             | `boolean`                      | `false`      |
+| `disabled`      | `disabled`      |             | `boolean`                      | `false`      |
+| `indeterminate` | `indeterminate` |             | `boolean`                      | `false`      |
+| `label`         | `label`         |             | `string`                       | `undefined`  |
+| `name`          | `name`          |             | `string`                       | `undefined`  |
+| `required`      | `required`      |             | `boolean`                      | `undefined`  |
+| `requiredText`  | `required-text` |             | `string`                       | `'Required'` |
+| `tooltipSize`   | `tooltip-size`  |             | `"lg" \| "md" \| "sm" \| "xl"` | `'sm'`       |
+| `tooltipText`   | `tooltip-text`  |             | `string`                       | `undefined`  |
 
 
 ## Events

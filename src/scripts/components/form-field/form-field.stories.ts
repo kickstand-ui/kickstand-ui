@@ -136,6 +136,7 @@ export const selectTest = () => {
 export const checkbox = () => {
     const label = text('label', 'Checkbox');
     const checked = boolean('checked', false);
+    const indeterminate = boolean('indeterminate', false);
     const tooltipText = text('tooltip-text', '');
     const required = boolean('required', false);
     const requiredText = text('required-text', 'Required');
@@ -145,6 +146,7 @@ export const checkbox = () => {
         <ks-checkbox 
             label="${label}" 
             checked="${checked}" 
+            indeterminate="${indeterminate}"
             tooltip-text="${tooltipText}" 
             required="${required}" 
             required-text="${requiredText}"

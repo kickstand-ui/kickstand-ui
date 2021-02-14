@@ -76,6 +76,7 @@ export class FormField implements ComponentInterface {
     @Prop() inline: boolean = false;
     @Prop() datalist: boolean = false;
     @Prop() checked: boolean = false;
+    @Prop() indeterminate: boolean = false;
     @Prop() icon?: string;
     @Prop() iconDirection: 'left' | 'right' = 'right';
     @Prop() size: 'sm' | 'md' | 'lg' = 'md';
@@ -377,6 +378,7 @@ export class FormField implements ComponentInterface {
                     required-text={this.requiredText}
                     name={this.getInputName()}
                     disabled={this.disabled}
+                    indeterminate={this.indeterminiate}
                     onChanged={e => this.handleComponentChange(e)}
                     ref={el => this.$customInput = el}
                 />
