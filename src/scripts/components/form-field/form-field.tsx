@@ -378,7 +378,7 @@ export class FormField implements ComponentInterface {
                     required-text={this.requiredText}
                     name={this.getInputName()}
                     disabled={this.disabled}
-                    indeterminate={this.indeterminiate}
+                    indeterminate={this.indeterminate}
                     onChanged={e => this.handleComponentChange(e)}
                     ref={el => this.$customInput = el}
                 />
