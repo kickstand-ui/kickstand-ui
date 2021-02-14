@@ -140,6 +140,7 @@ export const checkbox = () => {
     const tooltipText = text('tooltip-text', '');
     const required = boolean('required', false);
     const requiredText = text('required-text', 'Required');
+    const disabled = boolean('disabled', false);
 
     return (`
     <div class="m-xxl">
@@ -150,6 +151,7 @@ export const checkbox = () => {
             tooltip-text="${tooltipText}" 
             required="${required}" 
             required-text="${requiredText}"
+            disabled="${disabled}"
             />
     </div>
     `)

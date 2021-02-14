@@ -27,10 +27,12 @@ export class Checkbox implements ComponentInterface, ICustomInput {
     }
 
     componentDidRender() {
-        this.$checkbox.indeterminate = this.indeterminate;
+        this.$checkbox.indeterminate = !this.checked && this.indeterminate;
     }
 
     private changeHandler() {
+        this.indeterminate = false;
+        this.$checkbox.indeterminate = false;
         let detail = this.validateField();
 
         this.changed.emit(detail);
@@ -62,7 +64,7 @@ export class Checkbox implements ComponentInterface, ICustomInput {
                 <label class="checkbox-label" htmlFor={this.checkboxId}>
                     <span class="checkbox-icon">
                         <svg width="0.75em" height="0.625em" viewBox="0 0 12 10">
-                            {this.indeterminate
+                            {this.indeterminate && !this.checked
                                 ? <rect width="0.6em" height="0.1em" />
                                 : <polyline points="1.5 6 4.5 9 10.5 1"></polyline>}
                         </svg>
