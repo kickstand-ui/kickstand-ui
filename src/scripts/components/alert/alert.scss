@@ -11,7 +11,7 @@
         @each $color,
         $value in get-colors() {
             &.#{$color} {
-                @include b(solid, xxs, $color);
+                @include b($color: $color);
                 @include shadow(sm);
                 @include bg-color($color, 0.05);
                 @include color(dark);

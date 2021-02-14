@@ -11,6 +11,60 @@
         }
     }
 
+    .checkbox-label {
+        &:hover {
+            border-color: color-value(primary);
+            cursor: pointer;
+        }
+
+        .checkbox-icon {
+            display: inline-block;
+            vertical-align: middle;
+            transform: translate3d(0, 0, 0);
+            position: relative;
+            width: 1.125em;
+            height: 1.125em;
+            transform: scale(1);
+            vertical-align: middle;
+            background-color: white;
+            @include b($color: light, $variant: darker);
+            @include transition();
+            @include br(sm);
+
+            svg {
+                position: absolute;
+                top: 0.175em;
+                left: 0.125em;
+                fill: none;
+                stroke: white;
+                stroke-width: 2;
+                stroke-dasharray: 1em;
+                stroke-dashoffset: 1em;
+                transition-delay: .1s;
+                transform: translate3d(0, 0, 0);
+                @include transition();
+            }
+
+            &:before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                display: block;
+                transform: scale(0);
+                opacity: 1;
+                border-radius: 50%;
+                @include bg-color(primary);
+            }
+        }
+
+        .checkbox-description {
+            display: inline-block;
+            vertical-align: middle;
+            transform: translate3d(0, 0, 0);
+            @include pl(sm);
+        }
+    }
+
     .checkbox-input {
         @include screen-reader-only();
 
@@ -52,60 +106,5 @@
                 }
             }
         }
-    }
-}
-
-.checkbox-label {
-    &:hover {
-        border-color: color-value(primary);
-        cursor: pointer;
-    }
-
-    .checkbox-icon {
-        display: inline-block;
-        vertical-align: middle;
-        transform: translate3d(0, 0, 0);
-        position: relative;
-        width: 1.125em;
-        height: 1.125em;
-        transform: scale(1);
-        vertical-align: middle;
-        @include b($color: light, $variant: darker);
-        border-width: 0.125em;
-        background-color: white;
-        @include transition();
-        @include br(sm);
-
-        svg {
-            position: absolute;
-            top: 0.09375em;
-            left: 0.0625em;
-            fill: none;
-            stroke: white;
-            stroke-width: 2;
-            stroke-dasharray: 1em;
-            stroke-dashoffset: 1em;
-            transition-delay: .1s;
-            transform: translate3d(0, 0, 0);
-            @include transition();
-        }
-
-        &:before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            display: block;
-            transform: scale(0);
-            opacity: 1;
-            border-radius: 50%;
-            @include bg-color(primary);
-        }
-    }
-
-    .checkbox-description {
-        display: inline-block;
-        vertical-align: middle;
-        transform: translate3d(0, 0, 0);
-        @include pl(sm);
     }
 }

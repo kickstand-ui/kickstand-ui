@@ -4,7 +4,7 @@
     position: relative;
     overflow: hidden;
     @include br(sm);
-    @include b(solid, xxxs, light, dark);
+    @include b($color: light, $variant: dark);
     @include shadow();
 
     &.img-top {

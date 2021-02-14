@@ -22,6 +22,7 @@
                 &+.radio-label {
                     &:before {
                         border-color: color-value(primary);
+                        // border-width: spacing(xxs);
                     }
 
                     &:after {
@@ -58,16 +59,15 @@
 
             &:before {
                 left: 0;
-                top: 0.1em;
+                top: 0.2em;
                 width: 1em;
                 height: 1em;
                 @include b($color: light, $variant: darker);
-                border-width: spacing(xxs);
             }
 
             &:after {
-                top: (1.25em / 2) - (0.625em / 2) + 0.125em;
-                left: (1.25em / 2) - (0.625em / 2);
+                top: (1.125em / 2) - (0.625em / 2) + 0.2em;
+                left: (1.125em / 2) - (0.625em / 2);
                 width: 0.625em;
                 height: 0.625em;
                 transform: scale(0);

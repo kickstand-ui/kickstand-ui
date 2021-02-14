@@ -200,7 +200,7 @@ export const checklist = () => {
                 >
                 <option>Choose a value</option>
                 <option disabled>Value 1</option>
-                <option>Value 2</option>
+                <option selected disabled>Value 2</option>
                 <option>Value 3</option>
             </ks-checklist>
         </div>

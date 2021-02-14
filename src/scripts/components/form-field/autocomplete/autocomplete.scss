@@ -8,7 +8,7 @@
             width: 100%;
             height: 3.25rem;
             @include br(sm);
-            @include b($size: xxs);
+            @include b();
             @include p(md);
             @include shadow(inner);
 
@@ -25,7 +25,7 @@
             }
 
             &[aria-invalid="true"] {
-                @include b($size: xxs, $color: danger);
+                @include b($color: danger);
             }
 
             &.size {
@@ -90,7 +90,7 @@
             max-height: 0;
             overflow: hidden;
             background-color: white;
-            @include b($size: xxs);
+            @include b();
             @include b-t(none);
             @include br-b(sm);
             @include z-index(xs);

@@ -49,7 +49,7 @@
     .form-input {
         width: 100%;
         @include font-size(sm);
-        @include b($size: xxs);
+        @include b();
         @include p(md);
         @include shadow(inner);
         @include br(sm);
@@ -189,7 +189,7 @@
         }
 
         &[aria-invalid="true"] {
-            @include b($size: xxs, $color: danger);
+            @include b($color: danger);
         }
 
         &.display-icon-left {

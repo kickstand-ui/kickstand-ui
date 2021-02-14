@@ -45,7 +45,7 @@
             background-color: white;
             @include color(primary);
             @include font-size(sm);
-            @include b($size: xxs, $color: primary);
+            @include b($color: primary);
             @include px(lg);
             @include mb(-xxs);
 
@@ -74,8 +74,8 @@
             visibility: hidden;
             @include transition();
             @include px(lg);
-            @include b-x($size: xxs, $color: primary);
-            @include b-b($size: xxs, $color: primary);
+            @include b-x($size: xxxs, $color: primary);
+            @include b-b($size: xxxs, $color: primary);
 
             &[aria-hidden="false"] {
                 visibility: visible;
