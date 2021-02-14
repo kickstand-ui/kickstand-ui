@@ -16,6 +16,7 @@ export class Checkbox implements ComponentInterface, ICustomInput {
     @Prop() tooltipSize: 'sm' | 'md' | 'lg' | 'xl' = 'sm';;
     @Prop() requiredText: string = 'Required';
     @Prop() name: string;
+    @Prop() disabled: boolean = false;
 
     @Event() changed!: EventEmitter<IFormFieldData>;
 
@@ -53,7 +54,7 @@ export class Checkbox implements ComponentInterface, ICustomInput {
 
         return (
             <Host class="ks-checkbox">
-                <input class="checkbox-input" type="checkbox" {...props} onChange={() => this.changeHandler()} ref={el => this.$checkbox = el} />
+                <input class="checkbox-input" type="checkbox" {...props} onChange={() => this.changeHandler()} disabled={this.disabled} ref={el => this.$checkbox = el} />
                 <label class="checkbox-label" htmlFor={this.checkboxId}>
                     <span class="checkbox-icon">
                         <svg width="0.75em" height="0.625em" viewBox="0 0 12 10">

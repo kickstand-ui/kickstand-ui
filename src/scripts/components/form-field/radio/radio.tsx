@@ -11,6 +11,7 @@ export class Radio implements ComponentInterface {
     @Prop() checked: boolean;
     @Prop() inline: boolean = false;
     @Prop() name: string;
+    @Prop() disabled: boolean = false;
 
     @Event() selected!: EventEmitter;
 
@@ -26,7 +27,7 @@ export class Radio implements ComponentInterface {
         return (
             <Host class={classes}>
                 <div class="input-wrapper">
-                    <input class="radio-button" id={this.radioButtonId} type="radio" name={this.name} checked={this.checked} onChange={() => this.handleClick()} />
+                    <input class="radio-button" id={this.radioButtonId} type="radio" name={this.name} checked={this.checked} disabled={this.disabled} onChange={() => this.handleClick()} />
                     <label class="radio-label" htmlFor={this.radioButtonId}>{this.label}</label>
                 </div>
             </Host>

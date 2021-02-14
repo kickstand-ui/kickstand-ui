@@ -29,6 +29,13 @@
                     }
                 }
             }
+
+            &:disabled {
+                &+.radio-label {
+                    opacity: 0.7;
+                    cursor: not-allowed;
+                }
+            }
         }
 
         .radio-label {
@@ -54,7 +61,7 @@
                 top: 0.1em;
                 width: 1em;
                 height: 1em;
-                @include b();
+                @include b($color: light, $variant: darker);
                 border-width: spacing(xxs);
             }
 

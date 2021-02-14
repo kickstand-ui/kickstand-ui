@@ -10,6 +10,7 @@ export const playground = () => {
     const label = text('label', 'Username');
     const hideLabel = boolean('hide-label', false);
     const value = text('value', '');
+    const checked = boolean('checked', false);
     const helpText = text('help-text', '');
     const tooltipText = text('tooltip-text', '');
     const tooltipSize = text('tooltip-size', 'md');
@@ -67,6 +68,7 @@ export const playground = () => {
             icon-direction="${iconDirection}"
             size="${size}"
             auto-expand="${autoExpand}"
+            checked=${checked}
             >
             <option selected>Choose a value</option>
             <option>Value 1</option>
@@ -154,7 +156,7 @@ export const checkbox = () => {
 export const radio = () => {
     return (`
     <div class="m-xxl">
-        <ks-radio label="Radio 1"></ks-radio>
+        <ks-radio label="Radio 1" disabled></ks-radio>
         <ks-radio label="Radio 2"></ks-radio>
         <ks-radio label="Radio 3"></ks-radio>
     </div>
@@ -193,7 +195,7 @@ export const checklist = () => {
                 help-text="${helpText}"
                 >
                 <option>Choose a value</option>
-                <option>Value 1</option>
+                <option disabled>Value 1</option>
                 <option>Value 2</option>
                 <option>Value 3</option>
             </ks-checklist>

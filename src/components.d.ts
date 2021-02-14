@@ -118,6 +118,7 @@ export namespace Components {
     }
     interface KsCheckbox {
         "checked": boolean;
+        "disabled": boolean;
         "label": string;
         "name": string;
         "required": boolean;
@@ -324,6 +325,7 @@ export namespace Components {
     }
     interface KsRadio {
         "checked": boolean;
+        "disabled": boolean;
         "inline": boolean;
         "label": string;
         "name": string;
@@ -786,6 +788,7 @@ declare namespace LocalJSX {
     }
     interface KsCheckbox {
         "checked"?: boolean;
+        "disabled"?: boolean;
         "label"?: string;
         "name"?: string;
         "onChanged"?: (event: CustomEvent<IFormFieldData>) => void;
@@ -992,6 +995,7 @@ declare namespace LocalJSX {
     }
     interface KsRadio {
         "checked"?: boolean;
+        "disabled"?: boolean;
         "inline"?: boolean;
         "label"?: string;
         "name"?: string;
