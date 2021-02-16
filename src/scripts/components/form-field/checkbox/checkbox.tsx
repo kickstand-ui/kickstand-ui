@@ -65,7 +65,7 @@ export class Checkbox implements ComponentInterface, ICustomInput {
                     <span class="checkbox-icon">
                         <svg width="0.75em" height="0.625em" viewBox="0 0 12 10">
                             {this.indeterminate && !this.checked
-                                ? <rect width="0.6em" height="0.1em" />
+                                ? <rect width="0.7em" height="0.1em" />
                                 : <polyline points="1.5 6 4.5 9 10.5 1"></polyline>}
                         </svg>
                     </span>

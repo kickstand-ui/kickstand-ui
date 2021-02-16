@@ -11,6 +11,7 @@ export const playground = () => {
     const hideLabel = boolean('hide-label', false);
     const value = text('value', '');
     const checked = boolean('checked', false);
+    const indeterminate = boolean('indeterminate', false);
     const helpText = text('help-text', '');
     const tooltipText = text('tooltip-text', '');
     const tooltipSize = text('tooltip-size', 'md');
@@ -73,6 +74,7 @@ export const playground = () => {
             size="${size}"
             auto-expand="${autoExpand}"
             checked=${checked}
+            indeterminate=${indeterminate}
             multiple=${multiple}
             ${accept ? `accept="${accept}"` : ''}
             ${webkitdirectory ? `webkitdirectory="${webkitdirectory}"` : ''}
