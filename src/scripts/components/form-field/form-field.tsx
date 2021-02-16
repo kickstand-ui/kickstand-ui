@@ -253,7 +253,11 @@ export class FormField implements ComponentInterface {
             'disabled': this.disabled,
             'required': this.required,
             'aria-invalid': !this.disabled && this.invalid.toString(),
-            'list': this.datalist && this.listId
+            'list': this.datalist && this.listId,
+            'accept': this.accept,
+            'multiple': this.multiple,
+            'webkitdirectory': this.webkitdirectory,
+            'capture': this.capture
         };
         props = this.setProps(props);
         let classes = {

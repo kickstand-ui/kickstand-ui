@@ -36,6 +36,10 @@ export const playground = () => {
     const iconDirection = select('icon-direction', ['left', 'right'], 'right');
     const size = select('size', sizes, 'md');
     const autoExpand = boolean('auto-expand', false);
+    const accept = text('accept', undefined);
+    const multiple = boolean('multiple', false);
+    const webkitdirectory = text('webkitdirectory', undefined);
+    const capture = text('capture', undefined);
 
     return (`<div class="m-xxl">
         <ks-form-field 
@@ -69,6 +73,10 @@ export const playground = () => {
             size="${size}"
             auto-expand="${autoExpand}"
             checked=${checked}
+            multiple=${multiple}
+            ${accept ? `accept="${accept}"` : ''}
+            ${webkitdirectory ? `webkitdirectory="${webkitdirectory}"` : ''}
+            ${capture ? `capture="${capture}"` : ''}
             >
             <option selected>Choose a value</option>
             <option>Value 1</option>
