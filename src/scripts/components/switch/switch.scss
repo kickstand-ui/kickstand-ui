@@ -19,12 +19,6 @@
             }
         }
 
-        &:disabled,
-        &:disabled + .label {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
-
         .track {
             position: absolute;
             width: spacing(xxxl);
@@ -51,5 +45,16 @@
 
     .label {
         @include mr(sm);
+    }
+
+    &.disabled {
+        opacity: 0.7;
+
+        .label,
+        .toggle, 
+        .track {
+            cursor: not-allowed;
+            @include shadow(none);
+        }
     }
 }

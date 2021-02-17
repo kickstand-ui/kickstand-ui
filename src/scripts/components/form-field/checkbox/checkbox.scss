@@ -30,6 +30,7 @@
             @include b($color: light, $variant: darker);
             @include transition();
             @include br(sm);
+            @include shadow(inner);
 
             svg {
                 position: absolute;
@@ -87,6 +88,10 @@
         &:disabled+.checkbox-label {
             cursor: not-allowed;
             opacity: 0.7;
+
+            .checkbox-icon {
+                @include shadow(none);
+            }
         }
 
         &:indeterminate {
