@@ -66,6 +66,11 @@
         }
     }
 
+    .card-image {
+        flex-shrink: 0;
+        display: block;
+    }
+
     .card-content {
         display: flex;
         flex-direction: column;
@@ -75,6 +80,8 @@
         @include p(md);
 
         .card-body {
+            display: block;
+
             .body-header {
                 .heading {
                     @include font-size(lg);
@@ -93,6 +100,7 @@
         }
 
         .card-footer {
+            display: block;
             @include mt(md);
         }
     }
