@@ -31,18 +31,18 @@ export class Form implements ComponentInterface {
         this.$formFields = Array.from(this.$el.querySelectorAll('ks-form-field')) as HTMLKsFormFieldElement[];
     }
 
-    private submitHandler(e: Event) {
+    private async submitHandler(e: Event) {
         this.invalid = !this.$form.checkValidity();
 
         if (!this.action || this.invalid)
             e.preventDefault();
 
-        let formData = this.getFormData();
+        let formData = await this.getFormData();
 
         this.submitted.emit(formData);
     }
 
-    private getFormData() {
+    private async getFormData() {
         let formFieldData: IFormFieldData[] = [];
 
         this.$formFields.forEach(async x => {
