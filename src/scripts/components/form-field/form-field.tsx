@@ -14,7 +14,7 @@ export interface ICustomInput {
     validate(): Promise<IFormFieldData>
 }
 
-export interface ICustomInputElement extends HTMLElement, ICustomInput {}
+export interface ICustomInputElement extends HTMLElement, ICustomInput { }
 
 @Component({
     tag: 'ks-form-field',
@@ -140,11 +140,25 @@ export class FormField implements ComponentInterface {
             $options.forEach(x => x.hidden = true);
         }
 
+        this.setRangeStyles();
+
         this.inputHandler = debounce(() => {
-            this.value = this.type === 'file' 
-                ? this.$input['files'] 
+            this.value = this.type === 'file'
+                ? this.$input['files']
                 : this.$input.value || '';
+
+            this.setRangeStyles();
         }, this.debounce);
+    }
+
+    private setRangeStyles() {
+        if (this.type === 'range') {
+            const range: any = this.$input;
+            const min = this.min || 0;
+            const max = this.max || 100;
+
+            this.$input.style.background = `linear-gradient(to right, rgb(var(--ks-color-primary-base)) 0%, rgb(var(--ks-color-primary-base)) ${(range.value - min) / (max - min) * 100}%, rgb(var(--ks-color-light-light)) ${(range.value - min) / (max - min) * 100}%, rgb(var(--ks-color-light-light)) 100%)`;
+        }
     }
 
     private handleComponentChange(e) {
@@ -174,8 +188,8 @@ export class FormField implements ComponentInterface {
     }
 
     private getValue(): string {
-        return typeof this.value === 'number' 
-            ? this.value.toString() 
+        return typeof this.value === 'number'
+            ? this.value.toString()
             : (this.value || '').toString();
     }
 
@@ -247,7 +261,7 @@ export class FormField implements ComponentInterface {
         let value = this.getValue();
         let props = {
             'id': this.fieldId,
-            'class':`form-input size-${this.size} ${this.icon ? `display-icon-${this.iconDirection}` : ''} ${this.inputClass ? this.inputClass : ''}`,
+            'class': `form-input size-${this.size} ${this.icon ? `display-icon-${this.iconDirection}` : ''} ${this.inputClass ? this.inputClass : ''}`,
             'name': this.getInputName(),
             'value': value,
             'disabled': this.disabled,
@@ -306,9 +320,9 @@ export class FormField implements ComponentInterface {
                 </ks-autocomplete>
             ),
             'spin-box': (
-                <ks-spin-box 
+                <ks-spin-box
                     value={this.value}
-                    min={this.min} 
+                    min={this.min}
                     max={this.max}
                     step={this.step}
                     name={this.name}
@@ -320,7 +334,7 @@ export class FormField implements ComponentInterface {
                     input-class={this.inputClass}
                     onUpdated={e => this.handleComponentChange(e)}
                     ref={el => this.$customInput = el}
-                    >
+                >
                 </ks-spin-box>
             )
         }[this.type] || [

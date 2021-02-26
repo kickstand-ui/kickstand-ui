@@ -13,6 +13,11 @@
         }
     }
 
+    &[type="range"] .input-wrapper {
+        height: 2rem;
+    }
+
+
     .form-label {
         display: flex;
         flex-direction: column;
@@ -54,7 +59,7 @@
         @include shadow(inner);
         @include br(sm);
 
-        &:not(textarea) {
+        &:not(textarea, [type="range"]) {
             line-height: 1;
 
             &.size {
@@ -81,18 +86,18 @@
         &[type="range"] {
             -webkit-appearance: none;
             border: 0;
-            height: 2rem;
+            height: 0.25rem;
+            outline-offset: 1rem;
             @include shadow(none);
             @include p(none);
 
             &::-webkit-slider-runnable-track {
                 cursor: pointer;
                 width: 100%;
-                height: 0.75rem;
-                background: color-value(primary);
+                height: 0.25rem;
+                background: transparent;
                 @include br(sm);
                 @include shadow(xs);
-                @include b($color: dark);
             }
 
             &::-webkit-slider-thumb {
@@ -101,20 +106,19 @@
                 width: 1.5rem;
                 background: white;
                 -webkit-appearance: none;
+                margin-top: -11px;
                 @include br(xl);
-                @include mt(-sm);
                 @include shadow(sm);
-                @include b($color: dark);
+                @include b();
             }
 
             &::-moz-range-track {
                 cursor: pointer;
                 width: 100%;
                 height: 0.75rem;
-                background: color-value(primary);
+                background: color-value(light);
                 @include br(sm);
                 @include shadow(xs);
-                @include b($color: dark);
             }
 
             &::-moz-range-thumb {
@@ -124,7 +128,7 @@
                 background: white;
                 @include br(xl);
                 @include shadow(sm);
-                @include b($color: dark);
+                @include b();
             }
 
             &::-ms-track {
@@ -136,16 +140,14 @@
             }
 
             &::-ms-fill-lower {
-                background: color(primary);
+                background: color-value(primary);
                 @include br(xl);
-                @include b($color: dark);
                 @include shadow(xs);
             }
 
             &::-ms-fill-upper {
-                background: color(primary);
+                background: color-value(light, light);
                 @include br(xl);
-                @include b($color: dark);
                 @include shadow(xs);
             }
 
@@ -162,7 +164,7 @@
 
             &:focus {
                 &::-webkit-slider-runnable-track {
-                    background: color-value(primary);
+                    background: transparent;
                 }
 
                 &::-ms-fill-lower {
@@ -170,7 +172,7 @@
                 }
 
                 &::-ms-fill-upper {
-                    background: color-value(primary);
+                    background: transparent;
                 }
             }
         }
