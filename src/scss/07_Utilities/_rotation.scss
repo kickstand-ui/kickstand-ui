@@ -5,11 +5,11 @@ $angles: (0, 45, 90, 135, 180, 225, 270, 360);
 .rotate {
     @each $angle in $angles {
         &-#{$angle} {
-            transform: rotate(#{$angle}deg);
+            transform: rotate(#{$angle}deg) !important;
         }
 
         &--#{$angle} {
-            transform: rotate(-#{$angle}deg);
+            transform: rotate(-#{$angle}deg) !important;
         }
     }
 }
