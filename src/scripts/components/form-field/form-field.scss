@@ -84,6 +84,14 @@
             }
         }
 
+        &[type="search"] {
+            &::-ms-clear {
+                display: none;
+                width: 0;
+                height: 0;
+            }
+        }
+
         &[type="range"] {
             -webkit-appearance: none;
             border: 0;
