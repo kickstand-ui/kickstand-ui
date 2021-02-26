@@ -7,8 +7,8 @@
         .content {
             display: block;
             transform: scale(0.95);
-            @include m(auto);
-            margin-top: 10vh;
+            margin-top: -20vh;
+            @include pt(xl);
 
             .modal-wrapper {
                 width: 100%;
