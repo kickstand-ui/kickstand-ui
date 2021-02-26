@@ -50,12 +50,6 @@
         }
 
         .input-icons {
-            // position: absolute;
-            // right: 0;
-            // @include color(dark, lighter);
-            // @include font-size(md);
-            // @include mt(md);
-            // @include mr(lg);
             position: absolute;
             right: 0;
             top: 50%;
@@ -97,7 +91,6 @@
             @include shadow(sm);
             @include p(none);
             @include m(none);
-            @include mt(-xxxs);
             @include transition();
 
             .option {
@@ -106,6 +99,10 @@
                 &:focus {
                     @include b-y();
                     @include bg-color(light, lighter);
+                }
+
+                &:first-child:focus {
+                    @include b-t(none);
                 }
 
                 &:hover {
