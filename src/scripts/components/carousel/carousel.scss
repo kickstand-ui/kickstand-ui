@@ -119,18 +119,16 @@
             bottom: 0;
             right: 0;
             left: 0;
-            margin-right: 10%;
-            margin-left: 10%;
+            @include mx(auto);
             @include mb(xxl);
             @include z-index(sm);
 
             .indicator {
-                height: spacing(lg);
                 width: 1rem;
                 height: 1rem;
                 background-color: transparent;
                 filter: drop-shadow(0 0 0.25rem color-value(dark));
-                @include b($size: xxs, $color: light, $variant: light);
+                @include b($size: xxxs, $color: light, $variant: light);
                 @include br(circle);
                 @include mx(sm);
                 @include transition();
@@ -141,7 +139,6 @@
                 }
 
                 &[aria-selected="true"] {
-                    // @include b-b($size: xxs, $color: light, $variant: lighter);
                     @include bg-color(light, light);
                     @include transition();
                 }
