@@ -234,11 +234,18 @@
             right: 0;
             top: 50%;
             transform: translateY(-50%);
-            @include mr(md);
             @include font-size(md);
 
+            .input-icon {
+                @include mr(md);
+            }
+
             .input-button {
+                @include mr(none);
+                @include font-size(sm);
+
                 .icon {
+                    @include font-size(sm);
                     @include color(dark, lighter)
                 }
             }
