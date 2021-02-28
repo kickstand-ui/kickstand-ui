@@ -1,17 +1,17 @@
 @import "../00_Abstracts/index";
 
 .pointer {
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 .pointer-events-none {
-    pointer-events: none;
+    pointer-events: none !important;
 }
 
 .not-allowed {
-    cursor: not-allowed;
+    cursor: not-allowed !important;
 }
 
 .progress {
-    cursor: progress;
+    cursor: progress !important;
 }

@@ -3,7 +3,7 @@
 .ks-form {
     display: block;
     @include br(sm);
-    @include b(solid, xxs, light);
+    @include b($color: light);
     @include p(lg);
     @include bg-color(light, lighter);
 

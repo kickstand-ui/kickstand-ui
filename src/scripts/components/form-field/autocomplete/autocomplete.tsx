@@ -1,5 +1,5 @@
 import { Component, h, Prop, Host, Event, EventEmitter, ComponentInterface, State, Element, Method } from '@stencil/core';
-import { IFormFieldData, ICustomInput } from '../form-field';
+import { IFormFieldData, ICustomInput, FormFieldValue } from '../form-field';
 import { keyCodes } from '../../../utils/componentUtils';
 
 @Component({
@@ -18,7 +18,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
 
     @Element() $el: HTMLElement;
 
-    @Prop({ mutable: true }) value?: string | number | boolean | any[] | null = '';
+    @Prop({ mutable: true }) value?: FormFieldValue = '';
     @Prop() required: boolean;
     @Prop() disabled: boolean;
     @Prop() name: string;
@@ -34,6 +34,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
     @State() searchTerm: string;
 
     @Event() changed!: EventEmitter<IFormFieldData>;
+    @Event() cleared!: EventEmitter;
 
     @Method()
     async validate() {
@@ -185,6 +186,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
         this.$input.value = '';
         this.$select.value = '';
         this.changed.emit(this.validateField());
+        this.cleared.emit();
         this.filterOptions();
     }
 
@@ -259,7 +261,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
                         {...inputProps}
                     />
                     <span class="input-icons">
-                        {this.searchTerm ? <ks-button class="clear-button" size="xs" display="clear" button-class="text-md" color="dark" onClick={() => this.clearSearchTerm()}><ks-icon icon="times" label="clear"></ks-icon></ks-button> : ''}
+                        {this.$input?.value ? <ks-button class="clear-button" size="xs" display="clear" button-class="text-md" color="dark" onClick={() => this.clearSearchTerm()}><ks-icon icon="times" label="clear"></ks-icon></ks-button> : ''}
                         <ks-icon icon="search" class="search-icon"></ks-icon>
                     </span>
                     <ul id={`autocomplete-options-${this.autocompleteId}`} class="dropdown-options" role="listbox" ref={el => this.$dropdown = el}>

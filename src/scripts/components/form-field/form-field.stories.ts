@@ -10,6 +10,8 @@ export const playground = () => {
     const label = text('label', 'Username');
     const hideLabel = boolean('hide-label', false);
     const value = text('value', '');
+    const checked = boolean('checked', false);
+    const indeterminate = boolean('indeterminate', false);
     const helpText = text('help-text', '');
     const tooltipText = text('tooltip-text', '');
     const tooltipSize = text('tooltip-size', 'md');
@@ -35,6 +37,10 @@ export const playground = () => {
     const iconDirection = select('icon-direction', ['left', 'right'], 'right');
     const size = select('size', sizes, 'md');
     const autoExpand = boolean('auto-expand', false);
+    const accept = text('accept', undefined);
+    const multiple = boolean('multiple', false);
+    const webkitdirectory = text('webkitdirectory', undefined);
+    const capture = text('capture', undefined);
 
     return (`<div class="m-xxl">
         <ks-form-field 
@@ -67,6 +73,12 @@ export const playground = () => {
             icon-direction="${iconDirection}"
             size="${size}"
             auto-expand="${autoExpand}"
+            checked=${checked}
+            indeterminate=${indeterminate}
+            multiple=${multiple}
+            ${accept ? `accept="${accept}"` : ''}
+            ${webkitdirectory ? `webkitdirectory="${webkitdirectory}"` : ''}
+            ${capture ? `capture="${capture}"` : ''}
             >
             <option selected>Choose a value</option>
             <option>Value 1</option>
@@ -134,18 +146,22 @@ export const selectTest = () => {
 export const checkbox = () => {
     const label = text('label', 'Checkbox');
     const checked = boolean('checked', false);
+    const indeterminate = boolean('indeterminate', false);
     const tooltipText = text('tooltip-text', '');
     const required = boolean('required', false);
     const requiredText = text('required-text', 'Required');
+    const disabled = boolean('disabled', false);
 
     return (`
     <div class="m-xxl">
         <ks-checkbox 
             label="${label}" 
             checked="${checked}" 
+            indeterminate="${indeterminate}"
             tooltip-text="${tooltipText}" 
             required="${required}" 
             required-text="${requiredText}"
+            disabled="${disabled}"
             />
     </div>
     `)
@@ -154,7 +170,7 @@ export const checkbox = () => {
 export const radio = () => {
     return (`
     <div class="m-xxl">
-        <ks-radio label="Radio 1"></ks-radio>
+        <ks-radio label="Radio 1" disabled></ks-radio>
         <ks-radio label="Radio 2"></ks-radio>
         <ks-radio label="Radio 3"></ks-radio>
     </div>
@@ -193,8 +209,8 @@ export const checklist = () => {
                 help-text="${helpText}"
                 >
                 <option>Choose a value</option>
-                <option>Value 1</option>
-                <option>Value 2</option>
+                <option disabled>Value 1</option>
+                <option selected disabled>Value 2</option>
                 <option>Value 3</option>
             </ks-checklist>
         </div>
@@ -233,7 +249,7 @@ export const autocomplete = () => {
 export const spinbox = () => {
     return (`
     <div class="m-xxl">
-        <ks-form-field label="Spin-Box" type="spin-box"></ks-form-field>
+        <ks-form-field label="Spin-Box" type="spin-box" max="5" min="2"></ks-form-field>
     </div>
     `)
 }

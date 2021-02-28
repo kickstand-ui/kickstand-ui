@@ -15,12 +15,12 @@ $variations: ('lighter', 'light', 'base', 'dark', 'darker');
     .bg {
         &-white {
             color: black !important;
-            background-color: white;
+            background-color: white !important;
         }
     
         &-black {
             color: white !important;
-            background-color: black;
+            background-color: black !important;
         }
 
         &-transparent {

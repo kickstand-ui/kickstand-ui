@@ -194,7 +194,7 @@ $value in $spacing-sizes {
 
             // Margin Top
             .#{$mq}\:mt-#{$size} {
-                @include mt(#{"-" + $size}, $important: true);
+                @include mt($size, $important: true);
             }
 
             .#{$mq}\:-mt-#{$size} {
@@ -203,7 +203,7 @@ $value in $spacing-sizes {
 
             // Margin Bottom
             .#{$mq}\:mb-#{$size} {
-                @include mb(#{"-" + $size}, $important: true);
+                @include mb($size, $important: true);
             }
 
             .#{$mq}\:-mb-#{$size} {

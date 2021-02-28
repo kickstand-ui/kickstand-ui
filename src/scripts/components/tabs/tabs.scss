@@ -49,6 +49,7 @@
         width: 100%;
         white-space: normal;
         background-color: white;
+        flex-shrink: 0;
         @include b();
         @include p(lg);
     }

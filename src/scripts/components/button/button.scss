@@ -67,7 +67,7 @@
                 &.hollow {
                     background-color: transparent;
                     @include color($color);
-                    @include b(solid, xxxs, $color);
+                    @include b($color: $color);
 
                     &:focus,
                     &:hover:not(:disabled) {

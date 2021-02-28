@@ -8,7 +8,7 @@ export const card = () => {
     const imgDir = select('img-direction', imgDirections, 'top');
     const src = text('img-src', 'https://media.boingboing.net/wp-content/uploads/2018/07/screenshot-22.jpg');
     const alt = text('alt', 'Michael Scott');
-    const url = text('url', '');
+    const href = text('href', '');
     const clickable = boolean('clickable', false);
     const collapse = select('collapse', ['xxs', 'xs', 'sm', 'md', 'lg', 'xl'], 'xs');
     const lazy = boolean('lazy', true);
@@ -21,7 +21,7 @@ export const card = () => {
                 <ks-card img-src="${src}"
                         img-direction="${imgDir}"
                         alt="${alt}"
-                        url="${url}"
+                        href="${href}"
                         clickable="${clickable}"
                         class="w-30"
                         lazy="${lazy}"

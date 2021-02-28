@@ -8,7 +8,7 @@
         display: inline-flex;
         align-items: center;
         @include shadow(xs);
-        @include b($size: xxxs);
+        @include b();
 
         .form-input {
             text-align: center;
@@ -29,7 +29,7 @@
             }
 
             &[aria-invalid="true"] {
-                @include b($size: xxs, $color: danger);
+                @include b($color: danger);
             }
 
             &.size {

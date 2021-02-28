@@ -23,40 +23,9 @@ export const keyCodes = {
 
 /**
  * Documentation
- * A function to generate a unique UUID
- */
-export function uniqueId() {
-    let template = <any>[1e7] + -1e3 + -4e3 + -8e3 + -1e11;
-    return (template).replace(/[018]/g, c =>
-        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-    );
-}
-
-/**
- * Documentation
  * @param {Function} fn The callback method to execute after the debounce
  * @param {number} delay The time to wait after the action to call the callback method
  */
-export function debounce2(fn: Function, delay: number) {
-    var timeOutId: NodeJS.Timeout;
-    let debounced = function (...args: any[]) {
-        if (timeOutId)
-            clearTimeout(timeOutId);
-
-        timeOutId = setTimeout(() => {
-            fn(...args);
-        }, delay);
-    }
-
-    debounced();
-}
-
-/**
- * Documentation
- * @param {Function} fn The callback method to execute after the debounce
- * @param {number} delay The time to wait after the action to call the callback method
- */
-
 export const debounce = (fn: Function, delay: number) => {
     let timeOutId: NodeJS.Timeout;
     return function (...args) {

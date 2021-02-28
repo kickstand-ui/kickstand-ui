@@ -3,16 +3,18 @@ import { debounce } from '../../utils/componentUtils';
 
 export interface IFormFieldData {
     name: string;
-    value: string | number | boolean | any[];
+    value: FormFieldValue;
     isValid: boolean;
     validity: ValidityState;
 }
+
+export type FormFieldValue = string | number | boolean | FileList | Array<any> | null;
 
 export interface ICustomInput {
     validate(): Promise<IFormFieldData>
 }
 
-export interface ICustomInputElement extends HTMLElement, ICustomInput {}
+export interface ICustomInputElement extends HTMLElement, ICustomInput { }
 
 @Component({
     tag: 'ks-form-field',
@@ -41,7 +43,7 @@ export class FormField implements ComponentInterface {
     @Prop() requiredText: string = 'Required';
     @Prop({ mutable: true }) invalid: boolean = false;
     @Prop() disabled: boolean;
-    @Prop({ mutable: true }) value?: string | number | boolean | any[] | null;
+    @Prop({ mutable: true }) value?: FormFieldValue;
     @Prop() pattern?: string;
     @Prop() min?: number = undefined;
     @Prop() max?: number = undefined;
@@ -69,6 +71,25 @@ export class FormField implements ComponentInterface {
         | 'text'
         | 'textarea'
         | 'url' = 'text';
+    @Prop({ mutable: true }) validateOnInput: boolean = false;
+    @Prop() debounce: number = 0;
+    @Prop() inline: boolean = false;
+    @Prop() datalist: boolean = false;
+    @Prop() checked: boolean = false;
+    @Prop() indeterminate: boolean = false;
+    @Prop() icon?: string;
+    @Prop() iconDirection: 'left' | 'right' = 'right';
+    @Prop() size: 'sm' | 'md' | 'lg' = 'md';
+    @Prop() inputClass?: string;
+    @Prop() autoExpand: boolean = false;
+
+    // File Input
+    @Prop() accept?: string;
+    @Prop() multiple?: boolean;
+    @Prop() webkitdirectory?: boolean;
+    @Prop() capture: 'user' | 'environment';
+
+    // Error Messages
     @Prop() defaultErrorMessage: string = 'The value entered is not valid.';
     @Prop() badInputErrorMessage: string = 'There was a problem processing the value.';
     @Prop() patternErrorMessage: string = 'The value was not in the right format.';
@@ -79,16 +100,6 @@ export class FormField implements ComponentInterface {
     @Prop() minlengthErrorMessage: string = `Your value must be at least ${this.minlength} characters.`;
     @Prop() typeErrorMessage: string = `Your value must be a valid ${this.type === 'tel' ? 'telephone number' : this.type}.`;
     @Prop() requiredErrorMessage: string = this.type === 'autocomplete' ? 'The value entered is not one of the available options.' : 'This field is required.';
-    @Prop({ mutable: true }) validateOnInput: boolean = false;
-    @Prop() debounce: number = 0;
-    @Prop() inline: boolean = false;
-    @Prop() datalist: boolean = false;
-    @Prop() checked: boolean = false;
-    @Prop() icon?: string;
-    @Prop() iconDirection: 'left' | 'right' = 'right';
-    @Prop() size: 'sm' | 'md' | 'lg' = 'md';
-    @Prop() inputClass: string;
-    @Prop() autoExpand: boolean = false;
 
     @Event() updated!: EventEmitter<IFormFieldData>;
     @Event() blurred!: EventEmitter;
@@ -112,7 +123,7 @@ export class FormField implements ComponentInterface {
         if (this.type === 'autocomplete')
             return;
 
-        if (this.$input && this.$input.value !== this.value)
+        if (this.type !== 'file' && this.$input && this.$input.value !== this.value)
             this.$input.value = this.value?.toString();
 
         if (this.validateOnInput)
@@ -129,7 +140,25 @@ export class FormField implements ComponentInterface {
             $options.forEach(x => x.hidden = true);
         }
 
-        this.inputHandler = debounce(() => this.value = this.$input.value || '', this.debounce);
+        this.setRangeStyles();
+
+        this.inputHandler = debounce(() => {
+            this.value = this.type === 'file'
+                ? this.$input['files']
+                : this.$input.value || '';
+
+            this.setRangeStyles();
+        }, this.debounce);
+    }
+
+    private setRangeStyles() {
+        if (this.type === 'range') {
+            const range: any = this.$input;
+            const min = this.min || 0;
+            const max = this.max || 100;
+
+            this.$input.style.background = `linear-gradient(to right, rgb(var(--ks-color-primary-base)) 0%, rgb(var(--ks-color-primary-base)) ${(range.value - min) / (max - min) * 100}%, rgb(var(--ks-color-light-light)) ${(range.value - min) / (max - min) * 100}%, rgb(var(--ks-color-light-light)) 100%)`;
+        }
     }
 
     private handleComponentChange(e) {
@@ -152,15 +181,15 @@ export class FormField implements ComponentInterface {
         this.validityState = this.$input.validity;
         return {
             name: this.$input.name,
-            value: this.value == null ? this.value : this.value.toString(),
+            value: typeof this.value === 'number' ? this.value.toString() : this.value,
             isValid: this.$input.checkValidity(),
             validity: this.validityState
         };
     }
 
     private getValue(): string {
-        return typeof this.value === 'number' 
-            ? this.value.toString() 
+        return typeof this.value === 'number'
+            ? this.value.toString()
             : (this.value || '').toString();
     }
 
@@ -232,13 +261,17 @@ export class FormField implements ComponentInterface {
         let value = this.getValue();
         let props = {
             'id': this.fieldId,
-            'class':`form-input size-${this.size} ${this.icon ? `display-icon-${this.iconDirection}` : ''} ${this.inputClass ? this.inputClass : ''}`,
+            'class': `form-input size-${this.size} ${this.icon ? `display-icon-${this.iconDirection}` : ''} ${this.inputClass ? this.inputClass : ''}`,
             'name': this.getInputName(),
             'value': value,
             'disabled': this.disabled,
             'required': this.required,
             'aria-invalid': !this.disabled && this.invalid.toString(),
-            'list': this.datalist && this.listId
+            'list': this.datalist && this.listId,
+            'accept': this.accept,
+            'multiple': this.multiple,
+            'webkitdirectory': this.webkitdirectory,
+            'capture': this.capture
         };
         props = this.setProps(props);
         let classes = {
@@ -287,9 +320,9 @@ export class FormField implements ComponentInterface {
                 </ks-autocomplete>
             ),
             'spin-box': (
-                <ks-spin-box 
+                <ks-spin-box
                     value={this.value}
-                    min={this.min} 
+                    min={this.min}
                     max={this.max}
                     step={this.step}
                     name={this.name}
@@ -301,7 +334,7 @@ export class FormField implements ComponentInterface {
                     input-class={this.inputClass}
                     onUpdated={e => this.handleComponentChange(e)}
                     ref={el => this.$customInput = el}
-                    >
+                >
                 </ks-spin-box>
             )
         }[this.type] || [
@@ -362,6 +395,8 @@ export class FormField implements ComponentInterface {
                     required={this.required}
                     required-text={this.requiredText}
                     name={this.getInputName()}
+                    disabled={this.disabled}
+                    indeterminate={this.indeterminate}
                     onChanged={e => this.handleComponentChange(e)}
                     ref={el => this.$customInput = el}
                 />

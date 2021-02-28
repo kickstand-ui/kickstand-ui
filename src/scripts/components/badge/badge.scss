@@ -15,7 +15,7 @@
     @each $color, $value in get-colors() {
         &.#{$color} {
             @include bg-color($color);
-            @include b(solid, xxxs, $color);
+            @include b($color: $color);
 
             &.hollow {
                 background-color: transparent;

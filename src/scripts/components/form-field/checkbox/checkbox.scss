@@ -11,26 +11,6 @@
         }
     }
 
-    .checkbox-input {
-        @include screen-reader-only();
-
-        &:checked+.checkbox-label {
-            .checkbox-icon {
-                background: color-value(primary);
-                border-color: color-value(primary);
-
-                svg {
-                    stroke-dashoffset: 0;
-                }
-
-                &:before {
-                    opacity: 0;
-                    @include transition();
-                }
-            }
-        }
-    }
-
     .checkbox-label {
         &:hover {
             border-color: color-value(primary);
@@ -46,17 +26,16 @@
             height: 1.125em;
             transform: scale(1);
             vertical-align: middle;
-            // border: 0.125em solid var(split-color-list(default-border(color));
-            @include b();
-            border-width: 0.125em;
             background-color: white;
+            @include b($color: light, $variant: darker);
             @include transition();
             @include br(sm);
+            @include shadow(inner);
 
             svg {
                 position: absolute;
-                top: 0.09375em;
-                left: 0.0625em;
+                top: 0.175em;
+                left: 0.125em;
                 fill: none;
                 stroke: white;
                 stroke-width: 2;
@@ -84,6 +63,53 @@
             vertical-align: middle;
             transform: translate3d(0, 0, 0);
             @include pl(sm);
+        }
+    }
+
+    .checkbox-input {
+        @include screen-reader-only();
+
+        &:checked+.checkbox-label {
+            .checkbox-icon {
+                background: color-value(primary);
+                border-color: color-value(primary);
+
+                svg {
+                    stroke-dashoffset: 0;
+                }
+
+                &:before {
+                    opacity: 0;
+                    @include transition();
+                }
+            }
+        }
+
+        &:disabled+.checkbox-label {
+            cursor: not-allowed;
+            opacity: 0.7;
+
+            .checkbox-icon {
+                @include shadow(none);
+            }
+        }
+
+        &:indeterminate {
+            &+.checkbox-label {
+                svg {
+                    position: absolute;
+                    top: 0.43em;
+                    left: 0.155em;
+                    fill: color-value(primary);
+                    stroke: color-value(primary);
+                    stroke-width: 2;
+                    stroke-dasharray: 4em;
+                    stroke-dashoffset: 1em;
+                    transition-delay: .1s;
+                    transform: translate3d(0, 0, 0);
+                    @include transition();
+                }
+            }
         }
     }
 }
