@@ -1,8 +1,8 @@
 @import '../variables';
 
 @function transition($name) {
-    @if map-has-key($trasitions, $name) {
-        @return map-get($trasitions, $name);
+    @if map-has-key($transitions, $name) {
+        @return map-get($transitions, $name);
     }
 
     @else {
