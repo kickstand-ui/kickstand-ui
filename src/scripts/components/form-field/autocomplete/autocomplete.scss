@@ -62,6 +62,7 @@
 
             .ks-button {
                 .icon {
+                    @include font-size(sm);
                     @include color(dark, lighter);
                 }
             }
