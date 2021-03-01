@@ -5,7 +5,7 @@ export default { title: 'Components/Loading' };
 const sizes = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'];
 
 export const playground = () => {
-    const icon = select('icon', ['circle_spinner', 'ring_spinner', 'ellipsis_pulse', 'ellipsis_typing'], 'ring_spinner');
+    const icon = select('icon', ['loading_circle_spinner', 'loading_ring_spinner', 'loading_ellipsis_pulse', 'loading_ellipsis_typing'], 'loading_circle_spinner');
     const message = text('message', 'Loading...');
     const showMessage = boolean('show-message', false);
     const cssClass = text('class', '')
@@ -20,7 +20,7 @@ export const playground = () => {
 
 export const loadingOverlay = () => {
     const absolute = boolean('absolute', false);
-    const icon = select('icon', ['circle_spinner', 'ring_spinner', 'ellipsis_pulse', 'ellipsis_typing'], 'ring_spinner');
+    const icon = select('icon', ['loading_circle_spinner', 'loading_ring_spinner', 'loading_ellipsis_pulse', 'loading_ellipsis_typing'], 'loading_circle_spinner');
     const message = text('message', 'Loading...');
     const showMessage = boolean('show-message', false);
     const size = select('size', sizes, 'sm');
