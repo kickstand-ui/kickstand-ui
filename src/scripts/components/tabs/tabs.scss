@@ -49,7 +49,6 @@
         width: 100%;
         white-space: normal;
         background-color: white;
-        flex-shrink: 0;
         @include b();
         @include p(lg);
     }
@@ -76,6 +75,7 @@
             }
 
             .tab-panel {
+                flex-shrink: 0;
                 @include b-t(none);
                 @include br-b(sm);
             }
@@ -103,6 +103,7 @@
             }
 
             .tab-panel {
+                flex-shrink: 0;
                 @include b-b(none);
                 @include br-t(sm);
             }

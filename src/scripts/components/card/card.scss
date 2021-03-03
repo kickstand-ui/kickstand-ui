@@ -10,11 +10,19 @@
     &.img-top {
         display: flex;
         flex-direction: column;
+
+        .card-img {
+            flex-shrink: 0;
+        }    
     }
 
     &.img-bottom {
         display: flex;
         flex-direction: column-reverse;
+
+        .card-img {
+            flex-shrink: 0;
+        }    
     }
 
     &.img-left {
@@ -64,10 +72,6 @@
                 }
             }
         }
-    }
-
-    .card-img {
-        flex-shrink: 0;
     }
 
     .card-content {
