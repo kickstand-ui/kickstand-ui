@@ -61,7 +61,7 @@ export class SpinBox implements ComponentInterface, ICustomInput {
             return;
 
         let value = Number(this.$input.value);
-        this.value = --value;
+        this.value = value - this.step;
         this.$input.value = this.value.toString();
     }
 
@@ -70,7 +70,7 @@ export class SpinBox implements ComponentInterface, ICustomInput {
             return;
 
         let value = Number(this.$input.value);
-        this.value = ++value;
+        this.value = value + this.step;
         this.$input.value = this.value.toString();
     }
 
