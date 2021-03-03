@@ -37,6 +37,10 @@
     &.img-behind {
         display: flex;
         flex-direction: column;
+        
+        .card-img {
+            flex-shrink: 0;
+        }    
 
         .card-content {
             position: absolute;
