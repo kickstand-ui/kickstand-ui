@@ -8,12 +8,12 @@ import { keyCodes } from '../../../utils/componentUtils';
 })
 export class Autocomplete implements ComponentInterface, ICustomInput {
     autocompleteId = `autocomplete_${autocompleteIds++}`;
+    focusIndex: number = 0;
     $select: HTMLSelectElement;
     $input: HTMLInputElement;
     $options: HTMLOptionElement[];
     $selectedOption: HTMLOptionElement;
     $dropdownOptions: HTMLUListElement[];
-    focusIndex: number = 0;
     $dropdown: HTMLElement;
 
     @Element() $el: HTMLElement;
@@ -55,7 +55,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
             if (isPreventClose)
                 return;
 
-            this.isExpanded = false;
+            this.hideOptions();
         });
     }
 
@@ -158,7 +158,6 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
     }
 
     private onTextBoxDownPressed() {
-        this.filterOptions();
         this.showOptions();
         this.focusIndex = 0;
         setTimeout(() => this.$dropdownOptions[this.focusIndex].focus(), 100);
@@ -272,8 +271,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
                                 role="option"
                                 class="option"
                                 tabindex="-1"
-                                aria-selected="false"
-                                data-option-value={i}
+                                aria-selected={this.value === x.value ? 'true' : 'false'}
                                 id={`autocomplete_${this.autocompleteId}_option_${i}`}
                                 onClick={() => this.optionClickHandler(x, i)}
                                 onKeyUp={(e) => this.onOptionKeyupHandler(e, x, i)}
