@@ -255,6 +255,7 @@ export class FormField implements ComponentInterface {
     private handleClearContentsClick() {
         this.value = '';
         this.cleared.emit();
+        this.$input.focus();
     }
 
     render() {

@@ -43,13 +43,8 @@ export class Form implements ComponentInterface {
     }
 
     private async getFormData() {
-        let formFieldData: IFormFieldData[] = [];
-
-        this.$formFields.forEach(async x => {
-            let fieldData = await x.validate();
-            formFieldData.push(fieldData);
-        });
-
+        let formFieldData = await Promise.all(this.$formFields.map(async x => await x.validate()));
+        
         return {
             isValid: !this.invalid,
             formFieldData

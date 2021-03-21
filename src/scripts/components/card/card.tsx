@@ -43,16 +43,18 @@ export class Card implements ComponentInterface {
         let linkProps = {
             [this.hrefProp]: this.href
         }
-        
+
         const CustomTag = this.linkTag;
 
         return (
             <Host class={classes} role="article">
-                {this.imgSrc && (this.href
-                    ? <CustomTag class="card-img" {...linkProps} ref={el => this.$link = el}>
-                        <ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} aspect-ratio={this.imgAspectRatio} />
-                    </CustomTag>
-                    : <ks-img class="card-img" alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} aspect-ratio={this.imgAspectRatio} />)}
+                {this.imgSrc && <div class="card-img">
+                    {this.href
+                        ? <CustomTag {...linkProps} ref={el => this.$link = el}>
+                            <ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} aspect-ratio={this.imgAspectRatio} />
+                        </CustomTag>
+                        : <ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} aspect-ratio={this.imgAspectRatio} />}
+                </div>}
                 <div class="card-content">
                     <slot />
                 </div>

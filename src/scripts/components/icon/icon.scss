@@ -16,4 +16,12 @@
         overflow: visible;
         vertical-align: -0.125em;
     }
+
+    &[icon^="loading"] {
+        .icon {
+            margin: 0;
+            height: 1em;
+            width: 1em;
+        }
+    }
 }
