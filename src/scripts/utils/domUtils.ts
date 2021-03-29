@@ -1,7 +1,7 @@
 declare global {
-    interface HTMLElement {
-        find<T extends HTMLElement>(selector: string): T;
-        findAll<T extends HTMLElement>(selector: string): T[];
+    interface Element {
+        find<T extends Element>(selector: string): T;
+        findAll<T extends Element>(selector: string): T[];
         on(event: string, callback: Function): void;
     }
 
@@ -14,23 +14,23 @@ declare global {
     }
 }
 
-export function $<T extends HTMLElement>(selector: string): T {
+export function $<T extends Element>(selector: string): T {
     return (document.querySelector(selector) as any) as T;
 }
 
-export function $$<T extends HTMLElement>(selector: string): T[] {
+export function $$<T extends Element>(selector: string): T[] {
     return Array.from(document.querySelectorAll(selector) as any) as T[];
 }
 
-HTMLElement.prototype.find = function <T extends HTMLElement>(selector: string): T {
+Element.prototype.find = function <T extends Element>(selector: string): T {
     return this.querySelector(selector) as T;
 };
 
-HTMLElement.prototype.findAll = function <T extends HTMLElement>(selector: string): T[] {
+Element.prototype.findAll = function <T extends Element>(selector: string): T[] {
     return Array.from(document.querySelectorAll(selector) as any) as T[];
 };
 
-HTMLElement.prototype.on = function (event: string, callback: Function) {
+Element.prototype.on = function (event: string, callback: Function) {
     this.addEventListener(event, callback);
 };
 
