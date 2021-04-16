@@ -111,7 +111,7 @@ export class Overlay {
 
         return (<Host class={classes}>
             <div class="scrim" onClick={() => this.handleScrimClick()}></div>
-            <div class="content" role="dialog" aria-labelledby={this.titleId} tabindex="-1" ref={el => this.$content = el}>
+            <div class="content" role="dialog" aria-labelledby={this.titleId} aria-modal={`${this.isShowing}`} tabindex="-1" ref={el => this.$content = el}>
                 <slot />
             </div>
         </Host>);
