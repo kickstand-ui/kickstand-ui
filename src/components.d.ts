@@ -255,7 +255,6 @@ export namespace Components {
         "icon": string;
         "label": string;
         "labelledBy": string;
-        "rotate": '0' | '45' | '90' | '135' | '180' | '225' | '270' | '360' | '-45' | '-90' | '-135' | '-180' | '-225' | '-270' | '-360';
     }
     interface KsImg {
         "alt": string;
@@ -931,7 +930,6 @@ declare namespace LocalJSX {
         "icon"?: string;
         "label"?: string;
         "labelledBy"?: string;
-        "rotate"?: '0' | '45' | '90' | '135' | '180' | '225' | '270' | '360' | '-45' | '-90' | '-135' | '-180' | '-225' | '-270' | '-360';
     }
     interface KsImg {
         "alt"?: string;

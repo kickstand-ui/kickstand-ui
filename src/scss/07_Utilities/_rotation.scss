@@ -51,18 +51,18 @@ $angles: (0, 45, 90, 135, 180, 225, 270, 360);
 
 .spin {
     &-fast {
-        animation: rotating transition(med) linear infinite;
+        animation: rotating transition(med) linear infinite !important;
     }
 
     &-med {
-        animation: rotating transition(slow) linear infinite;
+        animation: rotating transition(slow) linear infinite !important;
     }
 
     &-slow {
-        animation: rotating transition(xslow) linear infinite;
+        animation: rotating transition(xslow) linear infinite !important;
     }
 
     &-none {
-        animation: none;
+        animation: none !important;
     }
 }
