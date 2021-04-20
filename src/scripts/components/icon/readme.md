@@ -7,12 +7,11 @@
 
 ## Properties
 
-| Property     | Attribute     | Description | Type                                                                                                                                   | Default     |
-| ------------ | ------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `icon`       | `icon`        |             | `string`                                                                                                                               | `undefined` |
-| `label`      | `label`       |             | `string`                                                                                                                               | `undefined` |
-| `labelledBy` | `labelled-by` |             | `string`                                                                                                                               | `undefined` |
-| `rotate`     | `rotate`      |             | `"-135" \| "-180" \| "-225" \| "-270" \| "-360" \| "-45" \| "-90" \| "0" \| "135" \| "180" \| "225" \| "270" \| "360" \| "45" \| "90"` | `'0'`       |
+| Property     | Attribute     | Description | Type     | Default     |
+| ------------ | ------------- | ----------- | -------- | ----------- |
+| `icon`       | `icon`        |             | `string` | `undefined` |
+| `label`      | `label`       |             | `string` | `undefined` |
+| `labelledBy` | `labelled-by` |             | `string` | `undefined` |
 
 
 ## Dependencies

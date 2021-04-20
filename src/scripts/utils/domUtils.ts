@@ -1,7 +1,7 @@
 declare global {
     interface Element {
-        find<T extends Element>(selector: string): T;
-        findAll<T extends Element>(selector: string): T[];
+        query<T extends Element>(selector: string): T;
+        queryAll<T extends Element>(selector: string): T[];
         on(event: string, callback: Function): void;
     }
 
@@ -22,11 +22,11 @@ export function $$<T extends Element>(selector: string): T[] {
     return Array.from(document.querySelectorAll(selector) as any) as T[];
 }
 
-Element.prototype.find = function <T extends Element>(selector: string): T {
+Element.prototype.query = function <T extends Element>(selector: string): T {
     return this.querySelector(selector) as T;
 };
 
-Element.prototype.findAll = function <T extends Element>(selector: string): T[] {
+Element.prototype.queryAll = function <T extends Element>(selector: string): T[] {
     return Array.from(document.querySelectorAll(selector) as any) as T[];
 };
 

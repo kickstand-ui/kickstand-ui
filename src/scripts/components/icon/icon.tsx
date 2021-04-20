@@ -12,7 +12,6 @@ export class Icon implements ComponentInterface {
     @Prop() label: string;
     @Prop() labelledBy: string;
     @Prop() icon: string;
-    @Prop() rotate: '0' | '45' | '90' | '135' | '180' | '225' | '270' | '360' | '-45' | '-90' | '-135' | '-180' | '-225' | '-270' | '-360' = '0';
 
     @State() iconContent: Document;
 
@@ -30,7 +29,7 @@ export class Icon implements ComponentInterface {
 
     render() {
         return (
-            <Host class={`ks-icon rotate-${this.rotate}`}></Host>
+            <Host class={`ks-icon`}></Host>
         );
     }
 }
