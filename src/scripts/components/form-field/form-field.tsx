@@ -35,8 +35,9 @@ export class FormField implements ComponentInterface {
     @Prop() label: string;
     @Prop() hideLabel: boolean = false;
     @Prop() helpText: string;
+    @Prop() tooltipLabel: string = 'additional information';
     @Prop() tooltipText: string;
-    @Prop() tooltipSize: 'sm' | 'md' | 'lg' | 'xl' = 'sm';;
+    @Prop() tooltipSize: 'sm' | 'md' | 'lg' | 'xl' = 'sm';
     @Prop() placeholder: string;
     @Prop() name: string;
     @Prop() required: boolean;
@@ -444,7 +445,7 @@ export class FormField implements ComponentInterface {
                         <span class={`field-label ${this.hideLabel && 'sr-only'}`}>
                             {this.label}
                             {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText} aria-hidden="true">*</abbr>}
-                            {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size={this.tooltipSize} text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info" /></ks-tooltip>}
+                            {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size={this.tooltipSize} text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info" label={this.tooltipLabel} /></ks-tooltip>}
                         </span>
                         <span class="help-text">{this.helpText}</span>
                         <span class="error-message text-danger" role="alert" aria-live="assertive">

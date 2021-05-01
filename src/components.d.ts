@@ -124,6 +124,7 @@ export namespace Components {
         "name": string;
         "required": boolean;
         "requiredText": string;
+        "tooltipLabel": string;
         "tooltipSize": 'sm' | 'md' | 'lg' | 'xl';
         "tooltipText": string;
         "validate": () => Promise<IFormFieldData>;
@@ -137,6 +138,7 @@ export namespace Components {
         "required": boolean;
         "requiredErrorMessage": string;
         "requiredText": string;
+        "tooltipLabel": string;
         "tooltipSize": 'sm' | 'md' | 'lg' | 'xl';
         "tooltipText": string;
         "type": 'checkbox' | 'radio';
@@ -213,6 +215,7 @@ export namespace Components {
         "size": 'sm' | 'md' | 'lg';
         "step"?: number;
         "stepErrorMessage": string;
+        "tooltipLabel": string;
         "tooltipSize": 'sm' | 'md' | 'lg' | 'xl';
         "tooltipText": string;
         "type": 'autocomplete'
@@ -796,6 +799,7 @@ declare namespace LocalJSX {
         "onChanged"?: (event: CustomEvent<IFormFieldData>) => void;
         "required"?: boolean;
         "requiredText"?: string;
+        "tooltipLabel"?: string;
         "tooltipSize"?: 'sm' | 'md' | 'lg' | 'xl';
         "tooltipText"?: string;
     }
@@ -809,6 +813,7 @@ declare namespace LocalJSX {
         "required"?: boolean;
         "requiredErrorMessage"?: string;
         "requiredText"?: string;
+        "tooltipLabel"?: string;
         "tooltipSize"?: 'sm' | 'md' | 'lg' | 'xl';
         "tooltipText"?: string;
         "type"?: 'checkbox' | 'radio';
@@ -889,6 +894,7 @@ declare namespace LocalJSX {
         "size"?: 'sm' | 'md' | 'lg';
         "step"?: number;
         "stepErrorMessage"?: string;
+        "tooltipLabel"?: string;
         "tooltipSize"?: 'sm' | 'md' | 'lg' | 'xl';
         "tooltipText"?: string;
         "type"?: 'autocomplete'
