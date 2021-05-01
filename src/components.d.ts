@@ -63,6 +63,10 @@ export namespace Components {
         "hrefProp": string;
         "linkTag": string;
         "loading": boolean;
+        "loadingIcon": string;
+        "loadingMessage": string;
+        "loadingTheme": 'dark' | 'light';
+        "showLoadingMessage": boolean;
         "shows": string;
         "size": 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "target": string;
@@ -737,6 +741,10 @@ declare namespace LocalJSX {
         "hrefProp"?: string;
         "linkTag"?: string;
         "loading"?: boolean;
+        "loadingIcon"?: string;
+        "loadingMessage"?: string;
+        "loadingTheme"?: 'dark' | 'light';
+        "showLoadingMessage"?: boolean;
         "shows"?: string;
         "size"?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
         "target"?: string;
