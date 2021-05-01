@@ -47,7 +47,7 @@ export class Card implements ComponentInterface {
         const CustomTag = this.linkTag;
 
         return (
-            <Host class={classes} role="article">
+            <Host class={classes}>
                 {this.imgSrc && <div class="card-img">
                     {this.href
                         ? <CustomTag {...linkProps} ref={el => this.$link = el}>
