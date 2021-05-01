@@ -4,7 +4,9 @@ import { Component, h, Prop, Method, Host, ComponentInterface } from '@stencil/c
     tag: 'ks-accordion-slide'
 })
 export class AccordionSlide implements ComponentInterface {
-    slideId: string = `accordion_slide_${slideIds++}`;
+    slideId: number = slideIds++;
+    controlId: string = `accordion_control_${this.slideId}`;
+    panelId: string = `accordion_slide_${this.slideId}`;
     $slideContent: HTMLElement;
 
     @Prop() heading: string;
@@ -25,12 +27,12 @@ export class AccordionSlide implements ComponentInterface {
         return (
             <Host class="accordion-slide">
                 <h3 class="accordion-heading">
-                    <button class="accordion-control" aria-controls={this.slideId} aria-expanded={`${this.expanded}`} onClick={() => this.toggleSlide()}>
+                    <button id={this.controlId} class="accordion-control" aria-controls={this.panelId} aria-expanded={`${this.expanded}`} onClick={() => this.toggleSlide()}>
                         <span>{this.heading}</span>
                         <ks-icon class="accordion-icon" icon="chevron_down" />
                     </button>
                 </h3>
-                <section class="accordion-content" role="tabpanel" aria-hidden={`${!this.expanded}`} id={this.slideId} ref={el => this.$slideContent = el}>
+                <section id={this.panelId} class="accordion-content" aria-hidden={`${!this.expanded}`} aria-labelledby={this.controlId} ref={el => this.$slideContent = el}>
                     <slot />
                 </section>
             </Host>
