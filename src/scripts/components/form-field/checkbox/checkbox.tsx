@@ -13,6 +13,7 @@ export class Checkbox implements ComponentInterface, ICustomInput {
     @Prop({ mutable: true, reflect: true }) checked: boolean = false;
     @Prop() required: boolean;
     @Prop() tooltipText: string;
+    @Prop() tooltipLabel: string;
     @Prop() tooltipSize: 'sm' | 'md' | 'lg' | 'xl' = 'sm';;
     @Prop() requiredText: string = 'Required';
     @Prop() name: string;
@@ -72,7 +73,7 @@ export class Checkbox implements ComponentInterface, ICustomInput {
                     <span class="checkbox-description">
                         {this.label}
                         {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-hidden="true">*</abbr>}
-                        {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size={this.tooltipSize} text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info" /></ks-tooltip>}
+                        {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size={this.tooltipSize} text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info" label={this.tooltipLabel} /></ks-tooltip>}
                     </span>
                 </label>
             </Host>

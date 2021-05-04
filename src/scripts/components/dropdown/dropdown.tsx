@@ -1,11 +1,11 @@
-import { Component, h, Prop, Host, Element, State, Listen, Method, Event, EventEmitter } from '@stencil/core';
-import { FOCUSABLE_ELEMENTS } from '../../utils/componentUtils';
+import { Component, h, Prop, Host, Element, State, Listen, Method, Event, EventEmitter, ComponentInterface } from '@stencil/core';
+import { FOCUSABLE_ELEMENTS, keyCodes } from '../../utils/componentUtils';
 
 @Component({
     tag: 'ks-dropdown',
     styleUrl: 'dropdown.scss'
 })
-export class Dropdown {
+export class Dropdown implements ComponentInterface {
     $contents: HTMLElement;
     $control: HTMLElement;
     $focusableEls: HTMLElement[];
@@ -51,14 +51,11 @@ export class Dropdown {
 
     @Listen('keydown')
     handleKeyDown(e: KeyboardEvent) {
-        const KEY_TAB = 9;
-        const KEY_ESC = 27;
-
         switch (e.keyCode) {
-            case KEY_TAB:
+            case keyCodes.TAB:
                 this.handleTab(e);
                 break;
-            case KEY_ESC:
+            case keyCodes.ESC:
                 this.handleEsc();
                 break;
             default:
@@ -71,11 +68,31 @@ export class Dropdown {
         this.hide();
     }
 
-    handleEsc() {
+    componentDidRender() {
+        this.$focusableEls = Array.from(this.$contents.querySelectorAll(FOCUSABLE_ELEMENTS));
+    }
+
+    componentDidLoad() {
+        window.addEventListener('click', (e: MouseEvent) => {
+            if (!this.isExpanded)
+                return;
+
+            let $preventCloseElements = Array.from(document.querySelectorAll('.prevent-dropdown-close'));
+            let isPreventClose = this.$el.contains(e.target as HTMLElement)
+                || $preventCloseElements.some(x => x.contains(e.target as HTMLElement));
+
+            if (isPreventClose)
+                return;
+
+            this.hide();
+        });
+    }
+
+    private handleEsc() {
         this.hide();
     }
 
-    handleTab(e: KeyboardEvent) {
+    private handleTab(e: KeyboardEvent) {
         if (!this.isExpanded)
             return;
 
@@ -88,35 +105,17 @@ export class Dropdown {
         }
     }
 
-    handleBackwardTab() {
+    private handleBackwardTab() {
         this.focusIndex = this.focusIndex === 0 ? this.$focusableEls.length - 1 : --this.focusIndex;
         this.$focusableEls[this.focusIndex].focus();
     }
 
-    handleForwardTab() {
+    private handleForwardTab() {
         this.focusIndex = this.$focusableEls.length - 1 === this.focusIndex ? 0 : ++this.focusIndex;
         this.$focusableEls[this.focusIndex].focus();
     }
 
-    componentDidRender() {
-        this.$focusableEls = Array.from(this.$contents.querySelectorAll(FOCUSABLE_ELEMENTS));
-
-        window.addEventListener('click', (e: MouseEvent) => {
-            if(!this.isExpanded)
-                return;
-                
-            let $preventCloseElements = Array.from(document.querySelectorAll('.prevent-dropdown-close'));
-            let isPreventClose = this.$el.contains(e.target as HTMLElement)
-                || $preventCloseElements.some(x => x.contains(e.target as HTMLElement));
-
-            if (isPreventClose)
-                return;
-
-            this.hide();
-        });
-    }
-
-    toggleDropdown() {
+    private toggleDropdown() {
         if (this.isExpanded) {
             this.hide();
         } else {

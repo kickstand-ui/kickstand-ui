@@ -17,6 +17,10 @@ export class Tooltip implements ComponentInterface {
     @Prop() text: string;
 
     componentDidRender() {
+        this.addRichContent();
+    }
+
+    private addRichContent() {
         if (!this.disable)
             this.$message.innerHTML = this.text;
     }
@@ -31,11 +35,12 @@ export class Tooltip implements ComponentInterface {
             ['aria-describedby']: !this.disable && this.tooltipId,
             'class': {
                 'text': !this.hideDecoration
-            }
+            },
+            'tabIndex': !this.disable ? 0 : null
         }
 
         return (
-            <Host class={classes} tabIndex={this.disable ? -1 : 0}>
+            <Host class={classes}>
                 <span {...wrapperProps}>
                     <slot />
                 </span>

@@ -5,18 +5,18 @@
         position: relative;
         display: inline-block;
 
-        @include hover-focus-active {
-            cursor: help;
-
-            .message {
-                visibility: visible;
-                opacity: 1;
-            }
-        }
-
         .text {
             @include b-b(dotted, xxxs, dark);
             @include transition();
+
+            @include hover-focus-active {
+                cursor: help;
+    
+                &+.message {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
         }
 
         .message {

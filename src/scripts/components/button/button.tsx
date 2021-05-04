@@ -29,6 +29,12 @@ export class LinkButton implements ComponentInterface {
     @Prop() target: string;
     @Prop() download: boolean;
 
+    @Prop() loadingTheme: 'dark' | 'light' = 'light';
+    @Prop() loadingMessage: string = 'Loading...';
+    @Prop() showLoadingMessage: boolean = false;
+    @Prop() loadingIcon: string;
+
+
     componentDidRender() {
         this.showLoading();
         this.setEventListeners();
@@ -116,7 +122,7 @@ export class LinkButton implements ComponentInterface {
                         <slot />
                     </CustomTag>
                     : [
-                        <ks-loading-overlay absolute ref={el => this.$loading = el} onClick={e => this.clickHandler(e)}></ks-loading-overlay>,
+                        <ks-loading-overlay theme={this.loadingTheme} message={this.loadingMessage} icon={this.loadingIcon} showMessage={this.showLoadingMessage} absolute  ref={el => this.$loading = el} onClick={e => this.clickHandler(e)}></ks-loading-overlay>,
                         <button {...props} class={classes} onClick={e => this.clickHandler(e)}>
                             <slot />
                         </button >

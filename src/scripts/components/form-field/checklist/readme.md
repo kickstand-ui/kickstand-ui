@@ -17,6 +17,7 @@
 | `required`             | `required`               |             | `boolean`                      | `undefined`                 |
 | `requiredErrorMessage` | `required-error-message` |             | `string`                       | ``This field is required.`` |
 | `requiredText`         | `required-text`          |             | `string`                       | `'Required'`                |
+| `tooltipLabel`         | `tooltip-label`          |             | `string`                       | `undefined`                 |
 | `tooltipSize`          | `tooltip-size`           |             | `"lg" \| "md" \| "sm" \| "xl"` | `'sm'`                      |
 | `tooltipText`          | `tooltip-text`           |             | `string`                       | `undefined`                 |
 | `type`                 | `type`                   |             | `"checkbox" \| "radio"`        | `'checkbox'`                |

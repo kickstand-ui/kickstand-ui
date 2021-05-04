@@ -16,6 +16,7 @@
 | `name`          | `name`          |             | `string`                       | `undefined`  |
 | `required`      | `required`      |             | `boolean`                      | `undefined`  |
 | `requiredText`  | `required-text` |             | `string`                       | `'Required'` |
+| `tooltipLabel`  | `tooltip-label` |             | `string`                       | `undefined`  |
 | `tooltipSize`   | `tooltip-size`  |             | `"lg" \| "md" \| "sm" \| "xl"` | `'sm'`       |
 | `tooltipText`   | `tooltip-text`  |             | `string`                       | `undefined`  |
 

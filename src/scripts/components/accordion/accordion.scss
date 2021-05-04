@@ -13,57 +13,65 @@
             @include mt(none);
 
             .accordion-heading {
-                @include br-t(sm);
+                .accordion-control {
+                    @include br-t(sm);
+                }
             }
         }
 
         &:last-child {
             .accordion-heading {
-                @include br-b(sm);
+                .accordion-control {
+                    @include br-b(sm);
 
-                &[aria-expanded="false"] {
-                    transition-delay: 0.5s;
-                    transition-property: border-radius;
-                }
+                    &[aria-expanded="false"] {
+                        transition-delay: 0.5s;
+                        transition-property: border-radius;
+                    }
 
-                &[aria-expanded="true"] {
-                    @include br-b(none);
-
-                    &+.accordion-content {
-                        @include br-b(sm);
+                    &[aria-expanded="true"] {
+                        @include br-b(none);
                     }
                 }
+            }
+
+            .accordion-content {
+                @include br-b(sm);
             }
         }
 
         .accordion-heading {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            font-weight: bold;
-            background-color: white;
-            @include color(primary);
-            @include font-size(sm);
-            @include b();
-            @include px(lg);
-            @include mb(-xxs);
+            @include mb(none);
 
-            .accordion-icon {
-                line-height: 1;
+            .accordion-control {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                font-weight: bold;
+                background-color: white;
                 @include color(primary);
-                @include font-size(md);
-                @include transition();
-            }
+                @include font-size(sm);
+                @include b();
+                @include px(lg);
+                @include mb(-xxs);
 
-            &:focus {
-                @include default-outline();
-            }
-
-            &[aria-expanded="true"] {
                 .accordion-icon {
-                    transform: rotate(-180deg);
+                    line-height: 1;
+                    @include color(primary);
+                    @include font-size(md);
                     @include transition();
+                }
+
+                &:focus {
+                    @include default-outline();
+                }
+
+                &[aria-expanded="true"] {
+                    .accordion-icon {
+                        transform: rotate(-180deg);
+                        @include transition();
+                    }
                 }
             }
         }
@@ -87,7 +95,9 @@
     &.sm {
         .accordion-slide {
             .accordion-heading {
-                @include py(sm);
+                .accordion-control {
+                    @include py(sm);
+                }
             }
         }
     }
@@ -95,7 +105,9 @@
     &.md {
         .accordion-slide {
             .accordion-heading {
-                @include py(md);
+                .accordion-control {
+                    @include py(md);
+                }
             }
         }
     }
@@ -103,7 +115,9 @@
     &.lg {
         .accordion-slide {
             .accordion-heading {
-                @include py(lg);
+                .accordion-control {
+                    @include py(lg);
+                }
             }
         }
     }
