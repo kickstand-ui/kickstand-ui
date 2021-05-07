@@ -6,8 +6,11 @@
         display: inline-block;
 
         .text {
-            @include b-b(dotted, xxxs, dark);
             @include transition();
+
+            &.decoration {
+                @include b-b(dotted, xxxs, dark);
+            }
 
             @include hover-focus-active {
                 cursor: help;

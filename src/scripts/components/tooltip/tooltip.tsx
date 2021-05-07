@@ -34,7 +34,8 @@ export class Tooltip implements ComponentInterface {
         let wrapperProps = {
             ['aria-describedby']: !this.disable && this.tooltipId,
             'class': {
-                'text': !this.hideDecoration
+                'text': true,
+                'decoration': !this.hideDecoration
             },
             'tabIndex': !this.disable ? 0 : null
         }
