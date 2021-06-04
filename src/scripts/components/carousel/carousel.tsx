@@ -18,8 +18,8 @@ export class Carousel implements ComponentInterface {
     @State() slideIndex: number = 0;
     @State() slideTimer: any;
     @State() isPaused: boolean = false;
+    @State() $slides: HTMLKsCarouselSlideElement[];
 
-    $slides: HTMLKsCarouselSlideElement[];
     $indicators: Element[] = [];
     carouselId = `carousel_${carouselIds++}`;
 
@@ -29,10 +29,19 @@ export class Carousel implements ComponentInterface {
 
     componentDidLoad() {
         this.goToSlide();
+        const mo = new MutationObserver(() => {
+            this.$indicators = [];
+            this.initSlides();
+            this.goToSlide();
+        });
+        mo.observe(this.$el, { childList: true });
     }
 
     initSlides() {
         this.$slides = Array.from(this.$el.querySelectorAll('ks-carousel-slide'));
+
+        if(this.$slides.length === 0)
+            return;
 
         this.$slides.forEach((slide, index) => {
             slide.id = slide.id || `${this.carouselId}_slide_${index}`;
@@ -94,7 +103,7 @@ export class Carousel implements ComponentInterface {
     }
 
     updateIndicator() {
-        if (this.hideIndicators)
+        if (this.hideIndicators || this.$indicators.length === 0)
             return;
 
         this.$indicators.forEach(slide => slide.setAttribute('aria-selected', 'false'));
@@ -156,13 +165,13 @@ export class Carousel implements ComponentInterface {
 
         return (
             <Host class="ks-carousel">
-                <div class="slide-wrapper">
+                {this.$slides.length > 0 && <div class="slide-wrapper">
                     <div class="slides">
                         <slot />
                     </div>
                     {controls}
-                </div>
-                {this.thumbnails && thumbnailList}
+                </div>}
+                {this.thumbnails && this.$slides.length > 0 && thumbnailList}
             </Host>
         );
     }

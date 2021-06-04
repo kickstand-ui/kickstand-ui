@@ -3,6 +3,10 @@
 .ks-breadcrumbs {
     display: block;
 
+    .slot {
+        display: none;
+    }
+
     .links {
         display: flex;
         flex-wrap: wrap;

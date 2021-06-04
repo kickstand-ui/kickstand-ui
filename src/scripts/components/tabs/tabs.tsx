@@ -6,19 +6,19 @@ import { keyCodes } from '../../utils/componentUtils';
     styleUrl: 'tabs.scss'
 })
 export class Tabs implements ComponentInterface {
-    $tabPanels: HTMLKsTabElement[];
-    $tabs: HTMLButtonElement[];
-    $tabList: HTMLElement;
     $selectedTab: HTMLElement = null;
     tabId: string = `tabs_${tabsIds++}`;
-
+    
     @Element() $el: HTMLElement;
-
+    
     @Prop() position: 'top' | 'bottom' | 'left' | 'right' = 'top';
     @Prop() align: 'start' | 'center' | 'end' | 'justified' = 'start';
     @Prop() label: string;
-
+    
     @State() selectedIndex: number = 0;
+    @State() $tabPanels: HTMLKsTabElement[];
+    @State() $tabs: HTMLButtonElement[];
+    @State() $tabList: HTMLElement;
 
     connectedCallback() {
         this.initElements();
@@ -27,6 +27,12 @@ export class Tabs implements ComponentInterface {
 
     componentDidLoad() {
         this.$tabs = Array.from(this.$el.querySelectorAll('[role="tab"]')) as HTMLButtonElement[];
+        const mo = new MutationObserver(() => {
+            this.initElements();
+            this.initTabs();
+            this.$tabs = Array.from(this.$el.querySelectorAll('[role="tab"]')) as HTMLButtonElement[];
+        });
+        mo.observe(this.$el, { childList: true });
     }
 
     initElements() {
@@ -69,8 +75,8 @@ export class Tabs implements ComponentInterface {
 
         this.deselectTab();
 
-        e.keyCode === keyCodes.RIGHT_ARROW 
-            ? this.goToNextTab() 
+        e.keyCode === keyCodes.RIGHT_ARROW
+            ? this.goToNextTab()
             : this.goToPreviousTab();
 
         this.selectTab();
