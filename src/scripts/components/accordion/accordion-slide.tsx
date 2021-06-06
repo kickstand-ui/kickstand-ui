@@ -28,7 +28,7 @@ export class AccordionSlide implements ComponentInterface {
             <Host class="accordion-slide">
                 <h3 class="accordion-heading">
                     <button id={this.controlId} class="accordion-control" aria-controls={this.panelId} aria-expanded={`${this.expanded}`} onClick={() => this.toggleSlide()}>
-                        <span>{this.heading}</span>
+                        <span ref={el => el.innerHTML = this.heading}></span>
                         <ks-icon class="accordion-icon" icon="chevron_down" />
                     </button>
                 </h3>
