@@ -7,7 +7,7 @@ export const defaultTabs = () => {
     const align = select('align', ['start', 'center', 'end', 'justified'], 'start');
     return (`                            
         <ks-tabs class="m-xxl" position="${position}" align="${align}" style="max-width: 900px;">
-            <ks-tab tab-text="Three Hole Punch Jim">
+            <ks-tab tab-text="<b>Three</b> Hole Punch Jim">
                 <img src="https://badgerherald.com/media/2014/10/Halloween-Jim_Three-Hole-Punch-Jim.jpg" alt="jim" />
             </ks-tab>
             <ks-tab tab-text="Dave">

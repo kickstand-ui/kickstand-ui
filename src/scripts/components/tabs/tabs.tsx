@@ -130,8 +130,8 @@ export class Tabs implements ComponentInterface {
                             id={`${tab.id || `${this.tabId}_${index}`}_button`}
                             tabIndex={index === 0 ? 0 : -1}
                             onClick={e => this.clickHandler(e, index)}
+                            ref={el => el.innerHTML = tab.tabText}
                         >
-                            {tab.tabText}
                         </button>
                     )}
                 </div>
