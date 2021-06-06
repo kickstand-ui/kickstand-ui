@@ -19,6 +19,11 @@
 
         .heading {
             @include m(none);
+
+            .link-text {
+                font-size: 0.9em;
+                @include ml(xxs);
+            }
         }
     }
 

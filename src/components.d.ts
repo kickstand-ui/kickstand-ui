@@ -255,6 +255,7 @@ export namespace Components {
         "hrefProp": string;
         "itemWidth": string;
         "linkTag": string;
+        "linkText": string;
         "nextButtonText": string;
         "prevButtonText": string;
     }
@@ -937,6 +938,7 @@ declare namespace LocalJSX {
         "hrefProp"?: string;
         "itemWidth"?: string;
         "linkTag"?: string;
+        "linkText"?: string;
         "nextButtonText"?: string;
         "prevButtonText"?: string;
     }

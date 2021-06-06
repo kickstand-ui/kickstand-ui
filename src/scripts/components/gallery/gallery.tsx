@@ -18,6 +18,7 @@ export class Gallery implements ComponentInterface {
     @Prop() itemWidth: string;
     @Prop() prevButtonText: string = 'scroll left';
     @Prop() nextButtonText: string = 'scroll right';
+    @Prop() linkText: string;
     @Prop() linkTag: string = 'a';
     @Prop() hrefProp: string = 'href';
 
@@ -27,14 +28,26 @@ export class Gallery implements ComponentInterface {
     componentDidRender() {
         this.setScrollValues();
         this.setScrollListener();
-        this.setItemWidth();
+        this.initGalleryItems();
     }
 
-    private setItemWidth() {
-        if (this.itemWidth) {
-            Array.from(this.$el.querySelector('.scrolling-content').children)
-                .forEach((x: HTMLElement) => x.style.width = this.itemWidth);
-        }
+    componentDidLoad() {
+        const mo = new MutationObserver(() => {
+            this.setScrollValues();
+            this.setScrollListener();
+            this.initGalleryItems();
+        });
+        mo.observe(this.$el, { childList: true });
+    }
+
+    private initGalleryItems() {
+        Array.from(this.$el.querySelector('.scrolling-content').children)
+            .forEach((x: HTMLElement) => {
+                x.setAttribute('role', 'list-item');
+
+                if (this.itemWidth)
+                    x.style.width = this.itemWidth
+            });
     }
 
     private setScrollListener() {
@@ -57,7 +70,7 @@ export class Gallery implements ComponentInterface {
 
     private scrollLeft() {
         this.setScrollValues();
-        
+
         this.position = this.$container.scrollLeft - this.getScrollWidth();
         this.position = this.position <= 0 ? 0 : this.position;
         this.scroll();
@@ -129,7 +142,13 @@ export class Gallery implements ComponentInterface {
         return (
             <Host class={classes}>
                 <header class="header">
-                    <h2 class="heading">{this.href ? <CustomTag ref={el => el.setAttribute(this.hrefProp, this.href)}>{this.heading}</CustomTag> : this.heading}</h2>
+                    <h2 class="heading">
+                        {this.href 
+                            ? this.linkText 
+                                ? <span>{this.heading} <CustomTag class="link-text" ref={el => el.setAttribute(this.hrefProp, this.href)}>{this.linkText}</CustomTag></span>
+                                : <CustomTag ref={el => el.setAttribute(this.hrefProp, this.href)}>{this.heading}</CustomTag> 
+                            : this.heading}
+                    </h2>
                     <div class="controls">
                         <ks-button class="scroll-left" size="xs" display="clear" disabled={this.isStart} onClick={() => this.scrollLeft()}>
                             <ks-icon class="text-lg" icon="chevron_left" label={this.prevButtonText}></ks-icon>
@@ -140,7 +159,7 @@ export class Gallery implements ComponentInterface {
                     </div>
                 </header>
                 <div class={wrapperClasses}>
-                    <div class="scrolling-content">
+                    <div class="scrolling-content" role="list">
                         <slot />
                     </div>
                 </div>
