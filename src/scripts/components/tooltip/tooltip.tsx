@@ -36,6 +36,7 @@ export class Tooltip implements ComponentInterface {
             'class': {
                 'text': true,
                 'decoration': !this.hideDecoration
+
             },
             'tabIndex': !this.disable ? 0 : null
         }
