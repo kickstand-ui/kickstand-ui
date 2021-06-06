@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
     <title>Stencil Component Starter</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <link rel="stylesheet" href="./build/kickstand-ui.css">
     <script type="module" src="/build/kickstand-ui.esm.js"></script>
     <script nomodule src="/build/kickstand-ui.js"></script>
@@ -15,6 +16,25 @@
         <div class="m-xxl">
             <span>{{count}}</span>
         </div>
+        <ks-breadcrumbs>
+            <a v-for="crumb in breadcrumbs" :href="crumb.url" v-html="crumb.text"></a>
+        </ks-breadcrumbs>
+        <button @click="addCrumb()">Add Crumb</button>
+
+        <ks-carousel class="w-50" thumbnails>
+            <ks-carousel-slide v-for="slide in slides" alt="Jim Pranks Dwight" :src="slide.src">
+                <h2>{{slide.text}}</h2>
+            </ks-carousel-slide>
+        </ks-carousel>
+
+
+        <ks-tabs class="m-xxl" style="max-width: 900px;">
+            <ks-tab v-for="tab in tabs" :tab-text="tab.tabText">
+                <img :src="tab.src" alt="jim" />
+            </ks-tab>
+        </ks-tabs>
+
+
         <div>
             <ks-spin-box class="m-xxl" min="-5" :value="count" max="5" @updated="e => count = e.detail.value" />
         </div>
@@ -25,7 +45,7 @@
             <ks-form-field label="Test Input" :value="message" @updated="e => message = e.detail.value"></ks-form-field>
         </div>
 
-        <p>The value is {{input}}</p>
+        <!-- <p>The value is {{input}}</p> -->
         <ks-form-field value="test"></ks-form-field>
         <p>Header: <input type="text" v-model="message" /></p>
         <ks-alert type="primary" :header="message">
@@ -115,13 +135,62 @@
             data: {
                 header: '',
                 count: '2',
-                message: 'Test Message'
+                message: 'Test Message',
+                breadcrumbs: [
+                    { url: 'test.com', text: '<ks-icon icon="home"></ks-icon> Home 1' },
+                    { url: 'test.com', text: 'Products 1' },
+                    { url: 'test.com', text: 'Bacon Flavored <em>Toothpaste</em> 1' },
+                    { url: 'test.com', text: 'Details 1' },
+                ],
+                slides: [
+                    {
+                        src: "http://oyster.ignimgs.com/wordpress/stg.ign.com/2013/05/Stapler_in_jello.jpg",
+                        text: "Stapler in Jello"
+                    },
+                    {
+                        src: "https://www.bing.com/th?id=OIP.vcsEsRm8QqPj0OW_edJICwHaEJ&pid=Api&rs=1",
+                        text: "Jim Dressed as Dwight"
+                    },
+                    {
+                        src: "https://www.8asians.com/wp-content/uploads/2012/10/8A-Asian-Jim-Jim-Vs-Dwight-Randall-Park.png",
+                        text: "Asian Jim"
+                    },
+                ],
+                tabs: [
+                    {
+                        tabText: "Three Hole Punch Jim",
+                        src: "https://badgerherald.com/media/2014/10/Halloween-Jim_Three-Hole-Punch-Jim.jpg"
+                    },
+                    {
+                        tabText: "Dave",
+                        src: "https://img.buzzfeed.com/buzzfeed-static/static/2018-01/10/12/asset/buzzfeed-prod-fastlane-03/sub-buzz-20247-1515605252-1.jpg"
+                    },
+                    {
+                        tabText: "Facebook",
+                        src: "https://s-i.huffpost.com/gen/2137796/images/o-JOHN-KRASINSKI-FACEBOOK-facebook.jpg"
+                    },
+                ]
             },
             methods: {
                 handleUpdate(e) {
                     console.log(e);
                     this.count = e.value;
+                },
+                addCrumb() {
+                    this.breadcrumbs.push({ url: 'test.com', text: 'Test 1' })
                 }
+            },
+            mounted() {
+                setTimeout(() => {
+                    this.slides.push({
+                        src: "https://typeset-beta.imgix.net/rehost%2F2016%2F9%2F29%2Fbed54d5a-3d87-4f44-8f30-70ea3d7ed505.png?w=740&h=416&fit=crop&crop=faces&auto=format&q=70",
+                        text: "Dwight Fights Himself"
+                    });
+                    this.tabs.push({
+                        tabText: "Popeye",
+                        src: "https://th.bing.com/th/id/OIP.phya83cWh3fCeJ1ExctZIQHaEK?pid=Api&rs=1"
+                    });
+                }, 3000);
             }
         });
     </script>

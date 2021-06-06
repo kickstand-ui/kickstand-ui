@@ -1,20 +1,24 @@
-import { Component, h, ComponentInterface, Host, Element, Prop } from '@stencil/core';
+import { Component, h, ComponentInterface, Host, Element, Prop, State } from '@stencil/core';
 
 @Component({
     tag: 'ks-breadcrumbs',
     styleUrl: 'breadcrumbs.scss'
 })
 export class Breadcrumbs implements ComponentInterface {
-    $links: HTMLAnchorElement[];
-
     @Element() $el: HTMLElement;
-
+    
     @Prop() linkTag: string = 'a';
     @Prop() hrefProp: string = 'href';
 
+    @State() $links: HTMLAnchorElement[];
+    
     connectedCallback() {
         this.$links = Array.from(this.$el.children) as HTMLAnchorElement[];
-        this.$links.forEach(x => x.hidden = true);
+    }
+
+    componentDidLoad() {
+        const mo = new MutationObserver(() => this.$links = Array.from(this.$el.querySelectorAll('a:not(.link)')) as HTMLAnchorElement[]);
+        mo.observe(this.$el, { childList: true });
     }
 
     private isLastCrumb(index: number): boolean {
@@ -27,6 +31,8 @@ export class Breadcrumbs implements ComponentInterface {
         $el.classList.add('link');
         if(this.isLastCrumb(index))
             $el.setAttribute('aria-current', 'page');
+        else
+            $el.removeAttribute('aria-current');
     }
 
     render() {
@@ -34,7 +40,9 @@ export class Breadcrumbs implements ComponentInterface {
 
         return (
             <Host role="navigation" aria-label="breadcrumbs" class="ks-breadcrumbs">
-                <slot />
+                <div class="slot">
+                    <slot />
+                </div>
                 <ol class="links">
                     {this.$links.map(($link, index) =>
                         <li class={{ 'breadcrumb': true, 'current': this.isLastCrumb(index) }}>

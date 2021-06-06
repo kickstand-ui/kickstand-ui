@@ -17,7 +17,11 @@ export const config: Config = {
         {
             type: 'docs-vscode',
             file: './dist/custom-elements.json'
-        }
+        },
+        {
+            type: 'www',
+            serviceWorker: null, // disable service workers
+        },
     ],
     globalStyle: 'src/scss/styles.scss',
     plugins: [
