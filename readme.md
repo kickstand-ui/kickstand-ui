@@ -18,12 +18,12 @@ Kickstand UI is a Design system and pattern library built with Web Components, s
 
 ```html
 <!-- global styles and utility classes -->
-<link rel="stylesheet" href="https://unpkg.com/kickstand-ui@beta/dist/kickstand-ui/kickstand-ui.css" />
+<link rel="stylesheet" href="https://unpkg.com/kickstand-ui/dist/kickstand-ui/kickstand-ui.css" />
 
 <!-- scripts for browsers that support ES modules -->
-<script type="module" src="https://unpkg.com/kickstand-ui@beta/dist/kickstand-ui/kickstand-ui.esm.js"></script>
+<script type="module" src="https://unpkg.com/kickstand-ui/dist/kickstand-ui/kickstand-ui.esm.js"></script>
 <!-- scripts for browsers that do not support ES modules (legacy browsers) -->
-<script nomodule src="https://unpkg.com/kickstand-ui@beta/dist/kickstand-ui/kickstand-ui.js"></script>
+<script nomodule src="https://unpkg.com/kickstand-ui/dist/kickstand-ui/kickstand-ui.js"></script>
 ```
 (_For the best user experience, be sure to include both `script` tags._)
 
@@ -56,13 +56,14 @@ If you are planning on using the compiled CSS, you can find it at `kickstand-ui/
 
 ## Browser Support
 
-All of Kickstand UI's components are built using standards-based [web components](https://www.webcomponents.org/introduction). Browser support has greatly improved over the years. For features that are not fully supported, polyfills have been added (which will be included as-needed) to provide a great experience no matter what browser you are using.
+Kickstand UI's components are built using standards-based [web components](https://www.webcomponents.org/introduction). Browser support has greatly improved over the years. For features that are not fully supported, polyfills have been added (which will be included as-needed) to provide a great experience no matter what browser you are using.
 
 Supported browsers include:
 
 - **Chrome**
 - **Chromium-based browsers** (this includes browsers like _Brave_, the new _Microsoft Edge_, and _Vivaldi_)
-- **Firefox**, **Safari**
+- **Firefox**
+- **Safari**
 - **Opera**
 - **Microsoft Edge** (legacy)
 - **Internet Explorer 11**.
