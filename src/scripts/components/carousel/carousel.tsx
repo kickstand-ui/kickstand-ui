@@ -1,4 +1,5 @@
 import { Component, h, Prop, State, Element, Host, ComponentInterface } from '@stencil/core';
+import { keyCodes } from '../../utils/componentUtils';
 
 @Component({
     tag: 'ks-carousel',
@@ -25,6 +26,7 @@ export class Carousel implements ComponentInterface {
 
     connectedCallback() {
         this.initSlides();
+        this.keydownHandler();
     }
 
     componentDidLoad() {
@@ -37,10 +39,21 @@ export class Carousel implements ComponentInterface {
         mo.observe(this.$el, { childList: true });
     }
 
+    keydownHandler() {
+        this.$el.addEventListener('keydown', (e) => {
+            if (e.keyCode !== keyCodes.RIGHT_ARROW && e.keyCode !== keyCodes.LEFT_ARROW)
+                return;
+
+            e.keyCode === keyCodes.RIGHT_ARROW
+                ? this.nextSlide()
+                : this.prevSlide();
+        });
+    }
+
     initSlides() {
         this.$slides = Array.from(this.$el.querySelectorAll('ks-carousel-slide'));
 
-        if(this.$slides.length === 0)
+        if (this.$slides.length === 0)
             return;
 
         this.$slides.forEach((slide, index) => {

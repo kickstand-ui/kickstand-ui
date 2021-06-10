@@ -159,6 +159,7 @@
 
     .thumbnails {
         display: flex;
+        @include mt(sm);
 
         .thumbnail {
             flex-grow: 1;

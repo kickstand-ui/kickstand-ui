@@ -7,6 +7,7 @@ export const playground = () => {
     const gutter = select('gutter', ['none', 'xxxs', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'], 'md');
     const width = text('item-width', '300px');
     const href = text('href', '');
+    const linkText = text('link-text', '');
     const linkTag = text('link-tag', 'a');
     const hrefProp = text('href-prop', 'href');
 
@@ -18,6 +19,7 @@ export const playground = () => {
             href="${href}"
             link-tag="${linkTag}"
             href-prop="${hrefProp}"
+            link-text="${linkText}"
             >
             <ks-card img-src="https://media.boingboing.net/wp-content/uploads/2018/07/screenshot-22.jpg"
                 alt="Michael Scott"

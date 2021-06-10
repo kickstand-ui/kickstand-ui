@@ -26,5 +26,6 @@ export const defaultAccordion = () => {
 
     return (`<ks-accordion class="m-xxl" size="${size}" style="max-width:800px;">
                 ${accordionData.map((x, i) => `<ks-accordion-slide heading="${x.heading}" expanded=${i === 0}>${x.bodyText}</ks-accordion-slide>`).join('')}
+                <ks-accordion-slide heading="<em>This</em> is a <b>Test</b>">Some basic text</ks-accordion-slide>
             </ks-accordion>`);
 };

@@ -15,6 +15,7 @@
 | `hrefProp`       | `href-prop`        |             | `string`                                                                               | `'href'`         |
 | `itemWidth`      | `item-width`       |             | `string`                                                                               | `undefined`      |
 | `linkTag`        | `link-tag`         |             | `string`                                                                               | `'a'`            |
+| `linkText`       | `link-text`        |             | `string`                                                                               | `undefined`      |
 | `nextButtonText` | `next-button-text` |             | `string`                                                                               | `'scroll right'` |
 | `prevButtonText` | `prev-button-text` |             | `string`                                                                               | `'scroll left'`  |
 
