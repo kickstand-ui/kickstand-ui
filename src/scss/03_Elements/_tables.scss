@@ -24,7 +24,7 @@ th {
     &.striped {
         tbody {
             tr:nth-child(odd) {
-                @include bg-color(light, light);
+                @include bg-color(light, lighter);
             }
         }
     }
@@ -33,7 +33,7 @@ th {
         tbody {
             tr {
                 &:hover {
-                    @include bg-color(light);
+                    @include bg-color(light, light);
                 }
             }
         }
