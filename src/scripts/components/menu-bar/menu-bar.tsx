@@ -87,7 +87,7 @@ export class MenuBar implements ComponentInterface {
         return (
             <Host class={classes} role="navigation">
                 {(this.logoUrl || this.tagline) &&
-                    <CustomTag class="menu-branding" ref={el => el.setAttribute(this.hrefProp, this.logoUrl)}>
+                    <CustomTag class="menu-branding" ref={el => el.setAttribute(this.hrefProp, '/')}>
                         {this.logoUrl && <img class="logo" src={this.logoUrl} alt={this.altText} />}
                         {this.tagline && <span class="tagline">{this.tagline}</span>}
                     </CustomTag>
