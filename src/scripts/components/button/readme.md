@@ -45,7 +45,7 @@
  - [ks-form-field](../form-field)
  - [ks-gallery](../gallery)
  - [ks-modal](../modal)
- - [ks-scroll-to-top](../scrollToTop)
+ - [ks-scroll-to-top](../scroll-to-top)
  - [ks-side-drawer](../side-drawer)
  - [ks-spin-box](../form-field/spin-box)
 

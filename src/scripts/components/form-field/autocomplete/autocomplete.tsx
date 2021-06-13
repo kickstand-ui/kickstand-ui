@@ -244,7 +244,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
                 </select>
                 <div class="autocomplete">
                     <input
-                        aria-owns={`autocomplete-options-${this.autocompleteId}`}
+                        aria-owns={`${this.autocompleteId}_options`}
                         class={`search-field size-${this.size} ${this.inputClass ? this.inputClass : ''}`}
                         autocapitalize="none"
                         type="text"
@@ -265,14 +265,14 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
                         {this.$input?.value ? <ks-button class="clear-button" size="xs" display="clear" color="dark" onClick={() => this.clearSearchTerm()}><ks-icon icon="times" label="clear"></ks-icon></ks-button> : ''}
                         <ks-icon icon="search" class="search-icon"></ks-icon>
                     </span>
-                    <ul id={`autocomplete-options-${this.autocompleteId}`} class="dropdown-options" role="listbox" ref={el => this.$dropdown = el}>
+                    <ul id={`${this.autocompleteId}_options`} class="dropdown-options" role="listbox" ref={el => this.$dropdown = el}>
                         {this.$filteredOptions.map((x, i) => (
                             <li
                                 role="option"
                                 class="option"
                                 tabindex="-1"
                                 aria-selected={this.value === x.value ? 'true' : 'false'}
-                                id={`autocomplete_${this.autocompleteId}_option_${i}`}
+                                id={`${this.autocompleteId}_option_${i}`}
                                 onClick={() => this.optionClickHandler(x, i)}
                                 onKeyUp={(e) => this.onOptionKeyupHandler(e, x, i)}
                             >
