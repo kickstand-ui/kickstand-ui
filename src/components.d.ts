@@ -346,6 +346,12 @@ export namespace Components {
         "gutter": 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "position": 'start' | 'center' | 'end' | 'stretch';
     }
+    interface KsScrollToTop {
+        "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+        "display": 'solid' | 'hollow' | 'clear' | 'link';
+        "size": 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+        "threshold": number;
+    }
     interface KsSideDrawer {
         "headerText": string;
         "hide": () => Promise<void>;
@@ -613,6 +619,12 @@ declare global {
         prototype: HTMLKsRowElement;
         new (): HTMLKsRowElement;
     };
+    interface HTMLKsScrollToTopElement extends Components.KsScrollToTop, HTMLStencilElement {
+    }
+    var HTMLKsScrollToTopElement: {
+        prototype: HTMLKsScrollToTopElement;
+        new (): HTMLKsScrollToTopElement;
+    };
     interface HTMLKsSideDrawerElement extends Components.KsSideDrawer, HTMLStencilElement {
     }
     var HTMLKsSideDrawerElement: {
@@ -692,6 +704,7 @@ declare global {
         "ks-radio": HTMLKsRadioElement;
         "ks-responsive-embed": HTMLKsResponsiveEmbedElement;
         "ks-row": HTMLKsRowElement;
+        "ks-scroll-to-top": HTMLKsScrollToTopElement;
         "ks-side-drawer": HTMLKsSideDrawerElement;
         "ks-spin-box": HTMLKsSpinBoxElement;
         "ks-switch": HTMLKsSwitchElement;
@@ -1040,6 +1053,12 @@ declare namespace LocalJSX {
         "gutter"?: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "position"?: 'start' | 'center' | 'end' | 'stretch';
     }
+    interface KsScrollToTop {
+        "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+        "display"?: 'solid' | 'hollow' | 'clear' | 'link';
+        "size"?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+        "threshold"?: number;
+    }
     interface KsSideDrawer {
         "headerText"?: string;
         "position"?: 'left' | 'right';
@@ -1125,6 +1144,7 @@ declare namespace LocalJSX {
         "ks-radio": KsRadio;
         "ks-responsive-embed": KsResponsiveEmbed;
         "ks-row": KsRow;
+        "ks-scroll-to-top": KsScrollToTop;
         "ks-side-drawer": KsSideDrawer;
         "ks-spin-box": KsSpinBox;
         "ks-switch": KsSwitch;
@@ -1174,6 +1194,7 @@ declare module "@stencil/core" {
             "ks-radio": LocalJSX.KsRadio & JSXBase.HTMLAttributes<HTMLKsRadioElement>;
             "ks-responsive-embed": LocalJSX.KsResponsiveEmbed & JSXBase.HTMLAttributes<HTMLKsResponsiveEmbedElement>;
             "ks-row": LocalJSX.KsRow & JSXBase.HTMLAttributes<HTMLKsRowElement>;
+            "ks-scroll-to-top": LocalJSX.KsScrollToTop & JSXBase.HTMLAttributes<HTMLKsScrollToTopElement>;
             "ks-side-drawer": LocalJSX.KsSideDrawer & JSXBase.HTMLAttributes<HTMLKsSideDrawerElement>;
             "ks-spin-box": LocalJSX.KsSpinBox & JSXBase.HTMLAttributes<HTMLKsSpinBoxElement>;
             "ks-switch": LocalJSX.KsSwitch & JSXBase.HTMLAttributes<HTMLKsSwitchElement>;

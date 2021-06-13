@@ -45,6 +45,7 @@
  - [ks-form-field](../form-field)
  - [ks-gallery](../gallery)
  - [ks-modal](../modal)
+ - [ks-scroll-to-top](../scrollToTop)
  - [ks-side-drawer](../side-drawer)
  - [ks-spin-box](../form-field/spin-box)
 
@@ -66,6 +67,7 @@ graph TD;
   ks-form-field --> ks-button
   ks-gallery --> ks-button
   ks-modal --> ks-button
+  ks-scroll-to-top --> ks-button
   ks-side-drawer --> ks-button
   ks-spin-box --> ks-button
   style ks-button fill:#f9f,stroke:#333,stroke-width:4px
