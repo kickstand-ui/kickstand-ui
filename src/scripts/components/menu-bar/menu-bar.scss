@@ -214,7 +214,6 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
                     &:focus {
                         @include default-outline();
-                        outline-color: text-color-value($key);
                     }
                 }
 
@@ -229,17 +228,20 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                             >* {
                                 @include color($key);                
 
-                                &:focus {
+                                @include hover-focus {
                                     @include default-outline();
-                                    outline-color: text-color-value($key);
                                 }
                             }
 
                             .ks-dropdown {                
                                 .dropdown-button {
                                     &.link {
-                                        @include color($key);
                                         font-weight: 600;
+                                        @include color($key);
+
+                                        @include hover-focus {
+                                            @include default-outline();
+                                        }
                                     }
                                 }
             
