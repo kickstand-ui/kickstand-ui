@@ -192,6 +192,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                             .dropdown-button {
                                 &.link {
                                     color: text-color-value($key);
+                                    font-weight: 600;
 
                                     &:focus {
                                         @include default-outline();
@@ -226,11 +227,26 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                     .menu-row {
                         .menu-item {
                             >* {
-                                @include color($key);
+                                @include color($key);                
 
                                 &:focus {
                                     @include default-outline();
                                     outline-color: text-color-value($key);
+                                }
+                            }
+
+                            .ks-dropdown {                
+                                .dropdown-button {
+                                    &.link {
+                                        @include color($key);
+                                        font-weight: 600;
+                                    }
+                                }
+            
+                                .dropdown-contents {
+                                    .dropdown-item {
+                                        @include color(dark);
+                                    }
                                 }
                             }
                         }
