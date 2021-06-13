@@ -291,6 +291,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                                     &.show-contents {
                                         .dropdown-contents {
                                             display: flex;
+                                            @include mt(md);
                                         }
                                     }
 
@@ -306,6 +307,8 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                                         max-width: 100vw;
                                         @include mx(-sm);
                                         @include br(none);
+                                        @include py(none);
+                                        @include my(none);
                                     }
                                 }
                             }

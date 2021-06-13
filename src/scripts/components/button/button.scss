@@ -47,6 +47,73 @@
             text-align: center;
         }
 
+        &.hollow {
+            background-color: transparent;
+
+            &:focus,
+            &:hover:not(:disabled) {
+                background-color: transparent;
+            }
+
+            &.size {
+                &-xs {
+                    padding: calc(#{spacing(sm) - spacing(xxxs)});
+                }
+
+                &-sm {
+                    padding: calc(#{spacing(md) - spacing(xxxs)});
+                }
+
+                &-md {
+                    padding: calc(#{spacing(lg) - spacing(xxxs)});
+                }
+
+                &-lg {
+                    padding: calc(#{spacing(xl) - spacing(xxxs)});
+                }
+
+                &-xl {
+                    padding: calc(#{spacing(xxl) - spacing(xxxs)});
+                }
+            }
+
+        }
+
+        &.clear {
+            border: 0;
+            background-color: transparent;
+            @include shadow(none);
+            @include transition(text-shadow);
+
+            &:focus,
+            &:hover:not(:disabled) {
+                border-color: transparent;
+                background-color: transparent;
+                @include transition(text-shadow);
+            }
+        }
+
+        &.link {
+            background-color: transparent;
+            display: inline-block;
+            text-decoration: none;
+            border: 0;
+            overflow: visible;
+            @include p(none);
+            @include shadow(none);
+
+            &:focus,
+            &:hover:not(:disabled) {
+                background-color: transparent;
+                text-decoration: underline;
+                @include shadow(none);
+            }
+
+            &:focus {
+                @include default-outline();
+            }
+        }
+
         @each $color,
         $value in get-colors() {
             &.#{$color} {
@@ -65,77 +132,42 @@
                 }
 
                 &.hollow {
-                    background-color: transparent;
                     @include color($color);
                     @include b($color: $color);
-
-                    &:focus,
-                    &:hover:not(:disabled) {
-                        background-color: transparent;
-                    }
-
-                    &.size {
-                        &-xs {
-                            padding: calc(#{spacing(sm) - spacing(xxxs)});
-                        }
-            
-                        &-sm {
-                            padding: calc(#{spacing(md) - spacing(xxxs)});
-                        }
-            
-                        &-md {
-                            padding: calc(#{spacing(lg) - spacing(xxxs)});
-                        }
-            
-                        &-lg {
-                            padding: calc(#{spacing(xl) - spacing(xxxs)});
-                        }
-            
-                        &-xl {
-                            padding: calc(#{spacing(xxl) - spacing(xxxs)});
-                        }
-                    }
-                        
                 }
 
                 &.clear {
-                    border: 0;
-                    background-color: transparent;
                     color: color-value($color);
-                    @include shadow(none);
-                    @include transition(text-shadow);
-
-                    &:focus,
-                    &:hover:not(:disabled) {
-                        border-color: transparent;
-                        background-color: transparent;
-                        text-shadow: 2px 2px 4px color-value(dark, 0.25);
-                        @include transition(text-shadow);
-                    }
                 }
 
                 &.link {
-                    background-color: transparent;
-                    display: inline-block;
-                    text-decoration: none;
-                    border: 0;
-                    overflow: visible;
                     @include color($color);
-                    @include p(none);
-                    @include shadow(none);
 
                     &:focus,
                     &:hover:not(:disabled) {
-                        background-color: transparent;
-                        text-decoration: underline;
                         @include color($color, light);
-                        @include shadow(none);
-                    }
-
-                    &:focus {
-                        @include default-outline();
                     }
                 }
+            }
+        }
+
+        &.white {
+            &.clear {
+                color: white;
+            }
+
+            &.link {
+                color: white;
+            }
+        }
+
+        &.black {
+            &.clear {
+                color: black;
+            }
+
+            &.link {
+                color: black;
             }
         }
 

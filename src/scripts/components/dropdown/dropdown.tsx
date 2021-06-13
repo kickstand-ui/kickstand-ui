@@ -16,7 +16,7 @@ export class Dropdown implements ComponentInterface {
     @Prop() text: string;
     @Prop() position: 'left' | 'right' = 'left';
     @Prop() icon: string;
-    @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';
+    @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'white' | 'black' = 'primary';
     @Prop() display: 'solid' | 'hollow' | 'clear' | 'link' = 'solid';
     @Prop() size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
     @Prop() loading: boolean;

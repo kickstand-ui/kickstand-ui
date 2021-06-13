@@ -41,6 +41,7 @@ export const menuBarProperties = () => {
                             text="Drop-Down" 
                             position="right" 
                             display="link" 
+                            color="white"
                             >
                             <ks-dropdown-item><span>Non-clickable drop-down item</span></ks-dropdown-item>
                             <ks-dropdown-item><a href="#">Test 2</a></ks-dropdown-item>

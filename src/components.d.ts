@@ -49,7 +49,7 @@ export namespace Components {
     }
     interface KsButton {
         "buttonClass": string;
-        "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+        "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'white' | 'black';
         "controls": string;
         "cssClass": string;
         "describedBy": string;
@@ -153,7 +153,7 @@ export namespace Components {
     }
     interface KsDropdown {
         "collapse": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-        "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+        "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'white' | 'black';
         "disabled": boolean;
         "display": 'solid' | 'hollow' | 'clear' | 'link';
         "hide": () => Promise<void>;
@@ -742,7 +742,7 @@ declare namespace LocalJSX {
     }
     interface KsButton {
         "buttonClass"?: string;
-        "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+        "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'white' | 'black';
         "controls"?: string;
         "cssClass"?: string;
         "describedBy"?: string;
@@ -846,7 +846,7 @@ declare namespace LocalJSX {
     }
     interface KsDropdown {
         "collapse"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-        "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+        "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'white' | 'black';
         "disabled"?: boolean;
         "display"?: 'solid' | 'hollow' | 'clear' | 'link';
         "hideIndicator"?: boolean;
