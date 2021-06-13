@@ -9,6 +9,8 @@ $breakpoints: (xl, lg, md, sm, xs, xxs, print);
 .skip-to-content {
     position: absolute;
     transform: translateX(-110%);
+    @include m(md);
+    @include z-index(xl);
     @include transition();
 
     &:focus,

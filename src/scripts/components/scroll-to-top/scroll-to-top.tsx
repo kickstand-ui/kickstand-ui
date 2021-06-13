@@ -13,6 +13,7 @@ export class ScrollToTop implements ComponentInterface {
     @Prop() threshold: number = 100;
 
     componentWillLoad() {
+        this.$el.hidden = true;
         document.addEventListener("scroll", () => {
             this.toggleVisibility();
         });
