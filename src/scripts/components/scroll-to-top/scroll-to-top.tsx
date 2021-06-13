@@ -2,7 +2,7 @@ import { Component, h, Prop, ComponentInterface, Host, Element } from '@stencil/
 
 @Component({
     tag: 'ks-scroll-to-top',
-    styleUrl: 'scrollToTop.scss'
+    styleUrl: 'scroll-to-top.scss'
 })
 export class ScrollToTop implements ComponentInterface {
     @Element() $el: HTMLElement;
