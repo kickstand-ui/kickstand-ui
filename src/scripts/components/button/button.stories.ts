@@ -82,7 +82,7 @@ export const buttonDisplay = () => {
     return (displays.map(d =>
         `<ks-button
             class="ml-md mt-md" 
-            display="${d}">
+            display="${d}" href="#">
             ${d} button
         </ks-button>`).join(""));
 };

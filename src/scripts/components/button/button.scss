@@ -47,6 +47,33 @@
             text-align: center;
         }
 
+        &.size {
+            &-xs {
+                @include p(sm);
+                @include font-size(xs);
+            }
+
+            &-sm {
+                @include p(md);
+                @include font-size(sm);
+            }
+
+            &-md {
+                @include p(lg);
+                @include font-size(sm);
+            }
+
+            &-lg {
+                @include p(xl);
+                @include font-size(md);
+            }
+
+            &-xl {
+                @include p(xxl);
+                @include font-size(lg);
+            }
+        }
+
         &.hollow {
             background-color: transparent;
 
@@ -168,33 +195,6 @@
 
             &.link {
                 color: black;
-            }
-        }
-
-        &.size {
-            &-xs {
-                @include p(sm);
-                @include font-size(xs);
-            }
-
-            &-sm {
-                @include p(md);
-                @include font-size(sm);
-            }
-
-            &-md {
-                @include p(lg);
-                @include font-size(sm);
-            }
-
-            &-lg {
-                @include p(xl);
-                @include font-size(md);
-            }
-
-            &-xl {
-                @include p(xxl);
-                @include font-size(lg);
             }
         }
 
