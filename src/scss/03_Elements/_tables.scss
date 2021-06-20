@@ -59,7 +59,7 @@ th {
         @include b-b();
     }
 
-    &.fixed-row {
+    &.fixed-heading {
         thead tr th {
             position: sticky;
             top: 0;

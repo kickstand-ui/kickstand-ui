@@ -99,7 +99,7 @@ export const responsive = () => {
 };
 export const sticky = () => {
     return (`
-  <table class="table fixed-row fixed-column" style="width:1600px">
+  <table class="table fixed-heading fixed-column" style="width:1600px">
     <thead>
         <tr>
             <th style="width:600px;" scope="col">NAME</th>
