@@ -1,6 +1,6 @@
 {
     "name": "kickstand-ui",
-    "version": "2.12.0",
+    "version": "2.13.6",
     "description": "Kickstand UI is a Design system and pattern library built with Web Components, so you can use them everywhere!",
     "main": "dist/index.cjs.js",
     "module": "dist/index.js",

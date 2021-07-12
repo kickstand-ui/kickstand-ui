@@ -27,3 +27,8 @@ export const displayFlex = () => {
         <div class="bg-light b-xs p-sm">Column 3<br>Intentionally Weird</div>
     </div>`);
 };
+
+export const skipToContent = () => {
+    return (`<ks-button color="dark" href="#content" class="skip-to-content">Skip To Content</ks-button>
+    <div><a href="#">Test</a></div>`);
+};

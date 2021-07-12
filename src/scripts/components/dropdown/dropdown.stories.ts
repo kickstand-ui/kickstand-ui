@@ -40,8 +40,8 @@ export const playground = () => {
                 <ks-dropdown-item prevent-close><span>Non-clickable drop-down item with very long text</span></ks-dropdown-item>
                 <ks-dropdown-item><a href="#">Test 2</a></ks-dropdown-item>
                 <ks-dropdown-item><a href="#">Test 3</a></ks-dropdown-item>
-                <ks-dropdown-item><a href="#">Test 4</a></ks-dropdown-item>
-                <ks-dropdown-item><a href="#">Test 5</a></ks-dropdown-item>
+                <ks-dropdown-item><ks-button display="link" href="#">Test 4</ks-button></ks-dropdown-item>
+                <ks-dropdown-item><ks-button display="link" href="#">Test 5</ks-button></ks-dropdown-item>
                 <ks-dropdown-item><ks-button>Test 5</ks-button></ks-dropdown-item>
             </ks-dropdown>
         </div>

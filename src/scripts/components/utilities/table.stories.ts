@@ -53,7 +53,7 @@ export const responsive = () => {
     const striped = boolean('striped', false)
     const hover = boolean('hover', false)
     return (`<div class="table-responsive">
-    <table class="table ${striped ? 'striped' : ''} ${hover ? 'hover' : ''} m-xxl">
+    <table class="table ${striped ? 'striped' : ''} ${hover ? 'hover' : ''}">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -96,4 +96,44 @@ export const responsive = () => {
         </tbody>
     </table>
 </div>`);
+};
+export const sticky = () => {
+    return (`
+  <table class="table fixed-heading fixed-column" style="width:1600px">
+    <thead>
+        <tr>
+            <th style="width:600px;" scope="col">NAME</th>
+            <th style="width:600px;" scope="col">POSITION</th>
+            <th style="width:600px;" scope="col">OFFICE</th>
+            <th style="width:600px;" scope="col">AGE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Tiger Nixon</td>
+            <td>System Architect</td>
+            <td>Edinburgh</td>
+            <td>61</td>
+        </tr>
+        <tr>
+            <td>Garrett Winters</td>
+            <td>Accountant</td>
+            <td>Tokyo</td>
+            <td>63</td>
+        </tr>
+        <tr>
+            <td>Ashton Cox</td>
+            <td>Junior Technical Author</td>
+            <td>San Francisco</td>
+            <td>66</td>
+        </tr>
+        <tr>
+            <td>Cedric Kelly</td>
+            <td>Senior Javascript Developer</td>
+            <td>Edinburgh</td>
+            <td>22</td>
+        </tr>
+    </tbody>
+  </table>
+`);
 };

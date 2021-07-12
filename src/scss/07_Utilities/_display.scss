@@ -6,6 +6,20 @@ $breakpoints: (xl, lg, md, sm, xs, xxs, print);
     @include full-width();
 }
 
+.skip-to-content {
+    position: absolute;
+    transform: translateX(-110%);
+    @include m(md);
+    @include z-index(xl);
+    @include transition();
+
+    &:focus,
+    &:focus-within {
+        transform: translateX(0%);
+        @include transition();
+    }
+}
+
 .display-block {
     display: block !important;
 }
@@ -190,19 +204,19 @@ $value in $breakpoints {
         }
 
         .#{$key}\:align-start {
-                align-items: flex-start !important;
+            align-items: flex-start !important;
         }
 
         .#{$key}\:align-end {
-                align-items: flex-end !important;
+            align-items: flex-end !important;
         }
 
         .#{$key}\:align-center {
-                align-items: center !important;
+            align-items: center !important;
         }
 
         .#{$key}\:align-stretch {
-                align-items: stretch !important;
+            align-items: stretch !important;
         }
 
         .#{$key}\:sr-only {

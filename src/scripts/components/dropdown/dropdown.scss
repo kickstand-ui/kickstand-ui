@@ -83,6 +83,28 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                     background-color: color-value(light, lighter);
                 }
             }
+
+            .ks-button {
+                width: 100%;
+                @include p(none);
+
+                &[display="link"]>* {
+                    text-align: left;
+                    text-decoration: none;
+                    display: block;
+                    width: 100%;
+                    font-weight: normal;
+                    @include color(primary);
+                    @include font-size(sm);
+                    @include px(xs);
+                    @include py(md);    
+
+                    @include hover {
+                        background-color: color-value(light, lighter);
+                    }
+                }
+
+            }
         }
 
         &.align-left {
@@ -135,6 +157,12 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         .dropdown-contents {
             display: flex;
             flex-direction: column;
+        }
+
+        &[display="link"] {
+            .dropdown-contents {
+                @include mt(xs);
+            }
         }
     }
 }
