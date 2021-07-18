@@ -24,6 +24,8 @@ export namespace Components {
         "display": boolean;
         "header": string;
         "hide": () => Promise<void>;
+        "hideIcon": boolean;
+        "icon": string;
         "note": boolean;
         "show": () => Promise<void>;
     }
@@ -728,6 +730,8 @@ declare namespace LocalJSX {
         "dismissible"?: boolean;
         "display"?: boolean;
         "header"?: string;
+        "hideIcon"?: boolean;
+        "icon"?: string;
         "note"?: boolean;
         "onHidden"?: (event: CustomEvent<any>) => void;
         "onShown"?: (event: CustomEvent<any>) => void;

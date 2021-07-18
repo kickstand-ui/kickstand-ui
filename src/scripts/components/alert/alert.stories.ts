@@ -10,9 +10,11 @@ export const defaultHeading = () => {
     const note = boolean('note', false);
     const dismissible = boolean('dismissible', false);
     const display = boolean('display', false);
+    const icon = text('icon', 'warning');
+    const hideIcon = boolean('hide-icon', false);
     return (`
         <div class="m-xxl">
-            <ks-alert id="alert_test" header="${header}" note="${note}" color="${color}" dismissible="${dismissible}" display="${display}">${dummyText}</ks-alert>
+            <ks-alert id="alert_test" icon="${icon}" hide-icon="${hideIcon}" header="${header}" note="${note}" color="${color}" dismissible="${dismissible}" display="${display}">${dummyText}</ks-alert>
             <p>Some random text.</p>
             <div>
                 <ks-button shows="alert_test">Show Alert</ks-button>

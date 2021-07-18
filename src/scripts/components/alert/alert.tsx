@@ -11,6 +11,8 @@ export class Alert {
     @Prop() closeText: string = 'Close';
     @Prop() note: boolean = false;
     @Prop() dismissible: boolean = false;
+    @Prop() icon: string = 'warning';
+    @Prop() hideIcon: boolean = false;
     @Prop({ mutable: true }) display: boolean = false;
     @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';
 
@@ -58,17 +60,20 @@ export class Alert {
         return (
             <Host {...props} class="ks-alert">
                 <div id={this.alertId} class={classes}>
-                    {(this.header || this.dismissible) &&
-                        <header class="alert-header">
-                            <h3 class="alert-heading">{this.header}</h3>
-                            {(this.dismissible && !this.note) && <ks-button class="alert-close" onClick={() => this.hide()} display="clear" size="xs" aria-controls={this.alertId}>
-                                <ks-icon icon="times" label={this.closeText}></ks-icon>
-                            </ks-button>}
-                        </header>
-                    }
-                    <p class="alert-body">
-                        <slot />
-                    </p>
+                    {!this.hideIcon && <ks-icon class="alert-icon" icon={this.icon}></ks-icon>}
+                    <div class="content">
+                        {(this.header || this.dismissible) &&
+                            <header class="alert-header">
+                                <h3 class="alert-heading">{this.header}</h3>
+                                {(this.dismissible && !this.note) && <ks-button class="alert-close" onClick={() => this.hide()} display="clear" size="xs" aria-controls={this.alertId}>
+                                    <ks-icon icon="times" label={this.closeText}></ks-icon>
+                                </ks-button>}
+                            </header>
+                        }
+                        <p class="alert-body">
+                            <slot />
+                        </p>
+                    </div>
                 </div>
             </Host>
         );
