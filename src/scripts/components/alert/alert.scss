@@ -6,6 +6,7 @@
     .alert-content {
         display: flex;
         align-items: center;
+        width: 100%;
         @include br(sm);
         @include p(lg);
         @include shadow(sm);
@@ -64,7 +65,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            @include mb(lg);
             @include color(dark);
 
             .alert-heading {
@@ -74,10 +74,6 @@
             }
 
             .alert-close {
-                // .button:hover {
-                //     @include shadow(none);
-                // }
-
                 .ks-icon {
                     height: 1.5em;
                     width: 1.5em;
