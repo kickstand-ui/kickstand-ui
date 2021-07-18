@@ -11,6 +11,7 @@
 | ------------- | -------------- | ----------- | --------- | ----------- |
 | `alt`         | `alt`          |             | `string`  | `undefined` |
 | `aspectRatio` | `aspect-ratio` |             | `string`  | `undefined` |
+| `fallbackSrc` | `fallback-src` |             | `string`  | `undefined` |
 | `height`      | `height`       |             | `number`  | `undefined` |
 | `lazy`        | `lazy`         |             | `boolean` | `undefined` |
 | `src`         | `src`          |             | `string`  | `undefined` |

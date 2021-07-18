@@ -13,6 +13,7 @@ export class Img implements ComponentInterface {
 
     @Prop() src: string;
     @Prop() alt: string;
+    @Prop() fallbackSrc: string;
     @Prop({ mutable: true }) width: number;
     @Prop({ mutable: true }) height: number;
     @Prop() lazy: boolean;
@@ -20,6 +21,7 @@ export class Img implements ComponentInterface {
     @Prop() threshold: number = 300;
 
     @State() oldSrc: string;
+    @State() hasError: boolean = false;
 
     componentDidLoad() {
         this.addIntersectionObserver();
@@ -40,6 +42,14 @@ export class Img implements ComponentInterface {
         this.oldSrc = this.src;
     }
 
+    private handleImageError() {
+        if (!this.fallbackSrc || this.hasError)
+            return;
+
+        this.$image.setAttribute('src', this.fallbackSrc);
+        this.hasError = true;
+    }
+
     private setAspectRatio() {
         let ratios = this.aspectRatio.split(':');
 
@@ -48,7 +58,8 @@ export class Img implements ComponentInterface {
     }
 
     setImgSrc() {
-        this.$image.setAttribute('src', this.src);
+        if(!this.$image.src)
+            this.$image.setAttribute('src', this.src);
     }
 
     addIntersectionObserver() {
@@ -102,7 +113,7 @@ export class Img implements ComponentInterface {
 
         return (
             <Host class="ks-img">
-                <img {...props} ref={el => this.$image = el} />
+                <img {...props} onError={() => this.handleImageError()} ref={el => this.$image = el} />
             </Host>
         );
     }

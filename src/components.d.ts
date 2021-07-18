@@ -269,6 +269,7 @@ export namespace Components {
     interface KsImg {
         "alt": string;
         "aspectRatio": string;
+        "fallbackSrc": string;
         "height": number;
         "lazy": boolean;
         "src": string;
@@ -981,6 +982,7 @@ declare namespace LocalJSX {
     interface KsImg {
         "alt"?: string;
         "aspectRatio"?: string;
+        "fallbackSrc"?: string;
         "height"?: number;
         "lazy"?: boolean;
         "src"?: string;
