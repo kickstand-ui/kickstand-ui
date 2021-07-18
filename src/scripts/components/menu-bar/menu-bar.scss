@@ -192,6 +192,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                             .dropdown-button {
                                 &.link {
                                     color: text-color-value($key);
+                                    font-weight: 600;
 
                                     &:focus {
                                         @include default-outline();
@@ -213,7 +214,6 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
                     &:focus {
                         @include default-outline();
-                        outline-color: text-color-value($key);
                     }
                 }
 
@@ -226,11 +226,29 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                     .menu-row {
                         .menu-item {
                             >* {
-                                @include color($key);
+                                @include color($key);                
 
-                                &:focus {
+                                @include hover-focus {
                                     @include default-outline();
-                                    outline-color: text-color-value($key);
+                                }
+                            }
+
+                            .ks-dropdown {                
+                                .dropdown-button {
+                                    &.link {
+                                        font-weight: 600;
+                                        @include color($key);
+
+                                        @include hover-focus {
+                                            @include default-outline();
+                                        }
+                                    }
+                                }
+            
+                                .dropdown-contents {
+                                    .dropdown-item {
+                                        @include color(dark);
+                                    }
                                 }
                             }
                         }
@@ -291,6 +309,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                                     &.show-contents {
                                         .dropdown-contents {
                                             display: flex;
+                                            @include mt(md);
                                         }
                                     }
 
@@ -306,6 +325,8 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                                         max-width: 100vw;
                                         @include mx(-sm);
                                         @include br(none);
+                                        @include py(none);
+                                        @include my(none);
                                     }
                                 }
                             }

@@ -7,31 +7,31 @@
 
 ## Properties
 
-| Property             | Attribute              | Description | Type                                                                                            | Default        |
-| -------------------- | ---------------------- | ----------- | ----------------------------------------------------------------------------------------------- | -------------- |
-| `buttonClass`        | `button-class`         |             | `string`                                                                                        | `''`           |
-| `color`              | `color`                |             | `"danger" \| "dark" \| "info" \| "light" \| "primary" \| "secondary" \| "success" \| "warning"` | `'primary'`    |
-| `controls`           | `controls`             |             | `string`                                                                                        | `undefined`    |
-| `cssClass`           | `css-class`            |             | `string`                                                                                        | `''`           |
-| `describedBy`        | `described-by`         |             | `string`                                                                                        | `undefined`    |
-| `disabled`           | `disabled`             |             | `boolean`                                                                                       | `undefined`    |
-| `display`            | `display`              |             | `"clear" \| "hollow" \| "link" \| "solid"`                                                      | `'solid'`      |
-| `download`           | `download`             |             | `boolean`                                                                                       | `undefined`    |
-| `expanded`           | `expanded`             |             | `boolean`                                                                                       | `false`        |
-| `haspopup`           | `haspopup`             |             | `boolean`                                                                                       | `false`        |
-| `hides`              | `hides`                |             | `string`                                                                                        | `undefined`    |
-| `href`               | `href`                 |             | `string`                                                                                        | `undefined`    |
-| `hrefProp`           | `href-prop`            |             | `string`                                                                                        | `'href'`       |
-| `linkTag`            | `link-tag`             |             | `string`                                                                                        | `'a'`          |
-| `loading`            | `loading`              |             | `boolean`                                                                                       | `undefined`    |
-| `loadingIcon`        | `loading-icon`         |             | `string`                                                                                        | `undefined`    |
-| `loadingMessage`     | `loading-message`      |             | `string`                                                                                        | `'Loading...'` |
-| `loadingTheme`       | `loading-theme`        |             | `"dark" \| "light"`                                                                             | `'light'`      |
-| `showLoadingMessage` | `show-loading-message` |             | `boolean`                                                                                       | `false`        |
-| `shows`              | `shows`                |             | `string`                                                                                        | `undefined`    |
-| `size`               | `size`                 |             | `"lg" \| "md" \| "sm" \| "xl" \| "xs"`                                                          | `'md'`         |
-| `target`             | `target`               |             | `string`                                                                                        | `undefined`    |
-| `type`               | `type`                 |             | `"button" \| "reset" \| "submit"`                                                               | `'button'`     |
+| Property             | Attribute              | Description | Type                                                                                                                  | Default        |
+| -------------------- | ---------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `buttonClass`        | `button-class`         |             | `string`                                                                                                              | `''`           |
+| `color`              | `color`                |             | `"black" \| "danger" \| "dark" \| "info" \| "light" \| "primary" \| "secondary" \| "success" \| "warning" \| "white"` | `'primary'`    |
+| `controls`           | `controls`             |             | `string`                                                                                                              | `undefined`    |
+| `cssClass`           | `css-class`            |             | `string`                                                                                                              | `''`           |
+| `describedBy`        | `described-by`         |             | `string`                                                                                                              | `undefined`    |
+| `disabled`           | `disabled`             |             | `boolean`                                                                                                             | `undefined`    |
+| `display`            | `display`              |             | `"clear" \| "hollow" \| "link" \| "solid"`                                                                            | `'solid'`      |
+| `download`           | `download`             |             | `boolean`                                                                                                             | `undefined`    |
+| `expanded`           | `expanded`             |             | `boolean`                                                                                                             | `false`        |
+| `haspopup`           | `haspopup`             |             | `boolean`                                                                                                             | `false`        |
+| `hides`              | `hides`                |             | `string`                                                                                                              | `undefined`    |
+| `href`               | `href`                 |             | `string`                                                                                                              | `undefined`    |
+| `hrefProp`           | `href-prop`            |             | `string`                                                                                                              | `'href'`       |
+| `linkTag`            | `link-tag`             |             | `string`                                                                                                              | `'a'`          |
+| `loading`            | `loading`              |             | `boolean`                                                                                                             | `undefined`    |
+| `loadingIcon`        | `loading-icon`         |             | `string`                                                                                                              | `undefined`    |
+| `loadingMessage`     | `loading-message`      |             | `string`                                                                                                              | `'Loading...'` |
+| `loadingTheme`       | `loading-theme`        |             | `"dark" \| "light"`                                                                                                   | `'light'`      |
+| `showLoadingMessage` | `show-loading-message` |             | `boolean`                                                                                                             | `false`        |
+| `shows`              | `shows`                |             | `string`                                                                                                              | `undefined`    |
+| `size`               | `size`                 |             | `"lg" \| "md" \| "sm" \| "xl" \| "xs"`                                                                                | `'md'`         |
+| `target`             | `target`               |             | `string`                                                                                                              | `undefined`    |
+| `type`               | `type`                 |             | `"button" \| "reset" \| "submit"`                                                                                     | `'button'`     |
 
 
 ## Dependencies
@@ -45,6 +45,7 @@
  - [ks-form-field](../form-field)
  - [ks-gallery](../gallery)
  - [ks-modal](../modal)
+ - [ks-scroll-to-top](../scroll-to-top)
  - [ks-side-drawer](../side-drawer)
  - [ks-spin-box](../form-field/spin-box)
 
@@ -66,6 +67,7 @@ graph TD;
   ks-form-field --> ks-button
   ks-gallery --> ks-button
   ks-modal --> ks-button
+  ks-scroll-to-top --> ks-button
   ks-side-drawer --> ks-button
   ks-spin-box --> ks-button
   style ks-button fill:#f9f,stroke:#333,stroke-width:4px

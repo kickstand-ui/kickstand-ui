@@ -52,18 +52,21 @@ export class MenuBar implements ComponentInterface {
             this.setDropdownFocus();
 
             Array.from(this.$el.querySelectorAll('ks-dropdown')).forEach(d => {
-                const $button = d.querySelector('ks-button') as HTMLElement;
+                const $button = d.querySelector('ks-button') as HTMLKsButtonElement;
                 const $contents = d.querySelector('.dropdown-contents') as HTMLElement;
-
+                let isContentsShown = false;
+                
                 d.style.maxHeight = $button.scrollHeight + 'px';
 
-                d.addEventListener('dropdownOpened', () => {
-                    d.style.maxHeight = $contents.scrollHeight + $button.scrollHeight + 'px';
-                    this.$menuContent.style.maxHeight = this.$menuContent.scrollHeight + $contents.scrollHeight + 'px';
-                });
+                $button.addEventListener('click', () => {
+                    isContentsShown = !isContentsShown;
 
-                d.addEventListener('dropdownClosed', () => {
-                    d.style.maxHeight = $button.scrollHeight + 'px';
+                    if (isContentsShown) {
+                        d.style.maxHeight = $contents.scrollHeight + $button.scrollHeight + 'px';
+                        this.$menuContent.style.maxHeight = this.$menuContent.scrollHeight + $contents.scrollHeight + 'px';
+                    } else {
+                        d.style.maxHeight = $button.scrollHeight + 'px';
+                    }
                 });
             })
         }
@@ -83,11 +86,11 @@ export class MenuBar implements ComponentInterface {
         };
 
         const CustomTag = this.linkTag;
-        
+
         return (
             <Host class={classes} role="navigation">
                 {(this.logoUrl || this.tagline) &&
-                    <CustomTag class="menu-branding" ref={el => el.setAttribute(this.hrefProp, this.logoUrl)}>
+                    <CustomTag class="menu-branding" ref={el => el.setAttribute(this.hrefProp, '/')}>
                         {this.logoUrl && <img class="logo" src={this.logoUrl} alt={this.altText} />}
                         {this.tagline && <span class="tagline">{this.tagline}</span>}
                     </CustomTag>

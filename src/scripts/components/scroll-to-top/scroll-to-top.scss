@@ -1,0 +1,9 @@
+@import "../../../scss/00_Abstracts/index";
+
+.ks-scroll-to-top {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    @include m(xl);
+    @include z-index(xl);
+}

@@ -9,7 +9,7 @@ export class LinkButton implements ComponentInterface {
 
     @Element() $el: HTMLElement;
 
-    @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' = 'primary';
+    @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'white' | 'black' = 'primary';
     @Prop() type: 'button' | 'submit' | 'reset' = 'button';
     @Prop() display: 'solid' | 'hollow' | 'clear' | 'link' = 'solid';
     @Prop() size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
