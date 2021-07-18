@@ -61,6 +61,10 @@
             @include mr(lg);
         }
 
+        .content {
+            width: 100%;
+        }
+
         .alert-header {
             display: flex;
             justify-content: space-between;
