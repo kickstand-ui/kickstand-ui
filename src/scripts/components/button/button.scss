@@ -110,13 +110,12 @@
             border: 0;
             background-color: transparent;
             @include shadow(none);
-            @include transition(text-shadow);
 
             &:focus,
             &:hover:not(:disabled) {
                 border-color: transparent;
                 background-color: transparent;
-                @include transition(text-shadow);
+                @include shadow(none);
             }
         }
 

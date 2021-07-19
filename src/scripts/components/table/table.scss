@@ -1,0 +1,90 @@
+@import "../../../scss/00_Abstracts/index";
+
+.ks-table {
+    display: block;
+
+    table {
+        border-collapse: separate;
+        border-spacing: 0;
+        @include b();
+        @include b-b($size: none);
+        @include b-r($size: none);
+
+        thead {
+            font-weight: bold;
+            @include b-b($size: xxs);
+        }
+
+        tr {
+            background-color: white;
+        }
+
+        th,
+        td {
+            vertical-align: bottom;
+            background-color: inherit;
+            @include p(sm);
+            @include b-r();
+            @include b-b();
+        }
+    }
+
+    &.striped {
+        tbody {
+            tr:nth-child(odd) {
+                @include bg-color(light, lighter);
+            }
+        }
+    }
+
+    &.hover {
+        tbody {
+            tr {
+                &:hover {
+                    @include bg-color(light, light);
+                }
+            }
+        }
+    }
+
+    &.responsive {
+        width: 100%;
+        overflow-x: auto;
+        @include b-x();
+
+        table {
+            @include mx(-xxxs);
+
+            tr> :last-child {
+                @include b-r($size:none);
+            }
+        }
+    }
+
+    &.fixed-row {
+        thead tr th {
+            position: sticky;
+            top: 0;
+            @include z-index(xxs);
+        }
+
+        thead tr> :first-child {
+            top: 0;
+            @include z-index(xs);
+        }
+    }
+
+    &.fixed-column {
+        thead tr> :first-child {
+            position: sticky;
+            left: 0;
+            @include z-index(xs);
+        }
+
+        tbody tr> :first-child {
+            position: sticky;
+            left: 0;
+            @include z-index(xxs);
+        }
+    }
+}
