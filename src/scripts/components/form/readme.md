@@ -38,8 +38,8 @@
 graph TD;
   ks-form --> ks-alert
   ks-form --> ks-icon
-  ks-alert --> ks-button
   ks-alert --> ks-icon
+  ks-alert --> ks-button
   ks-button --> ks-loading-overlay
   ks-loading-overlay --> ks-overlay
   ks-loading-overlay --> ks-loading

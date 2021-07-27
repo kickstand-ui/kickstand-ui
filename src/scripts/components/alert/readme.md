@@ -14,6 +14,8 @@
 | `dismissible` | `dismissible` |             | `boolean`                                                                                       | `false`     |
 | `display`     | `display`     |             | `boolean`                                                                                       | `false`     |
 | `header`      | `header`      |             | `string`                                                                                        | `undefined` |
+| `hideIcon`    | `hide-icon`   |             | `boolean`                                                                                       | `false`     |
+| `icon`        | `icon`        |             | `string`                                                                                        | `'warning'` |
 | `note`        | `note`        |             | `boolean`                                                                                       | `false`     |
 
 
@@ -56,14 +58,14 @@ Type: `Promise<void>`
 
 ### Depends on
 
-- [ks-button](../button)
 - [ks-icon](../icon)
+- [ks-button](../button)
 
 ### Graph
 ```mermaid
 graph TD;
-  ks-alert --> ks-button
   ks-alert --> ks-icon
+  ks-alert --> ks-button
   ks-button --> ks-loading-overlay
   ks-loading-overlay --> ks-overlay
   ks-loading-overlay --> ks-loading

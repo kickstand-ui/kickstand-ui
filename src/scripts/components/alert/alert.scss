@@ -4,6 +4,9 @@
     display: block;
 
     .alert-content {
+        display: flex;
+        align-items: center;
+        width: 100%;
         @include br(sm);
         @include p(lg);
         @include shadow(sm);
@@ -16,7 +19,12 @@
                 @include bg-color($color, 0.05);
                 @include color(dark);
 
+                .alert-icon {
+                    @include color($color, dark);
+                }
+
                 .alert-header {
+
                     .alert-heading,
                     .alert-close .icon {
                         @if(text-color($color, dark)==black) {
@@ -48,10 +56,19 @@
             }
         }
 
+        .alert-icon {
+            @include font-size(xl);
+            @include mr(lg);
+        }
+
+        .content {
+            width: 100%;
+        }
+
         .alert-header {
             display: flex;
             justify-content: space-between;
-            @include mb(lg);
+            align-items: center;
             @include color(dark);
 
             .alert-heading {
@@ -61,8 +78,13 @@
             }
 
             .alert-close {
-                .icon {
-                    @include font-size(md);
+                .ks-icon {
+                    height: 1.5em;
+                    width: 1.5em;
+
+                    .icon {
+                        @include font-size(md);
+                    }
                 }
             }
         }

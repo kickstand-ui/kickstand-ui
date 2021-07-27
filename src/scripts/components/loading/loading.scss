@@ -4,8 +4,13 @@
     display: inline-flex;
     align-items: center;
 
-    .icon {
-        margin: 0;
+    .ks-icon {
+        width: 1.5em;
+        height: 1.5em;
+
+        .icon {
+            margin: 0;
+        }
     }
 
     .message {
@@ -28,6 +33,11 @@
         line-height: 1;
         @include shadow(none, true);
 
+        .ks-icon {
+            width: 1.5em;
+            height: 1.5em;
+        }
+
         .show-message {
             flex-direction: column;
             align-items: center;
@@ -39,4 +49,3 @@
         }
     }
 }
-
