@@ -31,13 +31,11 @@
 ### Depends on
 
 - [ks-alert](../alert)
-- [ks-icon](../icon)
 
 ### Graph
 ```mermaid
 graph TD;
   ks-form --> ks-alert
-  ks-form --> ks-icon
   ks-alert --> ks-icon
   ks-alert --> ks-button
   ks-button --> ks-loading-overlay

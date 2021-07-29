@@ -3,6 +3,7 @@ import { IFormFieldData } from '../form-field/form-field';
 
 export interface IFormData {
     isValid: boolean;
+    formData: object;
     formFieldData: IFormFieldData[];
 }
 
@@ -42,11 +43,17 @@ export class Form implements ComponentInterface {
         this.submitted.emit(formData);
     }
 
-    private async getFormData() {
+    private async getFormData(): Promise<IFormData> {
         let formFieldData = await Promise.all(this.$formFields.map(async x => await x.validate()));
+        let formData = {};
+
+        formFieldData.forEach(v => {
+            formData[v.name] = v.value
+        });
         
         return {
             isValid: !this.invalid,
+            formData,
             formFieldData
         };
     }
@@ -64,7 +71,6 @@ export class Form implements ComponentInterface {
                     <slot />
                     <ks-alert class={{ 'form-error': true, 'hide': !this.invalid }} color="danger">
                         {this.invalid && [
-                            <ks-icon icon="warning" class="text-danger mr-sm" />,
                             <span class="error-message">{this.errorMessage}</span>
                         ]}
                     </ks-alert>
