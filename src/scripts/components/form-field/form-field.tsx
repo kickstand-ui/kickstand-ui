@@ -447,7 +447,7 @@ export class FormField implements ComponentInterface {
                             {this.required && <abbr class="text-danger text-decoration-none" title={this.requiredText} aria-label={this.requiredText} aria-hidden="true">*</abbr>}
                             {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size={this.tooltipSize} text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info" label={this.tooltipLabel} /></ks-tooltip>}
                         </span>
-                        <span class="help-text">{this.helpText}</span>
+                        {this.helpText && <span class="help-text">{this.helpText}</span>}
                         <span class="error-message text-danger" role="alert" aria-live="assertive">
                             {(this.invalid && !this.disabled) && <span class="error-text">
                                 <ks-icon icon="warning" class="mr-xs" />
