@@ -25,7 +25,6 @@
  - [ks-checkbox](../form-field/checkbox)
  - [ks-checklist](../form-field/checklist)
  - [ks-dropdown](../dropdown)
- - [ks-form](../form)
  - [ks-form-field](../form-field)
  - [ks-gallery](../gallery)
  - [ks-loading](../loading)
@@ -44,7 +43,6 @@ graph TD;
   ks-checkbox --> ks-icon
   ks-checklist --> ks-icon
   ks-dropdown --> ks-icon
-  ks-form --> ks-icon
   ks-form-field --> ks-icon
   ks-gallery --> ks-icon
   ks-loading --> ks-icon
