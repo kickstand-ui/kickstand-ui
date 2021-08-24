@@ -18,16 +18,14 @@ glob("src/scripts/components/icon/icons/*.svg")
         )
     )
     .then((files) => {
-        const iconList = files.map((svg) => {
+        const iconList = {};
+        files.forEach((svg) => {
             let file = path.basename(svg.file).replace(".svg", "");
             let iconGroup = svg.content.children.find(
                 (child) => child.name === "g" || child.name === "path"
             );
             updateSvgAttributes(iconGroup);
-            return {
-                name: file,
-                icon: svgson.stringify(iconGroup),
-            };
+            iconList[file] = svgson.stringify(iconGroup);
         });
 
         let filename = `src/scripts/components/icon/icon-list.ts`;
