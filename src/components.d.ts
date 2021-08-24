@@ -385,13 +385,6 @@ export namespace Components {
     interface KsTab {
         "tabText": string;
     }
-    interface KsTable {
-        "fixedColumn": boolean;
-        "fixedRow": boolean;
-        "hover": boolean;
-        "responsive": boolean;
-        "striped": boolean;
-    }
     interface KsTabs {
         "align": 'start' | 'center' | 'end' | 'justified';
         "label": string;
@@ -652,12 +645,6 @@ declare global {
         prototype: HTMLKsTabElement;
         new (): HTMLKsTabElement;
     };
-    interface HTMLKsTableElement extends Components.KsTable, HTMLStencilElement {
-    }
-    var HTMLKsTableElement: {
-        prototype: HTMLKsTableElement;
-        new (): HTMLKsTableElement;
-    };
     interface HTMLKsTabsElement extends Components.KsTabs, HTMLStencilElement {
     }
     var HTMLKsTabsElement: {
@@ -712,7 +699,6 @@ declare global {
         "ks-spin-box": HTMLKsSpinBoxElement;
         "ks-switch": HTMLKsSwitchElement;
         "ks-tab": HTMLKsTabElement;
-        "ks-table": HTMLKsTableElement;
         "ks-tabs": HTMLKsTabsElement;
         "ks-tooltip": HTMLKsTooltipElement;
     }
@@ -1094,13 +1080,6 @@ declare namespace LocalJSX {
     interface KsTab {
         "tabText"?: string;
     }
-    interface KsTable {
-        "fixedColumn"?: boolean;
-        "fixedRow"?: boolean;
-        "hover"?: boolean;
-        "responsive"?: boolean;
-        "striped"?: boolean;
-    }
     interface KsTabs {
         "align"?: 'start' | 'center' | 'end' | 'justified';
         "label"?: string;
@@ -1155,7 +1134,6 @@ declare namespace LocalJSX {
         "ks-spin-box": KsSpinBox;
         "ks-switch": KsSwitch;
         "ks-tab": KsTab;
-        "ks-table": KsTable;
         "ks-tabs": KsTabs;
         "ks-tooltip": KsTooltip;
     }
@@ -1205,7 +1183,6 @@ declare module "@stencil/core" {
             "ks-spin-box": LocalJSX.KsSpinBox & JSXBase.HTMLAttributes<HTMLKsSpinBoxElement>;
             "ks-switch": LocalJSX.KsSwitch & JSXBase.HTMLAttributes<HTMLKsSwitchElement>;
             "ks-tab": LocalJSX.KsTab & JSXBase.HTMLAttributes<HTMLKsTabElement>;
-            "ks-table": LocalJSX.KsTable & JSXBase.HTMLAttributes<HTMLKsTableElement>;
             "ks-tabs": LocalJSX.KsTabs & JSXBase.HTMLAttributes<HTMLKsTabsElement>;
             "ks-tooltip": LocalJSX.KsTooltip & JSXBase.HTMLAttributes<HTMLKsTooltipElement>;
         }
