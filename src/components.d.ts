@@ -174,6 +174,7 @@ export namespace Components {
     }
     interface KsForm {
         "action": string;
+        "clear": () => Promise<void>;
         "enctype": 'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain';
         "errorMessage": string;
         "formClass": string;
@@ -876,6 +877,7 @@ declare namespace LocalJSX {
         "inline"?: boolean;
         "invalid"?: boolean;
         "method"?: 'get' | 'post';
+        "onCleared"?: (event: CustomEvent<any>) => void;
         "onSubmitted"?: (event: CustomEvent<IFormData>) => void;
         "target"?: '_self' | '_blank' | '_parent' | '_top';
     }
