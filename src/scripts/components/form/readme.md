@@ -39,6 +39,16 @@ Type: `Promise<void>`
 
 
 
+### `submit() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
 
 ## Dependencies
 

@@ -181,6 +181,7 @@ export namespace Components {
         "inline": boolean;
         "invalid": boolean;
         "method": 'get' | 'post';
+        "submit": () => Promise<void>;
         "target": '_self' | '_blank' | '_parent' | '_top';
     }
     interface KsFormField {

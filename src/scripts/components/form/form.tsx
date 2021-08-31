@@ -38,6 +38,11 @@ export class Form implements ComponentInterface {
         this.clearHandler();
     }
 
+    @Method()
+    async submit() {
+        this.$form.requestSubmit();
+    }
+
     private async submitHandler(e: Event) {
         this.invalid = !this.$form.checkValidity();
 
