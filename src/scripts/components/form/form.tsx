@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host, Event, EventEmitter, ComponentInterface, Element } from '@stencil/core';
+import { Component, h, Prop, Host, Event, EventEmitter, ComponentInterface, Element, Method } from '@stencil/core';
 import { IFormFieldData } from '../form-field/form-field';
 
 export interface IFormData {
@@ -27,9 +27,20 @@ export class Form implements ComponentInterface {
     @Prop() formClass: string;
 
     @Event() submitted!: EventEmitter<IFormData>;
+    @Event() cleared!: EventEmitter;
 
     componentDidLoad() {
         this.$formFields = Array.from(this.$el.querySelectorAll('ks-form-field')) as HTMLKsFormFieldElement[];
+    }
+
+    @Method()
+    async clear() {
+        this.clearHandler();
+    }
+
+    @Method()
+    async submit() {
+        this.$form.requestSubmit();
     }
 
     private async submitHandler(e: Event) {
@@ -43,6 +54,16 @@ export class Form implements ComponentInterface {
         this.submitted.emit(formData);
     }
 
+    private async clearHandler() {
+        this.invalid = false;
+        this.$formFields.forEach(x => {            
+            x.value = '';
+            x.checked = false;
+            x.invalid = false;
+        });
+        this.cleared.emit();
+    }
+
     private async getFormData(): Promise<IFormData> {
         let formFieldData = await Promise.all(this.$formFields.map(async x => await x.validate()));
         let formData = {};
@@ -50,7 +71,7 @@ export class Form implements ComponentInterface {
         formFieldData.forEach(v => {
             formData[v.name] = v.value
         });
-        
+
         return {
             isValid: !this.invalid,
             formData,
@@ -67,7 +88,7 @@ export class Form implements ComponentInterface {
 
         return (
             <Host class="ks-form">
-                <form class={classes} ref={el => this.$form = el} onSubmit={(e) => this.submitHandler(e)} novalidate>
+                <form class={classes} ref={el => this.$form = el} onSubmit={(e) => this.submitHandler(e)} onReset={() => this.clearHandler()} novalidate>
                     <slot />
                     <ks-alert class={{ 'form-error': true, 'hide': !this.invalid }} color="danger">
                         {this.invalid && [

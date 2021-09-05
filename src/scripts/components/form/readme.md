@@ -23,7 +23,31 @@
 
 | Event       | Description | Type                     |
 | ----------- | ----------- | ------------------------ |
+| `cleared`   |             | `CustomEvent<any>`       |
 | `submitted` |             | `CustomEvent<IFormData>` |
+
+
+## Methods
+
+### `clear() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+### `submit() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
 
 
 ## Dependencies

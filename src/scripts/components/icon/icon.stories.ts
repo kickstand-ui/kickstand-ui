@@ -13,7 +13,8 @@ export const icons = () => {
 };
 
 export const listOfIcons = () => {
+    const icons = Object.keys(iconList);
     return (`<div class="display-flex flex-wrap">
-        ${iconList.map(x => `<ks-icon class="m-md text-lg text-info" icon="${x.name}" title="${x.name}"></ks-icon>`).join('')}
+        ${icons.map(x => `<ks-icon class="m-md text-lg text-info" icon="${x}" title="${x}"></ks-icon>`).join('')}
     </div>`);
 }

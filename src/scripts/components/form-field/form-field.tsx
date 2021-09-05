@@ -76,7 +76,7 @@ export class FormField implements ComponentInterface {
     @Prop() debounce: number = 0;
     @Prop() inline: boolean = false;
     @Prop() datalist: boolean = false;
-    @Prop() checked: boolean = false;
+    @Prop({ mutable: true }) checked: boolean = false;
     @Prop() indeterminate: boolean = false;
     @Prop() icon?: string;
     @Prop() iconDirection: 'left' | 'right' = 'right';
@@ -165,8 +165,11 @@ export class FormField implements ComponentInterface {
     private handleComponentChange(e) {
         let inputData: IFormFieldData = e.detail;
         this.invalid = !inputData.isValid;
-        this.validityState = inputData.validity
+        this.validityState = inputData.validity;        
         this.value = inputData.value;
+        if(this.type === 'checkbox')
+            this.checked = inputData.value as boolean;
+
         this.updated.emit(inputData);
     }
 
