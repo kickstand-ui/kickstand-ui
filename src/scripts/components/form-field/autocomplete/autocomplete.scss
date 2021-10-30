@@ -54,6 +54,7 @@
             right: 0;
             top: 50%;
             transform: translateY(-50%);
+            background-color: white;
             @include font-size(md);
             @include mr(sm);    
             @include p(xxs);

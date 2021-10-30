@@ -1,4 +1,4 @@
-import { Component, h, Prop, ComponentInterface, Host, Element } from '@stencil/core';
+import { Component, h, Prop, ComponentInterface, Host, Element, Event, EventEmitter } from '@stencil/core';
 
 @Component({
     tag: 'ks-button',
@@ -33,6 +33,9 @@ export class LinkButton implements ComponentInterface {
     @Prop() loadingMessage: string = 'Loading...';
     @Prop() showLoadingMessage: boolean = false;
     @Prop() loadingIcon: string;
+
+    @Event() clicked!: EventEmitter<MouseEvent>;
+    @Event() blurred!: EventEmitter;
 
 
     componentDidRender() {
@@ -84,7 +87,14 @@ export class LinkButton implements ComponentInterface {
     private clickHandler(e: MouseEvent) {
         if (this.loading || this.disabled) {
             e.stopPropagation();
+            return;
         }
+
+        this.clicked.emit(e);
+    }
+
+    private blurHandler() {
+        this.blurred.emit();
     }
 
     render() {
@@ -118,12 +128,12 @@ export class LinkButton implements ComponentInterface {
         return (
             <Host class="ks-button pointer">
                 {this.href
-                    ? <CustomTag class={classes} {...linkProps} onClick={e => this.clickHandler(e)}>
+                    ? <CustomTag class={classes} {...linkProps} onClick={e => this.clickHandler(e)} onBlur={() => this.blurHandler()}>
                         <slot />
                     </CustomTag>
                     : [
                         <ks-loading-overlay theme={this.loadingTheme} message={this.loadingMessage} icon={this.loadingIcon} showMessage={this.showLoadingMessage} absolute  ref={el => this.$loading = el} onClick={e => this.clickHandler(e)}></ks-loading-overlay>,
-                        <button {...props} class={classes} onClick={e => this.clickHandler(e)}>
+                        <button {...props} class={classes} onClick={e => this.clickHandler(e)} onBlur={() => this.blurHandler()}>
                             <slot />
                         </button >
                     ]}
