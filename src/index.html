@@ -13,6 +13,15 @@
 
 <body>
     <div id="app" ng-app="">
+        <ks-form-field label="Autocomplete" type="autocomplete" auto-expand required>
+            <option v-for="c in delayedCrumbs" :value="c.url" :key="c.text">{{c.text}}</option>
+            <!-- <option value="0" selected="" hidden="">Choose a value</option>
+            <option value="1" hidden="">Value 1</option>
+            <option value="2" hidden="">Value 2</option>
+            <option value="3" hidden="">Value 3</option>
+            <option value="4" hidden="">Popper green 3</option> -->
+        </ks-form-field>
+<br>
         <div class="m-xxl">
             <span>{{count}}</span>
         </div>
@@ -137,11 +146,12 @@
                 count: '2',
                 message: 'Test Message',
                 breadcrumbs: [
-                    { url: 'test.com', text: '<ks-icon icon="home"></ks-icon> Home 1' },
-                    { url: 'test.com', text: 'Products 1' },
-                    { url: 'test.com', text: 'Bacon Flavored <em>Toothpaste</em> 1' },
-                    { url: 'test.com', text: 'Details 1' },
+                    { url: 'test.com/1', text: '<ks-icon icon="home"></ks-icon> Home 1' },
+                    { url: 'test.com/2', text: 'Products 1' },
+                    { url: 'test.com/4', text: 'Bacon Flavored <em>Toothpaste</em> 1' },
+                    { url: 'test.com/4', text: 'Details 1' },
                 ],
+                delayedCrumbs: [],
                 slides: [
                     {
                         src: "http://oyster.ignimgs.com/wordpress/stg.ign.com/2013/05/Stapler_in_jello.jpg",
@@ -190,6 +200,7 @@
                         tabText: "Popeye",
                         src: "https://th.bing.com/th/id/OIP.phya83cWh3fCeJ1ExctZIQHaEK?pid=Api&rs=1"
                     });
+                    this.delayedCrumbs = this.breadcrumbs;
                 }, 3000);
             }
         });

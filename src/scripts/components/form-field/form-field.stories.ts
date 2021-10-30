@@ -80,11 +80,11 @@ export const playground = () => {
             ${webkitdirectory ? `webkitdirectory="${webkitdirectory}"` : ''}
             ${capture ? `capture="${capture}"` : ''}
             >
-            <option selected>Choose a value</option>
-            <option>Value 1</option>
-            <option>Value 2</option>
-            <option>Value 3</option>
-            <option>Popper green 3</option>
+            <option value="0" selected>Choose a value</option>
+            <option value="1">Value 1</option>
+            <option value="2">Value 2</option>
+            <option value="3">Value 3</option>
+            <option value="4">Popper green 3</option>
         </ks-form-field>
     </div>`);
 };
@@ -234,7 +234,7 @@ export const checklistFormField = () => {
 export const autocomplete = () => {
     return (`
     <div class="m-xxl">
-        <ks-form-field label="Autocomplete" type="autocomplete" required>
+        <ks-form-field label="Autocomplete" type="autocomplete" auto-expand required>
             <option search="Candy">Choose a value</option>
             <option search="trash">Value 1</option>
             <option>Something 2</option>

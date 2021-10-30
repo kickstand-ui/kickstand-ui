@@ -42,8 +42,12 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
     }
 
     componentWillLoad() {
-        this.$options = Array.from(this.$el.querySelectorAll('option')) as HTMLOptionElement[];
-        this.$filteredOptions = this.$options;
+        this.initOptions();
+    }
+
+    componentDidLoad() {
+        const mo = new MutationObserver(() => this.initOptions());
+        mo.observe(this.$el.parentElement, { childList: true });
     }
 
     componentDidRender() {
@@ -59,10 +63,13 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
         });
     }
 
+    private initOptions() {
+        this.$options = Array.from(this.$el.querySelectorAll('option')) as HTMLOptionElement[];
+        this.$filteredOptions = this.$options;
+    }
+
     private getValue(): string {
-        return typeof this.value === 'number' 
-            ? this.value.toString() 
-            : (this.value || '').toString();
+        return this.searchTerm;
     }
 
     private validateField() {
@@ -94,7 +101,8 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
                 this.onTextBoxDownPressed();
                 break;
             case keyCodes.TAB:
-                this.hideOptions();
+                if (document.activeElement !== this.$input)
+                    this.hideOptions();
                 break;
             default:
                 this.onTextBoxType();
@@ -104,9 +112,19 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
     private blurHandler() {
         const timeout = setTimeout(() => {
             this.hideOptions();
-            this.changed.emit(this.validateField());
+            const isValidSelection = this.$options.some(x => x.innerText?.toLowerCase() == this.searchTerm?.toLowerCase());
+            console.log('SEARCH TEM', this.searchTerm);
+            console.log('IS VALID', isValidSelection);
+            
+            if(!isValidSelection) {
+                this.value = '';
+                this.$select.value = '';
+            }
+
+            const validation = this.validateField();
+            this.changed.emit(validation);
         }, 200);
-        
+
         setTimeout(() => {
             if (this.$el.contains(document.activeElement))
                 clearTimeout(timeout);
@@ -120,6 +138,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
                 this.selectValue(option, index);
                 break;
             case keyCodes.ESC:
+                this.$input.focus();
                 this.hideOptions();
                 break;
             case keyCodes.UP_ARROW:
@@ -129,6 +148,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
                 this.selectNextOption();
                 break;
             case keyCodes.TAB:
+                console.log('TAB');
                 this.hideOptions();
                 break;
             default:
@@ -209,6 +229,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
         this.$selectedOption = option;
         this.$select.value = option.value || option.innerText;
         this.value = option.value || option.innerText;
+        this.searchTerm = option.innerText;
         this.focusIndex = index;
         this.$input.focus();
         this.$input.value = option.innerText;
@@ -217,7 +238,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
     }
 
     private focusHandler() {
-        if(this.autoExpand)
+        if (this.autoExpand)
             this.showOptions();
     }
 
@@ -262,7 +283,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
                         {...inputProps}
                     />
                     <span class="input-icons">
-                        {this.$input?.value ? <ks-button class="clear-button" size="xs" display="clear" color="dark" onClick={() => this.clearSearchTerm()}><ks-icon icon="times" label="clear"></ks-icon></ks-button> : ''}
+                        {this.$input?.value ? <ks-button class="clear-button" size="xs" display="clear" color="dark" onClick={() => this.clearSearchTerm()} onBlurred={() => this.blurHandler()}><ks-icon icon="times" label="clear"></ks-icon></ks-button> : ''}
                         <ks-icon icon="search" class="search-icon"></ks-icon>
                     </span>
                     <ul id={`${this.autocompleteId}_options`} class="dropdown-options" role="listbox" ref={el => this.$dropdown = el}>
