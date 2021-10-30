@@ -34,6 +34,14 @@
 | `type`               | `type`                 |             | `"button" \| "reset" \| "submit"`                                                                                     | `'button'`     |
 
 
+## Events
+
+| Event     | Description | Type                      |
+| --------- | ----------- | ------------------------- |
+| `blurred` |             | `CustomEvent<any>`        |
+| `clicked` |             | `CustomEvent<MouseEvent>` |
+
+
 ## Dependencies
 
 ### Used by
