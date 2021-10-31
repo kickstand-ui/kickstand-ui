@@ -55,7 +55,6 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
         this.$dropdownOptions = Array.from(this.$el.querySelectorAll('.option'));
         window.addEventListener('click', (e: MouseEvent) => {
             let isPreventClose = this.$el.contains(e.target as HTMLElement);
-
             if (isPreventClose)
                 return;
 
@@ -112,17 +111,13 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
     private blurHandler() {
         const timeout = setTimeout(() => {
             this.hideOptions();
-            const isValidSelection = this.$options.some(x => x.innerText?.toLowerCase() == this.searchTerm?.toLowerCase());
-            console.log('SEARCH TEM', this.searchTerm);
-            console.log('IS VALID', isValidSelection);
+            const isValidSelection = this.$options.some(x => x.innerText?.toLowerCase() === this.searchTerm?.toLowerCase());
             
             if(!isValidSelection) {
                 this.value = '';
                 this.$select.value = '';
+                this.changed.emit(this.validateField());   
             }
-
-            const validation = this.validateField();
-            this.changed.emit(validation);
         }, 200);
 
         setTimeout(() => {
@@ -148,7 +143,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
                 this.selectNextOption();
                 break;
             case keyCodes.TAB:
-                console.log('TAB');
+
                 this.hideOptions();
                 break;
             default:
