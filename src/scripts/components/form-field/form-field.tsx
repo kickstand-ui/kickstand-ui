@@ -94,8 +94,8 @@ export class FormField implements ComponentInterface {
     @Prop() defaultErrorMessage: string = 'The value entered is not valid.';
     @Prop() badInputErrorMessage: string = 'There was a problem processing the value.';
     @Prop() patternErrorMessage: string = 'The value was not in the right format.';
-    @Prop() maxErrorMessage: string = `Your value must be no greater than ${this.max}.`;
-    @Prop() minErrorMessage: string = `Your value must be no less than ${this.min}.`;
+    @Prop() maxErrorMessage: string = `Your value must be less than ${this.max + 1}.`;
+    @Prop() minErrorMessage: string = `Your value must be greater than ${this.min - 1}.`;
     @Prop() stepErrorMessage: string = `Your value must be divisible by ${this.step || 1}.`;
     @Prop() maxlengthErrorMessage: string = `Your value must be no more than ${this.maxlength} characters.`;
     @Prop() minlengthErrorMessage: string = `Your value must be at least ${this.minlength} characters.`;
