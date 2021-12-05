@@ -1,4 +1,5 @@
 import { Component, h, Prop, Method, Host, ComponentInterface } from '@stencil/core';
+import { sanitizeHTML } from "../../utils/htmlSanitizer";
 
 @Component({
     tag: 'ks-accordion-slide'
@@ -28,7 +29,7 @@ export class AccordionSlide implements ComponentInterface {
             <Host class="accordion-slide">
                 <h3 class="accordion-heading">
                     <button id={this.controlId} class="accordion-control" aria-controls={this.panelId} aria-expanded={`${this.expanded}`} onClick={() => this.toggleSlide()}>
-                        <span ref={el => el.innerHTML = this.heading}></span>
+                        <span ref={el => el.innerHTML = sanitizeHTML(this.heading) as string}></span>
                         <ks-icon class="accordion-icon" icon="chevron_down" />
                     </button>
                 </h3>
