@@ -1,5 +1,6 @@
 import { Component, h, Prop, Host, Event, EventEmitter, Method, Element, State, ComponentInterface } from '@stencil/core';
 import { IFormFieldData, ICustomInput } from '../form-field';
+import { sanitizeHTML } from "../../utils/htmlSanitizer";
 
 @Component({
     tag: 'ks-checklist',
@@ -119,8 +120,8 @@ export class Checklist implements ComponentInterface, ICustomInput {
                     <slot />
                     {
                         this.$options.map(option => this.type === 'checkbox'
-                            ? <ks-checkbox label={option.innerHTML} checked={option.selected} disabled={option.disabled} onChanged={() => this.updateValue(option.value || option.innerText)} />
-                            : <ks-radio label={option.innerHTML} checked={option.selected} name={this.name} disabled={option.disabled} onSelected={() => this.updateValue(option.value || option.innerText)} />)
+                            ? <ks-checkbox label={sanitizeHTML(option.innerHTML)} checked={option.selected} disabled={option.disabled} onChanged={() => this.updateValue(option.value || option.innerText)} />
+                            : <ks-radio label={sanitizeHTML(option.innerHTML)} checked={option.selected} name={this.name} disabled={option.disabled} onSelected={() => this.updateValue(option.value || option.innerText)} />)
                     }
                 </fieldset>
             </Host>

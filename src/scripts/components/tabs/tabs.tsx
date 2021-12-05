@@ -1,5 +1,6 @@
 import { Component, h, Prop, Host, Element, State, ComponentInterface } from '@stencil/core';
 import { keyCodes } from '../../utils/componentUtils';
+import { sanitizeHTML } from "../../utils/htmlSanitizer";
 
 @Component({
     tag: 'ks-tabs',
@@ -130,7 +131,7 @@ export class Tabs implements ComponentInterface {
                             id={`${tab.id || `${this.tabId}_${index}`}_button`}
                             tabIndex={index === 0 ? 0 : -1}
                             onClick={e => this.clickHandler(e, index)}
-                            ref={el => el.innerHTML = tab.tabText}
+                            ref={el => el.innerHTML = sanitizeHTML(tab.tabText) as string}
                         >
                         </button>
                     )}

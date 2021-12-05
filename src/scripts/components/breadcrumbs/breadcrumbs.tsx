@@ -1,4 +1,5 @@
 import { Component, h, ComponentInterface, Host, Element, Prop, State } from '@stencil/core';
+import { sanitizeHTML } from "../../utils/htmlSanitizer";
 
 @Component({
     tag: 'ks-breadcrumbs',
@@ -27,7 +28,7 @@ export class Breadcrumbs implements ComponentInterface {
 
     private setProps($el: HTMLAnchorElement, $link: HTMLAnchorElement, index: number) {
         $el.setAttribute(this.hrefProp, $link.getAttribute('href'));
-        $el.innerHTML = $link.innerHTML;
+        $el.innerHTML = sanitizeHTML($link.innerHTML) as string;
         $el.classList.add('link');
         if(this.isLastCrumb(index))
             $el.setAttribute('aria-current', 'page');
