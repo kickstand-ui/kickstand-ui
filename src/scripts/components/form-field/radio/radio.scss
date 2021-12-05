@@ -66,8 +66,8 @@
             }
 
             &:after {
-                top: (1.125em / 2) - (0.625em / 2) + 0.2em;
-                left: (1.125em / 2) - (0.625em / 2);
+                top: (1.125em * 0.5) - (0.625em * 0.5) + 0.2em;
+                left: (1.125em * 0.5) - (0.625em * 0.5);
                 width: 0.625em;
                 height: 0.625em;
                 transform: scale(0);

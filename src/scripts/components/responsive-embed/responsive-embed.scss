@@ -1,4 +1,5 @@
-@import "../../../scss/00_Abstracts/index";
+@use "sass:math";
+@use "../../../scss/00_Abstracts/variables" as *;
 
 .ks-responsive-embed {
     position: relative;
@@ -9,7 +10,7 @@
 
     @each $x, $y in $responsive-embed-aspect-ratios {
         &.ratio-#{$x}x#{$y} {
-            padding-top: #{($y / $x * 100) + "%"};
+            padding-top: #{(math.div($y, $x) * 100) + "%"};
         }
     }
 

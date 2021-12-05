@@ -1,9 +1,11 @@
+@use "sass:math";
+
 @function pow($base, $exponent, $precision: 12) {
     @if (floor($exponent) !=$exponent) {
         $precision2: pow(10, $precision);
         $exponent: round($exponent * $precision2);
         $denominator: greatest-common-divisor($exponent, $precision2);
-        @return nthRoot(pow($base, $exponent / $denominator), $precision2 / $denominator, $precision);
+        @return nthRoot(pow($base, math.div($exponent, $denominator)), math.div($precision2, $denominator), $precision);
     }
 
     $value: $base;
@@ -16,7 +18,7 @@
 
     @else if $exponent < 1 {
         @for $i from 0 through -$exponent {
-            $value: $value / $base;
+            $value: math.div($value, $base);
         }
     }
 
@@ -37,7 +39,7 @@
     $x: 1;
 
     @for $i from 0 through $precision {
-        $x: 1 / $n * (($n - 1) * $x + ($num / pow($x, $n - 1)));
+        $x: math.div(1, $n) * (($n - 1) * $x + math.div($num, pow($x, $n - 1)));
     }
 
     @return $x;
