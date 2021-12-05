@@ -1,17 +1,17 @@
-@import 'math';
+@use "sass:math" as math;
 
 /*
     Adopted with gratitude from w3.org:
     https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
 */
 @function get-relative-luminance($color) {
-    $color: $color / 255;
+    $color: math.div($color, 255);
 
     @if ($color < 0.03928) {
-        @return $color / 12.92
+        @return math.div($color, 12.92)
     }
 
-    @return pow(($color + 0.055) / 1.055, 2.4);
+    @return math.pow(math.div($color + 0.055, 1.055), 2.4);
 }
 
 @function get-luminance($color) {
@@ -26,7 +26,7 @@
     $backgroundLuminance: get-luminance($backgroundColor) + .05;
     $foregroundLuminance: get-luminance($foregroundColor) + .05;
 
-    @return max($backgroundLuminance, $foregroundLuminance) / min($backgroundLuminance, $foregroundLuminance);
+    @return math.div(max($backgroundLuminance, $foregroundLuminance), min($backgroundLuminance, $foregroundLuminance));
 }
 
 @function get-contrast-color($color) {
