@@ -232,19 +232,89 @@ export const checklistFormField = () => {
 }
 
 export const autocomplete = () => {
-    return (`
-    <div class="m-xxl">
-        <ks-form-field label="Autocomplete" type="autocomplete" auto-expand required>
-            <option search="Candy">Choose a value</option>
-            <option search="trash">Value 1</option>
-            <option>Something 2</option>
-            <option>Test 3</option>
-            <option>Valid 3</option>
-            <option>Something 1</option>
+    const type = select('type', types, 'autocomplete');
+    const label = text('label', 'Username');
+    const hideLabel = boolean('hide-label', false);
+    const value = text('value', '');
+    const checked = boolean('checked', false);
+    const indeterminate = boolean('indeterminate', false);
+    const helpText = text('help-text', '');
+    const tooltipText = text('tooltip-text', '');
+    const tooltipSize = text('tooltip-size', 'md');
+    const name = text('name', '');
+    const errorMessage = text('default-error-message', 'The value entered is not valid.');
+    const placeholder = text('placeholder', '');
+    const required = boolean('required', false);
+    const requiredText = text('required-text', 'Required');
+    const invalid = boolean('invalid', false);
+    const disabled = boolean('disabled', false);
+    const min = number('min', undefined);
+    const max = number('max', undefined);
+    const step = number('step', undefined);
+    const minlength = number('minlength', undefined);
+    const maxlength = number('maxlength', undefined);
+    const autocomplete = text('autocomplete', '');
+    const pattern = text('pattern', '');
+    const validateOnInput = boolean('validate-on-input', false);
+    const debounce = number('debounce', 0);
+    const datalist = boolean('datalist', false);
+    const inline = boolean('inline', false);
+    const icon = text('icon', '');
+    const iconDirection = select('icon-direction', ['left', 'right'], 'right');
+    const size = select('size', sizes, 'md');
+    const autoExpand = boolean('auto-expand', false);
+    const accept = text('accept', undefined);
+    const multiple = boolean('multiple', false);
+    const webkitdirectory = text('webkitdirectory', undefined);
+    const capture = text('capture', undefined);
+
+    return (`<div class="m-xxl">
+        <ks-form-field 
+            type="${type}"
+            label="${label}" 
+            hide-label="${hideLabel}"
+            help-text="${helpText}"
+            tooltip-text="${tooltipText}"
+            tooltip-size="${tooltipSize}"
+            name="${name}"
+            default-error-message="${errorMessage}"
+            placeholder="${placeholder}"
+            required="${required}"
+            required-text="${requiredText}"
+            invalid="${invalid}"
+            disabled="${disabled}"
+            value="${value}"
+            min="${min}"
+            max="${max}"
+            step="${step}"
+            minlength="${minlength}"
+            maxlength="${maxlength}"
+            autocomplete="${autocomplete}"
+            pattern="${pattern}"
+            validate-on-input="${validateOnInput}",
+            debounce="${debounce}"
+            datalist="${datalist}"
+            inline="${inline}"
+            icon="${icon}"
+            icon-direction="${iconDirection}"
+            size="${size}"
+            auto-expand="${autoExpand}"
+            checked=${checked}
+            indeterminate=${indeterminate}
+            multiple=${multiple}
+            ${accept ? `accept="${accept}"` : ''}
+            ${webkitdirectory ? `webkitdirectory="${webkitdirectory}"` : ''}
+            ${capture ? `capture="${capture}"` : ''}
+            >
+            <option value="0" selected>Choose a value</option>
+            <option value="1">Value 1</option>
+            <option value="2">Value 2</option>
+            <option value="3">Value 3</option>
+            <option value="4">Popper green 3</option>
+            <option value="5">Popper green 6</option>
         </ks-form-field>
-    </div>
-    `)
-}
+    </div>`);
+};
 
 export const spinbox = () => {
     return (`
