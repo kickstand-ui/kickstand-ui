@@ -12,6 +12,7 @@ export class Card implements ComponentInterface {
     // Props for image
     @Prop() imgSrc: string;
     @Prop() alt: string;
+    @Prop() fallbackSrc: string;
     @Prop() lazy: boolean;
     @Prop() threshold: number;
     @Prop() imgDirection: 'top' | 'bottom' | 'left' | 'right' | 'behind' = 'top';
@@ -51,9 +52,9 @@ export class Card implements ComponentInterface {
                 {this.imgSrc && <div class="card-img">
                     {this.href
                         ? <CustomTag {...linkProps} ref={el => this.$link = el}>
-                            <ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} aspect-ratio={this.imgAspectRatio} />
+                            <ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} fallback-src={this.fallbackSrc} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} aspect-ratio={this.imgAspectRatio} />
                         </CustomTag>
-                        : <ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} aspect-ratio={this.imgAspectRatio} />}
+                        : <ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} fallback-src={this.fallbackSrc} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} aspect-ratio={this.imgAspectRatio} />}
                 </div>}
                 <div class="card-content">
                     <slot />

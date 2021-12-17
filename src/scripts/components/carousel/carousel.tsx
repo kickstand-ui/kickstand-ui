@@ -170,7 +170,7 @@ export class Carousel implements ComponentInterface {
                 {this.$slides.map((slide, index) =>
                     <button id={`${slide.id}_indicator`} class="thumbnail" onClick={() => this.selectSlide(index)} role="tab" aria-selected="false" aria-controls={slide.id} ref={el => this.$indicators.push(el)}>
                         <span class="sr-only">Got to slide {slide ? index + 1 : ''}</span>
-                        <ks-img lazy src={slide.src} alt={`slide ${slide ? index + 1 : ''} image`} />
+                        <ks-img lazy={slide.lazy} src={slide.src} alt={`slide ${slide ? index + 1 : ''} image`} />
                     </button>
                 )}
             </div>
