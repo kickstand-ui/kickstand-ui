@@ -82,7 +82,6 @@
             position: absolute;
             list-style: none;
             width: auto;
-            white-space: nowrap;
             max-height: 0;
             background-color: white;
             @include b();
@@ -96,6 +95,7 @@
 
             .option {
                 @include p(md);
+                @include b-b();
 
                 &:focus {
                     @include b-y();

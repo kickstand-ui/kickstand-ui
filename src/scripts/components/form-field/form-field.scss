@@ -221,6 +221,7 @@
         }
 
         .icon-left {
+            pointer-events: none;
             position: absolute;
             left: 0;
             top: 50%;
@@ -231,6 +232,7 @@
         }
 
         .icon-right {
+            pointer-events: none;
             position: absolute;
             right: 0;
             top: 50%;
