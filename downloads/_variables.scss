@@ -1,0 +1,145 @@
+// CONTAINERS
+$content-width: 660px;
+
+//   FONTS
+$font-size-base: 16px;
+
+$fonts: (
+    accent: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+    base: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+    monospace: 'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
+);
+
+$font-sizes: (
+    xxs: 0.75rem, // 12px
+    xs: 0.875rem, // 14px
+    sm: 1rem,     // 16px
+    md: 1.25rem,  // 30px
+    lg: 1.5rem,   // 24px
+    xl: 2rem,     // 32px
+    xxl: 3rem     // 48px
+);
+
+// SPACING
+$line-height-base: 1.5;
+
+$spacing-sizes: (
+    auto: auto,
+    none: 0,
+    xxxs: 0.0625rem, // 1px
+    xxs: 0.125rem,   // 2px
+    xs: 0.25rem,     // 4px
+    sm: 0.5rem,      // 8px
+    md: 0.75rem,     // 12px
+    lg: 1rem,        // 16px
+    xl: 1.25rem,     // 20px
+    xxl: 1.5rem,     // 24px
+    xxxl: 2rem       // 32px
+);
+
+
+// COLORS
+
+$colors: (
+    'primary': #2c5374,
+    'secondary': #ac3f00,
+    'success': #4f821a,
+    'info': #509BCE,
+    'warning': #e1a900,
+    'danger': #b32e2e
+);
+
+$color-variation: 8%;
+$light-saturation: 50%;
+$light-lightness: 50%;
+$dark-saturation: 40%;
+$dark-darkness: 5%;
+
+
+// MEDIA QUERIES
+
+$media-queries: ( 
+    xl: 90rem,   // 1440px
+    lg: 75rem,   // 1200px
+    md: 62rem,   // 992px
+    sm: 48rem,   // 768px
+    xs: 30rem,   // 480px
+    xxs: 20rem,  // 320px
+    light-mode: light,
+    dark-mode: dark,
+    print: print
+);
+
+// RESPONSIVE EMBED ASPECT RATIOS
+
+$responsive-embed-aspect-ratios: (
+  (21, 9),
+  (16, 9),
+  (4, 3),
+  (1, 1)
+);
+
+// Z-INDEX
+
+$z-indexes: (
+    sub: -1,
+    none: 0,
+    xxs: 1,
+    xs: 10,
+    sm: 50,
+    md: 100,
+    lg: 200,
+    xl: 500,
+    trump: 99999
+);
+
+
+// OUTLINE
+
+$default-outline: (	
+    style: dashed,
+    size: xxxs,    // from $spacing-sizes
+    color: dark,
+    offset: xxs    // from $spacing-sizes
+);
+
+// BORDERS
+
+$default-border: (	
+    style: solid,
+    size: xxxs,    // from $spacing-sizes
+    color: light
+);
+
+$border-radiuses: (
+    none: 0,
+    sm: 0.25rem,  // 4px
+    md: 0.5rem,   // 8px
+    lg: 0.75rem,  // 12px
+    xl: 1rem,     // 16px
+    pill: 10rem,  // 160px
+    circle: 50%
+);
+
+//  SHADOWS
+
+$shadows: (
+    none: none,
+    outline: "0 0 0 2px rgba(0, 0, 0, 0.5)",
+    inner: "inset 1px 2px 4px rgba(0, 0, 0, 0.10)",
+    xs: "0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)",
+    sm: "0 3px 5px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12)",
+    md: "0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.10)",
+    lg: "0 15px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05)",
+    xl: "0 20px 40px rgba(0, 0, 0, 0.20)"
+);
+
+//  TRANSITIONS
+
+$transitions: (
+    xslow: 2s,
+    slow: 1s,
+    med: .5s,
+    fast: .3s,
+    xfast: .1s
+);

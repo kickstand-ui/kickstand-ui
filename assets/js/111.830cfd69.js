@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[111],{319:function(n,t,o){"use strict";o.r(t),o.d(t,"ks_card_footer",(function(){return c}));var r=o(13),c=function(){function n(n){Object(r.i)(this,n)}return n.prototype.render=function(){return Object(r.g)(r.b,{class:"card-footer"},Object(r.g)("slot",null))},n}()}}]);

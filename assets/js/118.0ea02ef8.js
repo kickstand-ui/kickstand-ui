@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[118],{327:function(n,t,i){"use strict";i.r(t),i.d(t,"ks_menu_group",(function(){return r}));var o=i(13),r=function(){function n(n){Object(o.i)(this,n),this.position="right"}return n.prototype.render=function(){return Object(o.g)(o.b,{class:"menu-group align-"+this.position},Object(o.g)("slot",null))},n}()}}]);
