@@ -20,23 +20,23 @@ $breakpoints: (xl, lg, md, sm, xs, xxs, print);
     }
 }
 
-.display-block {
+.d-block {
     display: block !important;
 }
 
-.display-inline {
+.d-inline {
     display: inline !important;
 }
 
-.display-inline-block {
+.d-inline-block {
     display: inline-block !important;
 }
 
-.display-inline-flex {
+.d-inline-flex {
     display: inline-flex !important;
 }
 
-.display-flex {
+.d-flex {
     display: flex !important;
 }
 
@@ -135,23 +135,23 @@ $value in $breakpoints {
             @include full-width(true);
         }
 
-        .#{$key}\:display-block {
+        .#{$key}\:d-block {
             display: block !important;
         }
 
-        .#{$key}\:display-inline {
+        .#{$key}\:d-inline {
             display: inline !important;
         }
 
-        .#{$key}\:display-inline-block {
+        .#{$key}\:d-inline-block {
             display: inline-block !important;
         }
 
-        .#{$key}\:display-inline-flex {
+        .#{$key}\:d-inline-flex {
             display: inline-flex !important;
         }
 
-        .#{$key}\:display-flex {
+        .#{$key}\:d-flex {
             display: flex !important;
         }
 
