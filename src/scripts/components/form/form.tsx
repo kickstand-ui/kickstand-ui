@@ -33,6 +33,10 @@ export class Form implements ComponentInterface {
         this.$formFields = Array.from(this.$el.querySelectorAll('ks-form-field')) as HTMLKsFormFieldElement[];
     }
 
+    componentDidRender(): void {
+        this.setFormAttributes();
+    }
+
     @Method()
     async clear() {
         this.clearHandler();
@@ -77,6 +81,21 @@ export class Form implements ComponentInterface {
             formData,
             formFieldData
         };
+    }
+
+    private setFormAttributes() {
+        if(this.action)
+            this.$form.setAttribute('action', this.action);
+            
+        if(this.target)
+            this.$form.setAttribute('target', this.target);
+
+        if(this.method)
+            this.$form.setAttribute('method', this.method);
+
+        if(this.enctype)
+            this.$form.setAttribute('enctype', this.enctype);
+
     }
 
     render() {
