@@ -94,9 +94,9 @@ export class FormField implements ComponentInterface {
     @Prop() defaultErrorMessage: string = 'The value entered is not valid.';
     @Prop() badInputErrorMessage: string = 'There was a problem processing the value.';
     @Prop() patternErrorMessage: string = 'The value was not in the right format.';
-    @Prop() maxErrorMessage: string = `Your value must be no greater than ${this.max}.`;
-    @Prop() minErrorMessage: string = `Your value must be no less than ${this.min}.`;
-    @Prop() stepErrorMessage: string = `Your value must be divisible by ${this.step || 1}.`;
+    @Prop() maxErrorMessage: string = `Your value must be less than ${this.max ? this.max + 1 : ''}.`;
+    @Prop() minErrorMessage: string = `Your value must be at least ${this.min}.`;
+    @Prop() stepErrorMessage: string = `Your value must be an increment of ${this.step || 1}.`;
     @Prop() maxlengthErrorMessage: string = `Your value must be no more than ${this.maxlength} characters.`;
     @Prop() minlengthErrorMessage: string = `Your value must be at least ${this.minlength} characters.`;
     @Prop() typeErrorMessage: string = `Your value must be a valid ${this.type === 'tel' ? 'telephone number' : this.type}.`;
@@ -165,9 +165,9 @@ export class FormField implements ComponentInterface {
     private handleComponentChange(e) {
         let inputData: IFormFieldData = e.detail;
         this.invalid = !inputData.isValid;
-        this.validityState = inputData.validity;        
+        this.validityState = inputData.validity;
         this.value = inputData.value;
-        if(this.type === 'checkbox')
+        if (this.type === 'checkbox')
             this.checked = inputData.value as boolean;
 
         this.updated.emit(inputData);
