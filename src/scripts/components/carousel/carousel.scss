@@ -129,7 +129,7 @@
                 background-color: transparent;
                 filter: drop-shadow(0 0 0.25rem color-value(dark));
                 @include b($size: xxxs, $color: light, $variant: light);
-                @include br(circle);
+                @include r(circle);
                 @include mx(sm);
                 @include transition();
 

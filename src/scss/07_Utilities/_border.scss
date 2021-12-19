@@ -114,43 +114,43 @@
     }
 }
 
-.br {
+.r {
     @each $key,
     $value in $border-radiuses {
-        &-#{$key} {
-            @include br($key, true);
+        &#{$key} {
+            @include r($key, true);
         }
 
-        &-t-#{$key} {
-            @include br-t($key, true);
+        &t-#{$key} {
+            @include rt($key, true);
         }
 
-        &-tl-#{$key} {
-            @include br-tl($key, true);
+        &tl-#{$key} {
+            @include rtl($key, true);
         }
 
-        &-tr-#{$key} {
-            @include br-tr($key, true);
+        &tr-#{$key} {
+            @include rtr($key, true);
         }
 
-        &-b-#{$key} {
-            @include br-b($key, true);
+        &b-#{$key} {
+            @include rb($key, true);
         }
 
-        &-bl-#{$key} {
-            @include br-bl($key, true);
+        &bl-#{$key} {
+            @include rbl($key, true);
         }
 
-        &-br-#{$key} {
-            @include br-br($key, true);
+        &r#{$key} {
+            @include rr($key, true);
         }
 
-        &-l-#{$key} {
-            @include br-l($key, true);
+        &l-#{$key} {
+            @include rl($key, true);
         }
 
-        &-r-#{$key} {
-            @include br-r($key, true);
+        &r-#{$key} {
+            @include rr($key, true);
         }
     }
 }

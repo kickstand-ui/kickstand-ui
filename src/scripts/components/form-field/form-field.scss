@@ -58,7 +58,7 @@
         @include b();
         @include p(md);
         @include shadow(inner);
-        @include br(sm);
+        @include r(sm);
 
         &:not(textarea, [type="range"]) {
             line-height: 1;
@@ -105,7 +105,7 @@
                 width: 100%;
                 height: 0.25rem;
                 background: transparent;
-                @include br(sm);
+                @include r(sm);
                 @include shadow(xs);
             }
 
@@ -116,7 +116,7 @@
                 background: white;
                 -webkit-appearance: none;
                 margin-top: -11px;
-                @include br(xl);
+                @include r(xl);
                 @include shadow(sm);
                 @include b();
             }
@@ -126,7 +126,7 @@
                 width: 100%;
                 height: 0.75rem;
                 background: color-value(light);
-                @include br(sm);
+                @include r(sm);
                 @include shadow(xs);
             }
 
@@ -135,7 +135,7 @@
                 height: 1.5rem;
                 width: 1.5rem;
                 background: white;
-                @include br(xl);
+                @include r(xl);
                 @include shadow(sm);
                 @include b();
             }
@@ -150,13 +150,13 @@
 
             &::-ms-fill-lower {
                 background: color-value(primary);
-                @include br(xl);
+                @include r(xl);
                 @include shadow(xs);
             }
 
             &::-ms-fill-upper {
                 background: color-value(light, light);
-                @include br(xl);
+                @include r(xl);
                 @include shadow(xs);
             }
 
@@ -165,7 +165,7 @@
                 height: 1.5rem;
                 width: 1.5rem;
                 background: white;
-                @include br(xl);
+                @include r(xl);
                 @include mt(xxxs);
                 @include shadow(sm);
                 @include b($color: dark);
@@ -268,7 +268,7 @@
             -webkit-appearance: none;
             -moz-appearance: none;
             -o-appearance: none;
-            @include br(sm);
+            @include r(sm);
             @include py(none);
 
             &::-ms-expand {

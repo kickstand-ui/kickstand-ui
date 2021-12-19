@@ -29,7 +29,7 @@
             background-color: white;
             @include b($color: light, $variant: darker);
             @include transition();
-            @include br(sm);
+            @include r(sm);
             @include shadow(inner);
 
             svg {

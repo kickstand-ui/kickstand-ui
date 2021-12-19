@@ -15,7 +15,7 @@
         width: 100%;
         text-align: center;
         display: block;
-        @include br(sm);
+        @include r(sm);
         @include p(md);
         @include shadow(xs);
         @include transition($property: box-shadow);

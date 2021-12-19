@@ -12,7 +12,7 @@ export const borders = () => {
 
 export const borderSizes = () => {
     return (`<ks-row class="m-xxl">
-        ${sizes.map(p => `<ks-column class="mx-md bg-light-light b-xs b-${p}">border-${p}</ks-column>`).join('')}
+        ${sizes.map(p => `<ks-column class="mx-md bg-light-light b-xs b-${p}">b-${p}</ks-column>`).join('')}
     </ks-row>`);
 };
 
@@ -26,6 +26,6 @@ export const borderColors = () => {
 
 export const borderRadiuses = () => {
     return (`${ ['none', 'sm', 'md', 'lg', 'xl', 'pill', 'circle'].map(x => `<ks-row class="m-xxl text-center">
-        ${['', '-t', '-tl', '-tr', '-b', '-bl', '-br', '-l', '-r'].map(p => `<ks-column class="mr-sm bg-light-lighter px-sm py-md b-xxs br${p}-${x}">br${p}-${x}</ks-column>`).join('')}
+        ${['', 't', 'tl', 'tr', 'b', 'bl', 'br', 'l', 'r'].map(p => `<ks-column class="mr-sm bg-light-lighter px-sm py-md b-xxs r${p}-${x}">r${p}-${x}</ks-column>`).join('')}
     </ks-row>`).join('')}`);
 };

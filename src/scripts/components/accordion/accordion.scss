@@ -14,7 +14,7 @@
 
             .accordion-heading {
                 .accordion-control {
-                    @include br-t(sm);
+                    @include rt(sm);
                 }
             }
         }
@@ -22,7 +22,7 @@
         &:last-child {
             .accordion-heading {
                 .accordion-control {
-                    @include br-b(sm);
+                    @include rb(sm);
 
                     &[aria-expanded="false"] {
                         transition-delay: 0.5s;
@@ -30,13 +30,13 @@
                     }
 
                     &[aria-expanded="true"] {
-                        @include br-b(none);
+                        @include rb(none);
                     }
                 }
             }
 
             .accordion-content {
-                @include br-b(sm);
+                @include rb(sm);
             }
         }
 

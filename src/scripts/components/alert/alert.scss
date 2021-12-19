@@ -7,7 +7,7 @@
         display: flex;
         align-items: center;
         width: 100%;
-        @include br(sm);
+        @include r(sm);
         @include p(lg);
         @include shadow(sm);
 
@@ -39,7 +39,7 @@
             }
 
             &.note.#{$color} {
-                @include br(none);
+                @include r(none);
                 @include b();
                 @include b-l(solid, md, $color);
                 @include bg-color(light, lighter);

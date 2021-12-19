@@ -2,7 +2,7 @@
 
 .ks-form {
     display: block;
-    @include br(sm);
+    @include r(sm);
     @include b($color: light);
     @include p(lg);
     @include bg-color(light, lighter);
@@ -17,14 +17,14 @@
                 @include m(none);
 
                 .form-input {
-                    @include br-r(none);
+                    @include rr(none);
                     @include b-r(none);
                 }
             }
             
             .ks-button {
                 .button {
-                    @include br-l(none);
+                    @include rl(none);
                 }
             }
 

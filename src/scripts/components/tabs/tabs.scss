@@ -3,7 +3,7 @@
 .ks-tabs {
     display: flex;
     @include shadow(sm);
-    @include br(sm);
+    @include r(sm);
     
     .tab-list {
         display: flex;
@@ -60,7 +60,7 @@
             .tab-list {
                 flex-wrap: wrap;
                 @include b();
-                @include br-t(sm);
+                @include rt(sm);
 
                 &.justify-justified {
                     flex-wrap: nowrap;
@@ -69,7 +69,7 @@
                 .tab-item {
                     &[aria-selected="true"] {
                         @include b-b(none);
-                        @include br-t(sm);
+                        @include rt(sm);
                     }
                 }
             }
@@ -77,7 +77,7 @@
             .tab-panel {
                 flex-shrink: 0;
                 @include b-t(none);
-                @include br-b(sm);
+                @include rb(sm);
             }
         }
 
@@ -87,7 +87,7 @@
             .tab-list {
                 flex-wrap: wrap;
                 @include b();
-                @include br-b(sm);
+                @include rb(sm);
 
                 &.justify-justified {
                     flex-wrap: nowrap;
@@ -97,7 +97,7 @@
                     &[aria-selected="true"] {
                         position: relative;
                         @include b-t(none);
-                        @include br-b(sm);
+                        @include rb(sm);
                     }
                 }
             }
@@ -105,7 +105,7 @@
             .tab-panel {
                 flex-shrink: 0;
                 @include b-b(none);
-                @include br-t(sm);
+                @include rt(sm);
             }
         }
 
@@ -115,7 +115,7 @@
             .tab-list {
                 flex-direction: column;
                 @include b();
-                @include br-l(sm);
+                @include rl(sm);
 
                 &.justify-justified {
                     .tab-item {
@@ -133,14 +133,14 @@
                     &[aria-selected="true"] {
                         @include shadow();
                         @include b-r(none);
-                        @include br-l(sm);
+                        @include rl(sm);
                     }
                 }
             }
 
             .tab-panel {
                 @include b-l(none);
-                @include br-r(sm);
+                @include rr(sm);
             }
         }
 
@@ -150,7 +150,7 @@
             .tab-list {
                 flex-direction: column;
                 @include b();
-                @include br-r(sm);
+                @include rr(sm);
 
                 &.justify-justified {
                     .tab-item {
@@ -167,14 +167,14 @@
                     &[aria-selected="true"] {
                         @include shadow();
                         @include b-l(none);
-                        @include br-r(sm);
+                        @include rr(sm);
                     }
                 }
             }
 
             .tab-panel {
                 @include b-r(none);
-                @include br-l(sm);
+                @include rl(sm);
             }
         }
     }

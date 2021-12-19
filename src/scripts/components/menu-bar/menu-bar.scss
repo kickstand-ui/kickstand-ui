@@ -324,7 +324,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                                         width: 100vw;
                                         max-width: 100vw;
                                         @include mx(-sm);
-                                        @include br(none);
+                                        @include r(none);
                                         @include py(none);
                                         @include my(none);
                                     }

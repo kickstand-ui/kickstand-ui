@@ -19,7 +19,7 @@
                 background-color: white;
                 @include p(lg);
                 @include transition();
-                @include br(sm);
+                @include r(sm);
                 @include shadow(xl);
                 @include m(none, $important: true);
 

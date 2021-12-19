@@ -9,7 +9,7 @@
     vertical-align: baseline;
     padding: 0.25em 0.4em;
     font-size: 0.75em;
-    @include br(pill);
+    @include r(pill);
     @include shadow(xs);
 
     @each $color, $value in get-colors() {

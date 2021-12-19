@@ -25,7 +25,7 @@
             height: spacing(lg);
             left: spacing(xxs);
             top: spacing(xs);
-            @include br(pill);
+            @include r(pill);
             @include shadow(inner);
             @include bg-color(light);
         }
@@ -35,7 +35,7 @@
             display: block;
             height: spacing(xl);
             width: spacing(xl);
-            @include br(circle);
+            @include r(circle);
             @include bg-color(light, lighter);
             @include b($color: light);
             @include shadow();

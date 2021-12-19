@@ -6,7 +6,7 @@
         align-items: center;
         @include shadow(xs);
         @include b();
-        @include br();
+        @include r();
 
         .ks-button {
             .button {
@@ -19,7 +19,7 @@
             -moz-appearance: textfield; // Firefox
             @include shadow(none);
             @include b-x();
-            @include br(none);
+            @include r(none);
             @include font-size(sm);
             @include p(sm);
             @include m(none);

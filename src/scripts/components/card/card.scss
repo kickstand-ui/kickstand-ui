@@ -3,7 +3,7 @@
 .ks-card {
     position: relative;
     overflow: hidden;
-    @include br(sm);
+    @include r(sm);
     @include b($color: light, $variant: dark);
     @include shadow();
 

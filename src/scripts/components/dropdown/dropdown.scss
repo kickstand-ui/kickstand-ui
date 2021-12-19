@@ -54,7 +54,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         overflow-x: auto;
         transform: translateY(-0.25rem);
         background-color: white;
-        @include br(sm);
+        @include r(sm);
         @include b();
         @include z-index(xs);
         @include p(sm);
@@ -110,13 +110,13 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         &.align-left {
             left: 0;
             right: auto;
-            @include br-tl(none);
+            @include rtl(none);
         }
 
         &.align-right {
             right: 0;
             left: auto;
-            @include br-tr(none);
+            @include rtr(none);
         }
     }
 
@@ -132,7 +132,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         overflow-y: auto;
         transform: translateY(-0.25rem);
         background-color: white;
-        @include br(sm);
+        @include r(sm);
         @include b();
         @include z-index(xs);
         @include px(sm);
@@ -143,7 +143,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
     &.show-contents {
         .dropdown-button {
-            @include br-b(none);
+            @include rb(none);
         }
 
         .contents {

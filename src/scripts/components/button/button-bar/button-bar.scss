@@ -3,12 +3,12 @@
 .ks-button-bar {
     display: inline-flex;
     @include shadow(xs);
-    @include br(sm);
+    @include r(sm);
 
     .ks-button {
         .button {
             @include shadow(none);
-            @include br(none);
+            @include r(none);
         }
     }
 
@@ -18,21 +18,21 @@
 
             &:first-child {
                 .button {
-                    @include br-l(sm);
+                    @include rl(sm);
                 }
             }
 
             &:last-child {
                 .button {
-                    @include br-r(sm);
+                    @include rr(sm);
                 }
             }
 
             & ~ .ks-dropdown {    
                 .ks-button {
                     .button {
-                        @include br-l(none);
-                        @include br-r(sm);
+                        @include rl(none);
+                        @include rr(sm);
                     }
                 }
             }
@@ -40,8 +40,8 @@
             .ks-dropdown ~ & {    
                 .ks-button {
                     .button {
-                        @include br-r(none);
-                        @include br-l(sm);
+                        @include rr(none);
+                        @include rl(sm);
                     }
                 }
             }    
@@ -56,13 +56,13 @@
 
             &:first-child {
                 .button {
-                    @include br-t(sm);
+                    @include rt(sm);
                 }
             }
 
             &:last-child {
                 .button {
-                    @include br-b(sm);
+                    @include rb(sm);
                 }
             }
         }
