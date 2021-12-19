@@ -2,13 +2,20 @@
 
 $breakpoints: (xl, lg, md, sm, xs, xxs, print);
 
-.text {
+.t {
 
     // Sizes
     @each $key,
     $value in $font-sizes {
         &-#{$key} {
             @include font-size($key, true);
+        }
+    }
+
+    // Family
+    @each $key, $value in $fonts {
+        &-#{$key} {
+            @include font($key);
         }
     }
 
@@ -93,10 +100,10 @@ $value in $breakpoints {
     $value in $font-sizes {
 
         /*
-         *  sm:text-md
-         *  xl:text-xl
+         *  sm:t-md
+         *  xl:t-xl
          */
-        .#{$mq}\:text-#{$key} {
+        .#{$mq}\:t-#{$key} {
             @include mq($mq) {
                 @include font-size($key, true);
             }
@@ -106,7 +113,7 @@ $value in $breakpoints {
 
 // Hover styles 
 
-.hover\:text {
+.hover\:t {
     &-normal:hover {
         font-weight: normal !important;
     }
