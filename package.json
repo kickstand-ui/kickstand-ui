@@ -35,7 +35,7 @@
         "@open-wc/webpack-import-meta-loader": "^0.4.7",
         "@stencil/core": "2.10.0",
         "@stencil/postcss": "^2.1.0",
-        "@stencil/sass": "^2.0.0-0",
+        "@stencil/sass": "^1.5.2",
         "@storybook/addon-a11y": "^6.3.12",
         "@storybook/addon-actions": "^6.3.12",
         "@storybook/addon-knobs": "^6.3.1",
