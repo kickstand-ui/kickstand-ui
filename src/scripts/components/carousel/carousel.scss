@@ -6,7 +6,7 @@
 
     .slide-wrapper {
         position: relative;
-        
+
         .slides {
             position: relative;
             width: 100%;
@@ -89,13 +89,12 @@
                 right: 0;
             }
 
-            .ks-button {
-                outline: 0;
-                width: 100%;
-            }
+            .button.light {
+                @include color(light, lighter);
 
-            svg {
-                filter: drop-shadow(0 0 0.25rem color-value(dark));
+                svg {
+                    filter: drop-shadow(0 0 0.1rem color-value(dark));
+                }
             }
         }
 
@@ -153,7 +152,7 @@
                 @include p(none);
                 @include m(none);
                 @include mx(sm);
-            }    
+            }
         }
     }
 

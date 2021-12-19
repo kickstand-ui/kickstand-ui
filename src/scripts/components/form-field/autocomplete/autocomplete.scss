@@ -75,28 +75,27 @@
 
         .dropdown-options {
             visibility: hidden;
-            overflow-y: scroll;
+            overflow: auto;
             -webkit-overflow-scrolling: touch;
             left: 0;
             right: 0;
             position: absolute;
             list-style: none;
             width: auto;
-            white-space: nowrap;
             max-height: 0;
-            overflow: hidden;
             background-color: white;
             @include b();
             @include b-t(none);
             @include br-b(sm);
             @include z-index(xs);
-            @include shadow(sm);
+            @include shadow(xs);
             @include p(none);
             @include m(none);
             @include transition();
 
             .option {
                 @include p(md);
+                @include b-b();
 
                 &:focus {
                     @include b-y();

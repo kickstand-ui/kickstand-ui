@@ -6,9 +6,9 @@ main {
 
 // Reset to align with b-xs style
 hr {
-    color: default-border(color);
     background-color: currentColor;
     border: 0;
+    @include b-b();
 }
 
 p {

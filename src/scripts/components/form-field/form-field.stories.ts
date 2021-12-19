@@ -312,6 +312,7 @@ export const autocomplete = () => {
             <option value="3">Value 3</option>
             <option value="4">Popper green 3</option>
             <option value="5">Popper green 6</option>
+            <option value="6">This is an option with some super long text to test overflow</option>
         </ks-form-field>
     </div>`);
 };
