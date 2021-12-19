@@ -14,6 +14,14 @@
 | `size`       | `size`        |             | `"lg" \| "md" \| "sm" \| "xl"` | `'sm'`      |
 
 
+## Events
+
+| Event    | Description | Type               |
+| -------- | ----------- | ------------------ |
+| `hidden` |             | `CustomEvent<any>` |
+| `shown`  |             | `CustomEvent<any>` |
+
+
 ## Methods
 
 ### `hide() => Promise<void>`

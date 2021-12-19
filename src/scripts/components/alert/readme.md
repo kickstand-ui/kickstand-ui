@@ -13,7 +13,7 @@
 | `color`       | `color`       |             | `"danger" \| "dark" \| "info" \| "light" \| "primary" \| "secondary" \| "success" \| "warning"` | `'primary'` |
 | `dismissible` | `dismissible` |             | `boolean`                                                                                       | `false`     |
 | `display`     | `display`     |             | `boolean`                                                                                       | `false`     |
-| `header`      | `header`      |             | `string`                                                                                        | `undefined` |
+| `heading`     | `heading`     |             | `string`                                                                                        | `undefined` |
 | `hideIcon`    | `hide-icon`   |             | `boolean`                                                                                       | `false`     |
 | `icon`        | `icon`        |             | `string`                                                                                        | `'warning'` |
 | `note`        | `note`        |             | `boolean`                                                                                       | `false`     |

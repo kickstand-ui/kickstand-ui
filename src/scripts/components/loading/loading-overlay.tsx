@@ -1,10 +1,11 @@
-import { Component, h, Prop, Method, Element, ComponentInterface, Host } from '@stencil/core';
+import { Component, h, Prop, Method, Element, ComponentInterface, Host, Event, EventEmitter } from '@stencil/core';
+import { IDismissible } from '../../utils/componentUtils';
 
 @Component({
     tag: 'ks-loading-overlay',
     styleUrl: 'loading.scss'
 })
-export class LoadingOverlay implements ComponentInterface {
+export class LoadingOverlay implements ComponentInterface, IDismissible {
     $overlay: HTMLKsOverlayElement;
 
     @Element() $el: HTMLElement;
@@ -16,14 +17,19 @@ export class LoadingOverlay implements ComponentInterface {
     @Prop() showMessage: boolean = false;
     @Prop() icon: string;
 
+    @Event() shown!: EventEmitter;
+    @Event() hidden!: EventEmitter;
+
     @Method()
     async show() {
         await this.$overlay.show();
+        this.shown.emit();
     }
 
     @Method()
     async hide() {
         await this.$overlay.hide();
+        this.hidden.emit();
     }
 
     render() {

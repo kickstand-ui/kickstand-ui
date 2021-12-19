@@ -1,10 +1,11 @@
-import { Component, h, Prop, Method, Host, ComponentInterface } from '@stencil/core';
+import { Component, h, Prop, Method, Host, Event, ComponentInterface, EventEmitter } from '@stencil/core';
+import { IDismissible } from '../../utils/componentUtils';
 import { sanitizeHTML } from "../../utils/htmlSanitizer";
 
 @Component({
     tag: 'ks-accordion-slide'
 })
-export class AccordionSlide implements ComponentInterface {
+export class AccordionSlide implements ComponentInterface, IDismissible {
     slideId: number = slideIds++;
     controlId: string = `accordion_control_${this.slideId}`;
     panelId: string = `accordion_slide_${this.slideId}`;
@@ -13,14 +14,30 @@ export class AccordionSlide implements ComponentInterface {
     @Prop() heading: string;
     @Prop() expanded: boolean = false;
 
+    @Event() shown!: EventEmitter;
+    @Event() hidden!: EventEmitter;
+    
+    @Method()
+    async hide() {
+        this.expanded = false;
+        this.$slideContent.style.maxHeight = '0px';
+        this.hidden.emit();
+    }
+
+    @Method()
+    async show() {
+        this.expanded = true;
+        this.$slideContent.style.maxHeight = this.$slideContent.scrollHeight + 32 + 'px';
+        this.shown.emit();
+    }
+
     @Method()
     async toggleSlide() {
-        this.expanded = !this.expanded;
-        this.$slideContent.style.maxHeight = this.expanded ? this.$slideContent.scrollHeight + 32 + 'px' : '0px';
+        this.expanded ? this.hide() : this.show();
     }
 
     componentDidRender() {
-        if(this.expanded)
+        if (this.expanded)
             this.$slideContent.style.maxHeight = this.expanded ? this.$slideContent.scrollHeight + 32 + 'px' : '0px';
     }
 

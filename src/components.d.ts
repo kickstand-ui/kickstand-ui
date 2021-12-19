@@ -15,6 +15,8 @@ export namespace Components {
     interface KsAccordionSlide {
         "expanded": boolean;
         "heading": string;
+        "hide": () => Promise<void>;
+        "show": () => Promise<void>;
         "toggleSlide": () => Promise<void>;
     }
     interface KsAlert {
@@ -22,7 +24,7 @@ export namespace Components {
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
         "dismissible": boolean;
         "display": boolean;
-        "header": string;
+        "heading": string;
         "hide": () => Promise<void>;
         "hideIcon": boolean;
         "icon": string;
@@ -714,13 +716,15 @@ declare namespace LocalJSX {
     interface KsAccordionSlide {
         "expanded"?: boolean;
         "heading"?: string;
+        "onHidden"?: (event: CustomEvent<any>) => void;
+        "onShown"?: (event: CustomEvent<any>) => void;
     }
     interface KsAlert {
         "closeText"?: string;
         "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
         "dismissible"?: boolean;
         "display"?: boolean;
-        "header"?: string;
+        "heading"?: string;
         "hideIcon"?: boolean;
         "icon"?: string;
         "note"?: boolean;
@@ -993,6 +997,8 @@ declare namespace LocalJSX {
         "absolute"?: boolean;
         "icon"?: string;
         "message"?: string;
+        "onHidden"?: (event: CustomEvent<any>) => void;
+        "onShown"?: (event: CustomEvent<any>) => void;
         "showMessage"?: boolean;
         "size"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
         "theme"?: 'dark' | 'light';
@@ -1017,6 +1023,8 @@ declare namespace LocalJSX {
     }
     interface KsModal {
         "modalTitle"?: string;
+        "onHidden"?: (event: CustomEvent<any>) => void;
+        "onShown"?: (event: CustomEvent<any>) => void;
         "preventClose"?: boolean;
         "size"?: 'sm' | 'md' | 'lg';
     }
@@ -1062,6 +1070,8 @@ declare namespace LocalJSX {
     }
     interface KsSideDrawer {
         "headerText"?: string;
+        "onHidden"?: (event: CustomEvent<any>) => void;
+        "onShown"?: (event: CustomEvent<any>) => void;
         "position"?: 'left' | 'right';
         "size"?: 'sm' | 'md' | 'lg' | 'xl';
     }

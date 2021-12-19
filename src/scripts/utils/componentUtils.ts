@@ -1,3 +1,16 @@
+import { EventEmitter } from "@stencil/core";
+
+/**
+ * Common methods for dismissible components
+ */
+export interface IDismissible {
+    shown: EventEmitter;
+    hidden: EventEmitter;
+    show(): Promise<void>;
+    hide(): Promise<void>;
+}
+
+
 /**
  * Documentation
  * A list of focusable HTML elements

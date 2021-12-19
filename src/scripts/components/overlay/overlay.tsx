@@ -1,11 +1,11 @@
-import { Component, h, Prop, Method, Host, State, Element, Listen, Event, EventEmitter } from '@stencil/core';
-import { FOCUSABLE_ELEMENTS } from '../../utils/componentUtils';
+import { Component, h, Prop, Method, Host, State, Element, Listen, Event, EventEmitter, ComponentInterface } from '@stencil/core';
+import { FOCUSABLE_ELEMENTS, IDismissible } from '../../utils/componentUtils';
 
 @Component({
     tag: 'ks-overlay',
     styleUrl: 'overlay.scss'
 })
-export class Overlay {
+export class Overlay implements ComponentInterface, IDismissible {
     $focusableEls: HTMLElement[];
     $focusedElBeforeOpen: HTMLElement;
     $content: HTMLElement;

@@ -1,13 +1,14 @@
-import { Component, h, Prop, Host, Method, Event, EventEmitter } from '@stencil/core';
+import { Component, h, Prop, Host, Method, Event, EventEmitter, ComponentInterface } from '@stencil/core';
+import { IDismissible } from '../../utils/componentUtils';
 
 @Component({
     tag: 'ks-alert',
     styleUrl: 'alert.scss'
 })
-export class Alert {
+export class Alert implements ComponentInterface, IDismissible {
     alertId = `alert_${alertIds++}`;
 
-    @Prop() header: string;
+    @Prop() heading: string;
     @Prop() closeText: string = 'Close';
     @Prop() note: boolean = false;
     @Prop() dismissible: boolean = false;
@@ -62,9 +63,9 @@ export class Alert {
                 <div id={this.alertId} class={classes}>
                     {!this.hideIcon && <ks-icon class="alert-icon" icon={this.icon}></ks-icon>}
                     <div class="content">
-                        {(this.header || this.dismissible) &&
+                        {(this.heading || this.dismissible) &&
                             <header class="alert-header">
-                                <h3 class="alert-heading">{this.header}</h3>
+                                <h3 class="alert-heading">{this.heading}</h3>
                                 {(this.dismissible && !this.note) && <ks-button class="alert-close" onClick={() => this.hide()} display="clear" size="xs" aria-controls={this.alertId}>
                                     <ks-icon icon="times" label={this.closeText}></ks-icon>
                                 </ks-button>}

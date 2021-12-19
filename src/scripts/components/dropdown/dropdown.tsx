@@ -1,11 +1,11 @@
 import { Component, h, Prop, Host, Element, State, Listen, Method, Event, EventEmitter, ComponentInterface } from '@stencil/core';
-import { FOCUSABLE_ELEMENTS, keyCodes } from '../../utils/componentUtils';
+import { FOCUSABLE_ELEMENTS, IDismissible, keyCodes } from '../../utils/componentUtils';
 
 @Component({
     tag: 'ks-dropdown',
     styleUrl: 'dropdown.scss'
 })
-export class Dropdown implements ComponentInterface {
+export class Dropdown implements ComponentInterface, IDismissible {
     $contents: HTMLElement;
     $control: HTMLElement;
     $focusableEls: HTMLElement[];

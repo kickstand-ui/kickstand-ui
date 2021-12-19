@@ -13,7 +13,35 @@
 | `heading`  | `heading`  |             | `string`  | `undefined` |
 
 
+## Events
+
+| Event    | Description | Type               |
+| -------- | ----------- | ------------------ |
+| `hidden` |             | `CustomEvent<any>` |
+| `shown`  |             | `CustomEvent<any>` |
+
+
 ## Methods
+
+### `hide() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+### `show() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
 
 ### `toggleSlide() => Promise<void>`
 

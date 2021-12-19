@@ -1,10 +1,11 @@
-import { Component, h, Prop, ComponentInterface, Element, Method, Host } from '@stencil/core';
+import { Component, h, Prop, ComponentInterface, Element, Method, Host, Event, EventEmitter } from '@stencil/core';
+import { IDismissible } from '../../utils/componentUtils';
 
 @Component({
     tag: 'ks-modal',
     styleUrl: 'modal.scss'
 })
-export class Modal implements ComponentInterface {
+export class Modal implements ComponentInterface, IDismissible {
     $overlay: HTMLKsOverlayElement;
     titleId = `modal_title_${modalIds++}`;
 
@@ -14,14 +15,19 @@ export class Modal implements ComponentInterface {
     @Prop() preventClose: boolean = false;
     @Prop() size: 'sm' | 'md' | 'lg' = 'md';
 
+    @Event() shown!: EventEmitter;
+    @Event() hidden!: EventEmitter;
+
     @Method()
     async show() {
         await this.$overlay.show();
+        this.shown.emit();
     }
 
     @Method()
     async hide() {
         await this.$overlay.hide();
+        this.hidden.emit();
     }
 
     render() {

@@ -1,10 +1,11 @@
-import { Component, h, Prop, Element, ComponentInterface, Method, State } from '@stencil/core';
+import { Component, h, Prop, Element, ComponentInterface, Method, State, Event, EventEmitter } from '@stencil/core';
+import { IDismissible } from '../../utils/componentUtils';
 
 @Component({
     tag: 'ks-side-drawer',
     styleUrl: 'side-drawer.scss'
 })
-export class SideDrawer implements ComponentInterface {
+export class SideDrawer implements ComponentInterface, IDismissible {
     $overlay: HTMLKsOverlayElement;
     $drawer: HTMLElement;
 
@@ -14,18 +15,23 @@ export class SideDrawer implements ComponentInterface {
     @Prop() size: 'sm' | 'md' | 'lg' | 'xl' = 'sm';
     @Prop() headerText: string;
 
+    @Event() shown!: EventEmitter;
+    @Event() hidden!: EventEmitter;
+
     @State() isShowing: boolean;
 
     @Method()
     async hide() {
         this.isShowing = false;
         await this.$overlay.hide();
+        this.hidden.emit();
     }
 
     @Method()
     async show() {
         await this.$overlay.show();
         this.isShowing = true;
+        this.shown.emit();
     }
 
     componentDidRender() {

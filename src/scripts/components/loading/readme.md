@@ -17,6 +17,14 @@
 | `theme`       | `theme`        |             | `"dark" \| "light"`                                      | `'light'`      |
 
 
+## Events
+
+| Event    | Description | Type               |
+| -------- | ----------- | ------------------ |
+| `hidden` |             | `CustomEvent<any>` |
+| `shown`  |             | `CustomEvent<any>` |
+
+
 ## Methods
 
 ### `hide() => Promise<void>`
