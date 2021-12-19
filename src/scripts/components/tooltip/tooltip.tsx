@@ -1,4 +1,5 @@
 import { Component, h, Prop, Host, Element, ComponentInterface } from '@stencil/core';
+import { sanitizeHTML } from "../../utils/htmlSanitizer";
 
 @Component({
     tag: 'ks-tooltip',
@@ -22,7 +23,7 @@ export class Tooltip implements ComponentInterface {
 
     private addRichContent() {
         if (!this.disable)
-            this.$message.innerHTML = this.text;
+            this.$message.innerHTML = sanitizeHTML(this.text) as string;
     }
 
     render() {

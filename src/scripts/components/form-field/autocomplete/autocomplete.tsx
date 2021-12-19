@@ -50,9 +50,13 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
         mo.observe(this.$el.parentElement, { childList: true });
     }
 
+    componentWillRender() {
+        this.searchTerm = this.$options.find(x => x.value === this.value || x.innerText === this.value)?.innerText;
+        this.$dropdownOptions = Array.from(this.$el.querySelectorAll('.option'));
+    }
+
     componentDidRender() {
         this.$select.value = this.value.toString();
-        this.$dropdownOptions = Array.from(this.$el.querySelectorAll('.option'));
         window.addEventListener('click', (e: MouseEvent) => {
             let isPreventClose = this.$el.contains(e.target as HTMLElement);
             if (isPreventClose)

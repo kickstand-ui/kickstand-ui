@@ -81,6 +81,7 @@ export namespace Components {
         "alt": string;
         "clickable": boolean;
         "collapse": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+        "fallbackSrc": string;
         "href": string;
         "hrefProp": string;
         "imgAspectRatio": string;
@@ -111,6 +112,7 @@ export namespace Components {
         "align": 'left' | 'center' | 'right';
         "alt": string;
         "clickable": boolean;
+        "fallbackSrc": string;
         "href": string;
         "hrefProp": string;
         "imgAspectRatio": string;
@@ -780,6 +782,7 @@ declare namespace LocalJSX {
         "alt"?: string;
         "clickable"?: boolean;
         "collapse"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+        "fallbackSrc"?: string;
         "href"?: string;
         "hrefProp"?: string;
         "imgAspectRatio"?: string;
@@ -810,6 +813,7 @@ declare namespace LocalJSX {
         "align"?: 'left' | 'center' | 'right';
         "alt"?: string;
         "clickable"?: boolean;
+        "fallbackSrc"?: string;
         "href"?: string;
         "hrefProp"?: string;
         "imgAspectRatio"?: string;

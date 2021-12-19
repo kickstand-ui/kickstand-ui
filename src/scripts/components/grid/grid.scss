@@ -1,4 +1,6 @@
-@import "../../../scss/00_Abstracts/index";
+@use "sass:math";
+
+@use "../../../scss/00_Abstracts/index" as *;
 
 $columns: 12;
 $breakpoints: (xl, lg, md, sm, xs, xxs);
@@ -10,15 +12,17 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
     flex-grow: 1;
 
     @each $bp, $value in $spacing-sizes {
-        $gutter-size: $value / 2;
+        @if not $value == auto {
+            $gutter-size: $value * 0.5;
 
-        &.gutter-#{$bp} {
-            margin-left: -$gutter-size;
-            margin-right: -$gutter-size;
+            &.gutter-#{$bp} {
+                margin-left: -$gutter-size;
+                margin-right: -$gutter-size;
 
-            >.col {
-                padding-left: $gutter-size;
-                padding-right: $gutter-size;
+                >.col {
+                    padding-left: $gutter-size;
+                    padding-right: $gutter-size;
+                }
             }
         }
     }
@@ -58,8 +62,8 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
         @for $i from 1 through $columns {
             &.col-#{$i} {
-                max-width: (100% / $columns) * $i;
-                flex: 0 0 (100% / $columns) * $i;
+                max-width: math.div(100%, $columns) * $i;
+                flex: 0 0 math.div(100%, $columns) * $i;
             }
         }
 
@@ -68,8 +72,8 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
             @each $bp in $breakpoints {
                 @include mq($bp) {
                     &.#{$bp}\:col-#{$i} {
-                        max-width: (100% / $columns) * $i;
-                        flex: 0 0 (100% / $columns) * $i;
+                        max-width: math.div(100%, $columns) * $i;
+                        flex: 0 0 math.div(100%, $columns) * $i;
                     }
                 }
             }
