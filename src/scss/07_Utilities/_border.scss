@@ -15,7 +15,7 @@
         }
     }
 
-    &-t {
+    &t {
         @each $key,
         $value in $spacing-sizes {
             &-#{$key} {
@@ -31,7 +31,7 @@
         }
     }
 
-    &-b {
+    &b {
         @each $key,
         $value in $spacing-sizes {
             &-#{$key} {
@@ -47,7 +47,7 @@
         }
     }
 
-    &-l {
+    &l {
         @each $key,
         $value in $spacing-sizes {
             &-#{$key} {
@@ -63,7 +63,7 @@
         }
     }
 
-    &-r {
+    &r {
         @each $key,
         $value in $spacing-sizes {
             &-#{$key} {
@@ -79,7 +79,7 @@
         }
     }
 
-    &-x {
+    &x {
         @each $key,
         $value in $spacing-sizes {
             &-#{$key} {
@@ -96,7 +96,7 @@
         }
     }
 
-    &-y {
+    &y {
         @each $key,
         $value in $spacing-sizes {
             &-#{$key} {

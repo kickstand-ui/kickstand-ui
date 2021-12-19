@@ -1,6 +1,6 @@
 export default { title: 'Utilities/Borders' };
 
-const positions = ['', '-t', '-r', '-b', '-l', '-x', '-y'];
+const positions = ['', 't', 'r', 'b', 'l', 'x', 'y'];
 const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
 const sizes = ['xxxs', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'];
 
