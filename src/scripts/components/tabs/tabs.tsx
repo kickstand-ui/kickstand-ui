@@ -12,9 +12,9 @@ export class Tabs implements ComponentInterface {
     
     @Element() $el: HTMLElement;
     
+    @Prop() label: string;
     @Prop() position: 'top' | 'bottom' | 'left' | 'right' = 'top';
     @Prop() align: 'start' | 'center' | 'end' | 'justified' = 'start';
-    @Prop() label: string;
     
     @State() selectedIndex: number = 0;
     @State() $tabPanels: HTMLKsTabElement[];

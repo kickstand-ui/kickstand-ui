@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property     | Attribute     | Description | Type                           | Default     |
-| ------------ | ------------- | ----------- | ------------------------------ | ----------- |
-| `headerText` | `header-text` |             | `string`                       | `undefined` |
-| `position`   | `position`    |             | `"left" \| "right"`            | `'left'`    |
-| `size`       | `size`        |             | `"lg" \| "md" \| "sm" \| "xl"` | `'sm'`      |
+| Property   | Attribute  | Description | Type                           | Default     |
+| ---------- | ---------- | ----------- | ------------------------------ | ----------- |
+| `heading`  | `heading`  |             | `string`                       | `undefined` |
+| `position` | `position` |             | `"left" \| "right"`            | `'left'`    |
+| `size`     | `size`     |             | `"lg" \| "md" \| "sm" \| "xl"` | `'sm'`      |
 
 
 ## Events

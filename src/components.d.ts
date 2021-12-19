@@ -96,8 +96,8 @@ export namespace Components {
         "threshold": number;
     }
     interface KsCardBody {
-        "cardSubtitle": string;
-        "cardTitle": string;
+        "heading": string;
+        "subHeading": string;
     }
     interface KsCardFooter {
     }
@@ -316,8 +316,8 @@ export namespace Components {
     interface KsMenuRow {
     }
     interface KsModal {
+        "heading": string;
         "hide": () => Promise<void>;
-        "modalTitle": string;
         "preventClose": boolean;
         "show": () => Promise<void>;
         "size": 'sm' | 'md' | 'lg';
@@ -362,7 +362,7 @@ export namespace Components {
         "threshold": number;
     }
     interface KsSideDrawer {
-        "headerText": string;
+        "heading": string;
         "hide": () => Promise<void>;
         "position": 'left' | 'right';
         "show": () => Promise<void>;
@@ -799,8 +799,8 @@ declare namespace LocalJSX {
         "threshold"?: number;
     }
     interface KsCardBody {
-        "cardSubtitle"?: string;
-        "cardTitle"?: string;
+        "heading"?: string;
+        "subHeading"?: string;
     }
     interface KsCardFooter {
     }
@@ -1022,7 +1022,7 @@ declare namespace LocalJSX {
     interface KsMenuRow {
     }
     interface KsModal {
-        "modalTitle"?: string;
+        "heading"?: string;
         "onHidden"?: (event: CustomEvent<any>) => void;
         "onShown"?: (event: CustomEvent<any>) => void;
         "preventClose"?: boolean;
@@ -1069,7 +1069,7 @@ declare namespace LocalJSX {
         "threshold"?: number;
     }
     interface KsSideDrawer {
-        "headerText"?: string;
+        "heading"?: string;
         "onHidden"?: (event: CustomEvent<any>) => void;
         "onShown"?: (event: CustomEvent<any>) => void;
         "position"?: 'left' | 'right';

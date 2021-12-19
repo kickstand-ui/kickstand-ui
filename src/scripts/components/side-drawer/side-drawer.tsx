@@ -11,9 +11,9 @@ export class SideDrawer implements ComponentInterface, IDismissible {
 
     @Element() $el: HTMLElement;
 
+    @Prop() heading: string;
     @Prop() position: 'left' | 'right' = 'left';
     @Prop() size: 'sm' | 'md' | 'lg' | 'xl' = 'sm';
-    @Prop() headerText: string;
 
     @Event() shown!: EventEmitter;
     @Event() hidden!: EventEmitter;
@@ -54,7 +54,7 @@ export class SideDrawer implements ComponentInterface, IDismissible {
             <ks-overlay onHidden={() => this.overlayHiddenHandler()} ref={el => this.$overlay = el}>
                 <aside class={classes} ref={el => this.$drawer = el}>
                     <header class="drawer-header">
-                        <h3 class="drawer-title">{this.headerText}</h3>
+                        <h3 class="drawer-title">{this.heading}</h3>
                         <ks-button onClick={() => this.hide()} class="drawer-close" color="dark" display="clear" button-class="p-xs">
                             <ks-icon icon="times" label="Close Modal" />
                         </ks-button>
