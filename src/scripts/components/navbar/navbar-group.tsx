@@ -1,14 +1,14 @@
 import { Component, h, Host, Prop, ComponentInterface } from '@stencil/core';
 
 @Component({
-    tag: 'ks-menu-group'
+    tag: 'ks-navbar-group'
 })
-export class MenuGroup implements ComponentInterface {
+export class NavbarGroup implements ComponentInterface {
     @Prop() position: 'left' | 'right' = 'right';
 
     render() {
         return (
-            <Host class={`menu-group align-${this.position}`}>
+            <Host class={`navbar-group align-${this.position}`}>
                 <slot />
             </Host>
         );

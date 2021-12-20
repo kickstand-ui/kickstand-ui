@@ -2,7 +2,7 @@
 
 $breakpoints: (xl, lg, md, sm, xs, xxs);
 
-.ks-menu-bar {
+.ks-navbar {
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -26,7 +26,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         }
     }
 
-    .menu-branding {
+    .navbar-branding {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -54,7 +54,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         }
     }
 
-    .menu-toggler {
+    .navbar-toggler {
         line-height: 1;
         display: none;
         background-color: transparent;
@@ -64,7 +64,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         @include shadow(none);
     }
 
-    .menu-content {
+    .navbar-content {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -74,14 +74,14 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         width: 100%;
         max-width: 100%;
 
-        .menu-row {
+        .navbar-row {
             width: 100%;
             display: flex;
             justify-content: flex-end;
             align-content: center;
             align-items: center;
 
-            .menu-group {
+            .navbar-group {
                 display: flex;
                 align-items: center;
 
@@ -96,7 +96,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                 }
             }
 
-            .menu-item {
+            .navbar-item {
                 font-weight: 600;
                 @include px(sm);
                 @include my(sm);
@@ -157,7 +157,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         &.#{$key} {
             @include bg-color($key);
 
-            .menu-branding {
+            .navbar-branding {
                 color: text-color-value($key);
 
                 &:focus {
@@ -166,7 +166,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                 }
             }
 
-            .menu-toggler {
+            .navbar-toggler {
                 color: text-color($key);
                 @include b($color: $key);
 
@@ -176,9 +176,9 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                 }
             }
 
-            .menu-content {
-                .menu-row {
-                    .menu-item {
+            .navbar-content {
+                .navbar-row {
+                    .navbar-item {
                         >* {
                             color: text-color-value($key);
 
@@ -209,7 +209,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                 background-color: white;
                 @include b-b();
 
-                .menu-branding {
+                .navbar-branding {
                     color: color($key);
 
                     &:focus {
@@ -217,14 +217,14 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                     }
                 }
 
-                .menu-toggler {
+                .navbar-toggler {
                     border-color: color-value($key);
                     @include color($key);
                 }
 
-                .menu-content {
-                    .menu-row {
-                        .menu-item {
+                .navbar-content {
+                    .navbar-row {
+                        .navbar-item {
                             >* {
                                 @include color($key);                
 
@@ -266,11 +266,11 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                     align-items: center;
                     justify-content: space-between;
 
-                    .menu-toggler {
+                    .navbar-toggler {
                         display: inline-flex;
                     }
 
-                    .menu-content {
+                    .navbar-content {
                         display: block;
                         visibility: hidden;
                         max-height: 0;
@@ -282,12 +282,12 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                         overflow-y: hidden;
                         @include transition($speed: med);
 
-                        .menu-row {
+                        .navbar-row {
                             flex-direction: column;
                             justify-content: flex-start;
                             align-items: flex-start;
 
-                            .menu-group {
+                            .navbar-group {
                                 flex-direction: column;
                                 justify-content: start;
                                 align-items: flex-start;
@@ -295,7 +295,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                                 @include mx(none);
                             }
 
-                            .menu-item {
+                            .navbar-item {
                                 width: 100%;
                                 text-align: left;
                                 @include b(none);
@@ -333,7 +333,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                         }
                     }
 
-                    [aria-expanded="true"]+.menu-content {
+                    [aria-expanded="true"]+.navbar-content {
                         height: auto;
                         visibility: visible;
                         @include mt(sm);

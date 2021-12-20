@@ -28,8 +28,8 @@
  - [ks-form-field](../form-field)
  - [ks-gallery](../gallery)
  - [ks-loading](../loading)
- - [ks-menu-bar](../menu-bar)
  - [ks-modal](../modal)
+ - [ks-navbar](../navbar)
  - [ks-side-drawer](../side-drawer)
  - [ks-spin-box](../form-field/spin-box)
 
@@ -46,8 +46,8 @@ graph TD;
   ks-form-field --> ks-icon
   ks-gallery --> ks-icon
   ks-loading --> ks-icon
-  ks-menu-bar --> ks-icon
   ks-modal --> ks-icon
+  ks-navbar --> ks-icon
   ks-side-drawer --> ks-icon
   ks-spin-box --> ks-icon
   style ks-icon fill:#f9f,stroke:#333,stroke-width:4px

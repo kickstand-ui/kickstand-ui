@@ -1,12 +1,12 @@
 import { text, select, boolean } from "@storybook/addon-knobs";
 
-export default { title: 'Components/Menu Bar' };
+export default { title: 'Components/Navbar' };
 
 const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
-export const menuBarProperties = () => {
+export const navbarBarProperties = () => {
     const logoUrl = text('logo-url', '');
     const altText = text('alt-text', '');
-    const tagline = text('tagline', 'Menu Bar Props');
+    const tagline = text('tagline', 'Navbar Props');
     const collapse = select('collapse', ['xxs', 'xs', 'sm', 'md', 'lg', 'xl'], 'sm')
     const fixed = select('fixed', ['', 'top', 'bottom'], '');
     const color = select('color', colors, 'primary')
@@ -16,7 +16,7 @@ export const menuBarProperties = () => {
 
     return (`
     <div>
-        <ks-menu-bar
+        <ks-navbar
             logo-url="${logoUrl}" 
             alt-text="${altText}" 
             tagline="${tagline}"
@@ -28,15 +28,15 @@ export const menuBarProperties = () => {
             link-tag="${linkTag}"
             href-prop="${hrefProp}"
             >
-            <ks-menu-row>
-                <ks-menu-group>
-                    <ks-menu-item>
+            <ks-navbar-row>
+                <ks-navbar-group>
+                    <ks-navbar-item>
                         <a href="#">Test</a>
-                    </ks-menu-item>
-                    <ks-menu-item>
+                    </ks-navbar-item>
+                    <ks-navbar-item>
                         <a href="#">Test 1</a>
-                    </ks-menu-item>
-                    <ks-menu-item>
+                    </ks-navbar-item>
+                    <ks-navbar-item>
                         <ks-dropdown
                             text="Drop-Down" 
                             position="right" 
@@ -48,31 +48,31 @@ export const menuBarProperties = () => {
                             <ks-dropdown-item><a href="#">Test 4</a></ks-dropdown-item>
                             <ks-dropdown-item><a href="#">Test 5</a></ks-dropdown-item>
                         </ks-dropdown>
-                    </ks-menu-item>
-                    <ks-menu-item>
+                    </ks-navbar-item>
+                    <ks-navbar-item>
                         <a href="#">Test 1</a>
-                    </ks-menu-item>
-                </ks-menu-group>
-            </ks-menu-row>
-        </ks-menu-bar>
+                    </ks-navbar-item>
+                </ks-navbar-group>
+            </ks-navbar-row>
+        </ks-navbar>
         <p>This is somebody text.</p>
     </div>
     `);
 };
 
-export const menuGroupProperties = () => {
+export const navbarGroupProperties = () => {
     const position = select('position', ['left', 'right'], 'right');
     return (`
-    <ks-menu-bar tagline="Group Props">
-        <ks-menu-row>
-            <ks-menu-group position="${position}">
-                <ks-menu-item>
+    <ks-navbar tagline="Group Props">
+        <ks-navbar-row>
+            <ks-navbar-group position="${position}">
+                <ks-navbar-item>
                     <a href="#">Test</a>
-                </ks-menu-item>
-                <ks-menu-item>
+                </ks-navbar-item>
+                <ks-navbar-item>
                     <a href="#">Test 1</a>
-                </ks-menu-item>
-                <ks-menu-item>
+                </ks-navbar-item>
+                <ks-navbar-item>
                     <ks-dropdown
                         text="Drop-Down" 
                         position="right" 
@@ -84,35 +84,35 @@ export const menuGroupProperties = () => {
                         <ks-dropdown-item><a href="#">Test 4</a></ks-dropdown-item>
                         <ks-dropdown-item><a href="#">Test 5</a></ks-dropdown-item>
                     </ks-dropdown>
-                </ks-menu-item>
-            </ks-menu-group>
-        </ks-menu-row>
-    </ks-menu-bar>
+                </ks-navbar-item>
+            </ks-navbar-group>
+        </ks-navbar-row>
+    </ks-navbar>
     `);
 };
 
-export const menuWithMultipleRows = () => {
+export const navbarWithMultipleRows = () => {
     return (`
-    <ks-menu-bar tagline="Multiple Rows">
-        <ks-menu-row>
-            <ks-menu-group>
-                <ks-menu-item>
+    <ks-navbar tagline="Multiple Rows">
+        <ks-navbar-row>
+            <ks-navbar-group>
+                <ks-navbar-item>
                     <a href="#">Sign Up</a>
-                </ks-menu-item>
-                <ks-menu-item class="pl-none">
+                </ks-navbar-item>
+                <ks-navbar-item class="pl-none">
                     <ks-button size="sm" color="secondary">Sign In</ks-button>
-                </ks-menu-item>
-            </ks-menu-group>
-        </ks-menu-row>
-        <ks-menu-row>
-            <ks-menu-group>
-                <ks-menu-item>
+                </ks-navbar-item>
+            </ks-navbar-group>
+        </ks-navbar-row>
+        <ks-navbar-row>
+            <ks-navbar-group>
+                <ks-navbar-item>
                     <a href="#">Test</a>
-                </ks-menu-item>
-                <ks-menu-item>
+                </ks-navbar-item>
+                <ks-navbar-item>
                     <a href="#">Test 1</a>
-                </ks-menu-item>
-                <ks-menu-item>
+                </ks-navbar-item>
+                <ks-navbar-item>
                     <ks-dropdown
                         text="Drop-Down" 
                         position="right" 
@@ -124,25 +124,25 @@ export const menuWithMultipleRows = () => {
                         <ks-dropdown-item><a href="#">Test 4</a></ks-dropdown-item>
                         <ks-dropdown-item><a href="#">Test 5</a></ks-dropdown-item>
                     </ks-dropdown>
-                </ks-menu-item>
-            </ks-menu-group>
-        </ks-menu-row>
-    </ks-menu-bar>
+                </ks-navbar-item>
+            </ks-navbar-group>
+        </ks-navbar-row>
+    </ks-navbar>
     `);
 };
 
-export const menuWithMultipleGroups = () => {
+export const navbarWithMultipleGroups = () => {
     return (`
-    <ks-menu-bar tagline="Multiple Groups">
-        <ks-menu-row>
-            <ks-menu-group position="left">
-                <ks-menu-item>
+    <ks-navbar tagline="Multiple Groups">
+        <ks-navbar-row>
+            <ks-navbar-group position="left">
+                <ks-navbar-item>
                     <a href="#">Test</a>
-                </ks-menu-item>
-                <ks-menu-item>
+                </ks-navbar-item>
+                <ks-navbar-item>
                     <a href="#">Test 1</a>
-                </ks-menu-item>
-                <ks-menu-item>
+                </ks-navbar-item>
+                <ks-navbar-item>
                     <ks-dropdown
                         text="Drop-Down" 
                         position="left" 
@@ -154,89 +154,89 @@ export const menuWithMultipleGroups = () => {
                         <ks-dropdown-item><a href="#">Test 4</a></ks-dropdown-item>
                         <ks-dropdown-item><a href="#">Test 5</a></ks-dropdown-item>
                     </ks-dropdown>
-                </ks-menu-item>
-            </ks-menu-group>
-            <ks-menu-group>
-                <ks-menu-item>
+                </ks-navbar-item>
+            </ks-navbar-group>
+            <ks-navbar-group>
+                <ks-navbar-item>
                     <a href="#">Sign Up</a>
-                </ks-menu-item>
-                <ks-menu-item>
+                </ks-navbar-item>
+                <ks-navbar-item>
                     <ks-button color="secondary" size="sm">Sign In</ks-button>
-                </ks-menu-item>
-            </ks-menu-group>
-        </ks-menu-row>
-    </ks-menu-bar>
+                </ks-navbar-item>
+            </ks-navbar-group>
+        </ks-navbar-row>
+    </ks-navbar>
     `);
 };
 
-export const multipleMenus = () => {
+export const multiplenavbars = () => {
     return (`
         <div class="my-xl">
-            <ks-menu-bar tagline="Collapse at XL" collapse="xl">
-                <ks-menu-row>
-                    <ks-menu-item>
+            <ks-navbar tagline="Collapse at XL" collapse="xl">
+                <ks-navbar-row>
+                    <ks-navbar-item>
                         <a href="#">Home</a>
-                    </ks-menu-item>
-                    <ks-menu-item>
+                    </ks-navbar-item>
+                    <ks-navbar-item>
                         <ks-button color="secondary" size="sm" href="#">Shop Now</ks-button>
-                    </ks-menu-item>
-                </ks-menu-row>
-            </ks-menu-bar>
+                    </ks-navbar-item>
+                </ks-navbar-row>
+            </ks-navbar>
             <br>
-            <ks-menu-bar tagline="Collapse at LG" collapse="lg">
-                <ks-menu-row>
-                    <ks-menu-item>
+            <ks-navbar tagline="Collapse at LG" collapse="lg">
+                <ks-navbar-row>
+                    <ks-navbar-item>
                         <a href="#">Home</a>
-                    </ks-menu-item>
-                    <ks-menu-item>
+                    </ks-navbar-item>
+                    <ks-navbar-item>
                         <ks-button color="secondary" size="sm" href="#">Shop Now</ks-button>
-                    </ks-menu-item>
-                </ks-menu-row>
-            </ks-menu-bar>
+                    </ks-navbar-item>
+                </ks-navbar-row>
+            </ks-navbar>
             <br>
-            <ks-menu-bar tagline="Collapse at MD" collapse="md">
-                <ks-menu-row>
-                    <ks-menu-item>
+            <ks-navbar tagline="Collapse at MD" collapse="md">
+                <ks-navbar-row>
+                    <ks-navbar-item>
                         <a href="#">Home</a>
-                    </ks-menu-item>
-                    <ks-menu-item>
+                    </ks-navbar-item>
+                    <ks-navbar-item>
                         <ks-button color="secondary" size="sm" href="#">Shop Now</ks-button>
-                    </ks-menu-item>
-                </ks-menu-row>
-            </ks-menu-bar>
+                    </ks-navbar-item>
+                </ks-navbar-row>
+            </ks-navbar>
             <br>
-            <ks-menu-bar tagline="Collapse at SM" collapse="sm">
-                <ks-menu-row>
-                    <ks-menu-item>
+            <ks-navbar tagline="Collapse at SM" collapse="sm">
+                <ks-navbar-row>
+                    <ks-navbar-item>
                         <a href="#">Home</a>
-                    </ks-menu-item>
-                    <ks-menu-item>
+                    </ks-navbar-item>
+                    <ks-navbar-item>
                         <ks-button color="secondary" size="sm" href="#">Shop Now</ks-button>
-                    </ks-menu-item>
-                </ks-menu-row>
-            </ks-menu-bar>
+                    </ks-navbar-item>
+                </ks-navbar-row>
+            </ks-navbar>
             <br>
-            <ks-menu-bar tagline="Collapse at XS" collapse="xs">
-                <ks-menu-row>
-                    <ks-menu-item>
+            <ks-navbar tagline="Collapse at XS" collapse="xs">
+                <ks-navbar-row>
+                    <ks-navbar-item>
                         <a href="#">Home</a>
-                    </ks-menu-item>
-                    <ks-menu-item>
+                    </ks-navbar-item>
+                    <ks-navbar-item>
                         <ks-button color="secondary" size="sm" href="#">Shop Now</ks-button>
-                    </ks-menu-item>
-                </ks-menu-row>
-            </ks-menu-bar>
+                    </ks-navbar-item>
+                </ks-navbar-row>
+            </ks-navbar>
             <br>
-            <ks-menu-bar tagline="Collapse at XXS" collapse="xxs">
-                <ks-menu-row>
-                    <ks-menu-item>
+            <ks-navbar tagline="Collapse at XXS" collapse="xxs">
+                <ks-navbar-row>
+                    <ks-navbar-item>
                         <a href="#">Home</a>
-                    </ks-menu-item>
-                    <ks-menu-item>
+                    </ks-navbar-item>
+                    <ks-navbar-item>
                         <ks-button color="secondary" size="sm" href="#">Shop Now</ks-button>
-                    </ks-menu-item>
-                </ks-menu-row>
-            </ks-menu-bar>
+                    </ks-navbar-item>
+                </ks-navbar-row>
+            </ks-navbar>
         </div>    
     `);
 }

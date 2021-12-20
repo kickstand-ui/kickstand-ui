@@ -324,6 +324,25 @@ export namespace Components {
     }
     interface KsModalFooter {
     }
+    interface KsNavbar {
+        "altText": string;
+        "collapse": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+        "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+        "fixed": 'top' | 'bottom';
+        "hrefProp": string;
+        "inverted": boolean;
+        "linkTag": string;
+        "logoUrl": string;
+        "menuButtonText": string;
+        "tagline": string;
+    }
+    interface KsNavbarGroup {
+        "position": 'left' | 'right';
+    }
+    interface KsNavbarItem {
+    }
+    interface KsNavbarRow {
+    }
     interface KsOverlay {
         "absolute": boolean;
         "hide": () => Promise<void>;
@@ -591,6 +610,30 @@ declare global {
         prototype: HTMLKsModalFooterElement;
         new (): HTMLKsModalFooterElement;
     };
+    interface HTMLKsNavbarElement extends Components.KsNavbar, HTMLStencilElement {
+    }
+    var HTMLKsNavbarElement: {
+        prototype: HTMLKsNavbarElement;
+        new (): HTMLKsNavbarElement;
+    };
+    interface HTMLKsNavbarGroupElement extends Components.KsNavbarGroup, HTMLStencilElement {
+    }
+    var HTMLKsNavbarGroupElement: {
+        prototype: HTMLKsNavbarGroupElement;
+        new (): HTMLKsNavbarGroupElement;
+    };
+    interface HTMLKsNavbarItemElement extends Components.KsNavbarItem, HTMLStencilElement {
+    }
+    var HTMLKsNavbarItemElement: {
+        prototype: HTMLKsNavbarItemElement;
+        new (): HTMLKsNavbarItemElement;
+    };
+    interface HTMLKsNavbarRowElement extends Components.KsNavbarRow, HTMLStencilElement {
+    }
+    var HTMLKsNavbarRowElement: {
+        prototype: HTMLKsNavbarRowElement;
+        new (): HTMLKsNavbarRowElement;
+    };
     interface HTMLKsOverlayElement extends Components.KsOverlay, HTMLStencilElement {
     }
     var HTMLKsOverlayElement: {
@@ -695,6 +738,10 @@ declare global {
         "ks-menu-row": HTMLKsMenuRowElement;
         "ks-modal": HTMLKsModalElement;
         "ks-modal-footer": HTMLKsModalFooterElement;
+        "ks-navbar": HTMLKsNavbarElement;
+        "ks-navbar-group": HTMLKsNavbarGroupElement;
+        "ks-navbar-item": HTMLKsNavbarItemElement;
+        "ks-navbar-row": HTMLKsNavbarRowElement;
         "ks-overlay": HTMLKsOverlayElement;
         "ks-progress-bar": HTMLKsProgressBarElement;
         "ks-radio": HTMLKsRadioElement;
@@ -1030,6 +1077,25 @@ declare namespace LocalJSX {
     }
     interface KsModalFooter {
     }
+    interface KsNavbar {
+        "altText"?: string;
+        "collapse"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+        "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
+        "fixed"?: 'top' | 'bottom';
+        "hrefProp"?: string;
+        "inverted"?: boolean;
+        "linkTag"?: string;
+        "logoUrl"?: string;
+        "menuButtonText"?: string;
+        "tagline"?: string;
+    }
+    interface KsNavbarGroup {
+        "position"?: 'left' | 'right';
+    }
+    interface KsNavbarItem {
+    }
+    interface KsNavbarRow {
+    }
     interface KsOverlay {
         "absolute"?: boolean;
         "onHidden"?: (event: CustomEvent<any>) => void;
@@ -1143,6 +1209,10 @@ declare namespace LocalJSX {
         "ks-menu-row": KsMenuRow;
         "ks-modal": KsModal;
         "ks-modal-footer": KsModalFooter;
+        "ks-navbar": KsNavbar;
+        "ks-navbar-group": KsNavbarGroup;
+        "ks-navbar-item": KsNavbarItem;
+        "ks-navbar-row": KsNavbarRow;
         "ks-overlay": KsOverlay;
         "ks-progress-bar": KsProgressBar;
         "ks-radio": KsRadio;
@@ -1192,6 +1262,10 @@ declare module "@stencil/core" {
             "ks-menu-row": LocalJSX.KsMenuRow & JSXBase.HTMLAttributes<HTMLKsMenuRowElement>;
             "ks-modal": LocalJSX.KsModal & JSXBase.HTMLAttributes<HTMLKsModalElement>;
             "ks-modal-footer": LocalJSX.KsModalFooter & JSXBase.HTMLAttributes<HTMLKsModalFooterElement>;
+            "ks-navbar": LocalJSX.KsNavbar & JSXBase.HTMLAttributes<HTMLKsNavbarElement>;
+            "ks-navbar-group": LocalJSX.KsNavbarGroup & JSXBase.HTMLAttributes<HTMLKsNavbarGroupElement>;
+            "ks-navbar-item": LocalJSX.KsNavbarItem & JSXBase.HTMLAttributes<HTMLKsNavbarItemElement>;
+            "ks-navbar-row": LocalJSX.KsNavbarRow & JSXBase.HTMLAttributes<HTMLKsNavbarRowElement>;
             "ks-overlay": LocalJSX.KsOverlay & JSXBase.HTMLAttributes<HTMLKsOverlayElement>;
             "ks-progress-bar": LocalJSX.KsProgressBar & JSXBase.HTMLAttributes<HTMLKsProgressBarElement>;
             "ks-radio": LocalJSX.KsRadio & JSXBase.HTMLAttributes<HTMLKsRadioElement>;

@@ -1,12 +1,12 @@
 import { Component, h, Prop, State, Element, Host, ComponentInterface } from '@stencil/core';
 
 @Component({
-    tag: 'ks-menu-bar',
-    styleUrl: 'menu-bar.scss'
+    tag: 'ks-navbar',
+    styleUrl: 'navbar.scss'
 })
-export class MenuBar implements ComponentInterface {
-    $menuContent: HTMLElement;
-    menuId: string = `menu_${menuIds++}`;
+export class NavbarBar implements ComponentInterface {
+    $navbarContent: HTMLElement;
+    navbarId: string = `navbar_${navbarIds++}`;
 
     @Element() $el: HTMLElement;
 
@@ -19,14 +19,15 @@ export class MenuBar implements ComponentInterface {
     @Prop() tagline: string;
     @Prop() linkTag: string = 'a';
     @Prop() hrefProp: string = 'href';
+    @Prop() menuButtonText: string = 'toggle menu';
 
     @State() expanded = false;
 
     componentDidRender() {
-        this.adjustForFixedMenu();
+        this.adjustForFixedNavbar();
     }
 
-    private adjustForFixedMenu() {
+    private adjustForFixedNavbar() {
         if (!this.fixed)
             return;
 
@@ -44,9 +45,9 @@ export class MenuBar implements ComponentInterface {
         }
     }
 
-    private toggleMenu() {
+    private toggleNavbar() {
         this.expanded = !this.expanded;
-        this.$menuContent.style.maxHeight = this.expanded ? this.$menuContent.scrollHeight + 'px' : '0px';
+        this.$navbarContent.style.maxHeight = this.expanded ? this.$navbarContent.scrollHeight + 'px' : '0px';
 
         if (this.expanded) {
             this.setDropdownFocus();
@@ -63,7 +64,7 @@ export class MenuBar implements ComponentInterface {
 
                     if (isContentsShown) {
                         d.style.maxHeight = $contents.scrollHeight + $button.scrollHeight + 'px';
-                        this.$menuContent.style.maxHeight = this.$menuContent.scrollHeight + $contents.scrollHeight + 'px';
+                        this.$navbarContent.style.maxHeight = this.$navbarContent.scrollHeight + $contents.scrollHeight + 'px';
                     } else {
                         d.style.maxHeight = $button.scrollHeight + 'px';
                     }
@@ -73,12 +74,12 @@ export class MenuBar implements ComponentInterface {
     }
 
     private setDropdownFocus() {
-        this.$menuContent.focus();
+        this.$navbarContent.focus();
     }
 
     render() {
         let classes = {
-            'ks-menu-bar': true,
+            'ks-navbar': true,
             [`collapse-${this.collapse}`]: true,
             [this.color]: true,
             'inverted': this.inverted,
@@ -90,22 +91,22 @@ export class MenuBar implements ComponentInterface {
         return (
             <Host class={classes} role="navigation">
                 {(this.logoUrl || this.tagline) &&
-                    <CustomTag class="menu-branding" ref={el => el.setAttribute(this.hrefProp, '/')}>
+                    <CustomTag class="navbar-branding" ref={el => el.setAttribute(this.hrefProp, '/')}>
                         {this.logoUrl && <img class="logo" src={this.logoUrl} alt={this.altText} />}
                         {this.tagline && <span class="tagline">{this.tagline}</span>}
                     </CustomTag>
                 }
                 <button
-                    class="button menu-toggler"
-                    onClick={this.toggleMenu.bind(this)}
+                    class="button navbar-toggler"
+                    onClick={() => this.toggleNavbar()}
                     aria-haspopup="true"
                     aria-expanded={`${this.expanded}`}
-                    aria-controls={`menu-content-${this.menuId}`}
+                    aria-controls={`navbar-content-${this.navbarId}`}
                 >
-                    <span class="sr-only">toggle menu</span>
+                    <span class="sr-only">{this.menuButtonText}</span>
                     <ks-icon icon="menu" />
                 </button>
-                <div class="menu-content" id={`menu-content-${this.menuId}`} ref={el => this.$menuContent = el}>
+                <div class="navbar-content" id={`navbar-content-${this.navbarId}`} ref={el => this.$navbarContent = el}>
                     <slot />
                 </div>
             </Host>
@@ -113,4 +114,4 @@ export class MenuBar implements ComponentInterface {
     }
 }
 
-let menuIds = 0;
+let navbarIds = 0;

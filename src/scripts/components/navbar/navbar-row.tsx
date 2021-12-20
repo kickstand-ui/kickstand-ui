@@ -1,12 +1,12 @@
 import { Component, h, Host, ComponentInterface } from '@stencil/core';
 
 @Component({
-    tag: 'ks-menu-row'
+    tag: 'ks-navbar-row'
 })
-export class MenuRow implements ComponentInterface {
+export class NavbarRow implements ComponentInterface {
     render() {
         return (
-            <Host class="menu-row">
+            <Host class="navbar-row">
                 <slot />
             </Host>
         );

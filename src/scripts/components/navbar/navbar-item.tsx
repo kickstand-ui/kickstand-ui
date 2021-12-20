@@ -1,9 +1,9 @@
 import { Component, Element, h, Host, State, ComponentInterface } from '@stencil/core';
 
 @Component({
-    tag: 'ks-menu-item'
+    tag: 'ks-navbar-item'
 })
-export class MenuItem implements ComponentInterface {
+export class NavbarItem implements ComponentInterface {
     @Element() $el: HTMLElement;
 
     @State() isActive: boolean;
@@ -23,7 +23,7 @@ export class MenuItem implements ComponentInterface {
 
     render() {
         let classes = {
-            'menu-item': true,
+            'navbar-item': true,
             'active': this.getActiveStatus()
         };
 
