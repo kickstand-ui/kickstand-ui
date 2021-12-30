@@ -32,44 +32,50 @@ export class NavbarBar implements ComponentInterface {
             return;
 
         const height = this.$el.offsetHeight;
+        if (this.fixed === 'top')
+            document.querySelector('body').style.paddingTop = `${height}px`;
 
-        switch (this.fixed) {
-            case 'top':
-                document.querySelector('body').style.paddingTop = `${height}px`;
-                break;
-            case 'bottom':
-                document.querySelector('body').style.paddingBottom = `${height}px`;
-                break;
-            default:
-                break;
-        }
+        if (this.fixed === 'bottom')
+            document.querySelector('body').style.paddingBottom = `${height}px`;
     }
 
     private toggleNavbar() {
         this.expanded = !this.expanded;
         this.$navbarContent.style.maxHeight = this.expanded ? this.$navbarContent.scrollHeight + 'px' : '0px';
 
-        if (this.expanded) {
-            this.setDropdownFocus();
+        if (!this.expanded) {
+            Array.from(this.$el.querySelectorAll('ks-dropdown')).forEach($dropdown => $dropdown.hide());
+            return;
+        }
 
-            Array.from(this.$el.querySelectorAll('ks-dropdown')).forEach(d => {
-                const $button = d.querySelector('ks-button') as HTMLKsButtonElement;
-                const $contents = d.querySelector('.dropdown-contents') as HTMLElement;
-                let isContentsShown = false;
-                
-                d.style.maxHeight = $button.scrollHeight + 'px';
+        this.setDropdownFocus();
 
-                $button.addEventListener('click', () => {
-                    isContentsShown = !isContentsShown;
+        Array.from(this.$el.querySelectorAll('ks-dropdown')).forEach($dropdown => {
+            const $button = $dropdown.querySelector('ks-button') as HTMLKsButtonElement;
+            const $contents = $dropdown.querySelector('.dropdown-contents') as HTMLElement;
+            let isContentsShown = false;
 
-                    if (isContentsShown) {
-                        d.style.maxHeight = $contents.scrollHeight + $button.scrollHeight + 'px';
-                        this.$navbarContent.style.maxHeight = this.$navbarContent.scrollHeight + $contents.scrollHeight + 'px';
-                    } else {
-                        d.style.maxHeight = $button.scrollHeight + 'px';
-                    }
-                });
-            })
+            $dropdown.style.maxHeight = $button.scrollHeight + 'px';
+            $dropdown.addEventListener('shown', (e) => {
+                (e.target as HTMLKsDropdownElement).style.maxHeight = $contents.scrollHeight + $button.scrollHeight + 'px';
+                this.$navbarContent.style.maxHeight = this.$navbarContent.scrollHeight + $contents.scrollHeight + 'px';
+            });
+            $dropdown.addEventListener('hidden', (e) => {
+                (e.target as HTMLKsDropdownElement).style.maxHeight = $button.scrollHeight + 'px';
+            });
+
+            $button.addEventListener('click', () => this.dropdownClickHandler(isContentsShown, $dropdown, $button, $contents));
+        })
+    }
+
+    private dropdownClickHandler(isContentsShown: boolean, $dropdown: HTMLKsDropdownElement, $button: HTMLKsButtonElement, $contents: HTMLElement) {
+        isContentsShown = !isContentsShown;
+
+        if (isContentsShown) {
+            $dropdown.style.maxHeight = $contents.scrollHeight + $button.scrollHeight + 'px';
+            this.$navbarContent.style.maxHeight = this.$navbarContent.scrollHeight + $contents.scrollHeight + 'px';
+        } else {
+            $dropdown.style.maxHeight = $button.scrollHeight + 'px';
         }
     }
 
