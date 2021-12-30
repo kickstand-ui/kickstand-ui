@@ -59,6 +59,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         @include z-index(xs);
         @include p(sm);
         @include transition();
+        @include bg-color(white);
 
         .dropdown-item {
             >* {

@@ -159,21 +159,11 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
             .menu-branding {
                 color: text-color-value($key);
-
-                &:focus {
-                    @include default-outline();
-                    outline-color: text-color-value($key);
-                }
             }
 
             .menu-toggler {
                 color: text-color($key);
                 @include b($color: $key);
-
-                &:focus {
-                    @include default-outline();
-                    outline-color: text-color-value($key);
-                }
             }
 
             .menu-content {
@@ -181,11 +171,6 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                     .menu-item {
                         >* {
                             color: text-color-value($key);
-
-                            &:focus {
-                                @include default-outline();
-                                outline-color: text-color-value($key);
-                            }
                         }
 
                         .ks-dropdown {
