@@ -7,6 +7,7 @@ export const form = () => {
     const target = select('target', ['', '_self', '_blank', '_parent', '_top'], '');
     const method = select('method', ['', 'GET', 'POST'], '');
     const invalid = boolean('invalid', false);
+    const hideErrorMessage = boolean('hide-error-message', false);
     const errorMessage = text('error-message', 'One or more of the from fields are not valid. Please, review the form and try again.');
     return (`
     <ks-form 
@@ -16,6 +17,7 @@ export const form = () => {
         method="${method}"
         invalid="${invalid}"
         error-message="${errorMessage}"
+        hide-error-message="${hideErrorMessage}"
         >
         <ks-form-field label="Name" required></ks-form-field>
         <ks-form-field label="Email" type="email" value="bad.email"></ks-form-field>

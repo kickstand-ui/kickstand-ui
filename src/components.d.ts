@@ -180,6 +180,7 @@ export namespace Components {
         "enctype": 'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain';
         "errorMessage": string;
         "formClass": string;
+        "hideErrorMessage": boolean;
         "inline": boolean;
         "invalid": boolean;
         "method": 'get' | 'post';
@@ -198,6 +199,7 @@ export namespace Components {
         "defaultErrorMessage": string;
         "disabled": boolean;
         "helpText": string;
+        "hideErrorMessage": boolean;
         "hideLabel": boolean;
         "icon"?: string;
         "iconDirection": 'left' | 'right';
@@ -881,6 +883,7 @@ declare namespace LocalJSX {
         "enctype"?: 'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain';
         "errorMessage"?: string;
         "formClass"?: string;
+        "hideErrorMessage"?: boolean;
         "inline"?: boolean;
         "invalid"?: boolean;
         "method"?: 'get' | 'post';
@@ -900,6 +903,7 @@ declare namespace LocalJSX {
         "defaultErrorMessage"?: string;
         "disabled"?: boolean;
         "helpText"?: string;
+        "hideErrorMessage"?: boolean;
         "hideLabel"?: boolean;
         "icon"?: string;
         "iconDirection"?: 'left' | 'right';
