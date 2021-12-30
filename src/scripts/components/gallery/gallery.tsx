@@ -43,7 +43,7 @@ export class Gallery implements ComponentInterface {
     private initGalleryItems() {
         Array.from(this.$el.querySelector('.scrolling-content').children)
             .forEach((x: HTMLElement) => {
-                x.setAttribute('role', 'list-item');
+                x.setAttribute('role', 'listitem');
 
                 if (this.itemWidth)
                     x.style.width = this.itemWidth
