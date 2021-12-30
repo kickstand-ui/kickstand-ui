@@ -159,21 +159,11 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
             .navbar-branding {
                 color: text-color-value($key);
-
-                &:focus {
-                    @include default-outline();
-                    outline-color: text-color-value($key);
-                }
             }
 
             .navbar-toggler {
                 color: text-color($key);
                 @include b($color: $key);
-
-                &:focus {
-                    @include default-outline();
-                    outline-color: text-color-value($key);
-                }
             }
 
             .navbar-content {
@@ -181,11 +171,6 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                     .navbar-item {
                         >* {
                             color: text-color-value($key);
-
-                            &:focus {
-                                @include default-outline();
-                                outline-color: text-color-value($key);
-                            }
                         }
 
                         .ks-dropdown {
@@ -193,6 +178,8 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                                 &.link {
                                     color: text-color-value($key);
                                     font-weight: 600;
+                                    line-height: $line-height-base;
+                                    @include r(none);
 
                                     &:focus {
                                         @include default-outline();
@@ -210,11 +197,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                 @include b-b();
 
                 .navbar-branding {
-                    color: color($key);
-
-                    &:focus {
-                        @include default-outline();
-                    }
+                    @include color($key);
                 }
 
                 .navbar-toggler {
@@ -227,10 +210,6 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                         .navbar-item {
                             >* {
                                 @include color($key);                
-
-                                @include hover-focus {
-                                    @include default-outline();
-                                }
                             }
 
                             .ks-dropdown {                
@@ -238,10 +217,6 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                                     &.link {
                                         font-weight: 600;
                                         @include color($key);
-
-                                        @include hover-focus {
-                                            @include default-outline();
-                                        }
                                     }
                                 }
             
@@ -312,10 +287,13 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                                             @include mt(md);
                                         }
                                     }
-
-                                    .dropdown-button {
+                                    .ks-button {
                                         width: 100%;
-                                        text-align: left;
+
+                                        .dropdown-button {
+                                            width: 100%;
+                                            text-align: left;
+                                        }    
                                     }
 
                                     .dropdown-contents {

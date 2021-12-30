@@ -1,33 +1,64 @@
 @import '../functions/colors';
 
 @mixin color($name: 'primary', $variant: 'base', $opacity: 1, $important: false) {
+    $rgba-color: rgba(var(--ks-color-#{$name}-#{$variant}), $opacity);
+
     @if(type-of($variant)=='number') {
         $opacity: $variant;
         $variant: 'base';
     }
 
+    @if($name==black) {
+        $rgba-color: rgba(255, 255, 255, $opacity);
+    }
+
+    @else if($name==white) {
+        $rgba-color: rgba(0, 0, 0, $opacity);
+    }
+
     @if($important) {
-        color: rgba(var(--ks-color-#{$name}-#{$variant}), $opacity) !important;
+        color: $rgba-color !important;
     }
 
     @else {
-        color: rgba(var(--ks-color-#{$name}-#{$variant}), $opacity);
+        color: $rgba-color;
     }
 }
 
 @mixin bg-color($name: 'primary', $variant: 'base', $opacity: 1, $important: false) {
+    $color: rgba(var(--ks-color-#{$name}-#{$variant}-text), $opacity);
+    $bg-color: rgba(var(--ks-color-#{$name}-#{$variant}), $opacity);
+
     @if(type-of($variant)=='number') {
         $opacity: $variant;
         $variant: 'base';
     }
 
+    @if($name==black) {
+        $color: rgba(255, 255, 255, $opacity);
+        $bg-color: rgba(0, 0, 0, $opacity);
+    }
+
+    @else if($name==white) {
+        $color: rgba(0, 0, 0, $opacity);
+        $bg-color: rgba(255, 255, 255, $opacity);
+    }
+
     @if($important) {
-        color: rgba(var(--ks-color-#{$name}-#{$variant}-text), $opacity) !important;
-        background-color: rgba(var(--ks-color-#{$name}-#{$variant}), $opacity) !important;
+        color: $color !important;
+        background-color: $bg-color !important;
+
+        & * {
+            outline-color: $color !important;
+        }
     }
 
     @else {
-        color: #{rgba(var(--ks-color-#{$name}-#{$variant}-text), $opacity)};
-        background-color: #{rgba(var(--ks-color-#{$name}-#{$variant}), $opacity)};
+        color: $color;
+        background-color: $bg-color;
+
+        & * {
+            outline-color: $color;
+        }
     }
 }

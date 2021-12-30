@@ -297,24 +297,6 @@ export namespace Components {
         "size": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
         "theme": 'dark' | 'light';
     }
-    interface KsMenuBar {
-        "altText": string;
-        "collapse": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-        "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
-        "fixed": 'top' | 'bottom';
-        "hrefProp": string;
-        "inverted": boolean;
-        "linkTag": string;
-        "logoUrl": string;
-        "tagline": string;
-    }
-    interface KsMenuGroup {
-        "position": 'left' | 'right';
-    }
-    interface KsMenuItem {
-    }
-    interface KsMenuRow {
-    }
     interface KsModal {
         "heading": string;
         "hide": () => Promise<void>;
@@ -574,30 +556,6 @@ declare global {
         prototype: HTMLKsLoadingOverlayElement;
         new (): HTMLKsLoadingOverlayElement;
     };
-    interface HTMLKsMenuBarElement extends Components.KsMenuBar, HTMLStencilElement {
-    }
-    var HTMLKsMenuBarElement: {
-        prototype: HTMLKsMenuBarElement;
-        new (): HTMLKsMenuBarElement;
-    };
-    interface HTMLKsMenuGroupElement extends Components.KsMenuGroup, HTMLStencilElement {
-    }
-    var HTMLKsMenuGroupElement: {
-        prototype: HTMLKsMenuGroupElement;
-        new (): HTMLKsMenuGroupElement;
-    };
-    interface HTMLKsMenuItemElement extends Components.KsMenuItem, HTMLStencilElement {
-    }
-    var HTMLKsMenuItemElement: {
-        prototype: HTMLKsMenuItemElement;
-        new (): HTMLKsMenuItemElement;
-    };
-    interface HTMLKsMenuRowElement extends Components.KsMenuRow, HTMLStencilElement {
-    }
-    var HTMLKsMenuRowElement: {
-        prototype: HTMLKsMenuRowElement;
-        new (): HTMLKsMenuRowElement;
-    };
     interface HTMLKsModalElement extends Components.KsModal, HTMLStencilElement {
     }
     var HTMLKsModalElement: {
@@ -732,10 +690,6 @@ declare global {
         "ks-img": HTMLKsImgElement;
         "ks-loading": HTMLKsLoadingElement;
         "ks-loading-overlay": HTMLKsLoadingOverlayElement;
-        "ks-menu-bar": HTMLKsMenuBarElement;
-        "ks-menu-group": HTMLKsMenuGroupElement;
-        "ks-menu-item": HTMLKsMenuItemElement;
-        "ks-menu-row": HTMLKsMenuRowElement;
         "ks-modal": HTMLKsModalElement;
         "ks-modal-footer": HTMLKsModalFooterElement;
         "ks-navbar": HTMLKsNavbarElement;
@@ -1050,24 +1004,6 @@ declare namespace LocalJSX {
         "size"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
         "theme"?: 'dark' | 'light';
     }
-    interface KsMenuBar {
-        "altText"?: string;
-        "collapse"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-        "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
-        "fixed"?: 'top' | 'bottom';
-        "hrefProp"?: string;
-        "inverted"?: boolean;
-        "linkTag"?: string;
-        "logoUrl"?: string;
-        "tagline"?: string;
-    }
-    interface KsMenuGroup {
-        "position"?: 'left' | 'right';
-    }
-    interface KsMenuItem {
-    }
-    interface KsMenuRow {
-    }
     interface KsModal {
         "heading"?: string;
         "onHidden"?: (event: CustomEvent<any>) => void;
@@ -1203,10 +1139,6 @@ declare namespace LocalJSX {
         "ks-img": KsImg;
         "ks-loading": KsLoading;
         "ks-loading-overlay": KsLoadingOverlay;
-        "ks-menu-bar": KsMenuBar;
-        "ks-menu-group": KsMenuGroup;
-        "ks-menu-item": KsMenuItem;
-        "ks-menu-row": KsMenuRow;
         "ks-modal": KsModal;
         "ks-modal-footer": KsModalFooter;
         "ks-navbar": KsNavbar;
@@ -1256,10 +1188,6 @@ declare module "@stencil/core" {
             "ks-img": LocalJSX.KsImg & JSXBase.HTMLAttributes<HTMLKsImgElement>;
             "ks-loading": LocalJSX.KsLoading & JSXBase.HTMLAttributes<HTMLKsLoadingElement>;
             "ks-loading-overlay": LocalJSX.KsLoadingOverlay & JSXBase.HTMLAttributes<HTMLKsLoadingOverlayElement>;
-            "ks-menu-bar": LocalJSX.KsMenuBar & JSXBase.HTMLAttributes<HTMLKsMenuBarElement>;
-            "ks-menu-group": LocalJSX.KsMenuGroup & JSXBase.HTMLAttributes<HTMLKsMenuGroupElement>;
-            "ks-menu-item": LocalJSX.KsMenuItem & JSXBase.HTMLAttributes<HTMLKsMenuItemElement>;
-            "ks-menu-row": LocalJSX.KsMenuRow & JSXBase.HTMLAttributes<HTMLKsMenuRowElement>;
             "ks-modal": LocalJSX.KsModal & JSXBase.HTMLAttributes<HTMLKsModalElement>;
             "ks-modal-footer": LocalJSX.KsModalFooter & JSXBase.HTMLAttributes<HTMLKsModalFooterElement>;
             "ks-navbar": LocalJSX.KsNavbar & JSXBase.HTMLAttributes<HTMLKsNavbarElement>;
