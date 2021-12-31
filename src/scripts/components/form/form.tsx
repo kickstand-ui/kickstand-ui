@@ -25,6 +25,7 @@ export class Form implements ComponentInterface {
     @Prop() errorMessage: string = 'One or more of the from fields are not valid. Please, review the form and try again.';
     @Prop() inline: boolean = false;
     @Prop() formClass: string;
+    @Prop() hideErrorMessage: boolean = false;
 
     @Event() submitted!: EventEmitter<IFormData>;
     @Event() cleared!: EventEmitter;
@@ -109,11 +110,11 @@ export class Form implements ComponentInterface {
             <Host class="ks-form">
                 <form class={classes} ref={el => this.$form = el} onSubmit={(e) => this.submitHandler(e)} onReset={() => this.clearHandler()} novalidate>
                     <slot />
-                    <ks-alert class={{ 'form-error': true, 'hide': !this.invalid }} color="danger">
+                    {!this.hideErrorMessage && <ks-alert class={{ 'form-error': true, 'hide': !this.invalid }} color="danger">
                         {this.invalid && [
                             <span class="error-message">{this.errorMessage}</span>
                         ]}
-                    </ks-alert>
+                    </ks-alert>}
                 </form>
             </Host>
         );

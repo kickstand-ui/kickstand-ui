@@ -41,6 +41,7 @@ export const playground = () => {
     const multiple = boolean('multiple', false);
     const webkitdirectory = text('webkitdirectory', undefined);
     const capture = text('capture', undefined);
+    const hideErrorMessage = boolean('hide-error-message', false);
 
     return (`<div class="m-xxl">
         <ks-form-field 
@@ -79,6 +80,7 @@ export const playground = () => {
             ${accept ? `accept="${accept}"` : ''}
             ${webkitdirectory ? `webkitdirectory="${webkitdirectory}"` : ''}
             ${capture ? `capture="${capture}"` : ''}
+            ${hideErrorMessage ? `hide-error-message="${hideErrorMessage}"` : ''}
             >
             <option value="0" selected>Choose a value</option>
             <option value="1">Value 1</option>

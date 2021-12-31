@@ -101,7 +101,8 @@ export class FormField implements ComponentInterface {
     @Prop() minlengthErrorMessage: string = `Your value must be at least ${this.minlength} characters.`;
     @Prop() typeErrorMessage: string = `Your value must be a valid ${this.type === 'tel' ? 'telephone number' : this.type}.`;
     @Prop() requiredErrorMessage: string = this.type === 'autocomplete' ? 'The value entered is not one of the available options.' : 'This field is required.';
-
+    @Prop() hideErrorMessage: boolean = false;
+    
     @Event() updated!: EventEmitter<IFormFieldData>;
     @Event() blurred!: EventEmitter;
     @Event() cleared!: EventEmitter;
@@ -387,7 +388,7 @@ export class FormField implements ComponentInterface {
 
         let formField = {
             'checkbox': [
-                <div class="error-message text-danger" role="alert" aria-live="assertive">
+                !this.hideErrorMessage && <div class="error-message text-danger" role="alert" aria-live="assertive">
                     {(this.invalid && !this.disabled) && <div class="error-text">
                         <ks-icon icon="warning" class="mr-xs" />
                         <span>{this.getErrorMessage()}</span>
@@ -451,12 +452,12 @@ export class FormField implements ComponentInterface {
                             {(this.tooltipText && this.tooltipText !== '') && <ks-tooltip position="right" size={this.tooltipSize} text={this.tooltipText} hide-decoration><ks-icon icon="info" class="text-info" label={this.tooltipLabel} /></ks-tooltip>}
                         </span>
                         {this.helpText && <span class="help-text">{this.helpText}</span>}
-                        <span class="error-message text-danger" role="alert" aria-live="assertive">
+                        {!this.hideErrorMessage && <span class="error-message text-danger" role="alert" aria-live="assertive">
                             {(this.invalid && !this.disabled) && <span class="error-text">
                                 <ks-icon icon="warning" class="mr-xs" />
                                 <span>{this.getErrorMessage()}</span>
                             </span>}
-                        </span>
+                        </span>}
                     </label>,
                     (fieldInput)
                 ]
