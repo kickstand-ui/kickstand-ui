@@ -177,10 +177,10 @@ export namespace Components {
     interface KsForm {
         "action": string;
         "clear": () => Promise<void>;
+        "disableErrorMessage": boolean;
         "enctype": 'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain';
         "errorMessage": string;
         "formClass": string;
-        "hideErrorMessage": boolean;
         "inline": boolean;
         "invalid": boolean;
         "method": 'get' | 'post';
@@ -197,9 +197,9 @@ export namespace Components {
         "datalist": boolean;
         "debounce": number;
         "defaultErrorMessage": string;
+        "disableErrorMessage": boolean;
         "disabled": boolean;
         "helpText": string;
-        "hideErrorMessage": boolean;
         "hideLabel": boolean;
         "icon"?: string;
         "iconDirection": 'left' | 'right';
@@ -880,10 +880,10 @@ declare namespace LocalJSX {
     }
     interface KsForm {
         "action"?: string;
+        "disableErrorMessage"?: boolean;
         "enctype"?: 'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain';
         "errorMessage"?: string;
         "formClass"?: string;
-        "hideErrorMessage"?: boolean;
         "inline"?: boolean;
         "invalid"?: boolean;
         "method"?: 'get' | 'post';
@@ -901,9 +901,9 @@ declare namespace LocalJSX {
         "datalist"?: boolean;
         "debounce"?: number;
         "defaultErrorMessage"?: string;
+        "disableErrorMessage"?: boolean;
         "disabled"?: boolean;
         "helpText"?: string;
-        "hideErrorMessage"?: boolean;
         "hideLabel"?: boolean;
         "icon"?: string;
         "iconDirection"?: 'left' | 'right';
