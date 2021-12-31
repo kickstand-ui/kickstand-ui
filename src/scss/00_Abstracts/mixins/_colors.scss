@@ -1,12 +1,12 @@
 @import '../functions/colors';
 
-@mixin color($name: 'primary', $variant: 'base', $opacity: 1, $important: false) {
-    $rgba-color: rgba(var(--ks-color-#{$name}-#{$variant}), $opacity);
-
+@mixin color($name: 'primary', $variant: 'base', $opacity: 1, $important: false) {   
     @if(type-of($variant)=='number') {
         $opacity: $variant;
         $variant: 'base';
     }
+
+    $rgba-color: rgba(var(--ks-color-#{$name}-#{$variant}), $opacity);
 
     @if($name==black) {
         $rgba-color: rgba(255, 255, 255, $opacity);
@@ -26,13 +26,13 @@
 }
 
 @mixin bg-color($name: 'primary', $variant: 'base', $opacity: 1, $important: false) {
-    $color: rgba(var(--ks-color-#{$name}-#{$variant}-text), $opacity);
-    $bg-color: rgba(var(--ks-color-#{$name}-#{$variant}), $opacity);
-
     @if(type-of($variant)=='number') {
         $opacity: $variant;
         $variant: 'base';
     }
+
+    $color: rgba(var(--ks-color-#{$name}-#{$variant}-text), $opacity);
+    $bg-color: rgba(var(--ks-color-#{$name}-#{$variant}), $opacity);
 
     @if($name==black) {
         $color: rgba(255, 255, 255, $opacity);
