@@ -88,3 +88,69 @@
         @error "Invalid border-radius size: '#{$size}'.";
     }
 }
+
+
+@mixin r-var($size: sm, $important: false) {
+    @include rt-var($size, $important);
+    @include rb-var($size, $important);
+}
+
+@mixin rt-var($size: sm, $important: false) {
+    @include rtl-var($size, $important);
+    @include rtr-var($size, $important);
+}
+
+@mixin rb-var($size: sm, $important: false) {
+    @include rbl-var($size, $important);
+    @include rr-var($size, $important);
+}
+
+@mixin rl-var($size: sm, $important: false) {
+    @include rtl-var($size, $important);
+    @include rbl-var($size, $important);
+}
+
+@mixin rr-var($size: sm, $important: false) {
+    @include rtr-var($size, $important);
+    @include rr-var($size, $important);
+}
+
+@mixin rtl-var($size: sm, $important: false) {
+    @if($important==true) {
+        border-top-left-radius: var($size) !important;
+    }
+
+    @else {
+        border-top-left-radius: var($size);
+    }
+}
+
+@mixin rtr-var($size: sm, $important: false) {
+    @if($important==true) {
+        border-top-right-radius: var($size) !important;
+    }
+
+    @else {
+        border-top-right-radius: var($size);
+    }
+}
+
+@mixin rbl-var($size: sm, $important: false) {
+    @if($important==true) {
+        border-bottom-left-radius: var($size) !important;
+    }
+
+    @else {
+        border-bottom-left-radius: var($size);
+    }
+}
+
+@mixin rr-var($size: sm, $important: false) {
+    @if($important==true) {
+        border-bottom-right-radius: var($size) !important;
+    }
+
+    @else {
+        border-bottom-right-radius: var($size);
+    }
+}

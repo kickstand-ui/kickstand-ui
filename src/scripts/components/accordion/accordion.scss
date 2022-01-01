@@ -1,6 +1,8 @@
 @import "../../../scss/00_Abstracts/index";
 
 .ks-accordion {
+    --border-radius: #{spacing(sm)};
+
     display: block;
 
     .accordion-slide {
@@ -14,7 +16,7 @@
 
             .accordion-heading {
                 .accordion-control {
-                    @include rt(sm);
+                    @include rt-var(--border-radius);
                 }
             }
         }
@@ -22,7 +24,7 @@
         &:last-child {
             .accordion-heading {
                 .accordion-control {
-                    @include rb(sm);
+                    @include rb-var(--border-radius);
 
                     &[aria-expanded="false"] {
                         transition-delay: 0.5s;
@@ -36,7 +38,7 @@
             }
 
             .accordion-content {
-                @include rb(sm);
+                @include rb-var(--border-radius);
             }
         }
 
@@ -54,7 +56,6 @@
                 @include font-size(sm);
                 @include b();
                 @include px(lg);
-                @include mb(-xxs);
 
                 .accordion-icon {
                     line-height: 1;
@@ -72,6 +73,10 @@
                         transform: rotate(-180deg);
                         @include transition();
                     }
+                }
+                
+                &[aria-expanded="false"] {
+                    @include mb(-xxs);
                 }
             }
         }
