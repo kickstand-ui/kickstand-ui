@@ -8,10 +8,10 @@ export const playground = () => {
     const tooltipText = text('text', 'This is a <b>test</b>.');
     const position = select('position', positions, 'top');
     const size = select('size', sizes, 'sm');
-    const disable = boolean('disable', false);
+    const disabled = boolean('disabled', false);
     const hideDecoration = boolean('hide-decoration', false);
     return (`<p style="margin-top: 40vh;" class="text-center w-100">
-        This is a test <ks-tooltip disable="${disable}" hide-decoration="${hideDecoration}" position="${position}" size="${size}" text="${tooltipText}">tooltip</ks-tooltip>.
+        This is a test <ks-tooltip disabled="${disabled}" hide-decoration="${hideDecoration}" position="${position}" size="${size}" text="${tooltipText}">tooltip</ks-tooltip>.
     </p>`);
 };
 

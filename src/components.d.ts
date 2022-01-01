@@ -55,7 +55,6 @@ export namespace Components {
         "buttonClass": string;
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'white' | 'black';
         "controls": string;
-        "cssClass": string;
         "describedBy": string;
         "disabled": boolean;
         "display": 'solid' | 'hollow' | 'clear' | 'link';
@@ -381,7 +380,7 @@ export namespace Components {
     }
     interface KsSwitch {
         "checked": boolean;
-        "disable": boolean;
+        "disabled": boolean;
         "label": string;
         "name": string;
     }
@@ -394,7 +393,7 @@ export namespace Components {
         "position": 'top' | 'bottom' | 'left' | 'right';
     }
     interface KsTooltip {
-        "disable": boolean;
+        "disabled": boolean;
         "hideDecoration": boolean;
         "position": 'top' | 'bottom' | 'left' | 'right';
         "size": 'sm' | 'md' | 'lg' | 'xl';
@@ -746,7 +745,6 @@ declare namespace LocalJSX {
         "buttonClass"?: string;
         "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'white' | 'black';
         "controls"?: string;
-        "cssClass"?: string;
         "describedBy"?: string;
         "disabled"?: boolean;
         "display"?: 'solid' | 'hollow' | 'clear' | 'link';
@@ -1078,7 +1076,7 @@ declare namespace LocalJSX {
     }
     interface KsSwitch {
         "checked"?: boolean;
-        "disable"?: boolean;
+        "disabled"?: boolean;
         "label"?: string;
         "name"?: string;
         "onUpdated"?: (event: CustomEvent<any>) => void;
@@ -1092,7 +1090,7 @@ declare namespace LocalJSX {
         "position"?: 'top' | 'bottom' | 'left' | 'right';
     }
     interface KsTooltip {
-        "disable"?: boolean;
+        "disabled"?: boolean;
         "hideDecoration"?: boolean;
         "position"?: 'top' | 'bottom' | 'left' | 'right';
         "size"?: 'sm' | 'md' | 'lg' | 'xl';

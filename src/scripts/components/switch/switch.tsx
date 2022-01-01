@@ -9,7 +9,7 @@ export class Switch implements ComponentInterface {
 
     @Prop() label: string;
     @Prop() name: string;
-    @Prop() disable: boolean = false;
+    @Prop() disabled: boolean = false;
     @Prop({ mutable: true }) checked: boolean = false;
 
     @Event() updated!: EventEmitter;
@@ -30,13 +30,13 @@ export class Switch implements ComponentInterface {
     render() {
         let classes = {
             'ks-switch': true,
-            'disabled': this.disable
+            'disabled': this.disabled
         };
 
         return (
             <Host class={classes}>
                 <label id={`${this.switchId}_label`} htmlFor={this.switchId} class="label">{this.label}</label>
-                <button type="button" id={this.switchId} class="control" role="switch" aria-checked={`${this.checked}`} aria-labelledby={`${this.switchId}_label`} onClick={() => this.clickHandler()} disabled={this.disable}>
+                <button type="button" id={this.switchId} class="control" role="switch" aria-checked={`${this.checked}`} aria-labelledby={`${this.switchId}_label`} onClick={() => this.clickHandler()} disabled={this.disabled}>
                     <span class="track"></span>
                     <span class="toggle"></span>
                 </button>

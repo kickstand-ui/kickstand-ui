@@ -9,7 +9,7 @@
 
 | Property         | Attribute         | Description | Type                                     | Default     |
 | ---------------- | ----------------- | ----------- | ---------------------------------------- | ----------- |
-| `disable`        | `disable`         |             | `boolean`                                | `false`     |
+| `disabled`       | `disabled`        |             | `boolean`                                | `false`     |
 | `hideDecoration` | `hide-decoration` |             | `boolean`                                | `false`     |
 | `position`       | `position`        |             | `"bottom" \| "left" \| "right" \| "top"` | `'top'`     |
 | `size`           | `size`            |             | `"lg" \| "md" \| "sm" \| "xl"`           | `'sm'`      |

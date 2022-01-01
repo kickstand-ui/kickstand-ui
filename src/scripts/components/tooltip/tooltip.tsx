@@ -13,7 +13,7 @@ export class Tooltip implements ComponentInterface {
 
     @Prop() position: 'top' | 'bottom' | 'left' | 'right' = 'top';
     @Prop() size: 'sm' | 'md' | 'lg' | 'xl' = 'sm';
-    @Prop() disable: boolean = false;
+    @Prop() disabled: boolean = false;
     @Prop() hideDecoration: boolean = false;
     @Prop() text: string;
 
@@ -22,24 +22,24 @@ export class Tooltip implements ComponentInterface {
     }
 
     private addRichContent() {
-        if (!this.disable)
+        if (!this.disabled)
             this.$message.innerHTML = sanitizeHTML(this.text) as string;
     }
 
     render() {
         let classes = {
             'ks-tooltip': true,
-            'disabled': this.disable
+            'disabled': this.disabled
         };
 
         let wrapperProps = {
-            ['aria-describedby']: !this.disable && this.tooltipId,
+            ['aria-describedby']: !this.disabled && this.tooltipId,
             'class': {
                 'text': true,
                 'decoration': !this.hideDecoration
 
             },
-            'tabIndex': !this.disable ? 0 : null
+            'tabIndex': !this.disabled ? 0 : null
         }
 
         return (
@@ -47,7 +47,7 @@ export class Tooltip implements ComponentInterface {
                 <span {...wrapperProps}>
                     <slot />
                 </span>
-                {!this.disable && <span id={this.tooltipId} class={`message ${this.position} size-${this.size}`} role="tooltip" ref={el => this.$message = el}></span>}
+                {!this.disabled && <span id={this.tooltipId} class={`message ${this.position} size-${this.size}`} role="tooltip" ref={el => this.$message = el}></span>}
             </Host>
         );
     }

@@ -7,12 +7,12 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type      | Default     |
-| --------- | --------- | ----------- | --------- | ----------- |
-| `checked` | `checked` |             | `boolean` | `false`     |
-| `disable` | `disable` |             | `boolean` | `false`     |
-| `label`   | `label`   |             | `string`  | `undefined` |
-| `name`    | `name`    |             | `string`  | `undefined` |
+| Property   | Attribute  | Description | Type      | Default     |
+| ---------- | ---------- | ----------- | --------- | ----------- |
+| `checked`  | `checked`  |             | `boolean` | `false`     |
+| `disabled` | `disabled` |             | `boolean` | `false`     |
+| `label`    | `label`    |             | `string`  | `undefined` |
+| `name`     | `name`     |             | `string`  | `undefined` |
 
 
 ## Events
