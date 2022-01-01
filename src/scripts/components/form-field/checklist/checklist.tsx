@@ -120,7 +120,7 @@ export class Checklist implements ComponentInterface, ICustomInput {
                     <slot />
                     {
                         this.$options.map(option => this.type === 'checkbox'
-                            ? <ks-checkbox label={sanitizeHTML(option.innerHTML) as string} checked={option.selected} disabled={option.disabled} onChanged={() => this.updateValue(option.value || option.innerText)} />
+                            ? <ks-checkbox label={sanitizeHTML(option.innerHTML) as string} checked={option.selected} disabled={option.disabled} disable-error-message onChanged={() => this.updateValue(option.value || option.innerText)} />
                             : <ks-radio label={sanitizeHTML(option.innerHTML) as string} checked={option.selected} name={this.name} disabled={option.disabled} onSelected={() => this.updateValue(option.value || option.innerText)} />)
                     }
                 </fieldset>
