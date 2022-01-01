@@ -10,20 +10,19 @@ export const lazyImage = () => {
     const width = number('width', undefined);
     const height = number('height', undefined);
     const lazy = boolean('lazy', true);
-    const aspectRatio = text('aspect-ratio', '5:3');
     const threshold = number('threshold', 300);
     return (`<div style="height:100vh;margin-bottom:500px;">
                 <h1>Scroll Down</h1>
             </div>
             <div>
                 <h3>(I was lazy loaded...)</h3>
-                <ks-img alt="${alt}" fallback-src="${fallbackSrc}" class="w-50" lazy="${lazy}" src="${src}" width="${width}" height="${height}" aspect-ratio="${aspectRatio}" threshold="${threshold}" />
+                <ks-img alt="${alt}" fallback-src="${fallbackSrc}" class="w-50" lazy="${lazy}" src="${src}" width="${width}" height="${height}" threshold="${threshold}" />
             </div>
             <div style="height:100vh;margin-bottom:500px;">
                 <h2>Scroll Down Some More</h2>
             </div>
             <div>
                 <h3>(So was I...)</h3>
-                <ks-img alt="${alt}" class="w-50" lazy="${lazy}" src="${src2}" width="${width}" height="${height}" aspect-ratio="${aspectRatio}" threshold="${threshold}" />
+                <ks-img alt="${alt}" class="w-50" lazy="${lazy}" src="${src2}" width="${width}" height="${height}" threshold="${threshold}" />
             </div>`);
 };

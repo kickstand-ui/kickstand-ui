@@ -86,7 +86,6 @@ export namespace Components {
         "fallbackSrc": string;
         "href": string;
         "hrefProp": string;
-        "imgAspectRatio": string;
         "imgDirection": 'top' | 'bottom' | 'left' | 'right' | 'behind';
         "imgHeight": number;
         "imgSrc": string;
@@ -117,7 +116,6 @@ export namespace Components {
         "fallbackSrc": string;
         "href": string;
         "hrefProp": string;
-        "imgAspectRatio": string;
         "imgHeight": number;
         "imgWidth": number;
         "lazy": boolean;
@@ -280,7 +278,6 @@ export namespace Components {
     }
     interface KsImg {
         "alt": string;
-        "aspectRatio": string;
         "fallbackSrc": string;
         "height": number;
         "lazy": boolean;
@@ -354,9 +351,6 @@ export namespace Components {
         "inline": boolean;
         "label": string;
         "name": string;
-    }
-    interface KsResponsiveEmbed {
-        "aspectRatio": string;
     }
     interface KsScrollToTop {
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
@@ -618,12 +612,6 @@ declare global {
         prototype: HTMLKsRadioElement;
         new (): HTMLKsRadioElement;
     };
-    interface HTMLKsResponsiveEmbedElement extends Components.KsResponsiveEmbed, HTMLStencilElement {
-    }
-    var HTMLKsResponsiveEmbedElement: {
-        prototype: HTMLKsResponsiveEmbedElement;
-        new (): HTMLKsResponsiveEmbedElement;
-    };
     interface HTMLKsScrollToTopElement extends Components.KsScrollToTop, HTMLStencilElement {
     }
     var HTMLKsScrollToTopElement: {
@@ -702,7 +690,6 @@ declare global {
         "ks-overlay": HTMLKsOverlayElement;
         "ks-progress-bar": HTMLKsProgressBarElement;
         "ks-radio": HTMLKsRadioElement;
-        "ks-responsive-embed": HTMLKsResponsiveEmbedElement;
         "ks-scroll-to-top": HTMLKsScrollToTopElement;
         "ks-side-drawer": HTMLKsSideDrawerElement;
         "ks-spin-box": HTMLKsSpinBoxElement;
@@ -792,7 +779,6 @@ declare namespace LocalJSX {
         "fallbackSrc"?: string;
         "href"?: string;
         "hrefProp"?: string;
-        "imgAspectRatio"?: string;
         "imgDirection"?: 'top' | 'bottom' | 'left' | 'right' | 'behind';
         "imgHeight"?: number;
         "imgSrc"?: string;
@@ -823,7 +809,6 @@ declare namespace LocalJSX {
         "fallbackSrc"?: string;
         "href"?: string;
         "hrefProp"?: string;
-        "imgAspectRatio"?: string;
         "imgHeight"?: number;
         "imgWidth"?: number;
         "lazy"?: boolean;
@@ -989,7 +974,6 @@ declare namespace LocalJSX {
     }
     interface KsImg {
         "alt"?: string;
-        "aspectRatio"?: string;
         "fallbackSrc"?: string;
         "height"?: number;
         "lazy"?: boolean;
@@ -1064,9 +1048,6 @@ declare namespace LocalJSX {
         "label"?: string;
         "name"?: string;
         "onSelected"?: (event: CustomEvent<any>) => void;
-    }
-    interface KsResponsiveEmbed {
-        "aspectRatio"?: string;
     }
     interface KsScrollToTop {
         "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
@@ -1153,7 +1134,6 @@ declare namespace LocalJSX {
         "ks-overlay": KsOverlay;
         "ks-progress-bar": KsProgressBar;
         "ks-radio": KsRadio;
-        "ks-responsive-embed": KsResponsiveEmbed;
         "ks-scroll-to-top": KsScrollToTop;
         "ks-side-drawer": KsSideDrawer;
         "ks-spin-box": KsSpinBox;
@@ -1202,7 +1182,6 @@ declare module "@stencil/core" {
             "ks-overlay": LocalJSX.KsOverlay & JSXBase.HTMLAttributes<HTMLKsOverlayElement>;
             "ks-progress-bar": LocalJSX.KsProgressBar & JSXBase.HTMLAttributes<HTMLKsProgressBarElement>;
             "ks-radio": LocalJSX.KsRadio & JSXBase.HTMLAttributes<HTMLKsRadioElement>;
-            "ks-responsive-embed": LocalJSX.KsResponsiveEmbed & JSXBase.HTMLAttributes<HTMLKsResponsiveEmbedElement>;
             "ks-scroll-to-top": LocalJSX.KsScrollToTop & JSXBase.HTMLAttributes<HTMLKsScrollToTopElement>;
             "ks-side-drawer": LocalJSX.KsSideDrawer & JSXBase.HTMLAttributes<HTMLKsSideDrawerElement>;
             "ks-spin-box": LocalJSX.KsSpinBox & JSXBase.HTMLAttributes<HTMLKsSpinBoxElement>;

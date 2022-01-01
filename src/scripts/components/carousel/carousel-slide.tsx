@@ -20,7 +20,6 @@ export class CarouselSlide implements ComponentInterface {
     @Prop() threshold: number = 300;
     @Prop() imgWidth: number;
     @Prop() imgHeight: number;
-    @Prop() imgAspectRatio: string;
     @Prop() fallbackSrc: string;
     @Prop() linkTag: string = 'a';
     @Prop() hrefProp: string = 'href';
@@ -76,7 +75,7 @@ export class CarouselSlide implements ComponentInterface {
 
         return (
             <Host class={classes} role="tabpanel" aria-hidden="true">
-                {this.src && <ks-img class="slide-image" alt={this.alt} lazy={this.lazy} src={this.src} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} aspect-ratio={this.imgAspectRatio} fallback-src={this.fallbackSrc} />}
+                {this.src && <ks-img class="slide-image" alt={this.alt} lazy={this.lazy} src={this.src} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} fallback-src={this.fallbackSrc} />}
                 <div class={contentClasses} ref={el => this.$content = el}>
                     <slot />
                 </div>

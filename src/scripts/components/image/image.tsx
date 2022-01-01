@@ -17,7 +17,6 @@ export class Img implements ComponentInterface {
     @Prop({ mutable: true }) width: number;
     @Prop({ mutable: true }) height: number;
     @Prop() lazy: boolean;
-    @Prop() aspectRatio: string;
     @Prop() threshold: number = 300;
 
     @State() oldSrc: string;
@@ -30,9 +29,6 @@ export class Img implements ComponentInterface {
     componentDidRender() {
         this.width = this.width || this.$el.scrollWidth;
         this.height = this.height || this.$el.scrollHeight;
-
-        if (this.aspectRatio)
-            this.setAspectRatio();
     }
 
     componentWillUpdate() {
@@ -48,13 +44,6 @@ export class Img implements ComponentInterface {
 
         this.$image.setAttribute('src', this.fallbackSrc);
         this.hasError = true;
-    }
-
-    private setAspectRatio() {
-        let ratios = this.aspectRatio.split(':');
-
-        if (ratios.length > 1)
-            this.height = this.width * parseFloat(ratios[1]) / parseFloat(ratios[0]);
     }
 
     setImgSrc() {

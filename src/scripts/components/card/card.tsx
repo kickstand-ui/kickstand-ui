@@ -21,7 +21,6 @@ export class Card implements ComponentInterface {
     @Prop() collapse: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'xs';
     @Prop() imgWidth: number;
     @Prop() imgHeight: number;
-    @Prop() imgAspectRatio: string;
     @Prop() linkTag: string = 'a';
     @Prop() hrefProp: string = 'href';
 
@@ -52,9 +51,9 @@ export class Card implements ComponentInterface {
                 {this.imgSrc && <div class="card-img">
                     {this.href
                         ? <CustomTag {...linkProps} ref={el => this.$link = el}>
-                            <ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} fallback-src={this.fallbackSrc} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} aspect-ratio={this.imgAspectRatio} />
+                            <ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} fallback-src={this.fallbackSrc} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} />
                         </CustomTag>
-                        : <ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} fallback-src={this.fallbackSrc} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} aspect-ratio={this.imgAspectRatio} />}
+                        : <ks-img alt={this.alt} lazy={this.lazy} src={this.imgSrc} fallback-src={this.fallbackSrc} threshold={this.threshold} width={this.imgWidth} height={this.imgHeight} />}
                 </div>}
                 <div class="card-content">
                     <slot />
