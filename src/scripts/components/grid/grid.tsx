@@ -2,7 +2,7 @@ import { Component, Prop, h, Host } from '@stencil/core';
 
 
 @Component({
-    tag: 'ks-row',
+    tag: 'ks-grid',
     styleUrl: 'grid.scss'
 })
 export class Row {
@@ -12,7 +12,7 @@ export class Row {
     render() {
         return (
             <Host class={{
-                'ks-row': true,
+                'ks-grid': true,
                 [`gutter-${this.gutter}`]: true,
                 [`align-content-${this.position}`]: this.position !== undefined
             }}>

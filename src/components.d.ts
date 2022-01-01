@@ -269,6 +269,10 @@ export namespace Components {
         "nextButtonText": string;
         "prevButtonText": string;
     }
+    interface KsGrid {
+        "gutter": 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
+        "position": 'start' | 'center' | 'end' | 'stretch';
+    }
     interface KsIcon {
         "icon": string;
         "label": string;
@@ -353,10 +357,6 @@ export namespace Components {
     }
     interface KsResponsiveEmbed {
         "aspectRatio": string;
-    }
-    interface KsRow {
-        "gutter": 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
-        "position": 'start' | 'center' | 'end' | 'stretch';
     }
     interface KsScrollToTop {
         "color": 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
@@ -534,6 +534,12 @@ declare global {
         prototype: HTMLKsGalleryElement;
         new (): HTMLKsGalleryElement;
     };
+    interface HTMLKsGridElement extends Components.KsGrid, HTMLStencilElement {
+    }
+    var HTMLKsGridElement: {
+        prototype: HTMLKsGridElement;
+        new (): HTMLKsGridElement;
+    };
     interface HTMLKsIconElement extends Components.KsIcon, HTMLStencilElement {
     }
     var HTMLKsIconElement: {
@@ -618,12 +624,6 @@ declare global {
         prototype: HTMLKsResponsiveEmbedElement;
         new (): HTMLKsResponsiveEmbedElement;
     };
-    interface HTMLKsRowElement extends Components.KsRow, HTMLStencilElement {
-    }
-    var HTMLKsRowElement: {
-        prototype: HTMLKsRowElement;
-        new (): HTMLKsRowElement;
-    };
     interface HTMLKsScrollToTopElement extends Components.KsScrollToTop, HTMLStencilElement {
     }
     var HTMLKsScrollToTopElement: {
@@ -688,6 +688,7 @@ declare global {
         "ks-form": HTMLKsFormElement;
         "ks-form-field": HTMLKsFormFieldElement;
         "ks-gallery": HTMLKsGalleryElement;
+        "ks-grid": HTMLKsGridElement;
         "ks-icon": HTMLKsIconElement;
         "ks-img": HTMLKsImgElement;
         "ks-loading": HTMLKsLoadingElement;
@@ -702,7 +703,6 @@ declare global {
         "ks-progress-bar": HTMLKsProgressBarElement;
         "ks-radio": HTMLKsRadioElement;
         "ks-responsive-embed": HTMLKsResponsiveEmbedElement;
-        "ks-row": HTMLKsRowElement;
         "ks-scroll-to-top": HTMLKsScrollToTopElement;
         "ks-side-drawer": HTMLKsSideDrawerElement;
         "ks-spin-box": HTMLKsSpinBoxElement;
@@ -978,6 +978,10 @@ declare namespace LocalJSX {
         "nextButtonText"?: string;
         "prevButtonText"?: string;
     }
+    interface KsGrid {
+        "gutter"?: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
+        "position"?: 'start' | 'center' | 'end' | 'stretch';
+    }
     interface KsIcon {
         "icon"?: string;
         "label"?: string;
@@ -1064,10 +1068,6 @@ declare namespace LocalJSX {
     interface KsResponsiveEmbed {
         "aspectRatio"?: string;
     }
-    interface KsRow {
-        "gutter"?: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
-        "position"?: 'start' | 'center' | 'end' | 'stretch';
-    }
     interface KsScrollToTop {
         "color"?: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark';
         "display"?: 'solid' | 'hollow' | 'clear' | 'link';
@@ -1139,6 +1139,7 @@ declare namespace LocalJSX {
         "ks-form": KsForm;
         "ks-form-field": KsFormField;
         "ks-gallery": KsGallery;
+        "ks-grid": KsGrid;
         "ks-icon": KsIcon;
         "ks-img": KsImg;
         "ks-loading": KsLoading;
@@ -1153,7 +1154,6 @@ declare namespace LocalJSX {
         "ks-progress-bar": KsProgressBar;
         "ks-radio": KsRadio;
         "ks-responsive-embed": KsResponsiveEmbed;
-        "ks-row": KsRow;
         "ks-scroll-to-top": KsScrollToTop;
         "ks-side-drawer": KsSideDrawer;
         "ks-spin-box": KsSpinBox;
@@ -1188,6 +1188,7 @@ declare module "@stencil/core" {
             "ks-form": LocalJSX.KsForm & JSXBase.HTMLAttributes<HTMLKsFormElement>;
             "ks-form-field": LocalJSX.KsFormField & JSXBase.HTMLAttributes<HTMLKsFormFieldElement>;
             "ks-gallery": LocalJSX.KsGallery & JSXBase.HTMLAttributes<HTMLKsGalleryElement>;
+            "ks-grid": LocalJSX.KsGrid & JSXBase.HTMLAttributes<HTMLKsGridElement>;
             "ks-icon": LocalJSX.KsIcon & JSXBase.HTMLAttributes<HTMLKsIconElement>;
             "ks-img": LocalJSX.KsImg & JSXBase.HTMLAttributes<HTMLKsImgElement>;
             "ks-loading": LocalJSX.KsLoading & JSXBase.HTMLAttributes<HTMLKsLoadingElement>;
@@ -1202,7 +1203,6 @@ declare module "@stencil/core" {
             "ks-progress-bar": LocalJSX.KsProgressBar & JSXBase.HTMLAttributes<HTMLKsProgressBarElement>;
             "ks-radio": LocalJSX.KsRadio & JSXBase.HTMLAttributes<HTMLKsRadioElement>;
             "ks-responsive-embed": LocalJSX.KsResponsiveEmbed & JSXBase.HTMLAttributes<HTMLKsResponsiveEmbedElement>;
-            "ks-row": LocalJSX.KsRow & JSXBase.HTMLAttributes<HTMLKsRowElement>;
             "ks-scroll-to-top": LocalJSX.KsScrollToTop & JSXBase.HTMLAttributes<HTMLKsScrollToTopElement>;
             "ks-side-drawer": LocalJSX.KsSideDrawer & JSXBase.HTMLAttributes<HTMLKsSideDrawerElement>;
             "ks-spin-box": LocalJSX.KsSpinBox & JSXBase.HTMLAttributes<HTMLKsSpinBoxElement>;

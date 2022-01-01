@@ -16,7 +16,7 @@ export const playground = () => {
 };
 
 export const tooltipPositions = () => {
-    return (`<ks-row style="margin-top: 40vh;">
+    return (`<ks-grid style="margin-top: 40vh;">
         <ks-column>
             <ks-tooltip class="m-auto" text="Test Text">Top</ks-tooltip>
         </ks-column>
@@ -29,5 +29,5 @@ export const tooltipPositions = () => {
         <ks-column>
             <ks-tooltip class="m-auto" position="left" text="Test Text">Left</ks-tooltip>
         </ks-column>
-    </ks-row>`);
+    </ks-grid>`);
 };
