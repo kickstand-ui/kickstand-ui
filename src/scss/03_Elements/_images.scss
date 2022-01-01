@@ -23,3 +23,16 @@ svg {
     overflow: hidden; // 1
     vertical-align: middle;
 }
+
+// Add aspect ratio based on height and width attributes
+
+img,
+input[type="image"],
+video,
+embed,
+iframe,
+marquee,
+object,
+table {
+    aspect-ratio: attr(width) / attr(height);
+}
