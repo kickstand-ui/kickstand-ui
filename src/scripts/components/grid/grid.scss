@@ -1,6 +1,6 @@
 @use "sass:math";
 
-@use "../../../scss/00_Abstracts/index" as *;
+@use "../../../scss/00_Abstracts/index"as *;
 
 $columns: 12;
 $breakpoints: (xl, lg, md, sm, xs, xxs);
@@ -11,18 +11,21 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
     flex-basis: 0;
     flex-grow: 1;
 
-    @each $bp, $value in $spacing-sizes {
-        @if not $value == auto {
-            $gutter-size: $value * 0.5;
+    @each $bp,
+    $value in $spacing-sizes {
+        @if $value==auto {
+            $value: 0;
+        }
 
-            &.gutter-#{$bp} {
-                margin-left: -$gutter-size;
-                margin-right: -$gutter-size;
+        $gutter-size: $value * 0.5;
 
-                >.col {
-                    padding-left: $gutter-size;
-                    padding-right: $gutter-size;
-                }
+        &.gutter-#{$bp} {
+            margin-left: -$gutter-size;
+            margin-right: -$gutter-size;
+
+            >.col {
+                padding-left: $gutter-size;
+                padding-right: $gutter-size;
             }
         }
     }
