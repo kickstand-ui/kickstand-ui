@@ -12,7 +12,6 @@
 | `buttonClass`        | `button-class`         |             | `string`                                                                                                              | `''`           |
 | `color`              | `color`                |             | `"black" \| "danger" \| "dark" \| "info" \| "light" \| "primary" \| "secondary" \| "success" \| "warning" \| "white"` | `'primary'`    |
 | `controls`           | `controls`             |             | `string`                                                                                                              | `undefined`    |
-| `cssClass`           | `css-class`            |             | `string`                                                                                                              | `''`           |
 | `describedBy`        | `described-by`         |             | `string`                                                                                                              | `undefined`    |
 | `disabled`           | `disabled`             |             | `boolean`                                                                                                             | `undefined`    |
 | `display`            | `display`              |             | `"clear" \| "hollow" \| "link" \| "solid"`                                                                            | `'solid'`      |

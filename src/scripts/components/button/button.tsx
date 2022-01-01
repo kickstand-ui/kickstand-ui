@@ -16,7 +16,6 @@ export class LinkButton implements ComponentInterface {
     @Prop() href: string;
     @Prop() linkTag: string = 'a';
     @Prop() hrefProp: string = 'href';
-    @Prop() cssClass: string = '';
     @Prop() buttonClass: string = '';
     @Prop() haspopup: boolean = false;
     @Prop() expanded: boolean = false;
@@ -102,7 +101,6 @@ export class LinkButton implements ComponentInterface {
             'button': true,
             [this.color]: true,
             [this.display]: true,
-            [this.cssClass]: true,
             [this.buttonClass]: true,
             [`size-${this.size}`]: true,
         };
