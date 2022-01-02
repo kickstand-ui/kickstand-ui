@@ -10,7 +10,6 @@ export class Badge implements ComponentInterface {
 
     render() {
         let classes= {
-            'ks-badge': true,
             [`${this.color}`]: true,
             'hollow': this.hollow
         };

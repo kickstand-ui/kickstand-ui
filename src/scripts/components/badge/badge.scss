@@ -1,6 +1,9 @@
 @import "../../../scss/00_Abstracts/index";
 
-.ks-badge {
+ks-badge {
+    --border-radius: var(--ks-border-radius-pill);
+    --shadow: var(--ks-shadow-sm);
+
     display: inline-block;
     text-decoration: none;
     line-height: 1;
@@ -9,8 +12,8 @@
     vertical-align: baseline;
     padding: 0.25em 0.4em;
     font-size: 0.75em;
-    @include r(pill);
-    @include shadow(xs);
+    border-radius: var(--border-radius);
+    @include shadow-var(--shadow);
 
     @each $color, $value in get-colors() {
         &.#{$color} {
