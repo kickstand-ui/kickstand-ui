@@ -1,7 +1,7 @@
 @import "../../../scss/00_Abstracts/index";
 
 ks-button {
-    --border-radius: #{var(--ks-border-radius-sm)};
+    --border-radius: var(--ks-border-radius-sm);
     --shadow: var(--ks-shadow-sm);
     --focus-shadow: var(--ks-shadow-md);
     --disabled-shadow: var(--ks-shadow-inner);
@@ -20,7 +20,7 @@ ks-button {
         width: 100%;
         text-align: center;
         display: block;
-        border-radius: var(--border-radius);
+        @include r-var(--border-radius);
         @include shadow-var(--shadow);
         @include p(md);
         @include shadow(xs);

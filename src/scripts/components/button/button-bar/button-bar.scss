@@ -1,9 +1,11 @@
 @import "../../../../scss/00_Abstracts/index";
 
 ks-button-bar {
+    --border-radius: var(--ks-border-radius-sm);
+
     display: inline-flex;
     @include shadow(xs);
-    @include r(sm);
+    @include r-var(--border-radius);
 
     ks-button {
         .button {
@@ -18,13 +20,13 @@ ks-button-bar {
 
             &:first-child {
                 .button:not(.dropdown-button) {
-                    @include rl(sm);
+                    @include rl-var(--border-radius);
                 }
             }
 
             &:last-child {
                 .button:not(.dropdown-button) {
-                    @include rr(sm);
+                    @include rr-var(--border-radius);
                 }
             }
 
@@ -32,7 +34,7 @@ ks-button-bar {
                 ks-button {
                     .button {
                         @include rl(none);
-                        @include rr(sm);
+                        @include rr-var(--border-radius);
                     }
                 }
             }
@@ -41,7 +43,7 @@ ks-button-bar {
                 ks-button {
                     .button {
                         @include rr(none);
-                        @include rl(sm);
+                        @include rl-var(--border-radius);
                     }
                 }
             }    
@@ -55,16 +57,34 @@ ks-button-bar {
             @include mt(-xxxs);
 
             &:first-child {
-                .button {
-                    @include rt(sm);
+                .button:not(.dropdown-button) {
+                    @include rt-var(--border-radius);
                 }
             }
 
             &:last-child {
-                .button {
-                    @include rb(sm);
+                .button:not(.dropdown-button) {
+                    @include rb-var(--border-radius);
                 }
             }
+
+            & ~ ks-dropdown {    
+                ks-button {
+                    .button {
+                        @include rt(none);
+                        @include rb-var(--border-radius);
+                    }
+                }
+            }
+
+            ks-dropdown ~ & {    
+                ks-button {
+                    .button {
+                        @include rb(none);
+                        @include rt-var(--border-radius);
+                    }
+                }
+            }    
         }
     }
 }
