@@ -10,7 +10,7 @@ ks-accordion {
     @include shadow-var(--shadow);
     @include r-var(--border-radius);
 
-    accordion-slide {
+    ks-accordion-slide {
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -106,7 +106,7 @@ ks-accordion {
     }
 
     &.sm {
-        accordion-slide {
+        ks-accordion-slide {
             .accordion-heading {
                 .accordion-control {
                     @include py(sm);
@@ -116,7 +116,7 @@ ks-accordion {
     }
 
     &.md {
-        accordion-slide {
+        ks-accordion-slide {
             .accordion-heading {
                 .accordion-control {
                     @include py(md);
@@ -126,7 +126,7 @@ ks-accordion {
     }
 
     &.lg {
-        accordion-slide {
+        ks-accordion-slide {
             .accordion-heading {
                 .accordion-control {
                     @include py(lg);
