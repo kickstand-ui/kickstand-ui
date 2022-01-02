@@ -9,7 +9,7 @@ export class ButtonBar implements ComponentInterface {
 
     render() {
         return (
-            <Host class={`ks-button-bar ${this.stacked ? 'stacked' : 'inline'}`}>
+            <Host class={`${this.stacked ? 'stacked' : 'inline'}`}>
                 <slot />
             </Host>
         );

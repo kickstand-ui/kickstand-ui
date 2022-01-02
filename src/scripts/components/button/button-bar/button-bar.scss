@@ -1,11 +1,11 @@
 @import "../../../../scss/00_Abstracts/index";
 
-.ks-button-bar {
+ks-button-bar {
     display: inline-flex;
     @include shadow(xs);
     @include r(sm);
 
-    .ks-button {
+    ks-button {
         .button {
             @include shadow(none);
             @include r(none);
@@ -13,23 +13,23 @@
     }
 
     &.inline {
-        .ks-button {
+        ks-button {
             @include ml(-xxxs);
 
             &:first-child {
-                .button {
+                .button:not(.dropdown-button) {
                     @include rl(sm);
                 }
             }
 
             &:last-child {
-                .button {
+                .button:not(.dropdown-button) {
                     @include rr(sm);
                 }
             }
 
-            & ~ .ks-dropdown {    
-                .ks-button {
+            & ~ ks-dropdown {    
+                ks-button {
                     .button {
                         @include rl(none);
                         @include rr(sm);
@@ -37,8 +37,8 @@
                 }
             }
 
-            .ks-dropdown ~ & {    
-                .ks-button {
+            ks-dropdown ~ & {    
+                ks-button {
                     .button {
                         @include rr(none);
                         @include rl(sm);

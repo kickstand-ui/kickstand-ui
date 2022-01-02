@@ -124,7 +124,7 @@ export class LinkButton implements ComponentInterface {
         const CustomTag = this.linkTag;
         
         return (
-            <Host class="ks-button pointer">
+            <Host>
                 {this.href
                     ? <CustomTag class={classes} {...linkProps} onClick={e => this.clickHandler(e)} onBlur={() => this.blurHandler()}>
                         <slot />
