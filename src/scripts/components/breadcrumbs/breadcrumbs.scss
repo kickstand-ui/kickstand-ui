@@ -1,6 +1,8 @@
 @import "../../../scss/00_Abstracts/index";
 
-.ks-breadcrumbs {
+ks-breadcrumbs {
+    --separator : "/";
+
     display: block;
 
     .slot {
@@ -35,7 +37,7 @@
 
             &::before {
                 display: inline-block;
-                content: "/";
+                content: var(--separator);
                 @include pr(sm);
             }
         }
