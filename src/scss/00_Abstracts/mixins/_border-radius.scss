@@ -22,7 +22,7 @@
 
 @mixin rr($size: sm, $important: false) {
     @include rtr($size, $important);
-    @include rr($size, $important);
+    @include rbr($size, $important);
 }
 
 @mixin rtl($size: sm, $important: false) {
@@ -73,7 +73,7 @@
     }
 }
 
-@mixin rr($size: sm, $important: false) {
+@mixin rbr($size: sm, $important: false) {
     @if map-has-key($border-radiuses, $size) {
         @if($important==true) {
             border-bottom-right-radius: var(--ks-border-radius-#{$size}) !important;
