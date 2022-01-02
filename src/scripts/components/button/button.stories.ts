@@ -58,7 +58,8 @@ export const iconButton = () => {
             target="${target}"
             hide-text
             >
-            ${color} button
+            <ks-icon icon="search" label="search"></ks-icon>
+             Search
         </ks-button>`);
 };
 
