@@ -125,7 +125,6 @@ export class Dropdown implements ComponentInterface, IDismissible {
 
     render() {
         let dropDownClasses = {
-            'ks-dropdown': true,
             'show-contents': this.isExpanded,
             'mega-menu': this.megaMenu
         };
