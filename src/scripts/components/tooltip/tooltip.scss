@@ -9,7 +9,7 @@
             @include transition();
 
             &.decoration {
-                @include b-b(dotted, xxxs, dark);
+                @include bb(dotted, xxxs, dark);
             }
 
             @include hover-focus-active {

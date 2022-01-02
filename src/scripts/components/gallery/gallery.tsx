@@ -133,8 +133,8 @@ export class Gallery implements ComponentInterface {
 
         let wrapperClasses = {
             'content-wrapper': true,
-            'b-l-xxxs': !this.isStart,
-            'b-r-xxxs': !this.isEnd
+            'bl-xxxs': !this.isStart,
+            'br-xxxs': !this.isEnd
         }
 
         const CustomTag = this.linkTag;

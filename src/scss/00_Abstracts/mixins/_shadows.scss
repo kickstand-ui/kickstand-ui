@@ -9,3 +9,13 @@
         box-shadow: var(--ks-shadow-#{$size});
     }
 }
+
+@mixin shadow-var($size: sm, $important: false) {
+    @if($important==true) {
+        box-shadow: var($size) !important;
+    }
+
+    @else {
+        box-shadow: var($size);
+    }
+}

@@ -19,7 +19,7 @@
         @each $key,
         $value in $spacing-sizes {
             &-#{$key} {
-                @include b-t($size: $key, $important: true);
+                @include bt($size: $key, $important: true);
             }
         }
 
@@ -35,7 +35,7 @@
         @each $key,
         $value in $spacing-sizes {
             &-#{$key} {
-                @include b-b($size: $key, $important: true);
+                @include bb($size: $key, $important: true);
             }
         }
 
@@ -51,7 +51,7 @@
         @each $key,
         $value in $spacing-sizes {
             &-#{$key} {
-                @include b-l($size: $key, $important: true);
+                @include bl($size: $key, $important: true);
             }
         }
 
@@ -67,7 +67,7 @@
         @each $key,
         $value in $spacing-sizes {
             &-#{$key} {
-                @include b-r($size: $key, $important: true);
+                @include br($size: $key, $important: true);
             }
         }
 
@@ -83,7 +83,7 @@
         @each $key,
         $value in $spacing-sizes {
             &-#{$key} {
-                @include b-x($size: $key, $important: true);
+                @include bx($size: $key, $important: true);
             }
         }
 
@@ -100,7 +100,7 @@
         @each $key,
         $value in $spacing-sizes {
             &-#{$key} {
-                @include b-y($size: $key, $important: true);
+                @include by($size: $key, $important: true);
             }
         }
 

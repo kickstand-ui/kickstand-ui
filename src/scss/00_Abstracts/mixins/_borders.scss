@@ -4,28 +4,28 @@
     border: border($style, $size, $color, $variant, $opacity, $important);
 }
 
-@mixin b-t($style: default-border(style), $size: default-border(size), $color: default-border(color), $variant: base, $opacity: 1, $important: false) {
+@mixin bt($style: default-border(style), $size: default-border(size), $color: default-border(color), $variant: base, $opacity: 1, $important: false) {
     border-top: border($style, $size, $color, $variant, $opacity, $important);
 }
 
-@mixin b-b($style: default-border(style), $size: default-border(size), $color: default-border(color), $variant: base, $opacity: 1, $important: false) {
+@mixin bb($style: default-border(style), $size: default-border(size), $color: default-border(color), $variant: base, $opacity: 1, $important: false) {
     border-bottom: border($style, $size, $color, $variant, $opacity, $important);
 }
 
-@mixin b-l($style: default-border(style), $size: default-border(size), $color: default-border(color), $variant: base, $opacity: 1, $important: false) {
+@mixin bl($style: default-border(style), $size: default-border(size), $color: default-border(color), $variant: base, $opacity: 1, $important: false) {
     border-left: border($style, $size, $color, $variant, $opacity, $important);
 }
 
-@mixin b-r($style: default-border(style), $size: default-border(size), $color: default-border(color), $variant: base, $opacity: 1, $important: false) {
+@mixin br($style: default-border(style), $size: default-border(size), $color: default-border(color), $variant: base, $opacity: 1, $important: false) {
     border-right: border($style, $size, $color, $variant, $opacity, $important);
 }
 
-@mixin b-x($style: default-border(style), $size: default-border(size), $color: default-border(color), $variant: base, $opacity: 1, $important: false) {
-    @include b-l($style, $size, $color, $variant, $opacity, $important);
-    @include b-r($style, $size, $color, $variant, $opacity, $important);
+@mixin bx($style: default-border(style), $size: default-border(size), $color: default-border(color), $variant: base, $opacity: 1, $important: false) {
+    @include bl($style, $size, $color, $variant, $opacity, $important);
+    @include br($style, $size, $color, $variant, $opacity, $important);
 }
 
-@mixin b-y($style: default-border(style), $size: default-border(size), $color: default-border(color), $variant: base, $opacity: 1, $important: false) {
-    @include b-t($style, $size, $color, $variant, $opacity, $important);
-    @include b-b($style, $size, $color, $variant, $opacity, $important);
+@mixin by($style: default-border(style), $size: default-border(size), $color: default-border(color), $variant: base, $opacity: 1, $important: false) {
+    @include bt($style, $size, $color, $variant, $opacity, $important);
+    @include bb($style, $size, $color, $variant, $opacity, $important);
 }                    

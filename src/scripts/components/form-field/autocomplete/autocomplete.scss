@@ -87,7 +87,7 @@
             overflow: hidden;
             background-color: white;
             @include b();
-            @include b-t(none);
+            @include bt(none);
             @include rb(sm);
             @include z-index(xs);
             @include shadow(sm);
@@ -99,12 +99,12 @@
                 @include p(md);
 
                 &:focus {
-                    @include b-y();
+                    @include by();
                     @include bg-color(light, lighter);
                 }
 
                 &:first-child:focus {
-                    @include b-t(none);
+                    @include bt(none);
                 }
 
                 &:hover {

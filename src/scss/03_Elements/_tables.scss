@@ -20,8 +20,8 @@ th {
     border-collapse: separate;
     border-spacing: 0;
     @include b();
-    @include b-b($size: none);
-    @include b-r($size: none);
+    @include bb($size: none);
+    @include br($size: none);
 
     &.striped {
         tbody {
@@ -43,7 +43,7 @@ th {
 
     thead {
         font-weight: bold;
-        @include b-b($size: xxs);
+        @include bb($size: xxs);
     }
 
     tr {
@@ -55,8 +55,8 @@ th {
         vertical-align: bottom;
         background-color: inherit;
         @include p(sm);
-        @include b-r();
-        @include b-b();
+        @include br();
+        @include bb();
     }
 
     &.fixed-heading {
@@ -91,13 +91,13 @@ th {
 .table-responsive {
     width: 100%;
     overflow-x: auto;
-    @include b-x();
+    @include bx();
 
     .table {
         @include mx(-xxxs);
 
         tr> :last-child {
-            @include b-r($size:none);
+            @include br($size:none);
         }
     }
 }

@@ -26,7 +26,7 @@
 }
 
 @function greatest-common-divisor($a, $b) {
-    @if ($b !=0) {
+    @if ($b != 0) {
         @return greatest-common-divisor($b, $a % $b);
     }
 

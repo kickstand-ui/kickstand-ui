@@ -194,7 +194,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
 
             &.inverted {
                 background-color: white;
-                @include b-b();
+                @include bb();
 
                 .navbar-branding {
                     @include color($key);
@@ -315,7 +315,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                         height: auto;
                         visibility: visible;
                         @include mt(sm);
-                        @include b-t();
+                        @include bt();
                         @include transition($speed: med);
                     }
                 }

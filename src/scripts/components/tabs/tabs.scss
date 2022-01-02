@@ -68,7 +68,7 @@
 
                 .tab-item {
                     &[aria-selected="true"] {
-                        @include b-b(none);
+                        @include bb(none);
                         @include rt(sm);
                     }
                 }
@@ -76,7 +76,7 @@
 
             .tab-panel {
                 flex-shrink: 0;
-                @include b-t(none);
+                @include bt(none);
                 @include rb(sm);
             }
         }
@@ -96,7 +96,7 @@
                 .tab-item {
                     &[aria-selected="true"] {
                         position: relative;
-                        @include b-t(none);
+                        @include bt(none);
                         @include rb(sm);
                     }
                 }
@@ -104,7 +104,7 @@
 
             .tab-panel {
                 flex-shrink: 0;
-                @include b-b(none);
+                @include bb(none);
                 @include rt(sm);
             }
         }
@@ -132,14 +132,14 @@
 
                     &[aria-selected="true"] {
                         @include shadow();
-                        @include b-r(none);
+                        @include br(none);
                         @include rl(sm);
                     }
                 }
             }
 
             .tab-panel {
-                @include b-l(none);
+                @include bl(none);
                 @include rr(sm);
             }
         }
@@ -166,14 +166,14 @@
 
                     &[aria-selected="true"] {
                         @include shadow();
-                        @include b-l(none);
+                        @include bl(none);
                         @include rr(sm);
                     }
                 }
             }
 
             .tab-panel {
-                @include b-r(none);
+                @include br(none);
                 @include rl(sm);
             }
         }
