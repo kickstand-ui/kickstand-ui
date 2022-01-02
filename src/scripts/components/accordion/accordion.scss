@@ -1,9 +1,14 @@
 @import "../../../scss/00_Abstracts/index";
 
 .ks-accordion {
-    --border-radius: #{spacing(sm)};
+    --border-radius: #{var(--ks-border-radius-sm)};
+    --expanded-bg-color: #{color(light, lighter)};
+    --expanded-color: #{text-color-value(light, lighter)};
+    --shadow: var(--ks-shadow-sm);
 
     display: block;
+    @include shadow-var(--shadow);
+    @include r-var(--border-radius);
 
     .accordion-slide {
         display: flex;
@@ -69,12 +74,15 @@
                 }
 
                 &[aria-expanded="true"] {
+                    color: var(--expanded-color);
+                    background-color: var(--expanded-bg-color);
+
                     .accordion-icon {
                         transform: rotate(-180deg);
                         @include transition();
                     }
                 }
-                
+
                 &[aria-expanded="false"] {
                     @include mb(-xxs);
                 }
@@ -87,8 +95,8 @@
             visibility: hidden;
             @include transition();
             @include px(lg);
-            @include b-x();
-            @include b-b();
+            @include bx();
+            @include bb();
 
             &[aria-hidden="false"] {
                 visibility: visible;
