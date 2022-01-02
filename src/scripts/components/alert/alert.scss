@@ -1,13 +1,16 @@
 @import "../../../scss/00_Abstracts/index";
 
 .ks-alert {
+    --border-radius: #{var(--ks-border-radius-sm)};
+    --icon-size: var(--ks-font-size-xl);
+
     display: block;
 
     .alert-content {
         display: flex;
         align-items: center;
         width: 100%;
-        @include r(sm);
+        @include r-var(--border-radius);
         @include p(lg);
         @include shadow(sm);
 
@@ -41,7 +44,7 @@
             &.note.#{$color} {
                 @include r(none);
                 @include b();
-                @include b-l(solid, md, $color);
+                @include bl(solid, md, $color);
                 @include bg-color(light, lighter);
 
                 .alert-header {
@@ -57,7 +60,7 @@
         }
 
         .alert-icon {
-            @include font-size(xl);
+            font-size: var(--icon-size);
             @include mr(lg);
         }
 
@@ -73,8 +76,7 @@
 
             .alert-heading {
                 font-weight: bold;
-                @include mt(none);
-                @include mb(none);
+                @include my(none);
             }
 
             .alert-close {
