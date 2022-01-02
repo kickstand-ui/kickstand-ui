@@ -43,7 +43,7 @@ export class AccordionSlide implements ComponentInterface, IDismissible {
 
     render() {
         return (
-            <Host class="accordion-slide">
+            <Host>
                 <h3 class="accordion-heading">
                     <button id={this.controlId} class="accordion-control" aria-controls={this.panelId} aria-expanded={`${this.expanded}`} onClick={() => this.toggleSlide()}>
                         <span ref={el => el.innerHTML = sanitizeHTML(this.heading) as string}></span>

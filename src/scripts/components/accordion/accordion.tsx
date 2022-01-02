@@ -9,7 +9,7 @@ export class Accordion implements ComponentInterface {
 
     render() {
         return (
-            <Host class={`ks-accordion ${this.size}`}>
+            <Host class={`${this.size}`}>
                 <slot />
             </Host>
         );

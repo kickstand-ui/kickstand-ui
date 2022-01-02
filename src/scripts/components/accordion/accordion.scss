@@ -1,6 +1,6 @@
 @import "../../../scss/00_Abstracts/index";
 
-.ks-accordion {
+ks-accordion {
     --border-radius: #{var(--ks-border-radius-sm)};
     --expanded-bg-color: #{color(light, lighter)};
     --expanded-color: #{text-color-value(light, lighter)};
@@ -10,7 +10,7 @@
     @include shadow-var(--shadow);
     @include r-var(--border-radius);
 
-    .accordion-slide {
+    accordion-slide {
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -106,7 +106,7 @@
     }
 
     &.sm {
-        .accordion-slide {
+        accordion-slide {
             .accordion-heading {
                 .accordion-control {
                     @include py(sm);
@@ -116,7 +116,7 @@
     }
 
     &.md {
-        .accordion-slide {
+        accordion-slide {
             .accordion-heading {
                 .accordion-control {
                     @include py(md);
@@ -126,7 +126,7 @@
     }
 
     &.lg {
-        .accordion-slide {
+        accordion-slide {
             .accordion-heading {
                 .accordion-control {
                     @include py(lg);
