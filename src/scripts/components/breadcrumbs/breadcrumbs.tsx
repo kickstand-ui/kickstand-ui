@@ -40,7 +40,7 @@ export class Breadcrumbs implements ComponentInterface {
         const CustomTag = this.linkTag;
 
         return (
-            <Host role="navigation" aria-label="breadcrumbs" class="ks-breadcrumbs">
+            <Host role="navigation" aria-label="breadcrumbs">
                 <div class="slot">
                     <slot />
                 </div>
