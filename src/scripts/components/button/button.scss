@@ -1,6 +1,11 @@
 @import "../../../scss/00_Abstracts/index";
 
-.ks-button {
+ks-button {
+    --border-radius: #{var(--ks-border-radius-sm)};
+    --shadow: var(--ks-shadow-sm);
+    --focus-shadow: var(--ks-shadow-md);
+    --disabled-shadow: var(--ks-shadow-inner);
+
     display: inline-block;
     position: relative;
 
@@ -15,7 +20,8 @@
         width: 100%;
         text-align: center;
         display: block;
-        @include r(sm);
+        border-radius: var(--border-radius);
+        @include shadow-var(--shadow);
         @include p(md);
         @include shadow(xs);
         @include transition($property: box-shadow);
@@ -23,7 +29,7 @@
 
         &:focus,
         &:hover:not(:disabled) {
-            @include shadow(md);
+            @include shadow-var(--focus-shadow);
             @include transition($property: box-shadow);
         }
 
@@ -35,7 +41,7 @@
         &:disabled {
             opacity: 0.6;
             cursor: not-allowed;
-            @include shadow(inner);
+            @include shadow-var(--disabled-shadow);
 
             * {
                 pointer-events: none;
@@ -168,6 +174,7 @@
 
                 &.link {
                     @include color($color);
+                    @include r(none);
 
                     &:focus,
                     &:hover:not(:disabled) {
