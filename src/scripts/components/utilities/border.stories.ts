@@ -12,7 +12,7 @@ export const borders = () => {
 
 export const borderSizes = () => {
     return (`<ks-grid class="m-xxl">
-        ${sizes.map(p => `<ks-column class="mx-md bg-light-light b-xs b-${p}">b-${p}</ks-column>`).join('')}
+        ${sizes.map(p => `<ks-column class="mx-md bg-light-light b-${p}">b-${p}</ks-column>`).join('')}
     </ks-grid>`);
 };
 
