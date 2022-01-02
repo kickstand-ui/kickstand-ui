@@ -1,8 +1,9 @@
 @import "../../../scss/00_Abstracts/index";
 
-.ks-alert {
-    --border-radius: #{var(--ks-border-radius-sm)};
+ks-alert {
+    --border-radius: var(--ks-border-radius-sm);
     --icon-size: var(--ks-font-size-xl);
+    --note-border-size: #{spacing(md)};
 
     display: block;
 
@@ -46,6 +47,7 @@
                 @include b();
                 @include bl(solid, md, $color);
                 @include bg-color(light, lighter);
+                border-left-width: var(--note-border-size);
 
                 .alert-header {
                     @if(text-color($color, dark)==black) {

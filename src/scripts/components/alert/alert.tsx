@@ -59,7 +59,7 @@ export class Alert implements ComponentInterface, IDismissible {
         };
 
         return (
-            <Host {...props} class="ks-alert">
+            <Host {...props}>
                 <div id={this.alertId} class={classes}>
                     {!this.hideIcon && <ks-icon class="alert-icon" icon={this.icon}></ks-icon>}
                     <div class="content">
