@@ -2,7 +2,7 @@
 
 $breakpoints: (xl, lg, md, sm, xs, xxs);
 
-.ks-dropdown {
+ks-dropdown {
     position: relative;
     display: inline-block;
     line-height: 1;
@@ -61,7 +61,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         @include transition();
         @include bg-color(white);
 
-        .dropdown-item {
+        ks-dropdown-item {
             >* {
                 display: inline-block;
                 @include px(xs);

@@ -17,7 +17,7 @@ export class DropdownItem {
 
     render() {
         return (
-            <Host role="listitem" onClick={() => this.clickHandler()} class="dropdown-item">
+            <Host role="listitem" onClick={() => this.clickHandler()}>
                 <slot />
             </Host>
         );
