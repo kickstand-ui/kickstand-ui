@@ -1,11 +1,23 @@
 @import "../../../scss/00_Abstracts/index";
 
-.ks-card {
+ks-card {
+    --border-radius: var(--ks-border-radius-sm);
+    --shadow: var(--ks-shadow-sm);
+    --focus-shadow: var(--ks-shadow-sm);
+    --content-padding: var(--ks-spacing-size-md);
+
     position: relative;
     overflow: hidden;
-    @include r(sm);
+    @include r-var(--border-radius);
     @include b($color: light, $variant: dark);
-    @include shadow();
+    @include shadow-var(--shadow);
+    @include transition();
+
+    &:hover,
+    &:focus-within {
+        @include shadow-var(--focus-shadow);
+        @include transition();
+    }
 
     &.img-top {
         display: flex;
@@ -49,7 +61,7 @@
             bottom: 0;
             left: 0;
 
-            .card-body {
+            ks-card-body {
                 .body-header {
                     .heading,
                     .subheading {
@@ -84,9 +96,9 @@
         justify-content: space-between;
         height: 100%;
         width: 100%;
-        @include p(md);
+        padding: var(--content-padding);
 
-        .card-body {
+        ks-card-body {
             display: block;
 
             .body-header {
@@ -106,7 +118,7 @@
             }
         }
 
-        .card-footer {
+        ks-card-footer {
             display: block;
             @include mt(md);
         }
