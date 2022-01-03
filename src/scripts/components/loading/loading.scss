@@ -1,6 +1,6 @@
 @import "../../../scss/00_Abstracts/index";
 
-.ks-loading {
+ks-loading {
     display: inline-flex;
     align-items: center;
 
@@ -26,7 +26,7 @@
     }
 }
 
-.ks-loading-overlay {
+ks-loading-overlay {
     cursor: wait;
 
     .content {

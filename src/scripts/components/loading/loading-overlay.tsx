@@ -34,7 +34,7 @@ export class LoadingOverlay implements ComponentInterface, IDismissible {
 
     render() {
         return (
-            <Host class="ks-loading-overlay">
+            <Host>
                 <ks-overlay theme={this.theme} prevent-close absolute={this.absolute} ref={el => this.$overlay = el}>
                     <ks-loading icon={this.icon} message={this.message} show-message={this.showMessage} class={`text-${this.size}`} />
                 </ks-overlay>

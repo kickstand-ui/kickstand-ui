@@ -103,7 +103,6 @@ export class Overlay implements ComponentInterface, IDismissible {
 
     render() {
         let classes = {
-            'ks-overlay': true,
             [this.theme]: true,
             'absolute': this.absolute,
             'opened': this.isShowing
