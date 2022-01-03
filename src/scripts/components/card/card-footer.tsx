@@ -6,7 +6,7 @@ import { Component, h, ComponentInterface, Host } from '@stencil/core';
 export class CardFooter implements ComponentInterface {
     render() {
         return (
-            <Host class="card-footer">
+            <Host>
                 <slot />
             </Host>
         );

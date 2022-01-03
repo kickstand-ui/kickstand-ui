@@ -34,7 +34,6 @@ export class Card implements ComponentInterface {
 
     render() {
         let classes = {
-            'ks-card': true,
             [`img-${this.imgDirection}`]: true,
             'pointer': this.clickable && this.href !== '' && this.href !== undefined,
             [`collapse-${this.collapse}`]: this.imgDirection !== 'behind'

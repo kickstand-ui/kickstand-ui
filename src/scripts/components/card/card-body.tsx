@@ -9,7 +9,7 @@ export class CardBody implements ComponentInterface {
 
     render() {
         return (
-            <Host class="card-body">
+            <Host>
                 {(this.heading || this.subHeading) && <header class="body-header">
                     {this.heading && <h3 class="heading">{this.heading}</h3>}
                     {this.subHeading && <h4 class="subheading">{this.subHeading}</h4>}
