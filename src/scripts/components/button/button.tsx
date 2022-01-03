@@ -130,7 +130,7 @@ export class LinkButton implements ComponentInterface {
                         <slot />
                     </CustomTag>
                     : [
-                        <ks-loading-overlay theme={this.loadingTheme} message={this.loadingMessage} icon={this.loadingIcon} showMessage={this.showLoadingMessage} absolute  ref={el => this.$loading = el} onClick={e => this.clickHandler(e)}></ks-loading-overlay>,
+                        <ks-loading-overlay theme={this.loadingTheme} message={this.loadingMessage} icon={this.loadingIcon} showMessage={this.showLoadingMessage} absolute ref={el => this.$loading = el} onClick={e => this.clickHandler(e)}></ks-loading-overlay>,
                         <button {...props} class={classes} onClick={e => this.clickHandler(e)} onBlur={() => this.blurHandler()}>
                             <slot />
                         </button >

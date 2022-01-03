@@ -2,7 +2,7 @@
 
 ks-button {
     --border-radius: var(--ks-border-radius-sm);
-    --shadow: var(--ks-shadow-sm);
+    --shadow: var(--ks-shadow-xs);
     --focus-shadow: var(--ks-shadow-md);
     --disabled-shadow: var(--ks-shadow-inner);
 
@@ -23,7 +23,6 @@ ks-button {
         @include r-var(--border-radius);
         @include shadow-var(--shadow);
         @include p(md);
-        @include shadow(xs);
         @include transition($property: box-shadow);
 
 
@@ -220,6 +219,12 @@ ks-button {
                     @include ml(sm);
                 }
             }
+        }
+    }
+
+    ks-loading-overlay {
+        ks-overlay {
+            @include r-var(--border-radius);
         }
     }
 }
