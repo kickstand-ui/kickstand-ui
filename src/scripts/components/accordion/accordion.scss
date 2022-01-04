@@ -54,7 +54,6 @@
                 @include font-size(sm);
                 @include b();
                 @include px(lg);
-                @include mb(-xxs);
 
                 .accordion-icon {
                     line-height: 1;
@@ -72,6 +71,10 @@
                         transform: rotate(-180deg);
                         @include transition();
                     }
+                }
+
+                &[aria-expanded="false"] {
+                    @include mb(-xxs);
                 }
             }
         }
