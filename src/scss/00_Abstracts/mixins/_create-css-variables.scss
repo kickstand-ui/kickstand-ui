@@ -5,8 +5,8 @@
         --ks-content-width: #{$content-width};
         --ks-font-size-base: #{$font-size-base};
         --ks-line-height-base: #{$line-height-base};
-        --ks-default-outline: #{default-outline(style) var(--ks-spacing-size-#{default-outline(size)}) rgba(var(--ks-color-#{default-outline(color)}-base), 1)};
-        --ks-default-outline-offset: var(--ks-spacing-size-#{default-outline(offset)});
+        --ks-default-outline: #{default-outline(style) var(--ks-spacing-#{default-outline(size)}) rgba(var(--ks-color-#{default-outline(color)}-base), 1)};
+        --ks-default-outline-offset: var(--ks-spacing-#{default-outline(offset)});
         --ks-default-border: #{default-border(style) spacing(default-border(size)) rgba(var(--ks-color-#{default-border(color)}-base), 1)};
 
         @each $key, $value in $fonts {
@@ -18,7 +18,7 @@
         }
 
         @each $key, $value in $spacing-sizes {
-            --ks-spacing-size-#{$key}: #{$value};
+            --ks-spacing-#{$key}: #{$value};
         }
 
         @each $key, $value in $z-indexes {
