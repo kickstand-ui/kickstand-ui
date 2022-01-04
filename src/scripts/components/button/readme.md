@@ -47,7 +47,6 @@
 
  - [ks-alert](../alert)
  - [ks-autocomplete](../form-field/autocomplete)
- - [ks-carousel](../carousel)
  - [ks-dropdown](../dropdown)
  - [ks-form-field](../form-field)
  - [ks-gallery](../gallery)
@@ -69,7 +68,6 @@ graph TD;
   ks-loading --> ks-icon
   ks-alert --> ks-button
   ks-autocomplete --> ks-button
-  ks-carousel --> ks-button
   ks-dropdown --> ks-button
   ks-form-field --> ks-button
   ks-gallery --> ks-button
