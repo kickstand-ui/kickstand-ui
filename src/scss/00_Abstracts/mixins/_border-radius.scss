@@ -12,7 +12,7 @@
 
 @mixin rb($size: sm, $important: false) {
     @include rbl($size, $important);
-    @include rr($size, $important);
+    @include rbr($size, $important);
 }
 
 @mixin rl($size: sm, $important: false) {
