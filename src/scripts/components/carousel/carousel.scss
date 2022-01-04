@@ -1,6 +1,14 @@
 @import "../../../scss/00_Abstracts/index";
 
-.ks-carousel {
+ks-carousel {
+    --indicator-size: var(--ks-font-size-sm);
+    --indicator-radius: var(--ks-border-radius-circle);
+    --indicator-spacing: var(--ks-spacing-sm);
+    --indicator-margin-bottom: var(--ks-spacing-lg);
+    --control-size: var(--ks-font-size-xl);
+    --control-padding: var(--ks-spacing-xl);
+    --thumbnail-width: 9rem;
+
     display: block;
     position: relative;
 
@@ -12,7 +20,7 @@
             width: 100%;
             overflow: hidden;
 
-            .slide {
+            ks-carousel-slide {
                 position: relative;
                 float: left;
                 width: 100%;
@@ -21,29 +29,29 @@
                 visibility: hidden;
                 opacity: 0;
                 @include transition($speed: slow, $timing-function: ease);
-
+            
                 &[aria-hidden="false"] {
                     visibility: visible;
                     display: block;
                     opacity: 1;
                     @include transition($speed: slow, $timing-function: ease);
                 }
-
+            
                 &.pointer {
                     &:focus-within {
                         @include default-outline();
                     }
                 }
-
+            
                 .slide-image {
                     width: 100%;
-
+            
                     img {
                         display: block;
                         width: 100%;
                     }
                 }
-
+            
                 .content {
                     position: absolute;
                     top: 0;
@@ -51,30 +59,30 @@
                     right: 0;
                     bottom: 0;
                     color: white;
-                    padding-left: 3.75rem;
-                    padding-right: 3.75rem;
+                    padding: var(--indicator-margin-bottom) calc(var(--control-padding) * 2 + var(--control-size));
+                    padding-bottom: calc(var(--indicator-size) + var(--indicator-margin-bottom));
                     text-shadow: 2px 2px 4px color(dark);
-                    margin-bottom: 2.75rem;
-                    @include mt(xxl);
-
+            
                     >* {
                         color: white;
                     }
                 }
-            }
+            }            
         }
 
         .control {
             position: absolute;
             top: 0;
             bottom: 0;
-            width: 10%;
             color: white;
             background-color: transparent;
             border: none;
             display: flex;
+            justify-content: center;
+            align-items: center;
             outline: 0;
-            @include font-size(xl);
+            font-size: var(--control-size);
+            padding: var(--control-padding);
 
             &:focus,
             &:hover {
@@ -87,11 +95,6 @@
 
             &.next {
                 right: 0;
-            }
-
-            .ks-button {
-                outline: 0;
-                width: 100%;
             }
 
             svg {
@@ -119,18 +122,19 @@
             bottom: 0;
             right: 0;
             left: 0;
+            font-size: var(--indicator-size);
+            margin-bottom: var(--indicator-margin-bottom);
             @include mx(auto);
-            @include mb(xxl);
             @include z-index(sm);
 
             .indicator {
-                width: 1rem;
-                height: 1rem;
+                width: 1em;
+                height: 1em;
                 background-color: transparent;
+                margin: 0 var(--indicator-spacing);
                 filter: drop-shadow(0 0 0.25rem color-value(dark));
                 @include b($size: xxxs, $color: light, $variant: light);
-                @include r(circle);
-                @include mx(sm);
+                @include r-var(--indicator-radius);
                 @include transition();
 
                 @include hover-focus {
@@ -147,7 +151,6 @@
             .autoplay-toggle {
                 background-color: transparent;
                 border: 0;
-                // color: white;
                 filter: drop-shadow(0 0 0.25rem color-value(dark));
                 @include color(light, light);
                 @include p(none);
@@ -165,7 +168,7 @@
             flex-grow: 1;
             flex-basis: 0;
             opacity: 0.5;
-            max-width: 9rem;
+            max-width: var(--thumbnail-width);
             @include b(none);
             @include p(none);
             @include m(none);
@@ -190,11 +193,7 @@
         }
 
         .thumbnail+.thumbnail {
-            @include ml(sm);
-        }
-
-        .indicator+.indicator {
-            @include pl(xs);
+            margin-left: var(--indicator-spacing);
         }
     }
 }
