@@ -122,9 +122,6 @@ export class FormField implements ComponentInterface {
 
     @Watch('value')
     protected async valueChanged() {
-        if (this.type === 'autocomplete')
-            return;
-
         if (this.type !== 'file' && this.$input && this.$input.value !== this.value)
             this.$input.value = this.value?.toString();
 
@@ -132,7 +129,6 @@ export class FormField implements ComponentInterface {
             this.invalid = !this.$input.checkValidity();
 
         let detail = await this.validateField();
-
         this.updated.emit(detail);
     }
 
@@ -167,18 +163,18 @@ export class FormField implements ComponentInterface {
         let inputData: IFormFieldData = e.detail;
         this.invalid = !inputData.isValid;
         this.validityState = inputData.validity;
-        this.value = inputData.value;
         if (this.type === 'checkbox')
             this.checked = inputData.value as boolean;
 
-        this.updated.emit(inputData);
+        this.value = this.type === 'checklist' 
+            ? [...(inputData.value as Array<string>)] 
+            : inputData.value;
     }
 
     private async validateField(): Promise<IFormFieldData> {
         if (this.$customInput) {
             const input = await this.$customInput.validate();
             this.invalid = !input.isValid;
-            this.value = input.value;
             this.validityState = input.validity
             return input;
         }
