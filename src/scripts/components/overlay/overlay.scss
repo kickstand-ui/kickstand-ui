@@ -16,6 +16,16 @@ ks-overlay {
     @include z-index(xl);
     @include transition();
 
+    &.light {
+        visibility: hidden;
+        background-color: color-value(light, 0.6);
+    }
+
+    &.dark {
+        visibility: hidden;
+        background-color: color-value(dark, 0.6);
+    }
+
     &.opened {
         visibility: visible;
         opacity: 1;
@@ -24,14 +34,6 @@ ks-overlay {
         .content {
             @include transition();
         }
-    }
-
-    &.light {
-        background-color: color-value(light, 0.6);
-    }
-
-    &.dark {
-        background-color: color-value(dark, 0.6);
     }
 
     &.absolute {
