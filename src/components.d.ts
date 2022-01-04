@@ -111,7 +111,6 @@ export namespace Components {
     interface KsCarouselSlide {
         "align": 'left' | 'center' | 'right';
         "alt": string;
-        "clickable": boolean;
         "fallbackSrc": string;
         "href": string;
         "hrefProp": string;
@@ -803,7 +802,6 @@ declare namespace LocalJSX {
     interface KsCarouselSlide {
         "align"?: 'left' | 'center' | 'right';
         "alt"?: string;
-        "clickable"?: boolean;
         "fallbackSrc"?: string;
         "href"?: string;
         "hrefProp"?: string;

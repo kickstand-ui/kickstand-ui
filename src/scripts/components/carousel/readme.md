@@ -11,7 +11,6 @@
 | ------------- | -------------- | ----------- | ------------------------------- | ----------- |
 | `align`       | `align`        |             | `"center" \| "left" \| "right"` | `'center'`  |
 | `alt`         | `alt`          |             | `string`                        | `undefined` |
-| `clickable`   | `clickable`    |             | `boolean`                       | `false`     |
 | `fallbackSrc` | `fallback-src` |             | `string`                        | `undefined` |
 | `href`        | `href`         |             | `string`                        | `undefined` |
 | `hrefProp`    | `href-prop`    |             | `string`                        | `'href'`    |

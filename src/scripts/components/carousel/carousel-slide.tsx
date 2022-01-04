@@ -15,7 +15,6 @@ export class CarouselSlide implements ComponentInterface {
     @Prop() href: string;
     @Prop() align: 'left' | 'center' | 'right' = 'center';
     @Prop() position: 'top' | 'center' | 'bottom' = 'center';
-    @Prop() clickable: boolean = false;
     @Prop() lazy: boolean = false;
     @Prop() threshold: number = 300;
     @Prop() imgWidth: number;
@@ -25,7 +24,7 @@ export class CarouselSlide implements ComponentInterface {
     @Prop() hrefProp: string = 'href';
 
     componentDidLoad() {
-        if (this.clickable)
+        if (this.href)
             this.$content.addEventListener('click', () => this.$link.click());
     }
 
@@ -53,13 +52,12 @@ export class CarouselSlide implements ComponentInterface {
 
     render() {
         let classes = {
-            'slide': true,
-            'pointer': this.clickable && this.href !== '' && this.href !== undefined
+            'pointer': this.href !== '' && this.href !== undefined
         };
 
         let contentClasses = {
             'content': true,
-            'display-flex': true,
+            'd-flex': true,
             'flex-column': true,
             [`align-${this.getAlignment()}`]: true,
             [`justify-${this.getPosition()}`]: true,
@@ -79,7 +77,7 @@ export class CarouselSlide implements ComponentInterface {
                 <div class={contentClasses} ref={el => this.$content = el}>
                     <slot />
                 </div>
-                {(this.clickable && this.href) && <CustomTag {...linkProps} ref={el => this.$link = el}>link to {this.href}</CustomTag>}
+                {this.href && <CustomTag {...linkProps} ref={el => this.$link = el}>link to {this.href}</CustomTag>}
             </Host>
         );
     }
