@@ -3,6 +3,12 @@
 $breakpoints: (xl, lg, md, sm, xs, xxs);
 
 ks-dropdown {
+    --button-text-size: var(--ks-font-size-sm);
+    --button-text-margin-right: var(--ks-spacing-sm);
+    --indicator-size: var(--ks-font-size-sm);
+    --contents-border-radius: var(--ks-border-radius-sm);
+    --contents-padding: var(--ks-spacing-sm);
+
     position: relative;
     display: inline-block;
     line-height: 1;
@@ -22,7 +28,8 @@ ks-dropdown {
         }
 
         .dropdown-text {
-            @include mr(xs);
+            font-size: var(--button-text-size);
+            margin-right: var(--button-text-margin-right);
         }
 
         .dropdown-icon {
@@ -30,6 +37,7 @@ ks-dropdown {
             @include transition();
 
             .icon {
+                font-size: var(--indicator-size);
                 @include mx(-xs);
             }
         }
@@ -54,10 +62,10 @@ ks-dropdown {
         overflow-x: auto;
         transform: translateY(-0.25rem);
         background-color: white;
-        @include r(sm);
+        border-radius: var(--contents-border-radius);
+        padding: var(--contents-padding);
         @include b();
         @include z-index(xs);
-        @include p(sm);
         @include transition();
         @include bg-color(white);
 
@@ -85,7 +93,7 @@ ks-dropdown {
                 }
             }
 
-            .ks-button {
+            ks-button {
                 width: 100%;
                 @include p(none);
 
