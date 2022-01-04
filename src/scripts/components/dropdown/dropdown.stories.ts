@@ -21,7 +21,7 @@ export const playground = () => {
     const collapse = select('collapse', ['xxs', 'xs', 'sm', 'md', 'lg', 'xl'], 'xs');
 
     return (`
-        <div class="display-flex pl-xxl ${dropdownAlignment === 'right' ? 'justify-end' : ''}">
+        <div class="d-flex pl-xxl ${dropdownAlignment === 'right' ? 'justify-end' : ''}">
             <ks-dropdown
                 class="m-lg"
                 text="${dropdownText}" 
