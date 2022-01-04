@@ -155,15 +155,15 @@ export class Carousel implements ComponentInterface {
             </div>
         );
         let controls = [
-            !this.hideControls && <ks-button display="link" color="light" class="control prev" onClick={this.prevSlide.bind(this)}>
+            !this.hideControls && <button class="control prev" onClick={this.prevSlide.bind(this)}>
                 <ks-icon class="control-icon text-xl" icon="chevron_left"></ks-icon>
                 <span class="sr-only">previous slide</span>
-            </ks-button>,
+            </button>,
             !this.thumbnails && indicators,
-            !this.hideControls && <ks-button display="link" color="light" class="control next" onClick={this.nextSlide.bind(this)}>
+            !this.hideControls && <button class="control next" onClick={this.nextSlide.bind(this)}>
                 <ks-icon class="control-icon text-xl" icon="chevron_right"></ks-icon>
                 <span class="sr-only">next slide</span>
-            </ks-button>,
+            </button>,
         ];
         let thumbnailList = (
             <div class="thumbnails" role="tablist">
@@ -177,14 +177,14 @@ export class Carousel implements ComponentInterface {
         );
 
         return (
-            <Host class="ks-carousel">
+            <Host>
                 {this.$slides.length > 0 && <div class="slide-wrapper">
                     <div class="slides">
                         <slot />
                     </div>
                     {controls}
                 </div>}
-                {this.thumbnails && this.$slides.length > 0 && thumbnailList}
+                {!this.hideIndicators && this.thumbnails && this.$slides.length > 0 && thumbnailList}
             </Host>
         );
     }
