@@ -69,53 +69,6 @@ ks-dropdown {
         @include transition();
         @include bg-color(white);
 
-        ks-dropdown-item {
-            >* {
-                display: inline-block;
-                @include px(xs);
-                @include py(md);
-            }
-
-            a {
-                text-align: left;
-                text-decoration: none;
-                display: block;
-                width: 100%;
-                font-weight: normal;
-                @include color(primary);
-                @include font-size(sm);
-            }
-
-            a,
-            button {
-                @include hover {
-                    background-color: color-value(light, lighter);
-                }
-            }
-
-            ks-button {
-                width: 100%;
-                @include p(none);
-
-                &[display="link"]>* {
-                    text-align: left;
-                    text-decoration: none;
-                    display: block;
-                    width: 100%;
-                    font-weight: normal;
-                    @include color(primary);
-                    @include font-size(sm);
-                    @include px(xs);
-                    @include py(md);    
-
-                    @include hover {
-                        background-color: color-value(light, lighter);
-                    }
-                }
-
-            }
-        }
-
         &.align-left {
             left: 0;
             right: auto;
@@ -171,6 +124,61 @@ ks-dropdown {
         &[display="link"] {
             .dropdown-contents {
                 @include mt(xs);
+            }
+        }
+    }
+}
+
+ks-dropdown-item {
+    --padding-x: var(--ks-spacing-xs);
+    --padding-y: var(--ks-spacing-md);
+    --font-size: var(--ks-font-size-sm);
+    --item-color: var(--ks-color-primary-base);
+    --margin-bottom: var(--ks-spacing-sm);
+
+    &:not(:last-child) {
+        margin-bottom: var(--margin-bottom);
+    }
+
+    >* {
+        display: inline-block;
+        padding: var(--padding-y) var(--padding-y);
+    }
+
+    a {
+        text-align: left;
+        text-decoration: none;
+        width: 100%;
+        font-weight: normal;
+        font-size: var(--font-size);
+        color: rgb(var(--item-color));
+    }
+
+    a,
+    button {
+        padding: var(--padding-y) var(--padding-y);
+
+        @include hover {
+            background-color: color-value(light, lighter);
+        }
+    }
+
+    ks-button {
+        width: 100%;
+        @include p(none);
+
+        .button.link:not(:disabled) {
+            text-align: left;
+            text-decoration: none;
+            width: 100%;
+            font-weight: normal;
+            font-size: var(--font-size);
+            padding: var(--padding-y) var(--padding-y);
+            color: rgb(var(--item-color));
+
+            @include hover {
+                text-decoration: none;
+                background-color: color-value(light, lighter);
             }
         }
     }
