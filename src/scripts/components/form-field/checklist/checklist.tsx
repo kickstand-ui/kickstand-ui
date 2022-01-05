@@ -50,7 +50,6 @@ export class Checklist implements ComponentInterface, ICustomInput {
 
     private handleValueChanged() {
         let detail = this.getFieldData();
-
         this.checked.emit(detail);
     }
 
