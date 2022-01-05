@@ -107,7 +107,7 @@ export class Form implements ComponentInterface {
         };
 
         return (
-            <Host class="ks-form">
+            <Host>
                 <form class={classes} ref={el => this.$form = el} onSubmit={(e) => this.submitHandler(e)} onReset={() => this.clearHandler()} novalidate>
                     <slot />
                     {!this.disableErrorMessage && <ks-alert class={{ 'form-error': true, 'hide': !this.invalid }} color="danger">

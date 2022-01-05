@@ -1,6 +1,6 @@
 @import "../../../scss/00_Abstracts/index";
 
-.ks-form {
+ks-form {
     display: block;
     @include r(sm);
     @include b($color: light);
