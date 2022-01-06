@@ -1,18 +1,25 @@
 @import "../../../scss/00_Abstracts/index";
 
 ks-form {
+    --border-radius: var(--ks-border-radius-sm);
+    --border-color: var(--ks-color-light-base);
+    --padding: var(--ks-spacing-lg);
+    --background-color: var(--ks-color-light-lighter);
+    --content-spacing: var(--ks-spacing-lg);
+
     display: block;
-    @include r(sm);
-    @include b($color: light);
-    @include p(lg);
-    @include bg-color(light, lighter);
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    background-color: rgb(var(--background-color));
+    @include b();
+    border-color: rgb(var(--border-color));
 
     .form {
         &.inline-form {
             display: flex;
             align-items: flex-end;
 
-            .ks-form-field {
+            ks-form-field {
                 width: 100%;
                 @include m(none);
 
@@ -22,7 +29,7 @@ ks-form {
                 }
             }
             
-            .ks-button {
+            ks-button {
                 .button {
                     @include rl(none);
                 }
@@ -35,11 +42,11 @@ ks-form {
         
         > {
             *:not(:last-child) {
-                @include mb(lg);
+                margin-bottom: var(--content-spacing);
             }
 
             :last-child {
-                @include mt(lg);
+                margin-top: var(--content-spacing);
             }
 
             :nth-last-child(2) {
