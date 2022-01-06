@@ -113,7 +113,7 @@ export class LinkButton implements ComponentInterface {
             'role' : this.role,
             'aria-selected': this.selected && `${this.selected}`,
             'aria-haspopup': this.haspopup && `${this.haspopup}`,
-            'aria-expanded': this.expanded && `${this.expanded}`,
+            'aria-expanded': this.controls && `${this.expanded}`,
             'aria-controls': this.controls,
             'aria-described-by': this.describedBy,
             'disabled': this.disabled || this.loading,
