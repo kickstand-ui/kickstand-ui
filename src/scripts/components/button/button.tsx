@@ -18,6 +18,7 @@ export class LinkButton implements ComponentInterface {
     @Prop() hrefProp: string = 'href';
     @Prop() cssClass: string = '';
     @Prop() buttonClass: string = '';
+    @Prop() role: string;
     @Prop() haspopup: boolean = false;
     @Prop() selected: boolean = false;
     @Prop() expanded: boolean = false;
@@ -109,9 +110,10 @@ export class LinkButton implements ComponentInterface {
         };
 
         let props = {
-            'aria-selected': `${this.selected}`,
-            'aria-haspopup': `${this.haspopup}`,
-            'aria-expanded': this.controls && `${this.expanded}`,
+            'role' : this.role,
+            'aria-selected': this.selected && `${this.selected}`,
+            'aria-haspopup': this.haspopup && `${this.haspopup}`,
+            'aria-expanded': this.expanded && `${this.expanded}`,
             'aria-controls': this.controls,
             'aria-described-by': this.describedBy,
             'disabled': this.disabled || this.loading,
