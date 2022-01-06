@@ -220,7 +220,11 @@ export class FormField implements ComponentInterface {
     }
 
     private getInputName() {
-        return this.name || this.label ? this.label.toLowerCase().replace(/ /g, '-') : '';
+        return this.name 
+            ? this.name 
+            : this.label 
+                ? this.label.toLowerCase().replace(/ /g, '-') 
+                : '';
     }
 
     private async onBlur() {

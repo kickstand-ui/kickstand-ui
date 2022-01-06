@@ -246,8 +246,13 @@
             }
 
             .input-button {
+                pointer-events: all;
                 @include mr(none);
                 @include font-size(sm);
+
+                .button {
+                    @include p(xs);
+                }
 
                 .icon {
                     @include font-size(sm);

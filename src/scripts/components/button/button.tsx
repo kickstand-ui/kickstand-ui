@@ -19,6 +19,7 @@ export class LinkButton implements ComponentInterface {
     @Prop() cssClass: string = '';
     @Prop() buttonClass: string = '';
     @Prop() haspopup: boolean = false;
+    @Prop() selected: boolean = false;
     @Prop() expanded: boolean = false;
     @Prop() loading: boolean;
     @Prop() disabled: boolean;
@@ -108,6 +109,7 @@ export class LinkButton implements ComponentInterface {
         };
 
         let props = {
+            'aria-selected': `${this.selected}`,
             'aria-haspopup': `${this.haspopup}`,
             'aria-expanded': this.controls && `${this.expanded}`,
             'aria-controls': this.controls,

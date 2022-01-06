@@ -68,6 +68,7 @@ export namespace Components {
         "loadingIcon": string;
         "loadingMessage": string;
         "loadingTheme": 'dark' | 'light';
+        "selected": boolean;
         "showLoadingMessage": boolean;
         "shows": string;
         "size": 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -771,6 +772,7 @@ declare namespace LocalJSX {
         "loadingTheme"?: 'dark' | 'light';
         "onBlurred"?: (event: CustomEvent<any>) => void;
         "onClicked"?: (event: CustomEvent<MouseEvent>) => void;
+        "selected"?: boolean;
         "showLoadingMessage"?: boolean;
         "shows"?: string;
         "size"?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';

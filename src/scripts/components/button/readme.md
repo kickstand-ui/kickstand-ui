@@ -27,6 +27,7 @@
 | `loadingIcon`        | `loading-icon`         |             | `string`                                                                                                              | `undefined`    |
 | `loadingMessage`     | `loading-message`      |             | `string`                                                                                                              | `'Loading...'` |
 | `loadingTheme`       | `loading-theme`        |             | `"dark" \| "light"`                                                                                                   | `'light'`      |
+| `selected`           | `selected`             |             | `boolean`                                                                                                             | `false`        |
 | `showLoadingMessage` | `show-loading-message` |             | `boolean`                                                                                                             | `false`        |
 | `shows`              | `shows`                |             | `string`                                                                                                              | `undefined`    |
 | `size`               | `size`                 |             | `"lg" \| "md" \| "sm" \| "xl" \| "xs"`                                                                                | `'md'`         |
