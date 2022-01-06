@@ -27,6 +27,7 @@
 | `loadingIcon`        | `loading-icon`         |             | `string`                                                                                                              | `undefined`    |
 | `loadingMessage`     | `loading-message`      |             | `string`                                                                                                              | `'Loading...'` |
 | `loadingTheme`       | `loading-theme`        |             | `"dark" \| "light"`                                                                                                   | `'light'`      |
+| `role`               | `role`                 |             | `string`                                                                                                              | `undefined`    |
 | `selected`           | `selected`             |             | `boolean`                                                                                                             | `false`        |
 | `showLoadingMessage` | `show-loading-message` |             | `boolean`                                                                                                             | `false`        |
 | `shows`              | `shows`                |             | `string`                                                                                                              | `undefined`    |
