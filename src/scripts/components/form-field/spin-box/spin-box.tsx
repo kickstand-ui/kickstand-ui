@@ -60,18 +60,16 @@ export class SpinBox implements ComponentInterface, ICustomInput {
         if (this.disabled)
             return;
 
-        let value = Number(this.$input.value);
-        this.value = value - this.step;
-        this.$input.value = this.value.toString();
+        this.$input.stepDown();
+        this.value = Number(this.$input.value);
     }
 
     private increaseClickHandler() {
         if (this.disabled)
             return;
 
-        let value = Number(this.$input.value);
-        this.value = value + this.step;
-        this.$input.value = this.value.toString();
+        this.$input.stepUp();
+        this.value = Number(this.$input.value);
     }
 
     private inputHandler() {
