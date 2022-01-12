@@ -258,7 +258,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
         }
 
         return (
-            <Host class="ks-autocomplete">
+            <Host>
                 <select ref={e => this.$select = e} {...selectProps}>
                     <slot />
                 </select>
