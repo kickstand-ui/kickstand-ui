@@ -6,6 +6,7 @@ ks-form-field {
     --error-message-size: var(--ks-font-size-xs);
     --error-message-color: var(--ks-color-danger-base);
     --input-background-color: white;
+    --input-color: var(--ks-color-dark-base);;
     --input-font-size: var(--ks-font-size-sm);
     --disabled-color: var(--ks-color-dark-base);
     --disabled-background-color: var(--ks-color-light-lighter);
@@ -72,6 +73,7 @@ ks-form-field {
     .form-input {
         width: 100%;
         background-color: rgb(var(--input-background-color));
+        color: rgb(var(--input-color));
         font-size: var(--input-font-size);
         @include b();
         @include p(md);
@@ -244,6 +246,7 @@ ks-form-field {
             top: 50%;
             transform: translateY(-50%);
             background-color: rgb(var(--input-background-color));
+            color: rgb(var(--input-color));
             font-size: var(--icon-size);
             @include ml(md);
         }
@@ -254,6 +257,7 @@ ks-form-field {
             top: 50%;
             transform: translateY(-50%);
             background-color: rgb(var(--input-background-color));
+            color: rgb(var(--input-color));
             font-size: var(--icon-size);
             @include mr(sm);
 
@@ -283,6 +287,7 @@ ks-form-field {
             appearance: none;
             line-height: 1.5;
             background-color: rgb(var(--input-background-color));
+            color: rgb(var(--input-color));
             -webkit-appearance: none;
             -moz-appearance: none;
             -o-appearance: none;
