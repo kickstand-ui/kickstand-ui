@@ -14,7 +14,7 @@ ks-autocomplete {
 
             &:disabled {
                 cursor: not-allowed;
-                background-color: rgb(var(--disabled-background-color));
+                background-color: rgb(var(--input-background-color));
                 color: rgb(var(--disabled-color));
                 @include shadow(none);
             }
@@ -55,7 +55,7 @@ ks-autocomplete {
             right: 0;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgb(var(--disabled-background-color));
+            background-color: rgb(var(--input-background-color));
             color: rgb(var(--icon-color));
             @include font-size(md);
             @include mr(sm);
