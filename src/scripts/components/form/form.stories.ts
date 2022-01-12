@@ -1,6 +1,6 @@
 import { text, select, boolean } from "@storybook/addon-knobs";
 
-export default { title: 'Components/Form' };
+export default { title: 'Forms/Form' };
 
 export const form = () => {
     const action = text('action', '');

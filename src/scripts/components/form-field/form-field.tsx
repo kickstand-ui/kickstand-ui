@@ -133,7 +133,7 @@ export class FormField implements ComponentInterface {
     }
 
     componentDidLoad() {
-        if (this.type !== 'select' || this.datalist) {
+        if (this.type !== 'select' || !this.datalist) {
             const $options = Array.from(this.$el.querySelectorAll('option')) as HTMLElement[];
             $options.forEach(x => x.hidden = true);
         }
@@ -277,7 +277,6 @@ export class FormField implements ComponentInterface {
         };
         props = this.setProps(props);
         let classes = {
-            'ks-form-field': true,
             'invalid': this.invalid && !this.disabled,
             'inline': this.inline
         };
@@ -384,9 +383,9 @@ export class FormField implements ComponentInterface {
 
         let formField = {
             'checkbox': [
-                !this.disableErrorMessage && <div class="error-message text-danger" role="alert" aria-live="assertive">
+                !this.disableErrorMessage && <div class="error-message" role="alert" aria-live="assertive">
                     {(this.invalid && !this.disabled) && <div class="error-text">
-                        <ks-icon icon="warning" class="mr-xs" />
+                        <ks-icon icon="warning" />
                         <span>{this.getErrorMessage()}</span>
                     </div>}
                 </div>,

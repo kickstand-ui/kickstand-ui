@@ -1,6 +1,19 @@
 @import "../../../scss/00_Abstracts/index";
 
-.ks-form-field {
+ks-form-field {
+    --border-radius: var(--ks-border-radius-sm);
+    --help-text-size: var(--ks-font-size-xs);
+    --error-message-size: var(--ks-font-size-xs);
+    --error-message-color: var(--ks-color-danger-base);
+    --input-background-color: white;
+    --input-font-size: var(--ks-font-size-sm);
+    --disabled-color: var(--ks-color-dark-base);
+    --disabled-background-color: var(--ks-color-light-lighter);
+    --placeholder-color: var(--ks-color-dark-lighter);
+    --icon-color: var(--ks-color-light-darker);
+    --icon-size: var(--ks-font-size-md);
+    --input-button-color: var(--ks-color-dark-lighter);
+
     display: block;
     position: relative;
 
@@ -36,29 +49,34 @@
 
         .help-text {
             font-weight: normal;
+            font-size: var(--help-text-size);
             @include color(dark, light);
-            @include font-size(xs);
         }
 
         .error-message {
-            @include font-size(xs);
+            font-size: var(--error-message-size);
+            color: rgb(var(--error-message-color));
 
             .error-text {
                 display: flex;
                 align-items: center;
                 @include mb(xs);
+
+                ks-icon {
+                    @include mr(xs);
+                }
             }
         }
     }
 
     .form-input {
         width: 100%;
-        background-color: white;
-        @include font-size(sm);
+        background-color: rgb(var(--input-background-color));
+        font-size: var(--input-font-size);
         @include b();
         @include p(md);
         @include shadow(inner);
-        @include r(sm);
+        @include r-var(--border-radius);
 
         &:not(textarea, [type="range"]) {
             line-height: 1;
@@ -188,19 +206,19 @@
 
         &:disabled {
             cursor: not-allowed;
-            @include bg-color(light, lighter);
-            @include color(dark, 0.5);
+            background-color: rgb(var(--disabled-background-color));
+            color: rgb(var(--disabled-color));
             @include shadow(none);
         }
 
         &::placeholder {
             opacity: 0.7;
             font-style: italic;
-            @include color(dark, lighter);
+            color: rgb(var(--placeholder-color));
         }
 
         &[aria-invalid="true"] {
-            @include b($color: danger);
+            border-color: rgb(var(--error-message-color));
         }
 
         &.display-icon-left {
@@ -216,8 +234,8 @@
         position: relative;
 
         .input-icon {
+            color: rgb(var(--icon-color));
             @include p(xxs);
-            @include color(light, darker);
         }
 
         .icon-left {
@@ -225,9 +243,9 @@
             left: 0;
             top: 50%;
             transform: translateY(-50%);
-            background-color: white;
+            background-color: rgb(var(--input-background-color));
+            font-size: var(--icon-size);
             @include ml(md);
-            @include font-size(md);
         }
 
         .icon-right {
@@ -235,8 +253,8 @@
             right: 0;
             top: 50%;
             transform: translateY(-50%);
-            background-color: white;
-            @include font-size(md);
+            background-color: rgb(var(--input-background-color));
+            font-size: var(--icon-size);
             @include mr(sm);
 
             .input-icon {
@@ -244,12 +262,12 @@
             }
 
             .input-button {
+                font-size: var(--input-font-size);
                 @include mr(none);
-                @include font-size(sm);
 
                 .icon {
-                    @include font-size(sm);
-                    @include color(dark, lighter)
+                    font-size: var(--input-font-size);
+                    color: rgb(var(--input-button-color));
                 }
             }
         }
@@ -264,11 +282,11 @@
             cursor: pointer;
             appearance: none;
             line-height: 1.5;
-            background-color: white;
+            background-color: rgb(var(--input-background-color));
             -webkit-appearance: none;
             -moz-appearance: none;
             -o-appearance: none;
-            @include r(sm);
+            @include r-var(--border-radius);
             @include py(none);
 
             &::-ms-expand {

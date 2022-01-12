@@ -1,6 +1,6 @@
 import { text, select, boolean, number } from '@storybook/addon-knobs';
 
-export default { title: 'Components/Form Field' };
+export default { title: 'Forms/Form Field' };
 
 const types = ['autocomplete', 'text', 'tel', 'url', 'password', 'date', 'email', 'search', 'number', 'hidden', 'color', 'file', 'month', 'range', 'spin-box', 'textarea', 'select', 'datalist', 'checkbox', 'checklist', 'radiolist', 'spin-box'].sort();
 const sizes = ['sm', 'md', 'lg'];
@@ -115,7 +115,7 @@ export const selectTest = () => {
     const debounce = number('debounce', 0);
     return (`<div class="m-xxl">
         <ks-form-field 
-            type="${type}"
+            type="${type === 'datalist' ? 'text' : type}"
             label="${label}" 
             hide-label="${hideLabel}" 
             help-text="${helpText}"
@@ -136,6 +136,7 @@ export const selectTest = () => {
             pattern="${pattern}"
             validate-on-input="${validateOnInput}"
             debounce="${debounce}"
+            datalist="${type === 'datalist'}"
             >
             <option selected>Choose a value</option>
             <option>Value 1</option>
@@ -179,7 +180,7 @@ export const radio = () => {
     `)
 }
 
-export const radmo = () => {
+export const radom = () => {
     return (`
     <select>
         <option>Choose a value</option>
