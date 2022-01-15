@@ -13,14 +13,14 @@ ks-checklist {
             font-weight: bold;
             @include mb(none);
 
-            .ks-tooltip {
+            ks-tooltip {
                 @include ml(xs);
             }
 
             .help-text {
                 font-weight: normal;
+                font-size: var(--help-text-size);
                 @include color(dark, light);
-                @include font-size(xs);
             }    
         }
     }
