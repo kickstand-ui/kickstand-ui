@@ -21,7 +21,6 @@ export class Radio implements ComponentInterface {
 
     render() {
         let classes = {
-            'ks-radio': true,
             'inline': this.inline
         }
         return (
