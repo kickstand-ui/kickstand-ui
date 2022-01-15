@@ -255,7 +255,6 @@ export namespace Components {
         "webkitdirectory"?: boolean;
     }
     interface KsGallery {
-        "gutter": 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "heading": string;
         "href": string;
         "hrefProp": string;
@@ -949,7 +948,6 @@ declare namespace LocalJSX {
         "webkitdirectory"?: boolean;
     }
     interface KsGallery {
-        "gutter"?: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "heading"?: string;
         "href"?: string;
         "hrefProp"?: string;

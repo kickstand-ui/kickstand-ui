@@ -14,7 +14,6 @@ export class Gallery implements ComponentInterface {
     @Element() $el: HTMLElement;
     @Prop() heading: string;
     @Prop() href: string;
-    @Prop() gutter: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl' = 'md';
     @Prop() itemWidth: string;
     @Prop() prevButtonText: string = 'scroll left';
     @Prop() nextButtonText: string = 'scroll right';
@@ -126,10 +125,6 @@ export class Gallery implements ComponentInterface {
     }
 
     render() {
-        let classes = {
-            [`gutter-${this.gutter}`]: true
-        };
-
         let wrapperClasses = {
             'content-wrapper': true,
             'bl-xxxs': !this.isStart,
@@ -139,7 +134,7 @@ export class Gallery implements ComponentInterface {
         const CustomTag = this.linkTag;
 
         return (
-            <Host class={classes}>
+            <Host>
                 <header class="header">
                     <h2 class="heading">
                         {this.href 
@@ -149,12 +144,12 @@ export class Gallery implements ComponentInterface {
                             : this.heading}
                     </h2>
                     <div class="controls">
-                        <ks-button class="scroll-left" size="xs" display="clear" disabled={this.isStart} onClick={() => this.scrollLeft()}>
+                        <button class="control scroll-left" disabled={this.isStart} onClick={() => this.scrollLeft()}>
                             <ks-icon class="text-lg" icon="chevron_left" label={this.prevButtonText}></ks-icon>
-                        </ks-button>
-                        <ks-button class="scroll-right" size="xs" display="clear" disabled={this.isEnd} onClick={() => this.scrollRight()}>
+                        </button>
+                        <button class="control scroll-right" disabled={this.isEnd} onClick={() => this.scrollRight()}>
                             <ks-icon class="text-lg" icon="chevron_right" label={this.nextButtonText}></ks-icon>
-                        </ks-button>
+                        </button>
                     </div>
                 </header>
                 <div class={wrapperClasses}>

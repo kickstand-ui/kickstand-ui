@@ -1,16 +1,10 @@
 @import "../../../scss/00_Abstracts/index";
 
 ks-gallery {
-    @each $key,
-    $value in $spacing-sizes {
-        &.gutter-#{$key} {
-            .scrolling-content {
-                >* {
-                    @include mr($key);
-                }
-            }
-        }
-    }
+    --gutter-size: var(--ks-spacing-md);
+    --link-text-font-size: 0.9em;
+    --control-size: var(--ks-font-size-md);
+    --control-color: var(--ks-color-primary-base);
 
     .header {
         display: flex;
@@ -20,9 +14,35 @@ ks-gallery {
         .heading {
             @include m(none);
 
+            a {
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
             .link-text {
-                font-size: 0.9em;
+                font-size: var(--link-text-font-size);
                 @include ml(xxs);
+            }
+        }
+
+        .control {
+            background-color: transparent;
+            border: 0;
+            color: rgb(var(--control-color));
+            font-size: var(--control-size);
+            line-height: 1;
+            @include p(md);
+
+            &:disabled {
+                opacity: 0.7;
+                cursor: not-allowed;
+            }
+
+            &.scroll-right {
+                @include mr(-md);
             }
         }
     }
@@ -31,10 +51,14 @@ ks-gallery {
         overflow-x: auto;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;  /* Firefox */
-        -ms-overflow-style: none; /* IE */
-        &::-webkit-scrollbar { 
-            display: none; /* Chrome Safari */
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+
+        /* IE */
+        &::-webkit-scrollbar {
+            display: none;
+            /* Chrome Safari */
         }
 
         .scrolling-content {
@@ -47,6 +71,7 @@ ks-gallery {
             }
 
             >* {
+                margin-right: var(--gutter-size);
                 flex: 0 0 auto;
             }
         }
