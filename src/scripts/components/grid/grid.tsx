@@ -12,7 +12,6 @@ export class Row {
     render() {
         return (
             <Host class={{
-                'ks-grid': true,
                 [`gutter-${this.gutter}`]: true,
                 [`align-content-${this.position}`]: this.position !== undefined
             }}>

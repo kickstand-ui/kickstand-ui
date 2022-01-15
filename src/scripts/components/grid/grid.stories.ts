@@ -8,11 +8,11 @@ export const basicGrid = () => {
     return (`
     <div class="main">
         <h2>Basic Grid</h2>
-        <ks-grid class="bg-primary">
-            <ks-column>Column 1</ks-column>
-            <ks-column>Column 2</ks-column>
-            <ks-column>Column 3</ks-column>
-            <ks-column>Column 4</ks-column>
+        <ks-grid class="bg-light">
+            <ks-column><span class="bg-primary d-block">Column 1</span></ks-column>
+            <ks-column><span class="bg-primary d-block">Column 2</span></ks-column>
+            <ks-column><span class="bg-primary d-block">Column 3</span></ks-column>
+            <ks-column><span class="bg-primary d-block">Column 4</span></ks-column>
         </ks-grid>
     </div>
     `);
