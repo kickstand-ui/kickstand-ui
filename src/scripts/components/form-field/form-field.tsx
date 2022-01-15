@@ -351,28 +351,18 @@ export class FormField implements ComponentInterface {
                         ref={el => this.$input = el}
                     />
                     <span class="icon-right">
-                        {this.type === 'password' && <ks-button
+                        {this.type === 'password' && <button
                             class="input-button"
-                            display="clear"
-                            size="xs"
-                            button-class="text-md"
-                            color="dark"
-                            hide-text
                             onClick={() => this.handleTogglePasswordClick()}
                         >
                             <ks-icon icon={this.showPassword ? 'hide' : 'view'} label={this.showPassword ? 'hide' : 'hide'}></ks-icon>
-                        </ks-button>}
-                        {this.type === 'search' && this.value && <ks-button
+                        </button>}
+                        {this.type === 'search' && this.value && <button
                             class="input-button"
-                            display="clear"
-                            size="xs"
-                            button-class="text-md"
-                            color="dark"
-                            hide-text
                             onClick={() => this.handleClearContentsClick()}
                         >
                             <ks-icon icon="times" label="clear"></ks-icon>
-                        </ks-button>}
+                        </button>}
                         {this.icon && this.iconDirection === 'right' && <ks-icon class="input-icon" icon={this.icon}></ks-icon>}
                     </span>
                 </div>,

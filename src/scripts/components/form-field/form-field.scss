@@ -272,7 +272,10 @@ ks-form-field {
 
             .input-button {
                 font-size: var(--input-font-size);
+                background-color: rgb(var(--input-background-color));
+                border: 0;
                 @include mr(none);
+                @include font-size(md);
 
                 .icon {
                     font-size: var(--input-font-size);

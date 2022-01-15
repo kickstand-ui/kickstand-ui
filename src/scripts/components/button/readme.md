@@ -47,7 +47,6 @@
 
  - [ks-alert](../alert)
  - [ks-dropdown](../dropdown)
- - [ks-form-field](../form-field)
  - [ks-gallery](../gallery)
  - [ks-modal](../modal)
  - [ks-scroll-to-top](../scroll-to-top)
@@ -66,7 +65,6 @@ graph TD;
   ks-loading --> ks-icon
   ks-alert --> ks-button
   ks-dropdown --> ks-button
-  ks-form-field --> ks-button
   ks-gallery --> ks-button
   ks-modal --> ks-button
   ks-scroll-to-top --> ks-button
