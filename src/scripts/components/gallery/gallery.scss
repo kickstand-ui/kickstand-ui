@@ -1,6 +1,6 @@
 @import "../../../scss/00_Abstracts/index";
 
-.ks-gallery {
+ks-gallery {
     @each $key,
     $value in $spacing-sizes {
         &.gutter-#{$key} {

@@ -127,7 +127,6 @@ export class Gallery implements ComponentInterface {
 
     render() {
         let classes = {
-            'ks-gallery': true,
             [`gutter-${this.gutter}`]: true
         };
 
