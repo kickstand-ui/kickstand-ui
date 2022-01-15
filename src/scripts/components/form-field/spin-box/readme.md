@@ -50,18 +50,12 @@ Type: `Promise<IFormFieldData>`
 
 ### Depends on
 
-- [ks-button](../../button)
 - [ks-icon](../../icon)
 
 ### Graph
 ```mermaid
 graph TD;
-  ks-spin-box --> ks-button
   ks-spin-box --> ks-icon
-  ks-button --> ks-loading-overlay
-  ks-loading-overlay --> ks-overlay
-  ks-loading-overlay --> ks-loading
-  ks-loading --> ks-icon
   ks-form-field --> ks-spin-box
   style ks-spin-box fill:#f9f,stroke:#333,stroke-width:4px
 ```

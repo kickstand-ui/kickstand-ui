@@ -108,7 +108,6 @@ graph TD;
   ks-loading-overlay --> ks-overlay
   ks-loading-overlay --> ks-loading
   ks-loading --> ks-icon
-  ks-spin-box --> ks-button
   ks-spin-box --> ks-icon
   ks-checkbox --> ks-tooltip
   ks-checkbox --> ks-icon

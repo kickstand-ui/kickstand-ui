@@ -1,26 +1,34 @@
 @import "../../../../scss/00_Abstracts/index";
 
-.ks-form-field {
-    .ks-spin-box {
+ks-form-field {
+    ks-spin-box {
         display: inline-flex;
         align-items: center;
-        @include shadow(xs);
+        box-shadow: var(--spin-box-shadow);
         @include b();
-        @include r();
+        @include r-var(--border-radius);
 
-        .ks-button {
-            .button {
-                @include px(sm);
-            }
+        .control {
+            line-height: 1;
+            font-size: var(--input-font-size);
+            background-color: rgb(var(--input-background-color));
+            border: none;
+            @include color(primary);
+            @include px(sm);
+            @include py(md);
         }
+
         .form-input {
             text-align: center;
             border: none;
             -moz-appearance: textfield; // Firefox
+            font-size: var(--input-font-size);
+            background-color: rgb(var(--input-background-color));
+            color: rgb(var(--input-color));
+            width: var(--spin-box-input-width);
             @include shadow(none);
             @include bx();
             @include r(none);
-            @include font-size(sm);
             @include p(sm);
             @include m(none);
 
@@ -32,27 +40,39 @@
             }
 
             &[aria-invalid="true"] {
-                @include b($color: danger);
+                border-color: var(--error-message-color);
             }
 
-            &.size {
-                &-sm {
+        }
+
+        &.size {
+            &-sm {
+
+                .control,
+                .form-input {
                     height: 2.5rem;
-                    width: 3.5rem;
                     @include py(sm);
                     @include font-size(sm);
                 }
+            }
 
-                &-md {
+            &-md {
+
+                .control,
+                .form-input {
+
                     height: 3rem;
-                    width: 4rem;
                     @include py(md);
                     @include font-size(sm);
                 }
+            }
 
-                &-lg {
+            &-lg {
+
+                .control,
+                .form-input {
+
                     height: 3.75rem;
-                    width: 5rem;
                     @include py(lg);
                     @include font-size(md);
                 }

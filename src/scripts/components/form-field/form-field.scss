@@ -3,6 +3,7 @@
 ks-form-field {
     --border-radius: var(--ks-border-radius-sm);
     --help-text-size: var(--ks-font-size-xs);
+    --help-text-color: rgb(var(--ks-color-dark-light));
     --error-message-size: var(--ks-font-size-xs);
     --error-message-color: var(--ks-color-danger-base);
     --input-background-color: white;
@@ -16,6 +17,8 @@ ks-form-field {
     --input-button-color: var(--ks-color-dark-lighter);
     --checkbox-size: 1em;
     --radio-button-size: 1em;
+    --spin-box-input-width: 3rem;
+    --spin-box-shadow: var(--ks-shadow-xs);
 
     display: block;
     position: relative;
@@ -53,7 +56,7 @@ ks-form-field {
         .help-text {
             font-weight: normal;
             font-size: var(--help-text-size);
-            @include color(dark, light);
+            color: rgb(var(--help-text-color));
         }
 
         .error-message {

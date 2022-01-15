@@ -86,18 +86,17 @@ export class SpinBox implements ComponentInterface, ICustomInput {
     render() {
         let value = this.getValue();
 
-        return (<Host class="ks-spin-box">
-            <ks-button
-                display="clear"
-                size={this.size}
+        return (<Host class={`size-${this.size}`}>
+            <button
+                class="control"
                 onClick={() => this.decreaseClickHandler()}
                 disabled={this.disabled}
             >
                 <ks-icon icon="minus" label="remove" />
-            </ks-button>
+            </button>
             <input
                 type="number"
-                class={`form-input ${this.inputClass ? this.inputClass : ''} size-${this.size}`}
+                class={`form-input ${this.inputClass ? this.inputClass : ''}`}
                 id={this.inputId}
                 min={this.min}
                 max={this.max}
@@ -110,14 +109,13 @@ export class SpinBox implements ComponentInterface, ICustomInput {
                 onInput={() => this.inputHandler()}
                 ref={(e) => this.$input = e}
             />
-            <ks-button
-                display="clear"
-                size={this.size}
+            <button
+                class="control"
                 onClick={() => this.increaseClickHandler()}
                 disabled={this.disabled}
             >
                 <ks-icon icon="plus" label="add" />
-            </ks-button>
+            </button>
             <div class="sr-only" role="status" aria-live="polite">{this.value}</div>
         </Host>);
     }

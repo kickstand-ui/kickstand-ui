@@ -53,7 +53,6 @@
  - [ks-modal](../modal)
  - [ks-scroll-to-top](../scroll-to-top)
  - [ks-side-drawer](../side-drawer)
- - [ks-spin-box](../form-field/spin-box)
 
 ### Depends on
 
@@ -74,7 +73,6 @@ graph TD;
   ks-modal --> ks-button
   ks-scroll-to-top --> ks-button
   ks-side-drawer --> ks-button
-  ks-spin-box --> ks-button
   style ks-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
