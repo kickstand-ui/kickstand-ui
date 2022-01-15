@@ -1,6 +1,6 @@
 @import "../../../../scss/00_Abstracts/index";
 
-.ks-checkbox {
+ks-checkbox {
     user-select: none;
     cursor: pointer;
     height: 2rem;
@@ -26,10 +26,11 @@
             height: 1.125em;
             transform: scale(1);
             vertical-align: middle;
-            background-color: white;
+            background-color: rgb(var(--input-background-color));
+            font-size: var(--checkbox-size);
             @include b($color: light, $variant: darker);
             @include transition();
-            @include r(sm);
+            @include r-var(--border-radius);
             @include shadow(inner);
 
             svg {
