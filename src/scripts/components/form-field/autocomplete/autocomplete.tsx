@@ -282,7 +282,7 @@ export class Autocomplete implements ComponentInterface, ICustomInput {
                         {...inputProps}
                     />
                     <span class="input-icons">
-                        {this.$input?.value ? <ks-button class="clear-button" size="xs" display="clear" color="dark" onClick={() => this.clearSearchTerm()} onBlurred={() => this.blurHandler()}><ks-icon icon="times" label="clear"></ks-icon></ks-button> : ''}
+                        {this.$input?.value ? <button class="clear-button" onClick={() => this.clearSearchTerm()} onBlur={() => this.blurHandler()}><ks-icon icon="times" label="clear"></ks-icon></button> : ''}
                         <ks-icon icon="search" class="search-icon"></ks-icon>
                     </span>
                     <ul id={`${this.autocompleteId}_options`} class="dropdown-options" role="listbox" ref={el => this.$dropdown = el}>

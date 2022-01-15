@@ -63,7 +63,10 @@ ks-autocomplete {
             @include color(light, darker);
 
 
-            ks-button {
+            .clear-button {
+                background-color: rgb(var(--input-background-color));
+                border: 0;
+
                 .icon {
                     font-size: var(--input-font-size);
                     color: rgb(var(--input-button-color));
