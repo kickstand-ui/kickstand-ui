@@ -100,7 +100,7 @@ export class Checklist implements ComponentInterface, ICustomInput {
 
     render() {
         return (
-            <Host class="ks-checklist">
+            <Host>
                 <fieldset>
                     <legend class="form-label">
                         <span class="field-label">
