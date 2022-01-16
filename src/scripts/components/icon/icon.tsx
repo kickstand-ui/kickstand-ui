@@ -28,7 +28,7 @@ export class Icon implements ComponentInterface {
 
     render() {
         return (
-            <Host class={`ks-icon`}></Host>
+            <Host></Host>
         );
     }
 }
