@@ -101,7 +101,7 @@ export class Img implements ComponentInterface {
         };
 
         return (
-            <Host class="ks-img">
+            <Host>
                 <img {...props} onError={() => this.handleImageError()} ref={el => this.$image = el} />
             </Host>
         );
