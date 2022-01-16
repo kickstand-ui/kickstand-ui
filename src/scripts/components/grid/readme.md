@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type                                        | Default   |
-| ---------- | ---------- | ----------- | ------------------------------------------- | --------- |
-| `position` | `position` |             | `"center" \| "end" \| "start" \| "stretch"` | `'start'` |
+| Property | Attribute | Description | Type                                        | Default   |
+| -------- | --------- | ----------- | ------------------------------------------- | --------- |
+| `align`  | `align`   |             | `"center" \| "end" \| "start" \| "stretch"` | `'start'` |
 
 
 ----------------------------------------------

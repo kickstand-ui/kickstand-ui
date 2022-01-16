@@ -6,11 +6,11 @@ import { Component, Prop, h, Host } from '@stencil/core';
     styleUrl: 'grid.scss'
 })
 export class Grid {
-    @Prop() position: 'start' | 'center' | 'end' | 'stretch' = 'start';
+    @Prop() align: 'start' | 'center' | 'end' | 'stretch' = 'start';
 
     render() {
         return (
-            <Host class={this.position ? `align-content-${this.position}` : ''}>
+            <Host class={this.align ? `align-content-${this.align}` : ''}>
                 <slot />
             </Host>
         );

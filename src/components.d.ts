@@ -151,7 +151,7 @@ export namespace Components {
         "validate": () => Promise<IFormFieldData>;
     }
     interface KsColumn {
-        "position": 'start' | 'center' | 'end' | 'stretch';
+        "align": 'start' | 'center' | 'end' | 'stretch';
     }
     interface KsDropdown {
         "collapse": 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -265,7 +265,7 @@ export namespace Components {
         "prevButtonText": string;
     }
     interface KsGrid {
-        "position": 'start' | 'center' | 'end' | 'stretch';
+        "align": 'start' | 'center' | 'end' | 'stretch';
     }
     interface KsIcon {
         "icon": string;
@@ -840,7 +840,7 @@ declare namespace LocalJSX {
         "type"?: 'checkbox' | 'radio';
     }
     interface KsColumn {
-        "position"?: 'start' | 'center' | 'end' | 'stretch';
+        "align"?: 'start' | 'center' | 'end' | 'stretch';
     }
     interface KsDropdown {
         "collapse"?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -957,7 +957,7 @@ declare namespace LocalJSX {
         "prevButtonText"?: string;
     }
     interface KsGrid {
-        "position"?: 'start' | 'center' | 'end' | 'stretch';
+        "align"?: 'start' | 'center' | 'end' | 'stretch';
     }
     interface KsIcon {
         "icon"?: string;
