@@ -1,12 +1,16 @@
 @import "../../../scss/00_Abstracts/index";
 
 ks-loading {
+    --icon-size: var(--ks-font-size-sm);
+    --message-size: var(--ks-font-size-sm);
+
     display: inline-flex;
     align-items: center;
 
-    .ks-icon {
+    ks-icon {
         width: 1.5em;
         height: 1.5em;
+        font-size: var(--icon-size);
 
         .icon {
             margin: 0;
@@ -15,6 +19,7 @@ ks-loading {
 
     .message {
         line-height: 1;
+        font-size: var(--message-size);
         @include ml(sm);
     }
 
@@ -27,15 +32,19 @@ ks-loading {
 }
 
 ks-loading-overlay {
+    --icon-size: var(--ks-font-size-sm);
+    --message-size: var(--ks-font-size-sm);
+
     cursor: wait;
 
     .content {
         line-height: 1;
         @include shadow(none, true);
 
-        .ks-icon {
+        ks-icon {
             width: 1.5em;
             height: 1.5em;
+            font-size: var(--icon-size);
         }
 
         .show-message {
@@ -44,6 +53,7 @@ ks-loading-overlay {
 
             .message {
                 margin-top: 0.25em;
+                font-size: var(--message-size);
                 @include ml(none);
             }
         }
