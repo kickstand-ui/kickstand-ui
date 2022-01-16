@@ -5,16 +5,12 @@ import { Component, Prop, h, Host } from '@stencil/core';
     tag: 'ks-grid',
     styleUrl: 'grid.scss'
 })
-export class Row {
+export class Grid {
     @Prop() position: 'start' | 'center' | 'end' | 'stretch' = 'start';
-    @Prop() gutter: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl' = 'sm';
 
     render() {
         return (
-            <Host class={{
-                [`gutter-${this.gutter}`]: true,
-                [`align-content-${this.position}`]: this.position !== undefined
-            }}>
+            <Host class={this.position ? `align-content-${this.position}` : ''}>
                 <slot />
             </Host>
         );

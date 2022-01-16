@@ -265,7 +265,6 @@ export namespace Components {
         "prevButtonText": string;
     }
     interface KsGrid {
-        "gutter": 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "position": 'start' | 'center' | 'end' | 'stretch';
     }
     interface KsIcon {
@@ -958,7 +957,6 @@ declare namespace LocalJSX {
         "prevButtonText"?: string;
     }
     interface KsGrid {
-        "gutter"?: 'none' | 'xxxs' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
         "position"?: 'start' | 'center' | 'end' | 'stretch';
     }
     interface KsIcon {
