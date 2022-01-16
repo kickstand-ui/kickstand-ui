@@ -28,7 +28,7 @@ export class ProgressBar implements ComponentInterface {
         this.value = this.validateValue();
 
         return (
-            <Host class="ks-progress">
+            <Host>
                 <div class="labels">
                     {!this.hideDescription && <span class="description">{this.description}</span>}
                     <span class={{
