@@ -1,6 +1,10 @@
 @import "../../../scss/00_Abstracts/index";
 
 ks-overlay {
+    --overlay-color: var(--ks-color-dark-base);
+    --overlay-opacity: 0.6;
+    --content-shadow: var(--ks-shadow-xl);
+
     align-items: center;
     display: flex;
     visibility: hidden;
@@ -13,17 +17,12 @@ ks-overlay {
     pointer-events: auto;
     touch-action: none;
     opacity: 0;
+    background-color: rgba(var(--overlay-color), var(--overlay-opacity));
     @include z-index(xl);
     @include transition();
 
-    &.light {
+    &:not(.opened) {
         visibility: hidden;
-        background-color: color-value(light, 0.6);
-    }
-
-    &.dark {
-        visibility: hidden;
-        background-color: color-value(dark, 0.6);
     }
 
     &.opened {
@@ -56,7 +55,7 @@ ks-overlay {
     .content {
         position: relative;
         outline: none;
-        @include shadow(xl);
+        box-shadow: var(--content-shadow);
         @include transition();
     }
 }

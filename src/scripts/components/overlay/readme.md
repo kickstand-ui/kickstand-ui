@@ -7,12 +7,11 @@
 
 ## Properties
 
-| Property       | Attribute       | Description | Type                | Default     |
-| -------------- | --------------- | ----------- | ------------------- | ----------- |
-| `absolute`     | `absolute`      |             | `boolean`           | `undefined` |
-| `preventClose` | `prevent-close` |             | `boolean`           | `false`     |
-| `theme`        | `theme`         |             | `"dark" \| "light"` | `'dark'`    |
-| `titleId`      | `title-id`      |             | `string`            | `undefined` |
+| Property       | Attribute       | Description | Type      | Default     |
+| -------------- | --------------- | ----------- | --------- | ----------- |
+| `absolute`     | `absolute`      |             | `boolean` | `undefined` |
+| `preventClose` | `prevent-close` |             | `boolean` | `false`     |
+| `titleId`      | `title-id`      |             | `string`  | `undefined` |
 
 
 ## Events

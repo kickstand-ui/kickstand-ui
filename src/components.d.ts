@@ -330,7 +330,6 @@ export namespace Components {
         "hide": () => Promise<void>;
         "preventClose": boolean;
         "show": () => Promise<void>;
-        "theme": 'dark' | 'light';
         "titleId": string;
     }
     interface KsProgressBar {
@@ -1023,7 +1022,6 @@ declare namespace LocalJSX {
         "onHidden"?: (event: CustomEvent<any>) => void;
         "onShown"?: (event: CustomEvent<any>) => void;
         "preventClose"?: boolean;
-        "theme"?: 'dark' | 'light';
         "titleId"?: string;
     }
     interface KsProgressBar {

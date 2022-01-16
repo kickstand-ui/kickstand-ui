@@ -14,7 +14,6 @@ export class Overlay implements ComponentInterface, IDismissible {
 
     @Prop() titleId: string;
     @Prop() absolute: boolean;
-    @Prop() theme: 'dark' | 'light' = 'dark';
     @Prop() preventClose: boolean = false;
 
     @Event() shown!: EventEmitter;
@@ -103,7 +102,6 @@ export class Overlay implements ComponentInterface, IDismissible {
 
     render() {
         let classes = {
-            [this.theme]: true,
             'absolute': this.absolute,
             'opened': this.isShowing
         };
