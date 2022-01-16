@@ -3,6 +3,9 @@
 $breakpoints: (xl, lg, md, sm, xs, xxs);
 
 ks-navbar {
+    --logo-width: 3rem;
+    --tagline-size: var(--ks-font-size-md);
+
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -34,7 +37,7 @@ ks-navbar {
         @include m(sm);
 
         .logo {
-            max-width: 3rem;
+            max-width: var(--logo-width);
             width: auto;
             @include mx(auto);
 
@@ -46,7 +49,7 @@ ks-navbar {
         .tagline {
             white-space: nowrap;
             text-decoration: none;
-            @include font-size(md);
+            font-size: var(--tagline-size);
         }
 
         .logo~.tagline {
