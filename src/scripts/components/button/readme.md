@@ -47,7 +47,6 @@
 
  - [ks-alert](../alert)
  - [ks-dropdown](../dropdown)
- - [ks-modal](../modal)
  - [ks-scroll-to-top](../scroll-to-top)
  - [ks-side-drawer](../side-drawer)
 
@@ -64,7 +63,6 @@ graph TD;
   ks-loading --> ks-icon
   ks-alert --> ks-button
   ks-dropdown --> ks-button
-  ks-modal --> ks-button
   ks-scroll-to-top --> ks-button
   ks-side-drawer --> ks-button
   style ks-button fill:#f9f,stroke:#333,stroke-width:4px

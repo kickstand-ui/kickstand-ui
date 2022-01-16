@@ -1,12 +1,18 @@
 @import "../../../scss/00_Abstracts/index";
 
 ks-modal {
+    --border-radius: var(--ks-border-radius-sm);
+    --shadow-size: var(--ks-shadow-xl);
+    --background-color: white;
+    --close-button-size: var(--ks-font-size-md);
+    --content-padding: var(--ks-spacing-lg);
+
     ks-overlay {
         @include p(lg);
 
         .content {
             display: flex;
-            justify-content: center;    
+            justify-content: center;
             transform: scale(0.95);
             margin-top: -20vh;
             @include pt(xl);
@@ -16,11 +22,11 @@ ks-modal {
                 width: 100%;
                 max-height: 80vh;
                 overflow-y: auto;
-                background-color: white;
-                @include p(lg);
+                background-color: var(--background-color);
+                box-shadow: var(--shadow-size);
+                padding: var(--content-padding);
                 @include transition();
-                @include r(sm);
-                @include shadow(xl);
+                @include r-var(--border-radius);
                 @include m(none, $important: true);
 
                 .modal-header {
@@ -36,19 +42,12 @@ ks-modal {
                     }
 
                     .modal-close {
-                        ks-button {
-                            .button {
-                                @include p(none);
-
-                                .button-text {
-                                    display: inline-flex;
-                                }
-
-                                .icon {
-                                    @include font-size(lg);
-                                }
-                            }
-                        }
+                        border: 0;
+                        background-color: var(--background-color);
+                        line-height: 1;
+                        font-size: var(--close-button-size);
+                        @include p(xs);
+                        @include mr(-xs);
                     }
                 }
 
@@ -77,14 +76,6 @@ ks-modal {
                         }
                     }
                 }
-
-                .modal-content {
-                    ks-modal-footer {
-                        display: flex;
-                        justify-content: flex-end;
-                        @include mt(md);
-                    }
-                }
             }
         }
 
@@ -98,4 +89,10 @@ ks-modal {
             }
         }
     }
+}
+
+ks-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    @include mt(md);
 }

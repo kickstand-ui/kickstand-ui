@@ -14,6 +14,7 @@ export class Modal implements ComponentInterface, IDismissible {
     @Prop() heading: string;
     @Prop() preventClose: boolean = false;
     @Prop() size: 'sm' | 'md' | 'lg' = 'md';
+    @Prop() closeText: string = 'Close Modal';
 
     @Event() shown!: EventEmitter;
     @Event() hidden!: EventEmitter;
@@ -37,9 +38,9 @@ export class Modal implements ComponentInterface, IDismissible {
                     <div class={`modal-wrapper size-${this.size}`}>
                         <header class="modal-header">
                             <h3 class="modal-title" id={this.titleId}>{this.heading}</h3>
-                            {!this.preventClose && <ks-button onClick={() => this.hide()} display="clear" color="dark" class="modal-close" button-class="p-xs">
-                                <ks-icon icon="times" label="Close Modal" />
-                            </ks-button>}
+                            {!this.preventClose && <button onClick={() => this.hide()} class="modal-close">
+                                <ks-icon icon="times" label={this.closeText}/>
+                            </button>}
                         </header>
                         <div class="modal-content">
                             <slot />

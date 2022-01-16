@@ -297,6 +297,7 @@ export namespace Components {
         "theme": 'dark' | 'light';
     }
     interface KsModal {
+        "closeText": string;
         "heading": string;
         "hide": () => Promise<void>;
         "preventClose": boolean;
@@ -989,6 +990,7 @@ declare namespace LocalJSX {
         "theme"?: 'dark' | 'light';
     }
     interface KsModal {
+        "closeText"?: string;
         "heading"?: string;
         "onHidden"?: (event: CustomEvent<any>) => void;
         "onShown"?: (event: CustomEvent<any>) => void;
