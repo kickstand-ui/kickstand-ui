@@ -85,7 +85,6 @@ export class NavbarBar implements ComponentInterface {
 
     render() {
         let classes = {
-            'ks-navbar': true,
             [`collapse-${this.collapse}`]: true,
             [this.color]: true,
             'inverted': this.inverted,

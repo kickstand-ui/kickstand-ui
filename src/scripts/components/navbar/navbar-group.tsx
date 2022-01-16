@@ -8,7 +8,7 @@ export class NavbarGroup implements ComponentInterface {
 
     render() {
         return (
-            <Host class={`navbar-group align-${this.position}`}>
+            <Host class={`align-${this.position}`}>
                 <slot />
             </Host>
         );

@@ -174,11 +174,6 @@ ks-button {
                 &.link {
                     @include color($color);
                     @include r(none);
-
-                    &:focus,
-                    &:hover:not(:disabled) {
-                        @include color($color, light);
-                    }
                 }
             }
         }

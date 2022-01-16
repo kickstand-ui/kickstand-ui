@@ -6,7 +6,7 @@ import { Component, h, Host, ComponentInterface } from '@stencil/core';
 export class NavbarRow implements ComponentInterface {
     render() {
         return (
-            <Host class="navbar-row">
+            <Host>
                 <slot />
             </Host>
         );

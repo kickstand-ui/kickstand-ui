@@ -23,7 +23,6 @@ export class NavbarItem implements ComponentInterface {
 
     render() {
         let classes = {
-            'navbar-item': true,
             'active': this.getActiveStatus()
         };
 

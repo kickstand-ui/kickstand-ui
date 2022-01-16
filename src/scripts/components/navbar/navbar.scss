@@ -2,7 +2,7 @@
 
 $breakpoints: (xl, lg, md, sm, xs, xxs);
 
-.ks-navbar {
+ks-navbar {
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -74,14 +74,14 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
         width: 100%;
         max-width: 100%;
 
-        .navbar-row {
+        ks-navbar-row {
             width: 100%;
             display: flex;
             justify-content: flex-end;
             align-content: center;
             align-items: center;
 
-            .navbar-group {
+            ks-navbar-group {
                 display: flex;
                 align-items: center;
 
@@ -96,7 +96,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                 }
             }
 
-            .navbar-item {
+            ks-navbar-item {
                 font-weight: 600;
                 @include px(sm);
                 @include my(sm);
@@ -122,7 +122,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                     text-decoration: underline;
                 }
 
-                .ks-dropdown {
+                ks-dropdown {
                     @include m(none);
 
                     .dropdown-button {
@@ -167,13 +167,13 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
             }
 
             .navbar-content {
-                .navbar-row {
-                    .navbar-item {
+                ks-navbar-row {
+                    ks-navbar-item {
                         >* {
                             color: text-color-value($key);
                         }
 
-                        .ks-dropdown {
+                        ks-dropdown {
                             .dropdown-button {
                                 &.link {
                                     color: text-color-value($key);
@@ -206,22 +206,22 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                 }
 
                 .navbar-content {
-                    .navbar-row {
-                        .navbar-item {
+                    ks-navbar-row {
+                        ks-navbar-item {
                             >* {
-                                @include color($key);                
+                                @include color($key);
                             }
 
-                            .ks-dropdown {                
+                            ks-dropdown {
                                 .dropdown-button {
                                     &.link {
                                         font-weight: 600;
                                         @include color($key);
                                     }
                                 }
-            
+
                                 .dropdown-contents {
-                                    .dropdown-item {
+                                    ks-dropdown-item {
                                         @include color(dark);
                                     }
                                 }
@@ -234,7 +234,9 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
     }
 
     &.collapse {
-        @each $key, $value in $breakpoints {
+
+        @each $key,
+        $value in $breakpoints {
             &-#{$key} {
                 @include mq($key) {
                     flex-wrap: wrap;
@@ -257,12 +259,12 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                         overflow: hidden;
                         @include transition($speed: med);
 
-                        .navbar-row {
+                        ks-navbar-row {
                             flex-direction: column;
                             justify-content: flex-start;
                             align-items: flex-start;
 
-                            .navbar-group {
+                            ks-navbar-group {
                                 flex-direction: column;
                                 justify-content: start;
                                 align-items: flex-start;
@@ -270,7 +272,7 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                                 @include mx(none);
                             }
 
-                            .navbar-item {
+                            ks-navbar-item {
                                 width: 100%;
                                 text-align: left;
                                 @include b(none);
@@ -280,20 +282,21 @@ $breakpoints: (xl, lg, md, sm, xs, xxs);
                                     width: 100%;
                                 }
 
-                                .ks-dropdown {
+                                ks-dropdown {
                                     &.show-contents {
                                         .dropdown-contents {
                                             display: flex;
                                             @include mt(md);
                                         }
                                     }
-                                    .ks-button {
+
+                                    ks-button {
                                         width: 100%;
 
                                         .dropdown-button {
                                             width: 100%;
                                             text-align: left;
-                                        }    
+                                        }
                                     }
 
                                     .dropdown-contents {
