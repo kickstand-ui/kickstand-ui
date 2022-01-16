@@ -1,7 +1,7 @@
 @import "../../../scss/00_Abstracts/index";
 
-.ks-modal {
-    .ks-overlay {
+ks-modal {
+    ks-overlay {
         @include p(lg);
 
         .content {
@@ -36,7 +36,7 @@
                     }
 
                     .modal-close {
-                        .ks-button {
+                        ks-button {
                             .button {
                                 @include p(none);
 
@@ -79,7 +79,7 @@
                 }
 
                 .modal-content {
-                    .modal-footer {
+                    ks-modal-footer {
                         display: flex;
                         justify-content: flex-end;
                         @include mt(md);

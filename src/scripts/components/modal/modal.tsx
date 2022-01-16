@@ -32,7 +32,7 @@ export class Modal implements ComponentInterface, IDismissible {
 
     render() {
         return (
-            <Host class="ks-modal">
+            <Host>
                 <ks-overlay title-id={this.titleId} ref={el => this.$overlay = el} prevent-close={this.preventClose}>
                     <div class={`modal-wrapper size-${this.size}`}>
                         <header class="modal-header">

@@ -6,7 +6,7 @@ import { Component, h, Host, ComponentInterface } from '@stencil/core';
 export class Modal implements ComponentInterface {
     render() {
         return (
-            <Host class="modal-footer">
+            <Host>
                 <slot />
             </Host>
         );
