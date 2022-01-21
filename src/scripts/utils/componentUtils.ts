@@ -15,7 +15,10 @@ export interface IDismissible {
  * Documentation
  * A list of focusable HTML elements
  */
-export const FOCUSABLE_ELEMENTS = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]';
+export const FOCUSABLE_ELEMENTS = '*:not([hidden]), a[href], area[href], input:not([disabled]), select:not([disabled]), ' +
+    'textarea:not([disabled]), button:not([disabled]), [aria-disabled]:not([aria-disabled="true"]), ' + 
+    '[tabindex]:not([tabindex="-1"]), audio[controls], video[controls], ' + 
+    '[contenteditable]:not([contenteditable="false"]), details>summary:first-of-type, details';
 
 /**
  * Documentation
