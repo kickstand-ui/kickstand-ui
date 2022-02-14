@@ -36,7 +36,7 @@ export class ScrollToTop implements ComponentInterface {
 
     render() {
         return (
-            <Host class="ks-scroll-to-top">
+            <Host>
                 <ks-button color={this.color} display={this.display} size={this.size} onClick={() => this.clickHandler()}>
                     <slot />
                 </ks-button>
