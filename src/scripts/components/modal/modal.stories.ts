@@ -6,7 +6,7 @@ export const playground = () => {
     const size = select('size', ['sm', 'md', 'lg'], 'md');
     const preventClose = boolean('prevent-close', false);
 
-    return (`
+    return `
     <div style="width:300px; height:300px;">
         <ks-button class="m-xxl" shows="modal" id="open">Guess What???</ks-button>
         <ks-modal modal-title="Toby's back!!!" size="${size}" prevent-close="${preventClose}" id="modal">
@@ -17,5 +17,5 @@ export const playground = () => {
             </ks-modal-footer>
         </ks-modal>
     </div>
-    `);
+    `;
 };

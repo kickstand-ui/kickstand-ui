@@ -1,16 +1,23 @@
-import { text, select, boolean } from "@storybook/addon-knobs";
+import { text, select, boolean } from '@storybook/addon-knobs';
 
 export default { title: 'Components/Form' };
 
 export const form = () => {
     const action = text('action', '');
-    const target = select('target', ['', '_self', '_blank', '_parent', '_top'], '');
+    const target = select(
+        'target',
+        ['', '_self', '_blank', '_parent', '_top'],
+        ''
+    );
     const method = select('method', ['', 'GET', 'POST'], '');
     const invalid = boolean('invalid', false);
-    const errorMessage = text('error-message', 'One or more of the from fields are not valid. Please, review the form and try again.');
+    const errorMessage = text(
+        'error-message',
+        'One or more of the from fields are not valid. Please, review the form and try again.'
+    );
     const disableErrorMessage = boolean('disable-error-message', false);
 
-    return (`
+    return `
     <ks-form 
         class="m-xl"
         action="${action}"
@@ -30,14 +37,14 @@ export const form = () => {
             <option>Value 3</option>
         </ks-form-field>
         <ks-button type="submit">Submit</ks-button>
-    </ks-form>`);
+    </ks-form>`;
 };
 
 export const inlineForm = () => {
-    return (`
+    return `
         <ks-form inline>
             <ks-form-field label="Search" type="search" hide-label required></ks-form-field>
             <ks-button type="submit">Search</ks-button>
         </ks-form>
-    `);
-}
+    `;
+};

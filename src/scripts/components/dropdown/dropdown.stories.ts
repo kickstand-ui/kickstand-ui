@@ -1,8 +1,17 @@
-import { text, select, boolean } from "@storybook/addon-knobs";
+import { text, select, boolean } from '@storybook/addon-knobs';
 
 export default { title: 'Components/Dropdown' };
 
-const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
+const colors = [
+    'primary',
+    'secondary',
+    'success',
+    'info',
+    'warning',
+    'danger',
+    'light',
+    'dark',
+];
 const displays = ['solid', 'hollow', 'clear', 'link'];
 const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
 
@@ -18,10 +27,16 @@ export const playground = () => {
     const megaMenu = boolean('mega-menu', false);
     const loading = boolean('loading', false);
     const disabled = boolean('disabled', false);
-    const collapse = select('collapse', ['xxs', 'xs', 'sm', 'md', 'lg', 'xl'], 'xs');
+    const collapse = select(
+        'collapse',
+        ['xxs', 'xs', 'sm', 'md', 'lg', 'xl'],
+        'xs'
+    );
 
-    return (`
-        <div class="display-flex pl-xxl ${dropdownAlignment === 'right' ? 'justify-end' : ''}">
+    return `
+        <div class="display-flex pl-xxl ${
+            dropdownAlignment === 'right' ? 'justify-end' : ''
+        }">
             <ks-dropdown
                 class="m-lg"
                 text="${dropdownText}" 
@@ -45,11 +60,11 @@ export const playground = () => {
                 <ks-dropdown-item><ks-button>Test 5</ks-button></ks-dropdown-item>
             </ks-dropdown>
         </div>
-        `);
+        `;
 };
 
 export const megaMenu = () => {
-    return (`
+    return `
         <ks-dropdown
             class="m-lg"
             text="Mega Menu Test" 
@@ -58,11 +73,11 @@ export const megaMenu = () => {
             <h3>Mega Menu meets Mega Desk</h3>
             <img src="https://media1.tenor.com/images/812ea59ea0ddcfbc1e2793092538dfde/tenor.gif">
         </ks-dropdown>
-    `);
-}
+    `;
+};
 
 export const collapseTest = () => {
-    return (`
+    return `
         <ks-dropdown text="Prevent Close">
             <ks-dropdown-item>
                 <ks-button color="secondary">I will close when you click me!</ks-button>
@@ -71,5 +86,5 @@ export const collapseTest = () => {
                 <ks-button>I will not close when you click me!</ks-button>
             </ks-dropdown-item>
         </ks-dropdown>
-    `);
-}
+    `;
+};

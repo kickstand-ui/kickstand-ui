@@ -15,7 +15,7 @@ declare global {
 }
 
 export function $<T extends Element>(selector: string): T {
-    return (document.querySelector(selector) as any) as T;
+    return document.querySelector(selector) as any as T;
 }
 
 export function $$<T extends Element>(selector: string): T[] {
@@ -26,7 +26,9 @@ Element.prototype.query = function <T extends Element>(selector: string): T {
     return this.querySelector(selector) as T;
 };
 
-Element.prototype.queryAll = function <T extends Element>(selector: string): T[] {
+Element.prototype.queryAll = function <T extends Element>(
+    selector: string
+): T[] {
     return Array.from(document.querySelectorAll(selector) as any) as T[];
 };
 

@@ -1,20 +1,33 @@
-import { text, select, boolean } from "@storybook/addon-knobs";
+import { text, select, boolean } from '@storybook/addon-knobs';
 
 export default { title: 'Components/Menu Bar' };
 
-const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
+const colors = [
+    'primary',
+    'secondary',
+    'success',
+    'info',
+    'warning',
+    'danger',
+    'light',
+    'dark',
+];
 export const menuBarProperties = () => {
     const logoUrl = text('logo-url', '');
     const altText = text('alt-text', '');
     const tagline = text('tagline', 'Menu Bar Props');
-    const collapse = select('collapse', ['xxs', 'xs', 'sm', 'md', 'lg', 'xl'], 'sm')
+    const collapse = select(
+        'collapse',
+        ['xxs', 'xs', 'sm', 'md', 'lg', 'xl'],
+        'sm'
+    );
     const fixed = select('fixed', ['', 'top', 'bottom'], '');
-    const color = select('color', colors, 'primary')
+    const color = select('color', colors, 'primary');
     const inverted = boolean('inverted', false);
     const linkTag = text('link-tag', 'a');
     const hrefProp = text('href-prop', 'href');
 
-    return (`
+    return `
     <div>
         <ks-menu-bar
             logo-url="${logoUrl}" 
@@ -57,12 +70,12 @@ export const menuBarProperties = () => {
         </ks-menu-bar>
         <p>This is somebody text.</p>
     </div>
-    `);
+    `;
 };
 
 export const menuGroupProperties = () => {
     const position = select('position', ['left', 'right'], 'right');
-    return (`
+    return `
     <ks-menu-bar tagline="Group Props">
         <ks-menu-row>
             <ks-menu-group position="${position}">
@@ -88,11 +101,11 @@ export const menuGroupProperties = () => {
             </ks-menu-group>
         </ks-menu-row>
     </ks-menu-bar>
-    `);
+    `;
 };
 
 export const menuWithMultipleRows = () => {
-    return (`
+    return `
     <ks-menu-bar tagline="Multiple Rows">
         <ks-menu-row>
             <ks-menu-group>
@@ -128,11 +141,11 @@ export const menuWithMultipleRows = () => {
             </ks-menu-group>
         </ks-menu-row>
     </ks-menu-bar>
-    `);
+    `;
 };
 
 export const menuWithMultipleGroups = () => {
-    return (`
+    return `
     <ks-menu-bar tagline="Multiple Groups">
         <ks-menu-row>
             <ks-menu-group position="left">
@@ -166,11 +179,11 @@ export const menuWithMultipleGroups = () => {
             </ks-menu-group>
         </ks-menu-row>
     </ks-menu-bar>
-    `);
+    `;
 };
 
 export const multipleMenus = () => {
-    return (`
+    return `
         <div class="my-xl">
             <ks-menu-bar tagline="Collapse at XL" collapse="xl">
                 <ks-menu-row>
@@ -238,5 +251,5 @@ export const multipleMenus = () => {
                 </ks-menu-row>
             </ks-menu-bar>
         </div>    
-    `);
-}
+    `;
+};

@@ -1,6 +1,6 @@
-import { text} from '@storybook/addon-knobs';
+import { text } from '@storybook/addon-knobs';
 
-export default { title: "Components/Breadcrumbs" };
+export default { title: 'Components/Breadcrumbs' };
 
 const breadcrumbs = [
     { url: 'test.com', text: '<ks-icon icon="home"></ks-icon> Home' },
@@ -13,7 +13,7 @@ export const breadcrumb = () => {
     const linkTag = text('link-tag', 'a');
     const hrefProp = text('href-prop', 'href');
 
-    return (`<ks-breadcrumbs link-tag="${linkTag}" href-prop="${hrefProp}">
+    return `<ks-breadcrumbs link-tag="${linkTag}" href-prop="${hrefProp}">
         ${breadcrumbs.map(x => `<a href="${x.url}">${x.text}</a>`).join('')}
-    </ks-breadcrumbs>`);
+    </ks-breadcrumbs>`;
 };

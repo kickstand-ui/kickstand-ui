@@ -2,7 +2,30 @@ import { text, select, boolean, number } from '@storybook/addon-knobs';
 
 export default { title: 'Components/Form Field' };
 
-const types = ['autocomplete', 'text', 'tel', 'url', 'password', 'date', 'email', 'search', 'number', 'hidden', 'color', 'file', 'month', 'range', 'spin-box', 'textarea', 'select', 'datalist', 'checkbox', 'checklist', 'radiolist', 'spin-box'].sort();
+const types = [
+    'autocomplete',
+    'text',
+    'tel',
+    'url',
+    'password',
+    'date',
+    'email',
+    'search',
+    'number',
+    'hidden',
+    'color',
+    'file',
+    'month',
+    'range',
+    'spin-box',
+    'textarea',
+    'select',
+    'datalist',
+    'checkbox',
+    'checklist',
+    'radiolist',
+    'spin-box',
+].sort();
 const sizes = ['sm', 'md', 'lg'];
 
 export const playground = () => {
@@ -16,7 +39,10 @@ export const playground = () => {
     const tooltipText = text('tooltip-text', '');
     const tooltipSize = text('tooltip-size', 'md');
     const name = text('name', '');
-    const errorMessage = text('default-error-message', 'The value entered is not valid.');
+    const errorMessage = text(
+        'default-error-message',
+        'The value entered is not valid.'
+    );
     const placeholder = text('placeholder', '');
     const required = boolean('required', false);
     const requiredText = text('required-text', 'Required');
@@ -43,7 +69,7 @@ export const playground = () => {
     const capture = text('capture', undefined);
     const disableErrorMessage = boolean('disable-error-message', false);
 
-    return (`<div class="m-xxl">
+    return `<div class="m-xxl">
         <ks-form-field 
             type="${type}"
             label="${label}" 
@@ -88,7 +114,7 @@ export const playground = () => {
             <option value="3">Value 3</option>
             <option value="4">Popper green 3</option>
         </ks-form-field>
-    </div>`);
+    </div>`;
 };
 
 export const selectTest = () => {
@@ -98,7 +124,10 @@ export const selectTest = () => {
     const value = text('value', '');
     const helpText = text('help-text', '');
     const tooltipText = text('tooltip-text', '');
-    const errorMessage = text('default-error-message', 'The value entered is not valid.');
+    const errorMessage = text(
+        'default-error-message',
+        'The value entered is not valid.'
+    );
     const placeholder = text('placeholder', '');
     const required = boolean('required', false);
     const requiredText = text('required-text', 'Required');
@@ -113,7 +142,7 @@ export const selectTest = () => {
     const pattern = text('pattern', '');
     const validateOnInput = boolean('validate-on-input', false);
     const debounce = number('debounce', 0);
-    return (`<div class="m-xxl">
+    return `<div class="m-xxl">
         <ks-form-field 
             type="${type}"
             label="${label}" 
@@ -142,7 +171,7 @@ export const selectTest = () => {
             <option>Value 2</option>
             <option>Value 3</option>
         </ks-form-field>
-    </div>`);
+    </div>`;
 };
 
 export const checkbox = () => {
@@ -154,7 +183,7 @@ export const checkbox = () => {
     const requiredText = text('required-text', 'Required');
     const disabled = boolean('disabled', false);
 
-    return (`
+    return `
     <div class="m-xxl">
         <ks-checkbox 
             label="${label}" 
@@ -166,29 +195,29 @@ export const checkbox = () => {
             disabled="${disabled}"
             />
     </div>
-    `)
-}
+    `;
+};
 
 export const radio = () => {
-    return (`
+    return `
     <div class="m-xxl">
         <ks-radio label="Radio 1" disabled></ks-radio>
         <ks-radio label="Radio 2"></ks-radio>
         <ks-radio label="Radio 3"></ks-radio>
     </div>
-    `)
-}
+    `;
+};
 
 export const radmo = () => {
-    return (`
+    return `
     <select>
         <option>Choose a value</option>
         <option>Value 1</option>
         <option>Value 2</option>
         <option>Value 3</option>
     </select>
-    `)
-}
+    `;
+};
 
 export const checklist = () => {
     const type = select('type', ['checkbox', 'radio'], 'checkbox');
@@ -199,7 +228,7 @@ export const checklist = () => {
     const requiredText = text('required-text', 'Required');
     const name = text('name', 'test');
 
-    return (`
+    return `
         <div class="m-xxl">
             <ks-checklist
                 label="${label}" 
@@ -216,11 +245,11 @@ export const checklist = () => {
                 <option>Value 3</option>
             </ks-checklist>
         </div>
-    `)
-}
+    `;
+};
 
 export const checklistFormField = () => {
-    return (`
+    return `
         <div class="m-xxl">
             <ks-form-field type="radiolist" label="Choose your next office mates">
                 <option selected>michael.scott@dundermifflin.com</option>
@@ -230,8 +259,8 @@ export const checklistFormField = () => {
                 <option>Meredith.palmer@dundermifflin.com</option>
             </ks-form-field>
         </div>
-    `)
-}
+    `;
+};
 
 export const autocomplete = () => {
     const type = select('type', types, 'autocomplete');
@@ -244,7 +273,10 @@ export const autocomplete = () => {
     const tooltipText = text('tooltip-text', '');
     const tooltipSize = text('tooltip-size', 'md');
     const name = text('name', '');
-    const errorMessage = text('default-error-message', 'The value entered is not valid.');
+    const errorMessage = text(
+        'default-error-message',
+        'The value entered is not valid.'
+    );
     const placeholder = text('placeholder', '');
     const required = boolean('required', false);
     const requiredText = text('required-text', 'Required');
@@ -270,7 +302,7 @@ export const autocomplete = () => {
     const webkitdirectory = text('webkitdirectory', undefined);
     const capture = text('capture', undefined);
 
-    return (`<div class="m-xxl">
+    return `<div class="m-xxl">
         <ks-form-field 
             type="${type}"
             label="${label}" 
@@ -316,13 +348,13 @@ export const autocomplete = () => {
             <option value="5">Popper green 6</option>
             <option value="6">This is an option with some super long text to test overflow</option>
         </ks-form-field>
-    </div>`);
+    </div>`;
 };
 
 export const spinbox = () => {
-    return (`
+    return `
     <div class="m-xxl">
         <ks-form-field label="Spin-Box" type="spin-box" max="5" min="2"></ks-form-field>
     </div>
-    `)
-}
+    `;
+};

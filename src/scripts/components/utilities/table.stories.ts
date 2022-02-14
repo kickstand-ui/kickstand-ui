@@ -1,11 +1,13 @@
-import { boolean } from "@storybook/addon-knobs";
+import { boolean } from '@storybook/addon-knobs';
 
 export default { title: 'Utilities/Table' };
 
 export const playground = () => {
-    const striped = boolean('striped', false)
-    const hover = boolean('hover', false)
-    return (`<table class="table ${striped ? 'striped' : ''} ${hover ? 'hover' : ''} m-xxl">
+    const striped = boolean('striped', false);
+    const hover = boolean('hover', false);
+    return `<table class="table ${striped ? 'striped' : ''} ${
+        hover ? 'hover' : ''
+    } m-xxl">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -46,13 +48,13 @@ export const playground = () => {
       <td>@twitter</td>
     </tr>
   </tbody>
-</table>`);
+</table>`;
 };
 
 export const responsive = () => {
-    const striped = boolean('striped', false)
-    const hover = boolean('hover', false)
-    return (`<div class="table-responsive">
+    const striped = boolean('striped', false);
+    const hover = boolean('hover', false);
+    return `<div class="table-responsive">
     <table class="table ${striped ? 'striped' : ''} ${hover ? 'hover' : ''}">
         <thead>
             <tr>
@@ -95,10 +97,10 @@ export const responsive = () => {
             </tr>
         </tbody>
     </table>
-</div>`);
+</div>`;
 };
 export const sticky = () => {
-    return (`
+    return `
   <table class="table fixed-heading fixed-column" style="width:1600px">
     <thead>
         <tr>
@@ -135,5 +137,5 @@ export const sticky = () => {
         </tr>
     </tbody>
   </table>
-`);
+`;
 };

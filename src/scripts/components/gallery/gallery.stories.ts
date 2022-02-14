@@ -1,17 +1,21 @@
-import { text, select } from "@storybook/addon-knobs";
+import { text, select } from '@storybook/addon-knobs';
 
 export default { title: 'Components/Gallery' };
 
 export const playground = () => {
     const heading = text('heading', 'Test Gallery');
-    const gutter = select('gutter', ['none', 'xxxs', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'], 'md');
+    const gutter = select(
+        'gutter',
+        ['none', 'xxxs', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'],
+        'md'
+    );
     const width = text('item-width', '300px');
     const href = text('href', '');
     const linkText = text('link-text', '');
     const linkTag = text('link-tag', 'a');
     const hrefProp = text('href-prop', 'href');
 
-    return (`<div class="m-xxl">
+    return `<div class="m-xxl">
         <ks-gallery 
             heading="${heading}" 
             gutter="${gutter}" 
@@ -132,5 +136,5 @@ export const playground = () => {
                 </ks-card-footer>
             </ks-card>
         </ks-gallery>
-    </div>`);
+    </div>`;
 };

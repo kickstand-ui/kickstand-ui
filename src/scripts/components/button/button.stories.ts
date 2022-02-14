@@ -2,7 +2,16 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 
 export default { title: 'Components/Button' };
 
-const colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
+const colors = [
+    'primary',
+    'secondary',
+    'success',
+    'info',
+    'warning',
+    'danger',
+    'light',
+    'dark',
+];
 const displays = ['solid', 'hollow', 'clear', 'link'];
 const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
 
@@ -18,7 +27,7 @@ export const playground = () => {
     const css2class = text('class', '');
     const linkTag = text('link-tag', 'a');
     const hrefProp = text('href-prop', 'href');
-    return (`<ks-button
+    return `<ks-button
             class="${css2class}"
             button-class="${buttonClass}" 
             class="m-md"
@@ -32,7 +41,7 @@ export const playground = () => {
             link-tag="${linkTag}"
             href-prop="${hrefProp}">
             ${color} button
-        </ks-button>`);
+        </ks-button>`;
 };
 
 export const iconButton = () => {
@@ -45,7 +54,7 @@ export const iconButton = () => {
     const target = text('target', '');
     const buttonClass = text('button-class', '');
     const cssClass = text('class', '');
-    return (`<ks-button
+    return `<ks-button
             class="${cssClass}"
             button-class="${buttonClass}" 
             class="m-md"
@@ -59,7 +68,7 @@ export const iconButton = () => {
             hide-text
             >
             ${color} button
-        </ks-button>`);
+        </ks-button>`;
 };
 
 export const buttonColors = () => {
@@ -67,24 +76,32 @@ export const buttonColors = () => {
     const size = select('size', sizes, 'md');
     const linkUrl = text('url', '');
     const buttonClass = text('button-class', '');
-    return (colors.map(color =>
-        `<ks-button
+    return colors
+        .map(
+            color =>
+                `<ks-button
             button-class="${buttonClass}" 
             color="${color}" 
             display="${display}" 
             size="${size}" 
             url="${linkUrl}">
             ${color} button
-        </ks-button>`).join(""));
+        </ks-button>`
+        )
+        .join('');
 };
 
 export const buttonDisplay = () => {
-    return (displays.map(d =>
-        `<ks-button
+    return displays
+        .map(
+            d =>
+                `<ks-button
             class="ml-md mt-md" 
             display="${d}" href="#">
             ${d} button
-        </ks-button>`).join(""));
+        </ks-button>`
+        )
+        .join('');
 };
 
 export const sizeVariations = () => {
@@ -92,8 +109,10 @@ export const sizeVariations = () => {
     const display = select('display', displays, 'solid');
     const linkUrl = text('url', '');
     const buttonClass = text('button-class', '');
-    return (sizes.map(size =>
-        `<ks-button
+    return sizes
+        .map(
+            size =>
+                `<ks-button
             class="m-md"
             button-class="${buttonClass}" 
             color="${color}" 
@@ -101,16 +120,17 @@ export const sizeVariations = () => {
             size="${size}" 
             url="${linkUrl}">
             ${size} button
-        </ks-button>`).join(''));
+        </ks-button>`
+        )
+        .join('');
 };
-
 
 export const buttonBar = () => {
     const stacked = boolean('stacked', false);
     const buttonDisplay = text('button display', 'hollow');
     const buttonClass = text('class', '');
 
-    return (`<div class="m-xl">
+    return `<div class="m-xl">
         <ks-button-bar stacked="${stacked}" class="${buttonClass}">
             <ks-button display="${buttonDisplay}">Button 1</ks-button>
             <ks-button display="${buttonDisplay}">Button 2</ks-button>
@@ -133,9 +153,9 @@ export const buttonBar = () => {
             </ks-dropdown>
     
         </ks-button-bar>
-    </div>`)
-}
+    </div>`;
+};
 
 export const inlineButton = () => {
-    return (`This is <a href="#">some</a> text with a <ks-button display="link">inline button</ks-button> in a sentence.`);
+    return `This is <a href="#">some</a> text with a <ks-button display="link">inline button</ks-button> in a sentence.`;
 };

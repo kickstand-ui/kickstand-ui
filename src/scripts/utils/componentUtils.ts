@@ -2,7 +2,8 @@
  * Documentation
  * A list of focusable HTML elements
  */
-export const FOCUSABLE_ELEMENTS = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]';
+export const FOCUSABLE_ELEMENTS =
+    'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]';
 
 /**
  * Documentation
@@ -18,7 +19,7 @@ export const keyCodes = {
     UP_ARROW: 38,
     RIGHT_ARROW: 39,
     DOWN_ARROW: 40,
-    SPACE: 32
+    SPACE: 32,
 };
 
 /**
@@ -29,11 +30,10 @@ export const keyCodes = {
 export const debounce = (fn: Function, delay: number) => {
     let timeOutId: NodeJS.Timeout;
     return function (...args) {
-        if (timeOutId)
-            clearTimeout(timeOutId);
+        if (timeOutId) clearTimeout(timeOutId);
 
         timeOutId = setTimeout(() => {
             fn(...args);
         }, delay);
-    }
-}
+    };
+};

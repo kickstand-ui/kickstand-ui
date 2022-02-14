@@ -1,4 +1,4 @@
-import { text, select, boolean, number } from "@storybook/addon-knobs";
+import { text, select, boolean, number } from '@storybook/addon-knobs';
 
 export default { title: 'Components/Carousel' };
 
@@ -10,7 +10,7 @@ export const carouselOptions = () => {
     const hideControls = boolean('hide-controls', false);
     const cssClass = text('class', 'm-md w-50');
 
-    return (`
+    return `
         <ks-carousel autoplay="${autoplay}" thumbnails="${thumbnails}" hide-indicators="${hideIndicators}" hide-controls="${hideControls}" timer="${timer}" class="${cssClass}">
             <ks-carousel-slide alt="Jim Pranks Dwight" src="http://oyster.ignimgs.com/wordpress/stg.ign.com/2013/05/Stapler_in_jello.jpg">
                 <h2>Stapler in Jello</h2>
@@ -28,7 +28,7 @@ export const carouselOptions = () => {
             </ks-carousel-slide>
         </ks-carousel>
         <p>Here is some content</p>
-    `);
+    `;
 };
 
 export const carouselSlideOptions = () => {
@@ -38,7 +38,7 @@ export const carouselSlideOptions = () => {
     const clickable = boolean('clickable', false);
     const cssClass = text('class', 'm-md w-50');
 
-    return (`
+    return `
         <ks-carousel autoplay="true" class="${cssClass}">
             <ks-carousel-slide clickable="${clickable}" href="${href}" position="${position}" align="${align}" alt="Jim Pranks Dwight" src="https://oyster.ignimgs.com/wordpress/stg.ign.com/2013/05/Jims_wall_of_pencils.png">
                 <h2>Desk Fort</h2>
@@ -48,6 +48,5 @@ export const carouselSlideOptions = () => {
                 <ks-button>Test Button</ks-button>
             </ks-carousel-slide>
         </ks-carousel>
-    `);
+    `;
 };
-

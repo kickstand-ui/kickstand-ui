@@ -1,9 +1,9 @@
-import { select } from "@storybook/addon-knobs";
+import { select } from '@storybook/addon-knobs';
 
 export default { title: 'Components/Grid' };
 
 export const basicGrid = () => {
-    return (`
+    return `
     <div class="main">
         <h2>Grid w/ Sub-grid</h2>
         <ks-row class="bg-primary">
@@ -74,12 +74,16 @@ export const basicGrid = () => {
         </div>
 
     </div>
-    `);
+    `;
 };
 
 export const gutters = () => {
-    const gutter = select('gutter', ['none', 'xxxs', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'], 'md');
-    return (`
+    const gutter = select(
+        'gutter',
+        ['none', 'xxxs', 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'],
+        'md'
+    );
+    return `
     <ks-row gutter="${gutter}">
         <ks-column>
             <span class="bg-light w-100">Start</span>
@@ -94,11 +98,11 @@ export const gutters = () => {
             <span class="bg-light w-100">Stretch</span>
         </ks-column>
     </ks-row>
-    `);
+    `;
 };
 
 export const gridAlignment = () => {
-    return (`
+    return `
     <ks-row position="end" style="height:200px;">
         <ks-column position="start">
             <span class="bg-light p-sm w-100">Start</span>
@@ -113,5 +117,5 @@ export const gridAlignment = () => {
             <span class="bg-light p-sm w-100">Stretch</span>
         </ks-column>
     </ks-row>
-    `);
+    `;
 };

@@ -9,14 +9,14 @@ export const config: Config = {
     outputTargets: [
         {
             type: 'dist',
-            esmLoaderPath: '../loader'
+            esmLoaderPath: '../loader',
         },
         {
-            type: 'docs-readme'
+            type: 'docs-readme',
         },
         {
             type: 'docs-vscode',
-            file: './dist/custom-elements.json'
+            file: './custom-elements.json',
         },
         {
             type: 'www',
@@ -27,15 +27,12 @@ export const config: Config = {
     plugins: [
         sass(),
         postcss({
-            plugins: [
-                autoprefixer(),
-                cssnano()
-            ]
-        })
+            plugins: [autoprefixer(), cssnano()],
+        }),
     ],
     buildEs5: 'prod',
     extras: {
         cssVarsShim: true,
-        shadowDomShim: false
-    }
+        shadowDomShim: false,
+    },
 };
