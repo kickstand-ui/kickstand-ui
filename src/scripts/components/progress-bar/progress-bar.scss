@@ -2,7 +2,14 @@
 
 $sizes: (xs, sm, md, lg);
 
-ks-progress {
+ks-progress-bar {
+    --border-radius: var(--ks-border-radius-sm);
+    --description-size: var(--ks-font-size-md);
+    --progress-label-size: var(--ks-font-size-sm);
+    --track-color: var(--ks-color-light-light);
+    --track-size: var(--ks-spacing-md);
+    --progress-color: var(--ks-color-primary-base);
+
     display: block;
 
     .labels {
@@ -11,11 +18,11 @@ ks-progress {
         align-items: baseline;
 
         .description {
-            @include font-size(md);
+            font-size: var(--description-size);
         }
 
         .progress-label {
-            @include font-size(sm);
+            font-size: var(--progress-label-size);
         }
     }
 
@@ -25,26 +32,16 @@ ks-progress {
         max-width: 100%;
         border: 0;
         position: relative;
-        @include bg-color(light, light);
-        @include r(sm);
+        height: var(--track-size);
+        background-color: rgb(var(--track-color));
+        border-radius: var(--border-radius);
 
         .value {
             display: block;
             height: 100%;
+            background-color: rgb(var(--progress-color));
             @include transition(width);
-            @include rl(sm);
-
-            @each $key, $value in get-colors() {
-                &.#{$key} {
-                    @include bg-color($key);
-                }
-            }
-        }
-
-        @each $size in $sizes {
-            &.#{$size} {
-                height: spacing($size);
-            }
+            @include rl-var(--border-radius);
         }
     }
 }

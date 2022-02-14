@@ -338,7 +338,6 @@ export namespace Components {
         "hideDescription": boolean;
         "hideProgressLabel": boolean;
         "progressLabel": string;
-        "size": 'xs' | 'sm' | 'md' | 'lg';
         "value": number;
     }
     interface KsRadio {
@@ -1030,7 +1029,6 @@ declare namespace LocalJSX {
         "hideDescription"?: boolean;
         "hideProgressLabel"?: boolean;
         "progressLabel"?: string;
-        "size"?: 'xs' | 'sm' | 'md' | 'lg';
         "value"?: number;
     }
     interface KsRadio {

@@ -1,17 +1,23 @@
-import { Component, h, Prop, Host, ComponentInterface } from '@stencil/core';
+import { Component, h, Prop, Host, ComponentInterface, Element } from '@stencil/core';
 
 @Component({
     tag: 'ks-progress-bar',
     styleUrl: 'progress-bar.scss'
 })
 export class ProgressBar implements ComponentInterface {
-    @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link' = 'primary';
+    @Element() $el: HTMLElement;
+
+    @Prop() color: 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'danger' | 'light' | 'dark' | 'link';
     @Prop() value: number = 0;
-    @Prop() size: 'xs' | 'sm' | 'md' | 'lg' = 'md';
     @Prop() description: string = 'Loading...';
     @Prop() hideDescription: boolean;
     @Prop() progressLabel: string = 'Progress';
     @Prop() hideProgressLabel: boolean;
+
+    componentWillRender() {
+        if(this.color)
+            this.$el.style.setProperty('--progress-color', `var(--ks-color-${this.color}-base)`);
+    }
 
     validateValue() {
         return isNaN(this.value)
@@ -36,9 +42,9 @@ export class ProgressBar implements ComponentInterface {
                         'sr-only': this.hideProgressLabel
                     }}>{this.progressLabel}: {this.value}%</span>
                 </div>
-                <span class={`progress-bar ${this.size}`} aria-valuemin="0" aria-valuemax="100" aria-valuenow={this.value.toString()} role="progressbar">
-                    <span class={`value ${this.color}`} style={{ width: `${this.value}%` }}></span>
-                </span>
+                <div class="progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow={this.value.toString()} role="progressbar">
+                    <div class="value" style={{ width: `${this.value}%` }}></div>
+                </div>
             </Host>
         );
     }
